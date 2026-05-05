@@ -1,26 +1,26 @@
 flowchart LR
   subgraph gbo["GBO Basis"]
     direction TB
-        fsc_pap("`**PAP<br>(beleidsregels)**`")
-        fsc("`**FSC / GraphQL / PBAC<br>(generieke bronontsluiting)**`")
-        fsc_tools("`**GBO tools<br>(vertaallaag)**`")
+        fsc_pap("<strong>PAP<br>(beleidsregels)</strong>")
+        fsc("<strong>FSC / GraphQL / PBAC<br>(generieke bronontsluiting)</strong>")
+        fsc_tools("<strong>GBO tools<br>(vertaallaag)</strong>")
   end
   subgraph eudi["EUDI-Wallet"]
     direction LR
-        eudi_asi("`**ASI-provider<br>(verify dienst)**`")
-        eudi_pubeaa("`**PubEAA-provider<br>(PubEAA)**`")
+        eudi_asi("<strong>ASI-provider<br>(verify dienst)</strong>")
+        eudi_pubeaa("<strong>PubEAA-provider<br>(PubEAA)</strong>")
         eudi_qeaa["QTSP<br>(QEAA)"]
         eudi_wallet["EUDI-Wallet burger"]
   end
   subgraph oots["SDG / OOTS"]
     direction LR
-        oots_adapter("`**OOTS adapter<br>(semantische mapping)**`")
+        oots_adapter("<strong>OOTS adapter<br>(semantische mapping)</strong>")
         oots_basis["Basisinrichting OOTS<br>RINIS / BZK"]
         oots_afnemer["Europese overheid<br>SDG-portaal"]
   end
   subgraph dvtp["DvTP"]
     direction LR
-        dvtp_toestemming("`**Toestemmingsvoorziening**`")
+        dvtp_toestemming("<strong>Toestemmingsvoorziening</strong>")
         dvtp_pseudoniem["Pseudonimiseervoorziening<br>(BSNk PP)"]
         dvtp_afnemer["Private dienstverlener"]
   end
