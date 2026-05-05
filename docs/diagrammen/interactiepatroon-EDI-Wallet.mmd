@@ -7,7 +7,6 @@ sequenceDiagram
     participant VerifDienst as Verificatie-<br/>dienst
     participant Auth as Autorisatie<br/>voorziening
     participant Bron as Overheids-<br/>bron
-    participant DV as Dienst-<br/>verlener
 
     Note over Burger,Bron: Stroom A — PuB-EAA: overheidsinstantie geeft attribuut rechtstreeks uit
 
@@ -48,12 +47,4 @@ sequenceDiagram
         QTSP->>QTSP: Issue QEAA
         QTSP-->>Wallet: QEAA attestatie
         Wallet-->>Burger: QEAA opgeslagen in wallet
-    end
-
-    Note over Burger,DV: Gebruik — burger deelt attestatie met dienstverlener
-
-    rect rgb(250, 238, 218)
-        Burger->>DV: Deel attestatie (OpenID4VP)
-        DV->>DV: Controleer attestatie
-        Note over DV: PuB-EAA of QEAA,<br/>gelijke juridische status (eIDAS 2.0)
     end
