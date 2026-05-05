@@ -904,8 +904,7 @@
 <h3 id="interactie">Interactie<a class="headerlink" href="#interactie" title="Permanent link">&para;</a></h3>
 <figure>
 
-<div class="mermaid">
-sequenceDiagram
+<div class="mermaid">sequenceDiagram
     autonumber
     actor Burger
     participant Wallet as EDI-Wallet
@@ -965,7 +964,6 @@ sequenceDiagram
         Note over DV: PuB-EAA of QEAA,&lt;br/&gt;gelijke juridische status (eIDAS 2.0)
     end
 </div>
-
 <figcaption>Gegevensverzoek van burger om credential via wallet te delen</figcaption>
 </figure>
 
@@ -978,8 +976,7 @@ Als de overheid het gegeven kwalificeert kan de bronhouder dit zelf doen, maar h
 <h3 id="interactie_1">Interactie<a class="headerlink" href="#interactie_1" title="Permanent link">&para;</a></h3>
 <figure>
 
-<div class="mermaid">
-sequenceDiagram
+<div class="mermaid">sequenceDiagram
     autonumber
     participant BRG as Burger&lt;br/&gt;(rechthebbende)
     participant EU as EU dienst&lt;br/&gt;(SDG/OOTS)
@@ -1037,7 +1034,6 @@ sequenceDiagram
         EU-&gt;&gt;BRG: Levert dienst
     end
 </div>
-
 <figcaption>Interactiepatroon gegevensverzoek Europese overheidsdienst via SDG/OOTS</figcaption>
 </figure>
 
@@ -1050,8 +1046,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 <h3 id="interactie_2">Interactie<a class="headerlink" href="#interactie_2" title="Permanent link">&para;</a></h3>
 <figure>
 
-<div class="mermaid">
-sequenceDiagram
+<div class="mermaid">sequenceDiagram
     autonumber
     actor Burger
     participant DV as Dienst-&lt;br/&gt;verlener
@@ -1097,7 +1092,6 @@ sequenceDiagram
         BRH--&gt;&gt;DV: Gevraagde gegevens
     end
 </div>
-
 <figcaption>Interactiepatroon Private Partij haalt gegevens op met toestemming van de burger</figcaption>
 </figure>
 

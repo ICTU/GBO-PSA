@@ -1516,8 +1516,7 @@ Ook deelnemers moeten aantoonbaar voldoen aan beveiligings- en privacy-eisen bij
 <p>In de contextdiagram worden de actoren ten opzichte van elkaar en van GBO geschetst.</p>
 <figure>
 
-<div class="mermaid">
-flowchart LR
+<div class="mermaid">flowchart LR
 
 Bronhouder["Overheidsbron"]
 DvTP["GBO
@@ -1531,7 +1530,6 @@ DvTP --&gt; Wallet
 DvTP --&gt; SDG
 DvTP --&gt; Privaat
 </div>
-
 <figcaption>Contextdiagram</figcaption>
 </figure>
 
@@ -1546,8 +1544,7 @@ DvTP --&gt; Privaat
 <h3 id="psa-interactiepatronen-interactie">Interactie<a class="headerlink" href="#psa-interactiepatronen-interactie" title="Permanent link">&para;</a></h3>
 <figure>
 
-<div class="mermaid">
-sequenceDiagram
+<div class="mermaid">sequenceDiagram
     autonumber
     actor Burger
     participant Wallet as EDI-Wallet
@@ -1607,7 +1604,6 @@ sequenceDiagram
         Note over DV: PuB-EAA of QEAA,&lt;br/&gt;gelijke juridische status (eIDAS 2.0)
     end
 </div>
-
 <figcaption>Gegevensverzoek van burger om credential via wallet te delen</figcaption>
 </figure>
 
@@ -1620,8 +1616,7 @@ Als de overheid het gegeven kwalificeert kan de bronhouder dit zelf doen, maar h
 <h3 id="psa-interactiepatronen-interactie_1">Interactie<a class="headerlink" href="#psa-interactiepatronen-interactie_1" title="Permanent link">&para;</a></h3>
 <figure>
 
-<div class="mermaid">
-sequenceDiagram
+<div class="mermaid">sequenceDiagram
     autonumber
     participant BRG as Burger&lt;br/&gt;(rechthebbende)
     participant EU as EU dienst&lt;br/&gt;(SDG/OOTS)
@@ -1679,7 +1674,6 @@ sequenceDiagram
         EU-&gt;&gt;BRG: Levert dienst
     end
 </div>
-
 <figcaption>Interactiepatroon gegevensverzoek Europese overheidsdienst via SDG/OOTS</figcaption>
 </figure>
 
@@ -1692,8 +1686,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 <h3 id="psa-interactiepatronen-interactie_2">Interactie<a class="headerlink" href="#psa-interactiepatronen-interactie_2" title="Permanent link">&para;</a></h3>
 <figure>
 
-<div class="mermaid">
-sequenceDiagram
+<div class="mermaid">sequenceDiagram
     autonumber
     actor Burger
     participant DV as Dienst-&lt;br/&gt;verlener
@@ -1739,7 +1732,6 @@ sequenceDiagram
         BRH--&gt;&gt;DV: Gevraagde gegevens
     end
 </div>
-
 <figcaption>Interactiepatroon Private Partij haalt gegevens op met toestemming van de burger</figcaption>
 </figure>
 
@@ -1842,7 +1834,6 @@ sequenceDiagram
     class BRP,BD,UWV,DUO,BAG,OV bronhouder
     class BRG burger
 </div>
-
 <figcaption>Architectuuroverzicht GBO</figcaption>
 </figure>
 
@@ -3478,7 +3469,7 @@ Er worden drie werkpakketten onderscheiden, die gekoppeld zijn aan de drie toepa
   classDef gbo fill:#fff0e8,stroke:#000000,color:#000000
   classDef burger fill:#edf7df,stroke:#6aa13a,color:#27500a</div>
 <figcaption>De werkpakketten getekend in relatie tot elkaar.  
-NB: in deze figuur zijn enkel de voorzieningen geschetst - geen afspraken of standaarden die ook nodig zijn. De lichtrode voorzieningen met afgeronde omlijning moeten door GBO ontwikkeld worden. De overige voorzieningen bestaan al, daar moet op aangesloten worden.</figcaption>
+NB: in deze figuur zijn enkel de voorzieningen geschetst - geen afspraken of standaarden die ook nodig zijn. De lichtrode voorzieningen moeten door GBO ontwikkeld worden. De overige voorzieningen bestaan al - daar moet op aangesloten worden.</figcaption>
 </figure>
 
 <h3 id="psa-realisatiestrategie-werkpakket-gbo-basis">Werkpakket GBO Basis<a class="headerlink" href="#psa-realisatiestrategie-werkpakket-gbo-basis" title="Permanent link">&para;</a></h3>
