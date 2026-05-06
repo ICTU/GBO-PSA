@@ -45,6 +45,7 @@ flowchart LR
   dvtp_pseudoniem <--> dvtp_afnemer
   ebw_qerds_adapter <--> ebw_pub_qtsp <--> ebw_wallet
   ebw_qerds_adapter <--> ebw_qtsp <--> ebw_wallet
+  ebw_wallet <--> organisatie["Organisatie<br>(publiek/privaat)"]
   eudi_wallet <--> burger["Burger"]
   oots_afnemer <--> burger
   dvtp_afnemer <--> burger
@@ -68,6 +69,7 @@ flowchart LR
   dvtp_afnemer:::dvtp
   bron:::bron
   burger:::burger
+  organisatie:::burger
 
   classDef bron fill:#edf7df,stroke:#6aa13a,color:#27500a
   classDef generiek fill:#f1efe8,stroke:#5f5e5a,color:#444441
