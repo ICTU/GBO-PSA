@@ -3397,44 +3397,44 @@ Er worden drie werkpakketten onderscheiden, die gekoppeld zijn aan de drie toepa
 <div class="mermaid">flowchart LR
   subgraph gbo["GBO Basis"]
     direction TB
-        fsc_pap("&lt;strong&gt;PAP&lt;br&gt;(beleidsregels)&lt;/strong&gt;")
-        fsc("&lt;strong&gt;FSC / GraphQL / PBAC&lt;br&gt;(generieke bronontsluiting)&lt;/strong&gt;")
-        fsc_tools("&lt;strong&gt;GBO tools&lt;br&gt;(vertaallaag)&lt;/strong&gt;")
+        fsc_pap("`**PAP&lt;br&gt;(beleidsregels)**`")
+        fsc("`**FSC / GraphQL / PBAC&lt;br&gt;(generieke bronontsluiting)**`")
+        fsc_tools("`**GBO tools&lt;br&gt;(vertaallaag)**`")
   end
   subgraph eudi["EUDI-Wallet"]
     direction LR
-        eudi_asi("&lt;strong&gt;ASI-provider&lt;br&gt;(verify dienst)&lt;/strong&gt;")
-        eudi_pubeaa("&lt;strong&gt;PubEAA-provider&lt;br&gt;(PubEAA)&lt;/strong&gt;")
+        eudi_asi("`**ASI-provider&lt;br&gt;(verify dienst)**`")
+        eudi_pubeaa("`**PubEAA-provider&lt;br&gt;(PubEAA)**`")
         eudi_qeaa["QTSP&lt;br&gt;(QEAA)"]
         eudi_wallet["EUDI-Wallet burger"]
   end
   subgraph oots["SDG / OOTS"]
     direction LR
-        oots_adapter("&lt;strong&gt;OOTS adapter&lt;br&gt;(semantische mapping)&lt;/strong&gt;")
+        oots_adapter("`**OOTS adapter&lt;br&gt;(semantische mapping)**`")
         oots_basis["Basisinrichting OOTS&lt;br&gt;RINIS / BZK"]
         oots_afnemer["Europese overheid&lt;br&gt;SDG-portaal"]
   end
   subgraph dvtp["DvTP"]
     direction LR
-        dvtp_toestemming("&lt;strong&gt;Toestemmingsvoorziening&lt;/strong&gt;")
+        dvtp_toestemming("`**Toestemmingsvoorziening**`")
         dvtp_pseudoniem["Pseudonimiseervoorziening&lt;br&gt;(BSNk PP)"]
         dvtp_afnemer["Private dienstverlener"]
   end
 
-  fsc_pap &lt;--&gt; fsc
-  fsc &lt;--&gt; fsc_tools
-  bron[("Overheidsbronnen&lt;br&gt;BRP · BD · UWV · KvK…")] &lt;--&gt; gbo
-  eudi_asi &lt;--&gt; eudi_qeaa
-  eudi_qeaa &lt;--&gt; eudi_wallet
-  gbo &lt;--&gt; eudi_asi &amp; eudi_pubeaa &amp; oots_adapter &amp; dvtp_toestemming
-  eudi_pubeaa &lt;--&gt; eudi_wallet
-  oots_adapter &lt;--&gt; oots_basis
-  oots_basis &lt;--&gt; oots_afnemer
-  dvtp_toestemming &lt;--&gt; dvtp_pseudoniem
-  dvtp_pseudoniem &lt;--&gt; dvtp_afnemer
-  eudi_wallet &lt;--&gt; burger["Burger"]
-  oots_afnemer &lt;--&gt; burger
-  dvtp_afnemer &lt;--&gt; burger
+  fsc_pap --- fsc
+  fsc --- fsc_tools
+  bron[("Overheidsbronnen&lt;br&gt;BRP · BD · UWV · KvK…")] -- Bron API&lt;br&gt;(GraphQL / REST-JSON / ...) --- gbo
+  eudi_asi -- REST-JSON --- eudi_qeaa
+  eudi_qeaa -- OpenID4VCI --- eudi_wallet
+  gbo -- GraphQL --- eudi_asi &amp; eudi_pubeaa &amp; oots_adapter &amp; dvtp_toestemming
+  eudi_pubeaa -- OpenID4VCI --- eudi_wallet
+  oots_adapter -- REST-JSON --- oots_basis
+  oots_basis -- eDelivery-AS4 --- oots_afnemer
+  dvtp_toestemming -- REST-JSON --- dvtp_pseudoniem
+  dvtp_pseudoniem -- REST-JSON --- dvtp_afnemer
+  eudi_wallet --- burger["Burger"]
+  oots_afnemer --- burger
+  dvtp_afnemer --- burger
 
   fsc_pap:::gbo
   fsc:::gbo

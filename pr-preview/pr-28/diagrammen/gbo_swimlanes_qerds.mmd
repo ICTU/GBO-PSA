@@ -32,23 +32,23 @@ flowchart LR
         ebw_wallet["EBW<br>(publiek/privaat)"]
   end
 
-  fsc_pap <--> fsc
-  fsc <--> fsc_tools
-  bron[("Overheidsbronnen<br>BRP · BD · UWV · KvK…")] <--> gbo
-  eudi_asi <--> eudi_qeaa
-  eudi_qeaa <--> eudi_wallet
-  gbo <--> eudi_asi & eudi_pubeaa & oots_adapter & dvtp_toestemming & ebw_qerds_adapter
-  eudi_pubeaa <--> eudi_wallet
-  oots_adapter <--> oots_basis
-  oots_basis <--> oots_afnemer
-  dvtp_toestemming <--> dvtp_pseudoniem
-  dvtp_pseudoniem <--> dvtp_afnemer
-  ebw_qerds_adapter <--> ebw_pub_qtsp <--> ebw_wallet
-  ebw_qerds_adapter <--> ebw_qtsp <--> ebw_wallet
-  ebw_wallet <--> organisatie["Organisatie<br>(publiek/privaat)"]
-  eudi_wallet <--> burger["Burger"]
-  oots_afnemer <--> burger
-  dvtp_afnemer <--> burger
+  fsc_pap --- fsc
+  fsc --- fsc_tools
+  bron[("Overheidsbronnen<br>BRP · BD · UWV · KvK…")] -- Bron API<br>(GraphQL / REST-JSON / ...) --- gbo
+  eudi_asi -- REST-JSON --- eudi_qeaa
+  eudi_qeaa -- OpenID4VCI --- eudi_wallet
+  gbo -- GraphQL --- eudi_asi & eudi_pubeaa & oots_adapter & dvtp_toestemming & ebw_qerds_adapter
+  eudi_pubeaa -- OpenID4VCI --- eudi_wallet
+  oots_adapter -- REST-JSON --- oots_basis
+  oots_basis -- eDelivery-AS4 --- oots_afnemer
+  dvtp_toestemming -- REST-JSON --- dvtp_pseudoniem
+  dvtp_pseudoniem -- REST-JSON --- dvtp_afnemer
+  ebw_qerds_adapter -- QERDS API / eDelivery-AS4 --- ebw_pub_qtsp -- QERDS delivery flow --- ebw_wallet
+  ebw_qerds_adapter -- QERDS API / eDelivery-AS4 --- ebw_qtsp -- QERDS delivery flow --- ebw_wallet
+  ebw_wallet --- organisatie["Organisatie<br>(publiek/privaat)"]
+  eudi_wallet --- burger["Burger"]
+  oots_afnemer --- burger
+  dvtp_afnemer --- burger
 
   fsc_pap:::gbo
   fsc:::gbo
