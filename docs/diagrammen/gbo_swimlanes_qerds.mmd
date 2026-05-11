@@ -36,7 +36,7 @@ flowchart LR
   fsc --- fsc_tools
   bron[("Overheidsbronnen<br>BRP · BD · UWV · KvK…")] -- Bron API<br>(GraphQL / REST-JSON / ...) --- gbo
   eudi_asi -- verify --- eudi_qeaa
-  eudi_asi -- retrieve --- eudi_qeaa
+  eudi_asi -- "`*retrieve*`" --- eudi_qeaa
   eudi_qeaa -- OpenID4VCI --- eudi_wallet
   gbo -- GraphQL --- eudi_asi & eudi_pubeaa & oots_adapter & dvtp_afnemer & ebw_qerds_adapter
   eudi_pubeaa -- OpenID4VCI ---- eudi_wallet
