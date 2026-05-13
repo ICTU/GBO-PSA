@@ -15,7 +15,7 @@ sequenceDiagram
         DV->>Burger: Redirect naar toestemmingsvoorziening GBO<br/>(met scope + doelbinding)
         Burger->>TV: Volgt redirect
         TV->>Auth: Authenticatieverzoek
-        Note over Auth: DigiD óf EDI-Wallet (eIDAS 2.0)
+        Note over Auth: DigiD of ander identificatiemiddel (eIDAS 2.0)
         Auth->>Burger: Authenticeer burger
         Burger-->>Auth: Authenticatie
         Auth-->>TV: BSN (geverifieerde identiteit)
