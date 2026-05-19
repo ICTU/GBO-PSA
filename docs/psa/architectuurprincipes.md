@@ -131,7 +131,7 @@
 
 ### P-07 · Vertrouwensstelsel op basis van PKI en erkende toetredingseisen
 
-**Stelling:** Alle deelnemende partijen (bronhouders, afnemers, private partijen) voldoen aan toetredingseisen en zijn aantoonbaar betrouwbaar via PKIoverheid-certificaten en/of het TIP-stelsel.
+**Stelling:** Alle deelnemende partijen (bronhouders, afnemers, private partijen) voldoen aan toetredingseisen en zijn aantoonbaar betrouwbaar via PKIoverheid-certificaten en/ of bestaande stelsels (zoals sectorale afsprakenstelsels), die door de stelselbeheer voldoende vertrouwd worden.
 
 **Bronnen:**  
 - PKIoverheid-stelsel  

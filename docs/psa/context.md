@@ -74,6 +74,14 @@ De doelstellingen van GBO zijn:
 - Meer uniformiteit en interoperabiliteit tussen overheden, en overheid en private partijen
 
 
+## UBO beproevingen
+
+Het project BronConnect / Uniforme Bronontsluitiung ([UBO](https://digilab.overheid.nl/projecten/beproeving-eenvoudig-en-eenduidig-gegevens-uitwisselen/)) heeft een aantal beproevingen uitgevoerd om te onderzoeken hoe gemeenten op een eenduidige manier kunnen voldoen aan de eisen die SDG/OOTS en de eIDAS-verordening stellen. UBO heeft laten zien dat gemeentelijke bronontsluiting via een integratielaag, Data API, FSC/OpenFSC en een OOTS/eDelivery-adapter werkbaar is.  
+GBO bouwt voort op de bevindingen van UBO en maakt daar een productiegericht, breder en generieker stelsel van: meer bronhouders, meer trajecten, rijkere autorisatie, expliciet semantiekbeheer en centrale of gedeelde voorzieningen waar dat schaalvoordeel geeft.
+
+In de bijlage [Lessons Learned UBO](bijlage_UBO_GBO.md) is uitgewerkt hoe de bevindingen van UBO zijn hergebruikt in de opzet en architectuur van GBO.
+
+
 ## Maximaal borgen in bestaande afsprakenstelsels
 
 GBO wordt geen nieuw, losstaand stelsel. De gerealiseerde stelselfuncties worden zoveel mogelijk geborgd binnen bestaande landelijke afsprakenstelsels, zoals het Federatief Datastelsel (FDS) en de Generieke Digitale Infrastructuur (GDI) voor de overheid, en binnen publiek-private afsprakenstelsels zoals Trusted Information Partners (TIP), voor de uitwisseling met private dienstverleners.  

@@ -125,13 +125,13 @@ Componenten en standaarden worden bij voorkeur als open source ontwikkeld en gep
 
 ---
 
-### D-13 · Standaardiseer waar mogelijk, maak uitzonderingen expliciet
+### D-13 · Standaardiseer waar mogelijk, maak uitzonderingen expliciet en zorg dat deze in bestaande gremia landen
 
 **Betekenis:**  
-Hergebruik van bestaande standaarden, patronen en voorzieningen heeft sterk de voorkeur boven het ontwikkelen van nieuwe oplossingen. Als een uitzondering nodig is, wordt deze gedocumenteerd als architectuurbeslissing (ADR — Architecture Decision Record) met een onderbouwde motivatie.
+Hergebruik van bestaande standaarden, patronen en voorzieningen heeft sterk de voorkeur boven het ontwikkelen van nieuwe oplossingen. Als een uitzondering nodig is, wordt deze gedocumenteerd als architectuurbeslissing (ADR — Architecture Decision Record) met een onderbouwde motivatie. Tevens wordt beschreven hoe de uitzondering opgenomen moet worden in een bestaand afsprakenstelsel, in regulier beheer genomen wordt of opgeheven wordt.
 
 **Toelichting voor GBO:**  
-Stel een ADR-register bij als onderdeel van de GBO-documentatie. Elke afwijking van een verplichte standaard of een vastgesteld architectuurprincipe krijgt een eigen ADR met: context, beslissing, overwogen alternatieven, en consequenties.
+Stel een ADR-register bij als onderdeel van de GBO-documentatie. Elke afwijking van een verplichte standaard of een vastgesteld architectuurprincipe krijgt een eigen ADR met: context, beslissing, overwogen alternatieven, en consequenties. Tevens wordt beschreven hoe GBO-specifieke oplossingen overgaan in reguliere afspraken, standaarden of voorzieningen - of uitgefaseerd worden.
 
 **Bronnen:**  
 - NORA BP09 — Pas open standaarden toe  
