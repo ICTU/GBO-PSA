@@ -946,6 +946,10 @@ programma <strong>GBO</strong> (<strong>G</strong>emeenschappelijke <strong>B</s
 <p>Meer uniformiteit en interoperabiliteit tussen overheden, en overheid en private partijen</p>
 </li>
 </ul>
+<h2 id="psa-context-ubo-beproevingen">UBO beproevingen<a class="headerlink" href="#psa-context-ubo-beproevingen" title="Permanent link">&para;</a></h2>
+<p>Het project BronConnect / Uniforme Bronontsluitiung (<a href="https://digilab.overheid.nl/projecten/beproeving-eenvoudig-en-eenduidig-gegevens-uitwisselen/">UBO</a>) heeft een aantal beproevingen uitgevoerd om te onderzoeken hoe gemeenten op een eenduidige manier kunnen voldoen aan de eisen die SDG/OOTS en de eIDAS-verordening stellen. UBO heeft laten zien dat gemeentelijke bronontsluiting via een integratielaag, Data API, FSC/OpenFSC en een OOTS/eDelivery-adapter werkbaar is.<br />
+GBO bouwt voort op de bevindingen van UBO en maakt daar een productiegericht, breder en generieker stelsel van: meer bronhouders, meer trajecten, rijkere autorisatie, expliciet semantiekbeheer en centrale of gedeelde voorzieningen waar dat schaalvoordeel geeft.</p>
+<p>In de bijlage <a href="#psa-bijlage_ubo_gbo">Lessons Learned UBO</a> is uitgewerkt hoe de bevindingen van UBO zijn hergebruikt in de opzet en architectuur van GBO.</p>
 <h2 id="psa-context-maximaal-borgen-in-bestaande-afsprakenstelsels">Maximaal borgen in bestaande afsprakenstelsels<a class="headerlink" href="#psa-context-maximaal-borgen-in-bestaande-afsprakenstelsels" title="Permanent link">&para;</a></h2>
 <p>GBO wordt geen nieuw, losstaand stelsel. De gerealiseerde stelselfuncties worden zoveel mogelijk geborgd binnen bestaande landelijke afsprakenstelsels, zoals het Federatief Datastelsel (FDS) en de Generieke Digitale Infrastructuur (GDI) voor de overheid, en binnen publiek-private afsprakenstelsels zoals Trusted Information Partners (TIP), voor de uitwisseling met private dienstverleners.<br />
 GBO breidt deze bestaande stelsels gericht uit met de afspraken, standaarden en voorzieningen die nodig zijn voor de gestandaardiseerde ontsluiting. Gaandeweg zal blijken of er nog onderdelen zijn die niet binnen bestaande stelsels passen en waar aanvullende invulling nodig is. Daarnaast worden relevante inzichten en feedback teruggekoppeld naar de verdere ontwikkeling van EDI en SDG.</p>
@@ -1036,7 +1040,7 @@ gegroepeerd per juridisch/beleids­kader. Bedoeld als input voor de PSA.</p>
 - NORA Authenticatie(middelen)beheer  </p>
 <hr />
 <h3 id="psa-architectuurprincipes-p-07-vertrouwensstelsel-op-basis-van-pki-en-erkende-toetredingseisen">P-07 · Vertrouwensstelsel op basis van PKI en erkende toetredingseisen<a class="headerlink" href="#psa-architectuurprincipes-p-07-vertrouwensstelsel-op-basis-van-pki-en-erkende-toetredingseisen" title="Permanent link">&para;</a></h3>
-<p><strong>Stelling:</strong> Alle deelnemende partijen (bronhouders, afnemers, private partijen) voldoen aan toetredingseisen en zijn aantoonbaar betrouwbaar via PKIoverheid-certificaten en/of het TIP-stelsel.</p>
+<p><strong>Stelling:</strong> Alle deelnemende partijen (bronhouders, afnemers, private partijen) voldoen aan toetredingseisen en zijn aantoonbaar betrouwbaar via PKIoverheid-certificaten en/ of bestaande stelsels (zoals sectorale afsprakenstelsels), die door de stelselbeheer voldoende vertrouwd worden.</p>
 <p><strong>Bronnen:</strong><br />
 - PKIoverheid-stelsel<br />
 - Wet digitale overheid (Wdo)<br />
@@ -1271,11 +1275,11 @@ Componenten en standaarden worden bij voorkeur als open source ontwikkeld en gep
 - Werkagenda Waardengedreven Digitaliseren (BZK)<br />
 - GEMMA Realisatieprincipes — "Open Source Software wordt gestimuleerd" (VNG Realisatie)  </p>
 <hr />
-<h3 id="psa-ontwerpprincipes-d-13-standaardiseer-waar-mogelijk-maak-uitzonderingen-expliciet">D-13 · Standaardiseer waar mogelijk, maak uitzonderingen expliciet<a class="headerlink" href="#psa-ontwerpprincipes-d-13-standaardiseer-waar-mogelijk-maak-uitzonderingen-expliciet" title="Permanent link">&para;</a></h3>
+<h3 id="psa-ontwerpprincipes-d-13-standaardiseer-waar-mogelijk-maak-uitzonderingen-expliciet-en-zorg-dat-deze-in-bestaande-gremia-landen">D-13 · Standaardiseer waar mogelijk, maak uitzonderingen expliciet en zorg dat deze in bestaande gremia landen<a class="headerlink" href="#psa-ontwerpprincipes-d-13-standaardiseer-waar-mogelijk-maak-uitzonderingen-expliciet-en-zorg-dat-deze-in-bestaande-gremia-landen" title="Permanent link">&para;</a></h3>
 <p><strong>Betekenis:</strong><br />
-Hergebruik van bestaande standaarden, patronen en voorzieningen heeft sterk de voorkeur boven het ontwikkelen van nieuwe oplossingen. Als een uitzondering nodig is, wordt deze gedocumenteerd als architectuurbeslissing (ADR — Architecture Decision Record) met een onderbouwde motivatie.</p>
+Hergebruik van bestaande standaarden, patronen en voorzieningen heeft sterk de voorkeur boven het ontwikkelen van nieuwe oplossingen. Als een uitzondering nodig is, wordt deze gedocumenteerd als architectuurbeslissing (ADR — Architecture Decision Record) met een onderbouwde motivatie. Tevens wordt beschreven hoe de uitzondering opgenomen moet worden in een bestaand afsprakenstelsel, in regulier beheer genomen wordt of opgeheven wordt.</p>
 <p><strong>Toelichting voor GBO:</strong><br />
-Stel een ADR-register bij als onderdeel van de GBO-documentatie. Elke afwijking van een verplichte standaard of een vastgesteld architectuurprincipe krijgt een eigen ADR met: context, beslissing, overwogen alternatieven, en consequenties.</p>
+Stel een ADR-register bij als onderdeel van de GBO-documentatie. Elke afwijking van een verplichte standaard of een vastgesteld architectuurprincipe krijgt een eigen ADR met: context, beslissing, overwogen alternatieven, en consequenties. Tevens wordt beschreven hoe GBO-specifieke oplossingen overgaan in reguliere afspraken, standaarden of voorzieningen - of uitgefaseerd worden.</p>
 <p><strong>Bronnen:</strong><br />
 - NORA BP09 — Pas open standaarden toe<br />
 - NORA Architectuurprincipes (noraonline.nl)<br />
@@ -3390,6 +3394,19 @@ Een voorstel hiervoor:<br />
 - Afspraken die uitsluitend overheid-overheid betreffen → landen in het FDS- en/of het GDI-afsprakenstelsel<br />
 - Afspraken waarbij ook private dienstverleners zijn betrokken (toelating dienstverleners, aansluitvoorwaarden, vrijwilligheidseis) → landen in publiek-private afsprakenstelsels zoals het TIP-afsprakenstelsel<br />
 - Wat wettelijk verankerd moet zijn → in Wdo en AMvB</p></section><section class="print-page" id="psa-realisatiestrategie"><h1 id="psa-realisatiestrategie-realisatiestrategie">Realisatiestrategie<a class="headerlink" href="#psa-realisatiestrategie-realisatiestrategie" title="Permanent link">&para;</a></h1>
+<h2 id="psa-realisatiestrategie-werkwijze">Werkwijze<a class="headerlink" href="#psa-realisatiestrategie-werkwijze" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Er komt geen nieuw stelsel en er komen geen "GBO"-voorzieningen, maar bestaande afspraken, standaarden en voorzieningen worden hergebruikt. Waar afspraken of standaarden aangevuld of aangepast moeten worden of voorzieningen ontworpen of ingericht moeten worden, wordt dit ingebracht bij de bestaande gremia.
+Zie ook de paragraaf <a href="#psa-realisatiestrategie-gebruik-van-bestaande-afsprakenstelsels">Gebruik van bestaande afsprakenstelsels</a> voor een verdere uitwerking hiervan.</p>
+</li>
+<li>
+<p>Er wordt gedurende de projectfase al wel pilots gestart waar gewerkt met de gewenste afspraken, standaarden en voorzieningen. Als deze nog niet bestaan, worden voorbeeld implementaties gebruikt die tevens gebruikt worden om het ontwerp te verbeteren. Uiteindelijk worden deze ontwikkelingen als referentie implementaties aangeboden aan de gremia waar het beheer belegd wordt. Dit gaat tot het niveau van "pre-productie": d.w.z. dat de afspraak of voorziening volledig genoeg is uitgewerkt om in productie genomen te kunnen worden. Maar de daadwerkelijke productiegang wordt aan de beoogde beheerder overgelaten. In sommige gevallen kan hier zelfs wet- en regelgeving voor nodig zijn, die in werking moet zijn getreden voor in productie gegaan kan worden.</p>
+</li>
+<li>
+<p>De inrichting van de ontbrekende afspraken, standaarden en voorzieningen moet voldoen aan de ontwerpprincipes. Gedurende het traject worden de ontwikkelingen hier periodiek op beoordeeld, waarover zo openbaar mogelijk (maar in elk geval naar de betrokken partijen) wordt gerapporteerd.</p>
+</li>
+</ul>
 <h2 id="psa-realisatiestrategie-werkpakketten">Werkpakketten<a class="headerlink" href="#psa-realisatiestrategie-werkpakketten" title="Permanent link">&para;</a></h2>
 <p>De stelselfuncties die nodig zijn om de GBO te kunnen gebruiken voor de drie gewenste toepassingen worden opgedeeld in werkpakketten. Met deze werkpakketten is het mogelijk om de drie toepassingen los van elkaar mogelijk te maken en afhankelijk van de prioriteiten rond de toepassingen te implementeren.<br />
 Er worden drie werkpakketten onderscheiden, die gekoppeld zijn aan de drie toepassingen. Daarnaast is er een werkpakket dat voor alle toepassingen nodig is: de basis functies.  </p>
@@ -3462,7 +3479,7 @@ Er worden drie werkpakketten onderscheiden, die gekoppeld zijn aan de drie toepa
   classDef gbo fill:#fff0e8,stroke:#000000,color:#000000
   classDef burger fill:#edf7df,stroke:#6aa13a,color:#27500a</div>
 <figcaption>De werkpakketten getekend in relatie tot elkaar.  
-NB: in deze figuur zijn enkel de voorzieningen geschetst - geen afspraken of standaarden die ook nodig zijn. De lichtrode voorzieningen moeten door GBO ontwikkeld worden. De overige voorzieningen bestaan al - daar moet op aangesloten worden.</figcaption>
+NB: in deze figuur zijn enkel de voorzieningen geschetst - geen afspraken of standaarden die ook nodig zijn. De lichtrode voorzieningen moeten nog ontwikkeld worden. De overige voorzieningen bestaan al - daar moet op aangesloten worden.</figcaption>
 </figure>
 
 <h3 id="psa-realisatiestrategie-werkpakket-gbo-basis">Werkpakket GBO Basis<a class="headerlink" href="#psa-realisatiestrategie-werkpakket-gbo-basis" title="Permanent link">&para;</a></h3>
@@ -3480,16 +3497,21 @@ NB: in deze figuur zijn enkel de voorzieningen geschetst - geen afspraken of sta
 <h2 id="psa-vraagstukken-inleiding">Inleiding<a class="headerlink" href="#psa-vraagstukken-inleiding" title="Permanent link">&para;</a></h2>
 <p>In dit hoofdstuk worden de vraagstukken waarvoor een oplossing gevonden moet worden of waarvoor een keuze gemaakt moet worden besproken.<br />
 Als er een oplossing is gevonden of een keuze is gemaakt, wordt dit in dit hoofdstuk als ontwerpkeuze vastgelegd. De verdere uitwerking vindt plaats in het technisch ontwerp.  </p>
+<h2 id="psa-vraagstukken-onboarding">Onboarding<a class="headerlink" href="#psa-vraagstukken-onboarding" title="Permanent link">&para;</a></h2>
+<p>Deelnemers aan het stelsel moeten aan eisen voldoen, waarbij de eisen kunnen verschillen per deelnemersgroep: bronhouders, afnemers, intermediairs, etc. Om deel te kunnen nemen aan het stelsel doorlopen de deelnemers een onboarding proces. Dat proces moet nog ingericht worden, zowel wat betreft de governance (wie doet wat en is waarvoor verantwoordelijk) als inhoud (waarop worden deelnemers beoordeeld).</p>
 <h2 id="psa-vraagstukken-identificatie-authenticatie-private-dienstverleners">Identificatie &amp; authenticatie private dienstverleners<a class="headerlink" href="#psa-vraagstukken-identificatie-authenticatie-private-dienstverleners" title="Permanent link">&para;</a></h2>
-<p>eHerkenning is de logische kandidaat, maar de onboarding, accreditatie en het onderscheid tussen directe afnemers en intermediairs/integrators moeten worden uitgewerkt. TIP biedt hiervoor aanknopingspunten.</p>
+<p>eHerkenning is de logische kandidaat, maar de onboarding, accreditatie en het onderscheid tussen directe afnemers en intermediairs/integrators moeten worden uitgewerkt. TIP biedt hiervoor aanknopingspunten.  </p>
 <h2 id="psa-vraagstukken-autorisatiearchitectuur-centrale-autorisatieserver-vs-gedistribueerde-pdp">Autorisatiearchitectuur: centrale autorisatieserver vs. gedistribueerde PDP<a class="headerlink" href="#psa-vraagstukken-autorisatiearchitectuur-centrale-autorisatieserver-vs-gedistribueerde-pdp" title="Permanent link">&para;</a></h2>
 <p>Gaat GBO werken met een "Autorisatieserver" als centraal component, met een bijbehorende "Vertrouwensleverancier" die tokens afgeeft. De Functionele Requirements en het GBO Beschrijvend Document spreken van een autorisatieserver als apart component (component 4).<br />
 Het is mogelijk om met decentrale PDP's te werken, die gebruik maken van centraal beheerde policies en centraal beschikbare PIP's (bv. het toestemmingenregister).</p>
 <h2 id="psa-vraagstukken-burgeridentificatie-en-het-bsn">Burgeridentificatie en het BSN<a class="headerlink" href="#psa-vraagstukken-burgeridentificatie-en-het-bsn" title="Permanent link">&para;</a></h2>
-<p>Het BSN mag bij private partijen niet direct worden doorgegeven. Dit vereist een pseudonimiseringslaag of sector-ID, terwijl voor OOTS de eIDAS-identifier geldt en de wallet werkt met SD-JWT VC-attributen. Dit zijn drie verschillende regimes op één generieke ontsluiting.</p>
-<p>Welke pseudonimiseringsvoorziening gaat GBO gebruiken?<br />
-- BSNk-PP dienst van BZK?
-- PRS dat vanuit VWS ontwikkeld wordt?</p>
+<p>Het BSN mag bij private partijen, die daarvoor geen wettelijke grondslag hebben, niet worden doorgegeven. Dit vereist een pseudonimiseringslaag of sector-ID, terwijl voor OOTS de eIDAS-identifier geldt en de wallet werkt met SD-JWT VC-attributen. Dit zijn drie verschillende regimes op één generieke ontsluiting.</p>
+<p>Voor het pseudonimiseren van het BSN wordt gebruik gemaakt van de BSNk PP voorziening. Deze voorziening gaat uit van een "geactiveerd" BSN - d.w.z. dat er al een pseudoniem voor het BSN bestaat. Welk pseudoniem gaan wij gebruiken? Gaan wij BSN's activeren en bijhouden wat dat pseudoniem is? (BSNk PP doet dat niet!)</p>
+<h2 id="psa-vraagstukken-toestemmingen">Toestemmingen<a class="headerlink" href="#psa-vraagstukken-toestemmingen" title="Permanent link">&para;</a></h2>
+<p>Voor DvTP (de gegevensstroom van overheidsbronnen naar private dienstverleners) is een toestemming vereist. Hiervoor is de toestemmingenvoorziening en het toestemmingenregister bedacht, maar hiervoor is nog wetgeving nodig.
+Er spelen hierbij enkele vragen:
+- Hoe wordt omgegaan met toestemming voor een eenmalige bevraging?
+- Is een toestemmingenvoorziening nodig als de gegevens via de burger aan de private dienstverlener beschikbaar worden gesteld (conform de "preview" functie van de Basisinrichting OOTS en de "Authorising Actors" functie van TIP)?</p>
 <h2 id="psa-vraagstukken-vertrouwensstelsel">Vertrouwensstelsel<a class="headerlink" href="#psa-vraagstukken-vertrouwensstelsel" title="Permanent link">&para;</a></h2>
 <p>Welke partijen mogen deelnemen, hoe worden ze geaccrediteerd, welke niveaus van zekerheid gelden per gegevenstype, en hoe verhouden PKI(O), eHerkenning, eIDAS, FDS en TIP-afspraken zich tot elkaar?</p>
 <h2 id="psa-vraagstukken-gekwalificeerde-elektronische-attesteringen-van-attributen">Gekwalificeerde elektronische attesteringen van attributen<a class="headerlink" href="#psa-vraagstukken-gekwalificeerde-elektronische-attesteringen-van-attributen" title="Permanent link">&para;</a></h2>

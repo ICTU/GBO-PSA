@@ -750,6 +750,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#onboarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Onboarding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identificatie-authenticatie-private-dienstverleners" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -776,6 +787,17 @@
     <span class="md-ellipsis">
       
         Burgeridentificatie en het BSN
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toestemmingen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toestemmingen
       
     </span>
   </a>
@@ -955,16 +977,21 @@
 <h2 id="inleiding">Inleiding<a class="headerlink" href="#inleiding" title="Permanent link">&para;</a></h2>
 <p>In dit hoofdstuk worden de vraagstukken waarvoor een oplossing gevonden moet worden of waarvoor een keuze gemaakt moet worden besproken.<br />
 Als er een oplossing is gevonden of een keuze is gemaakt, wordt dit in dit hoofdstuk als ontwerpkeuze vastgelegd. De verdere uitwerking vindt plaats in het technisch ontwerp.  </p>
+<h2 id="onboarding">Onboarding<a class="headerlink" href="#onboarding" title="Permanent link">&para;</a></h2>
+<p>Deelnemers aan het stelsel moeten aan eisen voldoen, waarbij de eisen kunnen verschillen per deelnemersgroep: bronhouders, afnemers, intermediairs, etc. Om deel te kunnen nemen aan het stelsel doorlopen de deelnemers een onboarding proces. Dat proces moet nog ingericht worden, zowel wat betreft de governance (wie doet wat en is waarvoor verantwoordelijk) als inhoud (waarop worden deelnemers beoordeeld).</p>
 <h2 id="identificatie-authenticatie-private-dienstverleners">Identificatie &amp; authenticatie private dienstverleners<a class="headerlink" href="#identificatie-authenticatie-private-dienstverleners" title="Permanent link">&para;</a></h2>
-<p>eHerkenning is de logische kandidaat, maar de onboarding, accreditatie en het onderscheid tussen directe afnemers en intermediairs/integrators moeten worden uitgewerkt. TIP biedt hiervoor aanknopingspunten.</p>
+<p>eHerkenning is de logische kandidaat, maar de onboarding, accreditatie en het onderscheid tussen directe afnemers en intermediairs/integrators moeten worden uitgewerkt. TIP biedt hiervoor aanknopingspunten.  </p>
 <h2 id="autorisatiearchitectuur-centrale-autorisatieserver-vs-gedistribueerde-pdp">Autorisatiearchitectuur: centrale autorisatieserver vs. gedistribueerde PDP<a class="headerlink" href="#autorisatiearchitectuur-centrale-autorisatieserver-vs-gedistribueerde-pdp" title="Permanent link">&para;</a></h2>
 <p>Gaat GBO werken met een "Autorisatieserver" als centraal component, met een bijbehorende "Vertrouwensleverancier" die tokens afgeeft. De Functionele Requirements en het GBO Beschrijvend Document spreken van een autorisatieserver als apart component (component 4).<br />
 Het is mogelijk om met decentrale PDP's te werken, die gebruik maken van centraal beheerde policies en centraal beschikbare PIP's (bv. het toestemmingenregister).</p>
 <h2 id="burgeridentificatie-en-het-bsn">Burgeridentificatie en het BSN<a class="headerlink" href="#burgeridentificatie-en-het-bsn" title="Permanent link">&para;</a></h2>
-<p>Het BSN mag bij private partijen niet direct worden doorgegeven. Dit vereist een pseudonimiseringslaag of sector-ID, terwijl voor OOTS de eIDAS-identifier geldt en de wallet werkt met SD-JWT VC-attributen. Dit zijn drie verschillende regimes op één generieke ontsluiting.</p>
-<p>Welke pseudonimiseringsvoorziening gaat GBO gebruiken?<br />
-- BSNk-PP dienst van BZK?
-- PRS dat vanuit VWS ontwikkeld wordt?</p>
+<p>Het BSN mag bij private partijen, die daarvoor geen wettelijke grondslag hebben, niet worden doorgegeven. Dit vereist een pseudonimiseringslaag of sector-ID, terwijl voor OOTS de eIDAS-identifier geldt en de wallet werkt met SD-JWT VC-attributen. Dit zijn drie verschillende regimes op één generieke ontsluiting.</p>
+<p>Voor het pseudonimiseren van het BSN wordt gebruik gemaakt van de BSNk PP voorziening. Deze voorziening gaat uit van een "geactiveerd" BSN - d.w.z. dat er al een pseudoniem voor het BSN bestaat. Welk pseudoniem gaan wij gebruiken? Gaan wij BSN's activeren en bijhouden wat dat pseudoniem is? (BSNk PP doet dat niet!)</p>
+<h2 id="toestemmingen">Toestemmingen<a class="headerlink" href="#toestemmingen" title="Permanent link">&para;</a></h2>
+<p>Voor DvTP (de gegevensstroom van overheidsbronnen naar private dienstverleners) is een toestemming vereist. Hiervoor is de toestemmingenvoorziening en het toestemmingenregister bedacht, maar hiervoor is nog wetgeving nodig.
+Er spelen hierbij enkele vragen:
+- Hoe wordt omgegaan met toestemming voor een eenmalige bevraging?
+- Is een toestemmingenvoorziening nodig als de gegevens via de burger aan de private dienstverlener beschikbaar worden gesteld (conform de "preview" functie van de Basisinrichting OOTS en de "Authorising Actors" functie van TIP)?</p>
 <h2 id="vertrouwensstelsel">Vertrouwensstelsel<a class="headerlink" href="#vertrouwensstelsel" title="Permanent link">&para;</a></h2>
 <p>Welke partijen mogen deelnemen, hoe worden ze geaccrediteerd, welke niveaus van zekerheid gelden per gegevenstype, en hoe verhouden PKI(O), eHerkenning, eIDAS, FDS en TIP-afspraken zich tot elkaar?</p>
 <h2 id="gekwalificeerde-elektronische-attesteringen-van-attributen">Gekwalificeerde elektronische attesteringen van attributen<a class="headerlink" href="#gekwalificeerde-elektronische-attesteringen-van-attributen" title="Permanent link">&para;</a></h2>
