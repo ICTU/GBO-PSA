@@ -824,12 +824,12 @@ UBO Gegevensstromen
 <div class="mermaid">flowchart LR
   subgraph ubo["UBO Bronontsluiting"]
     direction TB
-        fsc("`**FSC**&lt;br/&gt;(authenticatie, autorisatie&lt;br/&gt;routering, logging)`")
+        fsc("FSC&lt;br/&gt;(authenticatie, autorisatie&lt;br/&gt;routering, logging)")
   end
   subgraph eudi["EUDI-Wallet"]
     direction LR
-      eudi_verify("`**ASI-provider&lt;br/&gt;(verify dienst)**`")
-      eudi_retrieve("`**ASI-provider&lt;br/&gt;(retrieve dienst)**`")
+      eudi_verify("ASI-provider&lt;br/&gt;(verify dienst)")
+      eudi_retrieve("ASI-provider&lt;br/&gt;(retrieve dienst)")
       eudi_qeaa["QTSP&lt;br/&gt;(QEAA)"]
       eudi_wallet["EUDI-Wallet burger"]
   end
@@ -840,7 +840,7 @@ UBO Gegevensstromen
       oots_afnemer["Europese overheid&lt;br/&gt;SDG-portaal"]
   end
 
-  bron[("Gemeentebronnen&lt;br/&gt;BRP, vergunningen, etc.")] -- Bron API&lt;br/&gt;(REST-JSON) --- ubo
+  bron[("Gemeentebronnen&lt;br/&gt;GBA, vergunningen, etc.")] -- Bron API&lt;br/&gt;(REST-JSON) --- ubo
   ubo -- REST/JSON --- eudi_verify &amp; eudi_retrieve &amp; oots_v
   eudi_verify -- eDelivery/AS4&lt;br/&gt;ISO15000 --- eudi_qeaa -- OpenID4VCI --- eudi_wallet
   eudi_retrieve -- eDelivery/AS4&lt;br/&gt;ISO15000 --- eudi_qeaa -- OpenID4VCI --- eudi_wallet
@@ -870,40 +870,40 @@ GBO Gegevensstromen
 <div class="mermaid">flowchart LR
   subgraph gbo["GBO Basis"]
     direction TB
-        fsc_pap("`**PAP&lt;br/&gt;(beleidsregels)**`")
-        fsc("`**FSC / GraphQL / PBAC&lt;br/&gt;(generieke bronontsluiting)**`")
-        fsc_tools("`**GBO tools&lt;br/&gt;(vertaallaag)**`")
+        fsc_pap("PAP&lt;br/&gt;(beleidsregels)")
+        fsc("FSC / GraphQL / PBAC&lt;br/&gt;(generieke bronontsluiting)")
+        fsc_tools("GBO tools&lt;br/&gt;(vertaallaag)")
   end
   subgraph eudi["EUDI-Wallet"]
     direction LR
-        eudi_asi("`**ASI-provider&lt;br/&gt;(verify dienst)**`")
-        eudi_pubeaa("`**PubEAA-provider&lt;br/&gt;(PubEAA)**`")
+        eudi_asi("ASI-provider&lt;br/&gt;(verify dienst)")
+        eudi_pubeaa("PubEAA-provider&lt;br/&gt;(PubEAA)")
         eudi_qeaa["QTSP&lt;br/&gt;(QEAA)"]
         eudi_wallet["EUDI-Wallet burger"]
   end
   subgraph oots["SDG / OOTS"]
     direction LR
-        oots_adapter("`**OOTS adapter&lt;br/&gt;(semantische mapping)**`")
+        oots_adapter("OOTS adapter&lt;br/&gt;(semantische mapping)")
         oots_basis["Basisinrichting OOTS&lt;br/&gt;RINIS / BZK"]
         oots_afnemer["Europese overheid&lt;br/&gt;SDG-portaal"]
   end
   subgraph dvtp["DvTP"]
     direction LR
-        dvtp_toestemming("`**Toestemmingsvoorziening**`")
+        dvtp_toestemming("Toestemmingsvoorziening")
         dvtp_pseudoniem["Pseudonimiseervoorziening&lt;br/&gt;(BSNk PP)"]
         dvtp_afnemer["Private dienstverlener"]
   end
 
   fsc_pap --- fsc
   fsc --- fsc_tools
-  bron[("Overheidsbronnen&lt;br/&gt;BRP · BD · UWV · KvK…")] -- Bron API&lt;br/&gt;(GraphQL / REST-JSON / ...) --- gbo
+  bron[("Overheidsbronnen&lt;br/&gt;BRP · BD · UWV · KvK · …")] -- Bron API&lt;br/&gt;(GraphQL / REST-JSON / ...) --- gbo
   eudi_asi -- REST-JSON --- eudi_qeaa
   eudi_qeaa -- OpenID4VCI --- eudi_wallet
   gbo -- GraphQL --- eudi_asi &amp; eudi_pubeaa &amp; oots_adapter &amp; dvtp_afnemer
   eudi_pubeaa -- OpenID4VCI ---- eudi_wallet
   oots_adapter -- REST-JSON --- oots_basis
   oots_basis -- eDelivery-AS4 --- oots_afnemer
-  gbo -- REST-JSON --- dvtp_toestemming
+  gbo -- REST-JSON&lt;br/&gt;(PIP) --- dvtp_toestemming
   dvtp_toestemming -- REST-JSON --- dvtp_afnemer
   dvtp_toestemming -- REST-JSON --- dvtp_pseudoniem
   dvtp_pseudoniem ~~~ dvtp_afnemer
