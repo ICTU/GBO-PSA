@@ -37,6 +37,7 @@ flowchart LR
         U_INWAY -->|"REST/JSON"| U_OUTWAY
 
         U_OUTWAY --> |"REST/JSON"| U_OOTSV -->|"eDelivery/AS4"| U_EDLV -->|"eDelivery/AS4"| U_OOTS
+        U_AS4 ~~~ U_EDLV
         U_OUTWAY --> |"REST/JSON"| U_RETRIEVE -->|"REST/JSON"| U_AS4 -->|"eDelivery/AS4"| U_QTSP
         U_OUTWAY --> |"REST/JSON"| U_VERIF -->|"REST/JSON"| U_AS4 -->|"eDelivery/AS4"| U_QTSP
         U_QTSP -->|"OpenID4VCI"| U_WALLET
@@ -70,6 +71,7 @@ flowchart LR
         G_PRIV["Private dienstverlener"]:::afnemer
 
         G_BRON -->|"GraphQL, REST/JSON, SOAP,..."| G_API
+        G_BRON ~~~ G_TRANS
         G_TRANS -. "migratiepad / shared service" .-> G_API
         G_API -->|"GraphQL"| G_AUTH
         G_PAP -. "policies" .-> G_AUTH
