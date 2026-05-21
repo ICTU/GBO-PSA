@@ -13,15 +13,15 @@ In deze bijlage wordt uitgewerkt hoe de bevindingen uit de UBO beproevingen zijn
 In de onderstaande figuur zijn de gegevensstromen van UBO en GBO onder elkaar geschetst.
 
 <figure>
-UBO Gegevensstromen
 ``` mermaid
+UBO Gegevensstromen
 --8<-- "diagrammen/ubo_swimlanes.mmd"
 ```
-GBO Gegevensstromen
 ``` mermaid
+GBO Gegevensstromen
 --8<-- "diagrammen/gbo_swimlanes.mmd"
 ```
-<figcaption>De gegevensstromen zoals die in de projecten UBO en GBO zijn ontworpen.</figcaption>
+<figcaption>De gegevensstromen zoals het project UBO die heeft beproefd en GBO wil ontwerpen.</figcaption>
 </figure>
 
 In de volgende paragrafen wordt uitgewerkt wat GBO heeft overgenomen van UBO en waar GBO afwijkende keuzes maakt of een doorontwikkeling voorstelt.
