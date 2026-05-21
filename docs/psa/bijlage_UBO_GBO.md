@@ -14,11 +14,14 @@ In de onderstaande figuur zijn de gegevensstromen van UBO en GBO onder elkaar ge
 
 <figure>
 ``` mermaid
-UBO Gegevensstromen
+---
+title: UBO Gegevensstromen
+---
 --8<-- "diagrammen/ubo_swimlanes.mmd"
-```
-``` mermaid
-GBO Gegevensstromen
+
+---
+title: GBO Gegevensstromen
+---
 --8<-- "diagrammen/gbo_swimlanes.mmd"
 ```
 <figcaption>De gegevensstromen zoals het project UBO die heeft beproefd en GBO wil ontwerpen.</figcaption>
