@@ -820,93 +820,120 @@ GBO bouwt voort op de bevindingen van UBO en maakt daar een productiegericht, br
 <h2 id="vergelijking-ubo-gbo">Vergelijking UBO - GBO<a class="headerlink" href="#vergelijking-ubo-gbo" title="Permanent link">&para;</a></h2>
 <p>In de onderstaande figuur zijn de gegevensstromen van UBO en GBO onder elkaar geschetst.</p>
 <figure>
+UBO Gegevensstromen
 <div class="mermaid">flowchart LR
-    %% Vergelijking UBO en GBO
+  subgraph ubo["UBO Bronontsluiting"]
+    direction TB
+        fsc("`**FSC**&lt;br/&gt;(authenticatie, autorisatie&lt;br/&gt;routering, logging)`")
+  end
+  subgraph eudi["EUDI-Wallet"]
+    direction LR
+      eudi_verify("`**ASI-provider&lt;br/&gt;(verify dienst)**`")
+      eudi_retrieve("`**ASI-provider&lt;br/&gt;(retrieve dienst)**`")
+      eudi_qeaa["QTSP&lt;br/&gt;(QEAA)"]
+      eudi_wallet["EUDI-Wallet burger"]
+  end
+  subgraph oots["SDG / OOTS"]
+    direction LR
+      oots_v["OOTS-v Backend"]
+      oots_basis["Basisinrichting OOTS&lt;br/&gt;RINIS / BZK"]
+      oots_afnemer["Europese overheid&lt;br/&gt;SDG-portaal"]
+  end
 
-    classDef bron fill:#E8F3FF,stroke:#2F6FA3,stroke-width:1px,color:#111
-    classDef api fill:#EAF7EA,stroke:#3B8A3E,stroke-width:1px,color:#111
-    classDef auth fill:#FFF7D6,stroke:#B88A00,stroke-width:1px,color:#111
-    classDef adapter fill:#FFEBD6,stroke:#C76A00,stroke-width:1px,color:#111
-    classDef afnemer fill:#FDECF3,stroke:#B83A6B,stroke-width:1px,color:#111
-    classDef optional fill:#FFFFFF,stroke:#999,stroke-dasharray:4 3,color:#333
+  bron[("Gemeentebronnen&lt;br/&gt;BRP, vergunningen, etc.")] -- Bron API&lt;br/&gt;(REST-JSON) --- ubo
+  ubo -- REST/JSON --- eudi_verify &amp; eudi_retrieve &amp; oots_v
+  eudi_verify -- eDelivery/AS4&lt;br/&gt;ISO15000 --- eudi_qeaa -- OpenID4VCI --- eudi_wallet
+  eudi_retrieve -- eDelivery/AS4&lt;br/&gt;ISO15000 --- eudi_qeaa -- OpenID4VCI --- eudi_wallet
+  oots_v -- eDelivery-AS4 --- oots_basis -- eDelivery-AS4 --- oots_afnemer
+  eudi_wallet --- burger["Burger"]
+  oots_afnemer --- burger
 
-    subgraph UBO["UBO - beproeving uniforme bronontsluiting"]
-        direction LR
+  fsc:::ubo
+  eudi_verify:::ubo
+  eudi_retrieve:::ubo
+  eudi_qeaa:::eudi
+  eudi_wallet:::eudi
+  oots_v:::ubo
+  oots_basis:::oots
+  oots_afnemer:::oots
+  bron:::bron
+  burger:::burger
 
-        U_REG["Gemeentelijke registraties&lt;br/&gt;(BRP / vergunningen / passen)"]:::bron
+  classDef bron fill:#edf7df,stroke:#6aa13a,color:#27500a
+  classDef generiek fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef eudi fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef oots fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef dvtp fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef ubo fill:#fff0e8,stroke:#000000,color:#000000
+  classDef burger fill:#edf7df,stroke:#6aa13a,color:#27500a</div>
+GBO Gegevensstromen
+<div class="mermaid">flowchart LR
+  subgraph gbo["GBO Basis"]
+    direction TB
+        fsc_pap("`**PAP&lt;br/&gt;(beleidsregels)**`")
+        fsc("`**FSC / GraphQL / PBAC&lt;br/&gt;(generieke bronontsluiting)**`")
+        fsc_tools("`**GBO tools&lt;br/&gt;(vertaallaag)**`")
+  end
+  subgraph eudi["EUDI-Wallet"]
+    direction LR
+        eudi_asi("`**ASI-provider&lt;br/&gt;(verify dienst)**`")
+        eudi_pubeaa("`**PubEAA-provider&lt;br/&gt;(PubEAA)**`")
+        eudi_qeaa["QTSP&lt;br/&gt;(QEAA)"]
+        eudi_wallet["EUDI-Wallet burger"]
+  end
+  subgraph oots["SDG / OOTS"]
+    direction LR
+        oots_adapter("`**OOTS adapter&lt;br/&gt;(semantische mapping)**`")
+        oots_basis["Basisinrichting OOTS&lt;br/&gt;RINIS / BZK"]
+        oots_afnemer["Europese overheid&lt;br/&gt;SDG-portaal"]
+  end
+  subgraph dvtp["DvTP"]
+    direction LR
+        dvtp_toestemming("`**Toestemmingsvoorziening**`")
+        dvtp_pseudoniem["Pseudonimiseervoorziening&lt;br/&gt;(BSNk PP)"]
+        dvtp_afnemer["Private dienstverlener"]
+  end
 
-        subgraph U_INT["UBO-integratielaag"]
-            direction LR
-            U_DATA["Data API&lt;br/&gt;Digikoppeling REST API&lt;br/&gt;trajectspecifieke API's"]:::api
-            U_INWAY["OpenFSC Inway&lt;br/&gt;authenticatie, autorisatie,&lt;br/&gt;routering, logging"]:::auth
-        end
+  fsc_pap --- fsc
+  fsc --- fsc_tools
+  bron[("Overheidsbronnen&lt;br/&gt;BRP · BD · UWV · KvK…")] -- Bron API&lt;br/&gt;(GraphQL / REST-JSON / ...) --- gbo
+  eudi_asi -- REST-JSON --- eudi_qeaa
+  eudi_qeaa -- OpenID4VCI --- eudi_wallet
+  gbo -- GraphQL --- eudi_asi &amp; eudi_pubeaa &amp; oots_adapter &amp; dvtp_afnemer
+  eudi_pubeaa -- OpenID4VCI ---- eudi_wallet
+  oots_adapter -- REST-JSON --- oots_basis
+  oots_basis -- eDelivery-AS4 --- oots_afnemer
+  gbo -- REST-JSON --- dvtp_toestemming
+  dvtp_toestemming -- REST-JSON --- dvtp_afnemer
+  dvtp_toestemming -- REST-JSON --- dvtp_pseudoniem
+  dvtp_pseudoniem ~~~ dvtp_afnemer
+  eudi_wallet --- burger["Burger"]
+  oots_afnemer --- burger
+  dvtp_afnemer --- burger
 
-        subgraph U_DIST["Distributiekanaal / intermediair platform"]
-            direction LR
-            U_RETRIEVE["Attribuutophaalservice&lt;br/&gt;(retrieve)"]:::adapter
-            U_VERIF["Attribuutverificatieservice&lt;br/&gt;(verify)"]:::adapter
-            U_OOTSV["OOTS-V backend&lt;br/&gt;UBO-model → OOTS-EDM"]:::adapter
-        end
+  fsc_pap:::gbo
+  fsc:::gbo
+  fsc_tools:::gbo
+  eudi_asi:::gbo
+  eudi_pubeaa:::gbo
+  eudi_qeaa:::eudi
+  eudi_wallet:::eudi
+  oots_adapter:::gbo
+  oots_basis:::oots
+  oots_afnemer:::oots
+  dvtp_toestemming:::gbo
+  dvtp_pseudoniem:::dvtp
+  dvtp_afnemer:::dvtp
+  bron:::bron
+  burger:::burger
 
-        U_QTSP["QTSP-platform&lt;br/&gt;QEAA-provider"]:::afnemer
-        U_WALLET["EUDI-wallet"]:::afnemer
-        U_EDLV["eDelivery Access Point&lt;br/&gt;AS4 / Domibus"]:::afnemer
-        U_OOTS["Europese overheid&lt;br/&gt;SDG/OOTS"]:::afnemer
-
-        U_REG --&gt; U_DATA --&gt; U_INWAY
-        U_INWAY --&gt;|"REST/JSON"| U_OOTSV
-        U_RETRIEVE ~~~ U_EDLV
-        U_OOTSV --&gt;|"eDelivery/AS4"| U_EDLV --&gt;|"eDelivery/AS4"| U_OOTS
-        U_OOTSV --&gt;|"eDelivery/AS4"| U_RETRIEVE --&gt;|"eDelivery/AS4"| U_QTSP
-        U_OOTSV --&gt;|"eDelivery/AS4"| U_VERIF --&gt;|"eDelivery/AS4"| U_QTSP
-        U_QTSP --&gt;|"OpenID4VCI"| U_WALLET
-    end
-
-    subgraph GBO["GBO - productiegerichte gemeenschappelijke bronontsluiting"]
-        direction LR
-
-        G_BRON["Overheidsbronnen&lt;br/&gt;(gemeenten, RvIG, UWV,&lt;br/&gt;DUO, BD, BAG/BRK, ...)"]:::bron
-
-        subgraph G_BASIS["GBO Basis"]
-            direction LR
-            G_TRANS["GBO tools / vertaallaag&lt;br/&gt;optioneel voor bronhouders&lt;br/&gt;zonder eigen GraphQL"]:::optional
-            G_CAT["Schema Registry&lt;br/&gt;gegevenscatalogus"]:::api
-            G_API["Bronontsluiting API&lt;br/&gt;GraphQL via FSC&lt;br/&gt;geen trajectspecifieke endpoints"]:::api
-            G_AUTH["Autorisatie&lt;br/&gt;PEP / PDP / PIP&lt;br/&gt;(FTV)"]:::auth
-            G_PAP["PAP / Policy Store&lt;br/&gt;centrale beleidsregels"]:::auth
-        end
-
-        subgraph G_WP["Kanaalspecifieke voorzieningen"]
-            direction LR
-            G_OOTS_AD["OOTS-adapter&lt;br/&gt;GBO ↔ OOTS-EDM"]:::adapter
-            G_PUBEAA["PuB-EAA-provider&lt;br/&gt;SD-JWT VC / mdoc"]:::adapter
-            G_ASI["ASI-provider&lt;br/&gt;Verificatiedienst"]:::adapter
-            G_DVTP["DvTP&lt;br/&gt;toestemming, pseudonimisering"]:::adapter
-        end
-
-        G_WALLET["EDI/EUDI-wallet"]:::afnemer
-        G_QTSP["QTSP"]:::afnemer
-        G_OOTS_BI["eDelivery Access Point&lt;br/&gt;AS4 / Domibus"]:::afnemer
-        G_OOTS["Europese overheid&lt;br/&gt;SDG/OOTS"]:::afnemer
-        G_PRIV["Private dienstverlener"]:::afnemer
-
-        G_BRON ~~~ G_CAT
-        G_CAT -. "schema's, mappings" .-&gt; G_API
-        G_BRON --&gt;|"GraphQL, REST/JSON, SOAP,..."| G_API
-        G_TRANS -. "migratiepad / shared service" .-&gt; G_API
-        G_API --&gt;|"GraphQL"| G_AUTH
-        G_PAP -. "policies" .-&gt; G_AUTH
-
-        G_AUTH --&gt;|"GraphQL"| G_DVTP --&gt;|"GraphQL"| G_PRIV
-        G_AUTH --&gt;|"GraphQL"| G_ASI --&gt;|"REST/JSON"| G_QTSP --&gt;|"OpenID4VCI"| G_WALLET
-        G_AUTH --&gt;|"GraphQL"| G_PUBEAA --&gt;|"OpenID4VCI"| G_WALLET
-        G_AUTH --&gt;|"GraphQL"| G_OOTS_AD --&gt;|"REST/JSON"| G_OOTS_BI --&gt;|"eDelivery/AS4"| G_OOTS
-    end
-
-    %% Vergelijkingslijnen
-    U_DATA -. "GBO werkt met generieke GraphQL&lt;br/&gt;UBO met trajectspecifieke REST/JSON" .- G_API
-    U_INWAY -. "FSC blijft basis,&lt;br/&gt;maar GBO heeft rijkere autorisatie&lt;br/&gt;(gebaseerd op FTV)" .- G_AUTH
-    G_PUBEAA -. "van QEAA retrieve&lt;br/&gt;naar PUBEAA provider" .- U_RETRIEVE</div>
+  classDef bron fill:#edf7df,stroke:#6aa13a,color:#27500a
+  classDef generiek fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef eudi fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef oots fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef dvtp fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef gbo fill:#fff0e8,stroke:#000000,color:#000000
+  classDef burger fill:#edf7df,stroke:#6aa13a,color:#27500a</div>
 <figcaption>De gegevensstromen zoals die in de projecten UBO en GBO zijn ontworpen.</figcaption>
 </figure>
 
@@ -930,7 +957,7 @@ GBO bouwt voort op de bevindingen van UBO en maakt daar een productiegericht, br
 <tr>
 <td><strong>UBO-integratielaag</strong></td>
 <td>UBO introduceert een integratielaag met middleware, Data API en OpenFSC Inway als contactpunt voor gegevensvragen. De OpenFSC Outway aan de distributiekant bevraagt die Inway via FSC.</td>
-<td>GBO neemt dit patroon over als “generieke bronontsluiting”, maar maakt het minder gemeentelijk-specifiek en meer stelselmatig. In de PSA staat de “Gemeenschappelijke bronontsluiting API” centraal, met OAuth 2.0, REST/GraphQL en FSC.</td>
+<td>GBO neemt dit patroon over als “generieke bronontsluiting”, maar maakt het minder gemeentelijk-specifiek en meer stelselmatig. In de PSA staat de “Gemeenschappelijke bronontsluiting API” centraal, met OAuth 2.0, GraphQL en FSC.</td>
 </tr>
 <tr>
 <td><strong>FSC/OpenFSC als connectiviteitslaag</strong></td>
@@ -983,7 +1010,7 @@ GBO bouwt voort op de bevindingen van UBO en maakt daar een productiegericht, br
 <tr>
 <td><strong>API-paradigma</strong></td>
 <td>UBO gebruikt een Data API op basis van het Digikoppeling REST API-profiel, OpenAPI en API Design Rules.</td>
-<td>GBO schuift richting een generieke bronontsluiting met REST/GraphQL/FSC. GraphQL is vooral relevant voor selectieve gegevensuitvraag en dataminimalisatie, maar de PSA houdt ruimte voor REST/JSON en een vertaallaag voor bronhouders die nog geen GraphQL kunnen leveren.</td>
+<td>GBO schuift richting een generieke bronontsluiting met GraphQL/FSC. GraphQL is vooral relevant voor selectieve gegevensuitvraag en dataminimalisatie, maar de PSA houdt ruimte voor REST/JSON en een vertaallaag voor bronhouders die nog geen GraphQL kunnen leveren.</td>
 </tr>
 <tr>
 <td><strong>Semantische verantwoordelijkheid</strong></td>

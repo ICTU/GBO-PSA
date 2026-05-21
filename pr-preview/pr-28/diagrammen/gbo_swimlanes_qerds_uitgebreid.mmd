@@ -5,54 +5,54 @@ flowchart LR
   %% eIDAS trust-service route, naast wallet/attestation flows.
   %% =========================================================
 
-  bron[("Overheidsbronnen<br>BRP · Belastingdienst · UWV · KvK · …")]
-  burger["Burger<br>(natuurlijk persoon)"]
-  organisatie["Organisatie<br>(publiek / privaat)"]
+  bron[("Overheidsbronnen<br/>BRP · Belastingdienst · UWV · KvK · …")]
+  burger["Burger<br/>(natuurlijk persoon)"]
+  organisatie["Organisatie<br/>(publiek / privaat)"]
 
 %%  subgraph legenda["Legenda / ontwerpduiding"]
 %%    direction TB
 %%    leg_qtsp["Alleen QERDS als de dienst door een QTSP wordt geleverd"]
-%%    leg_qerds["QERDS message flow<br>system-mediated · bewijs van verzending/ontvangst · eIDAS trust service"]
-%%    leg_wallet["Wallet / attestation flow<br>user-mediated · EAA / PubEAA / QEAA"]
+%%    leg_qerds["QERDS message flow<br/>system-mediated · bewijs van verzending/ontvangst · eIDAS trust service"]
+%%    leg_wallet["Wallet / attestation flow<br/>user-mediated · EAA / PubEAA / QEAA"]
 %%  end
 
   subgraph gbo["GBO Basis"]
     direction TB
-    fsc_pap("<strong>PAP</strong><br>beleidsregels / autorisatiebeleid<strong>")
-    fsc("<strong>FSC / GraphQL / PBAC</strong><br>generieke bronontsluiting")
-    fsc_tools("<strong>GBO tools</strong><br>vertaallaag / mapping / normalisatie")
+    fsc_pap("<strong>PAP</strong><br/>beleidsregels / autorisatiebeleid<strong>")
+    fsc("<strong>FSC / GraphQL / PBAC</strong><br/>generieke bronontsluiting")
+    fsc_tools("<strong>GBO tools</strong><br/>vertaallaag / mapping / normalisatie")
   end
 
   subgraph qerds["QERDS (Trust Services)"]
     direction LR
-    qerds_client("<strong>GBO QERDS client</strong><br>routing / integratie / payloadvoorbereiding")
-    qerds_public("<strong>Publieke QTSP</strong><br>Qualified ERDS provider<br>(<i>vereist QTSP-status</i>)")
-    qerds_private["Private QTSP<br>Qualified ERDS provider"]
-%%    qerds_nonqualified["Optioneel: secure delivery service<br><i>niet-gekwalificeerd; geen QERDS</i>"]
+    qerds_client("<strong>GBO QERDS client</strong><br/>routing / integratie / payloadvoorbereiding")
+    qerds_public("<strong>Publieke QTSP</strong><br/>Qualified ERDS provider<br/>(<i>vereist QTSP-status</i>)")
+    qerds_private["Private QTSP<br/>Qualified ERDS provider"]
+%%    qerds_nonqualified["Optioneel: secure delivery service<br/><i>niet-gekwalificeerd; geen QERDS</i>"]
   end
 
   subgraph eudi["EDI gegevensstroom"]
     direction LR
-    eudi_asi("<strong>ASI-provider</strong><br>verify dienst voor authentieke bron")
-    eudi_pubeaa("<strong>PubEAA-provider</strong><br>publieke attestaties uit authentieke bron")
-    eudi_qeaa["Private QTSP<br>QEAA"]
+    eudi_asi("<strong>ASI-provider</strong><br/>verify dienst voor authentieke bron")
+    eudi_pubeaa("<strong>PubEAA-provider</strong><br/>publieke attestaties uit authentieke bron")
+    eudi_qeaa["Private QTSP<br/>QEAA"]
     subgraph wallet["EUDI-Wallet"]
-      eudi_ebw["EBW<br>(bedrijfsattributen, mandaten)"]
-      eudi_wallet_burger["EUDI-wallet<br>(persoonlijke attributen)"]
+      eudi_ebw["EBW<br/>(bedrijfsattributen, mandaten)"]
+      eudi_wallet_burger["EUDI-wallet<br/>(persoonlijke attributen)"]
     end
   end
 
   subgraph oots["SDG / OOTS gegevensstroom"]
     direction LR
-    oots_adapter("<strong>OOTS adapter</strong><br>semantische mapping")
-    oots_basis["Basisinrichting OOTS<br>RINIS / BZK"]
-    oots_afnemer["Europese overheid<br>SDG-portaal"]
+    oots_adapter("<strong>OOTS adapter</strong><br/>semantische mapping")
+    oots_basis["Basisinrichting OOTS<br/>RINIS / BZK"]
+    oots_afnemer["Europese overheid<br/>SDG-portaal"]
   end
 
   subgraph dvtp["DvTP gegevensstroom"]
     direction LR
     dvtp_toestemming("<strong>Toestemmingsvoorziening</strong>")
-    dvtp_pseudoniem["Pseudonimiseervoorziening<br>BSNk PP"]
+    dvtp_pseudoniem["Pseudonimiseervoorziening<br/>BSNk PP"]
     dvtp_afnemer["Private dienstverlener"]
   end
 

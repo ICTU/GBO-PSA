@@ -3415,33 +3415,33 @@ Er worden drie werkpakketten onderscheiden, die gekoppeld zijn aan de drie toepa
 <div class="mermaid">flowchart LR
   subgraph gbo["GBO Basis"]
     direction TB
-        fsc_pap("`**PAP&lt;br&gt;(beleidsregels)**`")
-        fsc("`**FSC / GraphQL / PBAC&lt;br&gt;(generieke bronontsluiting)**`")
-        fsc_tools("`**GBO tools&lt;br&gt;(vertaallaag)**`")
+        fsc_pap("`**PAP&lt;br/&gt;(beleidsregels)**`")
+        fsc("`**FSC / GraphQL / PBAC&lt;br/&gt;(generieke bronontsluiting)**`")
+        fsc_tools("`**GBO tools&lt;br/&gt;(vertaallaag)**`")
   end
   subgraph eudi["EUDI-Wallet"]
     direction LR
-        eudi_asi("`**ASI-provider&lt;br&gt;(verify dienst)**`")
-        eudi_pubeaa("`**PubEAA-provider&lt;br&gt;(PubEAA)**`")
-        eudi_qeaa["QTSP&lt;br&gt;(QEAA)"]
+        eudi_asi("`**ASI-provider&lt;br/&gt;(verify dienst)**`")
+        eudi_pubeaa("`**PubEAA-provider&lt;br/&gt;(PubEAA)**`")
+        eudi_qeaa["QTSP&lt;br/&gt;(QEAA)"]
         eudi_wallet["EUDI-Wallet burger"]
   end
   subgraph oots["SDG / OOTS"]
     direction LR
-        oots_adapter("`**OOTS adapter&lt;br&gt;(semantische mapping)**`")
-        oots_basis["Basisinrichting OOTS&lt;br&gt;RINIS / BZK"]
-        oots_afnemer["Europese overheid&lt;br&gt;SDG-portaal"]
+        oots_adapter("`**OOTS adapter&lt;br/&gt;(semantische mapping)**`")
+        oots_basis["Basisinrichting OOTS&lt;br/&gt;RINIS / BZK"]
+        oots_afnemer["Europese overheid&lt;br/&gt;SDG-portaal"]
   end
   subgraph dvtp["DvTP"]
     direction LR
         dvtp_toestemming("`**Toestemmingsvoorziening**`")
-        dvtp_pseudoniem["Pseudonimiseervoorziening&lt;br&gt;(BSNk PP)"]
+        dvtp_pseudoniem["Pseudonimiseervoorziening&lt;br/&gt;(BSNk PP)"]
         dvtp_afnemer["Private dienstverlener"]
   end
 
   fsc_pap --- fsc
   fsc --- fsc_tools
-  bron[("Overheidsbronnen&lt;br&gt;BRP · BD · UWV · KvK…")] -- Bron API&lt;br&gt;(GraphQL / REST-JSON / ...) --- gbo
+  bron[("Overheidsbronnen&lt;br/&gt;BRP · BD · UWV · KvK…")] -- Bron API&lt;br/&gt;(GraphQL / REST-JSON / ...) --- gbo
   eudi_asi -- REST-JSON --- eudi_qeaa
   eudi_qeaa -- OpenID4VCI --- eudi_wallet
   gbo -- GraphQL --- eudi_asi &amp; eudi_pubeaa &amp; oots_adapter &amp; dvtp_afnemer
