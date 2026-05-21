@@ -942,7 +942,7 @@ Er worden drie werkpakketten onderscheiden, die gekoppeld zijn aan de drie toepa
   subgraph oots["SDG / OOTS"]
     direction LR
         oots_adapter("OOTS adapter&lt;br/&gt;(semantische mapping)")
-        oots_basis["Basisinrichting OOTS&lt;br/&gt;RINIS / BZK"]
+        oots_basis["Basisinrichting OOTS&lt;br/&gt;(incl. OOTS-v Backend)"]
         oots_afnemer["Europese overheid&lt;br/&gt;SDG-portaal"]
   end
   subgraph dvtp["DvTP"]
@@ -955,7 +955,7 @@ Er worden drie werkpakketten onderscheiden, die gekoppeld zijn aan de drie toepa
   fsc_pap --- fsc
   fsc --- fsc_tools
   bron[("Overheidsbronnen&lt;br/&gt;BRP · BD · UWV · KvK · …")] -- Bron API&lt;br/&gt;(GraphQL / REST-JSON / ...) --- gbo
-  eudi_asi -- REST-JSON --- eudi_qeaa
+  eudi_asi -- REST-JSON&lt;br/&gt;(HTTP / OAuth) --- eudi_qeaa
   eudi_qeaa -- OpenID4VCI --- eudi_wallet
   gbo -- GraphQL --- eudi_asi &amp; eudi_pubeaa &amp; oots_adapter &amp; dvtp_afnemer
   eudi_pubeaa -- OpenID4VCI ---- eudi_wallet

@@ -842,8 +842,8 @@ UBO Gegevensstromen
 
   bron[("Gemeentebronnen&lt;br/&gt;GBA, vergunningen, etc.")] -- Bron API&lt;br/&gt;(REST-JSON) --- ubo
   ubo -- REST/JSON --- eudi_verify &amp; eudi_retrieve &amp; oots_v
-  eudi_verify -- eDelivery/AS4&lt;br/&gt;ISO15000 --- eudi_qeaa -- OpenID4VCI --- eudi_wallet
-  eudi_retrieve -- eDelivery/AS4&lt;br/&gt;ISO15000 --- eudi_qeaa -- OpenID4VCI --- eudi_wallet
+  eudi_verify -- eDelivery/AS4&lt;br/&gt;(ISO15000) --- eudi_qeaa -- OpenID4VCI --- eudi_wallet
+  eudi_retrieve -- eDelivery/AS4&lt;br/&gt;(ISO15000) --- eudi_qeaa -- OpenID4VCI --- eudi_wallet
   oots_v -- eDelivery-AS4 --- oots_basis -- eDelivery-AS4 --- oots_afnemer
   eudi_wallet --- burger["Burger"]
   oots_afnemer --- burger
@@ -884,7 +884,7 @@ GBO Gegevensstromen
   subgraph oots["SDG / OOTS"]
     direction LR
         oots_adapter("OOTS adapter&lt;br/&gt;(semantische mapping)")
-        oots_basis["Basisinrichting OOTS&lt;br/&gt;RINIS / BZK"]
+        oots_basis["Basisinrichting OOTS&lt;br/&gt;(incl. OOTS-v Backend)"]
         oots_afnemer["Europese overheid&lt;br/&gt;SDG-portaal"]
   end
   subgraph dvtp["DvTP"]
@@ -897,7 +897,7 @@ GBO Gegevensstromen
   fsc_pap --- fsc
   fsc --- fsc_tools
   bron[("Overheidsbronnen&lt;br/&gt;BRP · BD · UWV · KvK · …")] -- Bron API&lt;br/&gt;(GraphQL / REST-JSON / ...) --- gbo
-  eudi_asi -- REST-JSON --- eudi_qeaa
+  eudi_asi -- REST-JSON&lt;br/&gt;(HTTP / OAuth) --- eudi_qeaa
   eudi_qeaa -- OpenID4VCI --- eudi_wallet
   gbo -- GraphQL --- eudi_asi &amp; eudi_pubeaa &amp; oots_adapter &amp; dvtp_afnemer
   eudi_pubeaa -- OpenID4VCI ---- eudi_wallet
