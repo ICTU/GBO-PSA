@@ -1,12 +1,12 @@
 flowchart LR
   subgraph ubo["UBO Bronontsluiting"]
     direction TB
-        fsc("`**FSC**<br/>(authenticatie, autorisatie<br/>routering, logging)`")
+        fsc("FSC<br/>(authenticatie, autorisatie<br/>routering, logging)")
   end
   subgraph eudi["EUDI-Wallet"]
     direction LR
-      eudi_verify("`**ASI-provider<br/>(verify dienst)**`")
-      eudi_retrieve("`**ASI-provider<br/>(retrieve dienst)**`")
+      eudi_verify("ASI-provider<br/>(verify dienst)")
+      eudi_retrieve("ASI-provider<br/>(retrieve dienst)")
       eudi_qeaa["QTSP<br/>(QEAA)"]
       eudi_wallet["EUDI-Wallet burger"]
   end
@@ -17,7 +17,7 @@ flowchart LR
       oots_afnemer["Europese overheid<br/>SDG-portaal"]
   end
 
-  bron[("Gemeentebronnen<br/>BRP, vergunningen, etc.")] -- Bron API<br/>(REST-JSON) --- ubo
+  bron[("Gemeentebronnen<br/>GBA, vergunningen, etc.")] -- Bron API<br/>(REST-JSON) --- ubo
   ubo -- REST/JSON --- eudi_verify & eudi_retrieve & oots_v
   eudi_verify -- eDelivery/AS4<br/>ISO15000 --- eudi_qeaa -- OpenID4VCI --- eudi_wallet
   eudi_retrieve -- eDelivery/AS4<br/>ISO15000 --- eudi_qeaa -- OpenID4VCI --- eudi_wallet
