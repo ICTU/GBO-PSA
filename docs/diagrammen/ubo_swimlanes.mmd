@@ -1,0 +1,45 @@
+flowchart LR
+  subgraph ubo["UBO Bronontsluiting"]
+    direction TB
+        fsc("`**FSC**<br/>(authenticatie, autorisatie<br/>routering, logging)`")
+  end
+  subgraph eudi["EUDI-Wallet"]
+    direction LR
+      eudi_verify("`**ASI-provider<br/>(verify dienst)**`")
+      eudi_retrieve("`**ASI-provider<br/>(retrieve dienst)**`")
+      eudi_qeaa["QTSP<br/>(QEAA)"]
+      eudi_wallet["EUDI-Wallet burger"]
+  end
+  subgraph oots["SDG / OOTS"]
+    direction LR
+      oots_v["OOTS-v Backend"]
+      oots_basis["Basisinrichting OOTS<br/>RINIS / BZK"]
+      oots_afnemer["Europese overheid<br/>SDG-portaal"]
+  end
+
+  bron[("Gemeentebronnen<br/>BRP, vergunningen, etc.")] -- Bron API<br/>(REST-JSON) --- ubo
+  ubo -- REST/JSON --- eudi_verify & eudi_retrieve & oots_v
+  eudi_verify -- eDelivery/AS4<br/>ISO15000 --- eudi_qeaa -- OpenID4VCI --- eudi_wallet
+  eudi_retrieve -- eDelivery/AS4<br/>ISO15000 --- eudi_qeaa -- OpenID4VCI --- eudi_wallet
+  oots_v -- eDelivery-AS4 --- oots_basis -- eDelivery-AS4 --- oots_afnemer
+  eudi_wallet --- burger["Burger"]
+  oots_afnemer --- burger
+
+  fsc:::ubo
+  eudi_verify:::ubo
+  eudi_retrieve:::ubo
+  eudi_qeaa:::eudi
+  eudi_wallet:::eudi
+  oots_v:::ubo
+  oots_basis:::oots
+  oots_afnemer:::oots
+  bron:::bron
+  burger:::burger
+
+  classDef bron fill:#edf7df,stroke:#6aa13a,color:#27500a
+  classDef generiek fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef eudi fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef oots fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef dvtp fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef ubo fill:#fff0e8,stroke:#000000,color:#000000
+  classDef burger fill:#edf7df,stroke:#6aa13a,color:#27500a

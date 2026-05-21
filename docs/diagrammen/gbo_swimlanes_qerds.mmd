@@ -1,40 +1,40 @@
 flowchart LR
   subgraph gbo["GBO Basis"]
     direction TB
-        fsc_pap("`**PAP<br>(beleidsregels)**`")
-        fsc("`**FSC / GraphQL / PBAC<br>(generieke bronontsluiting)**`")
-        fsc_tools("`**GBO tools<br>(vertaallaag)**`")
+        fsc_pap("`**PAP<br/>(beleidsregels)**`")
+        fsc("`**FSC / GraphQL / PBAC<br/>(generieke bronontsluiting)**`")
+        fsc_tools("`**GBO tools<br/>(vertaallaag)**`")
   end
   subgraph eudi["EUDI-Wallet"]
     direction LR
         eudi_asi("`**ASI-provider**`")
-        eudi_pubeaa("`**PubEAA-provider<br>(PubEAA)**`")
-        eudi_qeaa["QTSP<br>(QEAA)"]
+        eudi_pubeaa("`**PubEAA-provider<br/>(PubEAA)**`")
+        eudi_qeaa["QTSP<br/>(QEAA)"]
         eudi_wallet["EUDI-Wallet burger"]
   end
   subgraph oots["SDG / OOTS"]
     direction LR
-        oots_adapter("`**OOTS adapter<br>(semantische mapping)**`")
-        oots_basis["Basisinrichting OOTS<br>RINIS / BZK"]
-        oots_afnemer["Europese overheid<br>SDG-portaal"]
+        oots_adapter("`**OOTS adapter<br/>(semantische mapping)**`")
+        oots_basis["Basisinrichting OOTS<br/>RINIS / BZK"]
+        oots_afnemer["Europese overheid<br/>SDG-portaal"]
   end
   subgraph dvtp["DvTP"]
     direction LR
         dvtp_toestemming("`**Toestemmingsvoorziening**`")
-        dvtp_pseudoniem["Pseudonimiseervoorziening<br>(BSNk PP)"]
+        dvtp_pseudoniem["Pseudonimiseervoorziening<br/>(BSNk PP)"]
         dvtp_afnemer["Private dienstverlener"]
   end
   subgraph ebw["QERDS"]
      direction LR
-        ebw_qerds_adapter("`**QERDS-adapter<br>(integratie/client)**`")
+        ebw_qerds_adapter("`**QERDS-adapter<br/>(integratie/client)**`")
         ebw_pub_qtsp("`**Publieke QTSP**`")
         ebw_qtsp["Private QTSP"]
-        ebw_wallet["EBW<br>(publiek/privaat)"]
+        ebw_wallet["EBW<br/>(publiek/privaat)"]
   end
 
   fsc_pap --- fsc
   fsc --- fsc_tools
-  bron[("Overheidsbronnen<br>BRP · BD · UWV · KvK…")] -- Bron API<br>(GraphQL / REST-JSON / ...) --- gbo
+  bron[("Overheidsbronnen<br/>BRP · BD · UWV · KvK…")] -- Bron API<br/>(GraphQL / REST-JSON / ...) --- gbo
   eudi_asi -- verify --- eudi_qeaa
   eudi_asi -- "`*retrieve*`" --- eudi_qeaa
   eudi_qeaa -- OpenID4VCI --- eudi_wallet
@@ -48,7 +48,7 @@ flowchart LR
   dvtp_pseudoniem ~~~ dvtp_afnemer
   ebw_qerds_adapter -- QERDS API / eDelivery-AS4 --- ebw_pub_qtsp -- QERDS delivery flow --- ebw_wallet
   ebw_qerds_adapter -- QERDS API / eDelivery-AS4 --- ebw_qtsp -- QERDS delivery flow --- ebw_wallet
-  ebw_wallet --- organisatie["Organisatie<br>(publiek/privaat)"]
+  ebw_wallet --- organisatie["Organisatie<br/>(publiek/privaat)"]
   eudi_wallet --- burger["Burger"]
   oots_afnemer --- burger
   dvtp_afnemer --- burger
