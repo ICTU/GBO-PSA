@@ -837,20 +837,20 @@ GBO bouwt voort op de bevindingen van UBO en maakt daar een productiegericht, br
 
         subgraph U_INT["UBO-integratielaag"]
             direction LR
-            U_DATA["Data API&lt;br/&gt;REST/JSON&lt;br/&gt;Digikoppeling REST API"]:::api
+            U_DATA["Data API&lt;br/&gt;Digikoppeling REST API&lt;br/&gt;trajectspecifieke API's"]:::api
             U_INWAY["OpenFSC Inway&lt;br/&gt;authenticatie, autorisatie,&lt;br/&gt;routering, logging"]:::auth
         end
 
         subgraph U_DIST["Distributiekanaal / intermediair platform"]
             direction LR
- U_RETRIEVE["Attribuutophaalservice&lt;br/&gt;(retrieve)"]:::adapter
+            U_RETRIEVE["Attribuutophaalservice&lt;br/&gt;(retrieve)"]:::adapter
             U_VERIF["Attribuutverificatieservice&lt;br/&gt;(verify)"]:::adapter
             U_OOTSV["OOTS-V backend&lt;br/&gt;UBO-model → OOTS-EDM"]:::adapter
         end
 
         U_QTSP["QTSP-platform&lt;br/&gt;QEAA-provider"]:::afnemer
         U_WALLET["EUDI-wallet"]:::afnemer
-            U_EDLV["eDelivery Access Point&lt;br/&gt;AS4 / Domibus"]:::afnemer
+        U_EDLV["eDelivery Access Point&lt;br/&gt;AS4 / Domibus"]:::afnemer
         U_OOTS["Europese overheid&lt;br/&gt;SDG/OOTS"]:::afnemer
 
         U_REG --&gt; U_DATA --&gt; U_INWAY
@@ -870,8 +870,8 @@ GBO bouwt voort op de bevindingen van UBO en maakt daar een productiegericht, br
         subgraph G_BASIS["GBO Basis"]
             direction LR
             G_TRANS["GBO tools / vertaallaag&lt;br/&gt;optioneel voor bronhouders&lt;br/&gt;zonder eigen GraphQL"]:::optional
-           G_CAT["Schema Registry&lt;br/&gt;gegevenscatalogus"]:::api
-             G_API["Bronontsluiting API&lt;br/&gt;REST/GraphQL via FSC&lt;br/&gt;geen trajectspecifieke endpoints"]:::api
+            G_CAT["Schema Registry&lt;br/&gt;gegevenscatalogus"]:::api
+            G_API["Bronontsluiting API&lt;br/&gt;GraphQL via FSC&lt;br/&gt;geen trajectspecifieke endpoints"]:::api
             G_AUTH["Autorisatie&lt;br/&gt;PEP / PDP / PIP&lt;br/&gt;(FTV)"]:::auth
             G_PAP["PAP / Policy Store&lt;br/&gt;centrale beleidsregels"]:::auth
         end
@@ -891,7 +891,7 @@ GBO bouwt voort op de bevindingen van UBO en maakt daar een productiegericht, br
         G_PRIV["Private dienstverlener"]:::afnemer
 
         G_BRON ~~~ G_CAT
-        G_CAT -. "query-templates,&lt;br/&gt;schema's, mappings" .-&gt; G_API
+        G_CAT -. "schema's, mappings" .-&gt; G_API
         G_BRON --&gt;|"GraphQL, REST/JSON, SOAP,..."| G_API
         G_TRANS -. "migratiepad / shared service" .-&gt; G_API
         G_API --&gt;|"GraphQL"| G_AUTH

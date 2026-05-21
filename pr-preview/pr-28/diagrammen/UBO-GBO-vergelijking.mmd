@@ -15,20 +15,20 @@ flowchart LR
 
         subgraph U_INT["UBO-integratielaag"]
             direction LR
-            U_DATA["Data API<br/>REST/JSON<br/>Digikoppeling REST API"]:::api
+            U_DATA["Data API<br/>Digikoppeling REST API<br/>trajectspecifieke API's"]:::api
             U_INWAY["OpenFSC Inway<br/>authenticatie, autorisatie,<br/>routering, logging"]:::auth
         end
 
         subgraph U_DIST["Distributiekanaal / intermediair platform"]
             direction LR
- U_RETRIEVE["Attribuutophaalservice<br/>(retrieve)"]:::adapter
+            U_RETRIEVE["Attribuutophaalservice<br/>(retrieve)"]:::adapter
             U_VERIF["Attribuutverificatieservice<br/>(verify)"]:::adapter
             U_OOTSV["OOTS-V backend<br/>UBO-model → OOTS-EDM"]:::adapter
         end
 
         U_QTSP["QTSP-platform<br/>QEAA-provider"]:::afnemer
         U_WALLET["EUDI-wallet"]:::afnemer
-            U_EDLV["eDelivery Access Point<br/>AS4 / Domibus"]:::afnemer
+        U_EDLV["eDelivery Access Point<br/>AS4 / Domibus"]:::afnemer
         U_OOTS["Europese overheid<br/>SDG/OOTS"]:::afnemer
 
         U_REG --> U_DATA --> U_INWAY
@@ -48,8 +48,8 @@ flowchart LR
         subgraph G_BASIS["GBO Basis"]
             direction LR
             G_TRANS["GBO tools / vertaallaag<br/>optioneel voor bronhouders<br/>zonder eigen GraphQL"]:::optional
-           G_CAT["Schema Registry<br/>gegevenscatalogus"]:::api
-             G_API["Bronontsluiting API<br/>REST/GraphQL via FSC<br/>geen trajectspecifieke endpoints"]:::api
+            G_CAT["Schema Registry<br/>gegevenscatalogus"]:::api
+            G_API["Bronontsluiting API<br/>GraphQL via FSC<br/>geen trajectspecifieke endpoints"]:::api
             G_AUTH["Autorisatie<br/>PEP / PDP / PIP<br/>(FTV)"]:::auth
             G_PAP["PAP / Policy Store<br/>centrale beleidsregels"]:::auth
         end
@@ -69,7 +69,7 @@ flowchart LR
         G_PRIV["Private dienstverlener"]:::afnemer
 
         G_BRON ~~~ G_CAT
-        G_CAT -. "query-templates,<br/>schema's, mappings" .-> G_API
+        G_CAT -. "schema's, mappings" .-> G_API
         G_BRON -->|"GraphQL, REST/JSON, SOAP,..."| G_API
         G_TRANS -. "migratiepad / shared service" .-> G_API
         G_API -->|"GraphQL"| G_AUTH
