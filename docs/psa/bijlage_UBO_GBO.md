@@ -18,7 +18,8 @@ In de onderstaande figuur zijn de gegevensstromen van UBO en GBO onder elkaar ge
 title: UBO Gegevensstromen
 ---
 --8<-- "diagrammen/ubo_swimlanes.mmd"
-
+```
+``` mermaid
 ---
 title: GBO Gegevensstromen
 ---
