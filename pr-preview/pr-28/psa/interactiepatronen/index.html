@@ -1058,9 +1058,10 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
         Auth-&gt;&gt;Burger: Authenticeer burger
         Burger--&gt;&gt;Auth: Authenticatie
         Auth--&gt;&gt;TV: BSN (geverifieerde identiteit)
+        TV-&gt;&gt;TV: Check PI/PP
         TV-&gt;&gt;PP: Activeer BSN
-        PP-&gt;&gt;PP: Genereert PI/PP
-        TV-&gt;&gt;PP: Transformeer BSN
+        PP-&gt;&gt;TV: PI/PP
+        TV-&gt;&gt;PP: Transformeer PI/PP
         PP--&gt;&gt;TV: Versleutelde PI/PP (VI/VP)
         TV-&gt;&gt;Burger: Toon gegevens waarvoor toestemming&lt;br/&gt;gevraagd wordt (scope + doelbinding)
         Burger--&gt;&gt;TV: Verleent toestemming

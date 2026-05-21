@@ -1,0 +1,83 @@
+flowchart LR
+    %% Vergelijking UBO en GBO
+
+    classDef bron fill:#E8F3FF,stroke:#2F6FA3,stroke-width:1px,color:#111
+    classDef api fill:#EAF7EA,stroke:#3B8A3E,stroke-width:1px,color:#111
+    classDef auth fill:#FFF7D6,stroke:#B88A00,stroke-width:1px,color:#111
+    classDef adapter fill:#FFEBD6,stroke:#C76A00,stroke-width:1px,color:#111
+    classDef afnemer fill:#FDECF3,stroke:#B83A6B,stroke-width:1px,color:#111
+    classDef optional fill:#FFFFFF,stroke:#999,stroke-dasharray:4 3,color:#333
+
+    subgraph UBO["UBO - beproeving uniforme bronontsluiting"]
+        direction LR
+
+        U_BRON["Gemeentelijke registraties<br/>(BRP / vergunningen / passen)"]:::bron
+
+        subgraph U_INT["UBO-integratielaag"]
+            direction LR
+            U_DATA["Data API<br/>REST/JSON<br/>Digikoppeling REST API"]:::api
+            U_INWAY["OpenFSC Inway<br/>authenticatie, autorisatie,<br/>routering, logging"]:::auth
+        end
+
+        subgraph U_DIST["Distributiekanaal / intermediair platform"]
+            direction LR
+            U_OUTWAY["OpenFSC Outway"]:::auth
+            U_RETRIEVE["Attribuutophaalservice<br/>(retrieve)"]:::adapter
+            U_VERIF["Attribuutverificatieservice<br/>(verify)"]:::adapter
+            U_AS4["eDelivery/AS4 adapter<br/>REST-JSON → eDelivery/AS4"]:::adapter
+            U_OOTSV["OOTS-V backend<br/>UBO-model → OOTS-EDM"]:::adapter
+        end
+
+        U_QTSP["QTSP-platform<br/>QEAA-provider"]:::afnemer
+        U_WALLET["EUDI-wallet"]:::afnemer
+        U_EDLV["eDelivery Access Point<br/>AS4 / Domibus"]:::afnemer
+        U_OOTS["Europese overheid<br/>SDG/OOTS"]:::afnemer
+
+        U_BRON --> U_DATA --> U_INWAY
+        U_INWAY -->|"REST/JSON"| U_OUTWAY
+
+        U_OUTWAY --> |"REST/JSON"| U_OOTSV -->|"eDelivery/AS4"| U_EDLV -->|"eDelivery/AS4"| U_OOTS
+        U_AS4 ~~~ U_EDLV
+        U_OUTWAY --> |"REST/JSON"| U_RETRIEVE -->|"REST/JSON"| U_AS4 -->|"eDelivery/AS4"| U_QTSP
+        U_OUTWAY --> |"REST/JSON"| U_VERIF -->|"REST/JSON"| U_AS4 -->|"eDelivery/AS4"| U_QTSP
+        U_QTSP -->|"OpenID4VCI"| U_WALLET
+    end
+
+    subgraph GBO["GBO - productiegerichte gemeenschappelijke bronontsluiting"]
+        direction LR
+
+        G_BRON["Overheidsbronnen<br/>(gemeenten, RvIG, UWV,<br/>DUO, BD, BAG/BRK, ...)"]:::bron
+
+        subgraph G_BASIS["GBO Basis"]
+            direction LR
+            G_TRANS["GBO tools / vertaallaag<br/>optioneel voor bronhouders<br/>zonder eigen GraphQL"]:::optional
+            G_API["Bronontsluiting API<br/>REST/GraphQL via FSC"]:::api
+            G_AUTH["Autorisatie<br/>PEP / PDP / PIP<br/>(FTV)"]:::auth
+            G_PAP["PAP / Policy Store<br/>centrale beleidsregels"]:::auth
+        end
+
+        subgraph G_WP["Kanaalspecifieke voorzieningen"]
+            direction LR
+            G_OOTS_AD["OOTS-adapter<br/>GBO ↔ OOTS-EDM"]:::adapter
+            G_PUBEAA["PuB-EAA-provider<br/>SD-JWT VC / mdoc"]:::adapter
+            G_ASI["ASI-provider<br/>Verificatiedienst"]:::adapter
+            G_DVTP["DvTP<br/>toestemming, pseudonimisering"]:::adapter
+        end
+
+        G_WALLET["EDI/EUDI-wallet"]:::afnemer
+        G_QTSP["QTSP"]:::afnemer
+        G_OOTS_BI["eDelivery Access Point<br/>AS4 / Domibus"]:::afnemer
+        G_OOTS["Europese overheid<br/>SDG/OOTS"]:::afnemer
+        G_PRIV["Private dienstverlener"]:::afnemer
+
+        G_BRON -->|"GraphQL, REST/JSON, SOAP,..."| G_API
+        G_BRON ~~~ G_TRANS
+        G_TRANS -. "migratiepad / shared service" .-> G_API
+        G_API -->|"GraphQL"| G_AUTH
+        G_PAP -. "policies" .-> G_AUTH
+
+        G_AUTH -->|"GraphQL"| G_DVTP -->|"GraphQL"| G_PRIV
+        G_AUTH -->|"GraphQL"| G_ASI -->|"REST/JSON"| G_QTSP -->|"OpenID4VCI"| G_WALLET
+        G_AUTH -->|"GraphQL"| G_PUBEAA -->|"OpenID4VCI"| G_WALLET
+        G_AUTH -->|"GraphQL"| G_OOTS_AD -->|"REST/JSON"| G_OOTS_BI -->|"eDelivery/AS4"| G_OOTS
+    end
