@@ -19,8 +19,8 @@ flowchart LR
 
   bron[("Gemeentebronnen<br/>GBA, vergunningen, etc.")] -- Bron API<br/>(REST-JSON) --- ubo
   ubo -- REST/JSON --- eudi_verify & eudi_retrieve & oots_v
-  eudi_verify -- eDelivery/AS4<br/>ISO15000 --- eudi_qeaa -- OpenID4VCI --- eudi_wallet
-  eudi_retrieve -- eDelivery/AS4<br/>ISO15000 --- eudi_qeaa -- OpenID4VCI --- eudi_wallet
+  eudi_verify -- eDelivery/AS4<br/>(ISO15000) --- eudi_qeaa -- OpenID4VCI --- eudi_wallet
+  eudi_retrieve -- eDelivery/AS4<br/>(ISO15000) --- eudi_qeaa -- OpenID4VCI --- eudi_wallet
   oots_v -- eDelivery-AS4 --- oots_basis -- eDelivery-AS4 --- oots_afnemer
   eudi_wallet --- burger["Burger"]
   oots_afnemer --- burger

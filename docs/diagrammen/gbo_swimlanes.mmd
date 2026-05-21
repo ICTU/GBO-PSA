@@ -15,7 +15,7 @@ flowchart LR
   subgraph oots["SDG / OOTS"]
     direction LR
         oots_adapter("OOTS adapter<br/>(semantische mapping)")
-        oots_basis["Basisinrichting OOTS<br/>RINIS / BZK"]
+        oots_basis["Basisinrichting OOTS<br/>(incl. OOTS-v Backend)"]
         oots_afnemer["Europese overheid<br/>SDG-portaal"]
   end
   subgraph dvtp["DvTP"]
@@ -28,7 +28,7 @@ flowchart LR
   fsc_pap --- fsc
   fsc --- fsc_tools
   bron[("Overheidsbronnen<br/>BRP · BD · UWV · KvK · …")] -- Bron API<br/>(GraphQL / REST-JSON / ...) --- gbo
-  eudi_asi -- REST-JSON --- eudi_qeaa
+  eudi_asi -- REST-JSON<br/>(HTTP / OAuth) --- eudi_qeaa
   eudi_qeaa -- OpenID4VCI --- eudi_wallet
   gbo -- GraphQL --- eudi_asi & eudi_pubeaa & oots_adapter & dvtp_afnemer
   eudi_pubeaa -- OpenID4VCI ---- eudi_wallet
