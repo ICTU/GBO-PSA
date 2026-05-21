@@ -822,108 +822,130 @@ GBO bouwt voort op de bevindingen van UBO en maakt daar een productiegericht, br
 <figure>
 UBO Gegevensstromen
 <div class="mermaid">flowchart LR
-  subgraph ubo["UBO Bronontsluiting"]
+  subgraph ubo["Uniforme Bronontsluiting (UBO)"]
     direction TB
-        fsc("FSC&lt;br/&gt;(authenticatie, autorisatie&lt;br/&gt;routering, logging)")
-  end
-  subgraph eudi["EUDI-Wallet"]
-    direction LR
-      eudi_verify("ASI-provider&lt;br/&gt;(verify dienst)")
-      eudi_retrieve("ASI-provider&lt;br/&gt;(retrieve dienst)")
-      eudi_qeaa["QTSP&lt;br/&gt;(QEAA)"]
-      eudi_wallet["EUDI-Wallet burger"]
-  end
-  subgraph oots["SDG / OOTS"]
-    direction LR
-      oots_v["OOTS-v Backend"]
-      oots_basis["Basisinrichting OOTS&lt;br/&gt;RINIS / BZK"]
-      oots_afnemer["Europese overheid&lt;br/&gt;SDG-portaal"]
+    data_api("UBO Data API&lt;br/&gt;(service specifiek)")
+    fsc("FSC&lt;br/&gt;Inway")
   end
 
-  bron[("Gemeentebronnen&lt;br/&gt;GBA, vergunningen, etc.")] -- Bron API&lt;br/&gt;(REST-JSON) --- ubo
-  ubo -- REST/JSON --- eudi_verify &amp; eudi_retrieve &amp; oots_v
-  eudi_verify -- eDelivery/AS4&lt;br/&gt;(ISO15000) --- eudi_qeaa -- OpenID4VCI --- eudi_wallet
-  eudi_retrieve -- eDelivery/AS4&lt;br/&gt;(ISO15000) --- eudi_qeaa -- OpenID4VCI --- eudi_wallet
-  oots_v -- eDelivery-AS4 --- oots_basis -- eDelivery-AS4 --- oots_afnemer
+%%  subgraph synergy["Synergy"]
+    subgraph oots["SDG / OOTS"]
+      direction LR
+      oots_outway("FSC&lt;br/&gt;Outway")
+      oots_v("OOTS-V")
+      oots_delivery("eDelivery&lt;br/&gt;toegangspunt")
+      oots_afnemer["SDG-OOTS-portaal"]
+    end
+    subgraph eudi["EUDI"]
+      direction LR
+      eudi_qeaa["QTSP&lt;br/&gt;(QEAA)"]
+      eudi_wallet["EUDI-Wallet"]
+    end
+%%  end
+
+  burger
+
+  bron[("Gemeentebronnen&lt;br/&gt;(GBA, vergunningen, etc.)")] --- data_api --- fsc --REST/JSON--- oots_outway
+  oots_outway --- oots_v --- oots_delivery --eDelivery/AS4--- oots_afnemer
+
+  oots_delivery --eDelivery/AS4--- eudi_qeaa --OpenID4VCI--- eudi_wallet
+  eudi_qeaa ~~~ oots_afnemer
+
   eudi_wallet --- burger["Burger"]
   oots_afnemer --- burger
 
   fsc:::ubo
-  eudi_verify:::ubo
-  eudi_retrieve:::ubo
+  data_api:::ubo
+
   eudi_qeaa:::eudi
   eudi_wallet:::eudi
-  oots_v:::ubo
-  oots_basis:::oots
+
+  oots_outway:::oots
+  oots_v:::oots
+  oots_delivery:::oots
   oots_afnemer:::oots
+
+%%  synergy:::synergy
+
   bron:::bron
   burger:::burger
 
   classDef bron fill:#edf7df,stroke:#6aa13a,color:#27500a
-  classDef generiek fill:#f1efe8,stroke:#5f5e5a,color:#444441
-  classDef eudi fill:#f1efe8,stroke:#5f5e5a,color:#444441
-  classDef oots fill:#f1efe8,stroke:#5f5e5a,color:#444441
-  classDef dvtp fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef eudi fill:#efe0f5,stroke:#5f5e5a,color:#444441
+  classDef oots fill:#efe0f5,stroke:#5f5e5a,color:#444441
   classDef ubo fill:#fff0e8,stroke:#000000,color:#000000
+  classDef synergy fill:#f1efe8,stroke:#5f5e5a,color:#444441
   classDef burger fill:#edf7df,stroke:#6aa13a,color:#27500a</div>
 GBO Gegevensstromen
 <div class="mermaid">flowchart LR
   subgraph gbo["GBO Basis"]
     direction TB
-        fsc_pap("PAP&lt;br/&gt;(beleidsregels)")
-        fsc("FSC / GraphQL / PBAC&lt;br/&gt;(generieke bronontsluiting)")
-        fsc_tools("GBO tools&lt;br/&gt;(vertaallaag)")
+        gbo_pbac("Autorisatie&lt;br/&gt;(PBAC/FTV)")
+        gbo_api("GraphQL&lt;br/&gt;(generiek)")
+        gbo_fsc_in("FSC inway")
   end
   subgraph eudi["EUDI-Wallet"]
     direction LR
-        eudi_asi("ASI-provider&lt;br/&gt;(verify dienst)")
-        eudi_pubeaa("PubEAA-provider&lt;br/&gt;(PubEAA)")
-        eudi_qeaa["QTSP&lt;br/&gt;(QEAA)"]
-        eudi_wallet["EUDI-Wallet burger"]
+      eudi_fsc_out("FSC outway")
+      eudi_asi("ASI-provider&lt;br/&gt;(verify dienst)")
+      eudi_pubeaa("PubEAA-provider&lt;br/&gt;(PubEAA)")
+      eudi_qeaa["QTSP&lt;br/&gt;(QEAA)"]
+      eudi_wallet["EUDI-Wallet burger"]
   end
   subgraph oots["SDG / OOTS"]
     direction LR
-        oots_adapter("OOTS adapter&lt;br/&gt;(semantische mapping)")
-        oots_basis["Basisinrichting OOTS&lt;br/&gt;(incl. OOTS-V backend)"]
-        oots_afnemer["Europese overheid&lt;br/&gt;SDG-portaal"]
-  end
-  subgraph dvtp["DvTP"]
-    direction LR
-        dvtp_toestemming("Toestemmingsvoorziening")
-        dvtp_pseudoniem["Pseudonimiseervoorziening&lt;br/&gt;(BSNk PP)"]
-        dvtp_afnemer["Private dienstverlener"]
+      oots_fsc_out("FSC outway")
+      oots_adapter("OOTS-V&lt;br/&gt;(GBO mapping)")
+      oots_basis["eDelivery&lt;br/&gt;toegangspunt"]
+      oots_afnemer["Europese overheid&lt;br/&gt;SDG-portaal"]
   end
 
-  fsc_pap --- fsc
-  fsc --- fsc_tools
-  bron[("Overheidsbronnen&lt;br/&gt;BRP · BD · UWV · KvK · …")] -- Bron API&lt;br/&gt;(GraphQL / REST-JSON / ...) --- gbo
-  eudi_asi -- REST-JSON&lt;br/&gt;(HTTP / OAuth) --- eudi_qeaa
-  eudi_qeaa -- OpenID4VCI --- eudi_wallet
-  gbo -- GraphQL --- eudi_asi &amp; eudi_pubeaa &amp; oots_adapter &amp; dvtp_afnemer
-  eudi_pubeaa -- OpenID4VCI ---- eudi_wallet
-  oots_adapter -- REST-JSON --- oots_basis
-  oots_basis -- eDelivery-AS4 --- oots_afnemer
-  gbo -- REST-JSON&lt;br/&gt;(PIP) --- dvtp_toestemming
-  dvtp_toestemming -- REST-JSON --- dvtp_afnemer
-  dvtp_toestemming -- REST-JSON --- dvtp_pseudoniem
-  dvtp_pseudoniem ~~~ dvtp_afnemer
+%%  subgraph dvtp["DvTP"]
+%%    direction LR
+%%      dvtp_fsc_out("FSC outway")
+%%      dvtp_toestemming("Toestemmingsvoorziening")
+%%      dvtp_pseudoniem["Pseudonimiseervoorziening&lt;br/&gt;(BSNk PP)"]
+%%      dvtp_afnemer["Private dienstverlener"]
+%%  end
+
+  bron[("Overheidsbronnen&lt;br/&gt;BRP · BD · UWV · KvK · …")] --- gbo_api --- gbo_pbac --- gbo_fsc_in
+  gbo_fsc_in -- GraphQL --- eudi_fsc_out &amp; oots_fsc_out
+%%  gbo_fsc_in -- GraphQL --- dvtp_fsc_out
+  eudi_fsc_out --- eudi_asi -- REST-JSON&lt;br/&gt;(HTTP / OAuth) --- eudi_qeaa -- OpenID4VCI --- eudi_wallet
+  eudi_fsc_out --- eudi_pubeaa -- OpenID4VCI ---- eudi_wallet
+  oots_fsc_out --- oots_adapter --- oots_basis -- eDelivery-AS4 --- oots_afnemer
+
+%%  gbo_pbac -- REST-JSON&lt;br/&gt;(PIP) --- dvtp_toestemming
+%%  dvtp_toestemming -- REST-JSON --- dvtp_afnemer
+%%  dvtp_toestemming -- REST-JSON --- dvtp_pseudoniem
+%%  dvtp_fsc_out --GraphQL--- dvtp_afnemer
+%%  dvtp_fsc_out ~~~ dvtp_pseudoniem
+%%  dvtp_fsc_out ~~~ oots_adapter
+%%  dvtp_fsc_out ~~~ dvtp_toestemming
+%%  oots_basis ~~~ dvtp_afnemer
+
   eudi_wallet --- burger["Burger"]
   oots_afnemer --- burger
-  dvtp_afnemer --- burger
+%%  dvtp_afnemer --- burger
 
-  fsc_pap:::gbo
-  fsc:::gbo
-  fsc_tools:::gbo
+  gbo_fsc_in:::gbo
+  gbo_api:::gbo
+  gbo_pbac:::gbo
+  eudi_fsc_out:::gbo
   eudi_asi:::gbo
   eudi_pubeaa:::gbo
   eudi_qeaa:::eudi
   eudi_wallet:::eudi
+  oots_fsc_out:::gbo
   oots_adapter:::gbo
   oots_basis:::oots
   oots_afnemer:::oots
-  dvtp_toestemming:::gbo
-  dvtp_pseudoniem:::dvtp
-  dvtp_afnemer:::dvtp
+
+%%  dvtp_fsc_out:::gbo
+%%  dvtp_toestemming:::gbo
+%%  dvtp_pseudoniem:::dvtp
+%%  dvtp_afnemer:::dvtp
+
   bron:::bron
   burger:::burger
 
@@ -934,7 +956,7 @@ GBO Gegevensstromen
   classDef dvtp fill:#f1efe8,stroke:#5f5e5a,color:#444441
   classDef gbo fill:#fff0e8,stroke:#000000,color:#000000
   classDef burger fill:#edf7df,stroke:#6aa13a,color:#27500a</div>
-<figcaption>De gegevensstromen zoals het project UBO die heeft beproefd en GBO wil ontwerpen.</figcaption>
+<figcaption>De gegevensstromen zoals het project UBO die heeft beproefd en zoals GBO ze nu wil inrichten.</figcaption>
 </figure>
 
 <p>In de volgende paragrafen wordt uitgewerkt wat GBO heeft overgenomen van UBO en waar GBO afwijkende keuzes maakt of een doorontwikkeling voorstelt.</p>
