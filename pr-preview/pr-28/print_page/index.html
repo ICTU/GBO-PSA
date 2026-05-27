@@ -3505,7 +3505,106 @@ NB: in deze figuur zijn enkel de voorzieningen geschetst - geen afspraken of sta
 - GraphQL profiel in Digikoppeling<br />
 - etc.</p>
 <h2 id="psa-realisatiestrategie-toekomstige-ontwikkelingen">Toekomstige ontwikkelingen<a class="headerlink" href="#psa-realisatiestrategie-toekomstige-ontwikkelingen" title="Permanent link">&para;</a></h2>
-<p>Plaatsen t.o.v. GBO als nieuwe "werkpakketten": swimlanes plaatje aangevuld met EBW/QERDS, Overheid-Overheid</p></section><section class="print-page" id="psa-vraagstukken"><h1 id="psa-vraagstukken-vraagstukken-en-ontwerpkeuzes">Vraagstukken en ontwerpkeuzes<a class="headerlink" href="#psa-vraagstukken-vraagstukken-en-ontwerpkeuzes" title="Permanent link">&para;</a></h1>
+<p>Plaatsen t.o.v. GBO als nieuwe "werkpakketten": swimlanes plaatje aangevuld met EBW/QERDS, Overheid-Overheid</p>
+<figure>
+<div class="mermaid">flowchart LR
+  subgraph gbo["GBO Basis"]
+    direction TB
+        fsc_pap("PAP&lt;br/&gt;(beleidsregels)")
+        fsc("FSC / GraphQL / PBAC&lt;br/&gt;(generieke bronontsluiting)")
+        fsc_tools("GBO tools&lt;br/&gt;(vertaallaag)")
+  end
+  subgraph eudi["EUDI-Wallet"]
+    direction LR
+        eudi_asi("ASI-provider")
+        eudi_pubeaa("PubEAA-provider&lt;br/&gt;(PubEAA)")
+        eudi_qeaa["QTSP&lt;br/&gt;(QEAA)"]
+        eudi_wallet["EUDI-Wallet burger"]
+  end
+  subgraph oots["SDG / OOTS"]
+    direction LR
+        oots_adapter("OOTS adapter&lt;br/&gt;(semantische mapping)")
+        oots_basis["Basisinrichting OOTS&lt;br/&gt;(incl. OOTS-V backend)"]
+        oots_afnemer["Europese overheid&lt;br/&gt;SDG-portaal"]
+  end
+  subgraph dvtp["DvTP"]
+    direction LR
+        dvtp_toestemming("Toestemmingsvoorziening")
+        dvtp_pseudoniem["Pseudonimiseervoorziening&lt;br/&gt;(BSNk PP)"]
+        dvtp_afnemer["Private dienstverlener"]
+  end
+  subgraph ebw["QERDS/EBW"]
+     direction LR
+        ebw_qerds_adapter("QERDS-adapter&lt;br/&gt;(integratie/client)")
+        ebw_pub_qtsp("Publieke QTSP")
+        ebw_qtsp["Private QTSP"]
+        ebw_wallet["EBW&lt;br/&gt;(publiek/privaat)"]
+  end
+  subgraph g2g["Overheid-Overheid"]
+     direction LR
+        g2g_adapter("G2G-adapter&lt;br/&gt;(semantische mapping)")
+        g2g_fsc("FSC&lt;br/&gt;(ketenpartner)")
+  end
+
+  fsc_pap --- fsc
+  fsc --- fsc_tools
+  bron[("Overheidsbronnen&lt;br/&gt;BRP · BD · UWV · KvK · …")] -- Bron API&lt;br/&gt;(GraphQL / REST-JSON / ...) --- gbo
+  eudi_asi -- verify --- eudi_qeaa
+  eudi_asi -. "`*retrieve*`" .- eudi_qeaa
+  eudi_qeaa -- OpenID4VCI --- eudi_wallet
+  gbo -- GraphQL --- eudi_asi &amp; eudi_pubeaa &amp; oots_adapter &amp; dvtp_afnemer &amp; ebw_qerds_adapter &amp; g2g_adapter
+  eudi_pubeaa -- OpenID4VCI ---- eudi_wallet
+  oots_adapter -- REST-JSON --- oots_basis
+  oots_basis -- eDelivery-AS4 --- oots_afnemer
+  gbo -- REST-JSON&lt;br/&gt;(PIP) --- dvtp_toestemming
+  dvtp_toestemming -- REST-JSON --- dvtp_afnemer
+  dvtp_toestemming -- REST-JSON --- dvtp_pseudoniem
+  dvtp_pseudoniem ~~~ dvtp_afnemer
+  ebw_qerds_adapter -- QERDS API / eDelivery-AS4 --- ebw_pub_qtsp -- QERDS delivery flow --- ebw_wallet
+  ebw_qerds_adapter -- QERDS API / eDelivery-AS4 --- ebw_qtsp -- QERDS delivery flow --- ebw_wallet
+  eudi_wallet --- burger["Burger"]
+  oots_afnemer --- burger
+  dvtp_afnemer --- burger
+  ebw_wallet --- organisatie["Organisatie&lt;br/&gt;(publiek/privaat)"]
+  g2g_adapter -- REST-JSON --- g2g_fsc
+  g2g_adapter ~~~ ebw_qtsp
+  ebw_qtsp ~~~ g2g_fsc
+  g2g_fsc --- overheid["Ketenpartner&lt;br/&gt;(overheid)"]
+
+  fsc_pap:::gbo
+  fsc:::gbo
+  fsc_tools:::gbo
+  g2g_adapter:::gbo
+  g2g_fsc:::overheid
+  ebw_qerds_adapter:::gbo
+  ebw_pub_qtsp:::gbo
+  ebw_qtsp:::eudi
+  ebw_wallet:::eudi
+  eudi_asi:::gbo
+  eudi_pubeaa:::gbo
+  eudi_qeaa:::eudi
+  eudi_wallet:::eudi
+  oots_adapter:::gbo
+  oots_basis:::oots
+  oots_afnemer:::oots
+  dvtp_toestemming:::gbo
+  dvtp_pseudoniem:::dvtp
+  dvtp_afnemer:::dvtp
+  bron:::bron
+  burger:::afnemer
+  organisatie:::afnemer
+  overheid:::afnemer
+
+  classDef bron fill:#edf7df,stroke:#6aa13a,color:#27500a
+  classDef generiek fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef eudi fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef oots fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef dvtp fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef overheid fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef gbo fill:#fff0e8,stroke:#000000,color:#000000
+  classDef afnemer fill:#edf7df,stroke:#6aa13a,color:#27500a</div>
+<figcaption>Mogelijke toekomstige use cases GBO-model.</figcaption>
+</figure></section><section class="print-page" id="psa-vraagstukken"><h1 id="psa-vraagstukken-vraagstukken-en-ontwerpkeuzes">Vraagstukken en ontwerpkeuzes<a class="headerlink" href="#psa-vraagstukken-vraagstukken-en-ontwerpkeuzes" title="Permanent link">&para;</a></h1>
 <h2 id="psa-vraagstukken-inleiding">Inleiding<a class="headerlink" href="#psa-vraagstukken-inleiding" title="Permanent link">&para;</a></h2>
 <p>In dit hoofdstuk worden de vraagstukken waarvoor een oplossing gevonden moet worden of waarvoor een keuze gemaakt moet worden besproken.<br />
 Als er een oplossing is gevonden of een keuze is gemaakt, wordt dit in dit hoofdstuk als ontwerpkeuze vastgelegd. De verdere uitwerking vindt plaats in het technisch ontwerp.  </p>
