@@ -59,3 +59,10 @@ Nog uitwerken:
 ## Toekomstige ontwikkelingen
 
 Plaatsen t.o.v. GBO als nieuwe "werkpakketten": swimlanes plaatje aangevuld met EBW/QERDS, Overheid-Overheid
+
+<figure>
+``` mermaid
+--8<-- "diagrammen/gbo_swimlanes_qerds_g2g.mmd"
+```
+<figcaption>Mogelijke toekomstige use cases GBO-model.</figcaption>
+</figure>
