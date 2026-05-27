@@ -25,26 +25,37 @@ NB: in deze figuur zijn enkel de voorzieningen geschetst - geen afspraken of sta
 
 ### Werkpakket GBO Basis
 
-Nog uitwerken
+Nog uitwerken  
+- Onderdelen uitgewerkt  
+- Deployment opties (bronhouder ontwikkelt & beheert, bronhouder implementeert referentiecomponenten & beheert, bronhouder neemt dienst af van provider)  
 
 ### Werkpakket EUDI-wallet
 
 Nog uitwerken
+- Onderdelen uitgewerkt  
+- Deployment opties (bronhouder als PubEAA-provider, centrale PubEAA-provider(s), enkel ASIp met verify & retrieve)  
 
 ### Werkpakket SDG/OOTS
 
-Nog uitwerken
+Nog uitwerken  
+- Onderdelen uitgewerkt  
+- Deployment opties (eigen SDG/OOTS stroom (EMREX), gebruik GBO-adapter & basisinrichting, gebruik enkel basisinrichting)  
 
 ### Werkpakket DvTP
 
-Nog uitwerken
+Nog uitwerken  
+- Onderdelen uitgewerkt  
+- Deployment opties (toestemmingsvoorziening/ -register, decrypt VP/VI centraal of lokaal, decrypt VI in FSC)  
 
 
 ## Gebruik van bestaande afsprakenstelsels
 
-Nog uitwerken
+Nog uitwerken:  
+- GBO-basis componenten GraphQL/PBAC in FSC/FTV  
+- GraphQL profiel in Digikoppeling  
+- etc.
 
 
 ## Toekomstige ontwikkelingen
 
-Plaatsen t.o.v. GBO als nieuwe "werkpakketten"...
+Plaatsen t.o.v. GBO als nieuwe "werkpakketten": swimlanes plaatje aangevuld met EBW/QERDS, Overheid-Overheid
