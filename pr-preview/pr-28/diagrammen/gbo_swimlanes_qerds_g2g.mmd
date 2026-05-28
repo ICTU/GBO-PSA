@@ -57,7 +57,7 @@ flowchart LR
   oots_afnemer --- burger
   dvtp_afnemer --- burger
   ebw_wallet --- organisatie["Organisatie<br/>(publiek/privaat)"]
-  g2g_adapter -- REST-JSON --- g2g_fsc
+  g2g_adapter -- GraphQL / REST-JSON --- g2g_fsc
   g2g_adapter ~~~ ebw_qtsp
   ebw_qtsp ~~~ g2g_fsc
   g2g_fsc --- overheid["Ketenpartner<br/>(overheid)"]
@@ -65,7 +65,7 @@ flowchart LR
   fsc_pap:::gbo
   fsc:::gbo
   fsc_tools:::gbo
-  g2g_adapter:::gbo
+  g2g_adapter:::gbo_opt
   g2g_fsc:::overheid
   ebw_qerds_adapter:::gbo
   ebw_pub_qtsp:::gbo
@@ -93,4 +93,5 @@ flowchart LR
   classDef dvtp fill:#f1efe8,stroke:#5f5e5a,color:#444441
   classDef overheid fill:#f1efe8,stroke:#5f5e5a,color:#444441
   classDef gbo fill:#fff0e8,stroke:#000000,color:#000000
+  classDef gbo_opt fill:#FFF9F5,stroke:#9C9C9C,color:#9C9C9C
   classDef afnemer fill:#edf7df,stroke:#6aa13a,color:#27500a
