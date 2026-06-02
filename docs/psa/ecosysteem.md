@@ -46,6 +46,4 @@ In de contextdiagram worden de actoren ten opzichte van elkaar en van GBO gesche
 
 Zoals in de contextdiagram wordt geschetst worden de gegevens van de bronhouder via GBO voor drie doelen gebruikt. Dit ontlast de bronhouder en maakt hergebruik van gegevens eenvoudiger. Ook als er meer doelen bijkomen vormt deze opzet een oplossing die hergebruikt kan worden.
 
-Om deze oplossing mogelijk te maken zal het stelsel een aantal interactiepatronen moeten ondersteunen. Het achterhalen van deze interactiepatronen gebeurt via use cases, die in de bijlage zijn uitgewerkt. De interactiepatronen worden in het volgende hoofdstuk besproken.
-
-In het volgende hoofdstuk worden eerst de kaders van de oplossing besproken: de architectuur- en ontwerpprincipes waar de oplossing rekening mee moet houden.  
+Om deze oplossing mogelijk te maken zal het stelsel een aantal interactiepatronen moeten ondersteunen. Het achterhalen van deze interactiepatronen zijn use cases gebruikt, die in andere stukken zijn uitgewerkt [tbd: juiste links opnemen]. De interactiepatronen worden in het volgende hoofdstuk besproken.

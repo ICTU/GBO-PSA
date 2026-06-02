@@ -20,17 +20,6 @@ Dit speelt zich af in een bredere context waarin bronhouders ook betrokken zijn 
 In 2025 is onderzocht of het ontsluiten van overheidsbronnen meer samenhangend en gezamenlijk kan worden opgepakt onder de noemer Gemeenschappelijke Bronontsluiting. Gemeenschappelijk benadrukt hier de collectieve aard van de opgave. Daarbij is gekeken naar één uniforme methode voor ontsluiting ten behoeve van de EDI-wallet, SDG-OOTS en DvTP, in samenhang met de ontwikkeling van FDS, TIP, NDS en (Europese) interoperabiliteit.  
 
 
-## Huidige situatie
-
-- Onnodige administratieve lasten voor burgers en organisaties doordat dezelfde gegevens herhaaldelijk worden opgevraagd en aangeleverd.
-
-- Risicovolle werkpraktijken (documentuitwisseling, datadeler-apps, scraping) die niet passen bij een gecontroleerde, transparante en uniforme keten.
-
-- Beperkte innovatie en dienstverlening doordat hergebruik van geverifieerde brongegevens richting private diensten niet goed mogelijk is, terwijl de maatschappelijke behoefte hieraan groeit.
-
-(zie probleemomschrijving in Beleidskompas)
-
-
 
 ## Probleemstelling
 
@@ -48,17 +37,22 @@ Het delen van persoonsgegevens ondervindt op dit moment de volgende problemen:
 
 - Scraping en vergelijkbare vormen van geautomatiseerd verzamelen vergroten risico’s en zijn juridisch kwetsbaar
 
+- Bronhouders moeten voor verschillende gegevensstromen verschillende technologieën en gegevenssets inrichten en beheren
+
+- Europese wet- en regelgeving legt verplichtingen op aan bronhouders waar zij (individueel) moeilijk aan kunnen voldoen
 
 
 ## Doelstelling
 
-Om de problemen uit de vorige paragraaf op te lossen wordt een stelsel (een verzameling afspraken, standaarden, stelselfuncties en voorzieningen) voorgesteld, waarin het mogelijk is dat:
+Om de problemen uit de vorige paragraaf op te lossen wordt een stelsel (een verzameling afspraken, standaarden en voorzieningen) voorgesteld, waarin het mogelijk is dat:
 
 - burgers toestemming geven en beheren via een vertrouwde overheidsomgeving, op basis van begrijpelijke informatie over doel, gegevens en ontvanger
 
 - private dienstverleners alleen gegevens opvragen binnen de afgesproken reikwijdte en de burger terugkoppelen welke gegevens zijn ontvangen en gebruikt
 
-- bronhouders alleen verstrekken na verificatie van een geldig verzoek en binnen een afgebakend doel, met waarborgen voor integriteit en herleidbaarheid
+- bronhouders via één mechanisme gegevens verstrekken na verificatie van een geldig verzoek en binnen een afgebakend doel
+
+> Hoewel er hier sprake is van een stelsel, is het geenzins de bedoeling een nieuw stelsel in te richten. De afspraken, standaarden en voorzieningen die ontwikkeld / ingericht worden, moeten landen in bestaande afsprakenstelsels.
 
 
 De doelstellingen van GBO zijn:

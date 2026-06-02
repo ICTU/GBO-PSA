@@ -11,16 +11,16 @@ sequenceDiagram
     Note over Burger,Bron: Stroom A — PuB-EAA: overheidsinstantie geeft attribuut rechtstreeks uit
 
     rect rgb(225, 245, 238)
-        Burger->>Wallet: Vraag attribuut op (OpenID4VCI initiate)
-        Wallet->>PubEAA: Credential Request (OpenID4VCI)
+        Burger->>Wallet: Vraag attribuut op
+        Wallet->>PubEAA: Credential Request
         Note over PubEAA: PuB-EAA voorziening: aangeboden<br/>door bron zelf óf centraal via GBO
         PubEAA->>Auth: Autorisatieverzoek
         Auth->>Wallet: Authenticatie- & autorisatieverzoek
         Wallet->>Burger: Toont verzoek & vraagt consent
         Burger->>Wallet: Geeft consent & presenteert PID / eID
-        Wallet->>Auth: Authenticatie / consent (OpenID4VP met PID / eID)
+        Wallet->>Auth: Authenticatie / consent (incl.PID / eID)
         Auth->>PubEAA: Autorisatie (incl. identificatie burger)
-        PubEAA->>Bron: Bevraag bron (met access token)
+        PubEAA->>Bron: Bevraag bron
         Bron-->>PubEAA: Attribuutgegevens
         PubEAA->>PubEAA: Kwalificeer attribuutgegevens
         PubEAA-->>Wallet: PuB-EAA credential
@@ -38,7 +38,7 @@ sequenceDiagram
         Auth->>Wallet: Authenticatie- & autorisatieverzoek
         Wallet->>Burger: Toont verzoek & vraagt consent
         Burger->>Wallet: Geeft consent & presenteert PID / eID
-        Wallet->>Auth: Authenticatie / consent (OpenID4VP met PID / eID)
+        Wallet->>Auth: Authenticatie / consent (met PID / eID)
         Auth->>VerifDienst: Autorisatie (incl. identificatie burger)
         VerifDienst->>Bron: Bevraag bron
         Bron-->>VerifDienst: Attribuutgegevens

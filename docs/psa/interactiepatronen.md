@@ -1,6 +1,6 @@
 # Interactiepatronen GBO
 
-Dit document beschrijft de belangrijkste interactiepatronen voor GBO zoals afgeleid uit de use cases. In de patronen is op verschillende plekken sprake van een "dienst"; dit kunnen standaarden of centrale of decentrale voorzieningen zijn. Daar wordt in het hoofdstuk [Capabilities](./capabilities.md) dieper op ingegaan.  
+Dit document beschrijft de belangrijkste interactiepatronen voor GBO zoals afgeleid uit de use cases. In de patronen is op verschillende plekken sprake van een "dienst"; dit kunnen afspraken, standaarden of centrale of decentrale voorzieningen zijn. Daar wordt in het hoofdstuk [Stelselfuncties](./capabilities.md) dieper op ingegaan.  
 
 
 
