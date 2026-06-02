@@ -897,7 +897,7 @@
 
 
 <h1 id="interactiepatronen-gbo">Interactiepatronen GBO<a class="headerlink" href="#interactiepatronen-gbo" title="Permanent link">&para;</a></h1>
-<p>Dit document beschrijft de belangrijkste interactiepatronen voor GBO zoals afgeleid uit de use cases. In de patronen is op verschillende plekken sprake van een "dienst"; dit kunnen standaarden of centrale of decentrale voorzieningen zijn. Daar wordt in het hoofdstuk <a href="../capabilities/">Capabilities</a> dieper op ingegaan.  </p>
+<p>Dit document beschrijft de belangrijkste interactiepatronen voor GBO zoals afgeleid uit de use cases. In de patronen is op verschillende plekken sprake van een "dienst"; dit kunnen afspraken, standaarden of centrale of decentrale voorzieningen zijn. Daar wordt in het hoofdstuk <a href="../capabilities/">Stelselfuncties</a> dieper op ingegaan.  </p>
 <h2 id="gegevensverzoek-van-burger-om-gegevens-via-wallet-te-delen">Gegevensverzoek van burger om gegevens via wallet te delen<a class="headerlink" href="#gegevensverzoek-van-burger-om-gegevens-via-wallet-te-delen" title="Permanent link">&para;</a></h2>
 <h3 id="doel">Doel<a class="headerlink" href="#doel" title="Permanent link">&para;</a></h3>
 <p>Een burger vraagt een gegeven op als gekwalificeerde attestatie om in zijn/haar wallet op te nemen en te delen met een dienstverlener.</p>
@@ -917,16 +917,16 @@
     Note over Burger,Bron: Stroom A — PuB-EAA: overheidsinstantie geeft attribuut rechtstreeks uit
 
     rect rgb(225, 245, 238)
-        Burger-&gt;&gt;Wallet: Vraag attribuut op (OpenID4VCI initiate)
-        Wallet-&gt;&gt;PubEAA: Credential Request (OpenID4VCI)
+        Burger-&gt;&gt;Wallet: Vraag attribuut op
+        Wallet-&gt;&gt;PubEAA: Credential Request
         Note over PubEAA: PuB-EAA voorziening: aangeboden&lt;br/&gt;door bron zelf óf centraal via GBO
         PubEAA-&gt;&gt;Auth: Autorisatieverzoek
         Auth-&gt;&gt;Wallet: Authenticatie- &amp; autorisatieverzoek
         Wallet-&gt;&gt;Burger: Toont verzoek &amp; vraagt consent
         Burger-&gt;&gt;Wallet: Geeft consent &amp; presenteert PID / eID
-        Wallet-&gt;&gt;Auth: Authenticatie / consent (OpenID4VP met PID / eID)
+        Wallet-&gt;&gt;Auth: Authenticatie / consent (incl.PID / eID)
         Auth-&gt;&gt;PubEAA: Autorisatie (incl. identificatie burger)
-        PubEAA-&gt;&gt;Bron: Bevraag bron (met access token)
+        PubEAA-&gt;&gt;Bron: Bevraag bron
         Bron--&gt;&gt;PubEAA: Attribuutgegevens
         PubEAA-&gt;&gt;PubEAA: Kwalificeer attribuutgegevens
         PubEAA--&gt;&gt;Wallet: PuB-EAA credential
@@ -944,7 +944,7 @@
         Auth-&gt;&gt;Wallet: Authenticatie- &amp; autorisatieverzoek
         Wallet-&gt;&gt;Burger: Toont verzoek &amp; vraagt consent
         Burger-&gt;&gt;Wallet: Geeft consent &amp; presenteert PID / eID
-        Wallet-&gt;&gt;Auth: Authenticatie / consent (OpenID4VP met PID / eID)
+        Wallet-&gt;&gt;Auth: Authenticatie / consent (met PID / eID)
         Auth-&gt;&gt;VerifDienst: Autorisatie (incl. identificatie burger)
         VerifDienst-&gt;&gt;Bron: Bevraag bron
         Bron--&gt;&gt;VerifDienst: Attribuutgegevens
@@ -1058,9 +1058,10 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
         Auth-&gt;&gt;Burger: Authenticeer burger
         Burger--&gt;&gt;Auth: Authenticatie
         Auth--&gt;&gt;TV: BSN (geverifieerde identiteit)
-        TV-&gt;&gt;TV: Check PI/PP
+        TV-&gt;&gt;TV: PI/PP aanwezig?
         TV-&gt;&gt;PP: Activeer BSN
         PP-&gt;&gt;TV: PI/PP
+        TV-&gt;&gt;TV: Registreer PI/PP
         TV-&gt;&gt;PP: Transformeer PI/PP
         PP--&gt;&gt;TV: Versleutelde PI/PP (VI/VP)
         TV-&gt;&gt;Burger: Toon gegevens waarvoor toestemming&lt;br/&gt;gevraagd wordt (scope + doelbinding)

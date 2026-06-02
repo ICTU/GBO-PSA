@@ -857,11 +857,10 @@ programma <strong>GBO</strong> (<strong>G</strong>emeenschappelijke <strong>B</s
 <ul>
 <li>NORA</li>
 <li>GDI</li>
-<li>EDI Wallet / EUDI Wallet</li>
+<li>EDI Wallet / EUDI Wallet (en ARF)</li>
 <li>Single Digital Gateway (SDG)</li>
 <li>Once Only Technical System (OOTS)</li>
 <li>Federatief Datastelsel</li>
-<li>...</li>
 </ul></section><section class="print-page" id="psa-context"><h1 id="psa-context-context-en-aanleiding">Context en aanleiding<a class="headerlink" href="#psa-context-context-en-aanleiding" title="Permanent link">&para;</a></h1>
 <h2 id="psa-context-beleidscontext">Beleidscontext<a class="headerlink" href="#psa-context-beleidscontext" title="Permanent link">&para;</a></h2>
 <p>Moderne dienstverlening aan burgers, zowel door overheden als private partijen, begint met vertrouwen in actuele en betrouwbare persoonsgegevens. Het beleidsdossier Regie op Gegevens richt zich, naast de regievormen inzage en eenmalige verstrekking, ook op het delen van gegevens: het mogelijk maken dat burgers hun eigen gegevens uit overheidsbronnen digitaal beschikbaar kunnen stellen aan dienstverleners of zichzelf.   </p>
@@ -880,19 +879,6 @@ programma <strong>GBO</strong> (<strong>G</strong>emeenschappelijke <strong>B</s
 <p>Deze drie ontwikkelingen hebben elk een eigen oorsprong, doel en reikwijdte. Wat ze gemeen hebben, is dat de gegevensdeling wordt geïnitieerd door de burger en dat daarvoor overheidsbronnen moeten worden ontsloten. Op de korte en middellange termijn staan overheidsorganisaties, de zogenoemde bronhouders, dan ook voor de opgave hun overheidsbronnen toegankelijk te maken voor deze ontwikkelingen.  </p>
 <p>Dit speelt zich af in een bredere context waarin bronhouders ook betrokken zijn bij de totstandkoming van het Federatief Datastelsel (FDS). In dit stelsel worden afspraken en standaarden voor gegevensuitwisseling binnen de overheid vastgelegd. Tegelijkertijd krijgt gegevensdeling met private partijen meer aandacht, waarvoor binnen de publiek-private samenwerking Trusted Information Partners (TIP) een afsprakenstelsel is ontwikkeld. Daarnaast maken de introductie van de Nederlandse Digitaliseringsstrategie (NDS) en de inwerkingtreding van de Europese verordening Interoperabel Europa (VIE) duidelijk dat het realiseren van nationale en Europese interoperabiliteit niet langer vrijblijvend is.  </p>
 <p>In 2025 is onderzocht of het ontsluiten van overheidsbronnen meer samenhangend en gezamenlijk kan worden opgepakt onder de noemer Gemeenschappelijke Bronontsluiting. Gemeenschappelijk benadrukt hier de collectieve aard van de opgave. Daarbij is gekeken naar één uniforme methode voor ontsluiting ten behoeve van de EDI-wallet, SDG-OOTS en DvTP, in samenhang met de ontwikkeling van FDS, TIP, NDS en (Europese) interoperabiliteit.  </p>
-<h2 id="psa-context-huidige-situatie">Huidige situatie<a class="headerlink" href="#psa-context-huidige-situatie" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<p>Onnodige administratieve lasten voor burgers en organisaties doordat dezelfde gegevens herhaaldelijk worden opgevraagd en aangeleverd.</p>
-</li>
-<li>
-<p>Risicovolle werkpraktijken (documentuitwisseling, datadeler-apps, scraping) die niet passen bij een gecontroleerde, transparante en uniforme keten.</p>
-</li>
-<li>
-<p>Beperkte innovatie en dienstverlening doordat hergebruik van geverifieerde brongegevens richting private diensten niet goed mogelijk is, terwijl de maatschappelijke behoefte hieraan groeit.</p>
-</li>
-</ul>
-<p>(zie probleemomschrijving in Beleidskompas)</p>
 <h2 id="psa-context-probleemstelling">Probleemstelling<a class="headerlink" href="#psa-context-probleemstelling" title="Permanent link">&para;</a></h2>
 <p>Het delen van persoonsgegevens ondervindt op dit moment de volgende problemen:</p>
 <ul>
@@ -914,9 +900,15 @@ programma <strong>GBO</strong> (<strong>G</strong>emeenschappelijke <strong>B</s
 <li>
 <p>Scraping en vergelijkbare vormen van geautomatiseerd verzamelen vergroten risico’s en zijn juridisch kwetsbaar</p>
 </li>
+<li>
+<p>Bronhouders moeten voor verschillende gegevensstromen verschillende technologieën en gegevenssets inrichten en beheren</p>
+</li>
+<li>
+<p>Europese wet- en regelgeving legt verplichtingen op aan bronhouders waar zij (individueel) moeilijk aan kunnen voldoen</p>
+</li>
 </ul>
 <h2 id="psa-context-doelstelling">Doelstelling<a class="headerlink" href="#psa-context-doelstelling" title="Permanent link">&para;</a></h2>
-<p>Om de problemen uit de vorige paragraaf op te lossen wordt een stelsel (een verzameling afspraken, standaarden, stelselfuncties en voorzieningen) voorgesteld, waarin het mogelijk is dat:</p>
+<p>Om de problemen uit de vorige paragraaf op te lossen wordt een stelsel (een verzameling afspraken, standaarden en voorzieningen) voorgesteld, waarin het mogelijk is dat:</p>
 <ul>
 <li>
 <p>burgers toestemming geven en beheren via een vertrouwde overheidsomgeving, op basis van begrijpelijke informatie over doel, gegevens en ontvanger</p>
@@ -925,9 +917,12 @@ programma <strong>GBO</strong> (<strong>G</strong>emeenschappelijke <strong>B</s
 <p>private dienstverleners alleen gegevens opvragen binnen de afgesproken reikwijdte en de burger terugkoppelen welke gegevens zijn ontvangen en gebruikt</p>
 </li>
 <li>
-<p>bronhouders alleen verstrekken na verificatie van een geldig verzoek en binnen een afgebakend doel, met waarborgen voor integriteit en herleidbaarheid</p>
+<p>bronhouders via één mechanisme gegevens verstrekken na verificatie van een geldig verzoek en binnen een afgebakend doel</p>
 </li>
 </ul>
+<blockquote>
+<p>Hoewel er hier sprake is van een stelsel, is het geenzins de bedoeling een nieuw stelsel in te richten. De afspraken, standaarden en voorzieningen die ontwikkeld / ingericht worden, moeten landen in bestaande afsprakenstelsels.</p>
+</blockquote>
 <p>De doelstellingen van GBO zijn:</p>
 <ul>
 <li>
@@ -1539,9 +1534,8 @@ DvTP --&gt; Privaat
 
 <h2 id="psa-ecosysteem-oplossingsrichting">Oplossingsrichting<a class="headerlink" href="#psa-ecosysteem-oplossingsrichting" title="Permanent link">&para;</a></h2>
 <p>Zoals in de contextdiagram wordt geschetst worden de gegevens van de bronhouder via GBO voor drie doelen gebruikt. Dit ontlast de bronhouder en maakt hergebruik van gegevens eenvoudiger. Ook als er meer doelen bijkomen vormt deze opzet een oplossing die hergebruikt kan worden.</p>
-<p>Om deze oplossing mogelijk te maken zal het stelsel een aantal interactiepatronen moeten ondersteunen. Het achterhalen van deze interactiepatronen gebeurt via use cases, die in de bijlage zijn uitgewerkt. De interactiepatronen worden in het volgende hoofdstuk besproken.</p>
-<p>In het volgende hoofdstuk worden eerst de kaders van de oplossing besproken: de architectuur- en ontwerpprincipes waar de oplossing rekening mee moet houden.  </p></section><section class="print-page" id="psa-interactiepatronen"><h1 id="psa-interactiepatronen-interactiepatronen-gbo">Interactiepatronen GBO<a class="headerlink" href="#psa-interactiepatronen-interactiepatronen-gbo" title="Permanent link">&para;</a></h1>
-<p>Dit document beschrijft de belangrijkste interactiepatronen voor GBO zoals afgeleid uit de use cases. In de patronen is op verschillende plekken sprake van een "dienst"; dit kunnen standaarden of centrale of decentrale voorzieningen zijn. Daar wordt in het hoofdstuk <a href="#psa-capabilities">Capabilities</a> dieper op ingegaan.  </p>
+<p>Om deze oplossing mogelijk te maken zal het stelsel een aantal interactiepatronen moeten ondersteunen. Het achterhalen van deze interactiepatronen zijn use cases gebruikt, die in andere stukken zijn uitgewerkt [tbd: juiste links opnemen]. De interactiepatronen worden in het volgende hoofdstuk besproken.</p></section><section class="print-page" id="psa-interactiepatronen"><h1 id="psa-interactiepatronen-interactiepatronen-gbo">Interactiepatronen GBO<a class="headerlink" href="#psa-interactiepatronen-interactiepatronen-gbo" title="Permanent link">&para;</a></h1>
+<p>Dit document beschrijft de belangrijkste interactiepatronen voor GBO zoals afgeleid uit de use cases. In de patronen is op verschillende plekken sprake van een "dienst"; dit kunnen afspraken, standaarden of centrale of decentrale voorzieningen zijn. Daar wordt in het hoofdstuk <a href="#psa-capabilities">Stelselfuncties</a> dieper op ingegaan.  </p>
 <h2 id="psa-interactiepatronen-gegevensverzoek-van-burger-om-gegevens-via-wallet-te-delen">Gegevensverzoek van burger om gegevens via wallet te delen<a class="headerlink" href="#psa-interactiepatronen-gegevensverzoek-van-burger-om-gegevens-via-wallet-te-delen" title="Permanent link">&para;</a></h2>
 <h3 id="psa-interactiepatronen-doel">Doel<a class="headerlink" href="#psa-interactiepatronen-doel" title="Permanent link">&para;</a></h3>
 <p>Een burger vraagt een gegeven op als gekwalificeerde attestatie om in zijn/haar wallet op te nemen en te delen met een dienstverlener.</p>
@@ -1561,16 +1555,16 @@ DvTP --&gt; Privaat
     Note over Burger,Bron: Stroom A — PuB-EAA: overheidsinstantie geeft attribuut rechtstreeks uit
 
     rect rgb(225, 245, 238)
-        Burger-&gt;&gt;Wallet: Vraag attribuut op (OpenID4VCI initiate)
-        Wallet-&gt;&gt;PubEAA: Credential Request (OpenID4VCI)
+        Burger-&gt;&gt;Wallet: Vraag attribuut op
+        Wallet-&gt;&gt;PubEAA: Credential Request
         Note over PubEAA: PuB-EAA voorziening: aangeboden&lt;br/&gt;door bron zelf óf centraal via GBO
         PubEAA-&gt;&gt;Auth: Autorisatieverzoek
         Auth-&gt;&gt;Wallet: Authenticatie- &amp; autorisatieverzoek
         Wallet-&gt;&gt;Burger: Toont verzoek &amp; vraagt consent
         Burger-&gt;&gt;Wallet: Geeft consent &amp; presenteert PID / eID
-        Wallet-&gt;&gt;Auth: Authenticatie / consent (OpenID4VP met PID / eID)
+        Wallet-&gt;&gt;Auth: Authenticatie / consent (incl.PID / eID)
         Auth-&gt;&gt;PubEAA: Autorisatie (incl. identificatie burger)
-        PubEAA-&gt;&gt;Bron: Bevraag bron (met access token)
+        PubEAA-&gt;&gt;Bron: Bevraag bron
         Bron--&gt;&gt;PubEAA: Attribuutgegevens
         PubEAA-&gt;&gt;PubEAA: Kwalificeer attribuutgegevens
         PubEAA--&gt;&gt;Wallet: PuB-EAA credential
@@ -1588,7 +1582,7 @@ DvTP --&gt; Privaat
         Auth-&gt;&gt;Wallet: Authenticatie- &amp; autorisatieverzoek
         Wallet-&gt;&gt;Burger: Toont verzoek &amp; vraagt consent
         Burger-&gt;&gt;Wallet: Geeft consent &amp; presenteert PID / eID
-        Wallet-&gt;&gt;Auth: Authenticatie / consent (OpenID4VP met PID / eID)
+        Wallet-&gt;&gt;Auth: Authenticatie / consent (met PID / eID)
         Auth-&gt;&gt;VerifDienst: Autorisatie (incl. identificatie burger)
         VerifDienst-&gt;&gt;Bron: Bevraag bron
         Bron--&gt;&gt;VerifDienst: Attribuutgegevens
@@ -1702,9 +1696,10 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
         Auth-&gt;&gt;Burger: Authenticeer burger
         Burger--&gt;&gt;Auth: Authenticatie
         Auth--&gt;&gt;TV: BSN (geverifieerde identiteit)
-        TV-&gt;&gt;TV: Check PI/PP
+        TV-&gt;&gt;TV: PI/PP aanwezig?
         TV-&gt;&gt;PP: Activeer BSN
         PP-&gt;&gt;TV: PI/PP
+        TV-&gt;&gt;TV: Registreer PI/PP
         TV-&gt;&gt;PP: Transformeer PI/PP
         PP--&gt;&gt;TV: Versleutelde PI/PP (VI/VP)
         TV-&gt;&gt;Burger: Toon gegevens waarvoor toestemming&lt;br/&gt;gevraagd wordt (scope + doelbinding)
@@ -3484,25 +3479,225 @@ NB: in deze figuur zijn enkel de voorzieningen geschetst - geen afspraken of sta
 </figure>
 
 <h3 id="psa-realisatiestrategie-werkpakket-gbo-basis">Werkpakket GBO Basis<a class="headerlink" href="#psa-realisatiestrategie-werkpakket-gbo-basis" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Onderdelen uitwerken  </li>
-<li>Deployment opties (bronhouder ontwikkelt &amp; beheert, bronhouder implementeert referentiecomponenten &amp; beheert, bronhouder neemt dienst af van provider)  </li>
-</ul>
-<h3 id="psa-realisatiestrategie-werkpakket-eudi-wallet">Werkpakket EUDI-wallet<a class="headerlink" href="#psa-realisatiestrategie-werkpakket-eudi-wallet" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Onderdelen uitwerken  </li>
-<li>Deployment opties (bronhouder als PubEAA-provider, centrale PubEAA-provider(s), enkel ASIp met verify &amp; retrieve)  </li>
-</ul>
+<p>Het GBO Basis-werkpakket legt de gemeenschappelijke fundatie waar alle drie de toepassingen op steunen. Het omvat de generieke bronontsluiting via GraphQL/FSC, de autorisatieketen (PEP/PDP/PIP/PAP), logging &amp; traceerbaarheid, en de semantische catalogus.</p>
+<h4 id="psa-realisatiestrategie-te-realiseren-onderdelen">Te realiseren onderdelen<a class="headerlink" href="#psa-realisatiestrategie-te-realiseren-onderdelen" title="Permanent link">&para;</a></h4>
+<h5 id="psa-realisatiestrategie-1-bronontsluiting-api-s07">1. Bronontsluiting API (S07)<a class="headerlink" href="#psa-realisatiestrategie-1-bronontsluiting-api-s07" title="Permanent link">&para;</a></h5>
+<p>Bronhouders stellen gegevens beschikbaar via een generieke GraphQL-API, ontsloten via FSC (Federated Service Connectivity). De volgende afspraken, standaarden en voorzieningen zijn nodig:</p>
+<p><strong>Afspraken</strong>
+- Stelselafspraak (in te brengen bij FDS): elke bronhouder realiseert één generieke ontsluiting; geen trajectspecifieke koppelingen.
+- Stelselafspraak (GBO): query-registratie — toegestane gegevensvragen per use case zijn vooraf geregistreerd in een centrale Query Template Registry en machineleesbaar afdwingbaar.
+- Toetredingsafspraak (GBO/FDS): onboardingprocedure bronhouders (PKIoverheid-certificaat → FSC-registratie → DCAT-beschrijving → trajectactivatie).</p>
+<p><strong>Standaarden</strong>
+- FSC — binnenlands koppelnetwerk (beschikbaar en in gebruik).
+- GraphQL — selectieve gegevensuitvraag (in productie bij iWlz); ⚠️ positionering als FDS-datadienst-type nog nodig.
+- DCAT-AP NL — verplichte zelfbeschrijving datasets (beschikbaar en verplicht binnen FDS).</p>
+<p><strong>Voorzieningen</strong> (zie ook deployment-opties hieronder)
+- FSC Inway per bronhouder (referentie-implementatie beschikbaar).
+- FSC Outway per afnemer (referentie-implementatie beschikbaar).
+- Query Template Registry — ⚠️ nog te realiseren als centrale GBO-voorziening.</p>
+<h5 id="psa-realisatiestrategie-2-fsc-standaard-aanvullen-met-pepftv-en-stelselrollen-s05">2. FSC-standaard aanvullen met PEP/FTV en stelselrollen (S05)<a class="headerlink" href="#psa-realisatiestrategie-2-fsc-standaard-aanvullen-met-pepftv-en-stelselrollen-s05" title="Permanent link">&para;</a></h5>
+<p>De FSC-standaard wordt uitgebreid met een Policy Enforcement Point (PEP) conform de FTV/AuthZEN-architectuur, zodat autorisatiebeslissingen langs dezelfde keten lopen ongeacht het traject.</p>
+<p><strong>Afspraken</strong>
+- Architectuurafspraak (GBO): geünificeerde autorisatieketen voor alle trajecten — één PEP/PDP, trajectspecifieke policies.
+- Stelselafspraak (GBO, aansluiting FTV): gestandaardiseerd Subject/Action/Resource/Context vocabulaire als GBO-AuthZEN-profiel.
+- Architectuurafspraak (GBO): BSN-resolving vindt uitsluitend plaats binnen de PEP, na de beleidsbeslissing.</p>
+<p><strong>Standaarden</strong>
+- AuthZEN NL Gov (draft) — interface PEP↔PDP (pilot bij Logius/FTV).
+- OPA/Rego — machineleesbare beleidstaal (in productie bij iWlz; directe precedentwaarde).</p>
+<p><strong>Voorzieningen</strong> (zie ook deployment-opties)
+- PEP — ⚠️ nog te realiseren; GBO levert referentie-implementatie.
+- PDP — ⚠️ nog te realiseren; policies centraal beheerd, PDP-instantie decentraal per bronhouder.
+- PAP/Policy Store — ⚠️ nog te realiseren; centraal beheer en distributie van policy-bundles via OPA Bundle API.</p>
+<h5 id="psa-realisatiestrategie-3-logging-traceerbaarheid-s09">3. Logging &amp; Traceerbaarheid (S09)<a class="headerlink" href="#psa-realisatiestrategie-3-logging-traceerbaarheid-s09" title="Permanent link">&para;</a></h5>
+<p><strong>Afspraken</strong>
+- Stelselafspraak (GBO/FDS): LDV-conforme logging verplicht voor alle GBO-componenten.
+- Stelselafspraak (GBO): cross-component correlatie via gestandaardiseerde trace-identifier (OpenTelemetry / W3C Trace Context).</p>
+<p><strong>Standaarden</strong>
+- Logboek Dataverwerkingen (LDV) — in consultatie; referentie-implementatie beschikbaar.
+- OpenTelemetry + W3C Trace Context — beschikbaar en breed ingezet.</p>
+<p><strong>Voorzieningen</strong>
+- LDV-logging per component (decentraal, per GBO-component te realiseren).</p>
+<h5 id="psa-realisatiestrategie-4-semantiek-catalogus-s10">4. Semantiek &amp; Catalogus (S10)<a class="headerlink" href="#psa-realisatiestrategie-4-semantiek-catalogus-s10" title="Permanent link">&para;</a></h5>
+<p><strong>Afspraken</strong>
+- Stelselafspraak (GBO): per bronhouder bestaat een beheerde, GBO-geregistreerde schemabeschrijving.
+- Architectuurafspraak: canonieke schemadefinitie is de enige bron van waarheid; serialisaties zijn afgeleid.</p>
+<p><strong>Voorzieningen</strong>
+- GBO Schema Registry / Catalogus — ⚠️ nog te realiseren; bouwt op FDS-datacatalogus.
+- Serialisatie-service (canoniek schema → JSON / XML / SD-JWT VC / mdoc) — ⚠️ nog te realiseren.</p>
+<hr />
+<h4 id="psa-realisatiestrategie-deployment-opties-bronontsluiting">Deployment-opties bronontsluiting<a class="headerlink" href="#psa-realisatiestrategie-deployment-opties-bronontsluiting" title="Permanent link">&para;</a></h4>
+<p>Het werkpakket kent drie deployment-opties voor de bronontsluiting. Deze kunnen naast elkaar bestaan; bronhouders kiezen de optie die past bij hun situatie.</p>
+<h5 id="psa-realisatiestrategie-optie-a-bronhouder-ontwikkelt-en-beheert-zelf">Optie A — Bronhouder ontwikkelt en beheert zelf<a class="headerlink" href="#psa-realisatiestrategie-optie-a-bronhouder-ontwikkelt-en-beheert-zelf" title="Permanent link">&para;</a></h5>
+<p>De bronhouder implementeert een GraphQL-API direct op zijn eigen systemen en beheert deze zelf. FSC Inway en PEP/PDP draaien bij de bronhouder. Dit is de doelarchitectuur voor grote bronhouders (BRP, Belastingdienst, UWV, DUO).</p>
+<p><em>Wat GBO levert:</em> referentie-implementaties van FSC Inway, PEP en PDP; onboardingprocedure; query-templates.</p>
+<h5 id="psa-realisatiestrategie-optie-b-bronhouder-implementeert-referentiecomponenten-en-beheert-deze-zelf">Optie B — Bronhouder implementeert referentiecomponenten en beheert deze zelf<a class="headerlink" href="#psa-realisatiestrategie-optie-b-bronhouder-implementeert-referentiecomponenten-en-beheert-deze-zelf" title="Permanent link">&para;</a></h5>
+<p>GBO stelt deploybare packages beschikbaar (containers/Helm charts) voor FSC Inway, PEP, PDP en GraphQL-wrapper. De bronhouder deployt en beheert deze zelf, maar hoeft ze niet zelf te ontwikkelen.</p>
+<p><em>Wat GBO levert:</em> deploybare referentiecomponenten, inclusief configuratiegidsen en onboardingondersteuning.</p>
+<h5 id="psa-realisatiestrategie-optie-c-bronhouder-neemt-dienst-af-van-gbo-vertaallaag-overgangstool">Optie C — Bronhouder neemt dienst af van GBO-vertaallaag (overgangstool)<a class="headerlink" href="#psa-realisatiestrategie-optie-c-bronhouder-neemt-dienst-af-van-gbo-vertaallaag-overgangstool" title="Permanent link">&para;</a></h5>
+<p>Voor bronhouders die (nog) geen GraphQL-API kunnen bieden, stelt GBO een centrale vertaallaag beschikbaar. Deze vertaalt inkomende GraphQL-query's naar bestaande REST-JSON API's of SOAP/XML-webservices van de bronhouder. De bronhouder hoeft zijn systemen niet aan te passen.</p>
+<p><em>Wat GBO levert:</em> centrale GBO Vertaallaag met configureerbare connectors per bronhouder; ⚠️ nog te realiseren.</p>
+<p><em>Kanttekening:</em> Optie C is bedoeld als overgangsmaatregel. De architectuurvoorkeur blijft dat bronhouders uiteindelijk een eigen GraphQL-API aanbieden (optie A of B), zodat de selectiviteit en semantische rijkdom van de uitvraag volledig benut worden.</p>
+<hr />
+<h4 id="psa-realisatiestrategie-deployment-opties-autorisatie-peppdp">Deployment-opties autorisatie (PEP/PDP)<a class="headerlink" href="#psa-realisatiestrategie-deployment-opties-autorisatie-peppdp" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Optie</th>
+<th>Beschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PEP/PDP decentraal bij bronhouder</td>
+<td>Eigen instantie per bronhouder; policies van centraal PAP. Voorkeur voor grote bronhouders.</td>
+</tr>
+<tr>
+<td>PEP/PDP als shared service (GBO)</td>
+<td>GBO biedt een gedeelde PEP/PDP-dienst aan; geschikt voor kleine bronhouders. ⚠️ nog te bepalen.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="psa-realisatiestrategie-werkpakket-eudi-wallet-edi">Werkpakket EUDI-wallet (EDI)<a class="headerlink" href="#psa-realisatiestrategie-werkpakket-eudi-wallet-edi" title="Permanent link">&para;</a></h3>
+<p>Het EDI-werkpakket maakt het mogelijk dat burgers overheidsgegeven kunnen ophalen als digitale attestatie (PuB-EAA) in een EUDI-wallet, conform eIDAS2/ARF. Het bouwt op de GBO Basis-API's.</p>
+<h4 id="psa-realisatiestrategie-te-realiseren-onderdelen_1">Te realiseren onderdelen<a class="headerlink" href="#psa-realisatiestrategie-te-realiseren-onderdelen_1" title="Permanent link">&para;</a></h4>
+<h5 id="psa-realisatiestrategie-1-pub-eaa-provider-centrale-uitgifte-dienst-s11">1. Pub-EAA provider — centrale uitgifte-dienst (S11)<a class="headerlink" href="#psa-realisatiestrategie-1-pub-eaa-provider-centrale-uitgifte-dienst-s11" title="Permanent link">&para;</a></h5>
+<p>Een Pub-EAA provider is een publieke verstrekker van publieke elektronische attestaties van attributen. Deze haalt brongegevens op via de GBO bronontsluiting (S07) en geeft ze uit als ondertekende credential in de wallet van de burger.</p>
+<p><strong>Afspraken</strong>
+- Stelselafspraak (GBO): welke overheidsbronnen PuB-EAAs uitgeven en voor welke attribuuttypen.
+- Attestation Rulebook per attribuuttype: vereiste gegevens, opmaak, beveiligingseisen en intrekkingsbeleid.
+- Toetredingsafspraak (RDI/GBO): opname van de uitgifte-dienst op de Nederlandse Trusted List (LoTE); vereist CAR-certificering.
+- ⚖️ CAR-certificering (Conformity Assessment Report) is verplicht op grond van Uitvoeringsverordening (EU) 2025/1569 voordat de dienst in productie kan.</p>
+<p><strong>Standaarden</strong>
+- OpenID4VCI — uitgifte-protocol (verplicht binnen ARF).
+- SD-JWT VC — primair credential-formaat (verplicht binnen ARF).
+- ISO/IEC 18013-5 (mdoc) — alternatief voor proximity-scenario's.
+- ETSI EN 319 412 — QESeal voor ondertekening van PuB-EAA.
+- Token Status List (IETF draft) — statusbeheer uitgegeven credentials.</p>
+<p><strong>Voorzieningen</strong>
+- Centrale Pub-EAA uitgifte-dienst (Credential Issuer) — ⚠️ nog te realiseren; bouwt op S07 en S03 (BSNk PP).
+- Opname op Nederlandse Trusted List — ⚠️ procedure nog te doorlopen bij RDI.
+- NL Wallet (EUDI Wallet referentie-implementatie) — beschikbaar als pilot; GBO-attestaties moeten aansluiten.</p>
+<h5 id="psa-realisatiestrategie-2-authentic-source-interface-met-verificatiefunctie-s11">2. Authentic Source Interface met verificatiefunctie (S11)<a class="headerlink" href="#psa-realisatiestrategie-2-authentic-source-interface-met-verificatiefunctie-s11" title="Permanent link">&para;</a></h5>
+<p>De Authentic Source Interface (ASI-P) stelt vertrouwende partijen in staat om de geldigheid van een gepresenteerde attestatie te verifiëren en eventueel de actuele brongegevens op te vragen ("verify &amp; retrieve").</p>
+<p><strong>Standaarden</strong>
+- OpenID4VP — presentatieprotocol wallet naar verifier (verplicht binnen ARF).</p>
+<p><strong>Voorzieningen</strong>
+- Centrale verificatiedienst (Status List / Verifier endpoint) — ⚠️ nog te realiseren.</p>
+<h5 id="psa-realisatiestrategie-3-configuratie-met-bronhouders-mapping-graphql-apis-naar-edi-attestaties-s10">3. Configuratie met bronhouders: mapping GraphQL-API's naar EDI-attestaties (S10)<a class="headerlink" href="#psa-realisatiestrategie-3-configuratie-met-bronhouders-mapping-graphql-apis-naar-edi-attestaties-s10" title="Permanent link">&para;</a></h5>
+<p>Per bronhouder en per attribuuttype worden de canonieke GraphQL-schema's gemapt naar de ARF-attestatieschema's.</p>
+<p><strong>Afspraken</strong>
+- Stelselafspraak (GBO): mapping naar PuB-EAA attestatieschema's verplicht voor EDI-wallet traject.</p>
+<p><strong>Voorzieningen</strong>
+- Serialisatie-service (canoniek schema → SD-JWT VC / mdoc) — ⚠️ nog te realiseren (onderdeel S10).</p>
+<hr />
+<h4 id="psa-realisatiestrategie-deployment-opties-edi-wallet">Deployment-opties EDI-wallet<a class="headerlink" href="#psa-realisatiestrategie-deployment-opties-edi-wallet" title="Permanent link">&para;</a></h4>
+<h5 id="psa-realisatiestrategie-optie-a-bronhouder-als-eigen-pub-eaa-provider">Optie A — Bronhouder als eigen Pub-EAA provider<a class="headerlink" href="#psa-realisatiestrategie-optie-a-bronhouder-als-eigen-pub-eaa-provider" title="Permanent link">&para;</a></h5>
+<p>De bronhouder richt zelf een Pub-EAA uitgifte-dienst in, inclusief CAR-certificering. Vereist zware inspanning van de beheerorganisatie (vergelijkbaar met een Pub TSP). Realistisch alleen voor de grootste bronhouders.</p>
+<h5 id="psa-realisatiestrategie-optie-b-centrale-pub-eaa-provider-gbo">Optie B — Centrale Pub-EAA provider (GBO)<a class="headerlink" href="#psa-realisatiestrategie-optie-b-centrale-pub-eaa-provider-gbo" title="Permanent link">&para;</a></h5>
+<p>GBO richt één centrale uitgifte-dienst in die namens meerdere bronhouders attesteringen uitgeeft op basis van de generieke bronontsluiting. Één CAR-certificering dekt meerdere bronhouders. Dit is de verwachte voorkeursinrichting.</p>
+<h5 id="psa-realisatiestrategie-optie-c-enkel-asi-p-met-verify-retrieve-geen-wallet-opslag">Optie C — Enkel ASI-P met verify &amp; retrieve (geen wallet-opslag)<a class="headerlink" href="#psa-realisatiestrategie-optie-c-enkel-asi-p-met-verify-retrieve-geen-wallet-opslag" title="Permanent link">&para;</a></h5>
+<p>Alleen de Authentic Source Interface wordt ingericht. Vertrouwende partijen kunnen in real-time de actuele brongegevens ophalen bij een presentatie; er worden geen credentials vooraf uitgegeven en in de wallet opgeslagen. Lichtere optie, maar minder offline-capabel.</p>
+<hr />
 <h3 id="psa-realisatiestrategie-werkpakket-sdgoots">Werkpakket SDG/OOTS<a class="headerlink" href="#psa-realisatiestrategie-werkpakket-sdgoots" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Onderdelen uitwerken  </li>
-<li>Deployment opties (eigen SDG/OOTS stroom (EMREX), gebruik GBO-adapter &amp; basisinrichting, gebruik enkel basisinrichting)  </li>
-</ul>
+<p>Het SDG/OOTS-werkpakket maakt het mogelijk dat Europese overheden in het kader van de Single Digital Gateway (SDG-verordening EU 2018/1724) bewijsstukken kunnen opvragen bij Nederlandse bronhouders via het OOTS-stelsel (Once Only Technical System). Het bouwt op de GBO Basis-API's.</p>
+<h4 id="psa-realisatiestrategie-te-realiseren-onderdelen_2">Te realiseren onderdelen<a class="headerlink" href="#psa-realisatiestrategie-te-realiseren-onderdelen_2" title="Permanent link">&para;</a></h4>
+<h5 id="psa-realisatiestrategie-1-sdg-oots-adapter-mapping-graphql-apis-naar-oots-schemas-s08-s10">1. SDG-OOTS-adapter: mapping GraphQL-API's naar OOTS-schema's (S08, S10)<a class="headerlink" href="#psa-realisatiestrategie-1-sdg-oots-adapter-mapping-graphql-apis-naar-oots-schemas-s08-s10" title="Permanent link">&para;</a></h5>
+<p>Een centrale adapter vertaalt inkomende OOTS-verzoeken (AS4/OOTS-EDM formaat) naar GraphQL-query's op de bronontsluiting, en vertaalt de respons terug naar OOTS-EDM XML.</p>
+<p><strong>Afspraken</strong>
+- Architectuurafspraak (GBO): de Basisinrichting OOTS is de enige AS4-toegangspoort; binnenlands verkeer gebruikt FSC direct.
+- Stelselafspraak (GBO): SMP-registratie van GBO-bronhouders voor OOTS-discovery wordt centraal beheerd.
+- Stelselafspraak (GBO): autorisatie van OOTS-verzoeken doorloopt dezelfde PEP/PDP-keten als binnenlandse verzoeken.
+- Stelselafspraak (GBO): mapping naar OOTS Semantic Repository evidence types verplicht voor OOTS-trajecten.</p>
+<p><strong>Standaarden</strong>
+- eDelivery AS4 (CEF) — verplicht transport voor OOTS.
+- OOTS-EDM (Evidence Data Model) — XML-payloadformaat; Schematron-validatieregels beschikbaar.
+- SMP 2.1 (Service Metadata Publisher) — discovery van toegangspunten.</p>
+<p><strong>Voorzieningen</strong>
+- Domibus Access Point — beschikbaar als open source (EC); ⚠️ operationele inrichting voor GBO nog te doen.
+- OOTS-EDM Adapter (XML ↔ FSC/GraphQL) — ⚠️ nog te realiseren.
+- SMP 2.1 Publisher — ⚠️ nog te realiseren; configuratie gebaseerd op Query Template Registry.</p>
+<h5 id="psa-realisatiestrategie-2-configuratie-met-bronhouders-welke-data-via-oots-schemas-s10">2. Configuratie met bronhouders: welke data via OOTS-schema's (S10)<a class="headerlink" href="#psa-realisatiestrategie-2-configuratie-met-bronhouders-welke-data-via-oots-schemas-s10" title="Permanent link">&para;</a></h5>
+<p>Per bronhouder wordt bepaald welke gegevens ontsloten worden voor welke OOTS evidence types (nu 9 gedefinieerde typen in de OOTS Semantic Repository).</p>
+<p><strong>Afspraken</strong>
+- Stelselafspraak (GBO): per bronhouder een beheerde schemabeschrijving; mapping naar OOTS evidence types is verplicht.</p>
+<hr />
+<h4 id="psa-realisatiestrategie-deployment-opties-oots">Deployment-opties OOTS<a class="headerlink" href="#psa-realisatiestrategie-deployment-opties-oots" title="Permanent link">&para;</a></h4>
+<h5 id="psa-realisatiestrategie-optie-a-eigen-sdgoots-stroom-bijv-emrex-voor-diplomawaardering">Optie A — Eigen SDG/OOTS-stroom (bijv. EMREX voor diplomawaardering)<a class="headerlink" href="#psa-realisatiestrategie-optie-a-eigen-sdgoots-stroom-bijv-emrex-voor-diplomawaardering" title="Permanent link">&para;</a></h5>
+<p>De bronhouder heeft een bestaande bilaterale OOTS-aansluiting (bijv. DUO via EMREX). GBO biedt een aanvullende route via de generieke ontsluiting, maar vervangt de bestaande stroom niet.</p>
+<h5 id="psa-realisatiestrategie-optie-b-gebruik-gbo-adapter-en-basisinrichting">Optie B — Gebruik GBO-adapter én basisinrichting<a class="headerlink" href="#psa-realisatiestrategie-optie-b-gebruik-gbo-adapter-en-basisinrichting" title="Permanent link">&para;</a></h5>
+<p>De bronhouder sluit aan op de centrale GBO OOTS-adapter en Domibus Access Point. De OOTS-EDM-vertaling en SMP-registratie worden centraal afgehandeld. De bronhouder biedt alleen de GraphQL-bronontsluiting (werkpakket Basis).</p>
+<p><em>Dit is de verwachte standaardinrichting voor de meeste bronhouders.</em></p>
+<h5 id="psa-realisatiestrategie-optie-c-gebruik-enkel-basisinrichting-rinis-domibus-geen-gbo-adapter">Optie C — Gebruik enkel basisinrichting (RINIS Domibus, geen GBO-adapter)<a class="headerlink" href="#psa-realisatiestrategie-optie-c-gebruik-enkel-basisinrichting-rinis-domibus-geen-gbo-adapter" title="Permanent link">&para;</a></h5>
+<p>De bronhouder richt zelf een OOTS-EDM-koppeling in op de bestaande Basisinrichting OOTS (RINIS), zonder gebruik te maken van de GBO-adapter. Dit vereist trajectspecifieke mapping bij de bronhouder zelf.</p>
+<hr />
 <h3 id="psa-realisatiestrategie-werkpakket-dvtp">Werkpakket DvTP<a class="headerlink" href="#psa-realisatiestrategie-werkpakket-dvtp" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Onderdelen uitwerken  </li>
-<li>Deployment opties (toestemmingsvoorziening/ -register, decrypt VP/VI centraal of lokaal, decrypt VI in FSC)  </li>
-</ul>
+<p>Het DvTP-werkpakket (Dienstverlening aan derde partijen met toestemming van de burger) maakt het mogelijk dat private dienstverleners met toestemming van de burger gegevens kunnen opvragen bij overheidsbronhouders. Het bouwt op de GBO Basis-API's en voegt de toestemmingsinfrastructuur toe.</p>
+<blockquote>
+<p>⚖️ <strong>Juridische randvoorwaarde:</strong> Dit werkpakket is pas operationeel inzetbaar nadat de Wdo een expliciete bevoegdheid voor bronhouders bevat om op verzoek van de burger gegevens te verstrekken aan private dienstverleners, én nadat sectorale geheimhoudingsplichten (AWR art. 67, Wet SUWI art. 74 e.a.) via de Wdo zijn doorbroken. De technische uitwerking loopt parallel aan het wetgevingstraject.</p>
+</blockquote>
+<h4 id="psa-realisatiestrategie-te-realiseren-onderdelen_3">Te realiseren onderdelen<a class="headerlink" href="#psa-realisatiestrategie-te-realiseren-onderdelen_3" title="Permanent link">&para;</a></h4>
+<h5 id="psa-realisatiestrategie-1-toestemmingsportaal-s02">1. Toestemmingsportaal (S02)<a class="headerlink" href="#psa-realisatiestrategie-1-toestemmingsportaal-s02" title="Permanent link">&para;</a></h5>
+<p>Een toegankelijk portaal waar de burger geïnformeerde toestemming geeft voor gegevensdeling, zich authenticeert via DigiD, en zijn toestemmingen kan inzien en intrekken. Pseudonimisering via BSNk PP vindt hier plaats.</p>
+<p><strong>Afspraken</strong>
+- Stelselafspraak (GBO, AVG art. 7): minimale informatie-eisen voor toestemmingspresentatie (doel, afnemer, gegevens, geldigheidsduur).
+- ⚖️ Aansluiteis (wettelijk te verankeren in Wdo/AMvB): gelijkwaardig alternatief verplicht; private dienstverleners mogen de digitale route niet als enige toegangsweg stellen.
+- ⚖️ Aansluiteis (wettelijk te verankeren): geen nadeel bij weigering van toestemming.
+- Architectuurafspraak (GBO): pseudonimisering vindt plaats in het portaal op het moment van toestemmingsvastlegging.</p>
+<p><strong>Standaarden</strong>
+- DigiD-aansluiting (SAML 2.0 / OpenID Connect) — beschikbaar.
+- WCAG 2.1 AA — verplicht voor overheidsdiensten.</p>
+<p><strong>Voorzieningen</strong>
+- Toestemmingsportaal — ⚠️ nog te realiseren; raakvlak MijnOverheid.
+- BSNk Activate (BSN → PI+PP bij eerste toestemmingsregistratie) — beschikbaar; ⚠️ onboarding portaal als BSNk-deelnemer nog te realiseren.</p>
+<h5 id="psa-realisatiestrategie-2-toestemmingsregister-grondslagregister-s01">2. Toestemmingsregister / grondslagregister (S01)<a class="headerlink" href="#psa-realisatiestrategie-2-toestemmingsregister-grondslagregister-s01" title="Permanent link">&para;</a></h5>
+<p>Een centrale voorziening die toestemmingen machineleesbaar vastlegt en beschikbaar stelt aan de PDP als Policy Information Point (PIP). De PDP toetst iedere gegevensuitvraag real-time aan de geregistreerde grondslag.</p>
+<p><strong>Afspraken</strong>
+- Stelselafspraak (GBO/FDS): welke grondslagtypen geldig zijn per traject (toestemming / wettelijke basis / doelbinding).
+- Stelselafspraak (GBO): formaat en inhoud van een grondslag-record (minimale attributen, geldigheid, scope).
+- Stelselafspraak (GBO/FDS, raakvlak AVG): intrekkingsrecht burger — termijnen en effect op lopende verwerkingen.</p>
+<p><strong>Standaarden</strong>
+- W3C ODRL — machineleesbare expressie van beleid en toestemming (beschikbaar; al in gebruik binnen FDS/DCAT-AP NL).
+- ⚠️ GBO PIP-profiel (raadpleeginterface grondslagregistratie) — nog te standaardiseren.</p>
+<p><strong>Voorzieningen</strong>
+- Toestemmingsregister / grondslagregister — ⚠️ nog te realiseren; Mitz (zorg) als leervoorbeeld.
+- Policy Store (centrale beleidsdefinities overige grondslagen) — ⚠️ nog te realiseren (zie ook S06).</p>
+<h5 id="psa-realisatiestrategie-3-aansluiten-op-bsnk-pp-s03">3. Aansluiten op BSNk PP (S03)<a class="headerlink" href="#psa-realisatiestrategie-3-aansluiten-op-bsnk-pp-s03" title="Permanent link">&para;</a></h5>
+<p>Het BSN van de burger mag private dienstverleners niet bereiken. Via BSNk PP (polymorf pseudonimisering) wordt het BSN omgezet naar partijspecifieke, onomkeerbare pseudoniemen.</p>
+<p><strong>Afspraken</strong>
+- Stelselafspraak (GBO, verankerd in AMvB Wdo / Wabvpz): BSN mag private dienstverleners zonder wettelijke grondslag nooit bereiken; pseudoniem is verplicht voor DvTP-traject.
+- Toetredingsafspraak (Logius/BSNk): onboarding private dienstverleners als BSNk PP-deelnemer.</p>
+<p><strong>Voorzieningen</strong>
+- BSNk PP (polymorf pseudonimiseringsstelsel) — <strong>beschikbaar en in productie</strong>; integratiewerk voor DvTP-traject nog nodig.
+- BSNk Transform / Close — beschikbaar; ⚠️ aansluiting PEP als BSN-geautoriseerde component nog te realiseren.</p>
+<h5 id="psa-realisatiestrategie-4-aansluiten-op-stelsel-toegang-s04">4. Aansluiten op Stelsel Toegang (S04)<a class="headerlink" href="#psa-realisatiestrategie-4-aansluiten-op-stelsel-toegang-s04" title="Permanent link">&para;</a></h5>
+<p>Private afnemers moeten op betrouwbaar niveau kunnen aantonen wie zij zijn voordat zij gegevens kunnen opvragen.</p>
+<p><strong>Afspraken</strong>
+- Stelselafspraak (GBO/FDS): onboardingproces dienstverleners (registratie, contractering, certificaatuitgifte).
+- Stelselafspraak (GBO): welke certificaattypen / trust anchors geaccepteerd worden per traject.</p>
+<p><strong>Voorzieningen</strong>
+- FDS Poortwachter (toelating en onboarding) — <strong>beschikbaar als FDS-functie</strong>; ⚠️ GBO-aansluitvoorwaarden voor private dienstverleners nog te maken.
+- FDS Marktmeester (deelnemerslijst en naleving) — <strong>beschikbaar als FDS-functie</strong>; uitbreiding met GBO-nalevingseisen gewenst.
+- eHerkenning — beschikbaar voor organisatie-authenticatie private dienstverleners.</p>
+<h5 id="psa-realisatiestrategie-5-configuratie-met-bronhouders-policies-voor-afnemers-op-basis-van-dienstenregister-s05-s06">5. Configuratie met bronhouders: policies voor afnemers op basis van dienstenregister (S05, S06)<a class="headerlink" href="#psa-realisatiestrategie-5-configuratie-met-bronhouders-policies-voor-afnemers-op-basis-van-dienstenregister-s05-s06" title="Permanent link">&para;</a></h5>
+<p>Per bronhouder worden policies opgesteld die bepalen welke afnemers welke gegevens mogen opvragen, onder welke grondslag en doelbinding. Deze policies worden centraal beheerd en gedistribueerd naar de decentrale PDP's.</p>
+<p><strong>Afspraken</strong>
+- Stelselafspraak (GBO): beleidstemplates per traject (wie mag wat opvragen onder welke grondslag).
+- Stelselafspraak (GBO): governance over wie policies mag schrijven, wijzigen en goedkeuren.
+- Stelselafspraak (GBO): RFC-procedure voor beleidswijzigingen, analoog aan iWlz RFC-aanpak.</p>
+<p><strong>Voorzieningen</strong>
+- PAP / Policy Store (centrale beleidsopstelling en distributie) — ⚠️ nog te realiseren.
+- OPA Bundle Server (distributie-endpoint voor PDP-updates) — ⚠️ nog te realiseren.</p>
+<hr />
+<h4 id="psa-realisatiestrategie-deployment-opties-dvtp">Deployment-opties DvTP<a class="headerlink" href="#psa-realisatiestrategie-deployment-opties-dvtp" title="Permanent link">&para;</a></h4>
+<h5 id="psa-realisatiestrategie-optie-a-centrale-toestemmingsvoorziening-en-register-gbo">Optie A — Centrale toestemmingsvoorziening en -register (GBO)<a class="headerlink" href="#psa-realisatiestrategie-optie-a-centrale-toestemmingsvoorziening-en-register-gbo" title="Permanent link">&para;</a></h5>
+<p>Eén centraal toestemmingsportaal en toestemmingsregister, beheerd door GBO of Logius. Alle bronhouders en afnemers sluiten hierop aan. Meest efficiënt; één punt voor burger om toestemmingen te beheren.</p>
+<h5 id="psa-realisatiestrategie-optie-b-decentraal-toestemmingsportaal-centraal-register">Optie B — Decentraal toestemmingsportaal, centraal register<a class="headerlink" href="#psa-realisatiestrategie-optie-b-decentraal-toestemmingsportaal-centraal-register" title="Permanent link">&para;</a></h5>
+<p>Bronhouders (of sectoren) bieden een eigen toestemmingsportaal aan (bijv. geïntegreerd in bestaand klantportaal), maar registreren toestemmingen in het centrale GBO-register. De PDP raadpleegt altijd het centrale register als PIP.</p>
+<h5 id="psa-realisatiestrategie-optie-c-versleuteld-verzoek-verwerkt-centraal-vpvi-decrypt-centraal">Optie C — Versleuteld verzoek verwerkt centraal (VP/VI decrypt centraal)<a class="headerlink" href="#psa-realisatiestrategie-optie-c-versleuteld-verzoek-verwerkt-centraal-vpvi-decrypt-centraal" title="Permanent link">&para;</a></h5>
+<p>De private dienstverlener stuurt een versleuteld verzoek; ontsleuteling vindt centraal plaats binnen de GBO-infrastructuur (bijv. als onderdeel van de PEP/FSC-keten). Gegevens bereiken de afnemer pas na autorisatiecontrole en pseudonimisering.</p>
+<h5 id="psa-realisatiestrategie-optie-d-versleuteld-verzoek-verwerkt-in-fsc-vpvi-decrypt-in-fsc">Optie D — Versleuteld verzoek verwerkt in FSC (VP/VI decrypt in FSC)<a class="headerlink" href="#psa-realisatiestrategie-optie-d-versleuteld-verzoek-verwerkt-in-fsc-vpvi-decrypt-in-fsc" title="Permanent link">&para;</a></h5>
+<p>Ontsleuteling en autorisatiecontrole zijn volledig geïntegreerd in de FSC Inway van de bronhouder. De GBO-infrastructuur bevat geen versleutelde gegevens; de keten is end-to-end vanuit de bronhouder.</p>
 <h2 id="psa-realisatiestrategie-gebruik-van-bestaande-afsprakenstelsels">Gebruik van bestaande afsprakenstelsels<a class="headerlink" href="#psa-realisatiestrategie-gebruik-van-bestaande-afsprakenstelsels" title="Permanent link">&para;</a></h2>
 <p>Nog uitwerken:<br />
 - GBO-basis componenten GraphQL/PBAC in FSC/FTV<br />

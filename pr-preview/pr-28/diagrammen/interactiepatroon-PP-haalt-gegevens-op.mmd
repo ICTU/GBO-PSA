@@ -19,9 +19,10 @@ sequenceDiagram
         Auth->>Burger: Authenticeer burger
         Burger-->>Auth: Authenticatie
         Auth-->>TV: BSN (geverifieerde identiteit)
-        TV->>TV: Check PI/PP
+        TV->>TV: PI/PP aanwezig?
         TV->>PP: Activeer BSN
         PP->>TV: PI/PP
+        TV->>TV: Registreer PI/PP
         TV->>PP: Transformeer PI/PP
         PP-->>TV: Versleutelde PI/PP (VI/VP)
         TV->>Burger: Toon gegevens waarvoor toestemming<br/>gevraagd wordt (scope + doelbinding)
