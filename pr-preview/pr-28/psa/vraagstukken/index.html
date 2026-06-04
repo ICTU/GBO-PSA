@@ -761,10 +761,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#identificatie-authenticatie-private-dienstverleners" class="md-nav__link">
+  <a href="#identificatie-authenticatie-intermediairs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Identificatie &amp; authenticatie private dienstverleners
+        Identificatie &amp; authenticatie intermediairs
       
     </span>
   </a>
@@ -831,17 +831,6 @@
     <span class="md-ellipsis">
       
         Centrale Componenten
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#transformatie-architectuur" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Transformatie-architectuur
       
     </span>
   </a>
@@ -979,14 +968,15 @@
 Als er een oplossing is gevonden of een keuze is gemaakt, wordt dit in dit hoofdstuk als ontwerpkeuze vastgelegd. De verdere uitwerking vindt plaats in het technisch ontwerp.  </p>
 <h2 id="onboarding">Onboarding<a class="headerlink" href="#onboarding" title="Permanent link">&para;</a></h2>
 <p>Deelnemers aan het stelsel moeten aan eisen voldoen, waarbij de eisen kunnen verschillen per deelnemersgroep: bronhouders, afnemers, intermediairs, etc. Om deel te kunnen nemen aan het stelsel doorlopen de deelnemers een onboarding proces. Dat proces moet nog ingericht worden, zowel wat betreft de governance (wie doet wat en is waarvoor verantwoordelijk) als inhoud (waarop worden deelnemers beoordeeld).</p>
-<h2 id="identificatie-authenticatie-private-dienstverleners">Identificatie &amp; authenticatie private dienstverleners<a class="headerlink" href="#identificatie-authenticatie-private-dienstverleners" title="Permanent link">&para;</a></h2>
-<p>eHerkenning is de logische kandidaat, maar de onboarding, accreditatie en het onderscheid tussen directe afnemers en intermediairs/integrators moeten worden uitgewerkt. TIP biedt hiervoor aanknopingspunten.  </p>
+<h2 id="identificatie-authenticatie-intermediairs">Identificatie &amp; authenticatie intermediairs<a class="headerlink" href="#identificatie-authenticatie-intermediairs" title="Permanent link">&para;</a></h2>
+<p>Voor systeemherkenning bij gegevensuitwisseling wordt PKIo gebruikt. Maar hoe gaan we om met intermediairs die tussen de bronhouder of afnemer en de stelselvoorziening zit?<br />
+FSC biedt hiervoor oplossingsrichtingen, waar in de uitwerking naar gekeken kan worden.</p>
 <h2 id="autorisatiearchitectuur-centrale-autorisatieserver-vs-gedistribueerde-pdp">Autorisatiearchitectuur: centrale autorisatieserver vs. gedistribueerde PDP<a class="headerlink" href="#autorisatiearchitectuur-centrale-autorisatieserver-vs-gedistribueerde-pdp" title="Permanent link">&para;</a></h2>
 <p>Gaat GBO werken met een "Autorisatieserver" als centraal component, met een bijbehorende "Vertrouwensleverancier" die tokens afgeeft. De Functionele Requirements en het GBO Beschrijvend Document spreken van een autorisatieserver als apart component (component 4).<br />
-Het is mogelijk om met decentrale PDP's te werken, die gebruik maken van centraal beheerde policies en centraal beschikbare PIP's (bv. het toestemmingenregister).</p>
+<strong>Onterpkeuze</strong>: De PSA en het technisch ontwerp gaan nu uit van een PBAC-oplossing, met een PDP, PEP en een centrale PAP. Of dit voor alle use cases de beste oplossing is, moet nog blijken.  </p>
 <h2 id="burgeridentificatie-en-het-bsn">Burgeridentificatie en het BSN<a class="headerlink" href="#burgeridentificatie-en-het-bsn" title="Permanent link">&para;</a></h2>
-<p>Het BSN mag bij private partijen, die daarvoor geen wettelijke grondslag hebben, niet worden doorgegeven. Dit vereist een pseudonimiseringslaag of sector-ID, terwijl voor OOTS de eIDAS-identifier geldt en de wallet werkt met SD-JWT VC-attributen. Dit zijn drie verschillende regimes op één generieke ontsluiting.</p>
-<p>Voor het pseudonimiseren van het BSN wordt gebruik gemaakt van de BSNk PP voorziening. Deze voorziening gaat uit van een "geactiveerd" BSN - d.w.z. dat er al een pseudoniem voor het BSN bestaat. Welk pseudoniem gaan wij gebruiken? Gaan wij BSN's activeren en bijhouden wat dat pseudoniem is? (BSNk PP doet dat niet!)</p>
+<p>Het BSN mag bij private partijen, die daarvoor geen wettelijke grondslag hebben, niet worden doorgegeven. Dit vereist een pseudonimiseringslaag.<br />
+<strong>Ontwerpkeuze</strong>: Voor het pseudonimiseren van het BSN wordt gebruik gemaakt van de BSNk PP voorziening. Deze voorziening gaat uit van een "geactiveerd" BSN - d.w.z. dat er al een pseudoniem voor het BSN bestaat. Deze pseudoniemen worden door GBO aangevraagd via de activatiedienst van BSNk en bijgehouden in het toestemmingenregister. Voordeel van het vastleggen van de pseudoniemen, is dat er geen BSN's in het toestemmingenregister opgeslagen hoeven te worden. Nadeel ia dat GBO als "toegangsdienst" erkend moet worden door BSNk, wat mogelijk extra verantwoording vereist.</p>
 <h2 id="toestemmingen">Toestemmingen<a class="headerlink" href="#toestemmingen" title="Permanent link">&para;</a></h2>
 <p>Voor DvTP (de gegevensstroom van overheidsbronnen naar private dienstverleners) is een toestemming vereist. Hiervoor is de toestemmingenvoorziening en het toestemmingenregister bedacht, maar hiervoor is nog wetgeving nodig.
 Er spelen hierbij enkele vragen:
@@ -998,11 +988,11 @@ Er spelen hierbij enkele vragen:
 <p>Hoe laten we attributen elektronisch kwalificeren? Hoe wordt de "attesteringsuitgifte" ingericht?<br />
 Dit is nodig voor de Wallet, maar mogelijk ook voor de andere use cases. Er is <a href="https://eur-lex.europa.eu/legal-content/NL/TXT/HTML/?uri=OJ:L_202501569">Europese Wetgeving</a>, maar die laat nog ruimte voor de inrichting en wie welke rol invult.  </p>
 <ul>
-<li>Gebruik QEAA / QTSP?</li>
-<li>Inrichten Pub-EAA?</li>
-<li>Centrale verificatiedienst tbv QEAA?</li>
+<li>Gebruik QEAA / QTSP?  </li>
+<li>Inrichten Pub-EAA?  </li>
+<li>Centrale verificatie- en/of retrievedienst t.b.v. QEAA?  </li>
 </ul>
-<p>Vooralsnog gaan we uit van een centrale Pub-EAA verstrekker en een centrale verificatiedienst t.b.v. QEAA. Daarmee zijn alle opties mogelijk: bronhouder treedt zelf op als Pub-EAA-verstrekker, bronhouder gebruikt centrale Pub-EAA-verstrekker, QTSP geeft attesteringen uit die bij bronhouder geverifieerd zijn.</p>
+<p><strong>Ontwerpkeuze</strong>: Vooralsnog gaan we uit van een centrale Pub-EAA verstrekker en een centrale verificatiedienst t.b.v. QEAA. Daarmee zijn diverse opties mogelijk: bronhouder treedt zelf op als Pub-EAA-verstrekker, bronhouder gebruikt centrale Pub-EAA-verstrekker, QTSP geeft attesteringen uit die bij bronhouder geverifieerd zijn. Als bronhouders ook graag attestaties wil laten uitgeven door QTSP's, kan er een "retrieve" functie toegevoegd worden aan de centrale verificatiedienst (die beide onderdeel zijn van de "Authentic Source Interface").</p>
 <h2 id="centrale-componenten">Centrale Componenten<a class="headerlink" href="#centrale-componenten" title="Permanent link">&para;</a></h2>
 <p>Ontwerpprincipe D01 stelt "Decentraal wat kan, centraal wat moet". Dit geldt als uitgangspunt, maar als een centrale voorziening voldoende voordelen biedt, past in de geldende wet- en regelgeving en niet tegn andere ontwerpprincipes ingaat, dan kan ervoor gekozen worden hiervoor te kiezen.<br />
 Bij de volgende voorzieningen die in theorie decentraal ingericht kunnen worden, wordt een centrale inrichting overwogen:</p>
@@ -1010,13 +1000,6 @@ Bij de volgende voorzieningen die in theorie decentraal ingericht kunnen worden,
 <li>PuB-EAA dienst waar alle overheidsbronnen gebruik van kunnen maken.</li>
 <li>Verificatiedienst waarmee QTSP's gegevens kunnen verifiëren en waar alle overheidsbronnen gebruik van kunnen maken.</li>
 <li>Vertaalvoorziening om GraphQL verzoeken om te zetten naar REST/API verzoeken voor overheidsbronnen die (nog) geen eigen GraphQL implementatie willen/ kunnen realiseren.</li>
-</ul>
-<h2 id="transformatie-architectuur">Transformatie-architectuur<a class="headerlink" href="#transformatie-architectuur" title="Permanent link">&para;</a></h2>
-<p>Hoe één bronhouder-API leidt tot drie verschillende afnemerprotocollen (DvTP/REST+OAuth, OOTS/AS4+eDelivery, Wallet/OID4VC)? Dit is het technische hart van de "bronhouder één keer, afnemer naar wens"-ambitie.</p>
-<ul>
-<li>De basisinrichting OOTS (beheerd door RINIS) biedt een dienst om berichten uit te wisselen tussen OOTS/eDelivery/AS4 en REST-API  </li>
-<li>Vanuit <a href="https://ec.europa.eu/digital-building-blocks/sites/spaces/OOTS/pages/930450665/Two+systems+one+vision">Synergy</a> en UBO is gekeken naar het koppelen van OOTS en de Wallet</li>
-<li>GBO heeft het streven om vanuit de FDS-standaarden (REST-API, aangevuld met GraphQL) te werken</li>
 </ul>
 
 
