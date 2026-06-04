@@ -1,21 +1,21 @@
 # Stelselfuncties
 
-Dit hoofdstuk beschrijft **wat het stelsel moet kunnen** en is een uitwerking van de generieke functies naar afspraken, standaarden en voorzieningen, die als "stelselfuncties" door het stelsel geleverd moeten worden. De term sluit aan op de terminologie van het Federatief Datastelsel (FDS).
+Dit hoofdstuk beschrijft **wat het stelsel moet kunnen** en is een uitwerking van de generieke functies uit de logische architectuur naar afspraken, standaarden en voorzieningen, die als "stelselfuncties" door het stelsel geleverd moeten worden. De term sluit aan op de terminologie van het Federatief Datastelsel (FDS).
 
 
 ## Leeswijzer
 
 Per stelselfunctie is aangegeven:  
 - **Type invulling:** afspraak, standaard of voorziening  
-- **Beheer:** centraal (GBO-stelsel of bestaand stelsel beheert) of decentraal (bronhouder / afnemer implementeert zelf)  
+- **Beheer:** centraal (NB: als nog niet bekend is waar het beheer komt, is "GBO-stelsel" ingevuld - maar het is de bedoeling dat alle stelselfuncties bij bestaande afsprakenstelsels of beheerorganisaties landen!) of decentraal (bronhouder / afnemer implementeert zelf)  
 - **Instantiëring:** gedeelde instantie of eigen instantie per partij  
 - **Bestaande invulling:** wat er al is en hergebruikt kan worden  
 - **Gap:** wat er nog ontbreekt of nog ingevuld moet worden (apart gemarkeerd met ⚠️)  
 
 
-De context is de GBO, ingebed in NORA/GDI en het Federatief Datastelsel (FDS), met aansluiting op het eIDAS2/ARF Europees kader. Stelselafspraken landen in bestaande afsprakenstelsels zoals FDS, GDI en TIP ([Trusted Information Partners](https://www.trustedinformationpartners.nl)).
+De context is GBO, ingebed in NORA/GDI en het Federatief Datastelsel (FDS), met aansluiting op het eIDAS2/ARF Europees kader. Stelselafspraken landen in bestaande afsprakenstelsels zoals FDS en GDI.
 
-De structuur "afspraken boven standaarden boven voorzieningen" is het expliciete uitgangspunt van FDS en wordt hier overgenomen. Waar mogelijk worden bestaande FDS-stelselfuncties hergebruikt (zie met name S04 en S07). Het **iWlz-afsprakenstelsel** geldt als blauwdruk voor de inrichting van het afsprakenstelsel zelf: gelaagd opgebouwd (organisatiebeleid → proces → informatie → applicatie → IT-infrastructuur → uitwisselprofielen), met een formeel RFC-proces voor wijzigingen.
+De structuur "afspraken boven standaarden boven voorzieningen" is het expliciete uitgangspunt van FDS en wordt hier overgenomen. Waar mogelijk worden bestaande FDS-stelselfuncties hergebruikt.
 
 Naast technische gaps kent dit document ook **juridische randvoorwaarden** (gemarkeerd met ⚖️): stelselfuncties die pas zinvol te realiseren zijn nadat de benodigde wettelijke grondslag is verankerd.
 
@@ -41,13 +41,13 @@ Naast technische gaps kent dit document ook **juridische randvoorwaarden** (gema
 | Standaard | Beheer | Bestaande invulling |
 |---|---|---|
 | W3C ODRL (Open Digital Rights Language) — uitdrukken van beleid en toestemming als machineleesbare policy | Internationaal / W3C | Beschikbaar; binnen FDS en DCAT-AP NL al in gebruik voor beleidsbeschrijving |
-| OData/REST of GraphQL als raadpleeginterface voor de grondslagregistratie (PIP-interface) | GBO-stelsel | ⚠️ Nog te standaardiseren als GBO PIP-profiel |
+| REST of GraphQL als raadpleeginterface voor de grondslagregistratie (PIP-interface) | GBO | ⚠️ Nog te standaardiseren als GBO PIP-profiel |
 
 ### Voorzieningen
 
 | Voorziening | Type | Beheer | Instantiëring | Bestaande invulling |
 |---|---|---|---|---|
-| Toestemmingsregister / grondslagregister | Centrale voorziening | Centraal — GBO-stelsel (of Logius als beheerder) | Gedeelde instantie | ⚠️ In de zorg gebruikt men Mitz waarvan geleerd kan worden; nog geen generieke GBO-voorziening |
+| Toestemmingsregister / grondslagregister | Centrale voorziening | Centraal — GBO | Gedeelde instantie | ⚠️ In de zorg gebruikt men Mitz waarvan geleerd kan worden; nog geen generieke GBO-voorziening |
 | Inzage- en beheerinterface voor burger (Mijn Toestemmingen) | Centrale voorziening | Centraal — GBO/Logius | Gedeelde instantie | ⚠️ Raakvlak MijnOverheid; nog geen generieke invulling |
 | Policy Store (centrale beleidsdefinities overige grondslagen) | Centrale voorziening | Centraal — GBO | Gedeeld | ⚠️ Nog te realiseren - zie ook S05 |
 
@@ -125,7 +125,7 @@ Naast technische gaps kent dit document ook **juridische randvoorwaarden** (gema
 
 *Vaststellen dat een deelnemende organisatie (dienstverlener, bronhouder, EU-lidstaat) is wie zij zegt te zijn, bevoegd is tot deelname, en verifieerbaar verbonden is aan het stelsel.*
 
-> ℹ️ **FDS hergebruik:** De organisatorische stelselfuncties **Poortwachter** (toelating en onboarding van nieuwe deelnemers) en **Marktmeester** (beheer van de deelnemerslijst en naleving van aansluitvoorwaarden) zijn binnen FDS al gedefinieerd en gedeeltelijk ingericht. GBO hergebruikt deze functies voor de toelating van bronhouders en private dienstverleners, aangevuld met GBO-specifieke aansluitvoorwaarden (zie ook S07).
+> ℹ️ **FDS hergebruik:** De organisatorische stelselfuncties **Poortwachter** (toelating en onboarding van nieuwe deelnemers) en **Marktmeester** (beheer van de deelnemerslijst en naleving van aansluitvoorwaarden) zijn binnen FDS al in opzet gedefinieerd. GBO hergebruikt deze functies voor de toelating van bronhouders en private dienstverleners, aangevuld met GBO-specifieke aansluitvoorwaarden (zie ook S07).
 
 ### Afspraken
 
@@ -152,8 +152,8 @@ Naast technische gaps kent dit document ook **juridische randvoorwaarden** (gema
 | PKI Overheid TSP's (vertrouwensdienstverleners) | Stelselvoorziening | Markt onder toezicht RDI | Gedeeld (meerdere TSP's) | Beschikbaar |
 | eIDAS-knooppunt NL | Centrale voorziening | Logius | Gedeeld | Beschikbaar; relevant voor grensoverschrijdende organisatie-authenticatie |
 | FSC Directory (contractregister) | Onderdeel FSC-stelsel | RINIS | Gedeeld | Beschikbaar als onderdeel FSC; registratie van actieve contracten tussen partijen |
-| FDS Poortwachter (toelating en onboarding deelnemers) | Organisatorische stelselfunctie FDS | Centraal — FDS-beheer / GBO | Gedeeld | **Beschikbaar als FDS-functie**; GBO vult deze functie in voor bronhouders en private dienstverleners met GBO-specifieke aansluitvoorwaarden — ⚠️ GBO-aansluitvoorwaarden zelf nog te maken |
-| FDS Marktmeester (deelnemerslijst en nalevingsbeheer) | Organisatorische stelselfunctie FDS | Centraal — FDS-beheer / GBO | Gedeeld | **Beschikbaar als FDS-functie**; GBO breidt deze functie uit met GBO-specifieke nalevingseisen voor private dienstverleners |
+| FDS Poortwachter (toelating en onboarding deelnemers) | Organisatorische stelselfunctie FDS | Centraal — FDS-beheer / GBO | Gedeeld | **In opzet beschreven als FDS stelselfunctie**; GBO vult deze functie in voor bronhouders en private dienstverleners met GBO-specifieke aansluitvoorwaarden — ⚠️ GBO-aansluitvoorwaarden zelf nog te maken |
+| FDS Marktmeester (deelnemerslijst en nalevingsbeheer) | Organisatorische stelselfunctie FDS | Centraal — FDS-beheer / GBO | Gedeeld | **In opzet beschreven als FDS stelselfunctie**; GBO breidt deze functie uit met GBO-specifieke nalevingseisen voor private dienstverleners |
 
 ---
 
@@ -409,10 +409,10 @@ De gaps zijn onderverdeeld in drie categorieën:
 | S01 — Toestemmingenregistratie | Wdo-grondslag DvTP; AMvB doelbinding en gegevenscategorieën | Toestemmingenregister als GBO-voorziening; PIP-interface standaard; stelselafspraken intrekking | W3C ODRL; DCAT-AP NL |
 | S02 — Toestemmingsportaal | Wdo-grondslag DvTP; wettelijke verankering vrijwilligheidseis en gelijkwaardig alternatief als aansluiteis | Portaal zelf; BSNk-onboarding portaal; UX-richtlijnen toestemmingspresentatie; transparantie-eis uitwerking | DigiD; BSNk Activate |
 | S03 — Burgeridentificatie & Pseudonimisering | — | BSNk PP-integratie voor DvTP (onboarding portaal en PEP); betrouwbaarheidsniveau-beleid per traject | BSNk PP (productie); DigiD; eIDAS-knooppunt |
-| S04 — Organisatie-authenticatie & Vertrouwensstelsel | — | GBO-vertrouwensprofiel (welke trust anchors per traject); OIN ↔ KvK ↔ eIDAS-identifier koppeling; GBO-aansluitvoorwaarden | FDS Poortwachter; FDS Marktmeester; FSC Directory; PKI Overheid; OIN-register |
+| S04 — Organisatie-authenticatie & Vertrouwensstelsel | — | GBO-vertrouwensprofiel (welke trust anchors per traject); OIN ↔ KvK ↔ eIDAS-identifier koppeling; GBO-aansluitvoorwaarden | FDS Poortwachter (in opzet); FDS Marktmeester (in opzet); FSC Directory; PKI Overheid; OIN-register |
 | S05 — Autorisatie (PEP/PDP/PIP) | — | Volledige PEP/PDP/PIP-keten nog te realiseren; GBO AuthZEN-profiel; BSN-resolving post-decision | OPA/Rego; FTV/AuthZEN (pilot) |
 | S06 — Beleidsbeheer & -distributie (PAP) | — | Centrale PAP-voorziening; Policy Store; distributie-endpoint; governance-afspraken beleidswijziging; toepasbare grondslagen als machineleesbaar beleid | OPA Bundle API; OCI (beschikbaar) |
-| S07 — Gegevensontsluiting (Bronontsluiting API) | — | Query Template Registry; GraphQL als FDS-datadienst-type positioneren; GBO onboardingprocedure bronhouders | FSC (productie); FDS Poortwachter; DCAT-AP NL; iWlz GraphQL-patroon |
+| S07 — Gegevensontsluiting (Bronontsluiting API) | — | Query Template Registry; GraphQL als FDS-datadienst-type positioneren; GBO onboardingprocedure bronhouders | FSC (productie); FDS Poortwachter (in opzet); DCAT-AP NL; iWlz GraphQL-patroon |
 | S08 — OOTS-adapter (Grensoverschrijdend) | — | GBO ↔ RINIS REST-koppeling; SMP-beheer; SDG-EDM mapping | RINIS basisinrichting beschikbaar; Domibus (open source, EC); AS4/OOTS-EDM standaarden |
 | S09 — Logging, Audit & Traceerbaarheid | — | LDV-profiel per GBO-component; inzagevoorziening burger | LDV (in consultatie, referentie-impl. beschikbaar); OpenTelemetry; iWlz TraceID/SpanID RFC (productie) |
 | S10 — Semantiek & Gegevenscatalogus | — | Schema Registry; serialisatie-service; mappings naar OOTS-EDM en PuB-EAA | FDS Datacatalogus; DCAT-AP NL; OOTS-EDM |
@@ -429,13 +429,13 @@ De aanbevolen lagenstructuur voor het afsprakenstelsel (analoog aan iWlz):
 | Laag | Inhoud voor GBO |
 |---|---|
 | Organisatiebeleid | Governance, rollen (bronhouder, afnemer, GBO-beheer), ontwerpkeuzes, serviceafspraken, wijzigingsbeheer |
-| Proces | Trajectprocessen: DvTP-toestemmingsstroom, OOTS-brugstroom, EDI-wallet uitgifte- en presentatiestroom |
+| Proces | Trajectprocessen: DvTP-toestemmingsstroom, OOTS-adapterstroom, EDI-wallet uitgifte- en presentatiestroom |
 | Informatie | Gegevensmodellen per bronhouder, canonieke schema's, mappings naar OOTS-EDM en PuB-EAA |
-| Applicatie | Technische afspraken per stelselfunctie: PEP/PDP-keten, FSC-profiel, BSNk PP-integratie, query-templates |
+| Applicatie | Technische afspraken per stelselfunctie: GraphQL profiel, PEP/PDP-keten, FSC-profiel, BSNk PP-integratie, query-templates |
 | IT-infrastructuur | Connectiviteit (FSC), certificaten (PKI Overheid), netwerkeisen, SLA's |
 | Uitwisselprofielen | Per traject (DvTP, OOTS, EDI-wallet): specifieke afspraken aanvullend op de generieke lagen |
 
-Wijzigingen in het afsprakenstelsel verlopen via een formeel RFC-proces, analoog aan de iWlz RFC-aanpak, met gepubliceerde versies en expliciete inwerkingtreding per implementatiestap.
+Wijzigingen in het afsprakenstelsel verlopen via een formeel RFC-proces, met gepubliceerde versies en expliciete inwerkingtreding per implementatiestap.
 
 NB: De afspraken moeten landen in bestaande afsprakenstelsels en wetgeving.  
 Een voorstel hiervoor:  
