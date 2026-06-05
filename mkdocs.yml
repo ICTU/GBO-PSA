@@ -91,4 +91,11 @@ nav:
       - Open Vraagstukken en ontwerpkeuzes: psa/vraagstukken.md
 
   - Technisch ontwerp:
-      - Reference architecture: ref-arch/gbo-reference-architecture.md
+      - Nog niet Beschikbaar: to/index.md
+#      - Reference architecture: ref-arch/gbo-reference-architecture.md
+
+  - Technische requirements:
+      - Nog niet beschikbaar: tech_reqs/index.md
+
+  - Semantiek:
+      - Nog niet beschikbaar: sem/index.md

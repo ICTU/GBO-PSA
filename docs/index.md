@@ -12,11 +12,8 @@ Welkom bij de repository met documentatie voor GBO. In deze repository worden al
 
 ## Leeswijzer
 
-De repository is als volgt opgebouwd:
-
-* **[PSA](psa/index.md)**: Projectstartarchitectuur
-* **[Technisch ontwerp](ref-arch/gbo-reference-architecture.md)**: Technisch ontwerp
-
+De repository bevat in de huidige versie enkel de conceptversie van de [PSA](psa/index.md) (Projectstartarchitectuur).
+Later worden hier ook het technisch ontwerp, de technische requirements en de uitwerking van de semantiek aan toegevoegd.
 
 Bent u op zoek naar het Globaal Ontwerp van het project GBO?  
 Deze is in een aparte omgeving geplaatst: [https://ictu.github.io/GBO-GO/](https://ictu.github.io/GBO-GO/)

@@ -2,7 +2,7 @@
 
 ## Werkwijze
 
-- Er komt geen nieuw stelsel en er komen geen "GBO"-voorzieningen, maar bestaande afspraken, standaarden en voorzieningen worden hergebruikt. Waar afspraken of standaarden aangevuld of aangepast moeten worden of voorzieningen ontworpen of ingericht moeten worden, wordt dit ingebracht bij de bestaande gremia.
+- Er komt geen nieuw stelsel en er komen geen "GBO"-voorzieningen, maar bestaande afspraken, standaarden en voorzieningen worden hergebruikt. Waar afspraken of standaarden aangevuld of aangepast moeten worden of voorzieningen ontworpen of ingericht moeten worden, wordt dit ingebracht bij de bestaande gremia. Voor het uitvoeren van pilots kan het nodig zijn om bepaalde functies tijdens de projectfase onder projectverantwoordelijkheid uit te voeren, maar voor in productiename zullen ook deze functies ondergebracht worden bij een bestaand afsprakenstelsel of een bestaande beheerorganisatie.
 Zie ook de paragraaf [Gebruik van bestaande afsprakenstelsels](#gebruik-van-bestaande-afsprakenstelsels) voor een verdere uitwerking hiervan.
 
 - Er wordt gedurende de projectfase al wel pilots gestart waar gewerkt met de gewenste afspraken, standaarden en voorzieningen. Als deze nog niet bestaan, worden voorbeeld implementaties gebruikt die tevens gebruikt worden om het ontwerp te verbeteren. Uiteindelijk worden deze ontwikkelingen als referentie implementaties aangeboden aan de gremia waar het beheer belegd wordt. Dit gaat tot het niveau van "pre-productie": d.w.z. dat de afspraak of voorziening volledig genoeg is uitgewerkt om in productie genomen te kunnen worden. Maar de daadwerkelijke productiegang wordt aan de beoogde beheerder overgelaten. In sommige gevallen kan hier zelfs wet- en regelgeving voor nodig zijn, die in werking moet zijn getreden voor in productie gegaan kan worden.
@@ -12,15 +12,16 @@ Zie ook de paragraaf [Gebruik van bestaande afsprakenstelsels](#gebruik-van-best
 
 ## Werkpakketten
 
-De stelselfuncties die nodig zijn om de GBO te kunnen gebruiken voor de drie gewenste toepassingen worden opgedeeld in werkpakketten. Met deze werkpakketten is het mogelijk om de drie toepassingen los van elkaar mogelijk te maken en afhankelijk van de prioriteiten rond de toepassingen te implementeren.  
-Er worden drie werkpakketten onderscheiden, die gekoppeld zijn aan de drie toepassingen. Daarnaast is er een werkpakket dat voor alle toepassingen nodig is: de basis functies.  
+De stelselfuncties die nodig zijn om de GBO te kunnen gebruiken voor de drie gewenste toepassingen worden opgedeeld in werkpakketten. Met deze werkpakketten is het mogelijk om de drie toepassingen los van elkaar mogelijk te maken en afhankelijk van de prioriteiten rond de toepassingen te implementeren. Verder bieden de werkpakketten verschillende "deployment-opties" (manieren waarop de stelselfuncties geïmplementeerd en beheerd kunnen worden) waar afhankelijk van de prioriteit en de afnemersvragen voor gekozen kunnen worden.  
+
+Er worden drie werkpakketten onderscheiden, die gekoppeld zijn aan de drie toepassingen. Daarnaast is er een werkpakket dat voor alle toepassingen nodig is: de GBO-basis functies.  
 
 <figure>
 ``` mermaid
 --8<-- "diagrammen/gbo_swimlanes.mmd"
 ```
 <figcaption>De werkpakketten getekend in relatie tot elkaar.<br/>
-NB: in deze figuur zijn enkel de voorzieningen geschetst - geen afspraken of standaarden die ook nodig zijn.<br/>De lichtrode voorzieningen moeten nog ontwikkeld worden. De overige voorzieningen bestaan al - daar moet op aangesloten worden.</figcaption>
+NB: in deze figuur zijn enkel de voorzieningen geschetst - daarnaast kunnen de werkpakketten ook afspraken of standaarden nodig hebben.<br/>De lichtrode voorzieningen moeten nog ontwikkeld worden. De overige voorzieningen bestaan al - daar moet op aangesloten worden.</figcaption>
 </figure>
 
 
@@ -137,11 +138,14 @@ Nog uitwerken:
 
 ## Toekomstige ontwikkelingen
 
-Plaatsen t.o.v. GBO als nieuwe "werkpakketten": swimlanes plaatje aangevuld met EBW/QERDS, Overheid-Overheid
+Het doel van GBO is het ontzorgen van bronhouders bij het bedienen van verschillende gegevensstromen. Het project GBO richt zich daarbij op de gegevensstromen die door burgers geïnitieerd worden: EDI, SDG/OOTS en DvTP. Maar de oplossingsrichting leent zich ook prima voor andere gegevensstromen: door het inrichten van een generieke bronontsluiting (GraphQL) met configureerbare toegangscontrole (FSC met FTV) kan deze voor veel verschillende gegevensstromen gebruikt worden. Die gegevensstromen moeten hun gegevensverzoeken dan via FSC aanbieden in de vorm van een GraphQL-request waarin de gewenste gegevens uitgevraagd worden. Als dat niet rechstreeks kan, is een adapter nodig die het verzoek omzet naar GraphQL en via een FSC Outway aanbiedt.
+Iedere gegevensstroom zal wel afspraken vereisen over de gegevenssets die afgenomen mogen worden en wie onder welke voorwaarden deze gegevens mogen opvragen. De vastlegging en toepassing van die afspraken kan echter wel in de bestaande FTV componenten (PEP/PDP, PAP en PIP) gebeuren.
+
+Om een indruk te geven hoe nieuwe gegevensstromen toegevoegd kunnen worden, zijn in de onderstaande figuur twee extra gegevensstromen toegevoegd.
 
 <figure>
 ``` mermaid
 --8<-- "diagrammen/gbo_swimlanes_qerds_g2g.mmd"
 ```
-<figcaption>Mogelijke toekomstige use cases GBO-model.</figcaption>
+<figcaption>Mogelijke toekomstige use cases GBO-model. NB: dit is zuiver illustratief en valt buiten de scope van GBO!</figcaption>
 </figure>
