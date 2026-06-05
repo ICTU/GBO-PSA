@@ -2,66 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://ictu.github.io/gbo/</loc>
-         <lastmod>2026-06-04</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://ictu.github.io/gbo/psa/</loc>
-         <lastmod>2026-06-04</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://ictu.github.io/gbo/psa/architectuurkaders/</loc>
-         <lastmod>2026-06-04</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://ictu.github.io/gbo/psa/architectuurprincipes/</loc>
-         <lastmod>2026-06-04</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://ictu.github.io/gbo/psa/bijlage_UBO_GBO/</loc>
-         <lastmod>2026-06-04</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://ictu.github.io/gbo/psa/capabilities/</loc>
-         <lastmod>2026-06-04</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://ictu.github.io/gbo/psa/context/</loc>
-         <lastmod>2026-06-04</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://ictu.github.io/gbo/psa/ecosysteem/</loc>
-         <lastmod>2026-06-04</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://ictu.github.io/gbo/psa/generieke-functies/</loc>
-         <lastmod>2026-06-04</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://ictu.github.io/gbo/psa/inleiding/</loc>
-         <lastmod>2026-06-04</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://ictu.github.io/gbo/psa/interactiepatronen/</loc>
-         <lastmod>2026-06-04</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://ictu.github.io/gbo/psa/ontwerpprincipes/</loc>
-         <lastmod>2026-06-04</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://ictu.github.io/gbo/psa/realisatiestrategie/</loc>
-         <lastmod>2026-06-04</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://ictu.github.io/gbo/psa/voorblad/</loc>
-         <lastmod>2026-06-04</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
          <loc>https://ictu.github.io/gbo/psa/vraagstukken/</loc>
-         <lastmod>2026-06-04</lastmod>
+         <lastmod>2026-06-05</lastmod>
     </url>
     <url>
-         <loc>https://ictu.github.io/gbo/ref-arch/gbo-reference-architecture/</loc>
-         <lastmod>2026-06-04</lastmod>
+         <loc>https://ictu.github.io/gbo/sem/</loc>
+         <lastmod>2026-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://ictu.github.io/gbo/tech_reqs/</loc>
+         <lastmod>2026-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://ictu.github.io/gbo/to/</loc>
+         <lastmod>2026-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://ictu.github.io/gbo/to/gbo-reference-architecture/</loc>
+         <lastmod>2026-06-05</lastmod>
     </url>
 </urlset>
