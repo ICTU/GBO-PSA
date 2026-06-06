@@ -1,0 +1,22 @@
+```mermaid
+
+flowchart LR
+
+ID["Identiteit & Vertrouwen"]
+ACCESS["Toegang & Interactie"]
+DATA["Gegevensvoorziening"]
+SEM["Semantiek & Eenheid van taal"]
+QUALITY["Gegevenskwaliteit & Validatie"]
+LEGAL["Gebruik & Juridische grondslag"]
+ORCH["Orkestratie & Integratie"]
+OPS["Beheer & Continuïteit"]
+
+ID --> ACCESS
+ACCESS --> DATA
+DATA --> QUALITY
+DATA --> SEM
+ACCESS --> LEGAL
+ORCH --> DATA
+OPS --> ORCH
+
+```

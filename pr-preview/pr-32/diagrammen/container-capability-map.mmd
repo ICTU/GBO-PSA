@@ -1,0 +1,117 @@
+```mermaid
+
+flowchart LR
+
+%% Actors-asking
+
+Citizen["👤 Burger"]
+PD["🏢 Private Dienstverlener"]
+EU["🌍 Europese organisatie"]
+
+%% Stelselcontainers
+
+subgraph Stelsel DvTP / GBO
+
+TI["**Toegang & Interactie**
+
+Portalen / API toegang
+Flow startpunt"]
+
+ID["**Identiteit & Vertrouwen**
+
+Authenticatie
+Identiteitsvaststelling"]
+
+CONSENT["**Gebruik & Juridische Grondslag**
+
+Consent management
+Toestemmingsregistratie"]
+
+AUTH["**Autorisatie & Beleidsafdwinging**
+
+Controle toestemming
+Policy enforcement"]
+
+SEM["**Semantiek & Eenheid van taal**
+
+Gegevensdefinities
+Datasets"]
+
+DATA["**Gegevensvoorziening**
+
+Stelsel-API's
+Gegevenslevering"]
+
+VAL["**Gegevenskwaliteit & Validatie**
+
+Controle integriteit
+Herkomstvalidatie"]
+
+ORCH["**Orkestratie & Integratie**
+
+Routering
+Bronaanvragen"]
+
+GOV["**Beheer & Continuïteit**
+
+Configuratie
+Catalogus
+Logging/Monitoring
+Verantwoording"]
+
+end
+
+%% Bronnen
+
+subgraph Overheidsbronnen
+
+BRP["BRP"]
+DUO["DUO"]
+BEL["Belastingdienst"]
+UWV["UWV"]
+
+end
+
+%% Actors-receiving
+
+CitizenR["👤 Burger"]
+PDR["🏢 Private Dienstverlener"]
+EUR["🌍 Europese organisatie"]
+
+
+%% Interacties
+
+Citizen --> TI
+PD --> TI
+EU --> TI
+
+TI --> ID
+TI --> CONSENT
+
+CONSENT --> AUTH
+
+PD --> AUTH
+
+AUTH --> ORCH
+
+ORCH --> DATA
+
+DATA --> VAL
+
+ORCH --> BRP
+ORCH --> DUO
+ORCH --> BEL
+ORCH --> UWV
+
+SEM --> DATA
+
+GOV --> CONSENT
+GOV --> AUTH
+GOV --> SEM
+GOV --> ORCH
+
+VAL --> CitizenR
+VAL --> PDR
+VAL --> EUR
+
+```

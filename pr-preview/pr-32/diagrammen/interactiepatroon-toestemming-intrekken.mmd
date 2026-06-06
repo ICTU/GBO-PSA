@@ -1,0 +1,20 @@
+``` mermaid
+
+sequenceDiagram
+actor Burger
+participant TI as Toegang & Interactie
+participant CONSENT as Toestemmingsdienst
+participant REG as Consentregister
+
+Burger ->> TI: Open overzicht toestemmingen
+TI ->> CONSENT: Vraag consentlijst
+CONSENT ->> REG: Lees consentgegevens
+REG ->> CONSENT: Consentlijst
+CONSENT ->> Burger: Toon overzicht
+
+Burger ->> CONSENT: Trek toestemming in
+CONSENT ->> REG: Update status (geannuleerd)
+REG ->> CONSENT: Bevestiging
+CONSENT ->> Burger: Intrekking bevestigd
+
+```

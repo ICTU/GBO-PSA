@@ -1,0 +1,26 @@
+``` mermaid
+
+graph TD
+    START([Gegevensuitwisseling\ninitiatief?])
+
+    START -->|Burger initieert zelf| A
+    START -->|Dienstverlener initieert\nmet toestemming burger| B
+
+    A["Patroon A\nBurger haalt op"]
+    B["Patroon B\nDienstverlener haalt op"]
+
+    A --> A1["EDI-Wallet\nOID4VCI · SD-JWT VC\nISO 18013-5"]
+    A --> A2["Eigen portaal\n(MijnOverheid-variant)"]
+
+    B --> B1["DvTP\nPrivate partijen\nREST · GraphQL · OAuth 2.0"]
+    B --> B2["SDG / OOTS\nEuropese overheden\nAS4 · eDelivery"]
+
+    classDef patroon fill:#EEEDFE,stroke:#534AB7,color:#3C3489
+    classDef kanaal  fill:#F1EFE8,stroke:#5F5E5A,color:#444441
+    classDef start   fill:#FAEEDA,stroke:#854F0B,color:#633806
+
+    class START start
+    class A,B patroon
+    class A1,A2,B1,B2 kanaal
+
+```

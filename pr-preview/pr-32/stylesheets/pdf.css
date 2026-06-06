@@ -1,0 +1,47 @@
+@media print {
+
+.md-sidebar,
+.md-header,
+.md-footer {
+  display: none !important;
+}
+
+.md-content {
+  max-width: 100% !important;
+}
+
+.md-typeset figure {
+  width: 100% !important;
+}
+
+.mermaid svg {
+  max-width: 100% !important;
+}
+.print-page h1 {
+  text-align: center;
+  margin-top: 40vh;
+}
+
+.print-page h2 {
+  text-align: center;
+}
+
+@page {
+  margin: 20mm;
+}
+@page {
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+  @bottom-center {
+    content: "Pagina " counter(page) " van " counter(pages);
+    font-size: 9pt;
+    color: #666;
+  }
+  @top-center {
+    content: "Projectstartarchitectuur GBO";
+    font-size: 9pt;
+    color: #888;
+  }
+}
+
+}

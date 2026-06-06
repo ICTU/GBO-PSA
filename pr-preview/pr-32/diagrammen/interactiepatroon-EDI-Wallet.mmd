@@ -1,0 +1,62 @@
+``` mermaid
+
+sequenceDiagram
+    autonumber
+    actor Burger
+    participant Wallet as EDI-Wallet
+    participant QTSP as QTSP
+    participant PubEAA as PuB-EAA<br/>voorziening
+    participant VerifDienst as Verificatie-<br/>dienst
+    participant Auth as Autorisatie<br/>voorziening
+    participant Bron as Overheids-<br/>bron
+    participant DV as Dienst-<br/>verlener
+
+    Note over Burger,Bron: Stroom A — PuB-EAA: overheidsinstantie geeft attribuut rechtstreeks uit
+
+    rect rgb(225, 245, 238)
+        Burger->>Wallet: Vraag attribuut op (OID4VCI initiate)
+        Wallet->>PubEAA: Credential Request (OID4VCI)
+        Note over PubEAA: PuB-EAA voorziening: aangeboden<br/>door bron zelf óf centraal via GBO
+        PubEAA->>Auth: Autorisatieverzoek
+        Auth->>Wallet: Authenticatie- & autorisatieverzoek
+        Wallet->>Burger: Toont verzoek & vraagt consent
+        Burger->>Wallet: Geeft consent & presenteert PID / eID
+        Wallet->>Auth: Authenticatie / consent (OID4VCP met PID / eID)
+        Auth->>PubEAA: Autorisatie (incl. identificatie burger)
+        PubEAA->>Bron: Bevraag bron (met access token)
+        Bron-->>PubEAA: Attribuutgegevens
+        PubEAA->>PubEAA: Kwalificeer attribuutgegevens
+        PubEAA-->>Wallet: PuB-EAA credential<br/>(SD-JWT VC · ISO 18013-5,<br/>QESeal door overheidsinstantie)
+        Wallet-->>Burger: PuB-EAA opgeslagen in wallet
+    end
+
+    Note over Burger,Bron: Stroom B — QEAA: QTSP kwalificeert attribuut via verificatiedienst
+
+    rect rgb(238, 237, 254)
+        Burger->>Wallet: Vraag attribuut op (OID4VCI initiate)
+        Wallet->>QTSP: Credential Request (OID4VCI)
+        Note over QTSP: QTSP verifieert attribuut<br/>via verificatiedienst
+        QTSP->>VerifDienst: Verificatieverzoek
+        Note over VerifDienst: Verificatiedienst: aangeboden<br/>door bron of centraal via GBO
+        VerifDienst->>Auth: Autorisatieverzoek
+        Auth->>Wallet: Authenticatie- & autorisatieverzoek
+        Wallet->>Burger: Toont verzoek & vraagt consent
+        Burger->>Wallet: Geeft consent & presenteert PID / eID
+        Wallet->>Auth: Authenticatie / consent (OID4VCP met PID / eID)
+        Auth->>VerifDienst: Autorisatie (incl. identificatie burger)
+        VerifDienst->>Bron: Bevraag bron (met access token)
+        Bron-->>VerifDienst: Attribuutgegevens
+        VerifDienst-->>QTSP: Geverifieerd attribuut
+        QTSP-->>Wallet: QEAA credential<br/>(SD-JWT VC · ISO 18013-5,<br/>QES/QESeal door QTSP)
+        Wallet-->>Burger: QEAA opgeslagen in wallet
+    end
+
+    Note over Burger,DV: Gebruik — burger deelt credential met dienstverlener
+
+    rect rgb(250, 238, 218)
+        Burger->>DV: Deel credential (OID4VP)
+        DV->>DV: Controleer credential
+        Note over DV: PuB-EAA of QEAA,<br/>gelijke juridische status (eIDAS 2.0)
+    end
+
+```

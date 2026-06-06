@@ -1,0 +1,92 @@
+``` mermaid
+graph LR
+    %% ── Bronhouders (links) ──────────────────────────────────
+    subgraph BRH["Bronhouders — generieke zijde"]
+        direction TB
+        BRP["BRP"]
+        BD["Belastingdienst"]
+        UWV["UWV"]
+        DUO["DUO"]
+        BAG["BAG / BRK"]
+        OV["Overige bronnen…"]
+    end
+
+    %% ── GBO Kern (midden) ────────────────────────────────────
+    subgraph GBO["GBO — Generieke Zijde"]
+        direction TB
+
+        subgraph TRUST["Juridisch &amp; Identiteit"]
+            direction TB
+            TG["⚖️ Toestemming &amp; Grondslag\nWdo / AMvB / AVG"]
+            BI["🪪 Burgeridentificatie\nBSN · pseudonimisering"]
+            VS["🔐 Vertrouwensstelsel\nPKI(O) · eHerkenning · eIDAS · TIP"]
+        end
+
+        subgraph FUNC["Generieke functies — GBO"]
+            direction LR
+            F1["Identiteit &amp; Vertrouwen\nID · Authc · Authz · PKI · Audit logging"]
+            F2["Toegang &amp; Interactie\nSSO · Federatief inloggen · Consent UI · Machtigen"]
+            F3["Gegevensvoorziening\nConnectiviteit · Lokalisatie · API-beheer · Raadplegen"]
+            F4["Semantiek &amp; Eenheid van Taal\nGGM · RDF · OWL · SKOS · JSON-LD · Vocabularia"]
+            F5["Gegevenskwaliteit &amp; Validatie\nSHACL · Herkomst · W3C PROV-O · Feedbackloops"]
+            F6["Grondslag &amp; Beleid\nConsent · Doelbinding · AVG · Beleidsregels"]
+            F7["Orkestratie &amp; Integratie\nProcesorkestratie · mapping · Event-afhandeling"]
+            F8["Beheer &amp; Continuïteit\nLogging · Monitoring · Versiebeheer · Incidentbeheer"]
+        end
+
+        BRON_API["🔗 Gemeenschappelijke bronontsluiting API\nOAuth 2.0 · REST/GraphQL · Digikoppeling"]
+    end
+
+    %% ── Afnemers (rechts) ────────────────────────────────────
+    subgraph AFN["Afnemers — specifieke zijde"]
+        direction TB
+        PP["🏢 Private partijen\nDvTP — toestemming burger"]
+        EU["🇪🇺 Europese overheden\nSDG / OOTS"]
+        EDI["📱 EDI-Wallet burger\neIDAS2 / ARF"]
+    end
+
+    %% ── Burger (onderaan) ────────────────────────────────────
+    BRG["👤 Burger — rechthebbende\nRegie op Gegevens · toestemming"]
+
+    %% ── Verbindingen ─────────────────────────────────────────
+    BRP -.->|generieke ontsluiting| BRON_API
+    BD  -.->|generieke ontsluiting| BRON_API
+    UWV -.->|generieke ontsluiting| BRON_API
+    DUO -.->|generieke ontsluiting| BRON_API
+    BAG -.->|generieke ontsluiting| BRON_API
+    OV  -.->|generieke ontsluiting| BRON_API
+
+    BRON_API --> FUNC
+
+    FUNC --> TG
+    FUNC --> BI
+    FUNC --> VS
+
+    TG -->|DvTP flow| PP
+    TG -->|SDG/OOTS| EU
+    BI -->|OID4VC| EDI
+
+    TG -->|toestemming| BRG
+
+    %% ── Stijlen ──────────────────────────────────────────────
+    classDef afnemer_private fill:#FAECE7,stroke:#993C1D,color:#712B13
+    classDef afnemer_eu      fill:#E6F1FB,stroke:#185FA5,color:#0C447C
+    classDef afnemer_edi     fill:#E1F5EE,stroke:#0F6E56,color:#085041
+    classDef juridisch       fill:#FAEEDA,stroke:#854F0B,color:#633806
+    classDef identiteit      fill:#EEEDFE,stroke:#534AB7,color:#3C3489
+    classDef generiek        fill:#F1EFE8,stroke:#5F5E5A,color:#444441
+    classDef bronontsluiting fill:#EAF3DE,stroke:#3B6D11,color:#27500A
+    classDef bronhouder      fill:#EAF3DE,stroke:#3B6D11,color:#27500A
+    classDef burger          fill:#EEEDFE,stroke:#534AB7,color:#3C3489
+
+    class PP afnemer_private
+    class EU afnemer_eu
+    class EDI afnemer_edi
+    class TG juridisch
+    class BI,VS identiteit
+    class F1,F2,F3,F4,F5,F6,F7,F8 generiek
+    class BRON_API bronontsluiting
+    class BRP,BD,UWV,DUO,BAG,OV bronhouder
+    class BRG burger
+
+```
