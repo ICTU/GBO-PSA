@@ -1844,7 +1844,7 @@ Iedere gegevensstroom zal wel afspraken vereisen over de gegevenssets die afgeno
   eudi_asi -. "`*retrieve*`" .- eudi_qeaa
   eudi_qeaa -- OpenID4VCI --- eudi_wallet
   gbo -- GraphQL --- eudi_asi &amp; eudi_pubeaa &amp; oots_adapter &amp; dvtp_afnemer &amp; ebw_qerds_adapter &amp; g2g_adapter
-  eudi_asi ~~~ eudi_pubeaa -- OpenID4VCI ---- eudi_wallet
+  eudi_pubeaa -- OpenID4VCI ---- eudi_wallet
   oots_adapter -- REST-JSON --- oots_basis
   oots_basis -- eDelivery-AS4 --- oots_afnemer
   gbo -- REST-JSON&lt;br/&gt;(PIP) --- dvtp_toestemming
