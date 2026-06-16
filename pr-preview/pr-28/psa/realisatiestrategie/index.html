@@ -1826,15 +1826,13 @@ Iedere gegevensstroom zal wel afspraken vereisen over de gegevenssets die afgeno
   end
   subgraph ebw["QERDS/EBW"]
      direction LR
-        ebw_qerds_adapter("QERDS-adapter&lt;br/&gt;(integratie/client)")
+        ebw_qerds_adapter("QERDS-adapter&lt;br/&gt;(client/EBW)")
         ebw_pub_qtsp("Publieke QTSP")
         ebw_qtsp["Private QTSP"]
         ebw_wallet["EBW&lt;br/&gt;(publiek/privaat)"]
   end
   subgraph g2g["Overheid-Overheid"]
      direction LR
-        g2g_adapter("G2G-adapter&lt;br/&gt;(semantische mapping)")
-        g2g_fsc("FSC&lt;br/&gt;(ketenpartner)")
   end
 
   fsc_pap --- fsc
@@ -1843,7 +1841,7 @@ Iedere gegevensstroom zal wel afspraken vereisen over de gegevenssets die afgeno
   eudi_asi -- verify --- eudi_qeaa
   eudi_asi -. "`*retrieve*`" .- eudi_qeaa
   eudi_qeaa -- OpenID4VCI --- eudi_wallet
-  gbo -- GraphQL --- eudi_asi &amp; eudi_pubeaa &amp; oots_adapter &amp; dvtp_afnemer &amp; ebw_qerds_adapter &amp; g2g_adapter
+  gbo -- GraphQL --- eudi_asi &amp; eudi_pubeaa &amp; oots_adapter &amp; dvtp_afnemer &amp; ebw_qerds_adapter
   eudi_pubeaa -- OpenID4VCI ---- eudi_wallet
   oots_adapter -- REST-JSON --- oots_basis
   oots_basis -- eDelivery-AS4 --- oots_afnemer
@@ -1851,16 +1849,14 @@ Iedere gegevensstroom zal wel afspraken vereisen over de gegevenssets die afgeno
   dvtp_toestemming -- REST-JSON --- dvtp_afnemer
   dvtp_toestemming -- REST-JSON --- dvtp_pseudoniem
   dvtp_pseudoniem ~~~ dvtp_afnemer
-  ebw_qerds_adapter -- QERDS API / eDelivery-AS4 --- ebw_pub_qtsp -- QERDS delivery flow --- ebw_wallet
-  ebw_qerds_adapter -- QERDS API / eDelivery-AS4 --- ebw_qtsp -- QERDS delivery flow --- ebw_wallet
+  ebw_qerds_adapter --- ebw_pub_qtsp --- ebw_wallet
+  ebw_qerds_adapter --- ebw_qtsp --- ebw_wallet
   eudi_wallet --- burger["Burger"]
   oots_afnemer --- burger
   dvtp_afnemer --- burger
   ebw_wallet --- organisatie["Organisatie&lt;br/&gt;(publiek/privaat)"]
-  g2g_adapter -- GraphQL / REST-JSON --- g2g_fsc
-  g2g_adapter ~~~ ebw_qtsp
-  ebw_qtsp ~~~ g2g_fsc
-  g2g_fsc --- overheid["Ketenpartner&lt;br/&gt;(overheid)"]
+  ebw_wallet ~~~ overheid["Ketenpartner&lt;br/&gt;(overheid)"]
+  gbo  --- overheid["Ketenpartner&lt;br/&gt;(overheid)"]
 
   fsc_pap:::gbo
   fsc:::gbo
