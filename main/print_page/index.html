@@ -610,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../psa/oplossing.md" class="md-nav__link">
+      <a href="../psa/oplossingsrichting/" class="md-nav__link">
         
   
   
@@ -1012,7 +1012,182 @@ programma <strong>GBO</strong> (<strong>G</strong>emeenschappelijke <strong>B</s
 <li>Single Digital Gateway (SDG)</li>
 <li>Once Only Technical System (OOTS)</li>
 <li>Federatief Datastelsel</li>
-</ul></section><section class="print-page" id="psa-architectuurprincipes"><h1 id="psa-architectuurprincipes-architectuurprincipes-gbo-gegevensuitwisseling">Architectuurprincipes GBO — Gegevensuitwisseling<a class="headerlink" href="#psa-architectuurprincipes-architectuurprincipes-gbo-gegevensuitwisseling" title="Permanent link">&para;</a></h1>
+</ul></section><section class="print-page" id="psa-oplossingsrichting"><h1 id="psa-oplossingsrichting-voorgestelde-oplossingsrichting">Voorgestelde oplossingsrichting<a class="headerlink" href="#psa-oplossingsrichting-voorgestelde-oplossingsrichting" title="Permanent link">&para;</a></h1>
+<p>Dit hoofdstuk beschrijft de voorgestelde oplossingsrichting voor GBO. Het onderstaande diagram vormt hiervoor de basis.</p>
+<figure>
+<div class="mermaid">flowchart LR
+  subgraph gbo["GBO Basis"]
+    direction TB
+        fsc_pap("PAP&lt;br/&gt;(beleidsregels)")
+        fsc("FSC / GraphQL / PBAC&lt;br/&gt;(generieke bronontsluiting)")
+        fsc_tools("GBO tools&lt;br/&gt;(vertaallaag)")
+  end
+  subgraph eudi["EUDI-Wallet"]
+    direction LR
+        eudi_asi("ASI-provider&lt;br/&gt;(verify dienst)")
+        eudi_pubeaa("PubEAA-provider&lt;br/&gt;(PubEAA)")
+        eudi_qeaa["QTSP&lt;br/&gt;(QEAA)"]
+        eudi_wallet["EUDI-Wallet"]
+  end
+  subgraph oots["SDG / OOTS"]
+    direction LR
+        oots_adapter("OOTS adapter&lt;br/&gt;(semantische mapping)")
+        oots_basis["Basisinrichting OOTS&lt;br/&gt;(incl. OOTS-V backend)"]
+        oots_afnemer["Europese overheid&lt;br/&gt;SDG-portaal"]
+  end
+  subgraph dvtp["DvTP"]
+    direction LR
+        dvtp_toestemming("Toestemmingsvoorziening")
+        dvtp_pseudoniem["Pseudonimiseervoorziening&lt;br/&gt;(BSNk PP)"]
+        dvtp_afnemer["Private dienstverlener"]
+  end
+
+  fsc_pap --- fsc
+  fsc --- fsc_tools
+  bron[("Overheidsbronnen&lt;br/&gt;BRP · BD · UWV · KvK · …")] -- Bron API&lt;br/&gt;(GraphQL / REST-JSON / ...) --- gbo
+  eudi_asi -- REST-JSON&lt;br/&gt;(HTTP / OAuth) --- eudi_qeaa
+  eudi_qeaa -- OpenID4VCI --- eudi_wallet
+  gbo -- GraphQL --- eudi_asi &amp; eudi_pubeaa &amp; oots_adapter &amp; dvtp_afnemer
+  eudi_pubeaa -- OpenID4VCI ---- eudi_wallet
+  oots_adapter -- REST-JSON --- oots_basis
+  oots_basis -- eDelivery-AS4 --- oots_afnemer
+  gbo -- REST-JSON&lt;br/&gt;(PIP) --- dvtp_toestemming
+  dvtp_toestemming -- REST-JSON --- dvtp_afnemer
+  dvtp_toestemming -- REST-JSON --- dvtp_pseudoniem
+  dvtp_pseudoniem ~~~ dvtp_afnemer
+  eudi_wallet --- burger["Burger"]
+  oots_afnemer --- burger
+  dvtp_afnemer --- burger
+
+  fsc_pap:::gbo
+  fsc:::gbo
+  fsc_tools:::gbo
+  eudi_asi:::gbo
+  eudi_pubeaa:::gbo
+  eudi_qeaa:::eudi
+  eudi_wallet:::eudi
+  oots_adapter:::gbo
+  oots_basis:::oots
+  oots_afnemer:::oots
+  dvtp_toestemming:::gbo
+  dvtp_pseudoniem:::dvtp
+  dvtp_afnemer:::dvtp
+  bron:::bron
+  burger:::burger
+
+  classDef bron fill:#edf7df,stroke:#6aa13a,color:#27500a
+  classDef generiek fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef eudi fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef oots fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef dvtp fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef gbo fill:#fff0e8,stroke:#000000,color:#000000
+  classDef burger fill:#edf7df,stroke:#6aa13a,color:#27500a</div>
+<figcaption>Figuur : Oplossingsrichting GBO.</figcaption>
+</figure>
+
+<h2 id="psa-oplossingsrichting-gemeenschappelijke-bronontsluiting">Gemeenschappelijke bronontsluiting<a class="headerlink" href="#psa-oplossingsrichting-gemeenschappelijke-bronontsluiting" title="Permanent link">&para;</a></h2>
+<p>Bronhouders stellen hun gegevens bloot via een generieke, herbruikbare GraphQL API. Deze API kan veel gegevens beschikbaarstellen, waarvan telkens een kleine selectie bevraagd wordt. Dit maakt het inrichten en onderhouden van een groot aantal kleinere REST-API's overbodig. Als er een nieuwe gegevensvraag ontstaat, kan dat via configuratie ingericht worden, in plaats van dat er een nieuwe API ingericht hoeft te worden.<br />
+Om te garanderen dat een afnemer alleen die gegevens krijgt waar recht op is, wordt autorisatie in de vorm van Policy Based Access Control (PBAC) ingericht. Iedere gegevensvraag wordt via een Policy Enforcement Point (PEP) aangeboden aan een Policy Decision Point (PDP) die controleert of de vraag voldoet aan de regels. Die regels liggen vast in een centrale Policy Administration Point (PAP), zodat voor alle partijen transparant is welke regels toegepast worden. Indien nodig bevraagt de PDP een Policy Information Point (PIP), waar realtime informatie opgevraagd kan worden die nodig is om de autorisatie te beoordelen. Denk hierbij bijvoorbeeld aan een toestemming die uit een toestemmingsregister gehaald kan worden, of het opzoeken van de vragende partij in een "trusted list" om te zien of de partij het vertrouwen heeft dat nodig is voor de gegevensvraag.<br />
+De verbinding tussen vragende partij en bron wordt via de FSC-standaard tot stand gebracht. Hiermee kan de beveiliging van de gegevensuitwisseling gegarandeerd worden en wordt noodzakelijke logging vastgelegd.</p>
+<p>Deze bouwstenen moeten door de bronhouder ingericht en onderhouden worden. Er bestaat al een referentie-implementatie voor de FSC-componenten en er wordt gewerkt aan een PBAC implementatie onder de naam Federatieve Toegangsverlening (FTV). Om de inrichting van de GraphQL API te standaardiseren zou er een GraphQL profiel in de Digikoppeling standaard opgenomen moeten worden.</p>
+<h2 id="psa-oplossingsrichting-aansluiten-op-bestaande-voorzieningen">Aansluiten op bestaande voorzieningen<a class="headerlink" href="#psa-oplossingsrichting-aansluiten-op-bestaande-voorzieningen" title="Permanent link">&para;</a></h2>
+<p>De vragende partijen kennen hun eigen standaarden en protocollen. Als deze afwijken van de FSC-standaard met GraphQL API's, dan worden er componenten ontwikkeld om de aansluiting te maken. Voor bronhouders is dit geen zorg; als zij hun gegevens beschikbaarstellen via de gemeenschappelijke bronontsluiting kunnen zij aansluiten. Ook voor de vragende partijen wordt de koppeling eenvoudig: zij kunnen hun standaarden en protocollen blijven gebruiken en krijgen toegang tot alle bronnen die voldoen aan de GBO oplossing.  </p>
+<p>In de figuur bovenaan dit hoofdstuk zijn enkele centrale voorziening ingetekend. Welke voorzieningen wanneer ingericht en beschikbaar gesteld worden, is afhankelijk van de vraag.</p>
+<h2 id="psa-oplossingsrichting-uitbreidbaar">Uitbreidbaar<a class="headerlink" href="#psa-oplossingsrichting-uitbreidbaar" title="Permanent link">&para;</a></h2>
+<p>Het doel van GBO is het ontzorgen van bronhouders bij het bedienen van verschillende gegevensstromen. Het project GBO richt zich daarbij op de gegevensstromen die door burgers geïnitieerd worden: EDI, OOTS en DvTP. Maar de oplossingsrichting leent zich ook prima voor andere gegevensstromen: door het inrichten van een generieke bronontsluiting (GraphQL) met configureerbare toegangscontrole (FSC met FTV) kan deze voor veel verschillende gegevensstromen gebruikt worden. Die gegevensstromen moeten hun gegevensverzoeken dan via FSC aanbieden in de vorm van een GraphQL-request waarin de gewenste gegevens uitgevraagd worden. Als dat niet rechstreeks kan, is een adapter nodig die het verzoek omzet naar GraphQL en via een FSC Outway aanbiedt.
+Iedere gegevensstroom zal wel afspraken vereisen over de gegevenssets die afgenomen mogen worden en wie onder welke voorwaarden deze gegevens mogen opvragen. De vastlegging en toepassing van die afspraken kan echter wel in de bestaande FTV componenten (PEP/PDP, PAP en PIP) gebeuren.</p>
+<p>Om een indruk te geven hoe nieuwe gegevensstromen toegevoegd kunnen worden, zijn in de onderstaande figuur twee extra gegevensstromen toegevoegd.</p>
+<figure>
+<div class="mermaid">flowchart LR
+  subgraph gbo["GBO Basis"]
+    direction TB
+        fsc_pap("PAP&lt;br/&gt;(beleidsregels)")
+        fsc("FSC / GraphQL / PBAC&lt;br/&gt;(generieke bronontsluiting)")
+        fsc_tools("GBO tools&lt;br/&gt;(vertaallaag)")
+  end
+  subgraph eudi["EUDI-Wallet"]
+    direction LR
+        eudi_asi("ASI-provider")
+        eudi_pubeaa("PubEAA-provider&lt;br/&gt;(PubEAA)")
+        eudi_qeaa["QTSP&lt;br/&gt;(QEAA)"]
+        eudi_wallet["EUDI-Wallet"]
+  end
+  subgraph oots["SDG / OOTS"]
+    direction LR
+        oots_adapter("OOTS adapter&lt;br/&gt;(semantische mapping)")
+        oots_basis["Basisinrichting OOTS&lt;br/&gt;(incl. OOTS-V backend)"]
+        oots_afnemer["Europese overheid&lt;br/&gt;SDG-portaal"]
+  end
+  subgraph dvtp["DvTP"]
+    direction LR
+        dvtp_toestemming("Toestemmingsvoorziening")
+        dvtp_pseudoniem["Pseudonimiseervoorziening&lt;br/&gt;(BSNk PP)"]
+        dvtp_afnemer["Private dienstverlener"]
+  end
+  subgraph ebw["QERDS/EBW"]
+     direction LR
+        ebw_qerds_adapter("QERDS-adapter&lt;br/&gt;(client/EBW)")
+        ebw_pub_qtsp("Publieke QTSP")
+        ebw_qtsp["Private QTSP"]
+        ebw_wallet["EBW&lt;br/&gt;(publiek/privaat)"]
+  end
+
+  fsc_pap --- fsc
+  fsc --- fsc_tools
+  bron[("Overheidsbronnen&lt;br/&gt;BRP · BD · UWV · KvK · …")] -- Bron API&lt;br/&gt;(GraphQL / REST-JSON / ...) --- gbo
+  eudi_asi -- verify --- eudi_qeaa
+  eudi_asi -. "`*retrieve*`" .- eudi_qeaa
+  eudi_qeaa -- OpenID4VCI --- eudi_wallet
+  gbo -- GraphQL --- eudi_asi &amp; eudi_pubeaa &amp; oots_adapter &amp; dvtp_afnemer &amp; ebw_qerds_adapter
+  eudi_pubeaa -- OpenID4VCI ---- eudi_wallet
+  oots_adapter -- REST-JSON --- oots_basis
+  oots_basis -- eDelivery-AS4 --- oots_afnemer
+  gbo -- REST-JSON&lt;br/&gt;(PIP) --- dvtp_toestemming
+  dvtp_toestemming -- REST-JSON --- dvtp_afnemer
+  dvtp_toestemming -- REST-JSON --- dvtp_pseudoniem
+  dvtp_pseudoniem ~~~ dvtp_afnemer
+  ebw_qerds_adapter --- ebw_pub_qtsp --- ebw_wallet
+  ebw_qerds_adapter --- ebw_qtsp --- ebw_wallet
+  eudi_wallet --- burger["Burger"]
+  oots_afnemer --- burger
+  dvtp_afnemer --- burger
+  ebw_wallet --- organisatie["Organisatie&lt;br/&gt;(publiek/privaat)"]
+  ebw_wallet ~~~ overheid["Ketenpartner&lt;br/&gt;(overheid)"]
+  gbo  -- GraphQL --- overheid["Ketenpartner&lt;br/&gt;(overheid)"]
+
+  fsc_pap:::gbo
+  fsc:::gbo
+  fsc_tools:::gbo
+  ebw_qerds_adapter:::gbo
+  ebw_pub_qtsp:::gbo
+  ebw_qtsp:::eudi
+  ebw_wallet:::eudi
+  eudi_asi:::gbo
+  eudi_pubeaa:::gbo
+  eudi_qeaa:::eudi
+  eudi_wallet:::eudi
+  oots_adapter:::gbo
+  oots_basis:::oots
+  oots_afnemer:::oots
+  dvtp_toestemming:::gbo
+  dvtp_pseudoniem:::dvtp
+  dvtp_afnemer:::dvtp
+  bron:::bron
+  burger:::afnemer
+  organisatie:::afnemer
+  overheid:::afnemer
+
+  classDef bron fill:#edf7df,stroke:#6aa13a,color:#27500a
+  classDef generiek fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef eudi fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef oots fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef dvtp fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef overheid fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef gbo fill:#fff0e8,stroke:#000000,color:#000000
+  classDef gbo_opt fill:#FFF9F5,stroke:#9C9C9C,color:#9C9C9C
+  classDef afnemer fill:#edf7df,stroke:#6aa13a,color:#27500a</div>
+<figcaption>Mogelijke toekomstige use cases GBO-model. NB: dit is zuiver illustratief en valt buiten de scope van GBO!</figcaption>
+</figure></section><section class="print-page" id="psa-architectuurprincipes"><h1 id="psa-architectuurprincipes-architectuurprincipes-gbo-gegevensuitwisseling">Architectuurprincipes GBO — Gegevensuitwisseling<a class="headerlink" href="#psa-architectuurprincipes-architectuurprincipes-gbo-gegevensuitwisseling" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p>Overzicht van de meest relevante architectuurprincipes voor de GBO,
 gegroepeerd per juridisch/beleids­kader. Bedoeld als input voor de PSA.</p>
@@ -1244,7 +1419,7 @@ gegroepeerd per juridisch/beleids­kader. Bedoeld als input voor de PSA.</p>
 </table></section><section class="print-page" id="psa-ontwerpprincipes"><h1 id="psa-ontwerpprincipes-ontwerpprincipes-gbo">Ontwerpprincipes GBO<a class="headerlink" href="#psa-ontwerpprincipes-ontwerpprincipes-gbo" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p>Selectie van de meest relevante <strong>ontwerpprincipes</strong> voor de inrichting van de GBO.
-Waar de <a href="#psa-ontwerpprincipes-architectuurprincipes_gbo.md">architectuurprincipes</a> de <em>wat</em> en <em>waarom</em> beschrijven,
+Waar de <a href="#psa-architectuurprincipes">architectuurprincipes</a> de <em>wat</em> en <em>waarom</em> beschrijven,
 geven deze ontwerpprincipes richting aan de <em>hoe</em> — de concrete keuzes bij het bouwen van het stelsel.</p>
 </blockquote>
 <hr />
@@ -3455,7 +3630,7 @@ Een voorstel hiervoor:<br />
 <ul>
 <li>
 <p>Er komt geen nieuw stelsel en er komen geen "GBO"-voorzieningen, maar bestaande afspraken, standaarden en voorzieningen worden hergebruikt. Waar afspraken of standaarden aangevuld of aangepast moeten worden of voorzieningen ontworpen of ingericht moeten worden, wordt dit ingebracht bij de bestaande gremia. Voor het uitvoeren van pilots kan het nodig zijn om bepaalde functies tijdens de projectfase onder projectverantwoordelijkheid uit te voeren, maar voor in productiename zullen ook deze functies ondergebracht worden bij een bestaand afsprakenstelsel of een bestaande beheerorganisatie.
-Zie ook de paragraaf <a href="#psa-realisatiestrategie-gebruik-van-bestaande-afsprakenstelsels">Gebruik van bestaande afsprakenstelsels</a> voor een verdere uitwerking hiervan.</p>
+Zie ook de paragraaf <a href="#psa-realisatiestrategie-gebruik-van-bestaande-stelsels">Gebruik van bestaande stelsels</a> voor een verdere uitwerking hiervan.</p>
 </li>
 <li>
 <p>Er wordt gedurende de projectfase al wel pilots gestart waar gewerkt met de gewenste afspraken, standaarden en voorzieningen. Als deze nog niet bestaan, worden voorbeeld implementaties gebruikt die tevens gebruikt worden om het ontwerp te verbeteren. Uiteindelijk worden deze ontwikkelingen als referentie implementaties aangeboden aan de gremia waar het beheer belegd wordt. Dit gaat tot het niveau van "pre-productie": d.w.z. dat de afspraak of voorziening volledig genoeg is uitgewerkt om in productie genomen te kunnen worden. Maar de daadwerkelijke productiegang wordt aan de beoogde beheerder overgelaten. In sommige gevallen kan hier wet- en regelgeving voor nodig zijn, die in werking moet zijn getreden voor in productie gegaan kan worden.</p>
