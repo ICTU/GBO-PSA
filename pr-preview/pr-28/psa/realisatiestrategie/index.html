@@ -1831,9 +1831,6 @@ Iedere gegevensstroom zal wel afspraken vereisen over de gegevenssets die afgeno
         ebw_qtsp["Private QTSP"]
         ebw_wallet["EBW&lt;br/&gt;(publiek/privaat)"]
   end
-  subgraph g2g["Overheid-Overheid"]
-     direction LR
-  end
 
   fsc_pap --- fsc
   fsc --- fsc_tools
@@ -1861,8 +1858,6 @@ Iedere gegevensstroom zal wel afspraken vereisen over de gegevenssets die afgeno
   fsc_pap:::gbo
   fsc:::gbo
   fsc_tools:::gbo
-  g2g_adapter:::gbo_opt
-  g2g_fsc:::overheid
   ebw_qerds_adapter:::gbo
   ebw_pub_qtsp:::gbo
   ebw_qtsp:::eudi
