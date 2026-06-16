@@ -1,0 +1,101 @@
+/* overschrijf de width: fit-content voor het figure element */
+.md-typeset figure {
+  width: 100% !important;
+}
+.md-typeset .mermaid {
+  text-align: center;
+}
+
+/* ── Mermaid interactive viewer ── */
+
+.mermaid-wrapper {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 6px;
+  margin: 1em 0;
+  min-height: 120px;
+}
+
+.mermaid-wrapper .mermaid {
+  transform-origin: 0 0;
+  padding: 1em;
+}
+
+.mermaid-toolbar {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 10;
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.mermaid-wrapper:hover .mermaid-toolbar {
+  opacity: 1;
+}
+
+.mermaid-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+}
+
+.mermaid-btn:hover {
+  background: var(--md-default-bg-color--lighter);
+}
+
+/* ── Fullscreen overlay ── */
+
+.mermaid-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--md-default-bg-color);
+  display: flex;
+  flex-direction: column;
+  outline: none;
+}
+
+.mermaid-fullscreen-toolbar {
+  display: flex;
+  gap: 4px;
+  padding: 12px 16px;
+  background: var(--md-default-bg-color--light);
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  justify-content: flex-end;
+}
+
+.mermaid-fullscreen-content {
+  flex: 1;
+  overflow: hidden;
+  transform-origin: 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+}
+
+.mermaid-btn-close {
+  background: transparent;
+  border-color: transparent;
+  font-size: 20px;
+  margin-left: 12px;
+}
+
+.mermaid-btn-close:hover {
+  color: #e05050;
+  background: transparent;
+}

@@ -1,0 +1,71 @@
+flowchart LR
+
+%% Actors
+
+Citizen["👤 Burger"]
+PD["🏢 Private Dienstverlener"]
+Integrator["🔗 Integrator"]
+EUOrg["🌍 Europese organisatie"]
+
+%% Stelsel
+
+subgraph Stelselvoorzieningen
+
+ID["Identiteit & Vertrouwen"]
+
+TI["Toegang & Interactie"]
+
+AUTH["Autorisatie & Beleidsafdwinging"]
+
+CONSENT["Gebruik & Juridische Grondslag
+(Toestemming)"]
+
+SEM["Semantiek & Eenheid van taal"]
+
+DATA["Gegevensvoorziening"]
+
+VAL["Gegevenskwaliteit & Validatie"]
+
+ORCH["Orkestratie & Integratie"]
+
+GOV["Beheer & Continuïteit"]
+
+end
+
+%% Bronhouders
+
+subgraph Brondomein
+
+BRON1["Bronhouder A"]
+BRON2["Bronhouder B"]
+BRON3["Bronhouder C"]
+
+end
+
+%% Interacties
+
+Citizen --> TI
+PD --> TI
+EUOrg --> TI
+
+TI --> ID
+
+TI --> CONSENT
+CONSENT --> AUTH
+
+PD --> AUTH
+
+AUTH --> ORCH
+
+ORCH --> DATA
+DATA --> VAL
+
+ORCH --> BRON1
+ORCH --> BRON2
+ORCH --> BRON3
+
+SEM --> DATA
+
+GOV --> CONSENT
+GOV --> AUTH
+GOV --> ORCH
