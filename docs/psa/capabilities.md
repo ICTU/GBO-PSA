@@ -284,7 +284,7 @@ Naast technische gaps kent dit document ook **juridische randvoorwaarden** (gema
 | Voorziening | Type | Beheer | Instantiëring | Bestaande invulling |
 |---|---|---|---|---|
 | Domibus Access Point | Centrale voorziening | Centraal (één NL-instelling voor GBO-bronhouders) | Gedeelde instantie | **Beschikbaar** als open source (EC); ⚠️ operationele inrichting voor GBO nog te doen |
-| OOTS-EDM Adapter (XML ↔ FSC/GraphQL vertaling) | Centrale voorziening | Centraal | Gedeelde instantie | ⚠️ Nog te realiseren |
+| OOTS Adapter (eDelivery/AS4 ↔ FSC/GraphQL vertaling) | Centrale voorziening | Centraal | Gedeelde instantie | **OOTS-V bestaat al als onderdeel van OOTS Basisinrichting** ⚠️ Nog doorontwikkelen naar GBO specs |
 | SMP 2.1 Publisher | Centrale voorziening | Centraal | Gedeelde instantie | ⚠️ Nog te realiseren; configuratie gebaseerd op query-catalogus (zie S07) |
 
 ---
