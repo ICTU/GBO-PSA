@@ -86,7 +86,6 @@ nav:
       - Oplossingsrichting: psa/oplossingsrichting.md
       - Architectuurprincipes: psa/architectuurprincipes.md
       - Ontwerpprincipes: psa/ontwerpprincipes.md
-      - Ecosysteem en oplossingsrichting: psa/ecosysteem.md
       - Interactiepatronen: psa/interactiepatronen.md
       - Logische architectuur: psa/generieke-functies.md
       - Stelselfuncties: psa/capabilities.md

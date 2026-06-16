@@ -3,7 +3,7 @@
 ## Project Start Architectuur  
 
 
-![ICTU](./media/ictu-logo.png)
+![ICTU](../media/ictu-logo.png)
 
 ---
 
