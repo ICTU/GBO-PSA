@@ -1,8 +1,8 @@
-# PSA en TO GBO
+# PSA GBO
 
-Deze repository bevat de **Project Start Architectuur (PSA)** en het **Technisch Ontwerp (TO)** voor het project **Gemeenschappelijke Bronontsluiting (GBO)**.
+Deze repository bevat de **Project Start Architectuur (PSA)** voor het project **Gemeenschappelijke Bronontsluiting (GBO)**.
 
-GBO heeft als doel een **generieke infrastructuur en afsprakenstelsel** te realiseren waarmee gegevens van overheidsorganisaties beschikbaar kunnen worden gemaakt voor:
+Het project GBO heeft als doel een **generieke infrastructuur en afsprakenstelsel** te realiseren waarmee gegevens van overheidsorganisaties beschikbaar kunnen worden gemaakt voor:
 
 * burgers
 * private partijen
@@ -20,14 +20,12 @@ De PSA beschrijft:
 * de realisatiestrategie
 
 De PSA beschrijft **wat het stelsel moet kunnen**, maar legt nog **geen technische implementatie** vast.  
-De technische implementatie wordt beschreven in het **technisch ontwerp** middels een **referentie architectuur**.
-
 ---
 
 # Repository structuur
 
 ```
-GBO
+GBO-PSA
 │
 ├─ README.md
 │
@@ -35,18 +33,9 @@ GBO
 │   └─ hoofdstukken PSA in markdown formaat
 │
 ├─ diagrams
-│   └─ diagrammen in Mermaid formaat
-│
-└─ ref-arch
-    └─ hoofdstukken TO in markdown formaat
+   └─ diagrammen in Mermaid formaat
 ```
 
-Bent u op zoek naar het Globaal Ontwerp van het project GBO?  
-Deze is in een aparte repository opgenomen: https://github.com/ICTU/GBO-GO
-
-Bent u op zoek naar de uitwerking van de GBO semantiek?
-Deze is in een aparte repository opgenomen: [tbd link opnemen!]
----
 
 # Status
 
