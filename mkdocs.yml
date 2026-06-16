@@ -83,7 +83,7 @@ nav:
   - Globaal Ontwerp: https://ictu.github.io/GBO-GO/latest/
   - Projectstartarchitectuur:
       - Inleiding: psa/inleiding.md
-      - Oplossingsrichting: psa/oplossing.md
+      - Oplossingsrichting: psa/oplossingsrichting.md
       - Architectuurprincipes: psa/architectuurprincipes.md
       - Ontwerpprincipes: psa/ontwerpprincipes.md
       - Ecosysteem en oplossingsrichting: psa/ecosysteem.md

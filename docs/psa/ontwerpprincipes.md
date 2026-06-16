@@ -1,7 +1,7 @@
 # Ontwerpprincipes GBO
 
 > Selectie van de meest relevante **ontwerpprincipes** voor de inrichting van de GBO.
-> Waar de [architectuurprincipes](./architectuurprincipes_GBO.md) de *wat* en *waarom* beschrijven,
+> Waar de [architectuurprincipes](./architectuurprincipes.md) de *wat* en *waarom* beschrijven,
 > geven deze ontwerpprincipes richting aan de *hoe* — de concrete keuzes bij het bouwen van het stelsel.
 
 ---
