@@ -76,8 +76,8 @@ plugins:
         - index.md
 
 nav:
-  - Over deze repository: index.md
-
+  - GBO: https://ictu.github.io/GBO/latest/
+  - GO: https://ictu.github.io/GBO-GO/latest/
   - PSA:
       - Inleiding: psa/inleiding.md
       - Context: psa/context.md
@@ -89,13 +89,5 @@ nav:
       - Stelselfuncties: psa/capabilities.md
       - Realisatiestrategie: psa/realisatiestrategie.md
       - Open Vraagstukken en ontwerpkeuzes: psa/vraagstukken.md
-
-  - Technisch ontwerp:
-      - Nog niet Beschikbaar: to/index.md
-#      - Reference architecture: ref-arch/gbo-reference-architecture.md
-
-  - Technische requirements:
-      - Nog niet beschikbaar: tech_reqs/index.md
-
-  - Semantiek:
-      - Nog niet beschikbaar: sem/index.md
+  - TO: https://ictu.github.io/GBO-TO/latest/
+  - SEM: https://ictu.github.io/GBO-SEM/latest/
