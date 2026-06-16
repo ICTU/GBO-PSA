@@ -44,7 +44,7 @@ Maakt het mogelijk dat burgers overheidsgegeven als digitale attestatie (PuB-EAA
 
 | # | Onderdeel | Stelselfunctie | Afspraken (nog te maken) | Standaarden (te kiezen) | Voorzieningen (hergebruiken of ontwikkelen) |
 |---|---|---|---|---|---|
-| 1 | **Pub-EAA provider** (centrale uitgifte-dienst) | [S11](capabilities.md#s11-attesteringsuitgifte-pub-eaa-qeaa) | - Attestation Rulebook per attribuuttype<br/>- wallet binding-profiel<br/>- intrekkingsbeleid<br/>- ⚖️ opname op NL Trusted List (RDI)<br/>- ⚖️ CAR-certificering vereist (Uitv.vo. 2025/1569) | - OpenID4VCI ✅<br/>- SD-JWT VC ✅<br/>- mdoc (ISO 18013-5) ✅<br/>- QESeal (ETSI EN 319 412) ✅<br/>- Token Status List ⚠️ | - Centrale Pub-EAA uitgifte-dienst ⚠️<br/>- Opname LoTE ⚠️<br/>- NL Wallet ✅ (pilot) |
+| 1 | **Pub-EAA provider** (centrale uitgifte-dienst) | [S11](capabilities.md#s11-attesteringsuitgifte-pub-eaa-qeaa) | - Attestation Rulebook per attribuuttype<br/>- wallet binding-profiel<br/>- intrekkingsbeleid<br/>- ⚖️ opname op NL Trusted List (RDI)<br/>- ⚖️ conformiteitsbeoordeling vereist (Verordening 910/2014) | - OpenID4VCI ✅<br/>- SD-JWT VC ✅<br/>- mdoc (ISO 18013-5) ✅<br/>- QESeal (ETSI EN 319 412) ✅<br/>- Token Status List ⚠️ | - Centrale Pub-EAA uitgifte-dienst ⚠️<br/>- Opname LoTE ⚠️<br/>- NL Wallet ✅ (pilot) |
 | 2 | **Authentic Source Interface** (verificatiedienst) | [S11](capabilities.md#s11-attesteringsuitgifte-pub-eaa-qeaa) | - Welke partijen de verificatieservice mogen bevragen en onder welke voorwaarden? | - OpenID4VP ✅ | - Centrale verificatiedienst ⚠️ |
 | 3 | **Mapping GraphQL → EDI-attestaties** | [S10](capabilities.md#s10-semantiek-gegevenscatalogus) | - Mapping naar PuB-EAA attestatieschema's verplicht per bronhouder | - SD-JWT VC / mdoc | - Serialisatie-service ⚠️ (onderdeel [S10](capabilities.md#s10-semantiek-gegevenscatalogus)) |
 
@@ -57,7 +57,7 @@ Maakt het mogelijk dat Europese overheden via OOTS (Once Only Technical System) 
 
 | # | Onderdeel | Stelselfunctie | Afspraken (nog te maken) | Standaarden (te kiezen) | Voorzieningen (hergebruiken of ontwikkelen) |
 |---|---|---|---|---|---|
-| 1 | **SDG-OOTS-adapter** (XML ↔ GraphQL) | [S08](capabilities.md#s08-oots-adapter-grensoverschrijdend), [S10](capabilities.md#s10-semantiek-gegevenscatalogus) | Architectuurafspraak:<br/>- Basisinrichting OOTS is enige AS4-toegangspoort<br/>- SMP-registratie centraal beheerd<br/>- OOTS-verzoeken door zelfde PEP/PDP-keten | - eDelivery AS4 ✅<br/>- OOTS-EDM ✅<br/>- SMP 2.1 ✅ | - Domibus Access Point ✅ (⚠️ inrichting)<br/>- OOTS-EDM Adapter ⚠️<br/>- SMP Publisher ⚠️ |
+| 1 | **SDG-OOTS-adapter** (XML ↔ GraphQL) | [S08](capabilities.md#s08-oots-adapter-grensoverschrijdend), [S10](capabilities.md#s10-semantiek-gegevenscatalogus) | Architectuurafspraak:<br/>- Basisinrichting OOTS is enige AS4-toegangspoort<br/>- SMP-registratie centraal beheerd<br/>- OOTS-verzoeken door zelfde PEP/PDP-keten | - eDelivery AS4 ✅<br/>- OOTS-EDM ✅<br/>- SMP 2.1 ✅ | - Domibus Access Point ✅ (⚠️ inrichting)<br/>- OOTS Adapter ⚠️<br/>- SMP Publisher ⚠️ |
 | 2 | **Mapping GraphQL → OOTS-schema's** | [S10](capabilities.md#s10-semantiek-gegevenscatalogus) | - Mapping naar OOTS Semantic Repository evidence types verplicht<br/>- per bronhouder bepalen welke data ontsloten wordt | OOTS-EDM ✅ | Via GBO Schema Registry ([S10](capabilities.md#s10-semantiek-gegevenscatalogus)) |
 
 ---
