@@ -1,4 +1,7 @@
-site_name: Documentatie GBO
+site_name: Projectstartarchitectuur GBO
+site_url: https://ictu.github.io/GBO-PSA/
+repo_url: https://github.com/ICTU/GBO-PSA
+repo_name: ictu/gbo
 
 theme:
   name: material
@@ -49,10 +52,6 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 2
-
-site_url: https://ictu.github.io/gbo/
-repo_url: https://github.com/ictu/gbo
-repo_name: ictu/gbo
 
 extra_css:
   - stylesheets/extra.css
