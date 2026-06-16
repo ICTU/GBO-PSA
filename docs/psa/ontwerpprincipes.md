@@ -1,6 +1,6 @@
-# Ontwerpprincipes GBO — Gegevensuitwisseling
+# Ontwerpprincipes GBO
 
-> Selectie van de meest relevante **ontwerpprincipes** voor de inrichting van het GBO-stelsel.
+> Selectie van de meest relevante **ontwerpprincipes** voor de inrichting van de GBO.
 > Waar de [architectuurprincipes](./architectuurprincipes_GBO.md) de *wat* en *waarom* beschrijven,
 > geven deze ontwerpprincipes richting aan de *hoe* — de concrete keuzes bij het bouwen van het stelsel.
 
@@ -14,7 +14,7 @@
 Taken, bevoegdheden en voorzieningen worden belegd op het laagst mogelijke niveau dat nog doelmatig en doeltreffend is. Centrale voorzieningen worden ingericht als decentrale alternatieven aantoonbaar onvoldoende zijn — bijvoorbeeld vanwege schaalniveau, interoperabiliteitseisen of beveiligingsrisico's. Voor de GBO betekent dit: generieke functies (authenticatie, toegang, bronontsluiting) worden centraal ingericht; domeinspecifieke functies mogen bij de betrokken partij blijven.
 
 **Toelichting voor GBO:**  
-Bronhouders beheren zelf hun gegevens. Het GBO-stelsel biedt een centrale *integratielaag*, maar geen centrale *gegevensopslag*. Keuzes voor centrale voorzieningen worden expliciet gemotiveerd, maar kunnen ook op verzoek van bronhouders gemaakt worden.
+Bronhouders beheren zelf hun gegevens. De GBO biedt een centrale *integratielaag*, maar geen centrale *gegevensopslag*. Keuzes voor centrale voorzieningen worden expliciet gemotiveerd, maar kunnen ook op verzoek van bronhouders gemaakt worden.
 
 **Bronnen:**  
 - Gemeentewet art. 117 lid 2 / Provinciewet art. 115 lid 2 (subsidiariteitsbeginsel)  
@@ -125,13 +125,13 @@ Componenten en standaarden worden bij voorkeur als open source ontwikkeld en gep
 
 ---
 
-### D-13 · Standaardiseer waar mogelijk, maak uitzonderingen expliciet
+### D-13 · Standaardiseer waar mogelijk, maak uitzonderingen expliciet en zorg dat deze in bestaande gremia landen
 
 **Betekenis:**  
-Hergebruik van bestaande standaarden, patronen en voorzieningen heeft sterk de voorkeur boven het ontwikkelen van nieuwe oplossingen. Als een uitzondering nodig is, wordt deze gedocumenteerd als architectuurbeslissing (ADR — Architecture Decision Record) met een onderbouwde motivatie.
+Hergebruik van bestaande standaarden, patronen en voorzieningen heeft sterk de voorkeur boven het ontwikkelen van nieuwe oplossingen. Als een uitzondering nodig is, wordt deze gedocumenteerd als architectuurbeslissing (ADR — Architecture Decision Record) met een onderbouwde motivatie. Tevens wordt beschreven hoe de uitzondering opgenomen moet worden in een bestaand afsprakenstelsel, in regulier beheer genomen wordt of opgeheven wordt.
 
 **Toelichting voor GBO:**  
-Stel een ADR-register bij als onderdeel van de GBO-documentatie. Elke afwijking van een verplichte standaard of een vastgesteld architectuurprincipe krijgt een eigen ADR met: context, beslissing, overwogen alternatieven, en consequenties.
+Stel een ADR-register bij als onderdeel van de GBO-documentatie. Elke afwijking van een verplichte standaard of een vastgesteld architectuurprincipe krijgt een eigen ADR met: context, beslissing, overwogen alternatieven, en consequenties. Tevens wordt beschreven hoe GBO-specifieke oplossingen overgaan in reguliere afspraken, standaarden of voorzieningen - of uitgefaseerd worden.
 
 **Bronnen:**  
 - NORA BP09 — Pas open standaarden toe  
@@ -158,7 +158,7 @@ Gegevens die via het GBO worden uitgewisseld, zijn semantisch eenduidig vastgele
 ### D-08 · Pas toe of leg uit — verplichte open standaarden
 
 **Betekenis:**  
-Overheidsorganisaties zijn verplicht de open standaarden op de 'pas toe of leg uit'-lijst van Forum Standaardisatie toe te passen. Afwijken is alleen toegestaan als er een zwaarwegende en gedocumenteerde reden is. Voor het GBO gelden in elk geval als verplicht: REST API Design Rules, NL GOV OAuth 2.0-profiel, NL GOV OIDC-profiel, Digikoppeling, MIM, DCAT2, SHACL en — zodra beschikbaar — OID4VC/OID4VP.
+Overheidsorganisaties zijn verplicht de open standaarden op de 'pas toe of leg uit'-lijst van Forum Standaardisatie toe te passen. Afwijken is alleen toegestaan als er een zwaarwegende en gedocumenteerde reden is. Voor het GBO gelden in elk geval als verplicht: REST API Design Rules, NL GOV OAuth 2.0-profiel, NL GOV OIDC-profiel, Digikoppeling, MIM, DCAT2, SHACL en — zodra beschikbaar — OpenID4VCI/OpenID4VP.
 
 **Toelichting voor GBO:**  
 Neem in het stelselontwerp een expliciete mapping op van GBO-koppelvlakken naar verplichte standaarden. Documenteer elk koppelvlak dat afwijkt van de 'pas toe'-standaard.

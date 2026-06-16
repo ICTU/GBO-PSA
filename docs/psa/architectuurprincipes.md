@@ -1,6 +1,6 @@
 # Architectuurprincipes GBO — Gegevensuitwisseling
 
-> Overzicht van de meest relevante architectuurprincipes voor het GBO-stelsel,
+> Overzicht van de meest relevante architectuurprincipes voor de GBO,
 > gegroepeerd per juridisch/beleids­kader. Bedoeld als input voor de PSA.
 
 ---
@@ -75,7 +75,7 @@
 
 ### P-09 · Open standaarden & leveranciersonafhankelijkheid
 
-**Stelling:** Het stelsel maakt gebruik van open standaarden (zoals OAuth 2.0, REST/GraphQL, Digikoppeling, OID4VC) van de Forum Standaardisatie 'pas toe of leg uit'-lijst, zodat vendor lock-in wordt voorkomen.
+**Stelling:** Het stelsel maakt gebruik van open standaarden (zoals OAuth 2.0, Digikoppeling, OpenID4VCI/OpenIDVP) van de Forum Standaardisatie 'pas toe of leg uit'-lijst, zodat vendor lock-in wordt voorkomen.
 
 **Bronnen:**  
 - NORA Domeinarchitectuur Gegevensuitwisseling §4.2  
@@ -97,7 +97,7 @@
 
 ### P-14 · Scheiding van generieke en niet-generieke functies
 
-**Stelling:** Het GBO beperkt zich tot generieke functies die overheidsbreed noodzakelijk zijn. Domeinspecifieke functionaliteit is de verantwoordelijkheid van de betreffende sector of partij.
+**Stelling:** De GBO beperkt zich tot generieke functies die overheidsbreed noodzakelijk zijn. Domeinspecifieke functionaliteit is de verantwoordelijkheid van de betreffende sector of partij.
 
 **Bronnen:**  
 - NORA subsidiariteitsbeginsel  
@@ -131,7 +131,7 @@
 
 ### P-07 · Vertrouwensstelsel op basis van PKI en erkende toetredingseisen
 
-**Stelling:** Alle deelnemende partijen (bronhouders, afnemers, private partijen) voldoen aan toetredingseisen en zijn aantoonbaar betrouwbaar via PKIoverheid-certificaten en/of het TIP-stelsel.
+**Stelling:** Alle deelnemende partijen (bronhouders, afnemers, private partijen) voldoen aan toetredingseisen en zijn aantoonbaar betrouwbaar via PKIoverheid-certificaten en/ of bestaande stelsels (zoals sectorale afsprakenstelsels), die door de stelselbeheer voldoende vertrouwd worden.
 
 **Bronnen:**  
 - PKIoverheid-stelsel  
@@ -144,7 +144,7 @@
 
 ### P-06 · Ondersteuning van de Europese digitale identiteitswallet (EUDIW)
 
-**Stelling:** Het stelsel is ontworpen om in de toekomst attributen uit te wisselen via de EU Digital Identity Wallet (OID4VC/OID4VP), zodat grensoverschrijdende dienstverlening mogelijk is.
+**Stelling:** Het stelsel is ontworpen om in de toekomst attributen uit te wisselen via de EU Digital Identity Wallet (OpenID4VCI/OpenID4VP), zodat grensoverschrijdende dienstverlening mogelijk is.
 
 **Bronnen:**  
 - eIDAS2 Verordening (EU) 2024/1183  

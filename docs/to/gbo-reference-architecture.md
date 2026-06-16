@@ -31,7 +31,7 @@ The architecture rests on seven pillars:
 graph TB
     subgraph Consumers
         direction TB
-        HV[Hypotheekverlener]
+        HV["Private Dienstverlener<br/>(e.g. hypotheekverlener)]
         WALLET[EUDI Wallet]
         EU_PROC[EU Online Procedure]
         GOV["Afnemer (overheid)"]
@@ -184,7 +184,7 @@ This separation means: the dienstencatalogus defines what is _maximally possible
 
 **Two-axis enforcement — scopes + constraints**: GraphQL authorization in GBO combines two complementary mechanisms, following the pattern proven by nID/iWlz in production:
 
-- **Scopes** (field-level / column axis): The dienstencatalogus defines which GraphQL fields are allowed per scope. Each scope in a consent record (e.g., `bd:ib:2025`) maps to a set of allowed fields in the catalog. The PDP parses the incoming GraphQL query into an AST using OPA's built-in `graphql.parse_query()` and verifies that every requested field is within the allowed set for the granted scopes. This enforces data minimization — a hypotheekverlener cannot request `inkomenUitBox3` if the scope only allows `verzamelinkomen` and `inkomenUitBox1`.
+- **Scopes** (field-level / column axis): The dienstencatalogus defines which GraphQL fields are allowed per scope. Each scope in a consent record (e.g., `bd:ib:2025`) maps to a set of allowed fields in the catalog. The PDP parses the incoming GraphQL query into an AST using OPA's built-in `graphql.parse_query()` and verifies that every requested field is within the allowed set for the granted scopes. This enforces data minimization — a consumer (e.g. hypotheekverlener) cannot request `inkomenUitBox3` if the scope only allows `verzamelinkomen` and `inkomenUitBox1`.
 - **Constraints** (record-level / row axis): Like nID/iWlz, the PDP enforces that mandatory `where`-clause arguments are present in the query and that their values match the caller's identity claims. For DvTP, the `consent_id` must appear as a where-clause argument (binding the query to a specific citizen's consent). For Gov-to-Gov, the requesting organization's OIN and legal basis must appear. The PDP inspects the AST to verify these structural constraints — not just field names, but argument presence and value binding.
 
 Together, scopes answer "which fields may you see?" and constraints answer "which records may you access?". Neither alone is sufficient: scopes without constraints allow accessing any citizen's data; constraints without scopes allow seeing all fields including those outside the consent.

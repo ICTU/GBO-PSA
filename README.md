@@ -1,14 +1,14 @@
-# PSA en TO GBO
+# PSA GBO
 
-Deze repository bevat de **Project Start Architectuur (PSA)** en het **Technisch Ontwerp (TO)** voor het project **Gemeenschappelijke Bronontsluiting (GBO)**.
+Deze repository bevat de **Project Start Architectuur (PSA)** voor het project **Gemeenschappelijke Bronontsluiting (GBO)**.
 
-GBO heeft als doel een **generieke infrastructuur en afsprakenstelsel** te realiseren waarmee gegevens van overheidsorganisaties beschikbaar kunnen worden gemaakt voor:
+Het project GBO heeft als doel een **generieke infrastructuur en afsprakenstelsel** te realiseren waarmee gegevens van overheidsorganisaties beschikbaar kunnen worden gemaakt voor:
 
 * burgers
 * private partijen
 * Europese toepassingen zoals **EDI Wallet** en **Single Digital Gateway (SDG/OOTS)**
 
-De gegevensuitwisseling met private dienstverleners is hierin speciaal, omdat hier geen wettelijke verplichting aan verbonden is. Daar is enerzijds meer ruimte om de inrichting vorm te geven, maar anderzijds minder verplichting om deze inrichting daadwerkelijk te volgen. Daarom wordt dit specifiek opgepakt onder de naam DvTP (Delen via Toestemming naar Private dienstverleners).
+De gegevensuitwisseling met private dienstverleners is hierin speciaal, omdat hier geen wettelijke verplichting aan verbonden is. Daar is enerzijds meer ruimte om de inrichting vorm te geven, maar anderzijds minder verplichting om deze inrichting daadwerkelijk te volgen. Daarom wordt dit specifiek opgepakt onder de naam DvTP (Delen via Toestemming naar Private dienstverleners).  
 
 De PSA beschrijft:
 
@@ -20,31 +20,22 @@ De PSA beschrijft:
 * de realisatiestrategie
 
 De PSA beschrijft **wat het stelsel moet kunnen**, maar legt nog **geen technische implementatie** vast.  
-De technische implementatie wordt beschreven in het **technisch ontwerp** middels een **Reference architecture**.
-
 ---
 
 # Repository structuur
 
 ```
-GBO
+GBO-PSA
 │
 ├─ README.md
 │
 ├─ psa
-│   └─ hoofdstukken in markdown formaat
+│   └─ hoofdstukken PSA in markdown formaat
 │
 ├─ diagrams
-│   └─ diagrammen in Mermaid formaat
-│
-└─ ref-arch
-    └─ hoofdstukken in markdown formaat
+   └─ diagrammen in Mermaid formaat
 ```
 
-Bent u op zoek naar het Globaal Ontwerp van het project GBO?  
-Deze is in een aparte repository opgenomen: https://github.com/ICTU/GBO-GO
-
----
 
 # Status
 

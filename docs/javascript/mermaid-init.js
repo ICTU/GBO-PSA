@@ -86,16 +86,16 @@ function wrapDiagram(el) {
     el.style.cursor = "grab";
   });
 
-  el.addEventListener(
-    "wheel",
-    function (e) {
-      e.preventDefault();
-      var factor = e.deltaY < 0 ? 1.1 : 1 / 1.1;
-      wrapper._scale = Math.min(Math.max(wrapper._scale * factor, 0.2), 5);
-      applyTransform(wrapper, el);
-    },
-    { passive: false },
-  );
+//  el.addEventListener(
+//    "wheel",
+//    function (e) {
+//      e.preventDefault();
+//      var factor = e.deltaY < 0 ? 1.1 : 1 / 1.1;
+//      wrapper._scale = Math.min(Math.max(wrapper._scale * factor, 0.2), 5);
+//      applyTransform(wrapper, el);
+//    },
+//    { passive: false },
+//  );
 }
 
 function btn(label, title, onclick) {
@@ -205,16 +205,16 @@ function openFullscreen(el) {
   });
 
   // Scroll zoom
-  container.addEventListener(
-    "wheel",
-    function (e) {
-      e.preventDefault();
-      var factor = e.deltaY < 0 ? 1.1 : 1 / 1.1;
-      state.scale = Math.min(Math.max(state.scale * factor, 0.2), 5);
-      applyFsTransform(container, state);
-    },
-    { passive: false },
-  );
+//  container.addEventListener(
+//    "wheel",
+//    function (e) {
+//      e.preventDefault();
+//      var factor = e.deltaY < 0 ? 1.1 : 1 / 1.1;
+//      state.scale = Math.min(Math.max(state.scale * factor, 0.2), 5);
+//      applyFsTransform(container, state);
+//    },
+//    { passive: false },
+//  );
 
   // Escape to close
   overlay.addEventListener("keydown", function (e) {

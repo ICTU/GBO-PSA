@@ -36,8 +36,7 @@ De PSA sluit aan bij:
 
 -   NORA
 -   GDI
--   EDI Wallet / EUDI Wallet
+-   EDI Wallet / EUDI Wallet (en ARF)
 -   Single Digital Gateway (SDG)
 -   Once Only Technical System (OOTS)
 -   Federatief Datastelsel
--   ...

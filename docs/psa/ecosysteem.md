@@ -24,26 +24,26 @@ De private partij is een organisatie die een dienst aan de burger levert en daar
 
 SDG/OOTS (Single Digital Gateway / Once Only Technical System) is een Europees netwerk van nationale voorzieningen en 'common services' waarmee Europese overheden gegevens uit overheidsbronnen van andere Europese lidstaten kunnen opvragen. De feitelijke actor is dan de overheidsfunctionaris die een persoonsgegeven nodig heeft voor het leveren van een dienst aan een burger die in het buitenland is.
 
--   GBO stelsel  
+-   GBO  
 
-Om de gegevens uit te wisselen zijn afspraken nodig en mogelijk een of enkele voorzieningen. Deze afspraken en eventuele voorzieningen worden beheerd in een stelsel. In dit document wordt dit stelsel het "GBO stelsel" genoemd, maar in de praktijk is het de bedoeling dat de afspraken en eventuele voorzieningen worden ondergebracht bij bestaande stelsel en/ of organisaties.
+Om de gegevens uit te wisselen zijn afspraken nodig en mogelijk een of enkele voorzieningen. Deze afspraken en eventuele voorzieningen worden beheerd in een stelsel. **In dit document wordt dit stelsel op enkele plekken voor de leesbaarheid "GBO" of "GBO stelsel" genoemd, maar het is uitdrukkelijk de bedoeling dat de afspraken en eventuele voorzieningen worden ondergebracht bij bestaande stelsels en/ of organisaties.**
 
 
 ## Contextdiagram
 
-In de contextdiagram worden de actoren ten opzichte van elkaar en van het GBO stelsel geschetst.
+In de contextdiagram worden de actoren ten opzichte van elkaar en van GBO geschetst.
 
 <figure>
 
+``` mermaid
 --8<-- "diagrammen/context-diagram.mmd"
 
+```
 <figcaption>Contextdiagram</figcaption>
 </figure>
 
 ## Oplossingsrichting  
 
-Zoals in de contextdiagram wordt geschetst worden de gegevens van de bronhouder via het GBO stelsel voor drie doelen gebruikt. Dit ontlast de bronhouder en maakt hergebruik van gegevens eenvoudiger. Ook als er meer doelen bijkomen vormt deze opzet een oplossing die hergebruikt kan worden.
+Zoals in de contextdiagram wordt geschetst worden de gegevens van de bronhouder via GBO voor drie doelen gebruikt. Dit ontlast de bronhouder en maakt hergebruik van gegevens eenvoudiger. Ook als er meer doelen bijkomen vormt deze opzet een oplossing die hergebruikt kan worden.
 
-Om deze oplossing mogelijk te maken zal het stelsel een aantal interactiepatronen moeten ondersteunen. Het achterhalen van deze interactiepatronen gebeurt via use cases, die in de bijlage zijn uitgewerkt. De interactiepatronen worden in het volgende hoofdstuk besproken.
-
-In het volgende hoofdstuk worden eerst de kaders van de oplossing besproken: de architectuur- en ontwerpprincipes waar de oplossing rekening mee moet houden.  
+Om deze oplossing mogelijk te maken zal het stelsel een aantal interactiepatronen moeten ondersteunen. Het achterhalen van deze interactiepatronen zijn use cases gebruikt, die in andere stukken zijn uitgewerkt [tbd: juiste links opnemen]. De interactiepatronen worden in het volgende hoofdstuk besproken.

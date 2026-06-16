@@ -8,8 +8,10 @@ Het logische architectuurdiagram schetst de generieke functies ten opzichte van 
 
 <figure>
 
+``` mermaid
 --8<-- "diagrammen/Architectuuroverzicht.mmd"
 
+```
 <figcaption>Architectuuroverzicht GBO</figcaption>
 </figure>
 
@@ -65,7 +67,7 @@ De vier functies in deze laag vormen de voorwaarden waaronder de generieke funct
 
 **Eisen:**
 
-- Het BSN wordt nooit doorgegeven aan of verwerkt door private dienstverleners. Voor private afnemers wordt altijd een partij-specifiek, onomkeerbaar pseudoniem gebruikt.
+- Het BSN wordt nooit doorgegeven aan of verwerkt door private dienstverleners die daar geen wettelijke grondslag voor hebben. Voor deze partijen wordt altijd een partij-specifiek, onomkeerbaar pseudoniem gebruikt.
 - Pseudoniemen voor verschillende private partijen zijn niet onderling koppelbaar, ook niet wanneer die partijen samenwerken.
 - Herhaald gebruik van hetzelfde pseudoniem voor dezelfde burger levert cryptografisch onkoppelbare uitvoer op (geen correlatierisico over tijd).
 - De omzetting van BSN naar pseudoniem — en terug, aan de bronhouderszijde — vindt plaats in een door de overheid beheerde en gecertificeerde voorziening.
@@ -92,7 +94,7 @@ De vier functies in deze laag vormen de voorwaarden waaronder de generieke funct
 
 - Iedere gegevensuitvraag — ongeacht het traject of de afnemer — doorloopt dezelfde autorisatieketen. Er zijn geen trajectspecifieke omwegen of parallelle handhavingspunten.
 - Het beleid is uitgedrukt in een formele, machineleesbare taal. Menselijk leesbare beschrijvingen zijn afgeleid van dezelfde bron, niet de bron zelf.
-- De autorisatiebeslissing is gebaseerd op: de identiteit van de afnemer, de gevraagde gegevens, de aanwezige grondslag (via toestemmingenregister, grondslagenregister of impliciet in request), en de context van het verzoek. Deze vier elementen zijn altijd expliciet aanwezig in de beslissing.
+- De autorisatiebeslissing is gebaseerd op: de identiteit van de afnemer, de gevraagde gegevens, de aanwezige grondslag (via toestemmingenregister, grondslagenregels of impliciet in request), en de context van het verzoek. Deze vier elementen zijn altijd expliciet aanwezig in de beslissing.
 - De autorisatiecomponent raadpleegt de toestemming real-time op het moment van uitvraag — er is geen vertrouwen op eerder uitgegeven tokens die de toestemmingsstatus "bevroren" vastleggen.
 - Beleidsdefinities zijn per traject instelbaar zonder wijziging van de autorisatie-infrastructuur zelf.
 - De beslissing (allow/deny) en de relevante context worden vastgelegd ten behoeve van auditbaarheid.
@@ -141,7 +143,7 @@ De vier functies in deze laag vormen de voorwaarden waaronder de generieke funct
 - Dezelfde gegevensset kan worden geserialiseerd naar de voor elk traject vereiste uitwisselingsformaten (JSON voor binnenlands, OOTS-EDM XML voor grensoverschrijdend, SD-JWT VC of mdoc voor de wallet). De canonieke definitie is eenmalig vastgelegd.
 - Mapping tussen de GBO-canonieke definitie en trajectspecifieke schema's (zoals OOTS Semantic Repository types of PuB-EAA attestatieschema's) is expliciet en beheerbaar.
 - Vocabularia zijn gebaseerd op open, breed gedragen standaarden (RDF, OWL, SKOS, JSON-LD) en sluiten aan op de Nederlandse overheidsstandaarden (GGM, NORA).
-- Semantische afspraken zijn versiebeheerd; wijzigingen in definities zijn traceerbaar en worden beheerst doorgevoerd.
+- Semantische afspraken zijn versie-beheerd; wijzigingen in definities zijn traceerbaar en worden beheerst doorgevoerd.
 
 ---
 
@@ -189,7 +191,7 @@ De vier functies in deze laag vormen de voorwaarden waaronder de generieke funct
 
 ## Generieke functie 8 — Beheer & Continuïteit
 
-**Doel:** Het GBO-stelsel is beheersbaar, monitorbaar en aantoonbaar betrouwbaar. Iedere gegevensuitvraag is herleidbaar: welke afnemer heeft wanneer welke gegevens over welke burger opgevraagd, op basis van welke grondslag, met welk besluit.
+**Doel:** De GBO is beheersbaar, monitorbaar en aantoonbaar betrouwbaar. Iedere gegevensuitvraag is herleidbaar: welke afnemer heeft wanneer welke gegevens over welke burger opgevraagd, op basis van welke grondslag, met welk besluit.
 
 **Eisen:**
 

@@ -1,10 +1,12 @@
-site_name: Documentatie GBO
+site_name: Projectstartarchitectuur GBO
+site_url: https://ictu.github.io/GBO-PSA/
+repo_url: https://github.com/ICTU/GBO-PSA
+repo_name: ictu/gbo
 
 theme:
   name: material
   custom_dir: overrides
   language: nl
-  palette:
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
@@ -23,6 +25,10 @@ theme:
     - toc.integrate
     - content.code.copy
     - content.code.annotate
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.path
+    - toc.follow
 
 markdown_extensions:
   - tables
@@ -46,10 +52,6 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 2
-
-site_url: https://ictu.github.io/gbo/
-repo_url: https://github.com/ictu/gbo
-repo_name: ictu/gbo
 
 extra_css:
   - stylesheets/extra.css
@@ -77,11 +79,11 @@ plugins:
         - index.md
 
 nav:
-  - Over deze repository: index.md
-
-  - PSA:
+  - GBO: https://ictu.github.io/GBO/latest/
+  - Globaal Ontwerp: https://ictu.github.io/GBO-GO/latest/
+  - Projectstartarchitectuur:
       - Inleiding: psa/inleiding.md
-      - Context: psa/context.md
+      - Oplossingsrichting: psa/oplossing.md
       - Architectuurprincipes: psa/architectuurprincipes.md
       - Ontwerpprincipes: psa/ontwerpprincipes.md
       - Ecosysteem en oplossingsrichting: psa/ecosysteem.md
@@ -90,6 +92,6 @@ nav:
       - Stelselfuncties: psa/capabilities.md
       - Realisatiestrategie: psa/realisatiestrategie.md
       - Open Vraagstukken en ontwerpkeuzes: psa/vraagstukken.md
-
-  - Technisch ontwerp:
-      - Reference architecture: ref-arch/gbo-reference-architecture.md
+  - Technisch Ontwerp: https://ictu.github.io/GBO/main/underconstruction.md
+  - Technische Requirements: https://ictu.github.io/GBO/main/underconstruction.md
+  - Semantiek: https://ictu.github.io/GBO/main/underconstruction.md
