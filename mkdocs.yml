@@ -81,7 +81,7 @@ plugins:
 
 nav:
   - GBO: https://ictu.github.io/GBO/latest/
-  - GO: https://ictu.github.io/GBO-GO/latest/
+  - Globaal Ontwerp: https://ictu.github.io/GBO-GO/latest/
   - PSA:
       - Inleiding: psa/inleiding.md
       - Context: psa/context.md
@@ -93,5 +93,5 @@ nav:
       - Stelselfuncties: psa/capabilities.md
       - Realisatiestrategie: psa/realisatiestrategie.md
       - Open Vraagstukken en ontwerpkeuzes: psa/vraagstukken.md
-  - TO: https://ictu.github.io/GBO-TO/latest/
-  - SEM: https://ictu.github.io/GBO-SEM/latest/
+  - Technisch Ontwerp: https://ictu.github.io/GBO-TO/latest/
+  - Semantiek: https://ictu.github.io/GBO-SEM/latest/
