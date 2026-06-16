@@ -1,5 +1,3 @@
-``` mermaid
-
 sequenceDiagram
     autonumber
     actor Burger
@@ -17,17 +15,21 @@ sequenceDiagram
         DV->>Burger: Redirect naar toestemmingsvoorziening GBO<br/>(met scope + doelbinding)
         Burger->>TV: Volgt redirect
         TV->>Auth: Authenticatieverzoek
-        Note over Auth: DigiD óf EDI-Wallet (eIDAS 2.0)
+        Note over Auth: DigiD of ander identificatiemiddel (eIDAS 2.0)
         Auth->>Burger: Authenticeer burger
         Burger-->>Auth: Authenticatie
         Auth-->>TV: BSN (geverifieerde identiteit)
-        TV->>PP: Pseudonimiseer BSN<br/>(BSNk PP)
-        PP-->>TV: Pseudoniem (PP-id)
+        TV->>TV: PI/PP aanwezig?
+        TV->>PP: Activeer BSN
+        PP->>TV: PI/PP
+        TV->>TV: Registreer PI/PP
+        TV->>PP: Transformeer PI/PP
+        PP-->>TV: Versleutelde PI/PP (VI/VP)
         TV->>Burger: Toon gegevens waarvoor toestemming<br/>gevraagd wordt (scope + doelbinding)
         Burger-->>TV: Verleent toestemming
-        TV->>TR: Schrijf toestemming in register<br/>(PP-id · scope · doelbinding · TTL)
+        TV->>TR: Schrijf toestemming in register<br/>(VI · scope · doelbinding · TTL)
         TR-->>TV: consent_id
-        TV->>DV: Redirect terug naar dienstverlener<br/>(met consent_id)
+        TV->>DV: Redirect terug naar dienstverlener<br/>(met consent_id en VP)
     end
 
     Note over DV,BRH: Fase 2 — Gegevensopvraging bij bronhouder
@@ -36,12 +38,10 @@ sequenceDiagram
         DV->>BRH: Gegevensverzoek<br/>(consent_id · mTLS / certificaat)
         BRH->>BRH: Authenticeer dienstverlener<br />(via certificaat)
         BRH->>BRH: Controleer bevoegdheid<br />(via FSC contract/Trusted List)
-        BRH->>TR: Valideer consent_id<br/>(geldig? scope? TTL?)
-        TR-->>BRH: Consent geldig + PP-id
+        BRH->>TR: Valideer consent_id<br/>(geldig? scope? TTL?)*
+        TR-->>BRH: Consent geldig<br />(incl. VI)
+        Note over TR, BRH: Als consent in token zit, is<br/>bevraging toestemmingenregister<br />niet nodig
         BRH->>BRH: Controleer data scope<br />(template match)
-        BRH->>PP: De-pseudonimiseer PP-id<br/>(BSNk PP)
-        PP-->>BRH: BSN
-        BRH-->>DV: Gevraagde gegevens<br/>(gezegeld door bronhouder)
+        BRH->>BRH: Ontsleutel VI naar BSN
+        BRH-->>DV: Gevraagde gegevens
     end
-
-```

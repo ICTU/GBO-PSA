@@ -1,9 +1,7 @@
-```mermaid
-
 graph TB
     subgraph Consumers
         direction TB
-        HV[Hypotheekverlener]
+        PSP[Private Dienstverlener]
         WALLET[EUDI Wallet]
         EU_PROC[EU Online Procedure]
         GOV["Afnemer (overheid)"]
@@ -40,7 +38,7 @@ graph TB
     OCI -->|"OPA Bundle API"| PDP
 
     %% DvTP flow
-    HV -->|"FSC Outway<br/>mTLS + PKI-O"| MGR
+    PSP -->|"FSC Outway<br/>mTLS + PKI-O"| MGR
     MGR -->|"JWT with<br/>verified claims"| FSC_IN
     FSC_IN --> PEP
     PEP -->|"AuthZEN eval"| PDP
@@ -51,10 +49,10 @@ graph TB
     SECTOR_PIP -.->|"org attributes"| MGR
 
     %% Consent flow
-    HV -.->|"redirect citizen"| PORTAL
+    PSP -.->|"redirect citizen"| PORTAL
     PORTAL -->|"write consent"| CREG
     PORTAL -->|"activate/transform"| BSNK
-    BSNK -.->|"EP in consent token"| HV
+    BSNK -.->|"EP in consent token"| PSP
     PEP -->|"resolve PI to BSN"| BSNK
 
     %% Gov-to-Gov flow
@@ -83,10 +81,8 @@ graph TB
     style GQL fill:#2d7a2d,stroke:#333,color:#fff
     style PUBEAA fill:#1a5276,stroke:#333,color:#fff
     style ASIP fill:#1a5276,stroke:#333,color:#fff
-    style HV fill:#1a3c4d,stroke:#333,color:#fff
+    style PSP fill:#1a3c4d,stroke:#333,color:#fff
     style WALLET fill:#1a3c4d,stroke:#333,color:#fff
     style EU_PROC fill:#1a3c4d,stroke:#333,color:#fff
     style GOV fill:#1a3c4d,stroke:#333,color:#fff
     style QTSP fill:#1a3c4d,stroke:#333,color:#fff
-
-```

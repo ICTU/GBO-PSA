@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://ictu.github.io/gbo/latest/psa/capabilities/">
+        <link rel="canonical" href="https://ictu.github.io/GBO-PSA/latest/psa/capabilities/">
       
       
         <link rel="prev" href="../generieke-functies/">
@@ -25,7 +25,7 @@
     
     
       
-        <title>Stelselfuncties - Documentatie GBO</title>
+        <title>Stelselfuncties - Projectstartarchitectuur GBO</title>
       
     
     
@@ -137,7 +137,7 @@
 
 
 <!-- Header -->
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav
     class="md-header__inner md-grid"
     aria-label="Header"
@@ -146,9 +146,9 @@
     <!-- Link to home -->
     <a
       href="../.."
-      title="Documentatie GBO"
+      title="Projectstartarchitectuur GBO"
       class="md-header__button md-logo"
-      aria-label="Documentatie GBO"
+      aria-label="Projectstartarchitectuur GBO"
       data-md-component="logo"
     >
       
@@ -168,7 +168,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Documentatie GBO
+            Projectstartarchitectuur GBO
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -276,7 +276,7 @@
     <!-- Repository information -->
     
       <div class="md-header__source">
-        <a href="https://github.com/ictu/gbo" title="Ga naar repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/ICTU/GBO-PSA" title="Ga naar repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
@@ -291,13 +291,139 @@
 
   <!-- Navigation tabs (sticky) -->
   
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO/latest/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  GBO
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO-GO/latest/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Globaal Ontwerp
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../inleiding/" class="md-tabs__link">
+          
+  
+  
+  Projectstartarchitectuur
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Technisch Ontwerp
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Technische Requirements
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Semantiek
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -311,22 +437,24 @@
                     
 
 
+  
+
 
   
 
-<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigatie" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigatie" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Documentatie GBO" class="md-nav__button md-logo" aria-label="Documentatie GBO" data-md-component="logo">
+    <a href="../.." title="Projectstartarchitectuur GBO" class="md-nav__button md-logo" aria-label="Projectstartarchitectuur GBO" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Documentatie GBO
+    Projectstartarchitectuur GBO
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/ictu/gbo" title="Ga naar repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/ICTU/GBO-PSA" title="Ga naar repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
@@ -346,14 +474,41 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="https://ictu.github.io/GBO/latest/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Over deze repository
+    GBO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ictu.github.io/GBO-GO/latest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Globaal Ontwerp
   
 
     
@@ -382,23 +537,26 @@
         
         
       
+      
+        
+      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    PSA
+    Projectstartarchitectuur
   
 
     
@@ -409,12 +567,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    PSA
+    Projectstartarchitectuur
   
 
           </label>
@@ -455,14 +613,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../context/" class="md-nav__link">
+      <a href="../oplossing.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Context
+    Oplossingsrichting
   
 
     
@@ -826,10 +984,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bijlage-gbo-afsprakenstelsel" class="md-nav__link">
+  <a href="#bijlage-afsprakenstelsel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bijlage: GBO-afsprakenstelsel
+        Bijlage: Afsprakenstelsel
       
     </span>
   </a>
@@ -914,69 +1072,15 @@
   
   
   
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Technisch ontwerp
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Technisch ontwerp
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../../ref-arch/gbo-reference-architecture/" class="md-nav__link">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Reference architecture
+    Technisch Ontwerp
   
 
     
@@ -988,11 +1092,57 @@
     </li>
   
 
-              
-            
-          </ul>
-        </nav>
+    
       
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technische Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semantiek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1008,6 +1158,12 @@
           
             <div class="md-content" data-md-component="content">
               
+                
+
+
+
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -1018,16 +1174,16 @@
 
 
 <h1 id="stelselfuncties">Stelselfuncties<a class="headerlink" href="#stelselfuncties" title="Permanent link">&para;</a></h1>
-<p>Dit hoofdstuk beschrijft <strong>wat het stelsel moet kunnen</strong> en is een uitwerking van de generieke functies naar afspraken, standaarden en voorzieningen, die als "stelselfuncties" door het stelsel geleverd moeten worden. De term sluit aan op de terminologie van het Federatief Datastelsel (FDS).</p>
+<p>Dit hoofdstuk beschrijft <strong>wat het stelsel moet kunnen</strong> en is een uitwerking van de generieke functies uit de logische architectuur naar afspraken, standaarden en voorzieningen, die als "stelselfuncties" door het stelsel geleverd moeten worden. De term sluit aan op de terminologie van het Federatief Datastelsel (FDS).</p>
 <h2 id="leeswijzer">Leeswijzer<a class="headerlink" href="#leeswijzer" title="Permanent link">&para;</a></h2>
 <p>Per stelselfunctie is aangegeven:<br />
 - <strong>Type invulling:</strong> afspraak, standaard of voorziening<br />
-- <strong>Beheer:</strong> centraal (GBO-stelsel of bestaand stelsel beheert) of decentraal (bronhouder / afnemer implementeert zelf)<br />
+- <strong>Beheer:</strong> centraal (NB: als nog niet bekend is waar het beheer komt, is "GBO-stelsel" ingevuld - maar het is de bedoeling dat alle stelselfuncties bij bestaande afsprakenstelsels of beheerorganisaties landen!) of decentraal (bronhouder / afnemer implementeert zelf)<br />
 - <strong>Instantiëring:</strong> gedeelde instantie of eigen instantie per partij<br />
 - <strong>Bestaande invulling:</strong> wat er al is en hergebruikt kan worden<br />
 - <strong>Gap:</strong> wat er nog ontbreekt of nog ingevuld moet worden (apart gemarkeerd met ⚠️)  </p>
-<p>De context is het GBO-stelsel, ingebed in NORA/GDI en het Federatief Datastelsel (FDS), met aansluiting op het eIDAS2/ARF Europees kader. Stelselafspraken landen in bestaande afsprakenstelsels: FDS en TIP (<a href="https://www.trustedinformationpartners.nl">Trusted Information Partners</a>).</p>
-<p>De structuur "afspraken boven standaarden boven voorzieningen" is het expliciete uitgangspunt van FDS en wordt hier overgenomen. Waar mogelijk worden bestaande FDS-stelselfuncties hergebruikt (zie met name S04 en S07). Het <strong>iWlz-afsprakenstelsel</strong> geldt als blauwdruk voor de inrichting van het GBO-afsprakenstelsel zelf: gelaagd opgebouwd (organisatiebeleid → proces → informatie → applicatie → IT-infrastructuur → uitwisselprofielen), met een formeel RFC-proces voor wijzigingen.</p>
+<p>De context is GBO, ingebed in NORA/GDI en het Federatief Datastelsel (FDS), met aansluiting op het eIDAS2/ARF Europees kader. Stelselafspraken landen in bestaande afsprakenstelsels zoals FDS en GDI.</p>
+<p>De structuur "afspraken boven standaarden boven voorzieningen" is het expliciete uitgangspunt van FDS en wordt hier overgenomen. Waar mogelijk worden bestaande FDS-stelselfuncties hergebruikt.</p>
 <p>Naast technische gaps kent dit document ook <strong>juridische randvoorwaarden</strong> (gemarkeerd met ⚖️): stelselfuncties die pas zinvol te realiseren zijn nadat de benodigde wettelijke grondslag is verankerd.</p>
 <hr />
 <h2 id="s01-toestemmingenregistratie">S01 — Toestemmingenregistratie<a class="headerlink" href="#s01-toestemmingenregistratie" title="Permanent link">&para;</a></h2>
@@ -1088,8 +1244,8 @@
 <td>Beschikbaar; binnen FDS en DCAT-AP NL al in gebruik voor beleidsbeschrijving</td>
 </tr>
 <tr>
-<td>OData/REST of GraphQL als raadpleeginterface voor de grondslagregistratie (PIP-interface)</td>
-<td>GBO-stelsel</td>
+<td>REST of GraphQL als raadpleeginterface voor de grondslagregistratie (PIP-interface)</td>
+<td>GBO</td>
 <td>⚠️ Nog te standaardiseren als GBO PIP-profiel</td>
 </tr>
 </tbody>
@@ -1109,7 +1265,7 @@
 <tr>
 <td>Toestemmingsregister / grondslagregister</td>
 <td>Centrale voorziening</td>
-<td>Centraal — GBO-stelsel (of Logius als beheerder)</td>
+<td>Centraal — GBO</td>
 <td>Gedeelde instantie</td>
 <td>⚠️ In de zorg gebruikt men Mitz waarvan geleerd kan worden; nog geen generieke GBO-voorziening</td>
 </tr>
@@ -1248,7 +1404,7 @@
 </table>
 <hr />
 <h2 id="s03-burgeridentificatie-pseudonimisering">S03 — Burgeridentificatie &amp; Pseudonimisering<a class="headerlink" href="#s03-burgeridentificatie-pseudonimisering" title="Permanent link">&para;</a></h2>
-<p><em>Het vaststellen van de identiteit van de burger op het vereiste betrouwbaarheidsniveau, en het omzetten van het BSN naar partij-specifieke, onomkeerbare pseudoniemen zodat het BSN nooit bij private afnemers terechtkomt.</em></p>
+<p><em>Het vaststellen van de identiteit van de burger op het vereiste betrouwbaarheidsniveau, en het omzetten van het BSN naar partij-specifieke, onomkeerbare pseudoniemen zodat het BSN nooit bij private afnemers terechtkomt als daar geen wettelijke grondslag voor bestaat.</em></p>
 <h3 id="afspraken_2">Afspraken<a class="headerlink" href="#afspraken_2" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -1261,7 +1417,7 @@
 </thead>
 <tbody>
 <tr>
-<td>BSN mag private dienstverleners nooit bereiken; pseudoniem is verplicht voor DvTP-traject</td>
+<td>BSN mag private dienstverleners (die hiervoor geen wettelijke grondslag hebben) nooit bereiken; pseudoniem is verplicht voor DvTP-traject</td>
 <td>Stelselafspraak</td>
 <td>Centraal — GBO, verankerd in AMvB Wdo / Wabvpz</td>
 <td>Deels al wettelijk bepaald (Wabvpz); uitwerking in GBO-stelsel nog nodig</td>
@@ -1366,7 +1522,7 @@
 <h2 id="s04-organisatie-authenticatie-vertrouwensstelsel">S04 — Organisatie-authenticatie &amp; Vertrouwensstelsel<a class="headerlink" href="#s04-organisatie-authenticatie-vertrouwensstelsel" title="Permanent link">&para;</a></h2>
 <p><em>Vaststellen dat een deelnemende organisatie (dienstverlener, bronhouder, EU-lidstaat) is wie zij zegt te zijn, bevoegd is tot deelname, en verifieerbaar verbonden is aan het stelsel.</em></p>
 <blockquote>
-<p>ℹ️ <strong>FDS hergebruik:</strong> De organisatorische stelselfuncties <strong>Poortwachter</strong> (toelating en onboarding van nieuwe deelnemers) en <strong>Marktmeester</strong> (beheer van de deelnemerslijst en naleving van aansluitvoorwaarden) zijn binnen FDS al gedefinieerd en gedeeltelijk ingericht. GBO hergebruikt deze functies voor de toelating van bronhouders en private dienstverleners, aangevuld met GBO-specifieke aansluitvoorwaarden (zie ook S07).</p>
+<p>ℹ️ <strong>FDS hergebruik:</strong> De organisatorische stelselfuncties <strong>Poortwachter</strong> (toelating en onboarding van nieuwe deelnemers) en <strong>Marktmeester</strong> (beheer van de deelnemerslijst en naleving van aansluitvoorwaarden) zijn binnen FDS al in opzet gedefinieerd. GBO hergebruikt deze functies voor de toelating van bronhouders en private dienstverleners, aangevuld met GBO-specifieke aansluitvoorwaarden (zie ook S07).</p>
 </blockquote>
 <h3 id="afspraken_3">Afspraken<a class="headerlink" href="#afspraken_3" title="Permanent link">&para;</a></h3>
 <table>
@@ -1477,14 +1633,14 @@
 <td>Organisatorische stelselfunctie FDS</td>
 <td>Centraal — FDS-beheer / GBO</td>
 <td>Gedeeld</td>
-<td><strong>Beschikbaar als FDS-functie</strong>; GBO vult deze functie in voor bronhouders en private dienstverleners met GBO-specifieke aansluitvoorwaarden — ⚠️ GBO-aansluitvoorwaarden zelf nog te maken</td>
+<td><strong>In opzet beschreven als FDS stelselfunctie</strong>; GBO vult deze functie in voor bronhouders en private dienstverleners met GBO-specifieke aansluitvoorwaarden — ⚠️ GBO-aansluitvoorwaarden zelf nog te maken</td>
 </tr>
 <tr>
 <td>FDS Marktmeester (deelnemerslijst en nalevingsbeheer)</td>
 <td>Organisatorische stelselfunctie FDS</td>
 <td>Centraal — FDS-beheer / GBO</td>
 <td>Gedeeld</td>
-<td><strong>Beschikbaar als FDS-functie</strong>; GBO breidt deze functie uit met GBO-specifieke nalevingseisen voor private dienstverleners</td>
+<td><strong>In opzet beschreven als FDS stelselfunctie</strong>; GBO breidt deze functie uit met GBO-specifieke nalevingseisen voor private dienstverleners</td>
 </tr>
 </tbody>
 </table>
@@ -1839,13 +1995,13 @@
 </thead>
 <tbody>
 <tr>
-<td>De OOTS-brug is de enige AS4-toegangspoort; binnenlands verkeer gebruikt FSC direct</td>
+<td>De Basisinrichting OOTS is de enige AS4-toegangspoort; binnenlands verkeer gebruikt FSC direct</td>
 <td>Architectuurafspraak</td>
 <td>Centraal — GBO</td>
 <td>⚠️ Nog te maken als GBO-architectuurprincipe</td>
 </tr>
 <tr>
-<td>SMP-registratie van GBO-bronhouders voor OOTS-discovery wordt centraal beheerd door de brug</td>
+<td>SMP-registratie van GBO-bronhouders voor OOTS-discovery wordt centraal beheerd door de Basisinrichting OOTS</td>
 <td>Stelselafspraak</td>
 <td>Centraal — GBO</td>
 <td>⚠️ Nog te maken</td>
@@ -1905,21 +2061,21 @@
 <tr>
 <td>Domibus Access Point</td>
 <td>Centrale voorziening</td>
-<td>Centraal — GBO (één NL-instelling voor GBO-bronhouders)</td>
+<td>Centraal (één NL-instelling voor GBO-bronhouders)</td>
 <td>Gedeelde instantie</td>
 <td><strong>Beschikbaar</strong> als open source (EC); ⚠️ operationele inrichting voor GBO nog te doen</td>
 </tr>
 <tr>
 <td>OOTS-EDM Adapter (XML ↔ FSC/GraphQL vertaling)</td>
 <td>Centrale voorziening</td>
-<td>Centraal — GBO</td>
+<td>Centraal</td>
 <td>Gedeelde instantie</td>
 <td>⚠️ Nog te realiseren</td>
 </tr>
 <tr>
 <td>SMP 2.1 Publisher</td>
 <td>Centrale voorziening</td>
-<td>Centraal — GBO</td>
+<td>Centraal</td>
 <td>Gedeelde instantie</td>
 <td>⚠️ Nog te realiseren; configuratie gebaseerd op query-catalogus (zie S07)</td>
 </tr>
@@ -2087,7 +2243,7 @@
 </tr>
 <tr>
 <td>Bestaande sectorale gegevensmodellen (zoals GGM, SGR, ...)</td>
-<td>VNG / SBKWI / ...</td>
+<td>VNG / BKWI / ...</td>
 <td>worden als vertrekpunt gebruikt bij de opstelling van het canonieke schema per bronhouder</td>
 </tr>
 <tr>
@@ -2327,7 +2483,7 @@
 <td>S04 — Organisatie-authenticatie &amp; Vertrouwensstelsel</td>
 <td>—</td>
 <td>GBO-vertrouwensprofiel (welke trust anchors per traject); OIN ↔ KvK ↔ eIDAS-identifier koppeling; GBO-aansluitvoorwaarden</td>
-<td>FDS Poortwachter; FDS Marktmeester; FSC Directory; PKI Overheid; OIN-register</td>
+<td>FDS Poortwachter (in opzet); FDS Marktmeester (in opzet); FSC Directory; PKI Overheid; OIN-register</td>
 </tr>
 <tr>
 <td>S05 — Autorisatie (PEP/PDP/PIP)</td>
@@ -2345,7 +2501,7 @@
 <td>S07 — Gegevensontsluiting (Bronontsluiting API)</td>
 <td>—</td>
 <td>Query Template Registry; GraphQL als FDS-datadienst-type positioneren; GBO onboardingprocedure bronhouders</td>
-<td>FSC (productie); FDS Poortwachter; DCAT-AP NL; iWlz GraphQL-patroon</td>
+<td>FSC (productie); FDS Poortwachter (in opzet); DCAT-AP NL; iWlz GraphQL-patroon</td>
 </tr>
 <tr>
 <td>S08 — OOTS-adapter (Grensoverschrijdend)</td>
@@ -2374,9 +2530,9 @@
 </tbody>
 </table>
 <hr />
-<h2 id="bijlage-gbo-afsprakenstelsel">Bijlage: GBO-afsprakenstelsel<a class="headerlink" href="#bijlage-gbo-afsprakenstelsel" title="Permanent link">&para;</a></h2>
+<h2 id="bijlage-afsprakenstelsel">Bijlage: Afsprakenstelsel<a class="headerlink" href="#bijlage-afsprakenstelsel" title="Permanent link">&para;</a></h2>
 <p>Er is een werkend afsprakenstelsel nodig dat de bovenstaande stelselfuncties verbindt in één samenhangend geheel van afspraken, standaarden en voorzieningen. Het <strong>iWlz-afsprakenstelsel</strong> is hiervoor een goede blauwdruk: het is gelaagd opgebouwd, formeel vastgesteld, en heeft een werkend RFC-proces voor wijzigingen.</p>
-<p>De aanbevolen lagenstructuur voor het GBO-afsprakenstelsel (analoog aan iWlz):</p>
+<p>De aanbevolen lagenstructuur voor het afsprakenstelsel (analoog aan iWlz):</p>
 <table>
 <thead>
 <tr>
@@ -2391,7 +2547,7 @@
 </tr>
 <tr>
 <td>Proces</td>
-<td>GBO-trajectprocessen: DvTP-toestemmingsstroom, OOTS-brugstroom, EDI-wallet uitgifte- en presentatiestroom</td>
+<td>Trajectprocessen: DvTP-toestemmingsstroom, OOTS-adapterstroom, EDI-wallet uitgifte- en presentatiestroom</td>
 </tr>
 <tr>
 <td>Informatie</td>
@@ -2399,7 +2555,7 @@
 </tr>
 <tr>
 <td>Applicatie</td>
-<td>Technische afspraken per stelselfunctie: PEP/PDP-keten, FSC-profiel, BSNk PP-integratie, query-templates</td>
+<td>Technische afspraken per stelselfunctie: GraphQL profiel, PEP/PDP-keten, FSC-profiel, BSNk PP-integratie, query-templates</td>
 </tr>
 <tr>
 <td>IT-infrastructuur</td>
@@ -2411,11 +2567,11 @@
 </tr>
 </tbody>
 </table>
-<p>Wijzigingen in het GBO-afsprakenstelsel verlopen via een formeel RFC-proces, analoog aan de iWlz RFC-aanpak, met gepubliceerde versies en expliciete inwerkingtreding per implementatiestap.</p>
-<p>NB: waar nu sprake is van het GBO-afsprakenstelsel, kunnen de afspraken landen in bestaande afsprakenstelsels en wetgeving.<br />
+<p>Wijzigingen in het afsprakenstelsel verlopen via een formeel RFC-proces, met gepubliceerde versies en expliciete inwerkingtreding per implementatiestap.</p>
+<p>NB: De afspraken moeten landen in bestaande afsprakenstelsels en wetgeving.<br />
 Een voorstel hiervoor:<br />
-- Afspraken die uitsluitend overheid-overheid betreffen → landen in het FDS-afsprakenstelsel<br />
-- Afspraken waarbij ook private partijen zijn betrokken (toelating dienstverleners, aansluitvoorwaarden, vrijwilligheidseis) → landen in het TIP-afsprakenstelsel (Spoor 1 governance, niet het TIP-transport)<br />
+- Afspraken die uitsluitend overheid-overheid betreffen → landen in het FDS- en/of het GDI-afsprakenstelsel<br />
+- Afspraken waarbij ook private dienstverleners zijn betrokken (toelating dienstverleners, aansluitvoorwaarden, vrijwilligheidseis) → landen in publiek-private afsprakenstelsels zoals het TIP-afsprakenstelsel<br />
 - Wat wettelijk verankerd moet zijn → in Wdo en AMvB</p>
 
 
@@ -2472,7 +2628,7 @@ Een voorstel hiervoor:<br />
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.code.annotate", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>

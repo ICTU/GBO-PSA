@@ -8,10 +8,8 @@
       
       
       
-        <link rel="canonical" href="https://ictu.github.io/gbo/latest/ref-arch/gbo-reference-architecture/">
+        <link rel="canonical" href="https://ictu.github.io/GBO-PSA/latest/to/gbo-reference-architecture/">
       
-      
-        <link rel="prev" href="../../psa/vraagstukken/">
       
       
       
@@ -23,7 +21,7 @@
     
     
       
-        <title>Reference architecture - Documentatie GBO</title>
+        <title>GBO Reference Architecture - Projectstartarchitectuur GBO</title>
       
     
     
@@ -135,7 +133,7 @@
 
 
 <!-- Header -->
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav
     class="md-header__inner md-grid"
     aria-label="Header"
@@ -144,9 +142,9 @@
     <!-- Link to home -->
     <a
       href="../.."
-      title="Documentatie GBO"
+      title="Projectstartarchitectuur GBO"
       class="md-header__button md-logo"
-      aria-label="Documentatie GBO"
+      aria-label="Projectstartarchitectuur GBO"
       data-md-component="logo"
     >
       
@@ -166,13 +164,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Documentatie GBO
+            Projectstartarchitectuur GBO
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Reference architecture
+              GBO Reference Architecture
             
           </span>
         </div>
@@ -274,7 +272,7 @@
     <!-- Repository information -->
     
       <div class="md-header__source">
-        <a href="https://github.com/ictu/gbo" title="Ga naar repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/ICTU/GBO-PSA" title="Ga naar repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
@@ -289,13 +287,137 @@
 
   <!-- Navigation tabs (sticky) -->
   
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO/latest/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  GBO
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO-GO/latest/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Globaal Ontwerp
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../psa/inleiding/" class="md-tabs__link">
+          
+  
+  
+  Projectstartarchitectuur
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Technisch Ontwerp
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Technische Requirements
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Semantiek
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -309,22 +431,24 @@
                     
 
 
+  
+
 
   
 
-<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigatie" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigatie" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Documentatie GBO" class="md-nav__button md-logo" aria-label="Documentatie GBO" data-md-component="logo">
+    <a href="../.." title="Projectstartarchitectuur GBO" class="md-nav__button md-logo" aria-label="Projectstartarchitectuur GBO" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Documentatie GBO
+    Projectstartarchitectuur GBO
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/ictu/gbo" title="Ga naar repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/ICTU/GBO-PSA" title="Ga naar repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
@@ -344,14 +468,41 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="https://ictu.github.io/GBO/latest/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Over deze repository
+    GBO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ictu.github.io/GBO-GO/latest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Globaal Ontwerp
   
 
     
@@ -375,28 +526,28 @@
     
     
       
-        
+      
         
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    PSA
+    Projectstartarchitectuur
   
 
     
@@ -407,12 +558,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    PSA
+    Projectstartarchitectuur
   
 
           </label>
@@ -453,14 +604,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../psa/context/" class="md-nav__link">
+      <a href="../../psa/oplossing.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Context
+    Oplossingsrichting
   
 
     
@@ -709,98 +860,17 @@
       
   
   
-    
   
   
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Technisch ontwerp
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Technisch ontwerp
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reference architecture
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Reference architecture
+    Technisch Ontwerp
   
 
     
@@ -809,78 +879,60 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Inhoudsopgave
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#executive-summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Executive Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Architecture Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#core-design-decisions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Core Design Decisions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#component-architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Component Architecture
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
-              
-            
-          </ul>
-        </nav>
+    
       
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technische Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semantiek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -895,6 +947,12 @@
           
           
             <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
               
               <article class="md-content__inner md-typeset">
                 
@@ -968,7 +1026,7 @@
 graph TB
     subgraph Consumers
         direction TB
-        HV[Hypotheekverlener]
+        HV["Private Dienstverlener&lt;br/&gt;(e.g. hypotheekverlener)]
         WALLET[EUDI Wallet]
         EU_PROC[EU Online Procedure]
         GOV["Afnemer (overheid)"]
@@ -1154,7 +1212,7 @@ graph TB
 <p>This separation means: the dienstencatalogus defines what is <em>maximally possible</em>, the citizen's consent defines what is <em>actually permitted</em> for a specific request.</p>
 <p><strong>Two-axis enforcement — scopes + constraints</strong>: GraphQL authorization in GBO combines two complementary mechanisms, following the pattern proven by nID/iWlz in production:</p>
 <ul>
-<li><strong>Scopes</strong> (field-level / column axis): The dienstencatalogus defines which GraphQL fields are allowed per scope. Each scope in a consent record (e.g., <code>bd:ib:2025</code>) maps to a set of allowed fields in the catalog. The PDP parses the incoming GraphQL query into an AST using OPA's built-in <code>graphql.parse_query()</code> and verifies that every requested field is within the allowed set for the granted scopes. This enforces data minimization — a hypotheekverlener cannot request <code>inkomenUitBox3</code> if the scope only allows <code>verzamelinkomen</code> and <code>inkomenUitBox1</code>.</li>
+<li><strong>Scopes</strong> (field-level / column axis): The dienstencatalogus defines which GraphQL fields are allowed per scope. Each scope in a consent record (e.g., <code>bd:ib:2025</code>) maps to a set of allowed fields in the catalog. The PDP parses the incoming GraphQL query into an AST using OPA's built-in <code>graphql.parse_query()</code> and verifies that every requested field is within the allowed set for the granted scopes. This enforces data minimization — a consumer (e.g. hypotheekverlener) cannot request <code>inkomenUitBox3</code> if the scope only allows <code>verzamelinkomen</code> and <code>inkomenUitBox1</code>.</li>
 <li><strong>Constraints</strong> (record-level / row axis): Like nID/iWlz, the PDP enforces that mandatory <code>where</code>-clause arguments are present in the query and that their values match the caller's identity claims. For DvTP, the <code>consent_id</code> must appear as a where-clause argument (binding the query to a specific citizen's consent). For Gov-to-Gov, the requesting organization's OIN and legal basis must appear. The PDP inspects the AST to verify these structural constraints — not just field names, but argument presence and value binding.</li>
 </ul>
 <p>Together, scopes answer "which fields may you see?" and constraints answer "which records may you access?". Neither alone is sufficient: scopes without constraints allow accessing any citizen's data; constraints without scopes allow seeing all fields including those outside the consent.</p>
@@ -2394,7 +2452,7 @@ INPUT:
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.code.annotate", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>

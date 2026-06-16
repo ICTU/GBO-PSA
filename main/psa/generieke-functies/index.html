@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://ictu.github.io/gbo/latest/psa/generieke-functies/">
+        <link rel="canonical" href="https://ictu.github.io/GBO-PSA/latest/psa/generieke-functies/">
       
       
         <link rel="prev" href="../interactiepatronen/">
@@ -25,7 +25,7 @@
     
     
       
-        <title>Logische architectuur - Documentatie GBO</title>
+        <title>Logische architectuur - Projectstartarchitectuur GBO</title>
       
     
     
@@ -137,7 +137,7 @@
 
 
 <!-- Header -->
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav
     class="md-header__inner md-grid"
     aria-label="Header"
@@ -146,9 +146,9 @@
     <!-- Link to home -->
     <a
       href="../.."
-      title="Documentatie GBO"
+      title="Projectstartarchitectuur GBO"
       class="md-header__button md-logo"
-      aria-label="Documentatie GBO"
+      aria-label="Projectstartarchitectuur GBO"
       data-md-component="logo"
     >
       
@@ -168,7 +168,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Documentatie GBO
+            Projectstartarchitectuur GBO
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -276,7 +276,7 @@
     <!-- Repository information -->
     
       <div class="md-header__source">
-        <a href="https://github.com/ictu/gbo" title="Ga naar repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/ICTU/GBO-PSA" title="Ga naar repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
@@ -291,13 +291,139 @@
 
   <!-- Navigation tabs (sticky) -->
   
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO/latest/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  GBO
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO-GO/latest/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Globaal Ontwerp
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../inleiding/" class="md-tabs__link">
+          
+  
+  
+  Projectstartarchitectuur
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Technisch Ontwerp
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Technische Requirements
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Semantiek
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -311,22 +437,24 @@
                     
 
 
+  
+
 
   
 
-<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigatie" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigatie" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Documentatie GBO" class="md-nav__button md-logo" aria-label="Documentatie GBO" data-md-component="logo">
+    <a href="../.." title="Projectstartarchitectuur GBO" class="md-nav__button md-logo" aria-label="Projectstartarchitectuur GBO" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Documentatie GBO
+    Projectstartarchitectuur GBO
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/ictu/gbo" title="Ga naar repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/ICTU/GBO-PSA" title="Ga naar repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
@@ -346,14 +474,41 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="https://ictu.github.io/GBO/latest/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Over deze repository
+    GBO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ictu.github.io/GBO-GO/latest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Globaal Ontwerp
   
 
     
@@ -382,23 +537,26 @@
         
         
       
+      
+        
+      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    PSA
+    Projectstartarchitectuur
   
 
     
@@ -409,12 +567,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    PSA
+    Projectstartarchitectuur
   
 
           </label>
@@ -455,14 +613,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../context/" class="md-nav__link">
+      <a href="../oplossing.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Context
+    Oplossingsrichting
   
 
     
@@ -881,69 +1039,15 @@
   
   
   
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Technisch ontwerp
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Technisch ontwerp
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../../ref-arch/gbo-reference-architecture/" class="md-nav__link">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Reference architecture
+    Technisch Ontwerp
   
 
     
@@ -955,11 +1059,57 @@
     </li>
   
 
-              
-            
-          </ul>
-        </nav>
+    
       
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technische Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semantiek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -974,6 +1124,12 @@
           
           
             <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
               
               <article class="md-content__inner md-typeset">
                 
@@ -1003,41 +1159,41 @@
     end
 
     %% ── GBO Kern (midden) ────────────────────────────────────
-    subgraph GBO["GBO — Generieke Zijde"]
+    subgraph GBO["GBO"]
         direction TB
 
         subgraph TRUST["Juridisch &amp;amp; Identiteit"]
             direction TB
-            TG["⚖️ Toestemming &amp;amp; Grondslag\nWdo / AMvB / AVG"]
-            BI["🪪 Burgeridentificatie\nBSN · pseudonimisering"]
-            VS["🔐 Vertrouwensstelsel\nPKI(O) · eHerkenning · eIDAS · TIP"]
+            TG["⚖️ Toestemming &amp;amp; Grondslag&lt;br /&gt;Wdo / AMvB / AVG"]
+            BI["🪪 Burgeridentificatie&lt;br /&gt;BSN · pseudonimisering"]
+            VS["🔐 Vertrouwensstelsel&lt;br /&gt;PKIo · eHerkenning · eIDAS"]
         end
 
         subgraph FUNC["Generieke functies — GBO"]
             direction LR
-            F1["Identiteit &amp;amp; Vertrouwen\nID · Authc · Authz · PKI · Audit logging"]
-            F2["Toegang &amp;amp; Interactie\nSSO · Federatief inloggen · Consent UI · Machtigen"]
-            F3["Gegevensvoorziening\nConnectiviteit · Lokalisatie · API-beheer · Raadplegen"]
-            F4["Semantiek &amp;amp; Eenheid van Taal\nGGM · RDF · OWL · SKOS · JSON-LD · Vocabularia"]
-            F5["Gegevenskwaliteit &amp;amp; Validatie\nSHACL · Herkomst · W3C PROV-O · Feedbackloops"]
-            F6["Grondslag &amp;amp; Beleid\nConsent · Doelbinding · AVG · Beleidsregels"]
-            F7["Orkestratie &amp;amp; Integratie\nProcesorkestratie · mapping · Event-afhandeling"]
-            F8["Beheer &amp;amp; Continuïteit\nLogging · Monitoring · Versiebeheer · Incidentbeheer"]
+            F1["Identiteit &amp;amp; Vertrouwen&lt;br /&gt;ID · Authc · Authz · PKI · Audit logging"]
+            F2["Toegang &amp;amp; Interactie&lt;br /&gt;SSO · Federatief inloggen · Consent UI · Machtigen"]
+            F3["Gegevensvoorziening&lt;br /&gt;Connectiviteit · Lokalisatie · API-beheer · Raadplegen"]
+            F4["Semantiek &amp;amp; Eenheid van Taal&lt;br /&gt;DCAT-AP · RDF · OWL · SKOS · JSON-LD · Vocabularia"]
+            F5["Gegevenskwaliteit &amp;amp; Validatie&lt;br /&gt;SHACL · Herkomst · W3C PROV-O · Feedbackloops"]
+            F6["Grondslag &amp;amp; Beleid&lt;br /&gt;Consent · Doelbinding · AVG · Beleidsregels"]
+            F7["Orkestratie &amp;amp; Integratie&lt;br /&gt;Procesorkestratie · Mapping · Event-afhandeling"]
+            F8["Beheer &amp;amp; Continuïteit&lt;br /&gt;Logging · Monitoring · Versiebeheer · Incidentbeheer"]
         end
 
-        BRON_API["🔗 Gemeenschappelijke bronontsluiting API\nOAuth 2.0 · REST/GraphQL · Digikoppeling"]
+        BRON_API["🔗 Gemeenschappelijke bronontsluiting API&lt;br /&gt;OAuth 2.0 · REST/GraphQL · FSC"]
     end
+
+    %% ── Burger (onderaan) ────────────────────────────────────
+    BRG["👤 Burger — rechthebbende&lt;br /&gt;Regie op Gegevens · toestemming"]
 
     %% ── Afnemers (rechts) ────────────────────────────────────
     subgraph AFN["Afnemers — specifieke zijde"]
         direction TB
-        PP["🏢 Private partijen\nDvTP — toestemming burger"]
-        EU["🇪🇺 Europese overheden\nSDG / OOTS"]
-        EDI["📱 EDI-Wallet burger\neIDAS2 / ARF"]
+        EU["🇪🇺 Europese overheden&lt;br /&gt;Basisinrichting OOTS"]
+        EDI["📱 EDI-Wallet burger&lt;br /&gt;eIDAS2 / ARF"]
+        PP["🏢 Private partijen&lt;br /&gt;DvTP — toestemming burger"]
     end
-
-    %% ── Burger (onderaan) ────────────────────────────────────
-    BRG["👤 Burger — rechthebbende\nRegie op Gegevens · toestemming"]
 
     %% ── Verbindingen ─────────────────────────────────────────
     BRP -.-&gt;|generieke ontsluiting| BRON_API
@@ -1053,9 +1209,9 @@
     FUNC --&gt; BI
     FUNC --&gt; VS
 
-    TG --&gt;|DvTP flow| PP
-    TG --&gt;|SDG/OOTS| EU
+    FUNC --&gt;|SDG/OOTS| EU
     BI --&gt;|OID4VC| EDI
+    TG --&gt;|DvTP flow| PP
 
     TG --&gt;|toestemming| BRG
 
@@ -1080,7 +1236,6 @@
     class BRP,BD,UWV,DUO,BAG,OV bronhouder
     class BRG burger
 </div>
-
 <figcaption>Architectuuroverzicht GBO</figcaption>
 </figure>
 
@@ -1126,7 +1281,7 @@
 <p><strong>Doel:</strong> Het garanderen dat het BSN uitsluitend circuleert binnen de overheidsinfrastructuur en nooit zichtbaar is voor private afnemers.</p>
 <p><strong>Eisen:</strong></p>
 <ul>
-<li>Het BSN wordt nooit doorgegeven aan of verwerkt door private dienstverleners. Voor private afnemers wordt altijd een partij-specifiek, onomkeerbaar pseudoniem gebruikt.</li>
+<li>Het BSN wordt nooit doorgegeven aan of verwerkt door private dienstverleners die daar geen wettelijke grondslag voor hebben. Voor deze partijen wordt altijd een partij-specifiek, onomkeerbaar pseudoniem gebruikt.</li>
 <li>Pseudoniemen voor verschillende private partijen zijn niet onderling koppelbaar, ook niet wanneer die partijen samenwerken.</li>
 <li>Herhaald gebruik van hetzelfde pseudoniem voor dezelfde burger levert cryptografisch onkoppelbare uitvoer op (geen correlatierisico over tijd).</li>
 <li>De omzetting van BSN naar pseudoniem — en terug, aan de bronhouderszijde — vindt plaats in een door de overheid beheerde en gecertificeerde voorziening.</li>
@@ -1148,7 +1303,7 @@
 <ul>
 <li>Iedere gegevensuitvraag — ongeacht het traject of de afnemer — doorloopt dezelfde autorisatieketen. Er zijn geen trajectspecifieke omwegen of parallelle handhavingspunten.</li>
 <li>Het beleid is uitgedrukt in een formele, machineleesbare taal. Menselijk leesbare beschrijvingen zijn afgeleid van dezelfde bron, niet de bron zelf.</li>
-<li>De autorisatiebeslissing is gebaseerd op: de identiteit van de afnemer, de gevraagde gegevens, de aanwezige grondslag (via toestemmingenregister, grondslagenregister of impliciet in request), en de context van het verzoek. Deze vier elementen zijn altijd expliciet aanwezig in de beslissing.</li>
+<li>De autorisatiebeslissing is gebaseerd op: de identiteit van de afnemer, de gevraagde gegevens, de aanwezige grondslag (via toestemmingenregister, grondslagenregels of impliciet in request), en de context van het verzoek. Deze vier elementen zijn altijd expliciet aanwezig in de beslissing.</li>
 <li>De autorisatiecomponent raadpleegt de toestemming real-time op het moment van uitvraag — er is geen vertrouwen op eerder uitgegeven tokens die de toestemmingsstatus "bevroren" vastleggen.</li>
 <li>Beleidsdefinities zijn per traject instelbaar zonder wijziging van de autorisatie-infrastructuur zelf.</li>
 <li>De beslissing (allow/deny) en de relevante context worden vastgelegd ten behoeve van auditbaarheid.</li>
@@ -1188,7 +1343,7 @@
 <li>Dezelfde gegevensset kan worden geserialiseerd naar de voor elk traject vereiste uitwisselingsformaten (JSON voor binnenlands, OOTS-EDM XML voor grensoverschrijdend, SD-JWT VC of mdoc voor de wallet). De canonieke definitie is eenmalig vastgelegd.</li>
 <li>Mapping tussen de GBO-canonieke definitie en trajectspecifieke schema's (zoals OOTS Semantic Repository types of PuB-EAA attestatieschema's) is expliciet en beheerbaar.</li>
 <li>Vocabularia zijn gebaseerd op open, breed gedragen standaarden (RDF, OWL, SKOS, JSON-LD) en sluiten aan op de Nederlandse overheidsstandaarden (GGM, NORA).</li>
-<li>Semantische afspraken zijn versiebeheerd; wijzigingen in definities zijn traceerbaar en worden beheerst doorgevoerd.</li>
+<li>Semantische afspraken zijn versie-beheerd; wijzigingen in definities zijn traceerbaar en worden beheerst doorgevoerd.</li>
 </ul>
 <hr />
 <h2 id="generieke-functie-5-gegevenskwaliteit-validatie">Generieke functie 5 — Gegevenskwaliteit &amp; Validatie<a class="headerlink" href="#generieke-functie-5-gegevenskwaliteit-validatie" title="Permanent link">&para;</a></h2>
@@ -1225,7 +1380,7 @@
 </ul>
 <hr />
 <h2 id="generieke-functie-8-beheer-continuiteit">Generieke functie 8 — Beheer &amp; Continuïteit<a class="headerlink" href="#generieke-functie-8-beheer-continuiteit" title="Permanent link">&para;</a></h2>
-<p><strong>Doel:</strong> Het GBO-stelsel is beheersbaar, monitorbaar en aantoonbaar betrouwbaar. Iedere gegevensuitvraag is herleidbaar: welke afnemer heeft wanneer welke gegevens over welke burger opgevraagd, op basis van welke grondslag, met welk besluit.</p>
+<p><strong>Doel:</strong> De GBO is beheersbaar, monitorbaar en aantoonbaar betrouwbaar. Iedere gegevensuitvraag is herleidbaar: welke afnemer heeft wanneer welke gegevens over welke burger opgevraagd, op basis van welke grondslag, met welk besluit.</p>
 <p><strong>Eisen:</strong></p>
 <ul>
 <li>Iedere gegevensuitvraag genereert een vastlegging conform de Logboek Dataverwerkingen (LDV) standaard.</li>
@@ -1302,7 +1457,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.code.annotate", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>

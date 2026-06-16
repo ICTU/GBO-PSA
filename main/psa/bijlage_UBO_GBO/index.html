@@ -8,13 +8,9 @@
       
       
       
-        <link rel="canonical" href="https://ictu.github.io/GBO-PSA/latest/psa/interactiepatronen/">
+        <link rel="canonical" href="https://ictu.github.io/GBO-PSA/latest/psa/bijlage_UBO_GBO/">
       
       
-        <link rel="prev" href="../ecosysteem/">
-      
-      
-        <link rel="next" href="../generieke-functies/">
       
       
         
@@ -25,7 +21,7 @@
     
     
       
-        <title>Interactiepatronen - Projectstartarchitectuur GBO</title>
+        <title>Bijlage - Lessons Learned van de beproevingen Uniforme Bronontsluiting - Projectstartarchitectuur GBO</title>
       
     
     
@@ -94,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#interactiepatronen-gbo" class="md-skip">
+        <a href="#bijlage-lessons-learned-van-de-beproevingen-uniforme-bronontsluiting" class="md-skip">
           Ga naar inhoud
         </a>
       
@@ -174,7 +170,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Interactiepatronen
+              Bijlage - Lessons Learned van de beproevingen Uniforme Bronontsluiting
             
           </span>
         </div>
@@ -339,12 +335,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../inleiding/" class="md-tabs__link">
           
   
@@ -525,31 +519,28 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -567,7 +558,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -722,37 +713,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Interactiepatronen
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../interactiepatronen/" class="md-nav__link">
         
   
   
@@ -768,59 +732,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Inhoudsopgave
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#gegevensverzoek-van-burger-om-gegevens-via-wallet-te-delen" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gegevensverzoek van burger om gegevens via wallet te delen
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gegevensverzoek-van-europese-overheidsdienst-aan-nederlandse-overheidsbron" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gegevensverzoek van Europese overheidsdienst aan Nederlandse overheidsbron
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gegevensverzoek-van-private-partij-met-toestemming-aan-bronhouder-dvtp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gegevensverzoek van private partij met toestemming aan bronhouder (DvTP)
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1052,202 +963,270 @@
   
 
 
-<h1 id="interactiepatronen-gbo">Interactiepatronen GBO<a class="headerlink" href="#interactiepatronen-gbo" title="Permanent link">&para;</a></h1>
-<p>Dit document beschrijft de belangrijkste interactiepatronen voor GBO zoals afgeleid uit de use cases. In de patronen is op verschillende plekken sprake van een "dienst"; dit kunnen afspraken, standaarden of centrale of decentrale voorzieningen zijn. Daar wordt in het hoofdstuk <a href="../capabilities/">Stelselfuncties</a> dieper op ingegaan.  </p>
-<h2 id="gegevensverzoek-van-burger-om-gegevens-via-wallet-te-delen">Gegevensverzoek van burger om gegevens via wallet te delen<a class="headerlink" href="#gegevensverzoek-van-burger-om-gegevens-via-wallet-te-delen" title="Permanent link">&para;</a></h2>
-<h3 id="doel">Doel<a class="headerlink" href="#doel" title="Permanent link">&para;</a></h3>
-<p>Een burger vraagt een gegeven op als gekwalificeerde attestatie om in zijn/haar wallet op te nemen en te delen met een dienstverlener.</p>
-<h3 id="interactie">Interactie<a class="headerlink" href="#interactie" title="Permanent link">&para;</a></h3>
+<h1 id="bijlage-lessons-learned-van-de-beproevingen-uniforme-bronontsluiting">Bijlage - Lessons Learned van de beproevingen Uniforme Bronontsluiting<a class="headerlink" href="#bijlage-lessons-learned-van-de-beproevingen-uniforme-bronontsluiting" title="Permanent link">&para;</a></h1>
+<h2 id="inleiding">Inleiding<a class="headerlink" href="#inleiding" title="Permanent link">&para;</a></h2>
+<p>Het project BronConnect / Uniforme Bronontsluitiung (<a href="https://digilab.overheid.nl/projecten/beproeving-eenvoudig-en-eenduidig-gegevens-uitwisselen/">UBO</a>) heeft een aantal beproevingen uitgevoerd om te onderzoeken hoe gemeenten op een eenduidige manier kunnen voldoen aan de eisen die SDG/OOTS en de eIDAS-verordening stellen. UBO heeft laten zien dat gemeentelijke bronontsluiting via een integratielaag, Data API, FSC/OpenFSC en een OOTS/eDelivery-adapter werkbaar is.<br />
+GBO bouwt voort op de bevindingen van UBO en maakt daar een productiegericht, breder en generieker stelsel van: meer bronhouders, meer trajecten, rijkere autorisatie, expliciet semantiekbeheer en centrale of gedeelde voorzieningen waar dat schaalvoordeel geeft.  </p>
+<p>In deze bijlage wordt uitgewerkt hoe de bevindingen uit de UBO beproevingen zijn gebruikt in de opzet en architectuur van GBO.</p>
+<h2 id="vergelijking-ubo-gbo">Vergelijking UBO - GBO<a class="headerlink" href="#vergelijking-ubo-gbo" title="Permanent link">&para;</a></h2>
+<p>In de onderstaande figuur zijn de gegevensstromen van UBO en GBO onder elkaar geschetst.</p>
 <figure>
+UBO Gegevensstromen
+<div class="mermaid">flowchart LR
+  subgraph ubo["Uniforme Bronontsluiting (UBO)"]
+    direction TB
+    data_api("UBO Data API&lt;br/&gt;(service specifiek)")
+    fsc("FSC&lt;br/&gt;Inway")
+  end
 
-<div class="mermaid">sequenceDiagram
-    autonumber
-    actor Burger
-    participant Wallet as EDI-Wallet
-    participant QTSP as QTSP
-    participant PubEAA as PuB-EAA&lt;br/&gt;voorziening
-    participant VerifDienst as Verificatie-&lt;br/&gt;dienst
-    participant Auth as Autorisatie&lt;br/&gt;voorziening
-    participant Bron as Overheids-&lt;br/&gt;bron
-
-    Note over Burger,Bron: Stroom A — PuB-EAA: overheidsinstantie geeft attribuut rechtstreeks uit
-
-    rect rgb(225, 245, 238)
-        Burger-&gt;&gt;Wallet: Vraag attribuut op
-        Wallet-&gt;&gt;PubEAA: Credential Request
-        Note over PubEAA: PuB-EAA voorziening: aangeboden&lt;br/&gt;door bron zelf óf centraal via GBO
-        PubEAA-&gt;&gt;Auth: Autorisatieverzoek
-        Auth-&gt;&gt;Wallet: Authenticatie- &amp; autorisatieverzoek
-        Wallet-&gt;&gt;Burger: Toont verzoek &amp; vraagt consent
-        Burger-&gt;&gt;Wallet: Geeft consent &amp; presenteert PID / eID
-        Wallet-&gt;&gt;Auth: Authenticatie / consent (incl.PID / eID)
-        Auth-&gt;&gt;PubEAA: Autorisatie (incl. identificatie burger)
-        PubEAA-&gt;&gt;Bron: Bevraag bron
-        Bron--&gt;&gt;PubEAA: Attribuutgegevens
-        PubEAA-&gt;&gt;PubEAA: Kwalificeer attribuutgegevens
-        PubEAA--&gt;&gt;Wallet: PuB-EAA credential
-        Wallet--&gt;&gt;Burger: PuB-EAA opgeslagen in wallet
+%%  subgraph synergy["Synergy"]
+    subgraph oots["SDG / OOTS"]
+      direction LR
+      oots_outway("FSC&lt;br/&gt;Outway")
+      oots_v("OOTS-V")
+      oots_delivery("eDelivery&lt;br/&gt;toegangspunt")
+      oots_afnemer["SDG-OOTS-portaal"]
     end
-
-    Note over Burger,Bron: Stroom B — QEAA: QTSP kwalificeert attribuut via verificatiedienst
-
-    rect rgb(238, 237, 254)
-        Burger-&gt;&gt;QTSP: Attestatie Request&lt;br /&gt;(incl. evt. stukken)
-        Note over QTSP: QTSP verifieert attribuut&lt;br/&gt;via verificatiedienst
-        QTSP-&gt;&gt;VerifDienst: Verificatieverzoek
-        Note over VerifDienst: Verificatiedienst: aangeboden&lt;br/&gt;door bron of centraal via GBO
-        VerifDienst-&gt;&gt;Auth: Autorisatieverzoek
-        Auth-&gt;&gt;Wallet: Authenticatie- &amp; autorisatieverzoek
-        Wallet-&gt;&gt;Burger: Toont verzoek &amp; vraagt consent
-        Burger-&gt;&gt;Wallet: Geeft consent &amp; presenteert PID / eID
-        Wallet-&gt;&gt;Auth: Authenticatie / consent (met PID / eID)
-        Auth-&gt;&gt;VerifDienst: Autorisatie (incl. identificatie burger)
-        VerifDienst-&gt;&gt;Bron: Bevraag bron
-        Bron--&gt;&gt;VerifDienst: Attribuutgegevens
-        VerifDienst-&gt;&gt;VerifDienst: Verifieer attribuutgegevens
-        VerifDienst--&gt;&gt;QTSP: Geverifieerd attribuut
-        QTSP-&gt;&gt;QTSP: Issue QEAA
-        QTSP--&gt;&gt;Wallet: QEAA attestatie
-        Wallet--&gt;&gt;Burger: QEAA opgeslagen in wallet
+    subgraph eudi["EUDI"]
+      direction LR
+      eudi_qeaa["QTSP&lt;br/&gt;(QEAA)"]
+      eudi_wallet["EUDI-Wallet"]
     end
-</div>
-<figcaption>Gegevensverzoek van burger om credential via wallet te delen</figcaption>
+%%  end
+
+  burger
+
+  bron[("Gemeentebronnen&lt;br/&gt;(GBA, vergunningen, etc.)")] --- data_api --- fsc --REST/JSON--- oots_outway
+  oots_outway --- oots_v --- oots_delivery --eDelivery/AS4--- oots_afnemer
+
+  oots_delivery --eDelivery/AS4--- eudi_qeaa --OpenID4VCI--- eudi_wallet
+  eudi_qeaa ~~~ oots_afnemer
+
+  eudi_wallet --- burger["Burger"]
+  oots_afnemer --- burger
+
+  fsc:::ubo
+  data_api:::ubo
+
+  eudi_qeaa:::eudi
+  eudi_wallet:::eudi
+
+  oots_outway:::ubo
+  oots_v:::ubo
+  oots_delivery:::oots
+  oots_afnemer:::oots
+
+%%  synergy:::synergy
+
+  bron:::bron
+  burger:::burger
+
+  classDef bron fill:#edf7df,stroke:#6aa13a,color:#27500a
+  classDef eudi fill:#efe0f5,stroke:#5f5e5a,color:#444441
+  classDef oots fill:#efe0f5,stroke:#5f5e5a,color:#444441
+  classDef ubo fill:#fff0e8,stroke:#000000,color:#000000
+  classDef synergy fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef burger fill:#edf7df,stroke:#6aa13a,color:#27500a</div>
+GBO Gegevensstromen
+<div class="mermaid">flowchart LR
+  subgraph gbo["GBO Basis"]
+    direction TB
+        gbo_pbac("Autorisatie&lt;br/&gt;(PBAC/FTV)")
+        gbo_api("GraphQL&lt;br/&gt;(generiek)")
+        gbo_fsc_in("FSC inway")
+  end
+  subgraph eudi["EUDI-Wallet"]
+    direction LR
+      eudi_fsc_out("FSC outway")
+      eudi_asi("ASI-provider&lt;br/&gt;(verify dienst)")
+      eudi_pubeaa("PubEAA-provider&lt;br/&gt;(PubEAA)")
+      eudi_qeaa["QTSP&lt;br/&gt;(QEAA)"]
+      eudi_wallet["EUDI-Wallet burger"]
+  end
+  subgraph oots["SDG / OOTS"]
+    direction LR
+      oots_fsc_out("FSC outway")
+      oots_adapter("OOTS-V&lt;br/&gt;(GBO mapping)")
+      oots_basis["eDelivery&lt;br/&gt;toegangspunt"]
+      oots_afnemer["Europese overheid&lt;br/&gt;SDG-portaal"]
+  end
+
+%%  subgraph dvtp["DvTP"]
+%%    direction LR
+%%      dvtp_fsc_out("FSC outway")
+%%      dvtp_toestemming("Toestemmingsvoorziening")
+%%      dvtp_pseudoniem["Pseudonimiseervoorziening&lt;br/&gt;(BSNk PP)"]
+%%      dvtp_afnemer["Private dienstverlener"]
+%%  end
+
+  bron[("Overheidsbronnen&lt;br/&gt;BRP · BD · UWV · KvK · …")] --- gbo_api --- gbo_pbac --- gbo_fsc_in
+  gbo_fsc_in -- GraphQL --- eudi_fsc_out &amp; oots_fsc_out
+%%  gbo_fsc_in -- GraphQL --- dvtp_fsc_out
+  eudi_fsc_out --- eudi_asi -- REST-JSON&lt;br/&gt;(HTTP / OAuth) --- eudi_qeaa -- OpenID4VCI --- eudi_wallet
+  eudi_fsc_out --- eudi_pubeaa -- OpenID4VCI ---- eudi_wallet
+  oots_fsc_out --- oots_adapter --- oots_basis -- eDelivery-AS4 --- oots_afnemer
+
+%%  gbo_pbac -- REST-JSON&lt;br/&gt;(PIP) --- dvtp_toestemming
+%%  dvtp_toestemming -- REST-JSON --- dvtp_afnemer
+%%  dvtp_toestemming -- REST-JSON --- dvtp_pseudoniem
+%%  dvtp_fsc_out --GraphQL--- dvtp_afnemer
+%%  dvtp_fsc_out ~~~ dvtp_pseudoniem
+%%  dvtp_fsc_out ~~~ oots_adapter
+%%  dvtp_fsc_out ~~~ dvtp_toestemming
+%%  oots_basis ~~~ dvtp_afnemer
+
+  eudi_wallet --- burger["Burger"]
+  oots_afnemer --- burger
+%%  dvtp_afnemer --- burger
+
+  gbo_fsc_in:::gbo
+  gbo_api:::gbo
+  gbo_pbac:::gbo
+  eudi_fsc_out:::gbo
+  eudi_asi:::gbo
+  eudi_pubeaa:::gbo
+  eudi_qeaa:::eudi
+  eudi_wallet:::eudi
+  oots_fsc_out:::gbo
+  oots_adapter:::gbo
+  oots_basis:::oots
+  oots_afnemer:::oots
+
+%%  dvtp_fsc_out:::gbo
+%%  dvtp_toestemming:::gbo
+%%  dvtp_pseudoniem:::dvtp
+%%  dvtp_afnemer:::dvtp
+
+  bron:::bron
+  burger:::burger
+
+  classDef bron fill:#edf7df,stroke:#6aa13a,color:#27500a
+  classDef generiek fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef eudi fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef oots fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef dvtp fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef gbo fill:#fff0e8,stroke:#000000,color:#000000
+  classDef burger fill:#edf7df,stroke:#6aa13a,color:#27500a</div>
+<figcaption>De gegevensstromen zoals het project UBO die heeft beproefd en zoals GBO ze nu wil inrichten.</figcaption>
 </figure>
 
-<h3 id="toelichting">Toelichting<a class="headerlink" href="#toelichting" title="Permanent link">&para;</a></h3>
-<p>Iedere bronhouder kan in theorie gegevens uitleveren aan wallets, maar deze gegevens krijgen pas juridische waarde als ze gekwalificeerd zijn. Dat kwalificeren kan op twee manieren: de overheid ondertekent het gegeven, waardoor het een PuB-EAA wordt, of een gekwalificeerde verlener van vertrouwensdiensten (QTSP) doet dit.<br />
-Als de overheid het gegeven kwalificeert kan de bronhouder dit zelf doen, maar het kan schaalvoordeel bieden om dit te centraliseren in een GBO PuB-EAA-dienst. Als een QTSP het gegeven kwalificeert, moet deze QTSP het gegeven kunnen verifiëren via een verificatiedienst. Ook hier kan een bronhouder de dienst zelf aanbieden, of kan ervoor gekozen worden om dit te centraliseren in een GBO verificatiedienst. Ook de autorisatiedienst die door de Pub-EAA-dienst en de verificatiedienst aangeroepen wordt, kan door de bronhouder aangeboden worden, maar het biedt schaalvoordeel om dat te centraliseren in een GBO dienst.</p>
-<h2 id="gegevensverzoek-van-europese-overheidsdienst-aan-nederlandse-overheidsbron">Gegevensverzoek van Europese overheidsdienst aan Nederlandse overheidsbron<a class="headerlink" href="#gegevensverzoek-van-europese-overheidsdienst-aan-nederlandse-overheidsbron" title="Permanent link">&para;</a></h2>
-<h3 id="doel_1">Doel<a class="headerlink" href="#doel_1" title="Permanent link">&para;</a></h3>
-<p>Een Europese overheidsdienst vraagt een gegeven (Evidence Request) aan een Nederlandse overheidsbron om een dienst aan een Nederlandse burger in het buitenland te kunnen leveren.</p>
-<h3 id="interactie_1">Interactie<a class="headerlink" href="#interactie_1" title="Permanent link">&para;</a></h3>
-<figure>
-
-<div class="mermaid">sequenceDiagram
-    autonumber
-    participant BRG as Burger&lt;br/&gt;(rechthebbende)
-    participant EU as EU dienst&lt;br/&gt;(SDG/OOTS)
-    participant RINIS as Basisinrichting OOTS NL&lt;br /&gt;(BZK/RINIS)
-    participant GBO as GBO&lt;br/&gt;(GBO voorziening)
-    participant BRH as Bronhouder&lt;br/&gt;(BRP / BD / …)
-
-    rect rgb(250, 241, 251)
-        Note over BRG,EU: ① Burger neemt dienst af
-        BRG-&gt;&gt;EU: Verzoek dienst
-        Note over EU: Gegeven Bronhouder nodig
-    end
-
-    rect rgb(230, 241, 251)
-        Note over EU,RINIS: ② OOTS-verzoek&lt;br /&gt;(eDelivery/AS4)
-        EU-&gt;&gt;RINIS: Evidence Request (eDelivery/AS4)
-    end
-
-    rect rgb(250, 238, 218)
-        Note over RINIS,GBO: ③ Doorzetten naar bron via GBO
-        RINIS-&gt;&gt;GBO: OOTS-payload (REST/JSON)
-        Note over RINIS: eDelivery → REST ontkoppeling
-    end
-
-    rect rgb(225, 245, 238)
-        Note over GBO,BRH: ④ Bronontsluiting (GBO generieke API)
-        GBO-&gt;&gt;BRH: API-aanroep (GBO-formaat)
-        BRH-&gt;&gt;GBO: Gegevens (REST/JSON)
-    end
-
-    rect rgb(225, 245, 238)
-        Note over GBO: ⑤ Semantische mapping &amp; logging (intern GBO)
-        Note over GBO: GBO-formaat → SDG Evidence type · audit log · doelbinding
-    end
-
-    rect rgb(250, 238, 218)
-        Note over GBO,RINIS: ⑥ Terugkoppeling naar OOTS basisinrichting
-        GBO-&gt;&gt;RINIS: Evidence Response (REST/JSON)
-        Note over RINIS: REST → eDelivery vertaling
-    end
-
-    rect rgb(230, 241, 251)
-        Note over RINIS,BRG: ⑦ Toestemming burger (User Review)
-        RINIS-&gt;&gt;BRG: Tonen te delen gegevens
-        BRG-&gt;&gt;RINIS: Keuze te delen gegevens
-    end
-
-    rect rgb(230, 241, 251)
-        Note over EU,RINIS: ⑧ OOTS-antwoord&lt;br /&gt;(eDelivery/AS4)
-        RINIS-&gt;&gt;EU: Evidence Response
-    end
-
-    rect rgb(250, 241, 251)
-        Note over BRG,EU: ⑨ Burger neemt dienst af
-        EU-&gt;&gt;BRG: Levert dienst
-    end
-</div>
-<figcaption>Interactiepatroon gegevensverzoek Europese overheidsdienst via SDG/OOTS</figcaption>
-</figure>
-
-<h3 id="toelichting_1">Toelichting<a class="headerlink" href="#toelichting_1" title="Permanent link">&para;</a></h3>
-<p>BZK heeft RINIS aangewezen als nationaal OOTS-toegangspunt (AS4/eDelivery), waar de OOTS basisinrichting in beheer is. Die geeft het Evidence Request als REST/JSON door aan GBO. GBO verzorgt de bronontsluiting en de semantische mapping naar het SDG Evidence-formaat. Bronhouders zien uitsluitend de GBO-API en hoeven geen OOTS-kennis te hebben.<br />
-De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisinrichting, waar het bericht in AS4 wordt verpakt. Na de toestemmingsinteractie met de burger wordt het bericht als Evidence Response teruggestuurd naar de Europese overheidsdienst.</p>
-<h2 id="gegevensverzoek-van-private-partij-met-toestemming-aan-bronhouder-dvtp">Gegevensverzoek van private partij met toestemming aan bronhouder (DvTP)<a class="headerlink" href="#gegevensverzoek-van-private-partij-met-toestemming-aan-bronhouder-dvtp" title="Permanent link">&para;</a></h2>
-<h3 id="doel_2">Doel<a class="headerlink" href="#doel_2" title="Permanent link">&para;</a></h3>
-<p>Een private dienstverlener haalt gegevens op bij een bronhouder op basis van een geldige toestemming van de burger.</p>
-<h3 id="interactie_2">Interactie<a class="headerlink" href="#interactie_2" title="Permanent link">&para;</a></h3>
-<figure>
-
-<div class="mermaid">sequenceDiagram
-    autonumber
-    actor Burger
-    participant DV as Dienst-&lt;br/&gt;verlener
-    participant Auth as Authenticatie-&lt;br/&gt;dienst
-    participant TV as Toestemmings-&lt;br/&gt;voorziening (GBO)
-    participant PP as BSNk PP&lt;br/&gt;(pseudonimisering)
-    participant TR as Toestemmings-&lt;br/&gt;register
-    participant BRH as Bron-&lt;br/&gt;houder
-
-    Note over Burger,BRH: Fase 1 — Toestemming verlenen
-
-    rect rgb(225, 245, 238)
-        Burger-&gt;&gt;DV: Neemt dienst af
-        DV-&gt;&gt;Burger: Redirect naar toestemmingsvoorziening GBO&lt;br/&gt;(met scope + doelbinding)
-        Burger-&gt;&gt;TV: Volgt redirect
-        TV-&gt;&gt;Auth: Authenticatieverzoek
-        Note over Auth: DigiD of ander identificatiemiddel (eIDAS 2.0)
-        Auth-&gt;&gt;Burger: Authenticeer burger
-        Burger--&gt;&gt;Auth: Authenticatie
-        Auth--&gt;&gt;TV: BSN (geverifieerde identiteit)
-        TV-&gt;&gt;TV: PI/PP aanwezig?
-        TV-&gt;&gt;PP: Activeer BSN
-        PP-&gt;&gt;TV: PI/PP
-        TV-&gt;&gt;TV: Registreer PI/PP
-        TV-&gt;&gt;PP: Transformeer PI/PP
-        PP--&gt;&gt;TV: Versleutelde PI/PP (VI/VP)
-        TV-&gt;&gt;Burger: Toon gegevens waarvoor toestemming&lt;br/&gt;gevraagd wordt (scope + doelbinding)
-        Burger--&gt;&gt;TV: Verleent toestemming
-        TV-&gt;&gt;TR: Schrijf toestemming in register&lt;br/&gt;(VI · scope · doelbinding · TTL)
-        TR--&gt;&gt;TV: consent_id
-        TV-&gt;&gt;DV: Redirect terug naar dienstverlener&lt;br/&gt;(met consent_id en VP)
-    end
-
-    Note over DV,BRH: Fase 2 — Gegevensopvraging bij bronhouder
-
-    rect rgb(238, 237, 254)
-        DV-&gt;&gt;BRH: Gegevensverzoek&lt;br/&gt;(consent_id · mTLS / certificaat)
-        BRH-&gt;&gt;BRH: Authenticeer dienstverlener&lt;br /&gt;(via certificaat)
-        BRH-&gt;&gt;BRH: Controleer bevoegdheid&lt;br /&gt;(via FSC contract/Trusted List)
-        BRH-&gt;&gt;TR: Valideer consent_id&lt;br/&gt;(geldig? scope? TTL?)*
-        TR--&gt;&gt;BRH: Consent geldig&lt;br /&gt;(incl. VI)
-        Note over TR, BRH: Als consent in token zit, is&lt;br/&gt;bevraging toestemmingenregister&lt;br /&gt;niet nodig
-        BRH-&gt;&gt;BRH: Controleer data scope&lt;br /&gt;(template match)
-        BRH-&gt;&gt;BRH: Ontsleutel VI naar BSN
-        BRH--&gt;&gt;DV: Gevraagde gegevens
-    end
-</div>
-<figcaption>Interactiepatroon Private Partij haalt gegevens op met toestemming van de burger</figcaption>
-</figure>
-
-<h3 id="toelichting_2">Toelichting<a class="headerlink" href="#toelichting_2" title="Permanent link">&para;</a></h3>
-<p>De dienstverlener kan rechtstreeks gegevens opvragen bij de bronhouder, maar heeft daarvoor toestemming van de burger nodig. Deze toestemming wordt door GBO afgehandeld via een toestemmingsvoorziening (een interface waar de burger vrij, specifiek, geïnformeerd en ondubbelzinnig de toestemming verleent) en een toestemmingsregister waar de toestemming wordt vastgelegd en waar deze gecontroleerd kan worden. De toestemmingsvoorziening moet de burger ook toegang geven tot de gegeven toestemmingen om te zien of die is gebruikt en om deze - indien relevant - in te trekken.</p>
-<p>De dienstverlener gebruikt nooit het BSN van de burger. Daarom moet deze gepseudonimiseerd worden. De pseudonimisering moet zo gebeuren dat de dienstverlener deze telkens kan depseudonimiseren naar een eigen identificatie, die echter geen betekenis heeft voor andere partijen. De bronhouder moet het pseudoniem kunnen depseudonimiseren naar het originele BSN.</p>
-<p>Bij controle van de gegevensvraag door de dienstverlener bij de bronhouder, authenticeert de bronhouder de dienstverlener op basis van het certificaat dat ook voor de versleuteling van het transport (mTLS) gebruikt wordt. Daarnaast moet de bronhouder controleren of de dienstverlener bevoegd is om gegevens op te vragen. Dat kan via FSC-contracten - de dienstverlener moet een contract hebben afgesloten om de API van de bronhouder te mogen bevragen. Dit kan ook op basis van een lijst met bevoegde afnemers (Trusted List). Zo'n lijst kan sectoraal beheerd worden, wat voorkomt dat een bronhouder met heel veel afnemers (bv. alle hypotheekverstrekkers) contracten moet afsluiten en beheren.</p>
+<p>In de volgende paragrafen wordt uitgewerkt wat GBO heeft overgenomen van UBO en waar GBO afwijkende keuzes maakt of een doorontwikkeling voorstelt.</p>
+<h3 id="overgenomen-van-ubo">Overgenomen van UBO<a class="headerlink" href="#overgenomen-van-ubo" title="Permanent link">&para;</a></h3>
+<p>In de onderstaande tabel staat wat UBO heeft getoetst en aangetoond, en hoe GBO dat overneemt.  </p>
+<table>
+<thead>
+<tr>
+<th>Onderwerp</th>
+<th>Wat UBO heeft bewezen</th>
+<th>Hoe GBO dit overneemt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Uniforme bronontsluiting als concept</strong></td>
+<td>UBO wil gemeenten één manier bieden om bronnen te ontsluiten voor meerdere kanalen zoals OOTS en EUDI-wallet, en gemeenten daarbij ontzorgen via ondersteunende services.</td>
+<td>GBO neemt dit principe over, maar trekt het breder: bronhouders stellen gegevens één keer beschikbaar via een generieke bronontsluiting voor meerdere trajecten. De PSA stelt expliciet dat bronhouders één generieke ontsluiting realiseren en geen trajectspecifieke endpoints per afnemer hoeven te maken.</td>
+</tr>
+<tr>
+<td><strong>UBO-integratielaag</strong></td>
+<td>UBO introduceert een integratielaag met middleware, Data API en OpenFSC Inway als contactpunt voor gegevensvragen. De OpenFSC Outway aan de distributiekant bevraagt die Inway via FSC.</td>
+<td>GBO neemt dit patroon over als “generieke bronontsluiting”, maar maakt het minder gemeentelijk-specifiek en meer stelselmatig. In de PSA staat de “Gemeenschappelijke bronontsluiting API” centraal, met OAuth 2.0, GraphQL en FSC.</td>
+</tr>
+<tr>
+<td><strong>FSC/OpenFSC als connectiviteitslaag</strong></td>
+<td>UBO benut FSC voor authenticatie, autorisatie, routering en logging; OpenFSC Inway en Outway zijn daarbij de referentiecomponenten.</td>
+<td>GBO houdt FSC als basis voor bronontsluiting en organisatie-authenticatie. In de realisatiestrategie staat “FSC / GraphQL / PBAC” als kern van GBO Basis. Belangrijk nuanceverschil: de PSA noemt FSC als standaard/patroon, maar schrijft niet per se OpenFSC als enige implementatie voor.</td>
+</tr>
+<tr>
+<td><strong>OOTS-V / Basisinrichting OOTS / RINIS</strong></td>
+<td>UBO gebruikt de OOTS-V als intermediair platform dat de UBO-integratielaag aansluit op het Europese OOTS-netwerk. De OOTS-V bevat onder meer OpenFSC Outway, OOTS-V backend, eDelivery-toegangspunt, authenticatieservice en preview/toestemmingsservice.</td>
+<td>GBO hergebruikt de Basisinrichting OOTS/RINIS als nationaal OOTS-toegangspunt voor AS4/eDelivery. De PSA beschrijft dat RINIS het OOTS-verzoek als REST/JSON doorzet naar GBO, waarna GBO bronontsluiting en semantische mapping verzorgt.</td>
+</tr>
+<tr>
+<td><strong>eDelivery/AS4-brug</strong></td>
+<td>UBO heeft het patroon bewezen waarin nationale REST/FSC-bevraging wordt gekoppeld aan Europees eDelivery/AS4-verkeer. De UBO-architectuur beschrijft het eDelivery-toegangspunt als Domibus-implementatie en schakelpunt met andere lidstaten.</td>
+<td>GBO neemt dit over voor SDG/OOTS: OOTS-adapter ↔ Basisinrichting OOTS ↔ eDelivery/AS4. De GBO-realisatiestrategie tekent dit ook zo: GBO levert via een OOTS-adapter REST/JSON aan de Basisinrichting OOTS, die via eDelivery-AS4 met de Europese overheid communiceert.</td>
+</tr>
+<tr>
+<td><strong>Attribuutverificatie voor EUDI-wallet/QTSP</strong></td>
+<td>UBO heeft een attribuutverificatieservice uitgewerkt waarbij de QTSP een verificatieverzoek doet en de service de authentieke bron op uniforme wijze bevraagt; de specificatie noemt Digikoppeling API-profiel/FSC richting bron en eDelivery plus OOTS/ETSI TS 119 478-berichtmodellen richting QTSP. (<a href="https://digilab.overheid.nl/uploads/uniforme-bronontsluiting/2026-03-30%20Specificaties%20attribuutverificatieservice.pdf">Digilab</a>)</td>
+<td>GBO bouwt hierop voort met een verificatiedienst/ASI-provider. De PSA beschrijft dat een QTSP via een verificatiedienst attributen kan laten verifiëren, waarbij die dienst door de bronhouder zelf of centraal via GBO kan worden aangeboden.</td>
+</tr>
+<tr>
+<td><strong>Intermediair patroon</strong></td>
+<td>UBO laat zien dat een intermediair platform algemene functies kan leveren tussen bronhouder en kanaal, zoals OOTS-V, eDelivery, preview/toestemming en attribuutverificatie.</td>
+<td>GBO veralgemeniseert dit tot een “GBO edge”-achtige laag met werkpakketten: OOTS-adapter, ASI-provider, PubEAA-provider, toestemmingsvoorziening en pseudonimiseervoorziening. De PSA tekent deze als afzonderlijke werkpakketten bovenop GBO Basis.</td>
+</tr>
+<tr>
+<td><strong>Lessen over vertrouwen, logging en certificaten</strong></td>
+<td>UBO gebruikt FSC met mTLS en PKI-certificaten; FSC schrijft logging met transactie-ID’s voor zonder de privacygevoelige gegevens zelf te loggen.</td>
+<td>GBO neemt dit mee in een breder vertrouwensstelsel. De PSA stelt dat organisatie-authenticatie gebaseerd is op certificaten van erkende vertrouwensdienstverleners en dat vertrouwen onafhankelijk moet zijn van het transportprotocol.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="doorontwikkelingen-gbo-tov-ubo">Doorontwikkelingen GBO t.o.v. UBO<a class="headerlink" href="#doorontwikkelingen-gbo-tov-ubo" title="Permanent link">&para;</a></h3>
+<p>In de onderstaande tabel staan de onderdelen waar GBO doorontwikkeld op de UBO bevindingen.  </p>
+<table>
+<thead>
+<tr>
+<th>Thema</th>
+<th>UBO</th>
+<th>Doorontwikkeling in GBO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Scope</strong></td>
+<td>UBO richt zich primair op gemeentelijke bronnen en initieel op OOTS en EUDI-wallet-use-cases. De UBO-architectuur noemt wel uitbreiding naar DvTP en niet-gemeentelijke bronhouders als bredere ambitie.</td>
+<td>GBO maakt die bredere ambitie het uitgangspunt: meerdere bronhouders, meerdere trajecten en een productiegericht stelsel. De PSA werkt met GBO Basis plus afzonderlijke werkpakketten voor EUDI-wallet, SDG/OOTS en DvTP.</td>
+</tr>
+<tr>
+<td><strong>API-paradigma</strong></td>
+<td>UBO gebruikt een Data API op basis van het Digikoppeling REST API-profiel, OpenAPI en API Design Rules.</td>
+<td>GBO schuift richting een generieke bronontsluiting met GraphQL/FSC. GraphQL is vooral relevant voor selectieve gegevensuitvraag en dataminimalisatie, maar de PSA houdt ruimte voor REST/JSON en een vertaallaag voor bronhouders die nog geen GraphQL kunnen leveren.</td>
+</tr>
+<tr>
+<td><strong>Semantische verantwoordelijkheid</strong></td>
+<td>UBO biedt gegevens kanaalonafhankelijk aan, maar erkent dat structuur en formaat van gegevens kanaalspecifiek kunnen zijn; OOTS-geboortegegevens kunnen dus afwijken van een EUDI-wallet-attestatie.</td>
+<td>GBO wil de kanaalspecifieke semantiek expliciet beheren in gemeenschappelijke functies. De PSA zegt dat dezelfde gegevensset geserialiseerd moet kunnen worden naar JSON, OOTS-EDM XML, SD-JWT VC of mdoc, op basis van een eenmalig vastgelegde canonieke definitie.</td>
+</tr>
+<tr>
+<td><strong>OOTS-mapping</strong></td>
+<td>In UBO zorgt de OOTS-V backend voor omvorming van het UBO-datamodel naar het OOTS Exchange Data Model, bewaakt de state en verzorgt logging/audit trail.</td>
+<td>In GBO wordt dit een expliciete <strong>OOTS-adapter</strong> met semantische mapping tussen GBO-formaat en SDG/OOTS Evidence Types. De PSA zegt dat GBO de bronontsluiting en semantische mapping verzorgt en dat bronhouders geen OOTS-kennis hoeven te hebben.</td>
+</tr>
+<tr>
+<td><strong>Autorisatie</strong></td>
+<td>UBO gebruikt FSC-contracten, access tokens en FSC-policies om te controleren of de gevraagde gegevensset binnen het contract valt.</td>
+<td>GBO breidt dit uit naar PBAC met PEP/PDP/PIP, real-time grondslagcontrole, AuthZEN-profielen en centraal beheerde policies. De PSA noemt OPA/Rego, AuthZEN NL Gov, PBAC, decentrale PEP/PDP’s en een centrale PAP/Policy Store als beoogde stelselfuncties.</td>
+</tr>
+<tr>
+<td><strong>Beleidsbeheer</strong></td>
+<td>UBO borgt autorisatie vooral in FSC-contracten en configuratie.</td>
+<td>GBO introduceert centraal beheerde, machineleesbare policybundels die naar decentrale PDP’s worden gedistribueerd. De PSA benoemt dit als nieuwe stelselfunctie S06 met een PAP, Policy Store en OPA Bundle Server.</td>
+</tr>
+<tr>
+<td><strong>BSN en private partijen</strong></td>
+<td>UBO-request bevat identificatiegegevens zoals eIDAS-identificatie en, waar van toepassing, BSN. Voor OOTS gebruikt de authenticatieservice het inlogproces ook om het BSN te verkrijgen.</td>
+<td>GBO stelt expliciet dat BSN nooit zichtbaar mag zijn voor private dienstverleners zonder wettelijke grondslag. Daarom komt er pseudonimisering met BSNk PP, waarbij BSN-resolving pas intern aan bronhouderszijde gebeurt.</td>
+</tr>
+<tr>
+<td><strong>Wallet-model</strong></td>
+<td>UBO gaat in de beschreven use cases vooral uit van een QTSP die QEAA’s uitgeeft of attributen verifieert via een intermediair/verificatieservice.</td>
+<td>GBO voegt een publieke route toe: een centrale of bronhoudergebonden PubEAA-provider voor PuB-EAA’s, naast de QTSP-route voor QEAA’s. De PSA noemt voorlopig een centrale PubEAA-verstrekker en centrale verificatiedienst, maar houdt ook opties open voor bronhouder-eigen invulling.</td>
+</tr>
+<tr>
+<td><strong>Centralisatie versus decentralisatie</strong></td>
+<td>UBO gebruikt al centrale/intermediaire functies waar dat praktisch is, zoals OOTS-V en attribuutverificatie, maar blijft een beproeving met een VNG-consortium.</td>
+<td>GBO maakt “decentraal wat kan, centraal wat moet” explicieter als ontwerpkeuze. De PSA noemt centrale PubEAA-dienst, centrale verificatiedienst en een vertaalvoorziening voor GraphQL-naar-REST/API als voorzieningen die centraal overwogen worden.</td>
+</tr>
+<tr>
+<td><strong>Governance en standaardisatie</strong></td>
+<td>UBO is een beproeving die is afgestemd met FDS en GBO en bedoeld is om leerervaringen terug te leveren voor landelijke borging.</td>
+<td>GBO formaliseert dit in stelselfuncties, afspraken, standaarden en voorzieningen. De PSA onderscheidt acht generieke functies, waaronder identiteit &amp; vertrouwen, gegevensvoorziening, semantiek, grondslag &amp; beleid en orkestratie &amp; integratie.</td>
+</tr>
+</tbody>
+</table>
 
 
 

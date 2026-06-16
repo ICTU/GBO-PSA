@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://ictu.github.io/gbo/latest/psa/ecosysteem/">
+        <link rel="canonical" href="https://ictu.github.io/GBO-PSA/latest/psa/ecosysteem/">
       
       
         <link rel="prev" href="../ontwerpprincipes/">
@@ -25,7 +25,7 @@
     
     
       
-        <title>Ecosysteem en oplossingsrichting - Documentatie GBO</title>
+        <title>Ecosysteem en oplossingsrichting - Projectstartarchitectuur GBO</title>
       
     
     
@@ -137,7 +137,7 @@
 
 
 <!-- Header -->
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav
     class="md-header__inner md-grid"
     aria-label="Header"
@@ -146,9 +146,9 @@
     <!-- Link to home -->
     <a
       href="../.."
-      title="Documentatie GBO"
+      title="Projectstartarchitectuur GBO"
       class="md-header__button md-logo"
-      aria-label="Documentatie GBO"
+      aria-label="Projectstartarchitectuur GBO"
       data-md-component="logo"
     >
       
@@ -168,7 +168,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Documentatie GBO
+            Projectstartarchitectuur GBO
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -276,7 +276,7 @@
     <!-- Repository information -->
     
       <div class="md-header__source">
-        <a href="https://github.com/ictu/gbo" title="Ga naar repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/ICTU/GBO-PSA" title="Ga naar repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
@@ -291,13 +291,139 @@
 
   <!-- Navigation tabs (sticky) -->
   
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO/latest/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  GBO
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO-GO/latest/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Globaal Ontwerp
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../inleiding/" class="md-tabs__link">
+          
+  
+  
+  Projectstartarchitectuur
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Technisch Ontwerp
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Technische Requirements
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Semantiek
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -311,22 +437,24 @@
                     
 
 
+  
+
 
   
 
-<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigatie" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigatie" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Documentatie GBO" class="md-nav__button md-logo" aria-label="Documentatie GBO" data-md-component="logo">
+    <a href="../.." title="Projectstartarchitectuur GBO" class="md-nav__button md-logo" aria-label="Projectstartarchitectuur GBO" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Documentatie GBO
+    Projectstartarchitectuur GBO
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/ictu/gbo" title="Ga naar repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/ICTU/GBO-PSA" title="Ga naar repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
@@ -346,14 +474,41 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="https://ictu.github.io/GBO/latest/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Over deze repository
+    GBO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ictu.github.io/GBO-GO/latest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Globaal Ontwerp
   
 
     
@@ -382,23 +537,26 @@
         
         
       
+      
+        
+      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    PSA
+    Projectstartarchitectuur
   
 
     
@@ -409,12 +567,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    PSA
+    Projectstartarchitectuur
   
 
           </label>
@@ -455,14 +613,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../context/" class="md-nav__link">
+      <a href="../oplossing.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Context
+    Oplossingsrichting
   
 
     
@@ -793,69 +951,15 @@
   
   
   
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Technisch ontwerp
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Technisch ontwerp
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../../ref-arch/gbo-reference-architecture/" class="md-nav__link">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Reference architecture
+    Technisch Ontwerp
   
 
     
@@ -867,11 +971,57 @@
     </li>
   
 
-              
-            
-          </ul>
-        </nav>
+    
       
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technische Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semantiek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -886,6 +1036,12 @@
           
           
             <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
               
               <article class="md-content__inner md-typeset">
                 
@@ -920,36 +1076,33 @@
 </ul>
 <p>SDG/OOTS (Single Digital Gateway / Once Only Technical System) is een Europees netwerk van nationale voorzieningen en 'common services' waarmee Europese overheden gegevens uit overheidsbronnen van andere Europese lidstaten kunnen opvragen. De feitelijke actor is dan de overheidsfunctionaris die een persoonsgegeven nodig heeft voor het leveren van een dienst aan een burger die in het buitenland is.</p>
 <ul>
-<li>GBO stelsel  </li>
+<li>GBO  </li>
 </ul>
-<p>Om de gegevens uit te wisselen zijn afspraken nodig en mogelijk een of enkele voorzieningen. Deze afspraken en eventuele voorzieningen worden beheerd in een stelsel. In dit document wordt dit stelsel het "GBO stelsel" genoemd, maar in de praktijk is het de bedoeling dat de afspraken en eventuele voorzieningen worden ondergebracht bij bestaande stelsel en/ of organisaties.</p>
+<p>Om de gegevens uit te wisselen zijn afspraken nodig en mogelijk een of enkele voorzieningen. Deze afspraken en eventuele voorzieningen worden beheerd in een stelsel. <strong>In dit document wordt dit stelsel op enkele plekken voor de leesbaarheid "GBO" of "GBO stelsel" genoemd, maar het is uitdrukkelijk de bedoeling dat de afspraken en eventuele voorzieningen worden ondergebracht bij bestaande stelsels en/ of organisaties.</strong></p>
 <h2 id="contextdiagram">Contextdiagram<a class="headerlink" href="#contextdiagram" title="Permanent link">&para;</a></h2>
-<p>In de contextdiagram worden de actoren ten opzichte van elkaar en van het GBO stelsel geschetst.</p>
+<p>In de contextdiagram worden de actoren ten opzichte van elkaar en van GBO geschetst.</p>
 <figure>
 
-<div class="mermaid">
-flowchart LR
+<div class="mermaid">flowchart LR
 
-Bronhouder
-DvTP["GBO stelsel
+Bronhouder["Overheidsbron"]
+DvTP["GBO
 (afspraken, standaarden, voorzieningen)"]
-Wallet
-Privaat["Private partij"]
+Wallet["EDI-Wallet"]
 SDG["SDG/OOTS"]
+Privaat["Private dienstverlener"]
 
 Bronhouder --&gt; DvTP
 DvTP --&gt; Wallet
-DvTP --&gt; Privaat
 DvTP --&gt; SDG
+DvTP --&gt; Privaat
 </div>
-
 <figcaption>Contextdiagram</figcaption>
 </figure>
 
 <h2 id="oplossingsrichting">Oplossingsrichting<a class="headerlink" href="#oplossingsrichting" title="Permanent link">&para;</a></h2>
-<p>Zoals in de contextdiagram wordt geschetst worden de gegevens van de bronhouder via het GBO stelsel voor drie doelen gebruikt. Dit ontlast de bronhouder en maakt hergebruik van gegevens eenvoudiger. Ook als er meer doelen bijkomen vormt deze opzet een oplossing die hergebruikt kan worden.</p>
-<p>Om deze oplossing mogelijk te maken zal het stelsel een aantal interactiepatronen moeten ondersteunen. Het achterhalen van deze interactiepatronen gebeurt via use cases, die in de bijlage zijn uitgewerkt. De interactiepatronen worden in het volgende hoofdstuk besproken.</p>
-<p>In het volgende hoofdstuk worden eerst de kaders van de oplossing besproken: de architectuur- en ontwerpprincipes waar de oplossing rekening mee moet houden.  </p>
+<p>Zoals in de contextdiagram wordt geschetst worden de gegevens van de bronhouder via GBO voor drie doelen gebruikt. Dit ontlast de bronhouder en maakt hergebruik van gegevens eenvoudiger. Ook als er meer doelen bijkomen vormt deze opzet een oplossing die hergebruikt kan worden.</p>
+<p>Om deze oplossing mogelijk te maken zal het stelsel een aantal interactiepatronen moeten ondersteunen. Het achterhalen van deze interactiepatronen zijn use cases gebruikt, die in andere stukken zijn uitgewerkt [tbd: juiste links opnemen]. De interactiepatronen worden in het volgende hoofdstuk besproken.</p>
 
 
 
@@ -1005,7 +1158,7 @@ DvTP --&gt; SDG
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.code.annotate", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
