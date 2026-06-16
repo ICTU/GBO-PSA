@@ -22,6 +22,10 @@ theme:
     - toc.integrate
     - content.code.copy
     - content.code.annotate
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.path
+    - toc.follow
 
 markdown_extensions:
   - tables
