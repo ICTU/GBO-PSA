@@ -80,7 +80,7 @@ plugins:
 
 nav:
   - GBO: https://ictu.github.io/GBO/latest/
-  - Globaal Ontwerp: https://ictu.github.io/GBO-GO/latest/
+  - Globaal Ontwerp: https://ictu.github.io/GBO-GO/latest/ontwerp/concept-globaal-ontwerp/
   - Projectstartarchitectuur:
       - Inleiding: psa/inleiding.md
       - Oplossingsrichting: psa/oplossingsrichting.md
