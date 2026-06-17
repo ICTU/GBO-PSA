@@ -20,7 +20,7 @@
 
 ### P-02 · Minimale gegevensverwerking (dataminimalisatie)
 
-**Stelling:** Er worden niet meer persoonsgegevens uitgewisseld dan strikt noodzakelijk voor het doel. Het stelsel levert attributen, niet ruwe (basis)registratie-dumps.
+**Stelling:** Er worden niet meer persoonsgegevens uitgewisseld dan strikt noodzakelijk voor het doel. Het stelsel ondersteunt dit door het leveren van attributen of specifieke gegevenssets in plaats van ruwe (basis)registratie-dumps.
 
 **Bronnen:**  
 - AVG art. 5 lid 1 sub c  
@@ -131,12 +131,12 @@
 
 ### P-07 · Vertrouwensstelsel op basis van PKI en erkende toetredingseisen
 
-**Stelling:** Alle deelnemende partijen (bronhouders, afnemers, private partijen) voldoen aan toetredingseisen en zijn aantoonbaar betrouwbaar via PKIoverheid-certificaten en/ of bestaande stelsels (zoals sectorale afsprakenstelsels), die door de stelselbeheer voldoende vertrouwd worden.
+**Stelling:** Alle deelnemende partijen (bronhouders, afnemers, private partijen) voldoen aan toetredingseisen en zijn aantoonbaar betrouwbaar via PKIoverheid-certificaten en/ of bestaande stelsels (zoals sectorale afsprakenstelsels), die door de stelselbeheer voldoende vertrouwd worden. In de toekomst kunnen daar EUDI en/ of European Business Wallet bij komen.
 
 **Bronnen:**  
 - PKIoverheid-stelsel  
 - Wet digitale overheid (Wdo)  
-- Afsprakenstelsel ETD (eHerkenning)  
+- Afsprakenstelsel Elektronische Toegangsdiensten (eHerkenning)  
 
 ---
 
