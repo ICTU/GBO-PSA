@@ -665,10 +665,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#relatie-met-andere-architecturen" class="md-nav__link">
+  <a href="#leeswijzer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Relatie met andere architecturen
+        Leeswijzer
       
     </span>
   </a>
@@ -894,7 +894,7 @@
   <span class="md-ellipsis">
     
   
-    Open Vraagstukken en ontwerpkeuzes
+    Open vragen en ontwerpkeuzes
   
 
     
@@ -1024,38 +1024,41 @@
 
 <h1 id="inleiding">Inleiding<a class="headerlink" href="#inleiding" title="Permanent link">&para;</a></h1>
 <h2 id="doel-van-dit-document">Doel van dit document<a class="headerlink" href="#doel-van-dit-document" title="Permanent link">&para;</a></h2>
-<p>Dit document beschrijft de Project Start Architectuur (PSA) voor het
-programma <strong>GBO</strong> (<strong>G</strong>emeenschappelijke <strong>B</strong>ron<strong>O</strong>ntsluiting).</p>
+<p>Dit document beschrijft de Projectstartarchitectuur (PSA) voor het project Gemeenschappelijke Bronontsluiting (GBO).</p>
 <p>De PSA beschrijft <strong>wat de oplossing moet kunnen</strong>, maar legt nog geen technische implementatie vast.</p>
 <h2 id="scope">Scope<a class="headerlink" href="#scope" title="Permanent link">&para;</a></h2>
-<p>De PSA beschrijft de architectuur voor een generieke infrastructuur waarmee:</p>
+<p>De PSA beschrijft de architectuur voor een afsprakenstelsel en generieke infrastructuur waarmee:</p>
 <ul>
 <li>burgers gegevens van overheidsorganisaties kunnen verkrijgen  </li>
 <li>burgers deze gegevens kunnen delen met private partijen  </li>
-<li>gegevens gebruikt kunnen worden voor Europese toepassingen zoals <strong>EDI Wallet</strong> en <strong>SDG/OOTS</strong>  </li>
+<li>gegevens gebruikt kunnen worden voor Europese toepassingen zoals EDI Wallet en OOTS  </li>
 </ul>
 <p>De PSA omvat:</p>
 <ul>
+<li>oplossingsrichting  </li>
 <li>architectuur- en ontwerpprincipes  </li>
 <li>generieke functies  </li>
-<li>capabilities  </li>
-<li>realisatiestrategie</li>
+<li>stelselfuncties  </li>
+<li>realisatiestrategie  </li>
 </ul>
 <p>De PSA beschrijft <strong>niet</strong>:</p>
 <ul>
 <li>concrete technische oplossingen  </li>
-<li>implementaties van componenten  </li>
+<li>implementaties van componenten en afspraken<sup>*</sup>  </li>
 <li>leverancierskeuzes  </li>
 </ul>
-<h2 id="relatie-met-andere-architecturen">Relatie met andere architecturen<a class="headerlink" href="#relatie-met-andere-architecturen" title="Permanent link">&para;</a></h2>
-<p>De PSA sluit aan bij:</p>
+<p><sup>*</sup>: hoewel in deze PSA benoemd wordt welke afspraken gemaakt moeten worden en welke componenten ontwikkeld moeten worden, is het <strong>niet</strong> de bedoeling dat GBO een nieuw afsprakenstelsel of voorzieningenbeheerder wordt. De te maken afspraken moeten landen in bestaande afsprakenstelsels en de te ontwikkelen voorzieningen moeten bij bestaande beheerorganisaties in beheer genomen worden.</p>
+<h2 id="leeswijzer">Leeswijzer<a class="headerlink" href="#leeswijzer" title="Permanent link">&para;</a></h2>
+<p>De PSA bevat de volgende onderdelen:</p>
 <ul>
-<li>NORA</li>
-<li>GDI</li>
-<li>EDI Wallet / EUDI Wallet (en ARF)</li>
-<li>Single Digital Gateway (SDG)</li>
-<li>Once Only Technical System (OOTS)</li>
-<li>Federatief Datastelsel</li>
+<li>Oplossingsrichting: een schets van hoe de gemeenschappelijke bronontsluiting eruit komt te zien;</li>
+<li>Architectuurprincipes: de principes die de kaders vormen voor de oplossing;</li>
+<li>Ontwerpprincipes: de principes waaraan de ontwikkeling van de oplossing zich moet houden;</li>
+<li>Interactiepatronen: een uitwerking van hoe de gegevensstromen die in beeld zijn, uitgevoerd worden;</li>
+<li>Logische architectuur: de generieke functies die nodig zijn om invulling te geven aan de gewenste oplossing;</li>
+<li>Stelselfuncties: de stelselfuncties (capabilities) die invulling geven aan de generieke functies;</li>
+<li>Realisatiestrategie: de voorgestelde manier om de oplossing tot stand te laten komen;</li>
+<li>Open vragen en ontwerpkeuzes: vraagstukken die nog uitgewerkt moeten worden en (indien relevant) de ontwerpkeuze die is gemaakt.</li>
 </ul>
 
 
