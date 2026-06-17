@@ -90,7 +90,7 @@ nav:
       - Logische architectuur: psa/generieke-functies.md
       - Stelselfuncties: psa/capabilities.md
       - Realisatiestrategie: psa/realisatiestrategie.md
-      - Open Vraagstukken en ontwerpkeuzes: psa/vraagstukken.md
+      - Open vragen en ontwerpkeuzes: psa/vraagstukken.md
   - Technisch Ontwerp: https://ictu.github.io/GBO-TO/latest/
   - Technische Requirements: https://ictu.github.io/GBO-TR/latest/
   - Semantiek: https://ictu.github.io/GBO-SEM/latest/
