@@ -59,7 +59,7 @@ De vier functies in deze laag vormen de voorwaarden waaronder de generieke funct
 **Eisen:**
 
 - De identiteitsvaststelling sluit aan op de voor het traject vereiste betrouwbaarheidsniveaus (eIDAS Laag/Substantieel/Hoog) en maakt gebruik van erkende authenticatiemiddelen.
-- Voor het EDI-wallet traject ondersteunt de functie het ontvangen van een burgeridentiteit via een wallet-presentatie (conform eIDAS2/ARF), met verificatie via de relevante Trusted List.
+- Voor het EUDI-Wallet traject ondersteunt de functie het ontvangen van een burgeridentiteit via een wallet-presentatie (conform eIDAS2/ARF), met verificatie via de relevante Trusted List.
 
 ### Pseudonimisering
 

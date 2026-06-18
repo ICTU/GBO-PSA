@@ -107,7 +107,7 @@ Naast technische gaps kent dit document ook **juridische randvoorwaarden** (gema
 |---|---|---|
 | eIDAS2 / ARF — wallet-gebaseerde identiteitspresentatie (PID) | Europese Commissie | ARF v2.x beschikbaar; NL implementatie via pilotprogramma eWallet NL |
 | OpenID4VP — presentatieprotocol voor wallet naar verifier | OpenID Foundation | Beschikbaar als onderdeel van ARF; aansluiting op GBO nog te realiseren |
-| ISO 18013-5 (mDL) — proximity presentatie voor offline scenario's | ISO | Beschikbaar; relevant voor EDI-wallet traject |
+| ISO 18013-5 (mDL) — proximity presentatie voor offline scenario's | ISO | Beschikbaar; relevant voor EUDI-Wallet traject |
 
 ### Voorzieningen
 
@@ -115,7 +115,7 @@ Naast technische gaps kent dit document ook **juridische randvoorwaarden** (gema
 |---|---|---|---|---|
 | DigiD | Centrale voorziening | Logius | Gedeeld | Beschikbaar; ondersteunt eIDAS Substantieel; koppeling met GBO via bestaande DigiD-aansluiting |
 | eHerkenning | Stelselvoorziening | Logius / markt | Gedeeld (meerdere leveranciers) | Beschikbaar voor organisatie-authenticatie; relevant voor onboarding dienstverleners |
-| eIDAS-erkende buitenlandse authenticatiemiddelen | Stelselvoorziening | eIDAS-knooppunt (Logius) | Gedeeld | Beschikbaar via NL eIDAS-knooppunt; relevant voor EDI-wallet en OOTS |
+| eIDAS-erkende buitenlandse authenticatiemiddelen | Stelselvoorziening | eIDAS-knooppunt (Logius) | Gedeeld | Beschikbaar via NL eIDAS-knooppunt; relevant voor EUDI-Wallet en OOTS |
 | BSNk PP (polymorf pseudonimiseringsstelsel) | Centrale voorziening | Logius | Gedeeld | **Beschikbaar en in productie** (eToegang-stelsel, ~2019); integratiewerk voor GBO/DvTP-traject nog nodig |
 | BSNk Activate / Transform / Close | Onderdelen van BSNk PP | Logius | Gedeeld | Beschikbaar; onboarding Toestemmingsportaal als AD/MR-deelnemer en PEP als BSN-geautoriseerde component nog te realiseren |
 
@@ -333,7 +333,7 @@ Naast technische gaps kent dit document ook **juridische randvoorwaarden** (gema
 | Per bronhouder bestaat een beheerde, GBO-geregistreerde schemabeschrijving | Stelselafspraak | Centraal — GBO (schema-registry) | ⚠️ Nog te maken als GBO-cataloguseis |
 | Canonieke schemadefinitie is de enige bron van waarheid; serialisaties zijn afgeleid | Architectuurafspraak | Centraal — GBO | ⚠️ Nog te maken als GBO-architectuurprincipe |
 | Mapping naar OOTS Semantic Repository evidence types is verplicht voor OOTS-trajecten | Stelselafspraak | Centraal — GBO, aansluiting EC OOTS | ⚠️ Nog te maken |
-| Mapping naar PuB-EAA attestatieschema's is verplicht voor EDI-wallet traject | Stelselafspraak | Centraal — GBO, aansluiting ARF/EC | ⚠️ Nog te maken |
+| Mapping naar PuB-EAA attestatieschema's is verplicht voor EUDI-Wallet traject | Stelselafspraak | Centraal — GBO, aansluiting ARF/EC | ⚠️ Nog te maken |
 
 ### Standaarden
 
@@ -429,11 +429,11 @@ De aanbevolen lagenstructuur voor het afsprakenstelsel (analoog aan iWlz):
 | Laag | Inhoud voor GBO |
 |---|---|
 | Organisatiebeleid | Governance, rollen (bronhouder, afnemer, GBO-beheer), ontwerpkeuzes, serviceafspraken, wijzigingsbeheer |
-| Proces | Trajectprocessen: DvTP-toestemmingsstroom, OOTS-adapterstroom, EDI-wallet uitgifte- en presentatiestroom |
+| Proces | Trajectprocessen: DvTP-toestemmingsstroom, OOTS-adapterstroom, EUDI-Wallet uitgifte- en presentatiestroom |
 | Informatie | Gegevensmodellen per bronhouder, canonieke schema's, mappings naar OOTS-EDM en PuB-EAA |
 | Applicatie | Technische afspraken per stelselfunctie: GraphQL profiel, PEP/PDP-keten, FSC-profiel, BSNk PP-integratie, query-templates |
 | IT-infrastructuur | Connectiviteit (FSC), certificaten (PKI Overheid), netwerkeisen, SLA's |
-| Uitwisselprofielen | Per traject (DvTP, OOTS, EDI-wallet): specifieke afspraken aanvullend op de generieke lagen |
+| Uitwisselprofielen | Per traject (DvTP, OOTS, EUDI-Wallet): specifieke afspraken aanvullend op de generieke lagen |
 
 Wijzigingen in het afsprakenstelsel verlopen via een formeel RFC-proces, met gepubliceerde versies en expliciete inwerkingtreding per implementatiestap.
 

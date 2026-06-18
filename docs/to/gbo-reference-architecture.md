@@ -5,7 +5,7 @@
 GBO (Gemeenschappelijke Bronontsluiting) provides a common source access layer enabling government data sources -- Belastingdienst, RvIG, DUO, UWV, gemeenten -- to serve five consuming trajectories through a single technical backbone:
 
 1. **DvTP** (Delen via Toestemming met Private partijen): Consent-based data sharing from government to private sector _(fully in draft -- no documents finalized)_
-2. **EDI-wallet** (European Digital Identity): Citizen-held attestations from government sources, issued by a shared PubEAA Provider
+2. **EUDI-Wallet** (European Digital Identity): Citizen-held attestations from government sources, issued by a shared PubEAA Provider
 3. **SDG-OOTS** (Single Digital Gateway): Cross-border evidence exchange within the EU
 4. **Gov-to-Gov**: Direct government-to-government data exchange over FSC + GraphQL, authorized by legal basis
 5. **Authentic Source Interface** (ETSI TS 119 478): Mandated by Article 45e eIDAS -- enables QTSPs to verify attributes against government registers so they can issue QEAAs
@@ -319,7 +319,7 @@ All authorization evidence -- consent records (DvTP), legal basis (OOTS, domesti
 | DvTP                         | Citizen consent in register                    | Consent → PIP query                   | Subject=provider org, Resource=consent_id+scope, Context=consent record from PIP                 |
 | SDG-OOTS                     | Legal basis (SDG Regulation)                   | Legal basis → policy bundle           | Subject=requesting MS, Resource=evidence type, Context=OOTS request metadata                     |
 | Domestic legal basis         | Law mandates access (e.g., Participatiewet)    | Legal basis → policy bundle           | Subject=requesting org, Resource=register+BSN, Context=legal_basis claim                         |
-| EDI-wallet (PubEAA issuance) | EUDI wallet PID via OpenID4VCI                 | Self-request (citizen = data subject) | Subject=citizen (via PID), Resource=attestation type, Context=PubEAA Provider trust status       |
+| EUDI-Wallet (PubEAA issuance) | EUDI wallet PID via OpenID4VCI                 | Self-request (citizen = data subject) | Subject=citizen (via PID), Resource=attestation type, Context=PubEAA Provider trust status       |
 | Authentic Source (Art. 45e)  | OAuth token (citizen-authorized) + QTSP status | Citizen-authorized → OAuth            | Subject=QTSP (on Trusted List), Resource=attribute type, Context=citizen authorization via I4/I5 |
 
 One PDP, one policy language, one enforcement point. Multiple trajectories, multiple policy sets — no central authorization server needed.

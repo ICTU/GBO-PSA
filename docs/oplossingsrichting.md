@@ -23,7 +23,7 @@ Deze bouwstenen moeten door de bronhouder ingericht en onderhouden worden. Er be
 De vragende partijen kennen hun eigen standaarden en protocollen. Als deze afwijken van de FSC-standaard met GraphQL API's, dan worden er componenten ontwikkeld om de aansluiting te maken. Voor bronhouders is dit geen zorg; als zij hun gegevens beschikbaarstellen via de gemeenschappelijke bronontsluiting kunnen zij aansluiten. Ook voor de vragende partijen wordt de koppeling eenvoudig: zij kunnen hun standaarden en protocollen blijven gebruiken en krijgen toegang tot alle bronnen die voldoen aan de GBO oplossing.  
 
 In de figuur bovenaan dit hoofdstuk de vereiste centrale voorzieningen voor de drie gegevensstromen die bij GBO in beeld zijn, ingetekend:  
-- Voor de EDI-wallet zijn dat een interface waar QTSP's toegang toe krijgen om QEAA's uit te kunnen geven, en een voorziening waarmee overheidsbronnen zelf attestaties (PubEAA's) kunnen uitgeven.
+- Voor de EUDI-Wallet zijn dat een interface waar QTSP's toegang toe krijgen om QEAA's uit te kunnen geven, en een voorziening waarmee overheidsbronnen zelf attestaties (PubEAA's) kunnen uitgeven.
 - Voor OOTS is dit een OOTS-adapter waarmee aangesloten wordt op de basisinrichting OOTS, waarvandaan gegevens met buitenlandse overheden gedeeld kunnen worden in het kader van SDG.
 - Voor het delen van gegevens via toestemming met private dienstverleners is een toestemmingsvoorziening nodig, en een voorziening om BSN's te pseudonimiseren, zodat deze niet terechtkomen bij partijen die geen BSN mogen verwerken.
 

@@ -15,7 +15,7 @@ Een burger vraagt een gegeven op als gekwalificeerde attestatie om in zijn/haar 
 <figure>
 
 ``` mermaid
---8<-- "diagrammen/interactiepatroon-EDI-Wallet.mmd"
+--8<-- "diagrammen/interactiepatroon-EUDI-Wallet.mmd"
 
 ```
 <figcaption>Gegevensverzoek van burger om credential via wallet te delen</figcaption>
