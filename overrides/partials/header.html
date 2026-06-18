@@ -53,7 +53,7 @@
     </label>
 
     <!-- Header title -->
-    <div class="md-header__title" data-md-component="header-title">
+    <div class="md-header__title">
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
@@ -96,7 +96,7 @@
        class="md-header__button md-icon">
       {% include ".icons/material/file-pdf-box.svg" %}
     </a>
-        
+
     <!-- Button to open search modal -->
     {% if "material/search" in config.plugins %}
       {% set search = config.plugins["material/search"] | attr("config") %}
