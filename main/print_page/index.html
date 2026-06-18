@@ -1013,7 +1013,7 @@
         eudi_qeaa["QTSP&lt;br/&gt;(QEAA)"]
         eudi_wallet["EUDI-Wallet"]
   end
-  subgraph oots["SDG / OOTS"]
+  subgraph oots["OOTS"]
     direction LR
         oots_adapter("OOTS adapter&lt;br/&gt;(protocol + semantische mapping)")
         oots_basis["Basisinrichting OOTS&lt;br/&gt;(Nederlandse OOTS koppelpunt)"]
@@ -1077,7 +1077,7 @@ Om te garanderen dat afnemers alleen die gegevens krijgt waar zij recht op hebbe
 <h2 id="oplossingsrichting-aansluiten-op-bestaande-voorzieningen">Aansluiten op bestaande voorzieningen<a class="headerlink" href="#oplossingsrichting-aansluiten-op-bestaande-voorzieningen" title="Permanent link">&para;</a></h2>
 <p>De vragende partijen kennen hun eigen standaarden en protocollen. Als deze afwijken van de FSC-standaard met GraphQL API's, dan worden er componenten ontwikkeld om de aansluiting te maken. Voor bronhouders is dit geen zorg; als zij hun gegevens beschikbaarstellen via de gemeenschappelijke bronontsluiting kunnen zij aansluiten. Ook voor de vragende partijen wordt de koppeling eenvoudig: zij kunnen hun standaarden en protocollen blijven gebruiken en krijgen toegang tot alle bronnen die voldoen aan de GBO oplossing.  </p>
 <p>In de figuur bovenaan dit hoofdstuk de vereiste centrale voorzieningen voor de drie gegevensstromen die bij GBO in beeld zijn, ingetekend:<br />
-- Voor de EDI-wallet zijn dat een interface waar QTSP's toegang toe krijgen om QEAA's uit te kunnen geven, en een voorziening waarmee overheidsbronnen zelf attestaties (PubEAA's) kunnen uitgeven.
+- Voor de EUDI-Wallet zijn dat een interface waar QTSP's toegang toe krijgen om QEAA's uit te kunnen geven, en een voorziening waarmee overheidsbronnen zelf attestaties (PubEAA's) kunnen uitgeven.
 - Voor OOTS is dit een OOTS-adapter waarmee aangesloten wordt op de basisinrichting OOTS, waarvandaan gegevens met buitenlandse overheden gedeeld kunnen worden in het kader van SDG.
 - Voor het delen van gegevens via toestemming met private dienstverleners is een toestemmingsvoorziening nodig, en een voorziening om BSN's te pseudonimiseren, zodat deze niet terechtkomen bij partijen die geen BSN mogen verwerken.</p>
 <h2 id="oplossingsrichting-uitbreidbaar">Uitbreidbaar<a class="headerlink" href="#oplossingsrichting-uitbreidbaar" title="Permanent link">&para;</a></h2>
@@ -1718,7 +1718,7 @@ Ook deelnemers moeten aantoonbaar voldoen aan beveiligings- en privacy-eisen bij
 <div class="mermaid">sequenceDiagram
     autonumber
     actor Burger
-    participant Wallet as EDI-Wallet
+    participant Wallet as EUDI-Wallet
     participant QTSP as QTSP
     participant PubEAA as PuB-EAA&lt;br/&gt;voorziening
     participant VerifDienst as Verificatie-&lt;br/&gt;dienst
@@ -1953,7 +1953,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
     subgraph AFN["Afnemers — specifieke zijde"]
         direction TB
         EU["🇪🇺 Europese overheden&lt;br /&gt;Basisinrichting OOTS"]
-        EDI["📱 EDI-Wallet burger&lt;br /&gt;eIDAS2 / ARF"]
+        EDI["📱 EUDI-Wallet burger&lt;br /&gt;eIDAS2 / ARF"]
         PP["🏢 Private partijen&lt;br /&gt;DvTP — toestemming burger"]
     end
 
@@ -2037,7 +2037,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 <p><strong>Eisen:</strong></p>
 <ul>
 <li>De identiteitsvaststelling sluit aan op de voor het traject vereiste betrouwbaarheidsniveaus (eIDAS Laag/Substantieel/Hoog) en maakt gebruik van erkende authenticatiemiddelen.</li>
-<li>Voor het EDI-wallet traject ondersteunt de functie het ontvangen van een burgeridentiteit via een wallet-presentatie (conform eIDAS2/ARF), met verificatie via de relevante Trusted List.</li>
+<li>Voor het EUDI-Wallet traject ondersteunt de functie het ontvangen van een burgeridentiteit via een wallet-presentatie (conform eIDAS2/ARF), met verificatie via de relevante Trusted List.</li>
 </ul>
 <h3 id="generieke-functies-pseudonimisering">Pseudonimisering<a class="headerlink" href="#generieke-functies-pseudonimisering" title="Permanent link">&para;</a></h3>
 <p><strong>Doel:</strong> Het garanderen dat het BSN uitsluitend circuleert binnen de overheidsinfrastructuur en nooit zichtbaar is voor private afnemers.</p>
@@ -2455,7 +2455,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 <tr>
 <td>ISO 18013-5 (mDL) — proximity presentatie voor offline scenario's</td>
 <td>ISO</td>
-<td>Beschikbaar; relevant voor EDI-wallet traject</td>
+<td>Beschikbaar; relevant voor EUDI-Wallet traject</td>
 </tr>
 </tbody>
 </table>
@@ -2490,7 +2490,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 <td>Stelselvoorziening</td>
 <td>eIDAS-knooppunt (Logius)</td>
 <td>Gedeeld</td>
-<td>Beschikbaar via NL eIDAS-knooppunt; relevant voor EDI-wallet en OOTS</td>
+<td>Beschikbaar via NL eIDAS-knooppunt; relevant voor EUDI-Wallet en OOTS</td>
 </tr>
 <tr>
 <td>BSNk PP (polymorf pseudonimiseringsstelsel)</td>
@@ -3209,7 +3209,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 <td>⚠️ Nog te maken</td>
 </tr>
 <tr>
-<td>Mapping naar PuB-EAA attestatieschema's is verplicht voor EDI-wallet traject</td>
+<td>Mapping naar PuB-EAA attestatieschema's is verplicht voor EUDI-Wallet traject</td>
 <td>Stelselafspraak</td>
 <td>Centraal — GBO, aansluiting ARF/EC</td>
 <td>⚠️ Nog te maken</td>
@@ -3537,7 +3537,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 </tr>
 <tr>
 <td>Proces</td>
-<td>Trajectprocessen: DvTP-toestemmingsstroom, OOTS-adapterstroom, EDI-wallet uitgifte- en presentatiestroom</td>
+<td>Trajectprocessen: DvTP-toestemmingsstroom, OOTS-adapterstroom, EUDI-Wallet uitgifte- en presentatiestroom</td>
 </tr>
 <tr>
 <td>Informatie</td>
@@ -3553,7 +3553,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 </tr>
 <tr>
 <td>Uitwisselprofielen</td>
-<td>Per traject (DvTP, OOTS, EDI-wallet): specifieke afspraken aanvullend op de generieke lagen</td>
+<td>Per traject (DvTP, OOTS, EUDI-Wallet): specifieke afspraken aanvullend op de generieke lagen</td>
 </tr>
 </tbody>
 </table>
@@ -3594,7 +3594,7 @@ Zie ook de paragraaf <a href="#realisatiestrategie-gebruik-van-bestaande-stelsel
         eudi_qeaa["QTSP&lt;br/&gt;(QEAA)"]
         eudi_wallet["EUDI-Wallet"]
   end
-  subgraph oots["SDG / OOTS"]
+  subgraph oots["OOTS"]
     direction LR
         oots_adapter("OOTS adapter&lt;br/&gt;(semantische mapping)")
         oots_basis["Basisinrichting OOTS&lt;br/&gt;(incl. OOTS-V backend)"]
@@ -3841,7 +3841,7 @@ NB: in deze figuur zijn enkel de voorzieningen geschetst - daarnaast kunnen de w
 GBO biedt bronhouders hiervoor referentiecomponenten aan, die de inrichting sterk vereenvoudigen. En als het (nog) niet haalbaar is om gegevens uit de bron met een GraphQL API beschikbaar te stellen, biedt GBO ondersteuning en tools om eventueel met andere API's aan te sluiten.</p>
 <p>Als bronhouders de GBO-Basis componenten hebben geïnstalleerd kunnen ze gebruik maken van de centrale componenten om de verschillende gegevensstromen te bedienen. Daar hoeven zij verder niets voor in te richten - er moeten enkel afspraken gemaakt worden over wie wanneer onder welke voorwaarden gegevens mogen opvragen.  </p>
 <p>Of bronhouders gebruik maken van de centrale componenten die nodig zijn om de verschillende gegevensstromen te bedienen, is een beleidsafweging. Voor zover deze componenten niet in wet- en regelgeving zijn opgenomen en (nog) niet op de pas-toe-of-leg-uit lijst staan, is het de bronhouders vrij om eigen componenten te gebruiken.<br />
-Zo kan voor het uitgeven van geattesteerde attributen (EDI-Wallet) ook een eigen PubEAA-provider gebruikt worden, of afspraken met QTSP's gemaakt worden om QEAA's uit te geven. en voor aansluiting op OOTS kunnen ook eigen voorzieningen gebruikt worden, zoals in de onderwijswereld al gebruik gemaakt wordt van EMREX.</p>
+Zo kan voor het uitgeven van geattesteerde attributen (EUDI-Wallet) ook een eigen PubEAA-provider gebruikt worden, of afspraken met QTSP's gemaakt worden om QEAA's uit te geven. en voor aansluiting op OOTS kunnen ook eigen voorzieningen gebruikt worden, zoals in de onderwijswereld al gebruik gemaakt wordt van EMREX.</p>
 <h2 id="realisatiestrategie-gebruik-van-bestaande-stelsels">Gebruik van bestaande stelsels<a class="headerlink" href="#realisatiestrategie-gebruik-van-bestaande-stelsels" title="Permanent link">&para;</a></h2>
 <p>GBO zal gebruik maken van bestaande afspraken, standaarden en voorzieningen, maar daar ook een aantal aan toevoegen of uitbreiden. De afspraken, standaarden en voorzieningen die ontwikkeld worden, moeten landen in bestaande afsprakenstelsel en/ of beheerorganisaties. Als er sprake is van een doorontwikkeling is de keuze voor dat afsprakenstelsel of die beheerorganisatie eenvoudig: dat blijft bij de huidige organisatie en de doorontwikkeling wordt zoveel mogelijk met of zelfs door die organisatie doorgevoerd. Maar voor nieuwe afspraken, standaarden of voorzieningen moet een geschikte organisatie gevonden worden.<br />
 In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende afspraken, standaarden en voorzieningen naar verwachting kunnen landen. Daarbij is onderscheid gemaakt tussen inhoudelijke governance, standaardbeheer en operationeel beheer van voorzieningen. Voor onderdelen waarvoor nog geen bestaande beheerorganisatie evident is, is het open besluitpunt expliciet gemaakt.</p>
@@ -3979,7 +3979,7 @@ In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende a
 <td><strong>Pub-EAA-provider voor publieke attestaties</strong></td>
 <td>EUDI-wallet / S11</td>
 <td>Voorziening + wettelijke rol</td>
-<td>EDI-wallet-governance / nationale eIDAS-governance</td>
+<td>EUDI-Wallet-governance / nationale eIDAS-governance</td>
 <td>Nader te bepalen; RvIG logisch voor PID/BRP-gerelateerde attributen; mogelijk federatief model voor domeinattributen</td>
 <td>Pub-EAA-uitgifte vraagt certificering, opname op relevante vertrouwenslijsten en duidelijke bronhouderverantwoordelijkheid. RvIG is logisch voor persoonsidentiteitsgegevens, maar niet automatisch voor alle publieke attributen.</td>
 <td>Besluit nodig over centraal, decentraal of federatief uitgiftemodel.</td>
@@ -3988,7 +3988,7 @@ In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende a
 <td><strong>Attestation Rulebooks per attribuuttype</strong></td>
 <td>EUDI-wallet / S11</td>
 <td>Afspraak / inhoudelijke governance</td>
-<td>EDI-wallet-governance, met bronhouder- en domeingovernance</td>
+<td>EUDI-Wallet-governance, met bronhouder- en domeingovernance</td>
 <td>BZK voor nationale regie; bronhouders/domeinen voor inhoud; technische beheerder nader te bepalen</td>
 <td>Per attribuuttype moet worden vastgelegd welke bron leidend is, welke gegevens worden uitgegeven, welke binding en intrekking gelden en welke betrouwbaarheidsniveaus van toepassing zijn.</td>
 <td>Apart beleggen naast de technische Pub-EAA-provider.</td>
@@ -3997,7 +3997,7 @@ In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende a
 <td><strong>ASI-provider / verificatiedienst</strong></td>
 <td>EUDI-wallet / S11</td>
 <td>Voorziening</td>
-<td>EDI-wallet-governance / nationale eIDAS-governance</td>
+<td>EUDI-Wallet-governance / nationale eIDAS-governance</td>
 <td>Nader te bepalen; Logius mogelijk voor generieke technische infrastructuur</td>
 <td>De ASI-providerfunctie betreft het kunnen verifiëren of opvragen van gegevens bij authentieke bronnen. Logius kan logisch zijn voor generieke infrastructuur, maar de inhoudelijke verantwoordelijkheid blijft bij bronhouders.</td>
 <td>Verduidelijken verschil tussen technische ASI-infrastructuur en inhoudelijke bronhouderverantwoordelijkheid.</td>
@@ -4006,7 +4006,7 @@ In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende a
 <td><strong>Mapping GraphQL → EDI-attestaties</strong></td>
 <td>EUDI-wallet / S10-S11</td>
 <td>Semantische mapping + beheerproces</td>
-<td>EDI-wallet-governance, gekoppeld aan GBO Schema Registry</td>
+<td>EUDI-Wallet-governance, gekoppeld aan GBO Schema Registry</td>
 <td>Bronhouders/domeinen inhoudelijk; technische ondersteuning via beheerder Schema Registry/Serialisatie-service</td>
 <td>De mapping bepaalt hoe brongegevens worden vertaald naar SD-JWT VC, mdoc of andere attestatieformaten. Dit raakt zowel semantiek als juridische betekenis van attributen.</td>
 <td>Beleggen per attribuuttype; koppelen aan Attestation Rulebooks.</td>

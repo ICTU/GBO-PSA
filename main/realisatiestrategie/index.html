@@ -1113,7 +1113,7 @@ Zie ook de paragraaf <a href="#gebruik-van-bestaande-stelsels">Gebruik van besta
         eudi_qeaa["QTSP&lt;br/&gt;(QEAA)"]
         eudi_wallet["EUDI-Wallet"]
   end
-  subgraph oots["SDG / OOTS"]
+  subgraph oots["OOTS"]
     direction LR
         oots_adapter("OOTS adapter&lt;br/&gt;(semantische mapping)")
         oots_basis["Basisinrichting OOTS&lt;br/&gt;(incl. OOTS-V backend)"]
@@ -1360,7 +1360,7 @@ NB: in deze figuur zijn enkel de voorzieningen geschetst - daarnaast kunnen de w
 GBO biedt bronhouders hiervoor referentiecomponenten aan, die de inrichting sterk vereenvoudigen. En als het (nog) niet haalbaar is om gegevens uit de bron met een GraphQL API beschikbaar te stellen, biedt GBO ondersteuning en tools om eventueel met andere API's aan te sluiten.</p>
 <p>Als bronhouders de GBO-Basis componenten hebben geïnstalleerd kunnen ze gebruik maken van de centrale componenten om de verschillende gegevensstromen te bedienen. Daar hoeven zij verder niets voor in te richten - er moeten enkel afspraken gemaakt worden over wie wanneer onder welke voorwaarden gegevens mogen opvragen.  </p>
 <p>Of bronhouders gebruik maken van de centrale componenten die nodig zijn om de verschillende gegevensstromen te bedienen, is een beleidsafweging. Voor zover deze componenten niet in wet- en regelgeving zijn opgenomen en (nog) niet op de pas-toe-of-leg-uit lijst staan, is het de bronhouders vrij om eigen componenten te gebruiken.<br />
-Zo kan voor het uitgeven van geattesteerde attributen (EDI-Wallet) ook een eigen PubEAA-provider gebruikt worden, of afspraken met QTSP's gemaakt worden om QEAA's uit te geven. en voor aansluiting op OOTS kunnen ook eigen voorzieningen gebruikt worden, zoals in de onderwijswereld al gebruik gemaakt wordt van EMREX.</p>
+Zo kan voor het uitgeven van geattesteerde attributen (EUDI-Wallet) ook een eigen PubEAA-provider gebruikt worden, of afspraken met QTSP's gemaakt worden om QEAA's uit te geven. en voor aansluiting op OOTS kunnen ook eigen voorzieningen gebruikt worden, zoals in de onderwijswereld al gebruik gemaakt wordt van EMREX.</p>
 <h2 id="gebruik-van-bestaande-stelsels">Gebruik van bestaande stelsels<a class="headerlink" href="#gebruik-van-bestaande-stelsels" title="Permanent link">&para;</a></h2>
 <p>GBO zal gebruik maken van bestaande afspraken, standaarden en voorzieningen, maar daar ook een aantal aan toevoegen of uitbreiden. De afspraken, standaarden en voorzieningen die ontwikkeld worden, moeten landen in bestaande afsprakenstelsel en/ of beheerorganisaties. Als er sprake is van een doorontwikkeling is de keuze voor dat afsprakenstelsel of die beheerorganisatie eenvoudig: dat blijft bij de huidige organisatie en de doorontwikkeling wordt zoveel mogelijk met of zelfs door die organisatie doorgevoerd. Maar voor nieuwe afspraken, standaarden of voorzieningen moet een geschikte organisatie gevonden worden.<br />
 In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende afspraken, standaarden en voorzieningen naar verwachting kunnen landen. Daarbij is onderscheid gemaakt tussen inhoudelijke governance, standaardbeheer en operationeel beheer van voorzieningen. Voor onderdelen waarvoor nog geen bestaande beheerorganisatie evident is, is het open besluitpunt expliciet gemaakt.</p>
@@ -1498,7 +1498,7 @@ In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende a
 <td><strong>Pub-EAA-provider voor publieke attestaties</strong></td>
 <td>EUDI-wallet / S11</td>
 <td>Voorziening + wettelijke rol</td>
-<td>EDI-wallet-governance / nationale eIDAS-governance</td>
+<td>EUDI-Wallet-governance / nationale eIDAS-governance</td>
 <td>Nader te bepalen; RvIG logisch voor PID/BRP-gerelateerde attributen; mogelijk federatief model voor domeinattributen</td>
 <td>Pub-EAA-uitgifte vraagt certificering, opname op relevante vertrouwenslijsten en duidelijke bronhouderverantwoordelijkheid. RvIG is logisch voor persoonsidentiteitsgegevens, maar niet automatisch voor alle publieke attributen.</td>
 <td>Besluit nodig over centraal, decentraal of federatief uitgiftemodel.</td>
@@ -1507,7 +1507,7 @@ In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende a
 <td><strong>Attestation Rulebooks per attribuuttype</strong></td>
 <td>EUDI-wallet / S11</td>
 <td>Afspraak / inhoudelijke governance</td>
-<td>EDI-wallet-governance, met bronhouder- en domeingovernance</td>
+<td>EUDI-Wallet-governance, met bronhouder- en domeingovernance</td>
 <td>BZK voor nationale regie; bronhouders/domeinen voor inhoud; technische beheerder nader te bepalen</td>
 <td>Per attribuuttype moet worden vastgelegd welke bron leidend is, welke gegevens worden uitgegeven, welke binding en intrekking gelden en welke betrouwbaarheidsniveaus van toepassing zijn.</td>
 <td>Apart beleggen naast de technische Pub-EAA-provider.</td>
@@ -1516,7 +1516,7 @@ In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende a
 <td><strong>ASI-provider / verificatiedienst</strong></td>
 <td>EUDI-wallet / S11</td>
 <td>Voorziening</td>
-<td>EDI-wallet-governance / nationale eIDAS-governance</td>
+<td>EUDI-Wallet-governance / nationale eIDAS-governance</td>
 <td>Nader te bepalen; Logius mogelijk voor generieke technische infrastructuur</td>
 <td>De ASI-providerfunctie betreft het kunnen verifiëren of opvragen van gegevens bij authentieke bronnen. Logius kan logisch zijn voor generieke infrastructuur, maar de inhoudelijke verantwoordelijkheid blijft bij bronhouders.</td>
 <td>Verduidelijken verschil tussen technische ASI-infrastructuur en inhoudelijke bronhouderverantwoordelijkheid.</td>
@@ -1525,7 +1525,7 @@ In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende a
 <td><strong>Mapping GraphQL → EDI-attestaties</strong></td>
 <td>EUDI-wallet / S10-S11</td>
 <td>Semantische mapping + beheerproces</td>
-<td>EDI-wallet-governance, gekoppeld aan GBO Schema Registry</td>
+<td>EUDI-Wallet-governance, gekoppeld aan GBO Schema Registry</td>
 <td>Bronhouders/domeinen inhoudelijk; technische ondersteuning via beheerder Schema Registry/Serialisatie-service</td>
 <td>De mapping bepaalt hoe brongegevens worden vertaald naar SD-JWT VC, mdoc of andere attestatieformaten. Dit raakt zowel semantiek als juridische betekenis van attributen.</td>
 <td>Beleggen per attribuuttype; koppelen aan Attestation Rulebooks.</td>
