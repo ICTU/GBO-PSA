@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#documentatie-gbo" class="md-skip">
+        <a href="#project-start-architectuur-psa-gbo" class="md-skip">
           Ga naar inhoud
         </a>
       
@@ -170,7 +170,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Documentatie GBO
+              Project Start Architectuur (PSA) - GBO
             
           </span>
         </div>
@@ -339,7 +339,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="psa/inleiding/" class="md-tabs__link">
+        <a href="psa/inleiding.md" class="md-tabs__link">
           
   
   
@@ -576,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="psa/inleiding/" class="md-nav__link">
+      <a href="psa/inleiding.md" class="md-nav__link">
         
   
   
@@ -604,7 +604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="psa/oplossingsrichting/" class="md-nav__link">
+      <a href="psa/oplossingsrichting.md" class="md-nav__link">
         
   
   
@@ -632,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="psa/architectuurprincipes/" class="md-nav__link">
+      <a href="psa/architectuurprincipes.md" class="md-nav__link">
         
   
   
@@ -660,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="psa/ontwerpprincipes/" class="md-nav__link">
+      <a href="psa/ontwerpprincipes.md" class="md-nav__link">
         
   
   
@@ -688,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="psa/interactiepatronen/" class="md-nav__link">
+      <a href="psa/interactiepatronen.md" class="md-nav__link">
         
   
   
@@ -716,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="psa/generieke-functies/" class="md-nav__link">
+      <a href="psa/generieke-functies.md" class="md-nav__link">
         
   
   
@@ -744,7 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="psa/capabilities/" class="md-nav__link">
+      <a href="psa/capabilities.md" class="md-nav__link">
         
   
   
@@ -772,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="psa/realisatiestrategie/" class="md-nav__link">
+      <a href="psa/realisatiestrategie.md" class="md-nav__link">
         
   
   
@@ -800,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="psa/vraagstukken/" class="md-nav__link">
+      <a href="psa/vraagstukken.md" class="md-nav__link">
         
   
   
@@ -935,8 +935,10 @@
   
 
 
-<h1 id="documentatie-gbo">Documentatie GBO<a class="headerlink" href="#documentatie-gbo" title="Permanent link">&para;</a></h1>
-<p>Welkom bij de repository met documentatie voor GBO. In deze repository worden alle relevante documentatie voor het project Gemeenschappelijke Bronontsluiting gepubliceerd.</p>
+<h1 id="project-start-architectuur-psa-gbo">Project Start Architectuur (PSA) - GBO<a class="headerlink" href="#project-start-architectuur-psa-gbo" title="Permanent link">&para;</a></h1>
+<p>Welkom bij de Project Start Architectuur voor GBO. Dit document beschrijft de architectuurkaders, principes en interactiepatronen die van toepassing zijn op dit project.</p>
+<h2 id="over-dit-document">Over dit document<a class="headerlink" href="#over-dit-document" title="Permanent link">&para;</a></h2>
+<p>Deze PSA is opgebouwd uit verschillende modules om het beheer overzichtelijk te houden. Aan de linkerkant (of via het menu bovenin) kun je door de verschillende hoofdstukken navigeren.</p>
 <h2 id="kerngegevens">Kerngegevens<a class="headerlink" href="#kerngegevens" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -959,17 +961,31 @@
 <td style="text-align: left;">https://github.com/ICTU/GBO</td>
 </tr>
 <tr>
+<td style="text-align: left;"><strong>PDF</strong></td>
+<td style="text-align: left;"><a href="/GBO/print_page/">Pagina die als PDF afgedrukt kan worden</a></td>
+</tr>
+<tr>
 <td style="text-align: left;"><strong>Laatst bijgewerkt</strong></td>
 <td style="text-align: left;">{{ git_revision_date }}</td>
 </tr>
 </tbody>
 </table>
 <h2 id="leeswijzer">Leeswijzer<a class="headerlink" href="#leeswijzer" title="Permanent link">&para;</a></h2>
-<p>De repository bevat in de huidige versie enkel de conceptversie van de <a href="psa/">PSA</a> (Projectstartarchitectuur).
-Later worden hier ook het technisch ontwerp, de technische requirements en de uitwerking van de semantiek aan toegevoegd.</p>
-<p>Bent u op zoek naar het Globaal Ontwerp van het project GBO?<br />
-Deze is in een aparte omgeving geplaatst: <a href="https://ictu.github.io/GBO-GO/">https://ictu.github.io/GBO-GO/</a></p>
-<p><em>Vragen over deze repository kunnen gesteld worden aan de architect van het projectteam.</em></p>
+<p>De PSA is als volgt opgebouwd:</p>
+<ul>
+<li><strong><a href="inleiding/">Inleiding</a></strong>: Doel en scope van dit document.</li>
+<li><strong><a href="context/">Context</a></strong>: De omgeving waarin het project landt.</li>
+<li><strong><a href="architectuurprincipes/">Architectuurprincipes</a></strong>: De kaders waaraan de oplossing moet voldoen.</li>
+<li><strong><a href="ontwerpprincipes/">Ontwerpprincipes</a></strong>: De kaders waaraan het technische ontwerp van de oplossing moet voldoen.</li>
+<li><strong><a href="ecosysteem/">Ecosysteem en oplossingsrichting</a></strong>: Het systeem (rollen en relaties) waar we naar kijken en welke oplossingsrchting we voor ogen hebben.</li>
+<li><strong><a href="interactiepatronen/">Interactiepatronen</a></strong>: De interactiepatronen die uit de use cases volgen en die de oplossing moet ondersteunen.</li>
+<li><strong><a href="generieke-functies/">Logische architectuur</a></strong>: De generieke functies waar de oplossing uit bestaat.</li>
+<li><strong><a href="capabilities/">Capabilities</a></strong>: De capabiltities/ bedrijfsfuncties die de generieke functies invullen en waar het GBO stelsel inrichting aan moet geven.</li>
+<li><strong><a href="realisatiestrategie/">Realisatiestrategie</a></strong>: De strategie om de oplossing te realiseren en te implementeren.</li>
+<li><strong><a href="vraagstukken/">Vraagstukken en ontwerpkeuzes</a></strong>: Vraagstukken waarvoor nog geen oplossing is gevonden of keuze is gemaakt. Als er een oplossing is gevonden of een keuze is gemaakt, wordt deze in dit hoofdstuk vastgelegd als ontwerpkeuze en in het technisch ontwerp uitgewerkt.</li>
+</ul>
+<hr />
+<p><em>Vragen over deze PSA kunnen gesteld worden aan de architect van het projectteam.</em></p>
 
 
 
