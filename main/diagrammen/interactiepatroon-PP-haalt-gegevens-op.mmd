@@ -40,7 +40,6 @@ sequenceDiagram
         BRH->>BRH: Controleer bevoegdheid<br />(via FSC contract/Trusted List)
         BRH->>TR: Valideer consent_id<br/>(geldig? scope? TTL?)*
         TR-->>BRH: Consent geldig<br />(incl. VI)
-        Note over TR, BRH: Als consent in token zit, is<br/>bevraging toestemmingenregister<br />niet nodig
         BRH->>BRH: Controleer data scope<br />(template match)
         BRH->>BRH: Ontsleutel VI naar BSN
         BRH-->>DV: Gevraagde gegevens
