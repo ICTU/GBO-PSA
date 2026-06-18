@@ -983,7 +983,7 @@
 
 <h1 id="bijlage-lessons-learned-van-de-beproevingen-uniforme-bronontsluiting">Bijlage - Lessons Learned van de beproevingen Uniforme Bronontsluiting<a class="headerlink" href="#bijlage-lessons-learned-van-de-beproevingen-uniforme-bronontsluiting" title="Permanent link">&para;</a></h1>
 <h2 id="inleiding">Inleiding<a class="headerlink" href="#inleiding" title="Permanent link">&para;</a></h2>
-<p>Het project BronConnect / Uniforme Bronontsluitiung (<a href="https://digilab.overheid.nl/projecten/beproeving-eenvoudig-en-eenduidig-gegevens-uitwisselen/">UBO</a>) heeft een aantal beproevingen uitgevoerd om te onderzoeken hoe gemeenten op een eenduidige manier kunnen voldoen aan de eisen die SDG/OOTS en de eIDAS-verordening stellen. UBO heeft laten zien dat gemeentelijke bronontsluiting via een integratielaag, Data API, FSC/OpenFSC en een OOTS/eDelivery-adapter werkbaar is.<br />
+<p>Het project BronConnect / Uniforme Bronontsluitiung (<a href="https://digilab.overheid.nl/projecten/beproeving-eenvoudig-en-eenduidig-gegevens-uitwisselen/">UBO</a>) heeft een aantal beproevingen uitgevoerd om te onderzoeken hoe gemeenten op een eenduidige manier kunnen voldoen aan de eisen die OOTS en de eIDAS-verordening stellen. UBO heeft laten zien dat gemeentelijke bronontsluiting via een integratielaag, Data API, FSC/OpenFSC en een OOTS/eDelivery-adapter werkbaar is.<br />
 GBO bouwt voort op de bevindingen van UBO en maakt daar een productiegericht, breder en generieker stelsel van: meer bronhouders, meer trajecten, rijkere autorisatie, expliciet semantiekbeheer en centrale of gedeelde voorzieningen waar dat schaalvoordeel geeft.  </p>
 <p>In deze bijlage wordt uitgewerkt hoe de bevindingen uit de UBO beproevingen zijn gebruikt in de opzet en architectuur van GBO.</p>
 <h2 id="vergelijking-ubo-gbo">Vergelijking UBO - GBO<a class="headerlink" href="#vergelijking-ubo-gbo" title="Permanent link">&para;</a></h2>
@@ -1003,7 +1003,7 @@ UBO Gegevensstromen
       oots_outway("FSC&lt;br/&gt;Outway")
       oots_v("OOTS-V")
       oots_delivery("eDelivery&lt;br/&gt;toegangspunt")
-      oots_afnemer["SDG-OOTS-portaal"]
+      oots_afnemer["OOTS-portaal"]
     end
     subgraph eudi["EUDI"]
       direction LR
@@ -1163,7 +1163,7 @@ GBO Gegevensstromen
 <tr>
 <td><strong>eDelivery/AS4-brug</strong></td>
 <td>UBO heeft het patroon bewezen waarin nationale REST/FSC-bevraging wordt gekoppeld aan Europees eDelivery/AS4-verkeer. De UBO-architectuur beschrijft het eDelivery-toegangspunt als Domibus-implementatie en schakelpunt met andere lidstaten.</td>
-<td>GBO neemt dit over voor SDG/OOTS: OOTS-adapter ↔ Basisinrichting OOTS ↔ eDelivery/AS4. De GBO-realisatiestrategie tekent dit ook zo: GBO levert via een OOTS-adapter REST/JSON aan de Basisinrichting OOTS, die via eDelivery-AS4 met de Europese overheid communiceert.</td>
+<td>GBO neemt dit over voor OOTS: OOTS-adapter ↔ Basisinrichting OOTS ↔ eDelivery/AS4. De GBO-realisatiestrategie tekent dit ook zo: GBO levert via een OOTS-adapter REST/JSON aan de Basisinrichting OOTS, die via eDelivery-AS4 met de Europese overheid communiceert.</td>
 </tr>
 <tr>
 <td><strong>Attribuutverificatie voor EUDI-wallet/QTSP</strong></td>
@@ -1196,7 +1196,7 @@ GBO Gegevensstromen
 <tr>
 <td><strong>Scope</strong></td>
 <td>UBO richt zich primair op gemeentelijke bronnen en initieel op OOTS en EUDI-wallet-use-cases. De UBO-architectuur noemt wel uitbreiding naar DvTP en niet-gemeentelijke bronhouders als bredere ambitie.</td>
-<td>GBO maakt die bredere ambitie het uitgangspunt: meerdere bronhouders, meerdere trajecten en een productiegericht stelsel. De PSA werkt met GBO Basis plus afzonderlijke werkpakketten voor EUDI-wallet, SDG/OOTS en DvTP.</td>
+<td>GBO maakt die bredere ambitie het uitgangspunt: meerdere bronhouders, meerdere trajecten en een productiegericht stelsel. De PSA werkt met GBO Basis plus afzonderlijke werkpakketten voor EUDI-wallet, OOTS en DvTP.</td>
 </tr>
 <tr>
 <td><strong>API-paradigma</strong></td>
@@ -1211,7 +1211,7 @@ GBO Gegevensstromen
 <tr>
 <td><strong>OOTS-mapping</strong></td>
 <td>In UBO zorgt de OOTS-V backend voor omvorming van het UBO-datamodel naar het OOTS Exchange Data Model, bewaakt de state en verzorgt logging/audit trail.</td>
-<td>In GBO wordt dit een expliciete <strong>OOTS-adapter</strong> met semantische mapping tussen GBO-formaat en SDG/OOTS Evidence Types. De PSA zegt dat GBO de bronontsluiting en semantische mapping verzorgt en dat bronhouders geen OOTS-kennis hoeven te hebben.</td>
+<td>In GBO wordt dit een expliciete <strong>OOTS-adapter</strong> met semantische mapping tussen GBO-formaat en OOTS Evidence Types. De PSA zegt dat GBO de bronontsluiting en semantische mapping verzorgt en dat bronhouders geen OOTS-kennis hoeven te hebben.</td>
 </tr>
 <tr>
 <td><strong>Autorisatie</strong></td>

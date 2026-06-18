@@ -987,7 +987,7 @@
 <ol>
 <li><strong>DvTP</strong> (Delen via Toestemming met Private partijen): Consent-based data sharing from government to private sector <em>(fully in draft -- no documents finalized)</em></li>
 <li><strong>EUDI-Wallet</strong> (European Digital Identity): Citizen-held attestations from government sources, issued by a shared PubEAA Provider</li>
-<li><strong>SDG-OOTS</strong> (Single Digital Gateway): Cross-border evidence exchange within the EU</li>
+<li><strong>OOTS</strong> (Single Digital Gateway): Cross-border evidence exchange within the EU</li>
 <li><strong>Gov-to-Gov</strong>: Direct government-to-government data exchange over FSC + GraphQL, authorized by legal basis</li>
 <li><strong>Authentic Source Interface</strong> (ETSI TS 119 478): Mandated by Article 45e eIDAS -- enables QTSPs to verify attributes against government registers so they can issue QEAAs</li>
 </ol>
@@ -1059,7 +1059,7 @@ graph TB
         SECTOR_PIP["Sector PIPs&lt;br/&gt;(KNB, KvK, BIG)"]
         ASIP[Authentic Source Interface]
         PUBEAA[PubEAA Provider]
-        AS4_BRIDGE[SDG-OOTS Adapter]
+        AS4_BRIDGE[OOTS Adapter]
         DOMIBUS[Domibus Access Point]
     end
 
@@ -1417,7 +1417,7 @@ Dienstverlener decrypts EP                  PEP decrypts EI → BSN
 <td>Subject=provider org, Resource=consent_id+scope, Context=consent record from PIP</td>
 </tr>
 <tr>
-<td>SDG-OOTS</td>
+<td>OOTS</td>
 <td>Legal basis (SDG Regulation)</td>
 <td>Legal basis → policy bundle</td>
 <td>Subject=requesting MS, Resource=evidence type, Context=OOTS request metadata</td>
@@ -1447,8 +1447,8 @@ Dienstverlener decrypts EP                  PEP decrypts EI → BSN
 <h3 id="6-fsc-primary-connectivity">6. FSC-Primary Connectivity<a class="headerlink" href="#6-fsc-primary-connectivity" title="Permanent link">&para;</a></h3>
 <p><strong>Decision</strong>: FSC handles all domestic connectivity. Cross-border (OOTS) traffic arrives via an AS4 bridge that translates to FSC at the edge. There is no need for additional domestic transport protocols -- FSC is the single domestic connectivity stack.</p>
 <p>Bronhouders implement one connectivity stack (FSC Inway). The GBO edge layer handles OOTS cross-border translation.</p>
-<h3 id="7-as4-bridge-for-sdg-oots-eu-mandate">7. AS4 Bridge for SDG-OOTS (EU Mandate)<a class="headerlink" href="#7-as4-bridge-for-sdg-oots-eu-mandate" title="Permanent link">&para;</a></h3>
-<p><strong>Decision</strong>: A Domibus Access Point handles SDG-OOTS cross-border evidence exchange. This is an EU regulatory requirement (Single Digital Gateway Regulation), not a choice.</p>
+<h3 id="7-as4-bridge-for-oots-eu-mandate">7. AS4 Bridge for OOTS (EU Mandate)<a class="headerlink" href="#7-as4-bridge-for-oots-eu-mandate" title="Permanent link">&para;</a></h3>
+<p><strong>Decision</strong>: A Domibus Access Point handles OOTS cross-border evidence exchange. This is an EU regulatory requirement (Single Digital Gateway Regulation), not a choice.</p>
 <p>GBO builds this bridge because it must. The bridge translates OOTS AS4 requests into FSC/GraphQL requests toward bronhouders. This is the only scenario where AS4 is needed -- all domestic traffic uses FSC directly.</p>
 <hr />
 <h2 id="component-architecture">Component Architecture<a class="headerlink" href="#component-architecture" title="Permanent link">&para;</a></h2>
@@ -1570,7 +1570,7 @@ type InkomensgegevensPerJaar {
 </tr>
 <tr>
 <td><code>income-evidence-eu</code></td>
-<td>SDG-OOTS</td>
+<td>OOTS</td>
 <td>Maps to OOTS-EDM income evidence type fields</td>
 </tr>
 <tr>
@@ -2299,7 +2299,7 @@ INPUT:
 </table>
 <p><strong>Same backend</strong>: All server-side trajectories (Demo 1, 2, 3, 5) use the same bronhouder GraphQL API and the same PEP/PDP infrastructure. The difference is in the authorization policy and the protocol at the consumer edge. Demo 4 (RP presentation) is purely wallet-to-RP and does not touch GBO infrastructure at all.</p>
 <hr />
-<h2 id="sdg-oots-cross-border-bridge">SDG-OOTS Cross-Border Bridge<a class="headerlink" href="#sdg-oots-cross-border-bridge" title="Permanent link">&para;</a></h2>
+<h2 id="oots-cross-border-bridge">OOTS Cross-Border Bridge<a class="headerlink" href="#oots-cross-border-bridge" title="Permanent link">&para;</a></h2>
 <h3 id="why-oots-requires-an-as4-bridge">Why OOTS Requires an AS4 Bridge<a class="headerlink" href="#why-oots-requires-an-as4-bridge" title="Permanent link">&para;</a></h3>
 <p>The Single Digital Gateway Regulation (EU 2018/1724) mandates cross-border evidence exchange via the Once-Only Technical System (OOTS). This is a legal obligation, not an architectural choice. OOTS uses eDelivery AS4 transport with Domibus Access Points, four-corner routing, and SMP 2.1 discovery.</p>
 <p>GBO must build an AS4 bridge to serve cross-border requests. This bridge translates OOTS AS4 requests into FSC/GraphQL requests toward bronhouders, and returns evidence in OOTS-EDM format.</p>

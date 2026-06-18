@@ -1016,7 +1016,7 @@
   subgraph oots["OOTS"]
     direction LR
         oots_adapter("OOTS adapter&lt;br/&gt;(protocol + semantische mapping)")
-        oots_basis["Basisinrichting OOTS&lt;br/&gt;(Nederlandse OOTS koppelpunt)"]
+        oots_basis["Basisinrichting OOTS&lt;br/&gt;(nationaal OOTS-toegangspunt)"]
         oots_afnemer["Europese overheid&lt;br/&gt;SDG-portaal"]
   end
   subgraph dvtp["DvTP"]
@@ -1781,7 +1781,7 @@ Als de overheid het gegeven kwalificeert kan de bronhouder dit zelf doen, maar h
 <div class="mermaid">sequenceDiagram
     autonumber
     participant BRG as Burger&lt;br/&gt;(rechthebbende)
-    participant EU as EU dienst&lt;br/&gt;(SDG/OOTS)
+    participant EU as EU dienst&lt;br/&gt;(OOTS)
     participant RINIS as Basisinrichting OOTS NL&lt;br /&gt;(BZK/RINIS)
     participant GBO as GBO&lt;br/&gt;(GBO voorziening)
     participant BRH as Bronhouder&lt;br/&gt;(BRP / BD / …)
@@ -1836,7 +1836,7 @@ Als de overheid het gegeven kwalificeert kan de bronhouder dit zelf doen, maar h
         EU-&gt;&gt;BRG: Levert dienst
     end
 </div>
-<figcaption>Interactiepatroon gegevensverzoek Europese overheidsdienst via SDG/OOTS</figcaption>
+<figcaption>Interactiepatroon gegevensverzoek Europese overheidsdienst via OOTS</figcaption>
 </figure>
 
 <h3 id="interactiepatronen-toelichting_1">Toelichting<a class="headerlink" href="#interactiepatronen-toelichting_1" title="Permanent link">&para;</a></h3>
@@ -1971,7 +1971,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
     FUNC --&gt; BI
     FUNC --&gt; VS
 
-    FUNC --&gt;|SDG/OOTS| EU
+    FUNC --&gt;|OOTS| EU
     BI --&gt;|OID4VC| EDI
     TG --&gt;|DvTP flow| PP
 
@@ -2085,7 +2085,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 </ul>
 <hr />
 <h2 id="generieke-functies-generieke-functie-3-gegevensvoorziening">Generieke functie 3 — Gegevensvoorziening<a class="headerlink" href="#generieke-functies-generieke-functie-3-gegevensvoorziening" title="Permanent link">&para;</a></h2>
-<p><strong>Doel:</strong> Bronhouders stellen hun gegevens beschikbaar via een gestandaardiseerde interface die door alle trajecten herbruikbaar is, inclusief grensoverschrijdende uitwisseling conform SDG/OOTS.</p>
+<p><strong>Doel:</strong> Bronhouders stellen hun gegevens beschikbaar via een gestandaardiseerde interface die door alle trajecten herbruikbaar is, inclusief grensoverschrijdende uitwisseling conform OOTS.</p>
 <p><strong>Eisen:</strong></p>
 <ul>
 <li>Een bronhouder realiseert één generieke ontsluiting. Er zijn geen trajectspecifieke endpoints of koppelingen per afnemer.</li>
@@ -2093,7 +2093,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 <li>De set van toegestane gegevensvragen per gebruik is vooraf geregistreerd (via een catalogus of template-mechanisme) en door beleid afdwingbaar. Binnen de toegestane gegevensvraag bepaalt de afnemer welke gegevens voor zijn situatie nodig zijn. Afwijkingen die buiten de toegestane gegevensvraag vallen zijn niet mogelijk.</li>
 <li>De interface is onafhankelijk van het BSN als externe sleutel: het subject-identifier in een uitvraag van een private afnemer is altijd een pseudoniem of een consent-referentie; BSN-resolving is een interne aangelegenheid van de ontsluiting.</li>
 <li>Bronhouders implementeren de ontsluiting eenmalig; aanpassingen voor nieuwe afnemers of trajecten vereisen geen bronhouder-specifieke ontwikkeling, alleen aanpassing van het beleid en de query-registratie.</li>
-<li>Verzoeken vanuit andere EU-lidstaten (SDG/OOTS) worden aan de GBO-zijde vertaald naar het binnenlandse formaat en protocol. Bronhouders zien geen EU-specifiek transportprotocol.</li>
+<li>Verzoeken vanuit andere EU-lidstaten (OOTS) worden aan de GBO-zijde vertaald naar het binnenlandse formaat en protocol. Bronhouders zien geen EU-specifiek transportprotocol.</li>
 <li>Serviceregistratie voor grensoverschrijdende discovery (SMP) wordt centraal beheerd, niet door individuele bronhouders.</li>
 </ul>
 <hr />
@@ -3757,7 +3757,7 @@ NB: in deze figuur zijn enkel de voorzieningen geschetst - daarnaast kunnen de w
 <tbody>
 <tr>
 <td>1</td>
-<td><strong>SDG-OOTS-adapter</strong> (XML ↔ GraphQL)</td>
+<td><strong>OOTS-adapter</strong> (XML ↔ GraphQL)</td>
 <td><a href="#capabilities-s08-oots-adapter-grensoverschrijdend">S08</a>, <a href="#capabilities-s10-semantiek-gegevenscatalogus">S10</a></td>
 <td>Architectuurafspraak:<br/>- Basisinrichting OOTS is enige AS4-toegangspoort<br/>- SMP-registratie centraal beheerd<br/>- OOTS-verzoeken door zelfde PEP/PDP-keten</td>
 <td>- eDelivery AS4 ✅<br/>- OOTS-EDM ✅<br/>- SMP 2.1 ✅</td>
@@ -3891,7 +3891,7 @@ In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende a
 <td>Architectuurafspraak + standaardprofiel</td>
 <td>FDS / GDI-governance</td>
 <td>Ontwikkeling via Realisatie IBDS/FDS; structureel beheer bij Logius of een GDI-beheerlijn</td>
-<td>De PEP/PDP/PIP-keten is de generieke autorisatieketen voor alle gegevensstromen. Het profiel moet voorkomen dat EDI, SDG/OOTS en DvTP elk een eigen autorisatiemodel krijgen.</td>
+<td>De PEP/PDP/PIP-keten is de generieke autorisatieketen voor alle gegevensstromen. Het profiel moet voorkomen dat EDI, OOTS en DvTP elk een eigen autorisatiemodel krijgen.</td>
 <td>Structurele beheerrelatie tussen FDS, GDI en Logius expliciteren.</td>
 </tr>
 <tr>
@@ -3950,7 +3950,7 @@ In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende a
 </tr>
 <tr>
 <td><strong>GBO Schema Registry</strong></td>
-<td>GBO Basis, EDI, SDG/OOTS / S10</td>
+<td>GBO Basis, EDI, OOTS / S10</td>
 <td>Voorziening</td>
 <td>FDS-catalogusgovernance, met semantische kaders vanuit Geonovum</td>
 <td>Operationeel beheer nader te bepalen; inhoudelijke verantwoordelijkheid bij bronhouders/domeinen</td>
@@ -3959,9 +3959,9 @@ In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende a
 </tr>
 <tr>
 <td><strong>Serialisatie-service GraphQL → EDI/OOTS</strong></td>
-<td>GBO Basis, EDI, SDG/OOTS / S10-S11-S08</td>
+<td>GBO Basis, EDI, OOTS / S10-S11-S08</td>
 <td>Voorziening / referentiecomponent</td>
-<td>FDS voor generiek gebruik; EDI- en SDG/OOTS-governance voor specifieke doelmodellen</td>
+<td>FDS voor generiek gebruik; EDI- en OOTS-governance voor specifieke doelmodellen</td>
 <td>Operationeel beheer nader te bepalen; inhoudelijke mapping onder verantwoordelijkheid van bronhouders en betreffende stelsels</td>
 <td>De serialisatie-service vertaalt generieke brondata naar specifieke attestatie- of evidence-formaten. Dit is een cruciale brugfunctie tussen generieke bronontsluiting en domeinspecifieke Europese stelsels.</td>
 <td>Apart beleggen; niet automatisch onder Geonovum of Logius schuiven zonder besluit.</td>
@@ -4013,27 +4013,27 @@ In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende a
 </tr>
 <tr>
 <td><strong>OOTS-basisinrichting: Domibus Access Point en SMP</strong></td>
-<td>SDG/OOTS / S08</td>
+<td>OOTS / S08</td>
 <td>Voorziening + aansluitafspraak</td>
-<td>SDG/OOTS-governance</td>
+<td>OOTS-governance</td>
 <td>BZK/bNC-SDG voor nationale regie; RINIS logisch voor basisinrichting en technische OOTS-aansluiting</td>
-<td>Voor SDG/OOTS ligt het beheer van de AS4-toegangspoort, Domibus-inrichting en SMP-registratie dichter bij de bestaande OOTS-basisinrichting dan bij generieke GBO-governance.</td>
+<td>Voor OOTS ligt het beheer van de AS4-toegangspoort, Domibus-inrichting en SMP-registratie dichter bij de bestaande OOTS-basisinrichting dan bij generieke GBO-governance.</td>
 <td>Expliciet maken dat dit geen generieke GBO-voorziening is, maar aansluiting op OOTS-basisinrichting.</td>
 </tr>
 <tr>
 <td><strong>GBO OOTS-adapter XML ↔ GraphQL</strong></td>
-<td>SDG/OOTS / S08-S10</td>
+<td>OOTS / S08-S10</td>
 <td>Voorziening / adapter</td>
-<td>SDG/OOTS-governance + FDS voor achterliggende bronontsluiting</td>
+<td>OOTS-governance + FDS voor achterliggende bronontsluiting</td>
 <td>Operationeel beheer nader te bepalen; nationale SDG-regie opdrachtgever</td>
 <td>De adapter vertaalt OOTS-verzoeken naar GraphQL en terug naar OOTS-EDM. Dit is een specifieke gegevensstroomadapter bovenop de generieke GBO-basis.</td>
 <td>Beheer apart beleggen; niet laten verdwijnen onder “semantische vertaling”.</td>
 </tr>
 <tr>
 <td><strong>Mapping GraphQL → OOTS Evidence Types</strong></td>
-<td>SDG/OOTS / S10</td>
+<td>OOTS / S10</td>
 <td>Semantische mapping + inhoudelijke governance</td>
-<td>SDG/OOTS-governance, met semantische kaders vanuit Geonovum waar passend</td>
+<td>OOTS-governance, met semantische kaders vanuit Geonovum waar passend</td>
 <td>bNC-SDG/BZK als nationale opdrachtgever; bronhouders voor inhoud; Geonovum mogelijk voor methodiek/standaarden</td>
 <td>De mapping naar OOTS Evidence Types is deels technisch-semantisch, maar ook inhoudelijk: welke Nederlandse gegevens bewijzen welk Europees evidence requirement?</td>
 <td>Besluit nodig over nationale regie en goedkeuringsproces per evidence type.</td>
