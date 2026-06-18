@@ -1,33 +1,45 @@
-# Project Start Architectuur (PSA) - GBO
+# Inleiding
 
-Welkom bij de Project Start Architectuur voor GBO. Dit document beschrijft de architectuurkaders, principes en interactiepatronen die van toepassing zijn op dit project.
+## Doel van dit document
 
-## Over dit document
-Deze PSA is opgebouwd uit verschillende modules om het beheer overzichtelijk te houden. Aan de linkerkant (of via het menu bovenin) kun je door de verschillende hoofdstukken navigeren.
+Dit document beschrijft de Projectstartarchitectuur (PSA) voor het project Gemeenschappelijke Bronontsluiting (GBO).
 
-## Kerngegevens
-| Onderwerp | Details |
-| :--- | :--- |
-| **Status** | Concept / In review |
-| **Eigenaar** | ICTU |
-| **GithubRep** | https://github.com/ICTU/GBO |
-| **PDF** | [Pagina die als PDF afgedrukt kan worden](/GBO/print_page/) |
-| **Laatst bijgewerkt** | {{ git_revision_date }} |
+De PSA beschrijft **wat de oplossing moet kunnen**, maar legt nog geen technische implementatie vast.
+
+
+## Scope
+
+De PSA beschrijft de architectuur voor een afsprakenstelsel en generieke infrastructuur waarmee:
+
+-   burgers gegevens van overheidsorganisaties kunnen verkrijgen  
+-   burgers deze gegevens kunnen delen met private partijen  
+-   gegevens gebruikt kunnen worden voor Europese toepassingen zoals EDI Wallet en OOTS  
+
+De PSA omvat:
+
+-   oplossingsrichting  
+-   architectuur- en ontwerpprincipes  
+-   generieke functies  
+-   stelselfuncties  
+-   realisatiestrategie  
+
+De PSA beschrijft **niet**:
+
+-   concrete technische oplossingen  
+-   implementaties van componenten en afspraken<sup>\*</sup>  
+-   leverancierskeuzes  
+
+<sup>\*</sup>: hoewel in deze PSA benoemd wordt welke afspraken gemaakt moeten worden en welke componenten ontwikkeld moeten worden, is het **niet** de bedoeling dat GBO een nieuw afsprakenstelsel of voorzieningenbeheerder wordt. De te maken afspraken moeten landen in bestaande afsprakenstelsels en de te ontwikkelen voorzieningen moeten bij bestaande beheerorganisaties in beheer genomen worden.
 
 ## Leeswijzer
-De PSA is als volgt opgebouwd:
 
-* **[Inleiding](inleiding.md)**: Doel en scope van dit document.
-* **[Context](context.md)**: De omgeving waarin het project landt.
-* **[Architectuurprincipes](architectuurprincipes.md)**: De kaders waaraan de oplossing moet voldoen.
-* **[Ontwerpprincipes](ontwerpprincipes.md)**: De kaders waaraan het technische ontwerp van de oplossing moet voldoen.
-* **[Ecosysteem en oplossingsrichting](ecosysteem.md)**: Het systeem (rollen en relaties) waar we naar kijken en welke oplossingsrchting we voor ogen hebben.
-* **[Interactiepatronen](interactiepatronen.md)**: De interactiepatronen die uit de use cases volgen en die de oplossing moet ondersteunen.
-* **[Logische architectuur](generieke-functies.md)**: De generieke functies waar de oplossing uit bestaat.
-* **[Capabilities](capabilities.md)**: De capabiltities/ bedrijfsfuncties die de generieke functies invullen en waar het GBO stelsel inrichting aan moet geven.
-* **[Realisatiestrategie](realisatiestrategie.md)**: De strategie om de oplossing te realiseren en te implementeren.
-* **[Vraagstukken en ontwerpkeuzes](vraagstukken.md)**: Vraagstukken waarvoor nog geen oplossing is gevonden of keuze is gemaakt. Als er een oplossing is gevonden of een keuze is gemaakt, wordt deze in dit hoofdstuk vastgelegd als ontwerpkeuze en in het technisch ontwerp uitgewerkt.
+De PSA bevat de volgende onderdelen:
 
-
----
-*Vragen over deze PSA kunnen gesteld worden aan de architect van het projectteam.*
+- Oplossingsrichting: een schets van hoe de gemeenschappelijke bronontsluiting eruit komt te zien;
+- Architectuurprincipes: de principes die de kaders vormen voor de oplossing;
+- Ontwerpprincipes: de principes waaraan de ontwikkeling van de oplossing zich moet houden;
+- Interactiepatronen: een uitwerking van hoe de gegevensstromen die in beeld zijn, uitgevoerd worden;
+- Logische architectuur: de generieke functies die nodig zijn om invulling te geven aan de gewenste oplossing;
+- Stelselfuncties: de stelselfuncties (capabilities) die invulling geven aan de generieke functies;
+- Realisatiestrategie: de voorgestelde manier om de oplossing tot stand te laten komen;
+- Open vragen en ontwerpkeuzes: vraagstukken die nog uitgewerkt moeten worden en (indien relevant) de ontwerpkeuze die is gemaakt.

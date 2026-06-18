@@ -83,7 +83,7 @@ nav:
   - Context: https://ictu.github.io/GBO/latest/context.md
   - Globaal Ontwerp: https://ictu.github.io/GBO-GO/
   - Projectstartarchitectuur:
-      - Inleiding: inleiding.md
+      - Inleiding: index.md
       - Oplossingsrichting: oplossingsrichting.md
       - Architectuurprincipes: architectuurprincipes.md
       - Ontwerpprincipes: ontwerpprincipes.md
