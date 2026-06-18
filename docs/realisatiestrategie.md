@@ -51,7 +51,7 @@ Maakt het mogelijk dat burgers overheidsgegeven als digitale attestatie (PuB-EAA
 
 ---
 
-### Werkpakket SDG/OOTS
+### Werkpakket OOTS
 
 Maakt het mogelijk dat Europese overheden via OOTS (Once Only Technical System) bewijsstukken opvragen bij Nederlandse bronhouders (SDG-verordening EU 2018/1724). Bouwt op GBO Basis.
 
