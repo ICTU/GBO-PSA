@@ -6,7 +6,7 @@ GBO (Gemeenschappelijke Bronontsluiting) provides a common source access layer e
 
 1. **DvTP** (Delen via Toestemming met Private partijen): Consent-based data sharing from government to private sector _(fully in draft -- no documents finalized)_
 2. **EUDI-Wallet** (European Digital Identity): Citizen-held attestations from government sources, issued by a shared PubEAA Provider
-3. **SDG-OOTS** (Single Digital Gateway): Cross-border evidence exchange within the EU
+3. **OOTS** (Single Digital Gateway): Cross-border evidence exchange within the EU
 4. **Gov-to-Gov**: Direct government-to-government data exchange over FSC + GraphQL, authorized by legal basis
 5. **Authentic Source Interface** (ETSI TS 119 478): Mandated by Article 45e eIDAS -- enables QTSPs to verify attributes against government registers so they can issue QEAAs
 
@@ -46,7 +46,7 @@ graph TB
         SECTOR_PIP["Sector PIPs<br/>(KNB, KvK, BIG)"]
         ASIP[Authentic Source Interface]
         PUBEAA[PubEAA Provider]
-        AS4_BRIDGE[SDG-OOTS Adapter]
+        AS4_BRIDGE[OOTS Adapter]
         DOMIBUS[Domibus Access Point]
     end
 
@@ -317,7 +317,7 @@ All authorization evidence -- consent records (DvTP), legal basis (OOTS, domesti
 | Trajectory                   | Authorization input                            | Access basis path                     | AuthZEN translation                                                                              |
 | ---------------------------- | ---------------------------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------ |
 | DvTP                         | Citizen consent in register                    | Consent → PIP query                   | Subject=provider org, Resource=consent_id+scope, Context=consent record from PIP                 |
-| SDG-OOTS                     | Legal basis (SDG Regulation)                   | Legal basis → policy bundle           | Subject=requesting MS, Resource=evidence type, Context=OOTS request metadata                     |
+| OOTS                     | Legal basis (SDG Regulation)                   | Legal basis → policy bundle           | Subject=requesting MS, Resource=evidence type, Context=OOTS request metadata                     |
 | Domestic legal basis         | Law mandates access (e.g., Participatiewet)    | Legal basis → policy bundle           | Subject=requesting org, Resource=register+BSN, Context=legal_basis claim                         |
 | EUDI-Wallet (PubEAA issuance) | EUDI wallet PID via OpenID4VCI                 | Self-request (citizen = data subject) | Subject=citizen (via PID), Resource=attestation type, Context=PubEAA Provider trust status       |
 | Authentic Source (Art. 45e)  | OAuth token (citizen-authorized) + QTSP status | Citizen-authorized → OAuth            | Subject=QTSP (on Trusted List), Resource=attribute type, Context=citizen authorization via I4/I5 |
@@ -332,9 +332,9 @@ For the full protocol-level analysis including JWT anatomy, Rego examples, and s
 
 Bronhouders implement one connectivity stack (FSC Inway). The GBO edge layer handles OOTS cross-border translation.
 
-### 7. AS4 Bridge for SDG-OOTS (EU Mandate)
+### 7. AS4 Bridge for OOTS (EU Mandate)
 
-**Decision**: A Domibus Access Point handles SDG-OOTS cross-border evidence exchange. This is an EU regulatory requirement (Single Digital Gateway Regulation), not a choice.
+**Decision**: A Domibus Access Point handles OOTS cross-border evidence exchange. This is an EU regulatory requirement (Single Digital Gateway Regulation), not a choice.
 
 GBO builds this bridge because it must. The bridge translates OOTS AS4 requests into FSC/GraphQL requests toward bronhouders. This is the only scenario where AS4 is needed -- all domestic traffic uses FSC directly.
 
@@ -465,7 +465,7 @@ The same bronhouder schema serves all trajectories. The dienstencatalogus define
 | Scope                | Trajectory | Allowed fields (Belastingdienst BRI)                  |
 | -------------------- | ---------- | ----------------------------------------------------- |
 | `bd:ib:*`            | DvTP       | verzamelinkomen, inkomenUitBox1, grondslag, peilDatum |
-| `income-evidence-eu` | SDG-OOTS   | Maps to OOTS-EDM income evidence type fields          |
+| `income-evidence-eu` | OOTS   | Maps to OOTS-EDM income evidence type fields          |
 | `income-attestation` | EUDI       | Fields for PuB-EAA income attestation credential      |
 
 ### PEP/PDP/PIP Authorization Chain
@@ -1142,7 +1142,7 @@ The Authentic Source Interface acts as a protocol adapter: it translates ETSI TS
 
 ---
 
-## SDG-OOTS Cross-Border Bridge
+## OOTS Cross-Border Bridge
 
 ### Why OOTS Requires an AS4 Bridge
 

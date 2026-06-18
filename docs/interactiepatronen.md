@@ -38,10 +38,10 @@ Een Europese overheidsdienst vraagt een gegeven (Evidence Request) aan een Neder
 <figure>
 
 ``` mermaid
---8<-- "diagrammen/interactiepatroon-SDG-OOTS-verzoek.mmd"
+--8<-- "diagrammen/interactiepatroon-OOTS-verzoek.mmd"
 
 ```
-<figcaption>Interactiepatroon gegevensverzoek Europese overheidsdienst via SDG/OOTS</figcaption>
+<figcaption>Interactiepatroon gegevensverzoek Europese overheidsdienst via OOTS</figcaption>
 </figure>
 
 ### Toelichting

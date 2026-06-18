@@ -119,7 +119,7 @@ De vier functies in deze laag vormen de voorwaarden waaronder de generieke funct
 
 ## Generieke functie 3 — Gegevensvoorziening
 
-**Doel:** Bronhouders stellen hun gegevens beschikbaar via een gestandaardiseerde interface die door alle trajecten herbruikbaar is, inclusief grensoverschrijdende uitwisseling conform SDG/OOTS.
+**Doel:** Bronhouders stellen hun gegevens beschikbaar via een gestandaardiseerde interface die door alle trajecten herbruikbaar is, inclusief grensoverschrijdende uitwisseling conform OOTS.
 
 **Eisen:**
 
@@ -128,7 +128,7 @@ De vier functies in deze laag vormen de voorwaarden waaronder de generieke funct
 - De set van toegestane gegevensvragen per gebruik is vooraf geregistreerd (via een catalogus of template-mechanisme) en door beleid afdwingbaar. Binnen de toegestane gegevensvraag bepaalt de afnemer welke gegevens voor zijn situatie nodig zijn. Afwijkingen die buiten de toegestane gegevensvraag vallen zijn niet mogelijk.
 - De interface is onafhankelijk van het BSN als externe sleutel: het subject-identifier in een uitvraag van een private afnemer is altijd een pseudoniem of een consent-referentie; BSN-resolving is een interne aangelegenheid van de ontsluiting.
 - Bronhouders implementeren de ontsluiting eenmalig; aanpassingen voor nieuwe afnemers of trajecten vereisen geen bronhouder-specifieke ontwikkeling, alleen aanpassing van het beleid en de query-registratie.
-- Verzoeken vanuit andere EU-lidstaten (SDG/OOTS) worden aan de GBO-zijde vertaald naar het binnenlandse formaat en protocol. Bronhouders zien geen EU-specifiek transportprotocol.
+- Verzoeken vanuit andere EU-lidstaten (OOTS) worden aan de GBO-zijde vertaald naar het binnenlandse formaat en protocol. Bronhouders zien geen EU-specifiek transportprotocol.
 - Serviceregistratie voor grensoverschrijdende discovery (SMP) wordt centraal beheerd, niet door individuele bronhouders.
 
 ---

@@ -31,7 +31,7 @@ flowchart LR
         U_QTSP["QTSP-platform<br/>QEAA-provider"]:::afnemer
         U_WALLET["EUDI-wallet"]:::afnemer
         U_EDLV["eDelivery Access Point<br/>AS4 / Domibus"]:::afnemer
-        U_OOTS["Europese overheid<br/>SDG/OOTS"]:::afnemer
+        U_OOTS["Europese overheid<br/>OOTS"]:::afnemer
 
         U_BRON --> U_DATA --> U_INWAY
         U_INWAY -->|"REST/JSON"| U_OUTWAY
@@ -68,7 +68,7 @@ flowchart LR
         G_WALLET["EDI/EUDI-wallet"]:::afnemer
         G_QTSP["QTSP"]:::afnemer
         G_OOTS_BI["eDelivery Access Point<br/>AS4 / Domibus"]:::afnemer
-        G_OOTS["Europese overheid<br/>SDG/OOTS"]:::afnemer
+        G_OOTS["Europese overheid<br/>OOTS"]:::afnemer
         G_PRIV["Private dienstverlener"]:::afnemer
 
         G_TRANS -. "migratiepad / shared service" .-> G_API
