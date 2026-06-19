@@ -1,4 +1,5 @@
 (function () {
+  const PRINT_TOC_DEPTH = 2;
   function cleanHeadingText(heading) {
     const clone = heading.cloneNode(true);
 
@@ -34,12 +35,15 @@
       return;
     }
 
+    const headingSelector = Array.from(
+      { length: PRINT_TOC_DEPTH },
+      function (_, index) {
+        return "#print-site-page section.print-page h" + (index + 1);
+      }
+    ).join(", ");
+
     const headings = Array.from(
-      document.querySelectorAll(
-        "#print-site-page section.print-page h1, " +
-        "#print-site-page section.print-page h2, " +
-        "#print-site-page section.print-page h3"
-      )
+      document.querySelectorAll(headingSelector)
     ).filter(function (heading) {
       return !heading.closest("#print-page-toc") &&
              !heading.closest("#print-site-cover-page") &&
@@ -52,7 +56,7 @@
     list.className = "print-generated-toc";
 
     headings.forEach(function (heading) {
-      const level = Math.min(getHeadingLevel(heading), 3);
+      const level = getHeadingLevel(heading);
       const anchorId = getAnchorId(heading);
       const title = cleanHeadingText(heading);
 
