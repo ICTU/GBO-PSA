@@ -8,11 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://ictu.github.io/gbo/">
+        <link rel="canonical" href="https://ictu.github.io/GBO-PSA/latest/psa/inleiding/">
       
       
       
-        <link rel="next" href="ontwerp/concept-globaal-ontwerp/">
+        <link rel="next" href="oplossingsrichting/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Documentatie GBO</title>
+        <title>Inleiding - Gemeenschappelijke Bronontsluiting</title>
       
     
     
@@ -48,8 +48,6 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
-    
-      <link rel="stylesheet" href="css/print-site-enum-headings1.css">
     
       <link rel="stylesheet" href="css/print-site-enum-headings2.css">
     
@@ -94,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#documentatie-gbo" class="md-skip">
+        <a href="#inleiding" class="md-skip">
           Ga naar inhoud
         </a>
       
@@ -108,38 +106,80 @@
       </div>
     
     
-      
+      <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine classes -->
+
 
   
 
-<header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Documentatie GBO" class="md-header__button md-logo" aria-label="Documentatie GBO" data-md-component="logo">
+
+<!-- Header -->
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="Header"
+  >
+
+    <!-- Link to home -->
+    <a
+      href="."
+      title="Gemeenschappelijke Bronontsluiting"
+      class="md-header__button md-logo"
+      aria-label="Gemeenschappelijke Bronontsluiting"
+      data-md-component="logo"
+    >
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
+
+    <!-- Button to open drawer -->
     <label class="md-header__button md-icon" for="__drawer">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
-    <div class="md-header__title" data-md-component="header-title">
+
+    <!-- Header title -->
+    <div class="md-header__title">
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Documentatie GBO
+            Gemeenschappelijke Bronontsluiting
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Over deze repository
+              Inleiding
             
           </span>
         </div>
       </div>
     </div>
+
+    <!-- Color palette toggle -->
     
       
         <form class="md-header__option" data-md-component="palette">
@@ -167,17 +207,35 @@
 </form>
       
     
+
+    <!-- User preference: color palette -->
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
+
+    <!-- Site language selector -->
     
+
+    <!-- Knop voor PDF Download -->
+    <a href="javascript:void(0)"
+       onclick="downloadPDF('print_page/')"
+       title="Download PDF"
+       class="md-header__button md-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m-9.5 8.5c0 .8-.7 1.5-1.5 1.5H7v2H5.5V9H8c.8 0 1.5.7 1.5 1.5zm5 2c0 .8-.7 1.5-1.5 1.5h-2.5V9H13c.8 0 1.5.7 1.5 1.5zm4-3H17v1h1.5V13H17v2h-1.5V9h3zm-6.5 0h1v3h-1zm-5 0h1v1H7z"/></svg>
+    </a>
+
+    <!-- Button to open search modal -->
     
       
+
+      <!-- Check if search is actually enabled - see https://t.ly/DT_0V -->
       
         <label class="md-header__button md-icon" for="__search">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         </label>
+
+        <!-- Search interface -->
         <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -212,9 +270,11 @@
 </div>
       
     
+
+    <!-- Repository information -->
     
       <div class="md-header__source">
-        <a href="https://github.com/ictu/gbo" title="Ga naar repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/ICTU/GBO-PSA" title="Ga naar repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
@@ -226,14 +286,161 @@
       </div>
     
   </nav>
+
+  <!-- Navigation tabs (sticky) -->
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Gemeenschappelijke Bronontsluiting
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO/latest/context.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Context
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO-GO/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Globaal Ontwerp
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="." class="md-tabs__link">
+          
+  
+  
+  Projectstartarchitectuur
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction_to/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Technisch Ontwerp
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction_tr/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Technische Requirements
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction_sem/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Semantiek
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
   
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -247,22 +454,24 @@
                     
 
 
+  
+
 
   
 
-<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigatie" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigatie" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Documentatie GBO" class="md-nav__button md-logo" aria-label="Documentatie GBO" data-md-component="logo">
+    <a href="." title="Gemeenschappelijke Bronontsluiting" class="md-nav__button md-logo" aria-label="Gemeenschappelijke Bronontsluiting" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Documentatie GBO
+    Gemeenschappelijke Bronontsluiting
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/ictu/gbo" title="Ga naar repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/ICTU/GBO-PSA" title="Ga naar repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
@@ -277,6 +486,144 @@
     
       
       
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ictu.github.io/GBO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gemeenschappelijke Bronontsluiting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ictu.github.io/GBO/latest/context.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ictu.github.io/GBO-GO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Globaal Ontwerp
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projectstartarchitectuur
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projectstartarchitectuur
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
     
@@ -298,7 +645,7 @@
   <span class="md-ellipsis">
     
   
-    Over deze repository
+    Inleiding
   
 
     
@@ -316,7 +663,7 @@
   <span class="md-ellipsis">
     
   
-    Over deze repository
+    Inleiding
   
 
     
@@ -342,10 +689,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#kerngegevens" class="md-nav__link">
+  <a href="#doel-van-dit-document" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Kerngegevens
+        Doel van dit document
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope
       
     </span>
   </a>
@@ -370,60 +728,7 @@
     </li>
   
 
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Globaal ontwerp
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Globaal ontwerp
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+              
             
               
                 
@@ -432,103 +737,14 @@
   
   
     <li class="md-nav__item">
-      <a href="ontwerp/concept-globaal-ontwerp/" class="md-nav__link">
+      <a href="oplossingsrichting/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Globaal ontwerp
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PSA
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    PSA
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="psa/voorblad/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Voorblad
+    Oplossingsrichting
   
 
     
@@ -549,63 +765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="psa/inleiding/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Inleiding
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="psa/context/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Context
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="psa/architectuurprincipes/" class="md-nav__link">
+      <a href="architectuurprincipes/" class="md-nav__link">
         
   
   
@@ -633,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="psa/ontwerpprincipes/" class="md-nav__link">
+      <a href="ontwerpprincipes/" class="md-nav__link">
         
   
   
@@ -661,35 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="psa/ecosysteem/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Ecosysteem en oplossingsrichting
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="psa/interactiepatronen/" class="md-nav__link">
+      <a href="interactiepatronen/" class="md-nav__link">
         
   
   
@@ -717,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="psa/generieke-functies/" class="md-nav__link">
+      <a href="generieke-functies/" class="md-nav__link">
         
   
   
@@ -745,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="psa/capabilities/" class="md-nav__link">
+      <a href="capabilities/" class="md-nav__link">
         
   
   
@@ -773,7 +905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="psa/realisatiestrategie/" class="md-nav__link">
+      <a href="realisatiestrategie/" class="md-nav__link">
         
   
   
@@ -801,14 +933,14 @@
   
   
     <li class="md-nav__item">
-      <a href="psa/vraagstukken/" class="md-nav__link">
+      <a href="vraagstukken/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Open Vraagstukken en ontwerpkeuzes
+    Open vragen en ontwerpkeuzes
   
 
     
@@ -831,73 +963,19 @@
     
       
       
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Technisch ontwerp
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Technisch ontwerp
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
   
   
   
   
     <li class="md-nav__item">
-      <a href="ref-arch/gbo-reference-architecture/" class="md-nav__link">
+      <a href="https://ictu.github.io/GBO/main/underconstruction_to/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Reference architecture
+    Technisch Ontwerp
   
 
     
@@ -909,11 +987,57 @@
     </li>
   
 
-              
-            
-          </ul>
-        </nav>
+    
       
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction_tr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technische Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ictu.github.io/GBO/main/underconstruction_sem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semantiek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -929,6 +1053,12 @@
           
             <div class="md-content" data-md-component="content">
               
+                
+
+
+
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -938,44 +1068,38 @@
   
 
 
-<h1 id="documentatie-gbo">Documentatie GBO<a class="headerlink" href="#documentatie-gbo" title="Permanent link">&para;</a></h1>
-<p>Welkom bij de repository met documentatie voor GBO. In deze repository worden alle relevante documentatie voor het project Gemeenschappelijke Bronontsluiting gepubliceerd.</p>
-<h2 id="kerngegevens">Kerngegevens<a class="headerlink" href="#kerngegevens" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Onderwerp</th>
-<th style="text-align: left;">Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Status</strong></td>
-<td style="text-align: left;">Concept / In review</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Eigenaar</strong></td>
-<td style="text-align: left;">ICTU</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>GithubRep</strong></td>
-<td style="text-align: left;">https://github.com/ICTU/GBO</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Laatst bijgewerkt</strong></td>
-<td style="text-align: left;">{{ git_revision_date }}</td>
-</tr>
-</tbody>
-</table>
-<h2 id="leeswijzer">Leeswijzer<a class="headerlink" href="#leeswijzer" title="Permanent link">&para;</a></h2>
-<p>De repository is als volgt opgebouwd:</p>
+<h1 id="inleiding">Inleiding<a class="headerlink" href="#inleiding" title="Permanent link">&para;</a></h1>
+<h2 id="doel-van-dit-document">Doel van dit document<a class="headerlink" href="#doel-van-dit-document" title="Permanent link">&para;</a></h2>
+<p>Dit document beschrijft de Projectstartarchitectuur (PSA) voor het project Gemeenschappelijke Bronontsluiting (GBO).<br />
+De PSA beschrijft <strong>wat de oplossing moet kunnen</strong>, maar legt nog geen technische implementatie vast.  </p>
+<blockquote>
+<p>LET OP: Het project gemeenschappelijke bronontsluiting is in ontwikkeling en de documentatie volgt dit. De huidige versie van dit document is daarom niet definitief. De status van de documentatie is <a href="https://ictu.github.io/GBO/latest/#reviewproces">hier</a> te vinden.</p>
+</blockquote>
+<h2 id="scope">Scope<a class="headerlink" href="#scope" title="Permanent link">&para;</a></h2>
+<p>De PSA beschrijft de architectuur voor een afsprakenstelsel en generieke infrastructuur waarmee:</p>
 <ul>
-<li><strong><a href="ontwerp/concept-globaal-ontwerp/">Globaal ontwerp</a></strong>: Globaal Ontwerp GBO</li>
-<li><strong><a href="psa/">PSA</a></strong>: Projectstartarchitectuur</li>
-<li><strong><a href="ref-arch/gbo-reference-architecture/">Technisch ontwerp</a></strong>: Technisch ontwerp</li>
+<li>burgers gegevens van overheidsorganisaties kunnen verkrijgen  </li>
+<li>burgers deze gegevens kunnen delen met private partijen  </li>
+<li>gegevens gebruikt kunnen worden voor Europese toepassingen zoals EDI Wallet en OOTS  </li>
 </ul>
-<hr />
-<p><em>Vragen over deze repository kunnen gesteld worden aan de architect van het projectteam.</em></p>
+<p>De PSA beschrijft <strong>niet</strong>:</p>
+<ul>
+<li>concrete technische oplossingen  </li>
+<li>implementaties van componenten en afspraken  </li>
+<li>leverancierskeuzes  </li>
+</ul>
+<h2 id="leeswijzer">Leeswijzer<a class="headerlink" href="#leeswijzer" title="Permanent link">&para;</a></h2>
+<p>De PSA bevat de volgende onderdelen:</p>
+<ul>
+<li><a href="oplossingsrichting/">Oplossingsrichting</a>: een schets van hoe de gemeenschappelijke bronontsluiting eruit komt te zien;</li>
+<li><a href="architectuurprincipes/">Architectuurprincipes</a>: de principes die de kaders vormen voor de oplossing;</li>
+<li><a href="ontwerpprincipes/">Ontwerpprincipes</a>: de principes waaraan de ontwikkeling van de oplossing zich moet houden;</li>
+<li><a href="interactiepatronen/">Interactiepatronen</a>: een uitwerking van hoe de gegevensstromen die in beeld zijn, uitgevoerd worden;</li>
+<li><a href="generieke-functies/">Logische architectuur</a>: de generieke functies die nodig zijn om invulling te geven aan de gewenste oplossing;</li>
+<li><a href="capabilities/">Stelselfuncties</a>: de stelselfuncties (capabilities) die invulling geven aan de generieke functies;</li>
+<li><a href="realisatiestrategie/">Realisatiestrategie</a>: de voorgestelde manier om de oplossing tot stand te laten komen;</li>
+<li><a href="vraagstukken/">Open vragen en ontwerpkeuzes</a>: vraagstukken die nog uitgewerkt moeten worden en (indien relevant) de ontwerpkeuze die is gemaakt.</li>
+</ul>
 
 
 
@@ -1031,7 +1155,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.code.annotate", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.follow"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Let op: er wordt alleen gezocht binnen dit documentatie-onderdeel. Om in andere onderdelen te zoeken: ga via het hoofdmenu eerst naar het onderdeel en voer dan de zoekterm in.", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
       <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
@@ -1041,6 +1165,8 @@
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
         <script src="javascript/mermaid-init.js"></script>
+      
+        <script src="javascript/print.js"></script>
       
     
   </body>
