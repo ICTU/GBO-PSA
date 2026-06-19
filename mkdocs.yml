@@ -80,6 +80,9 @@ plugins:
       toc_title: "Inhoudsopgave"
       toc_depth: 3
 
+hooks:
+  - hooks/print_site_nav.py
+  
 nav:
   - Gemeenschappelijke Bronontsluiting: https://ictu.github.io/GBO/
   - Context: https://ictu.github.io/GBO/latest/context.md
