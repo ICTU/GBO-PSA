@@ -74,6 +74,8 @@ plugins:
   - print-site:
       add_to_navigation: false
       print_page_title: "GBO - Projectstartarchitectuur"
+      add_cover_page: true
+      cover_page_template: "docs/assets/templates/voorblad.tpl"
       enumerate_headings: true
       enumerate_figures: false
       add_table_of_contents: true
@@ -82,7 +84,7 @@ plugins:
 
 hooks:
   - hooks/print_site_nav.py
-  
+
 nav:
   - Gemeenschappelijke Bronontsluiting: https://ictu.github.io/GBO/
   - Context: https://ictu.github.io/GBO/latest/context.md
