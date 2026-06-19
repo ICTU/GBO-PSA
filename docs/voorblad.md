@@ -1,12 +1,11 @@
-# GBO / DvTP
-## Project Start Architectuur
+# GBO
 
-![ICTU](media/ictu-logo.png)
+## Project Start Architectuur  
 
-Versie 0.1  
-Maart 2026
+
+![ICTU](../media/ictu-logo.png)
 
 ---
 
-Auteur: Govert Claus  
+Auteur: project GBO  
 Organisatie: ICTU

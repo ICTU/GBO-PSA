@@ -1,31 +1,46 @@
-<figure>
-
-``` mermaid
-
 sequenceDiagram
+    autonumber
     actor Burger
-    participant DV as Dienstverlener<br/>(privaat / EU-overheid)
-    participant GBO as GBO<br/>toestemmingscheck + ontsluiting
-    participant Bron as Bronhouder<br/>overheidsbron
-    participant TR as Transformatie<br/>formaat afnemer
+    participant DV as Dienst-<br/>verlener
+    participant Auth as Authenticatie-<br/>dienst
+    participant TV as Toestemmings-<br/>voorziening (GBO)
+    participant PP as BSNk PP<br/>(pseudonimisering)
+    participant TR as Toestemmings-<br/>register
+    participant BRH as Bron-<br/>houder
 
-    DV->>Burger: 1. Vraag toestemming<br/>(redirect naar overheidsportaal)
-    Burger->>GBO: 2. Authenticatie DigiD<br/>+ toestemming verlenen
-    GBO-->>DV: 3. Toestemmingstoken<br/>(OAuth 2.0 / consent token)
+    Note over Burger,BRH: Fase 1 — Toestemming verlenen
 
-    DV->>GBO: 4. Gegevensverzoek<br/>+ toestemmingstoken + mTLS
-    GBO->>GBO: 5. Valideer token<br/>(geldig? scope? TTL?)
-    GBO->>Bron: 6. Ophaalverzoek<br/>(OAuth 2.0 · REST/GraphQL)
-    Bron-->>GBO: 7. Gegevens<br/>(gezegeld door bronhouder)
-    GBO->>TR: 8. Transformeer naar<br/>afnemerformaat
-
-    alt DvTP (private partij)
-        TR-->>DV: 9a. REST/GraphQL response<br/>(eigen formaat)
-    else SDG/OOTS (EU overheid)
-        TR-->>DV: 9b. AS4 / eDelivery<br/>(SDG evidence format)
+    rect rgb(225, 245, 238)
+        Burger->>DV: Neemt dienst af
+        DV->>Burger: Redirect naar toestemmingsvoorziening GBO<br/>(met scope + doelbinding)
+        Burger->>TV: Volgt redirect
+        TV->>Auth: Authenticatieverzoek
+        Note over Auth: DigiD of ander identificatiemiddel (eIDAS 2.0)
+        Auth->>Burger: Authenticeer burger
+        Burger-->>Auth: Authenticatie
+        Auth-->>TV: BSN (geverifieerde identiteit)
+        TV->>TV: PI/PP aanwezig?
+        TV->>PP: Activeer BSN
+        PP->>TV: PI/PP
+        TV->>TV: Registreer PI/PP
+        TV->>PP: Transformeer PI/PP
+        PP-->>TV: Versleutelde PI/PP (VI/VP)
+        TV->>Burger: Toon gegevens waarvoor toestemming<br/>gevraagd wordt (scope + doelbinding)
+        Burger-->>TV: Verleent toestemming
+        TV->>TR: Schrijf toestemming in register<br/>(VI · scope · doelbinding · TTL)
+        TR-->>TV: consent_id
+        TV->>DV: Redirect terug naar dienstverlener<br/>(met consent_id en VP)
     end
 
-```
+    Note over DV,BRH: Fase 2 — Gegevensopvraging bij bronhouder
 
-<figcaption>Interactiepatroon Private Partij haalt gegevens op</figcaption>
-</figure>
+    rect rgb(238, 237, 254)
+        DV->>BRH: Gegevensverzoek<br/>(consent_id · mTLS / certificaat)
+        BRH->>BRH: Authenticeer dienstverlener<br />(via certificaat)
+        BRH->>BRH: Controleer bevoegdheid<br />(via FSC contract/Trusted List)
+        BRH->>TR: Valideer consent_id<br/>(geldig? scope? TTL?)*
+        TR-->>BRH: Consent geldig<br />(incl. VI)
+        BRH->>BRH: Controleer data scope<br />(template match)
+        BRH->>BRH: Ontsleutel VI naar BSN
+        BRH-->>DV: Gevraagde gegevens
+    end

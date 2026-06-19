@@ -1,7 +1,3 @@
-<figure>
-
-``` mermaid
-
 graph TD
     START([Gegevensuitwisseling\ninitiatief?])
 
@@ -11,7 +7,7 @@ graph TD
     A["Patroon A\nBurger haalt op"]
     B["Patroon B\nDienstverlener haalt op"]
 
-    A --> A1["EDI-Wallet\nOID4VCI · SD-JWT VC\nISO 18013-5"]
+    A --> A1["EUDI-Wallet\nOID4VCI · SD-JWT VC\nISO 18013-5"]
     A --> A2["Eigen portaal\n(MijnOverheid-variant)"]
 
     B --> B1["DvTP\nPrivate partijen\nREST · GraphQL · OAuth 2.0"]
@@ -24,8 +20,3 @@ graph TD
     class START start
     class A,B patroon
     class A1,A2,B1,B2 kanaal
-
-```
-
-<figcaption>Diagram keuze interactiepatroon gegevensverzoek</figcaption>
-</figure>

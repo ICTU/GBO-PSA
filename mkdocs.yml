@@ -1,28 +1,53 @@
-site_name: PSA GBO
+site_name: Gemeenschappelijke Bronontsluiting
+site_url: https://ictu.github.io/GBO-PSA/latest/psa/inleiding/
+repo_url: https://github.com/ICTU/GBO-PSA
+repo_name: ictu/gbo
 
 theme:
   name: material
-  language: nl
+  language: custom
+  custom_dir: overrides
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
   features:
     - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - toc.integrate
     - content.code.copy
     - content.code.annotate
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.path
+    - toc.follow
 
 markdown_extensions:
-
+  - tables
+  - footnotes
+  - sane_lists
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - admonition
+  - attr_list
   # Mermaid diagrammen
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-
-  # Includes voor diagrammen
+          format: !!python/name:pymdownx.superfences.fence_div_format
   - pymdownx.snippets:
       base_path:
         - docs
       check_paths: true
-
   # Automatische inhoudsopgave
   - toc:
       permalink: true
@@ -34,32 +59,39 @@ extra_css:
 
 extra_javascript:
   - https://unpkg.com/mermaid@10/dist/mermaid.min.js
-  - javascripts/mermaid-init.js
+  - javascript/mermaid-init.js
+  - javascript/print.js
+
+extra:
+  version:
+    provider: mike
+    alias: true
 
 plugins:
   - search
+  - mike:
+      canonical_version: "latest"
   - print-site:
       add_to_navigation: false
-      print_page_title: "PSA GBO / DvTP"
-      enumerate_headings: true
+      print_page_title: "Documentatie GBO"
+      enumerate_headings: false
+      exclude:
+        - index.md
 
 nav:
-  - Voorblad: voorblad.md
-
-  - Over dit document: index.md
-
-  - PSA:
-    - Inleiding: psa/inleiding.md
-    - Context: psa/context.md
-    - Architectuurprincipes: psa/architectuurprincipes.md
-    - Ontwerpprincipes: psa/ontwerpprincipes.md
-    - Ecosysteem en oplossingsrichting: psa/ecosysteem.md
-    - Interactiepatronen: psa/interactiepatronen.md
-    - Logische architectuur: psa/generieke-functies.md
-    - Capabilities: psa/capabilities.md
-    - Realisatiestrategie: psa/realisatiestrategie.md
-    - Open Vraagstukken en ontwerpkeuzes: psa/vraagstukken.md
-
-  - Use Cases:
-    - Zorgeloos Vastgoed: use-cases/zorgeloos-vastgoed.md
-    - Gebruik vastgoedgegevens: use-cases/lvg.md
+  - Gemeenschappelijke Bronontsluiting: https://ictu.github.io/GBO/
+  - Context: https://ictu.github.io/GBO/latest/context.md
+  - Globaal Ontwerp: https://ictu.github.io/GBO-GO/
+  - Projectstartarchitectuur:
+      - Inleiding: index.md
+      - Oplossingsrichting: oplossingsrichting.md
+      - Architectuurprincipes: architectuurprincipes.md
+      - Ontwerpprincipes: ontwerpprincipes.md
+      - Interactiepatronen: interactiepatronen.md
+      - Logische architectuur: generieke-functies.md
+      - Stelselfuncties: capabilities.md
+      - Realisatiestrategie: realisatiestrategie.md
+      - Open vragen en ontwerpkeuzes: vraagstukken.md
+  - Technisch Ontwerp: https://ictu.github.io/GBO/main/underconstruction_to/
+  - Technische Requirements: https://ictu.github.io/GBO/main/underconstruction_tr/
+  - Semantiek: https://ictu.github.io/GBO/main/underconstruction_sem/

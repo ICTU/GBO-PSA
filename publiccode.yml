@@ -21,12 +21,13 @@ description:
          Project Startarchitectuur GBO
 
    longDescription: >
-         Architectuur voor het project Gemeenschappelijke Bronontsluiting (GBO) / Data delen via toestemming aan private partijen (DvTP)
+         Architectuur voor het project Gemeenschappelijke Bronontsluiting (GBO)
 
    features:
       - PSA
       - Diagrammen die in PSA gebruikt worden
-      - Use Cases die in project toegepast worden
+      - Technisch ontwerp
+      - Globaal ontwerp
 
 legal:
  license: nog vast te stellen
