@@ -95,4 +95,27 @@
   .print-cover__metadata dd {
     margin: 0;
   }
+
+  #print-page-toc {
+    display: block !important;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  #print-page-toc nav ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .print-generated-toc__item {
+    margin: 0.25rem 0;
+  }
+
+  .print-generated-toc__item--level-2 {
+    margin-left: 1rem;
+  }
+
+  .print-generated-toc__item--level-3 {
+    margin-left: 2rem;
+  }
 }
