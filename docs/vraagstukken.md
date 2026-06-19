@@ -20,7 +20,7 @@ FSC biedt hiervoor oplossingsrichtingen, waar in de uitwerking naar gekeken kan 
 ## Autorisatiearchitectuur: centrale autorisatieserver vs. gedistribueerde PDP
 
 Gaat GBO werken met een "Autorisatieserver" als centraal component, met een bijbehorende "Vertrouwensleverancier" die tokens afgeeft. De Functionele Requirements en het GBO Beschrijvend Document spreken van een autorisatieserver als apart component (component 4).  
-**Onterpkeuze**: De PSA en het technisch ontwerp gaan nu uit van een PBAC-oplossing, met een PDP, PEP en een centrale PAP. Of dit voor alle use cases de beste oplossing is, moet nog blijken.  
+**Ontwerpkeuze**: De PSA en het technisch ontwerp gaan nu uit van een PBAC-oplossing, met een PDP, PEP en een centrale PAP. Of dit voor alle use cases de beste oplossing is, moet nog blijken.  
 
 
 ## Burgeridentificatie en het BSN
@@ -32,9 +32,15 @@ Het BSN mag bij private partijen, die daarvoor geen wettelijke grondslag hebben,
 ## Toestemmingen
 
 Voor DvTP (de gegevensstroom van overheidsbronnen naar private dienstverleners) is een toestemming vereist. Hiervoor is de toestemmingenvoorziening en het toestemmingenregister bedacht, maar hiervoor is nog wetgeving nodig.
-Er spelen hierbij enkele vragen:
-- Hoe wordt omgegaan met toestemming voor een eenmalige bevraging?
-- Is een toestemmingenvoorziening nodig als de gegevens via de burger aan de private dienstverlener beschikbaar worden gesteld (conform de "preview" functie van de Basisinrichting OOTS en de "Authorising Actors" functie van TIP)?
+Er spelen hierbij enkele vragen:  
+- Hoe wordt omgegaan met toestemming voor een eenmalige bevraging?  
+- Is een toestemmingenvoorziening nodig als de gegevens via de burger aan de private dienstverlener beschikbaar worden gesteld (conform de "preview" functie van de Basisinrichting OOTS en de "Authorising Actors" functie van TIP)?  
+- Waarom niet de verantwoordelijkheid bij de bronhouder of afnemer leggen en dit decentraal oplossen?  
+**Ontwerpkeuze**: GBO gaat uit van een centrale toestemmingsvoorziening met een toestemmingenregister en een toestemmingenportaal. De onderbouwing daarvoor is:
+- Kostenbesparing: éénmalig inrichten en beheren is goedkoper dan dat iedere bronhouder en/of afnemer dit zelf regelt.  
+- Herkenbaarheid voor de burger: een centrale voorziening biedt de burger telkens dezelfde ervaring, wat herkenning en vertrouwen opbouwt.  
+- Inzage voor de burger: met een centrale voorziening is het aanzienlijk eenvoudiger om de burger inzage te geven in al zijn toestemmingen via het Toestemmingsportaal.  
+- Eén keer toestemmen: de burger kan in één handeling toestemming geven voor een set gegevens die mogelijk uit meerdere bronnen afkomstig zijn. Bij decentrale registratie per bron zou de burger voor elke bron apart moeten toestemmen.  
 
 
 ## Vertrouwensstelsel
