@@ -71,6 +71,7 @@ extra_css:
 extra_javascript:
   - https://unpkg.com/mermaid@10/dist/mermaid.min.js
   - javascript/mermaid-init.js
+  - javascript/print-site-toc-fix.js
   - javascript/print.js
 
 plugins:
@@ -86,7 +87,7 @@ plugins:
       enumerate_figures: false
       add_table_of_contents: true
       toc_title: "Inhoudsopgave"
-      toc_depth: 3
+      toc_depth: 2
 
 hooks:
   - hooks/print_site_nav.py
