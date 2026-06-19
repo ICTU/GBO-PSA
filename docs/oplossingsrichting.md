@@ -6,7 +6,7 @@ Dit hoofdstuk beschrijft de voorgestelde oplossingsrichting voor GBO. Het onders
 ``` mermaid
 --8<-- "diagrammen/gbo_swimlanes_simpel.mmd"
 ```
-<figcaption>Figuur : Oplossingsrichting GBO.</figcaption>
+<figcaption>Oplossingsrichting GBO.</figcaption>
 </figure>
 
 ## Gemeenschappelijke bronontsluiting
