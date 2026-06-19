@@ -21,7 +21,7 @@
     
     
       
-        <title>Documentatie GBO - Gemeenschappelijke Bronontsluiting</title>
+        <title>GBO - Projectstartarchitectuur - Gemeenschappelijke Bronontsluiting</title>
       
     
     
@@ -166,7 +166,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Documentatie GBO
+              GBO - Projectstartarchitectuur
             
           </span>
         </div>
@@ -974,11 +974,11 @@
 
 
 
-<div id="print-site-page" class="print-site-enumerate-figures">
+<div id="print-site-page" class="print-site-enumerate-headings">
         <section class="print-page">
             <div id="print-page-toc" data-toc-depth="3">
                 <nav role='navigation' class='print-page-toc-nav'>
-                <h1 class='print-page-toc-title'>Table of Contents</h1>
+                <h1 class='print-page-toc-title'>Inhoudsopgave</h1>
                 </nav>
             </div>
         </section>
@@ -986,7 +986,38 @@
                     <section class='print-page md-section' id='section-4' heading-number='4'>
                         <h1>Projectstartarchitectuur<a class='headerlink' href='#section-4' title='Permanent link'></a>
                         </h1>
-                    <section class="print-page" id="oplossingsrichting" heading-number="4.2"><h1 id="oplossingsrichting-voorgestelde-oplossingsrichting">Voorgestelde oplossingsrichting<a class="headerlink" href="#oplossingsrichting-voorgestelde-oplossingsrichting" title="Permanent link">&para;</a></h1>
+                    <section class="print-page" id="index" heading-number="4.1"><h1 id="index-inleiding">Inleiding<a class="headerlink" href="#index-inleiding" title="Permanent link">&para;</a></h1>
+<h2 id="index-doel-van-dit-document">Doel van dit document<a class="headerlink" href="#index-doel-van-dit-document" title="Permanent link">&para;</a></h2>
+<p>Dit document beschrijft de Projectstartarchitectuur (PSA) voor het project Gemeenschappelijke Bronontsluiting (GBO).<br />
+De PSA beschrijft <strong>wat de oplossing moet kunnen</strong>, maar legt nog geen technische implementatie vast.  </p>
+<blockquote>
+<p>LET OP: Het project gemeenschappelijke bronontsluiting is in ontwikkeling en de documentatie volgt dit. De huidige versie van dit document is daarom niet definitief. De status van de documentatie is <a href="https://ictu.github.io/GBO/latest/#reviewproces">hier</a> te vinden.</p>
+</blockquote>
+<h2 id="index-scope">Scope<a class="headerlink" href="#index-scope" title="Permanent link">&para;</a></h2>
+<p>De PSA beschrijft de architectuur voor een afsprakenstelsel en generieke infrastructuur waarmee:</p>
+<ul>
+<li>burgers gegevens van overheidsorganisaties kunnen verkrijgen  </li>
+<li>burgers deze gegevens kunnen delen met private partijen  </li>
+<li>gegevens gebruikt kunnen worden voor Europese toepassingen zoals EDI Wallet en OOTS  </li>
+</ul>
+<p>De PSA beschrijft <strong>niet</strong>:</p>
+<ul>
+<li>concrete technische oplossingen  </li>
+<li>implementaties van componenten en afspraken  </li>
+<li>leverancierskeuzes  </li>
+</ul>
+<h2 id="index-leeswijzer">Leeswijzer<a class="headerlink" href="#index-leeswijzer" title="Permanent link">&para;</a></h2>
+<p>De PSA bevat de volgende onderdelen:</p>
+<ul>
+<li><a href="#oplossingsrichting">Oplossingsrichting</a>: een schets van hoe de gemeenschappelijke bronontsluiting eruit komt te zien;</li>
+<li><a href="#architectuurprincipes">Architectuurprincipes</a>: de principes die de kaders vormen voor de oplossing;</li>
+<li><a href="#ontwerpprincipes">Ontwerpprincipes</a>: de principes waaraan de ontwikkeling van de oplossing zich moet houden;</li>
+<li><a href="#interactiepatronen">Interactiepatronen</a>: een uitwerking van hoe de gegevensstromen die in beeld zijn, uitgevoerd worden;</li>
+<li><a href="#generieke-functies">Logische architectuur</a>: de generieke functies die nodig zijn om invulling te geven aan de gewenste oplossing;</li>
+<li><a href="#capabilities">Stelselfuncties</a>: de stelselfuncties (capabilities) die invulling geven aan de generieke functies;</li>
+<li><a href="#realisatiestrategie">Realisatiestrategie</a>: de voorgestelde manier om de oplossing tot stand te laten komen;</li>
+<li><a href="#vraagstukken">Open vragen en ontwerpkeuzes</a>: vraagstukken die nog uitgewerkt moeten worden en (indien relevant) de ontwerpkeuze die is gemaakt.</li>
+</ul></section><section class="print-page" id="oplossingsrichting" heading-number="4.2"><h1 id="oplossingsrichting-voorgestelde-oplossingsrichting">Voorgestelde oplossingsrichting<a class="headerlink" href="#oplossingsrichting-voorgestelde-oplossingsrichting" title="Permanent link">&para;</a></h1>
 <p>Dit hoofdstuk beschrijft de voorgestelde oplossingsrichting voor GBO. Het onderstaande diagram vormt hiervoor de basis.</p>
 <figure>
 <div class="mermaid">flowchart LR
@@ -4154,6 +4185,11 @@ Bij de volgende voorzieningen die in theorie decentraal ingericht kunnen worden,
 <li>Verificatiedienst waarmee QTSP's gegevens kunnen verifiëren en waar alle overheidsbronnen gebruik van kunnen maken.</li>
 <li>Vertaalvoorziening om GraphQL verzoeken om te zetten naar REST/API verzoeken voor overheidsbronnen die (nog) geen eigen GraphQL implementatie willen/ kunnen realiseren.</li>
 </ul></section></section></div><style>.print-site-enumerate-headings #section-4 > h1:before { content: '4 ' }
+.print-site-enumerate-headings #index > h1:before { content: '4.1 ' }
+
+                .print-site-enumerate-headings #index h2:before { content: '4.1.' counter(counter-index-2) ' ' }
+                .print-site-enumerate-headings #index h2 {  counter-increment: counter-index-2 }
+            
 .print-site-enumerate-headings #oplossingsrichting > h1:before { content: '4.2 ' }
 
                 .print-site-enumerate-headings #oplossingsrichting h2:before { content: '4.2.' counter(counter-oplossingsrichting-2) ' ' }
