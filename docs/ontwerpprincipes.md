@@ -243,20 +243,20 @@ Ook deelnemers moeten aantoonbaar voldoen aan beveiligings- en privacy-eisen bij
 
 | ID   | Principe                                                        | Cluster                           | Primair kader              |
 |------|-----------------------------------------------------------------|-----------------------------------|----------------------------|
-| D-01 | Decentraal wat kan, centraal wat moet                           | Governance & organisatie          | GDI / GA / Gemeentewet     |
-| D-02 | Afspraken > standaarden > voorzieningen                         | Governance & organisatie          | GDI / GA (MIDO)            |
-| D-03 | Gebruik landelijke GDI-bouwstenen tenzij…                       | Governance & organisatie          | GDI / NORA                 |
-| D-04 | Robuust, modulair en flexibel ontwerp                           | Technische architectuur           | GDI / NORA                 |
-| D-05 | Gegevens bij de bron — geen onnodige kopieën                    | Gegevensarchitectuur              | NORA (NAP12) / GEMMA       |
-| D-06 | Componentgebaseerd werken — herbruikbare bouwstenen             | Technische architectuur           | NORA (NAP07) / GEMMA       |
-| D-07 | Open source tenzij zwaarwegende redenen                         | Technische architectuur           | NORA / BZK                 |
-| D-08 | Pas toe of leg uit — verplichte open standaarden                | Standaarden & koppelvlakken       | Forum Standaardisatie      |
-| D-09 | API-first — NLGov REST API Design Rules (en GraphQL-afweging)  | Standaarden & koppelvlakken       | Forum Standaardisatie / EU |
-| D-10 | Informatiebeveiliging en privacy by design                      | Beveiliging & privacy             | BIO2 / AVG / NIS2          |
-| D-11 | Least privilege — toegang op basis van minimale rechten         | Beveiliging & privacy             | BIO2 / OAuth / AVG         |
-| D-12 | Aantoonbare veiligheid — audit en pen-testing                   | Beveiliging & privacy             | BIO2 / NIS2 / Cbw          |
-| D-13 | Standaardiseer waar mogelijk, uitzonderingen expliciet (ADR)    | Kwaliteit & beheersbaarheid       | NORA / GA                  |
-| D-14 | Interoperabiliteit — semantische en technische afstemming       | Kwaliteit & beheersbaarheid       | NORA / EIF                 |
+| [D-01](#d-01-decentraal-wat-kan-centraal-wat-moet) | Decentraal wat kan, centraal wat moet                           | Governance & organisatie          | GDI / GA / Gemeentewet     |
+| [D-02](#d-02-afspraken-gaan-boven-standaarden-standaarden-gaan-boven-voorzieningen) | Afspraken > standaarden > voorzieningen                         | Governance & organisatie          | GDI / GA (MIDO)            |
+| [D-03](#d-03-gebruik-landelijke-generieke-voorzieningen-gdi-bouwstenen-tenzij) | Gebruik landelijke GDI-bouwstenen tenzij…                       | Governance & organisatie          | GDI / NORA                 |
+| [D-04](#d-04-robuust-modulair-en-flexibel-ontwerp) | Robuust, modulair en flexibel ontwerp                           | Technische architectuur           | GDI / NORA                 |
+| [D-05](#d-05-gegevens-bij-de-bron-geen-onnodige-kopieen) | Gegevens bij de bron — geen onnodige kopieën                    | Gegevensarchitectuur              | NORA (NAP12) / GEMMA       |
+| [D-06](#d-06-componentgebaseerd-werken-herbruikbare-bouwstenen) | Componentgebaseerd werken — herbruikbare bouwstenen             | Technische architectuur           | NORA (NAP07) / GEMMA       |
+| [D-07](#d-07-open-source-tenzij-er-zwaarwegende-redenen-zijn-om-dat-niet-te-doen) | Open source tenzij zwaarwegende redenen                         | Technische architectuur           | NORA / BZK                 |
+| [D-08](#d-08-pas-toe-of-leg-uit-verplichte-open-standaarden) | Pas toe of leg uit — verplichte open standaarden                | Standaarden & koppelvlakken       | Forum Standaardisatie      |
+| [D-09](#d-09-api-first-ontsluiting-via-gestandaardiseerde-apis) | API-first — NLGov REST API Design Rules (en GraphQL-afweging)  | Standaarden & koppelvlakken       | Forum Standaardisatie / EU |
+| [D-10](#d-10-informatiebeveiliging-en-privacy-by-design) | Informatiebeveiliging en privacy by design                      | Beveiliging & privacy             | BIO2 / AVG / NIS2          |
+| [D-11](#d-11-least-privilege-toegang-op-basis-van-minimale-rechten) | Least privilege — toegang op basis van minimale rechten         | Beveiliging & privacy             | BIO2 / OAuth / AVG         |
+| [D-12](#d-12-aantoonbare-veiligheid-audit-en-pen-testing) | Aantoonbare veiligheid — audit en pen-testing                   | Beveiliging & privacy             | BIO2 / NIS2 / Cbw          |
+| [D-13](#d-13-standaardiseer-waar-mogelijk-maak-uitzonderingen-expliciet-en-zorg-dat-deze-in-bestaande-gremia-landen) | Standaardiseer waar mogelijk, uitzonderingen expliciet (ADR)    | Kwaliteit & beheersbaarheid       | NORA / GA                  |
+| [D-14](#d-14-interoperabiliteit-semantische-en-technische-afstemming) | Interoperabiliteit — semantische en technische afstemming       | Kwaliteit & beheersbaarheid       | NORA / EIF                 |
 
 ---
 

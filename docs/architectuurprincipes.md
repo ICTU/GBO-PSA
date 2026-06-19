@@ -194,19 +194,19 @@
 
 | ID   | Principe                                                        | Cluster                        | Primair kader         |
 |------|-----------------------------------------------------------------|--------------------------------|-----------------------|
-| P-01 | Grondslag vóór uitwisseling                                     | Privacy & gegevensbescherming  | AVG                   |
-| P-02 | Minimale gegevensverwerking                                     | Privacy & gegevensbescherming  | AVG                   |
-| P-03 | Privacy by design & by default                                  | Privacy & gegevensbescherming  | AVG                   |
-| P-04 | BSN-loos voor private afnemers                                  | Privacy & gegevensbescherming  | Wabb / AVG            |
-| P-05 | Erkende authenticatiemiddelen op passend niveau                 | Identiteit & vertrouwen        | Wdo / eIDAS2          |
-| P-06 | Ondersteuning EUDIW                                             | Identiteit & vertrouwen        | eIDAS2 / ARF          |
-| P-07 | Vertrouwensstelsel PKI & toetredingseisen                       | Identiteit & vertrouwen        | Wdo / PKI             |
-| P-08 | Eenmalige vastlegging, meervoudig gebruik                       | Gegevensuitwisseling           | NORA / FDS            |
-| P-09 | Open standaarden & leveranciersonafhankelijkheid                | Gegevensuitwisseling           | NORA / Data Act       |
-| P-10 | Datasoevereiniteit: bronhouder behoudt regie                    | Gegevensuitwisseling           | DGA / Data Act        |
-| P-11 | FAIR-principes voor gegevens                                    | Gegevensuitwisseling           | NORA / FAIR           |
-| P-12 | Logging & onweerlegbaarheid                                     | Logging, audit & transparantie | AVG / NORA            |
-| P-13 | Transparantie & inzage voor de burger                           | Logging, audit & transparantie | AVG / Regie op Gegev. |
-| P-14 | Scheiding generieke en niet-generieke functies                  | Architectuur & governance      | NORA / GDI            |
-| P-15 | Ontkoppeling voor wendbaarheid en robuustheid                   | Architectuur & governance      | NORA / GDI            |
-| P-16 | Eerlijke toegang voor private partijen                          | Architectuur & governance      | DGA / Wabb / DvTP     |
+| [P-01](#p-01-grondslag-voor-uitwisseling) | Grondslag vóór uitwisseling                                     | Privacy & gegevensbescherming  | AVG                   |
+| [P-02](#p-02-minimale-gegevensverwerking-dataminimalisatie) | Minimale gegevensverwerking                                     | Privacy & gegevensbescherming  | AVG                   |
+| [P-03](#p-03-privacy-by-design-by-default) | Privacy by design & by default                                  | Privacy & gegevensbescherming  | AVG                   |
+| [P-04](#p-04-bsn-loos-voor-private-afnemers-pseudonimisering) | BSN-loos voor private afnemers                                  | Privacy & gegevensbescherming  | Wabb / AVG            |
+| [P-05](#p-05-erkende-authenticatiemiddelen-op-passend-betrouwbaarheidsniveau) | Erkende authenticatiemiddelen op passend niveau                 | Identiteit & vertrouwen        | Wdo / eIDAS2          |
+| [P-06](#p-06-ondersteuning-van-de-europese-digitale-identiteitswallet-eudiw) | Ondersteuning EUDIW                                             | Identiteit & vertrouwen        | eIDAS2 / ARF          |
+| [P-07](#p-07-vertrouwensstelsel-op-basis-van-pki-en-erkende-toetredingseisen) | Vertrouwensstelsel PKI & toetredingseisen                       | Identiteit & vertrouwen        | Wdo / PKI             |
+| [P-08](#p-08-eenmalige-vastlegging-meervoudig-gebruik-ev-mg) | Eenmalige vastlegging, meervoudig gebruik                       | Gegevensuitwisseling           | NORA / FDS            |
+| [P-09](#p-09-open-standaarden-leveranciersonafhankelijkheid) | Open standaarden & leveranciersonafhankelijkheid                | Gegevensuitwisseling           | NORA / Data Act       |
+| [P-10](#p-10-datasoevereiniteit-de-bronhouder-behoudt-regie) | Datasoevereiniteit: bronhouder behoudt regie                    | Gegevensuitwisseling           | DGA / Data Act        |
+| [P-11](#p-11-fair-principes-voor-gegevens) | FAIR-principes voor gegevens                                    | Gegevensuitwisseling           | NORA / FAIR           |
+| [P-12](#p-12-logging-onweerlegbaarheid-van-gegevensuitwisselingen) | Logging & onweerlegbaarheid                                     | Logging, audit & transparantie | AVG / NORA            |
+| [P-13](#p-13-transparantie-inzage-voor-de-burger) | Transparantie & inzage voor de burger                           | Logging, audit & transparantie | AVG / Regie op Gegev. |
+| [P-14](#p-14-scheiding-van-generieke-en-niet-generieke-functies) | Scheiding generieke en niet-generieke functies                  | Architectuur & governance      | NORA / GDI            |
+| [P-15](#p-15-ontkoppeling-voor-wendbaarheid-en-robuustheid) | Ontkoppeling voor wendbaarheid en robuustheid                   | Architectuur & governance      | NORA / GDI            |
+| [P-16](#p-16-eerlijke-en-niet-discriminerende-toegang-voor-private-partijen) | Eerlijke toegang voor private partijen                          | Architectuur & governance      | DGA / Wabb / DvTP     |
