@@ -1,7 +1,18 @@
 site_name: Gemeenschappelijke Bronontsluiting
-site_url: https://ictu.github.io/GBO-PSA/latest/psa/inleiding/
+site_url: https://ictu.github.io/GBO-PSA/
 repo_url: https://github.com/ICTU/GBO-PSA
 repo_name: ictu/gbo
+
+extra:
+  version:
+    provider: mike
+    alias: true
+  document_version:
+    provider: mike
+    alias: true
+  document_date: "juni 2026"
+  document_author: "ICTU"
+  document_status: "voor externe review"
 
 theme:
   name: material
@@ -61,11 +72,6 @@ extra_javascript:
   - https://unpkg.com/mermaid@10/dist/mermaid.min.js
   - javascript/mermaid-init.js
   - javascript/print.js
-
-extra:
-  version:
-    provider: mike
-    alias: true
 
 plugins:
   - search
