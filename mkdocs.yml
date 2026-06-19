@@ -73,10 +73,12 @@ plugins:
       canonical_version: "latest"
   - print-site:
       add_to_navigation: false
-      print_page_title: "Documentatie GBO"
-      enumerate_headings: false
-      exclude:
-        - index.md
+      print_page_title: "GBO - Projectstartarchitectuur"
+      enumerate_headings: true
+      enumerate_figures: false
+      add_table_of_contents: true
+      toc_title: "Inhoudsopgave"
+      toc_depth: 3
 
 nav:
   - Gemeenschappelijke Bronontsluiting: https://ictu.github.io/GBO/
