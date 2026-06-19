@@ -5,8 +5,8 @@ repo_name: ictu/gbo
 
 theme:
   name: material
+  language: custom
   custom_dir: overrides
-  language: nl
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate

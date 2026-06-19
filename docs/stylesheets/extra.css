@@ -99,3 +99,9 @@
   color: #e05050;
   background: transparent;
 }
+
+.md-search-result__meta {
+  white-space: normal;
+  line-height: 1.4;
+  font-weight: 750;
+}
