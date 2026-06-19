@@ -1,52 +1,45 @@
-# Project Start Architectuur (PSA)
+# PSA GBO
 
-## Delen via Toestemming naar Private Partijen (DvTP) / Gemeenschappelijke BronOntsluiting (GBO)
+Deze repository bevat de **Project Start Architectuur (PSA)** voor het project **Gemeenschappelijke Bronontsluiting (GBO)**.
 
-Deze repository bevat de **Project Start Architectuur (PSA)** voor het programma **DvTP/GBO**.
-
-GBO heeft als doel een **generieke infrastructuur en afsprakenstelsel** te realiseren waarmee gegevens van overheidsorganisaties beschikbaar kunnen worden gemaakt voor:
+Het project GBO heeft als doel een **generieke infrastructuur en afsprakenstelsel** te realiseren waarmee gegevens van overheidsorganisaties beschikbaar kunnen worden gemaakt voor:
 
 * burgers
 * private partijen
-* Europese toepassingen zoals **EDI Wallet** en **Single Digital Gateway (SDG/OOTS)**
+* Europese toepassingen zoals **EDI Wallet** en **Single Digital Gateway (OOTS)**
 
-De gegevensuitwisseling met private partijen is hierin speciaal, omdat hier geen wettelijke verplichting aan verbonden is. Daar is enerzijds meer ruimte om de inrichting vorm te geven, maar anderzijds minder verplichting om deze inrichting daadwerkelijk te volgen. Daarom wordt dit specifiek opgepakt onder de naam DvTP (Delen via Toestemming naar Private Partijen).
+De gegevensuitwisseling met private dienstverleners is hierin speciaal, omdat hier geen wettelijke verplichting aan verbonden is. Daar is enerzijds meer ruimte om de inrichting vorm te geven, maar anderzijds minder verplichting om deze inrichting daadwerkelijk te volgen. Daarom wordt dit specifiek opgepakt onder de naam DvTP (Delen via Toestemming naar Private dienstverleners).  
 
 De PSA beschrijft:
 
 * de context en doelstelling van de oplossing
 * de architectuurprincipes en kaders
-* het capability model
-* de generieke functies
 * de logische architectuur
+* de generieke functies
+* de stelselfuncties waarmee de generieke functies ingevuld worden
+* de realisatiestrategie
 
-De PSA beschrijft **wat het stelsel moet kunnen**, maar legt nog **geen technische implementatie** vast.
-De technische invulling volgt in een aparte software-architectuur.
-
+De PSA beschrijft **wat het stelsel moet kunnen**, maar legt nog **geen technische implementatie** vast.  
 ---
 
 # Repository structuur
 
 ```
-dvtp-gbo-psa
+GBO-PSA
 │
 ├─ README.md
 │
 ├─ psa
-│   └─ hoofdstukken in markdown formaat
+│   └─ hoofdstukken PSA in markdown formaat
 │
 ├─ diagrams
-│   └─ diagrammen in Mermaid formaat
-│
-└─ use-cases
-    └─ beschrijving van de use cases
+   └─ diagrammen in Mermaid formaat
 ```
 
----
 
 # Status
 
-Deze PSA is **in ontwikkeling** en wordt iteratief aangevuld.
+Deze documentatie is **in ontwikkeling** en wordt iteratief aangevuld.
 Wijzigingen worden bijgehouden via GitHub versiebeheer.
 
 ---
@@ -71,4 +64,4 @@ Contactpersoon: [Govert Claus](mailto:govert.claus@ictu.nl)
 
 # Licentie
 
-Nog te bepalen.
+EUPL v1.2
