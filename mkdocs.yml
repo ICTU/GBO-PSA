@@ -92,6 +92,6 @@ nav:
       - Stelselfuncties: capabilities.md
       - Realisatiestrategie: realisatiestrategie.md
       - Open vragen en ontwerpkeuzes: vraagstukken.md
-  - Technisch Ontwerp: https://ictu.github.io/GBO/latest/underconstruction_to/
-  - Technische Requirements: https://ictu.github.io/GBO/latest/underconstruction_tr/
-  - Semantiek: https://ictu.github.io/GBO/latest/underconstruction_sem/
+  - Technisch Ontwerp: https://ictu.github.io/GBO/main/underconstruction_to/
+  - Technische Requirements: https://ictu.github.io/GBO/main/underconstruction_tr/
+  - Semantiek: https://ictu.github.io/GBO/main/underconstruction_sem/
