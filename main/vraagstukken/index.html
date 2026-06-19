@@ -49,16 +49,6 @@
       
     
     
-      <link rel="stylesheet" href="../css/print-site-enum-headings2.css">
-    
-      <link rel="stylesheet" href="../css/print-site-enum-headings3.css">
-    
-      <link rel="stylesheet" href="../css/print-site-enum-headings4.css">
-    
-      <link rel="stylesheet" href="../css/print-site-enum-headings5.css">
-    
-      <link rel="stylesheet" href="../css/print-site-enum-headings6.css">
-    
       <link rel="stylesheet" href="../css/print-site.css">
     
       <link rel="stylesheet" href="../css/print-site-material.css">
@@ -1156,15 +1146,21 @@ Als er een oplossing is gevonden of een keuze is gemaakt, wordt dit in dit hoofd
 FSC biedt hiervoor oplossingsrichtingen, waar in de uitwerking naar gekeken kan worden.</p>
 <h2 id="autorisatiearchitectuur-centrale-autorisatieserver-vs-gedistribueerde-pdp">Autorisatiearchitectuur: centrale autorisatieserver vs. gedistribueerde PDP<a class="headerlink" href="#autorisatiearchitectuur-centrale-autorisatieserver-vs-gedistribueerde-pdp" title="Permanent link">&para;</a></h2>
 <p>Gaat GBO werken met een "Autorisatieserver" als centraal component, met een bijbehorende "Vertrouwensleverancier" die tokens afgeeft. De Functionele Requirements en het GBO Beschrijvend Document spreken van een autorisatieserver als apart component (component 4).<br />
-<strong>Onterpkeuze</strong>: De PSA en het technisch ontwerp gaan nu uit van een PBAC-oplossing, met een PDP, PEP en een centrale PAP. Of dit voor alle use cases de beste oplossing is, moet nog blijken.  </p>
+<strong>Ontwerpkeuze</strong>: De PSA en het technisch ontwerp gaan nu uit van een PBAC-oplossing, met een PDP, PEP en een centrale PAP. Of dit voor alle use cases de beste oplossing is, moet nog blijken.  </p>
 <h2 id="burgeridentificatie-en-het-bsn">Burgeridentificatie en het BSN<a class="headerlink" href="#burgeridentificatie-en-het-bsn" title="Permanent link">&para;</a></h2>
 <p>Het BSN mag bij private partijen, die daarvoor geen wettelijke grondslag hebben, niet worden doorgegeven. Dit vereist een pseudonimiseringslaag.<br />
 <strong>Ontwerpkeuze</strong>: Voor het pseudonimiseren van het BSN wordt gebruik gemaakt van de BSNk PP voorziening. Deze voorziening gaat uit van een "geactiveerd" BSN - d.w.z. dat er al een pseudoniem voor het BSN bestaat. Deze pseudoniemen worden door GBO aangevraagd via de activatiedienst van BSNk en bijgehouden in het toestemmingenregister. Voordeel van het vastleggen van de pseudoniemen, is dat er geen BSN's in het toestemmingenregister opgeslagen hoeven te worden. Nadeel ia dat GBO als "toegangsdienst" erkend moet worden door BSNk, wat mogelijk extra verantwoording vereist.</p>
 <h2 id="toestemmingen">Toestemmingen<a class="headerlink" href="#toestemmingen" title="Permanent link">&para;</a></h2>
 <p>Voor DvTP (de gegevensstroom van overheidsbronnen naar private dienstverleners) is een toestemming vereist. Hiervoor is de toestemmingenvoorziening en het toestemmingenregister bedacht, maar hiervoor is nog wetgeving nodig.
-Er spelen hierbij enkele vragen:
-- Hoe wordt omgegaan met toestemming voor een eenmalige bevraging?
-- Is een toestemmingenvoorziening nodig als de gegevens via de burger aan de private dienstverlener beschikbaar worden gesteld (conform de "preview" functie van de Basisinrichting OOTS en de "Authorising Actors" functie van TIP)?</p>
+Er spelen hierbij enkele vragen:<br />
+- Hoe wordt omgegaan met toestemming voor een eenmalige bevraging?<br />
+- Is een toestemmingenvoorziening nodig als de gegevens via de burger aan de private dienstverlener beschikbaar worden gesteld (conform de "preview" functie van de Basisinrichting OOTS en de "Authorising Actors" functie van TIP)?<br />
+- Waarom niet de verantwoordelijkheid bij de bronhouder of afnemer leggen en dit decentraal oplossen?<br />
+<strong>Ontwerpkeuze</strong>: GBO gaat uit van een centrale toestemmingsvoorziening met een toestemmingenregister en een toestemmingenportaal. De onderbouwing daarvoor is:
+- Kostenbesparing: éénmalig inrichten en beheren is goedkoper dan dat iedere bronhouder en/of afnemer dit zelf regelt.<br />
+- Herkenbaarheid voor de burger: een centrale voorziening biedt de burger telkens dezelfde ervaring, wat herkenning en vertrouwen opbouwt.<br />
+- Inzage voor de burger: met een centrale voorziening is het aanzienlijk eenvoudiger om de burger inzage te geven in al zijn toestemmingen via het Toestemmingsportaal.<br />
+- Eén keer toestemmen: de burger kan in één handeling toestemming geven voor een set gegevens die mogelijk uit meerdere bronnen afkomstig zijn. Bij decentrale registratie per bron zou de burger voor elke bron apart moeten toestemmen.  </p>
 <h2 id="vertrouwensstelsel">Vertrouwensstelsel<a class="headerlink" href="#vertrouwensstelsel" title="Permanent link">&para;</a></h2>
 <p>Welke partijen mogen deelnemen, hoe worden ze geaccrediteerd, welke niveaus van zekerheid gelden per gegevenstype, en hoe verhouden PKI(O), eHerkenning, eIDAS, FDS en bijvoorbeeld TIP-afspraken zich tot elkaar?</p>
 <h2 id="gekwalificeerde-elektronische-attesteringen-van-attributen">Gekwalificeerde elektronische attesteringen van attributen<a class="headerlink" href="#gekwalificeerde-elektronische-attesteringen-van-attributen" title="Permanent link">&para;</a></h2>
