@@ -88,7 +88,7 @@ Pas een gelaagde componentarchitectuur toe conform het NORA Vijflaagsmodel (inte
 Gegevens worden zoveel mogelijk real-time bevraagd bij de bronhouder via API's, in plaats van gekopieerd naar lokale registers of tussenopslagplaatsen. Kopieën zijn tijdelijke uitzonderingen die expliciet worden gemotiveerd (bijv. technische onmogelijkheid van real-time bevraging) en worden beheerst.
 
 **Toelichting voor GBO:**  
-Het GBO fungeert als *integratielaag*, niet als *gegevensmagazijn*. Bronhouders (BRP, Belastingdienst, UWV, DUO, BAG/BRK) worden bevraagd via de gemeenschappelijke bronontsluiting-API. Tussenopslag is alleen toegestaan als performance of beschikbaarheid dit vereist, met expliciete AVG-grondslag.
+GBO fungeert als *integratielaag*, niet als *gegevensmagazijn*. Bronhouders (BRP, Belastingdienst, UWV, DUO, BAG/BRK) worden bevraagd via de gemeenschappelijke bronontsluiting-API. Tussenopslag is alleen toegestaan als performance of beschikbaarheid dit vereist, met expliciete AVG-grondslag.
 
 **Bronnen:**  
 - NORA NAP12 — Informeer bij de bron (noraonline.nl)  
@@ -143,7 +143,7 @@ Stel een ADR-register bij als onderdeel van de GBO-documentatie. Elke afwijking 
 ### D-14 · Interoperabiliteit — semantische en technische afstemming
 
 **Betekenis:**  
-Gegevens die via het GBO worden uitgewisseld, zijn semantisch eenduidig vastgelegd en zijn zoveel mogelijk gebaseerd op bestaande informatiemodellen (waaronder GGM, NEN3610 en IMGeo) en bijbehorende standaarden voor datamodellering en ontologieën (zoals MIM, UML en RDF/SHACL). Technische koppelvlakken zijn gebaseerd op deze informatiemodellen en gespecificeerd volgens de OpenAPI Specification, waardoor afnemers gegevens machineleesbaar kunnen verwerken zonder aanvullende interpretatie.
+Gegevens die via GBO worden uitgewisseld, zijn semantisch eenduidig vastgelegd en zijn zoveel mogelijk gebaseerd op bestaande informatiemodellen (waaronder GGM, NEN3610 en IMGeo) en bijbehorende standaarden voor datamodellering en ontologieën (zoals MIM, UML en RDF/SHACL). Technische koppelvlakken zijn gebaseerd op deze informatiemodellen en gespecificeerd volgens de OpenAPI Specification, waardoor afnemers gegevens machineleesbaar kunnen verwerken zonder aanvullende interpretatie.
 
 **Bronnen:**  
 - NORA Domeinarchitectuur Gegevensuitwisseling — semantiek & validatie  
@@ -260,11 +260,11 @@ Ook deelnemers moeten aantoonbaar voldoen aan beveiligings- en privacy-eisen bij
 
 ---
 
-## Noot: REST vs. GraphQL voor het GBO
+## Noot: REST vs. GraphQL voor GBO
 
 De NLGov REST API Design Rules staan verplicht op de 'pas toe of leg uit'-lijst en zijn van toepassing **als** REST wordt ingezet. De standaard verplicht het gebruik van REST zelf niet — het gebruik van GraphQL is daarmee formeel niet in strijd.
 
-Voor het GBO is een **hybride aanpak** verdedigbaar:
+Voor GBO is een **hybride aanpak** verdedigbaar:
 
 | Criterium             | REST (NLGov ADR)                    | GraphQL                                    |
 |-----------------------|-------------------------------------|--------------------------------------------|
