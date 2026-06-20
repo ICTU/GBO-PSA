@@ -1,7 +1,7 @@
 # Architectuurprincipes GBO — Gegevensuitwisseling
 
 > Overzicht van de meest relevante architectuurprincipes voor de GBO,
-> gegroepeerd per juridisch/beleids­kader. Bedoeld als input voor de PSA.
+> gegroepeerd per juridisch/beleids­kader. Bedoeld als basis voor de uitwerking van de oplossingsrichting en het opstellen van de ontwerpprincipes.
 
 ---
 
