@@ -46,7 +46,7 @@ Een Europese overheidsdienst vraagt een gegeven (Evidence Request) aan een Neder
 
 ### Toelichting
 
-BZK heeft RINIS aangewezen als nationaal OOTS-toegangspunt (AS4/eDelivery), waar de OOTS basisinrichting in beheer is. Die geeft het Evidence Request als REST/JSON door aan GBO. GBO verzorgt de bronontsluiting en de semantische mapping naar het SDG Evidence-formaat. Bronhouders zien uitsluitend de GBO-API en hoeven geen OOTS-kennis te hebben.  
+BZK heeft RINIS aangewezen als nationaal OOTS-toegangspunt (AS4/eDelivery), waar de OOTS basisinrichting in beheer is. Die geeft het Evidence Request als GraphQL-request door aan GBO. GBO verzorgt de bronontsluiting en de semantische mapping naar het SDG Evidence-formaat. Bronhouders zien uitsluitend de GBO-API en hoeven geen OOTS-kennis te hebben.  
 De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisinrichting, waar het bericht in AS4 wordt verpakt. Na de toestemmingsinteractie met de burger wordt het bericht als Evidence Response teruggestuurd naar de Europese overheidsdienst.
 
 

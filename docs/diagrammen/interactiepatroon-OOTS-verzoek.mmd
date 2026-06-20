@@ -20,7 +20,7 @@ sequenceDiagram
     rect rgb(250, 238, 218)
         Note over RINIS,GBO: ③ Doorzetten naar bron via GBO
         RINIS->>GBO: OOTS-payload (REST/JSON)
-        Note over RINIS: eDelivery → REST ontkoppeling
+        Note over RINIS: eDelivery → GraphQL ontkoppeling
     end
 
     rect rgb(225, 245, 238)
@@ -37,7 +37,7 @@ sequenceDiagram
     rect rgb(250, 238, 218)
         Note over GBO,RINIS: ⑥ Terugkoppeling naar OOTS basisinrichting
         GBO->>RINIS: Evidence Response (REST/JSON)
-        Note over RINIS: REST → eDelivery vertaling
+        Note over RINIS: GraphQL → eDelivery vertaling
     end
 
     rect rgb(230, 241, 251)
