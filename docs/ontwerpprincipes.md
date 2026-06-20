@@ -158,7 +158,7 @@ Gegevens die via GBO worden uitgewisseld, zijn semantisch eenduidig vastgelegd e
 ### D-08 · Pas toe of leg uit — verplichte open standaarden
 
 **Betekenis:**  
-Overheidsorganisaties zijn verplicht de open standaarden op de 'pas toe of leg uit'-lijst van Forum Standaardisatie toe te passen. Afwijken is alleen toegestaan als er een zwaarwegende en gedocumenteerde reden is. Voor het GBO gelden in elk geval als verplicht: REST API Design Rules, NL GOV OAuth 2.0-profiel, NL GOV OIDC-profiel, Digikoppeling, MIM, DCAT2, SHACL en — zodra beschikbaar — OpenID4VCI/OpenID4VP.
+Overheidsorganisaties zijn verplicht de open standaarden op de 'pas toe of leg uit'-lijst van Forum Standaardisatie toe te passen. Afwijken is alleen toegestaan als er een zwaarwegende en gedocumenteerde reden is. Voor GBO gelden in elk geval als verplicht: REST API Design Rules, NL GOV OAuth 2.0-profiel, NL GOV OIDC-profiel, Digikoppeling, MIM, DCAT2, SHACL en — zodra beschikbaar — OpenID4VCI/OpenID4VP.
 
 **Toelichting voor GBO:**  
 Neem in het stelselontwerp een expliciete mapping op van GBO-koppelvlakken naar verplichte standaarden. Documenteer elk koppelvlak dat afwijkt van de 'pas toe'-standaard.
@@ -262,7 +262,7 @@ Ook deelnemers moeten aantoonbaar voldoen aan beveiligings- en privacy-eisen bij
 
 ## Noot: REST vs. GraphQL voor GBO
 
-De NLGov REST API Design Rules staan verplicht op de 'pas toe of leg uit'-lijst en zijn van toepassing **als** REST wordt ingezet. De standaard verplicht het gebruik van REST zelf niet — het gebruik van GraphQL is daarmee formeel niet in strijd.
+De NLGov REST API Design Rules (ADR) staan verplicht op de 'pas toe of leg uit'-lijst en zijn van toepassing **als** REST wordt ingezet. De standaard verplicht het gebruik van REST zelf niet — het gebruik van GraphQL is daarmee formeel niet in strijd.
 
 Voor GBO is een **hybride aanpak** verdedigbaar:
 
@@ -272,4 +272,5 @@ Voor GBO is een **hybride aanpak** verdedigbaar:
 | Dataminimalisatie     | Vaste response-structuur            | Client selecteert exact benodigde velden   |
 | Beveiligingsvolwassenheid | Hoog (OAuth 2.0-profiel beschikbaar) | Gemiddeld (vereist extra scope-mapping) |
 | Tooling & ecosystem   | Breed beschikbaar                   | Breed, maar minder overheid-specifiek      |
-| Aanbeveling GBO       | Standaard externe ontsluiting       | Optioneel voor interne/flexibele queries   |
+
+Om GraphQL in zijn volle breedte op een gestandaardiseerde manier te kunnen gebruiken is een GraphQL-profiel op de Digikoppeling standaard gewenst. Er zijn meer trajecten bij de overheid die het gebruik van GraphQL onderzoeken (doorontwikkeling KArWeI, BKWI) of zelfs al toepassen (iWlz). Daarom zoekt GBO de samenwerking met deze partijen om tot een standaard te komen. Om bronhouders te ontlasten wordt tooling beschikbaar gesteld om met de huidige koppelvlakken aan te sluiten op GBO.
