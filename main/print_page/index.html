@@ -1572,7 +1572,7 @@ Gegevens die via GBO worden uitgewisseld, zijn semantisch eenduidig vastgelegd e
 <h2 id="ontwerpprincipes-kader-3-forum-standaardisatie-kennisplatform-apis">Kader 3 — Forum Standaardisatie / Kennisplatform API's<a class="headerlink" href="#ontwerpprincipes-kader-3-forum-standaardisatie-kennisplatform-apis" title="Permanent link">&para;</a></h2>
 <h3 id="ontwerpprincipes-d-08-pas-toe-of-leg-uit-verplichte-open-standaarden">D-08 · Pas toe of leg uit — verplichte open standaarden<a class="headerlink" href="#ontwerpprincipes-d-08-pas-toe-of-leg-uit-verplichte-open-standaarden" title="Permanent link">&para;</a></h3>
 <p><strong>Betekenis:</strong><br />
-Overheidsorganisaties zijn verplicht de open standaarden op de 'pas toe of leg uit'-lijst van Forum Standaardisatie toe te passen. Afwijken is alleen toegestaan als er een zwaarwegende en gedocumenteerde reden is. Voor het GBO gelden in elk geval als verplicht: REST API Design Rules, NL GOV OAuth 2.0-profiel, NL GOV OIDC-profiel, Digikoppeling, MIM, DCAT2, SHACL en — zodra beschikbaar — OpenID4VCI/OpenID4VP.</p>
+Overheidsorganisaties zijn verplicht de open standaarden op de 'pas toe of leg uit'-lijst van Forum Standaardisatie toe te passen. Afwijken is alleen toegestaan als er een zwaarwegende en gedocumenteerde reden is. Voor GBO gelden in elk geval als verplicht: REST API Design Rules, NL GOV OAuth 2.0-profiel, NL GOV OIDC-profiel, Digikoppeling, MIM, DCAT2, SHACL en — zodra beschikbaar — OpenID4VCI/OpenID4VP.</p>
 <p><strong>Toelichting voor GBO:</strong><br />
 Neem in het stelselontwerp een expliciete mapping op van GBO-koppelvlakken naar verplichte standaarden. Documenteer elk koppelvlak dat afwijkt van de 'pas toe'-standaard.</p>
 <p><strong>Bronnen:</strong><br />
@@ -1727,7 +1727,7 @@ Ook deelnemers moeten aantoonbaar voldoen aan beveiligings- en privacy-eisen bij
 </table>
 <hr />
 <h2 id="ontwerpprincipes-noot-rest-vs-graphql-voor-gbo">Noot: REST vs. GraphQL voor GBO<a class="headerlink" href="#ontwerpprincipes-noot-rest-vs-graphql-voor-gbo" title="Permanent link">&para;</a></h2>
-<p>De NLGov REST API Design Rules staan verplicht op de 'pas toe of leg uit'-lijst en zijn van toepassing <strong>als</strong> REST wordt ingezet. De standaard verplicht het gebruik van REST zelf niet — het gebruik van GraphQL is daarmee formeel niet in strijd.</p>
+<p>De NLGov REST API Design Rules (ADR) staan verplicht op de 'pas toe of leg uit'-lijst en zijn van toepassing <strong>als</strong> REST wordt ingezet. De standaard verplicht het gebruik van REST zelf niet — het gebruik van GraphQL is daarmee formeel niet in strijd.</p>
 <p>Voor GBO is een <strong>hybride aanpak</strong> verdedigbaar:</p>
 <table>
 <thead>
@@ -1758,13 +1758,9 @@ Ook deelnemers moeten aantoonbaar voldoen aan beveiligings- en privacy-eisen bij
 <td>Breed beschikbaar</td>
 <td>Breed, maar minder overheid-specifiek</td>
 </tr>
-<tr>
-<td>Aanbeveling GBO</td>
-<td>Standaard externe ontsluiting</td>
-<td>Optioneel voor interne/flexibele queries</td>
-</tr>
 </tbody>
-</table></section><section class="print-page" id="interactiepatronen" heading-number="5"><h1 id="interactiepatronen-interactiepatronen-gbo">Interactiepatronen GBO<a class="headerlink" href="#interactiepatronen-interactiepatronen-gbo" title="Permanent link">&para;</a></h1>
+</table>
+<p>Om GraphQL in zijn volle breedte op een gestandaardiseerde manier te kunnen gebruiken is een GraphQL-profiel op de Digikoppeling standaard gewenst. Er zijn meer trajecten bij de overheid die het gebruik van GraphQL onderzoeken (doorontwikkeling KArWeI, BKWI) of zelfs al toepassen (iWlz). Daarom zoekt GBO de samenwerking met deze partijen om tot een standaard te komen. Om bronhouders te ontlasten wordt tooling beschikbaar gesteld om met de huidige koppelvlakken aan te sluiten op GBO.</p></section><section class="print-page" id="interactiepatronen" heading-number="5"><h1 id="interactiepatronen-interactiepatronen-gbo">Interactiepatronen GBO<a class="headerlink" href="#interactiepatronen-interactiepatronen-gbo" title="Permanent link">&para;</a></h1>
 <p>Dit document beschrijft de belangrijkste interactiepatronen voor GBO zoals afgeleid uit de use cases. In de patronen is op verschillende plekken sprake van een "dienst"; dit kunnen afspraken, standaarden of centrale of decentrale voorzieningen zijn. Daar wordt in het hoofdstuk <a href="#capabilities">Stelselfuncties</a> dieper op ingegaan.  </p>
 <h2 id="interactiepatronen-gegevensverzoek-van-burger-om-gegevens-via-wallet-te-delen">Gegevensverzoek van burger om gegevens via wallet te delen<a class="headerlink" href="#interactiepatronen-gegevensverzoek-van-burger-om-gegevens-via-wallet-te-delen" title="Permanent link">&para;</a></h2>
 <h3 id="interactiepatronen-doel">Doel<a class="headerlink" href="#interactiepatronen-doel" title="Permanent link">&para;</a></h3>
