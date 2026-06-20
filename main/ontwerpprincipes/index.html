@@ -820,10 +820,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#noot-rest-vs-graphql-voor-het-gbo" class="md-nav__link">
+  <a href="#noot-rest-vs-graphql-voor-gbo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Noot: REST vs. GraphQL voor het GBO
+        Noot: REST vs. GraphQL voor GBO
       
     </span>
   </a>
@@ -1158,7 +1158,7 @@ Pas een gelaagde componentarchitectuur toe conform het NORA Vijflaagsmodel (inte
 <p><strong>Betekenis:</strong><br />
 Gegevens worden zoveel mogelijk real-time bevraagd bij de bronhouder via API's, in plaats van gekopieerd naar lokale registers of tussenopslagplaatsen. Kopieën zijn tijdelijke uitzonderingen die expliciet worden gemotiveerd (bijv. technische onmogelijkheid van real-time bevraging) en worden beheerst.</p>
 <p><strong>Toelichting voor GBO:</strong><br />
-Het GBO fungeert als <em>integratielaag</em>, niet als <em>gegevensmagazijn</em>. Bronhouders (BRP, Belastingdienst, UWV, DUO, BAG/BRK) worden bevraagd via de gemeenschappelijke bronontsluiting-API. Tussenopslag is alleen toegestaan als performance of beschikbaarheid dit vereist, met expliciete AVG-grondslag.</p>
+GBO fungeert als <em>integratielaag</em>, niet als <em>gegevensmagazijn</em>. Bronhouders (BRP, Belastingdienst, UWV, DUO, BAG/BRK) worden bevraagd via de gemeenschappelijke bronontsluiting-API. Tussenopslag is alleen toegestaan als performance of beschikbaarheid dit vereist, met expliciete AVG-grondslag.</p>
 <p><strong>Bronnen:</strong><br />
 - NORA NAP12 — Informeer bij de bron (noraonline.nl)<br />
 - GEMMA Informatiearchitectuurprincipes — eenmalige vastlegging (VNG Realisatie, opgegaan in GEMMA 2024/2025)<br />
@@ -1195,7 +1195,7 @@ Stel een ADR-register bij als onderdeel van de GBO-documentatie. Elke afwijking 
 <hr />
 <h3 id="d-14-interoperabiliteit-semantische-en-technische-afstemming">D-14 · Interoperabiliteit — semantische en technische afstemming<a class="headerlink" href="#d-14-interoperabiliteit-semantische-en-technische-afstemming" title="Permanent link">&para;</a></h3>
 <p><strong>Betekenis:</strong><br />
-Gegevens die via het GBO worden uitgewisseld, zijn semantisch eenduidig vastgelegd en zijn zoveel mogelijk gebaseerd op bestaande informatiemodellen (waaronder GGM, NEN3610 en IMGeo) en bijbehorende standaarden voor datamodellering en ontologieën (zoals MIM, UML en RDF/SHACL). Technische koppelvlakken zijn gebaseerd op deze informatiemodellen en gespecificeerd volgens de OpenAPI Specification, waardoor afnemers gegevens machineleesbaar kunnen verwerken zonder aanvullende interpretatie.</p>
+Gegevens die via GBO worden uitgewisseld, zijn semantisch eenduidig vastgelegd en zijn zoveel mogelijk gebaseerd op bestaande informatiemodellen (waaronder GGM, NEN3610 en IMGeo) en bijbehorende standaarden voor datamodellering en ontologieën (zoals MIM, UML en RDF/SHACL). Technische koppelvlakken zijn gebaseerd op deze informatiemodellen en gespecificeerd volgens de OpenAPI Specification, waardoor afnemers gegevens machineleesbaar kunnen verwerken zonder aanvullende interpretatie.</p>
 <p><strong>Bronnen:</strong><br />
 - NORA Domeinarchitectuur Gegevensuitwisseling — semantiek &amp; validatie<br />
 - Gemeentelijk Gegevensmodel (GGM) — VNG<br />
@@ -1359,9 +1359,9 @@ Ook deelnemers moeten aantoonbaar voldoen aan beveiligings- en privacy-eisen bij
 </tbody>
 </table>
 <hr />
-<h2 id="noot-rest-vs-graphql-voor-het-gbo">Noot: REST vs. GraphQL voor het GBO<a class="headerlink" href="#noot-rest-vs-graphql-voor-het-gbo" title="Permanent link">&para;</a></h2>
+<h2 id="noot-rest-vs-graphql-voor-gbo">Noot: REST vs. GraphQL voor GBO<a class="headerlink" href="#noot-rest-vs-graphql-voor-gbo" title="Permanent link">&para;</a></h2>
 <p>De NLGov REST API Design Rules staan verplicht op de 'pas toe of leg uit'-lijst en zijn van toepassing <strong>als</strong> REST wordt ingezet. De standaard verplicht het gebruik van REST zelf niet — het gebruik van GraphQL is daarmee formeel niet in strijd.</p>
-<p>Voor het GBO is een <strong>hybride aanpak</strong> verdedigbaar:</p>
+<p>Voor GBO is een <strong>hybride aanpak</strong> verdedigbaar:</p>
 <table>
 <thead>
 <tr>
