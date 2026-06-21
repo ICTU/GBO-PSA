@@ -62,7 +62,7 @@ Dit is nodig voor de Wallet, maar mogelijk ook voor de andere use cases. Er is [
 
 ## Hoe start de uitgifte van attestaties?
 
-In het interactiepatroon is geschetst dat de burger de aanvraag voor een attestatie start vanuit zijn wallet of via een QTSP. Maar het is nog de vraag hoe de utgifte in de praktijk start: vanuit de bronhouder (eventueel via de wallet), een QTSP of wellicht vanuit de dienstverlener of een combinatie daarvan, waarbij de ene partij doorverwijst naar de andere. Mogelijk heeft een keuze hierin gevolgen voor het intractiepatroon en de uitwerking van de voorgestelde voorzieningen.  
+In het interactiepatroon is geschetst dat de burger de aanvraag voor een attestatie start vanuit zijn wallet of via een QTSP. Maar het is nog de vraag hoe de uitgifte in de praktijk start: vanuit de bronhouder (eventueel via de wallet), een QTSP of wellicht vanuit de dienstverlener of een combinatie daarvan, waarbij de ene partij doorverwijst naar de andere. Mogelijk heeft een keuze hierin gevolgen voor het interactiepatroon en de uitwerking van de voorgestelde voorzieningen.  
 Vooralsnog maakt GBO hierin geen keuze en worden de voorzieningen zo ontworpen dat zoveel mogelijk opties mogelijk blijven.
 
 ## Centrale Componenten
