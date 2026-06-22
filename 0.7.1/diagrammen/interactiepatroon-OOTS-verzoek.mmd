@@ -1,0 +1,57 @@
+sequenceDiagram
+    autonumber
+    participant BRG as Burger<br/>(rechthebbende)
+    participant EU as EU dienst<br/>(OOTS)
+    participant RINIS as Basisinrichting OOTS NL<br />(BZK/RINIS)
+    participant GBO as GBO<br/>(GBO voorziening)
+    participant BRH as Bronhouder<br/>(BRP / BD / …)
+
+    rect rgb(250, 241, 251)
+        Note over BRG,EU: ① Burger neemt dienst af
+        BRG->>EU: Verzoek dienst
+        Note over EU: Gegeven Bronhouder nodig
+    end
+
+    rect rgb(230, 241, 251)
+        Note over EU,RINIS: ② OOTS-verzoek<br />(eDelivery/AS4)
+        EU->>RINIS: Evidence Request (eDelivery/AS4)
+    end
+
+    rect rgb(250, 238, 218)
+        Note over RINIS,GBO: ③ Doorzetten naar bron via GBO
+        RINIS->>GBO: OOTS-payload (REST/JSON)
+        Note over RINIS: eDelivery → GraphQL ontkoppeling
+    end
+
+    rect rgb(225, 245, 238)
+        Note over GBO,BRH: ④ Bronontsluiting (GBO generieke API)
+        GBO->>BRH: API-aanroep (GBO-formaat)
+        BRH->>GBO: Gegevens (REST/JSON)
+    end
+
+    rect rgb(225, 245, 238)
+        Note over GBO: ⑤ Semantische mapping & logging (intern GBO)
+        Note over GBO: GBO-formaat → SDG Evidence type · audit log · doelbinding
+    end
+
+    rect rgb(250, 238, 218)
+        Note over GBO,RINIS: ⑥ Terugkoppeling naar OOTS basisinrichting
+        GBO->>RINIS: Evidence Response (REST/JSON)
+        Note over RINIS: GraphQL → eDelivery vertaling
+    end
+
+    rect rgb(230, 241, 251)
+        Note over RINIS,BRG: ⑦ Toestemming burger (User Review)
+        RINIS->>BRG: Tonen te delen gegevens
+        BRG->>RINIS: Keuze te delen gegevens
+    end
+
+    rect rgb(230, 241, 251)
+        Note over EU,RINIS: ⑧ OOTS-antwoord<br />(eDelivery/AS4)
+        RINIS->>EU: Evidence Response
+    end
+
+    rect rgb(250, 241, 251)
+        Note over BRG,EU: ⑨ Burger neemt dienst af
+        EU->>BRG: Levert dienst
+    end
