@@ -92,7 +92,7 @@ hooks:
 
 nav:
   - Gemeenschappelijke Bronontsluiting: https://ictu.github.io/GBO/
-  - Context: https://ictu.github.io/GBO/latest/context.md
+  - Context: https://ictu.github.io/GBO/latest/context
   - Globaal Ontwerp: https://ictu.github.io/GBO-GO/
   - Projectstartarchitectuur:
       - Inleiding: index.md
