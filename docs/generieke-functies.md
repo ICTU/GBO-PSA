@@ -42,7 +42,7 @@ De vier functies in deze laag vormen de voorwaarden waaronder de generieke funct
 
 ### Toestemming
 
-**Doel:** Vaststellen en beheren van de testemming voor gegevensdeling.
+**Doel:** Vaststellen en beheren van de toestemming voor gegevensdeling.
 
 **Eisen:**
 
@@ -67,7 +67,7 @@ De vier functies in deze laag vormen de voorwaarden waaronder de generieke funct
 
 **Eisen:**
 
-- Het BSN wordt nooit doorgegeven aan of verwerkt door private dienstverleners die daar geen wettelijke grondslag voor hebben. Voor deze partijen wordt altijd een partij-specifiek, onomkeerbaar pseudoniem gebruikt.
+- Het BSN wordt nooit doorgegeven aan of verwerkt door private dienstverleners die daar geen wettelijke grondslag voor hebben. Voor deze partijen wordt altijd een partijspecifiek, onomkeerbaar pseudoniem gebruikt.
 - Pseudoniemen voor verschillende private partijen zijn niet onderling koppelbaar, ook niet wanneer die partijen samenwerken.
 - Herhaald gebruik van hetzelfde pseudoniem voor dezelfde burger levert cryptografisch onkoppelbare uitvoer op (geen correlatierisico over tijd).
 - De omzetting van BSN naar pseudoniem — en terug, aan de bronhouderszijde — vindt plaats in een door de overheid beheerde en gecertificeerde voorziening.
@@ -126,7 +126,7 @@ De vier functies in deze laag vormen de voorwaarden waaronder de generieke funct
 - Een bronhouder realiseert één generieke ontsluiting. Er zijn geen trajectspecifieke endpoints of koppelingen per afnemer.
 - De interface ondersteunt selectieve gegevensuitvraag: de afnemer kan exact de velden opvragen die voor het specifieke gebruik nodig zijn. Dataminimalisatie is structureel ingebouwd, niet afhankelijk van afsprakenstelsel of goede wil.
 - De set van toegestane gegevensvragen per gebruik is vooraf geregistreerd (via een catalogus of template-mechanisme) en door beleid afdwingbaar. Binnen de toegestane gegevensvraag bepaalt de afnemer welke gegevens voor zijn situatie nodig zijn. Afwijkingen die buiten de toegestane gegevensvraag vallen zijn niet mogelijk.
-- De interface is onafhankelijk van het BSN als externe sleutel: het subject-identifier in een uitvraag van een private afnemer is altijd een pseudoniem of een consent-referentie; BSN-resolving is een interne aangelegenheid van de ontsluiting.
+- De interface is onafhankelijk van het BSN als externe sleutel: de subject-identifier in een uitvraag van een private afnemer is altijd een pseudoniem of een consent-referentie; BSN-resolving is een interne aangelegenheid van de ontsluiting.
 - Bronhouders implementeren de ontsluiting eenmalig; aanpassingen voor nieuwe afnemers of trajecten vereisen geen bronhouder-specifieke ontwikkeling, alleen aanpassing van het beleid en de query-registratie.
 - Verzoeken vanuit andere EU-lidstaten (OOTS) worden aan de GBO-zijde vertaald naar het binnenlandse formaat en protocol. Bronhouders zien geen EU-specifiek transportprotocol.
 - Serviceregistratie voor grensoverschrijdende discovery (SMP) wordt centraal beheerd, niet door individuele bronhouders.
@@ -141,7 +141,7 @@ De vier functies in deze laag vormen de voorwaarden waaronder de generieke funct
 
 - Per bronhouder bestaat een geregistreerde, door GBO beheerde beschrijving van de beschikbaar gestelde gegevenselementen (naam, type, definitie, herkomst).
 - Dezelfde gegevensset kan worden geserialiseerd naar de voor elk traject vereiste uitwisselingsformaten (JSON voor binnenlands, OOTS-EDM XML voor grensoverschrijdend, SD-JWT VC of mdoc voor de wallet). De canonieke definitie is eenmalig vastgelegd.
-- Mapping tussen de GBO-canonieke definitie en trajectspecifieke schema's (zoals OOTS Semantic Repository types of PuB-EAA attestatieschema's) is expliciet en beheerbaar.
+- Mapping tussen de GBO-canonieke definitie en trajectspecifieke schema's (zoals OOTS Semantic Repository types of PuBEAA attestatieschema's) is expliciet en beheerbaar.
 - Vocabularia zijn gebaseerd op open, breed gedragen standaarden (RDF, OWL, SKOS, JSON-LD) en sluiten aan op de Nederlandse overheidsstandaarden (GGM, NORA).
 - Semantische afspraken zijn versie-beheerd; wijzigingen in definities zijn traceerbaar en worden beheerst doorgevoerd.
 
@@ -207,7 +207,7 @@ De vier functies in deze laag vormen de voorwaarden waaronder de generieke funct
 
 ## Samenhang
 
-De generieke functies zijn niet op zichzelf staand. De onderstaande afhankelijkheden zijn architectureel kritiek:
+De generieke functies zijn niet op zichzelf staand. De onderstaande afhankelijkheden zijn architectuurkritisch:
 
 - **Generieke functie 1 (Identiteit & Vertrouwen)** is afhankelijk van de **Vertrouwensstelsel**-laag voor de identiteitsvaststelling van organisaties, en van **Generieke functie 6 (Grondslag & Beleid)** als informatiebron voor autorisatiebeslissingen.
 - **Generieke functie 2 (Toegang & Interactie)** is de schrijfinterface naar **Toestemming & Grondslag**, en triggert de pseudonimiseringsactie van **Burgeridentificatie & Pseudonimisering**.

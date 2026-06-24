@@ -2,7 +2,7 @@
 
 > Selectie van de meest relevante **ontwerpprincipes** voor de inrichting van de GBO.
 > Waar de [architectuurprincipes](./architectuurprincipes.md) de *wat* en *waarom* beschrijven,
-> geven deze ontwerpprincipes richting aan de *hoe* — de concrete keuzes bij het bouwen van het stelsel.
+> geven deze ontwerpprincipes richting aan het *hoe* — de concrete keuzes bij het bouwen van het stelsel.
 
 ---
 
@@ -57,7 +57,7 @@ Voor authenticatie: DigiD / eHerkenning / EUDIW. Voor transport: Digikoppeling R
 **Bronnen:**  
 - GDI-Meerjarenvisie 2024–2028 (Bureau MIDO)  
 - GDI Programmeringsplan 2024 (Rijksoverheid / MIDO)  
-- Digitaleoverheid.nl — GDI bouwstenoverzicht  
+- Digitaleoverheid.nl — GDI-bouwstenoverzicht  
 - NORA — gebruik generieke bouwstenen (BP07)  
 
 ---
@@ -273,4 +273,4 @@ Voor GBO is een **hybride aanpak** verdedigbaar:
 | Beveiligingsvolwassenheid | Hoog (OAuth 2.0-profiel beschikbaar) | Gemiddeld (vereist extra scope-mapping) |
 | Tooling & ecosystem   | Breed beschikbaar                   | Breed, maar minder overheid-specifiek      |
 
-Om GraphQL in zijn volle breedte op een gestandaardiseerde manier te kunnen gebruiken is een GraphQL-profiel op de Digikoppeling standaard gewenst. Er zijn meer trajecten bij de overheid die het gebruik van GraphQL onderzoeken (doorontwikkeling KArWeI, BKWI) of zelfs al toepassen (iWlz). Daarom zoekt GBO de samenwerking met deze partijen om tot een standaard te komen. Om bronhouders te ontlasten wordt tooling beschikbaar gesteld om met de huidige koppelvlakken aan te sluiten op GBO.
+Om GraphQL in zijn volle breedte op een gestandaardiseerde manier te kunnen gebruiken is een GraphQL-profiel op de Digikoppeling-standaard gewenst. Er zijn meer trajecten bij de overheid die het gebruik van GraphQL onderzoeken (doorontwikkeling KArWeI, BKWI) of zelfs al toepassen (iWlz). Daarom zoekt GBO de samenwerking met deze partijen om tot een standaard te komen. Om bronhouders te ontlasten wordt tooling beschikbaar gesteld om met de huidige koppelvlakken aan te sluiten op GBO.

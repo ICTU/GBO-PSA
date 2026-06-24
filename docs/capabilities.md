@@ -13,7 +13,7 @@ Per stelselfunctie is aangegeven:
 - **Gap:** wat er nog ontbreekt of nog ingevuld moet worden (apart gemarkeerd met ⚠️)  
 
 
-De context is GBO, ingebed in NORA/GDI en het Federatief Datastelsel (FDS), met aansluiting op het eIDAS2/ARF Europees kader. Stelselafspraken landen in bestaande afsprakenstelsels zoals FDS en GDI.
+De context is GBO, ingebed in NORA/GDI en het Federatief Datastelsel (FDS), met aansluiting op het Europese eIDAS2/ARF kader. Stelselafspraken landen in bestaande afsprakenstelsels zoals FDS en GDI.
 
 De structuur "afspraken boven standaarden boven voorzieningen" is het expliciete uitgangspunt van FDS en wordt hier overgenomen. Waar mogelijk worden bestaande FDS-stelselfuncties hergebruikt.
 
@@ -57,7 +57,7 @@ Naast technische gaps kent dit document ook **juridische randvoorwaarden** (gema
 
 *De burger geeft via een toegankelijke interface geïnformeerde toestemming voor gegevensdeling, authenticeert zich daarvoor op het vereiste niveau, en kan toestemmingen inzien en intrekken. De pseudonimiseringsactie vindt hier plaats.*
 
-> ⚖️ **Juridische randvoorwaarde:** De werking van dit portaal is onlosmakelijk verbonden aan de Wdo-grondslag (zie S01). Bovendien moeten de vrijwilligheidsborging en het gelijkwaardig alternatief wettelijk worden verankerd als aansluiteis voor private dienstverleners, voordat het portaal operationeel zinvol is. Zonder die verankering is niet afdwingbaar dat dienstverleners de digitale route niet als dwingend voorwaarde mogen stellen.
+> ⚖️ **Juridische randvoorwaarde:** De werking van dit portaal is onlosmakelijk verbonden aan de Wdo-grondslag (zie S01). Bovendien moeten de vrijwilligheidsborging en het gelijkwaardig alternatief wettelijk worden verankerd als aansluiteis voor private dienstverleners, voordat het portaal operationeel zinvol is. Zonder die verankering is niet afdwingbaar dat dienstverleners de digitale route niet als dwingende voorwaarde mogen stellen.
 
 ### Afspraken
 
@@ -90,13 +90,13 @@ Naast technische gaps kent dit document ook **juridische randvoorwaarden** (gema
 
 ## S03 — Burgeridentificatie & Pseudonimisering
 
-*Het vaststellen van de identiteit van de burger op het vereiste betrouwbaarheidsniveau, en het omzetten van het BSN naar partij-specifieke, onomkeerbare pseudoniemen zodat het BSN nooit bij private afnemers terechtkomt als daar geen wettelijke grondslag voor bestaat.*
+*Het vaststellen van de identiteit van de burger op het vereiste betrouwbaarheidsniveau, en het omzetten van het BSN naar partijspecifieke, onomkeerbare pseudoniemen zodat het BSN nooit bij private afnemers terechtkomt als daar geen wettelijke grondslag voor bestaat.*
 
 ### Afspraken
 
 | Afspraak | Type | Beheer | Invulling |
 |---|---|---|---|
-| BSN mag private dienstverleners (die hiervoor geen wettelijke grondslag hebben) nooit bereiken; pseudoniem is verplicht voor DvTP-traject | Stelselafspraak | Centraal — GBO, verankerd in AMvB Wdo / Wabvpz | Deels al wettelijk bepaald (Wabvpz); uitwerking in GBO-stelsel nog nodig |
+| Het BSN mag private dienstverleners (die hiervoor geen wettelijke grondslag hebben) nooit bereiken; pseudoniem is verplicht voor DvTP-traject | Stelselafspraak | Centraal — GBO, verankerd in AMvB Wdo / Wabvpz | Deels al wettelijk bepaald (Wabvpz); uitwerking in GBO-stelsel nog nodig |
 | Koppeling tussen toestemmingsrecord en pseudoniem (consent_id als brug) | Stelselafspraak | Centraal — GBO | ⚠️ Nog te maken |
 | Betrouwbaarheidsniveaus per traject (welk eIDAS-niveau vereist voor welk type gegevens) | Stelselafspraak | Centraal — GBO/FDS, raakvlak eIDAS2 | ⚠️ Nog te maken als GBO-beleidsprofiel |
 | Onboarding private dienstverleners als BSNk PP-deelnemer (EP-sleuteldistributie) | Toetredingsafspraak | Centraal — Logius/BSNk | Bestaand BSNk-onboardingproces; uitbreiding voor DvTP-partijen nodig |
@@ -142,7 +142,7 @@ Naast technische gaps kent dit document ook **juridische randvoorwaarden** (gema
 |---|---|---|
 | PKI Overheid (certificatenbeleid) | Logius | Beschikbaar en verplicht binnen overheid; basis voor FSC-authenticatie |
 | eIDAS Trusted Lists (LoTL / nationale TL) | Europese Commissie / RDI | Beschikbaar; NL Trusted List beheerd door RDI |
-| ETSI EN 319 412 (certificaatprofielen voor gekwalificeerde zegels en handtekeningen) | ETSI | Beschikbaar; relevant voor QTSP-erkenning en PuB-EAA signing |
+| ETSI EN 319 412 (certificaatprofielen voor gekwalificeerde zegels en handtekeningen) | ETSI | Beschikbaar; relevant voor QTSP-erkenning en PuBEAA signing |
 
 ### Voorzieningen
 
@@ -174,7 +174,7 @@ Naast technische gaps kent dit document ook **juridische randvoorwaarden** (gema
 
 | Standaard | Beheer | Bestaande invulling |
 |---|---|---|
-| AuthZEN NL Gov (draft) — gestandaardiseerde interface tussen PEP en PDP | Logius | Draft-standaard; FTV (Federatieve Toegangsverlenig, Logius) loopt pilot |
+| AuthZEN NL Gov (draft) — gestandaardiseerde interface tussen PEP en PDP | Logius | Draft-standaard; FTV (Federatieve Toegangsverlening, Logius) loopt pilot |
 | OPA/Rego — machineleesbare beleidstaal voor PDP-evaluatie | Open Policy Agent / CNCF | **In productie bij iWlz** (ZIN) voor gevoelige zorgdata; directe precedentwaarde |
 | XACML 3.0 — alternatieve PDP-standaard (minder actueel, maar breed ingezet) | OASIS | Beschikbaar; minder geschikt voor fine-grained data-access dan OPA/Rego |
 | PBAC (Policy-Based Access Control) als autorisatieparadigma | Conceptueel kader | Beschreven in FTV-architectuur; aansluiting GBO gewenst |
@@ -201,7 +201,7 @@ Naast technische gaps kent dit document ook **juridische randvoorwaarden** (gema
 | Afspraak | Type | Beheer | Invulling |
 |---|---|---|---|
 | Governance: wie is bevoegd tot het schrijven, wijzigen en goedkeuren van policies per traject (DvTP, OOTS, EDI) | Stelselafspraak | Centraal — GBO-stelselorganisatie | ⚠️ Nog te maken; raakt aan rolverdeling bronhouder, vakdepartement en GBO-beheer |
-| Beleidswijzigingsproces: RFC-procedure voor het aanpassen van gedeelde policies, inclusief testfase en inwerkingtredingmoment | Stelselafspraak | Centraal — GBO | ⚠️ Nog te maken; analoog aan iWlz RFC-aanpak |
+| Beleidswijzigingsproces: RFC-procedure voor het aanpassen van gedeelde policies, inclusief testfase en inwerkingtredingsmoment | Stelselafspraak | Centraal — GBO | ⚠️ Nog te maken; analoog aan iWlz RFC-aanpak |
 | Policies worden als gesigneerde bundles gedistribueerd; decentrale PDP's halen updates asynchroon op | Architectuurafspraak | Centraal — GBO | ⚠️ Nog te maken als GBO-architectuurprincipe |
 | Naast toestemming worden ook toepasbare grondslagen (wettelijke basis, doelbinding) als machineleesbaar beleid centraal beheerd | Stelselafspraak | Centraal — GBO/FDS, raakvlak AVG/Wdo | ⚠️ Nog te maken; ODRL of Rego als taal nog te bepalen |
 
@@ -242,7 +242,7 @@ Naast technische gaps kent dit document ook **juridische randvoorwaarden** (gema
 
 | Standaard | Beheer | Bestaande invulling |
 |---|---|---|
-| FSC (Federated Service Connectivity) — binnenlands koppelnetwerk voor REST/HTTP | Logius / FSC-community | **Beschikbaar en in gebruik** binnen overheid; standaard voor domestiek verkeer in FDS |
+| FSC (Federated Service Connectivity) — binnenlands koppelnetwerk voor REST/HTTP | Logius / FSC-community | **Beschikbaar en in gebruik** binnen overheid; standaard voor binnenlands verkeer in FDS |
 | GraphQL — selectieve gegevensuitvraag op basis van geregistreerde schema's | GraphQL Foundation | Beschikbaar; **in productie bij iWlz**; nog niet opgenomen in FDS standaardenlandkaart als datadienst-type — ⚠️ positionering als FDS-datadienst-type nog nodig |
 | DCAT-AP NL — datacatalogus beschrijving | Geonovum / FDS | **Beschikbaar en verplicht** binnen FDS |
 | NL API Strategie / REST API Design Rules | Geonovum / Kennisplatform API's | **Beschikbaar en verplicht** binnen overheid; GraphQL loopt over HTTP en is hiermee verenigbaar |
@@ -324,7 +324,7 @@ Naast technische gaps kent dit document ook **juridische randvoorwaarden** (gema
 
 ## S10 — Semantiek & Gegevenscatalogus
 
-*Gegevens die via GBO uitgewisseld worden hebben een eenduidige, beheerde betekenis. Dezelfde canonieke definitie wordt geserialiseerd naar de voor elk traject vereiste uitwisselingsformaten.*
+*Gegevens die via GBO worden uitgewisseld, hebben een eenduidige, beheerde betekenis. Dezelfde canonieke definitie wordt geserialiseerd naar de voor elk traject vereiste uitwisselingsformaten.*
 
 ### Afspraken
 
@@ -333,7 +333,7 @@ Naast technische gaps kent dit document ook **juridische randvoorwaarden** (gema
 | Per bronhouder bestaat een beheerde, GBO-geregistreerde schemabeschrijving | Stelselafspraak | Centraal — GBO (schema-registry) | ⚠️ Nog te maken als GBO-cataloguseis |
 | Canonieke schemadefinitie is de enige bron van waarheid; serialisaties zijn afgeleid | Architectuurafspraak | Centraal — GBO | ⚠️ Nog te maken als GBO-architectuurprincipe |
 | Mapping naar OOTS Semantic Repository evidence types is verplicht voor OOTS-trajecten | Stelselafspraak | Centraal — GBO, aansluiting EC OOTS | ⚠️ Nog te maken |
-| Mapping naar PuB-EAA attestatieschema's is verplicht voor EUDI-Wallet traject | Stelselafspraak | Centraal — GBO, aansluiting ARF/EC | ⚠️ Nog te maken |
+| Mapping naar PuBEAA attestatieschema's is verplicht voor EUDI-Wallet traject | Stelselafspraak | Centraal — GBO, aansluiting ARF/EC | ⚠️ Nog te maken |
 
 ### Standaarden
 
@@ -355,23 +355,23 @@ Naast technische gaps kent dit document ook **juridische randvoorwaarden** (gema
 
 ---
 
-## S11 — Attesteringsuitgifte (PuB-EAA / QEAA)
+## S11 — Attesteringsuitgifte (PuBEAA / QEAA)
 
 *Het omzetten van brongegevens uit authentieke overheidsbronnen naar digitaal ondertekende attesteringen die burgers kunnen opslaan in een EUDI-wallet en presenteren aan vertrouwende partijen.*
 
-> ⚖️ **Juridische randvoorwaarde:** De vereisten voor PuB-EAA-uitgifte zijn vastgelegd in Uitvoeringsverordening (EU) 2025/1569 en de bijbehorende ETSI-normen. Overheidsorganen die PuB-EAAs uitgeven moeten beschikken over een goedgekeurd Conformity Assessment Report (CAR) van een geaccrediteerde Conformity Assessment Body (CAB). De Europese regelgeving op dit punt is nog in ontwikkeling; de uitwerking van GBO op dit vlak loopt parallel aan de nadere invulling van het Europese kader.
+> ⚖️ **Juridische randvoorwaarde:** De vereisten voor PuBEAA-uitgifte zijn vastgelegd in Uitvoeringsverordening (EU) 2025/1569 en de bijbehorende ETSI-normen. Overheidsorganen die PuBEAA's uitgeven moeten beschikken over een goedgekeurd Conformity Assessment Report (CAR) van een geaccrediteerde Conformity Assessment Body (CAB). De Europese regelgeving op dit punt is nog in ontwikkeling; de uitwerking van GBO op dit vlak loopt parallel aan de nadere invulling van het Europese kader.
 
-> ℹ️ **Scope-afbakening:** GBO overweegt een **centrale PuB-EAA-uitgifte-dienst** in te richten die namens overheidsbronhouders attesteringen uitgeeft op basis van de generieke bronontsluiting (S07), en een **centrale verificatiedienst** waar vertrouwende partijen de geldigheid van uitgegeven attesteringen kunnen controleren. De keuze of beide voorzieningen centraal worden ingericht, decentraal per bronhouder, of dat de uitgifte elders (buiten GBO) wordt belegd, is nog niet gemaakt en wordt hier als open vraag behandeld.
+> ℹ️ **Scope-afbakening:** GBO overweegt een **centrale PuBEAA-uitgiftedienst** in te richten die namens overheidsbronhouders attesteringen uitgeeft op basis van de generieke bronontsluiting (S07), en een **centrale verificatiedienst** waar vertrouwende partijen de geldigheid van uitgegeven attesteringen kunnen controleren. De keuze of beide voorzieningen centraal worden ingericht, decentraal per bronhouder, of dat de uitgifte elders (buiten GBO) wordt belegd, is nog niet gemaakt en wordt hier als open vraag behandeld.
 
 ### Afspraken
 
 | Afspraak | Type | Beheer | Invulling |
 |---|---|---|---|
-| Welke overheidsbronnen PuB-EAAs uitgeven en voor welke attribuuttypen | Stelselafspraak | Centraal — GBO, per bronhouder te activeren | ⚠️ Nog te maken; lijst van attribuuttypen sluit aan op canonieke schema's (C9) |
+| Welke overheidsbronnen PuBEAA's uitgeven en voor welke attribuuttypen | Stelselafspraak | Centraal — GBO, per bronhouder te activeren | ⚠️ Nog te maken; lijst van attribuuttypen sluit aan op canonieke schema's (C9) |
 | Attestation Rulebook per attribuuttype: vereiste gegevens, opmaak, bewijzen, beveiligingseisen, intrekkingsbeleid | Stelselafspraak | Centraal — GBO, aansluiting EC/ARF-rulebooks | ⚠️ Nog te maken per attribuuttype; Europese standaardrulebooks in ontwikkeling |
 | Wallet binding: koppeling van uitgifte aan specifieke wallet-instantie van de burger | Architectuurafspraak | Centraal — GBO | ⚠️ Nog te maken als GBO-technisch profiel; conform ARF wallet binding vereisten |
 | Intrekkingsbeleid: wanneer een attestering wordt ingetrokken en hoe de statuslijst wordt bijgehouden | Stelselafspraak | Centraal — GBO | ⚠️ Nog te maken; sluit aan op statuslijstmechanisme (Token Status List of OCSP) |
-| Opname van de centrale PuB-EAA-dienst op de Nederlandse Trusted List (beheerd door RDI) | Toetredingsafspraak | Centraal — RDI / GBO | ⚠️ Vereist CAR-certificering; procedure nog te doorlopen |
+| Opname van de centrale PuBEAA-dienst op de Nederlandse Trusted List (beheerd door RDI) | Toetredingsafspraak | Centraal — RDI / GBO | ⚠️ Vereist CAR-certificering; procedure nog te doorlopen |
 | Verificatiedienst: welke partijen de centrale verificatieservice mogen bevragen en onder welke voorwaarden | Stelselafspraak | Centraal — GBO | ⚠️ Nog te maken |
 
 ### Standaarden
@@ -379,9 +379,9 @@ Naast technische gaps kent dit document ook **juridische randvoorwaarden** (gema
 | Standaard | Beheer | Bestaande invulling |
 |---|---|---|
 | OpenID4VCI (OpenID for Verifiable Credential Issuance) — protocol voor uitgifte van credentials aan wallet | OpenID Foundation / ARF | **Beschikbaar**; verplicht binnen ARF; implementatierichtlijnen in uitvoeringsverordening 2025/1569 |
-| SD-JWT VC (Selective Disclosure JWT Verifiable Credential) — credential-formaat voor wallet-opslag | IETF / ARF | **Beschikbaar**; primair formaat voor PuB-EAA in ARF |
+| SD-JWT VC (Selective Disclosure JWT Verifiable Credential) — credential-formaat voor wallet-opslag | IETF / ARF | **Beschikbaar**; primair formaat voor PuBEAA in ARF |
 | ISO/IEC 18013-5 (mdoc) — alternatief credential-formaat voor proximity-presentatie | ISO / ARF | **Beschikbaar**; relevant voor offline en proximity use cases |
-| ETSI EN 319 412 — eisen aan gekwalificeerde zegels voor ondertekening van PuB-EAA | ETSI | **Beschikbaar**; ondertekening met QESeal verplicht voor PuB-EAA |
+| ETSI EN 319 412 — eisen aan gekwalificeerde zegels voor ondertekening van PuBEAA | ETSI | **Beschikbaar**; ondertekening met QESeal verplicht voor PuBEAA |
 | Token Status List (IETF draft) — mechanisme voor statusbeheer van uitgegeven credentials | IETF | Beschikbaar als draft; ⚠️ nog niet definitief vastgesteld als verplichte standaard in ARF |
 | OpenID4VP (OpenID for Verifiable Presentations) — protocol voor presentatie van credentials door wallet aan verifier | OpenID Foundation / ARF | **Beschikbaar**; verplicht binnen ARF; relevant voor de verificatiedienst |
 
@@ -389,8 +389,8 @@ Naast technische gaps kent dit document ook **juridische randvoorwaarden** (gema
 
 | Voorziening | Type | Beheer | Instantiëring | Bestaande invulling |
 |---|---|---|---|---|
-| Centrale PuB-EAA-uitgifte-dienst (Credential Issuer) | Centrale voorziening (optie) | Centraal — GBO of Logius als beheerder | Gedeelde instantie namens meerdere bronhouders | ⚠️ Nog te realiseren; vereist CAR-certificering; bouwt op C5 (bronontsluiting) en C2 (burgeridentificatie) |
-| CAR-certificering voor de uitgifte-dienst | Conformiteitseis | Geaccrediteerde CAB (markt, onder toezicht RDI) | Per uitgifte-dienst | ⚠️ Nog te doorlopen; vereiste uit uitvoeringsverordening 2025/1569 |
+| Centrale PuBEAA-uitgiftedienst (Credential Issuer) | Centrale voorziening (optie) | Centraal — GBO of Logius als beheerder | Gedeelde instantie namens meerdere bronhouders | ⚠️ Nog te realiseren; vereist CAR-certificering; bouwt op C5 (bronontsluiting) en C2 (burgeridentificatie) |
+| CAR-certificering voor de uitgiftedienst | Conformiteitseis | Geaccrediteerde CAB (markt, onder toezicht RDI) | Per uitgiftedienst | ⚠️ Nog te doorlopen; vereiste uit uitvoeringsverordening 2025/1569 |
 | Centrale verificatiedienst (Status List / Verifier endpoint) | Centrale voorziening (optie) | Centraal — GBO of Logius | Gedeelde instantie | ⚠️ Nog te realiseren; biedt vertrouwende partijen een gestandaardiseerd endpoint voor intrekkingsstatus en uitgeversketen |
 | Opname op Nederlandse Trusted List (LoTE) | Registratie bij RDI | RDI | Eenmalig per erkende uitgevende dienst | ⚠️ Vereist goedgekeurde CAR; procedure loopt via RDI conform eIDAS Trusted List Infrastructure |
 | NL Wallet (EUDI Wallet referentie-implementatie NL) | Nationale voorziening | Logius / stelselbeheerder EDI-stelsel | Gedeeld | Beschikbaar als pilotimplementatie; GBO-attesteringen moeten aansluiten op NL Wallet-specificaties |
@@ -415,8 +415,8 @@ De gaps zijn onderverdeeld in drie categorieën:
 | S07 — Gegevensontsluiting (Bronontsluiting API) | — | Query Template Registry; GraphQL als FDS-datadienst-type positioneren; GBO onboardingprocedure bronhouders | FSC (productie); FDS Poortwachter (in opzet); DCAT-AP NL; iWlz GraphQL-patroon |
 | S08 — OOTS-adapter (Grensoverschrijdend) | — | GBO ↔ RINIS REST-koppeling; SMP-beheer; SDG-EDM mapping | RINIS basisinrichting beschikbaar; Domibus (open source, EC); AS4/OOTS-EDM standaarden |
 | S09 — Logging, Audit & Traceerbaarheid | — | LDV-profiel per GBO-component; inzagevoorziening burger | LDV (in consultatie, referentie-impl. beschikbaar); OpenTelemetry; iWlz TraceID/SpanID RFC (productie) |
-| S10 — Semantiek & Gegevenscatalogus | — | Schema Registry; serialisatie-service; mappings naar OOTS-EDM en PuB-EAA | FDS Datacatalogus; DCAT-AP NL; OOTS-EDM |
-| S11 — Attesteringsuitgifte (PuB-EAA / QEAA) | CAR-certificering uitgifte-dienst; opname op NL Trusted List (RDI) | Centrale uitgifte-dienst; Attestation Rulebooks per attribuuttype; wallet binding profiel; verificatiedienst; intrekkingsbeleid | OpenID4VCI; SD-JWT VC; ARF; NL Wallet (pilot) |
+| S10 — Semantiek & Gegevenscatalogus | — | Schema Registry; serialisatie-service; mappings naar OOTS-EDM en PuBEAA | FDS Datacatalogus; DCAT-AP NL; OOTS-EDM |
+| S11 — Attesteringsuitgifte (PuBEAA / QEAA) | CAR-certificering uitgiftedienst; opname op NL Trusted List (RDI) | Centrale uitgiftedienst; Attestation Rulebooks per attribuuttype; wallet binding profiel; verificatiedienst; intrekkingsbeleid | OpenID4VCI; SD-JWT VC; ARF; NL Wallet (pilot) |
 
 ---
 
@@ -430,7 +430,7 @@ De aanbevolen lagenstructuur voor het afsprakenstelsel (analoog aan iWlz):
 |---|---|
 | Organisatiebeleid | Governance, rollen (bronhouder, afnemer, GBO-beheer), ontwerpkeuzes, serviceafspraken, wijzigingsbeheer |
 | Proces | Trajectprocessen: DvTP-toestemmingsstroom, OOTS-adapterstroom, EUDI-Wallet uitgifte- en presentatiestroom |
-| Informatie | Gegevensmodellen per bronhouder, canonieke schema's, mappings naar OOTS-EDM en PuB-EAA |
+| Informatie | Gegevensmodellen per bronhouder, canonieke schema's, mappings naar OOTS-EDM en PuBEAA |
 | Applicatie | Technische afspraken per stelselfunctie: GraphQL profiel, PEP/PDP-keten, FSC-profiel, BSNk PP-integratie, query-templates |
 | IT-infrastructuur | Connectiviteit (FSC), certificaten (PKI Overheid), netwerkeisen, SLA's |
 | Uitwisselprofielen | Per traject (DvTP, OOTS, EUDI-Wallet): specifieke afspraken aanvullend op de generieke lagen |

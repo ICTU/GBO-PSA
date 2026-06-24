@@ -8,12 +8,12 @@ Als er een oplossing is gevonden of een keuze is gemaakt, wordt dit in dit hoofd
 
 ## Onboarding
 
-Deelnemers aan het stelsel moeten aan eisen voldoen, waarbij de eisen kunnen verschillen per deelnemersgroep: bronhouders, afnemers, intermediairs, etc. Om deel te kunnen nemen aan het stelsel doorlopen de deelnemers een onboarding proces. Dat proces moet nog ingericht worden, zowel wat betreft de governance (wie doet wat en is waarvoor verantwoordelijk) als inhoud (waarop worden deelnemers beoordeeld).
+Deelnemers aan het stelsel moeten aan eisen voldoen, waarbij de eisen kunnen verschillen per deelnemersgroep: bronhouders, afnemers, intermediairs, etc. Om deel te kunnen nemen aan het stelsel doorlopen de deelnemers een onboardingproces. Dat proces moet nog ingericht worden, zowel wat betreft de governance (wie doet wat en is waarvoor verantwoordelijk) als inhoud (waarop worden deelnemers beoordeeld).
 
 
 ## Identificatie & authenticatie intermediairs
 
-Voor systeemherkenning bij gegevensuitwisseling wordt PKIo gebruikt. Maar hoe gaan we om met intermediairs die tussen de bronhouder of afnemer en de stelselvoorziening zit?  
+Voor systeemherkenning bij gegevensuitwisseling wordt PKIo gebruikt. Maar hoe gaan we om met intermediairs die tussen de bronhouder of afnemer en de stelselvoorziening zitten?  
 FSC biedt hiervoor oplossingsrichtingen, waar in de uitwerking naar gekeken kan worden.
 
 
@@ -26,17 +26,17 @@ Gaat GBO werken met een "Autorisatieserver" als centraal component, met een bijb
 ## Burgeridentificatie en het BSN
 
 Het BSN mag bij private partijen, die daarvoor geen wettelijke grondslag hebben, niet worden doorgegeven. Dit vereist een pseudonimiseringslaag.  
-**Ontwerpkeuze**: Voor het pseudonimiseren van het BSN wordt gebruik gemaakt van de BSNk PP voorziening. Deze voorziening gaat uit van een "geactiveerd" BSN - d.w.z. dat er al een pseudoniem voor het BSN bestaat. Deze pseudoniemen worden door GBO aangevraagd via de activatiedienst van BSNk en bijgehouden in het toestemmingenregister. Voordeel van het vastleggen van de pseudoniemen, is dat er geen BSN's in het toestemmingenregister opgeslagen hoeven te worden. Nadeel ia dat GBO als "toegangsdienst" erkend moet worden door BSNk, wat mogelijk extra verantwoording vereist.
+**Ontwerpkeuze**: Voor het pseudonimiseren van het BSN wordt gebruik gemaakt van de BSNk PP voorziening. Deze voorziening gaat uit van een "geactiveerd" BSN - d.w.z. dat er al een pseudoniem voor het BSN bestaat. Deze pseudoniemen worden door GBO aangevraagd via de activatiedienst van BSNk en bijgehouden in het toestemmingenregister. Voordeel van het vastleggen van de pseudoniemen, is dat er geen BSN's in het toestemmingenregister opgeslagen hoeven te worden. Nadeel is dat GBO als "toegangsdienst" erkend moet worden door BSNk, wat mogelijk extra verantwoording vereist.
 
 
 ## Toestemmingen
 
-Voor DvTP (de gegevensstroom van overheidsbronnen naar private dienstverleners) is een toestemming vereist. Hiervoor is de toestemmingenvoorziening en het toestemmingenregister bedacht, maar hiervoor is nog wetgeving nodig.
+Voor DvTP (de gegevensstroom van overheidsbronnen naar private dienstverleners) is een toestemming vereist. Hiervoor is de toestemmingsvoorziening en het toestemmingenregister bedacht, maar hiervoor is nog wetgeving nodig.
 Er spelen hierbij enkele vragen:  
 - Hoe wordt omgegaan met toestemming voor een eenmalige bevraging?  
-- Is een toestemmingenvoorziening nodig als de gegevens via de burger aan de private dienstverlener beschikbaar worden gesteld (conform de "preview" functie van de Basisinrichting OOTS en de "Authorising Actors" functie van TIP)?  
+- Is een toestemmingsvoorziening nodig als de gegevens via de burger aan de private dienstverlener beschikbaar worden gesteld (conform de "preview" functie van de Basisinrichting OOTS en de "Authorising Actors" functie van TIP)?  
 - Waarom niet de verantwoordelijkheid bij de bronhouder of afnemer leggen en dit decentraal oplossen?  
-**Ontwerpkeuze**: GBO gaat uit van een centrale toestemmingsvoorziening met een toestemmingenregister en een toestemmingenportaal. De onderbouwing daarvoor is:  
+**Ontwerpkeuze**: GBO gaat uit van een centrale toestemmingsvoorziening met een toestemmingenregister en een toestemmingsportaal. De onderbouwing daarvoor is:  
 - Kostenbesparing: éénmalig inrichten en beheren is goedkoper dan dat iedere bronhouder en/of afnemer dit zelf regelt.  
 - Herkenbaarheid voor de burger: een centrale voorziening biedt de burger telkens dezelfde ervaring, wat herkenning en vertrouwen opbouwt.  
 - Inzage voor de burger: met een centrale voorziening is het aanzienlijk eenvoudiger om de burger inzage te geven in al zijn toestemmingen via het Toestemmingsportaal.  
@@ -51,13 +51,13 @@ Welke partijen mogen deelnemen, hoe worden ze geaccrediteerd, welke niveaus van 
 ## Gekwalificeerde elektronische attesteringen van attributen
 
 Hoe laten we attributen elektronisch kwalificeren? Hoe wordt de "attesteringsuitgifte" ingericht?  
-Dit is nodig voor de Wallet, maar mogelijk ook voor de andere use cases. Er is [Europese Wetgeving](https://eur-lex.europa.eu/legal-content/NL/TXT/HTML/?uri=OJ:L_202501569), maar die laat nog ruimte voor de inrichting en wie welke rol invult.  
+Dit is nodig voor de Wallet, maar mogelijk ook voor de andere use cases. Er is [Europese wetgeving](https://eur-lex.europa.eu/legal-content/NL/TXT/HTML/?uri=OJ:L_202501569), maar die laat nog ruimte voor de inrichting en wie welke rol invult.  
 
 - Gebruik QEAA / QTSP?  
-- Inrichten Pub-EAA?  
+- Inrichten PuBEAA?  
 - Centrale verificatie- en/of retrievedienst t.b.v. QEAA?  
 
-**Ontwerpkeuze**: Vooralsnog gaan we uit van een centrale Pub-EAA verstrekker en een centrale verificatiedienst t.b.v. QEAA. Daarmee zijn diverse opties mogelijk: bronhouder treedt zelf op als Pub-EAA-verstrekker, bronhouder gebruikt centrale Pub-EAA-verstrekker, QTSP geeft attesteringen uit die bij bronhouder geverifieerd zijn. Als bronhouders ook graag attestaties wil laten uitgeven door QTSP's, kan er een "retrieve" functie toegevoegd worden aan de centrale verificatiedienst (die beide onderdeel zijn van de "Authentic Source Interface").
+**Ontwerpkeuze**: Vooralsnog gaan we uit van een centrale PuBEAA verstrekker en een centrale verificatiedienst t.b.v. QEAA. Daarmee zijn diverse opties mogelijk: bronhouder treedt zelf op als PuBEAA-verstrekker, bronhouder gebruikt centrale PuBEAA-verstrekker, QTSP geeft attesteringen uit die bij bronhouder geverifieerd zijn. Als bronhouders ook graag attestaties willen laten uitgeven door QTSP's, kan er een "retrieve" functie toegevoegd worden aan de centrale verificatiedienst (die beide onderdeel zijn van de "Authentic Source Interface").
 
 
 ## Hoe start de uitgifte van attestaties?
@@ -67,9 +67,9 @@ Vooralsnog maakt GBO hierin geen keuze en worden de voorzieningen zo ontworpen d
 
 ## Centrale Componenten
 
-Ontwerpprincipe D01 stelt "Decentraal wat kan, centraal wat moet". Dit geldt als uitgangspunt, maar als een centrale voorziening voldoende voordelen biedt, past in de geldende wet- en regelgeving en niet tegn andere ontwerpprincipes ingaat, dan kan ervoor gekozen worden hiervoor te kiezen.  
+Ontwerpprincipe D01 stelt "Decentraal wat kan, centraal wat moet". Dit geldt als uitgangspunt, maar als een centrale voorziening voldoende voordelen biedt, past in de geldende wet- en regelgeving en niet tegen andere ontwerpprincipes ingaat, dan kan ervoor gekozen worden hiervoor te kiezen.  
 Bij de volgende voorzieningen die in theorie decentraal ingericht kunnen worden, wordt een centrale inrichting overwogen:
 
-- PuB-EAA dienst waar alle overheidsbronnen gebruik van kunnen maken.
+- PuBEAA dienst waar alle overheidsbronnen gebruik van kunnen maken.
 - Verificatiedienst waarmee QTSP's gegevens kunnen verifiëren en waar alle overheidsbronnen gebruik van kunnen maken.
 - Vertaalvoorziening om GraphQL verzoeken om te zetten naar REST/API verzoeken voor overheidsbronnen die (nog) geen eigen GraphQL implementatie willen/ kunnen realiseren.

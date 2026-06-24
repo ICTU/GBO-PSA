@@ -30,7 +30,7 @@
 
 ### P-03 · Privacy by design & by default
 
-**Stelling:** Privacybeschermende maatregelen — waaronder pseudonimisering — zijn ingebakken in het ontwerp van het stelsel, niet achteraf toegevoegd. Welke maatregelen nodig zijn kan per situatie verschillen, maar het moet altijd vanaf het ontwerp meegnomen worden.
+**Stelling:** Privacybeschermende maatregelen — waaronder pseudonimisering — zijn ingebakken in het ontwerp van het stelsel, niet achteraf toegevoegd. Welke maatregelen nodig zijn kan per situatie verschillen, maar het moet altijd vanaf het ontwerp meegenomen worden.
 
 **Bronnen:**  
 - AVG art. 25  
@@ -131,7 +131,7 @@
 
 ### P-07 · Vertrouwensstelsel op basis van PKI en erkende toetredingseisen
 
-**Stelling:** Alle deelnemende partijen (bronhouders, afnemers, private partijen) voldoen aan toetredingseisen en zijn aantoonbaar betrouwbaar via PKIoverheid-certificaten en/ of bestaande stelsels (zoals sectorale afsprakenstelsels), die door de stelselbeheer voldoende vertrouwd worden. In de toekomst kunnen daar EUDI en/ of European Business Wallet bij komen.
+**Stelling:** Alle deelnemende partijen (bronhouders, afnemers, private partijen) voldoen aan toetredingseisen en zijn aantoonbaar betrouwbaar via PKIoverheid-certificaten en/of bestaande stelsels (zoals sectorale afsprakenstelsels), die door het stelselbeheer voldoende vertrouwd worden. In de toekomst kunnen daar EUDI en/of European Business Wallet bij komen.
 
 **Bronnen:**  
 - PKIoverheid-stelsel  
@@ -157,7 +157,7 @@
 
 ### P-10 · Datasoevereiniteit: de bronhouder behoudt regie
 
-**Stelling:** Bronhouders behouden volledige zeggenschap over hun gegevens en de condities waaronder die worden ontsloten. GBO heeft geen eigenaarschap over de data welke ontsloten wordt, maar faciliteert deze enkel.
+**Stelling:** Bronhouders behouden volledige zeggenschap over hun gegevens en de condities waaronder die worden ontsloten. GBO heeft geen eigenaarschap over de data die wordt ontsloten wordt, maar faciliteert deze enkel.
 
 **Bronnen:**  
 - EU Data Governance Act (DGA) Verordening 2022/868  
