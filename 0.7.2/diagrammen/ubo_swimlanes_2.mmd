@@ -1,0 +1,55 @@
+flowchart LR
+  subgraph ubo["Uniforme Bronontsluiting (UBO)"]
+    direction TB
+    data_api("UBO Data API<br/>(service specifiek)")
+    fsc("FSC<br/>Inway")
+  end
+
+%%  subgraph synergy["Synergy"]
+    subgraph oots["SDG / OOTS"]
+      direction LR
+      oots_outway("FSC<br/>Outway")
+      oots_v("OOTS-V")
+      oots_delivery("eDelivery<br/>toegangspunt")
+      oots_afnemer["OOTS-portaal"]
+    end
+    subgraph eudi["EUDI"]
+      direction LR
+      eudi_qeaa["QTSP<br/>(QEAA)"]
+      eudi_wallet["EUDI-Wallet"]
+    end
+%%  end
+
+  burger
+
+  bron[("Gemeentebronnen<br/>(GBA, vergunningen, etc.)")] --- data_api --- fsc --REST/JSON--- oots_outway
+  oots_outway --- oots_v --- oots_delivery --eDelivery/AS4--- oots_afnemer
+
+  oots_delivery --eDelivery/AS4--- eudi_qeaa --OpenID4VCI--- eudi_wallet
+  eudi_qeaa ~~~ oots_afnemer
+
+  eudi_wallet --- burger["Burger"]
+  oots_afnemer --- burger
+
+  fsc:::ubo
+  data_api:::ubo
+
+  eudi_qeaa:::eudi
+  eudi_wallet:::eudi
+
+  oots_outway:::ubo
+  oots_v:::ubo
+  oots_delivery:::oots
+  oots_afnemer:::oots
+
+%%  synergy:::synergy
+
+  bron:::bron
+  burger:::burger
+
+  classDef bron fill:#edf7df,stroke:#6aa13a,color:#27500a
+  classDef eudi fill:#efe0f5,stroke:#5f5e5a,color:#444441
+  classDef oots fill:#efe0f5,stroke:#5f5e5a,color:#444441
+  classDef ubo fill:#fff0e8,stroke:#000000,color:#000000
+  classDef synergy fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef burger fill:#edf7df,stroke:#6aa13a,color:#27500a
