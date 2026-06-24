@@ -32,7 +32,7 @@ De generieke functies die het GBO-stelsel moet bieden zijn:
 7. Orkestratie & Integratie
 8. Beheer & Continuïteit
 
-Vanuit de [architectuur- en ontwerpprincipes](./architectuurprincipes.md) worden aan deze generieke functies eisen gesteld, die hieronder zijn uitgewerkt. De eisen zijn bewust technologieneutraal geformuleerd; ze beschrijven *wat* een generieke functie moet kunnen, niet *hoe* dat gerealiseerd wordt.
+Vanuit de [architectuur-](./architectuurprincipes.md) en [ontwerpprincipes](./ontwerpprincipes.md) worden aan deze generieke functies eisen gesteld, die hieronder zijn uitgewerkt. De eisen zijn bewust technologieneutraal geformuleerd; ze beschrijven *wat* een generieke functie moet kunnen, niet *hoe* dat gerealiseerd wordt.
 
 ---
 
