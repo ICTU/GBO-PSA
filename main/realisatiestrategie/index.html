@@ -1079,7 +1079,7 @@
 Zie ook de paragraaf <a href="#gebruik-van-bestaande-stelsels">Gebruik van bestaande stelsels</a> voor een verdere uitwerking hiervan.</p>
 </li>
 <li>
-<p>Er wordt gedurende de projectfase al wel pilots gestart waar gewerkt met de gewenste afspraken, standaarden en voorzieningen. Als deze nog niet bestaan, worden voorbeeld implementaties gebruikt die tevens gebruikt worden om het ontwerp te verbeteren. Uiteindelijk worden deze ontwikkelingen als referentie implementaties aangeboden aan de gremia waar het beheer belegd wordt. Dit gaat tot het niveau van "pre-productie": d.w.z. dat de afspraak of voorziening volledig genoeg is uitgewerkt om in productie genomen te kunnen worden. Maar de daadwerkelijke productiegang wordt aan de beoogde beheerder overgelaten. In sommige gevallen kan hier wet- en regelgeving voor nodig zijn, die in werking moet zijn getreden voor in productie gegaan kan worden.</p>
+<p>Er worden gedurende de projectfase al wel pilots gestart waarin wordt gewerkt met de gewenste afspraken, standaarden en voorzieningen. Als deze nog niet bestaan, worden voorbeeld implementaties gebruikt die tevens gebruikt worden om het ontwerp te verbeteren. Uiteindelijk worden deze ontwikkelingen als referentie implementaties aangeboden aan de gremia waar het beheer belegd wordt. Dit gaat tot het niveau van "pre-productie": d.w.z. dat de afspraak of voorziening volledig genoeg is uitgewerkt om in productie genomen te kunnen worden. Maar de daadwerkelijke productiegang wordt aan de beoogde beheerder overgelaten. In sommige gevallen kan hier wet- en regelgeving voor nodig zijn, die in werking moet zijn getreden voor in productie gegaan kan worden.</p>
 </li>
 <li>
 <p>De inrichting van de ontbrekende afspraken, standaarden en voorzieningen moet voldoen aan de <a href="../ontwerpprincipes/">ontwerpprincipes</a>. Gedurende het traject worden de ontwikkelingen hier periodiek op beoordeeld, waarover zo openbaar mogelijk (maar in elk geval naar de betrokken partijen) wordt gerapporteerd.</p>
@@ -1211,7 +1211,7 @@ NB: in deze figuur zijn enkel de voorzieningen geschetst - daarnaast kunnen de w
 </table>
 <hr />
 <h3 id="werkpakket-eudi-wallet-edi">Werkpakket EUDI-wallet (EDI)<a class="headerlink" href="#werkpakket-eudi-wallet-edi" title="Permanent link">&para;</a></h3>
-<p>Maakt het mogelijk dat burgers overheidsgegeven als digitale attestatie (PuB-EAA) in een EUDI-wallet opslaan. Bouwt op GBO Basis.</p>
+<p>Maakt het mogelijk dat burgers overheidsgegevens als digitale attestatie (PuBEAA) in een EUDI-wallet opslaan. Bouwt op GBO Basis.</p>
 <table>
 <thead>
 <tr>
@@ -1226,16 +1226,16 @@ NB: in deze figuur zijn enkel de voorzieningen geschetst - daarnaast kunnen de w
 <tbody>
 <tr>
 <td>1</td>
-<td><strong>Pub-EAA provider</strong> (centrale uitgifte-dienst)</td>
-<td><a href="../capabilities/#s11-attesteringsuitgifte-pub-eaa-qeaa">S11</a></td>
+<td><strong>PuBEAA provider</strong> (centrale uitgiftedienst)</td>
+<td><a href="../capabilities/#s11-attesteringsuitgifte-PuBEAA-qeaa">S11</a></td>
 <td>- Attestation Rulebook per attribuuttype<br/>- wallet binding-profiel<br/>- intrekkingsbeleid<br/>- ⚖️ opname op NL Trusted List (RDI)<br/>- ⚖️ conformiteitsbeoordeling vereist (Verordening 910/2014)</td>
 <td>- OpenID4VCI ✅<br/>- SD-JWT VC ✅<br/>- mdoc (ISO 18013-5) ✅<br/>- QESeal (ETSI EN 319 412) ✅<br/>- Token Status List ⚠️</td>
-<td>- Centrale Pub-EAA uitgifte-dienst ⚠️<br/>- Opname LoTE ⚠️<br/>- NL Wallet ✅ (pilot)</td>
+<td>- Centrale PuBEAA uitgiftedienst ⚠️<br/>- Opname LoTE ⚠️<br/>- NL Wallet ✅ (pilot)</td>
 </tr>
 <tr>
 <td>2</td>
 <td><strong>Authentic Source Interface</strong> (verificatiedienst)</td>
-<td><a href="../capabilities/#s11-attesteringsuitgifte-pub-eaa-qeaa">S11</a></td>
+<td><a href="../capabilities/#s11-attesteringsuitgifte-PuBEAA-qeaa">S11</a></td>
 <td>- Welke partijen de verificatieservice mogen bevragen en onder welke voorwaarden?</td>
 <td>- OpenID4VP ✅</td>
 <td>- Centrale verificatiedienst ⚠️</td>
@@ -1244,7 +1244,7 @@ NB: in deze figuur zijn enkel de voorzieningen geschetst - daarnaast kunnen de w
 <td>3</td>
 <td><strong>Mapping GraphQL → EDI-attestaties</strong></td>
 <td><a href="../capabilities/#s10-semantiek-gegevenscatalogus">S10</a></td>
-<td>- Mapping naar PuB-EAA attestatieschema's verplicht per bronhouder</td>
+<td>- Mapping naar PuBEAA attestatieschema's verplicht per bronhouder</td>
 <td>- SD-JWT VC / mdoc</td>
 <td>- Serialisatie-service ⚠️ (onderdeel <a href="../capabilities/#s10-semantiek-gegevenscatalogus">S10</a>)</td>
 </tr>
@@ -1348,12 +1348,12 @@ NB: in deze figuur zijn enkel de voorzieningen geschetst - daarnaast kunnen de w
 <hr />
 <h2 id="implementatie-bij-bronhouders">Implementatie bij bronhouders<a class="headerlink" href="#implementatie-bij-bronhouders" title="Permanent link">&para;</a></h2>
 <p>Bronhouders die gebruik willen maken van GBO moeten de componenten van het GBO-Basis werkpakket in de eigen omgeving installeren en onderhouden. Alleen de policy store met beleidsregels (PAP) wordt centraal aangeboden, maar daar moet wel op aangesloten worden.<br />
-GBO biedt bronhouders hiervoor referentiecomponenten aan, die de inrichting sterk vereenvoudigen. En als het (nog) niet haalbaar is om gegevens uit de bron met een GraphQL API beschikbaar te stellen, biedt GBO ondersteuning en tools om eventueel met andere API's aan te sluiten.</p>
+GBO biedt bronhouders hiervoor referentiecomponenten aan, die de inrichting sterk vereenvoudigen. En als het (nog) niet haalbaar is om gegevens uit de bron met een GraphQL-API beschikbaar te stellen, biedt GBO ondersteuning en tools om eventueel met andere API's aan te sluiten.</p>
 <p>Als bronhouders de GBO-Basis componenten hebben geïnstalleerd kunnen ze gebruik maken van de centrale componenten om de verschillende gegevensstromen te bedienen. Daar hoeven zij verder niets voor in te richten - er moeten enkel afspraken gemaakt worden over wie wanneer onder welke voorwaarden gegevens mogen opvragen.  </p>
 <p>Of bronhouders gebruik maken van de centrale componenten die nodig zijn om de verschillende gegevensstromen te bedienen, is een beleidsafweging. Voor zover deze componenten niet in wet- en regelgeving zijn opgenomen en (nog) niet op de pas-toe-of-leg-uit lijst staan, is het de bronhouders vrij om eigen componenten te gebruiken.<br />
-Zo kan voor het uitgeven van geattesteerde attributen (EUDI-Wallet) ook een eigen PubEAA-provider gebruikt worden, of afspraken met QTSP's gemaakt worden om QEAA's uit te geven. en voor aansluiting op OOTS kunnen ook eigen voorzieningen gebruikt worden, zoals in de onderwijswereld al gebruik gemaakt wordt van EMREX.</p>
+Zo kan voor het uitgeven van geattesteerde attributen (EUDI-Wallet) ook een eigen PubEAA-provider gebruikt worden, of afspraken met QTSP's gemaakt worden om QEAA's uit te geven. En voor aansluiting op OOTS kunnen ook eigen voorzieningen gebruikt worden, zoals in de onderwijswereld al gebruik gemaakt wordt van EMREX.</p>
 <h2 id="gebruik-van-bestaande-stelsels">Gebruik van bestaande stelsels<a class="headerlink" href="#gebruik-van-bestaande-stelsels" title="Permanent link">&para;</a></h2>
-<p>GBO zal gebruik maken van bestaande afspraken, standaarden en voorzieningen, maar daar ook een aantal aan toevoegen of uitbreiden. De afspraken, standaarden en voorzieningen die ontwikkeld worden, moeten landen in bestaande afsprakenstelsel en/ of beheerorganisaties. Als er sprake is van een doorontwikkeling is de keuze voor dat afsprakenstelsel of die beheerorganisatie eenvoudig: dat blijft bij de huidige organisatie en de doorontwikkeling wordt zoveel mogelijk met of zelfs door die organisatie doorgevoerd. Maar voor nieuwe afspraken, standaarden of voorzieningen moet een geschikte organisatie gevonden worden.<br />
+<p>GBO zal gebruik maken van bestaande afspraken, standaarden en voorzieningen, maar daar ook een aantal aan toevoegen of uitbreiden. De afspraken, standaarden en voorzieningen die ontwikkeld worden, moeten landen in bestaande afsprakenstelsels en/of beheerorganisaties. Als er sprake is van een doorontwikkeling is de keuze voor dat afsprakenstelsel of die beheerorganisatie eenvoudig: dat blijft bij de huidige organisatie en de doorontwikkeling wordt zoveel mogelijk met of zelfs door die organisatie doorgevoerd. Maar voor nieuwe afspraken, standaarden of voorzieningen moet een geschikte organisatie gevonden worden.<br />
 In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende afspraken, standaarden en voorzieningen naar verwachting kunnen landen. Daarbij is onderscheid gemaakt tussen inhoudelijke governance, standaardbeheer en operationeel beheer van voorzieningen. Voor onderdelen waarvoor nog geen bestaande beheerorganisatie evident is, is het open besluitpunt expliciet gemaakt.</p>
 <table>
 <thead>
@@ -1486,12 +1486,12 @@ In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende a
 <td>Besluit nodig over beheerduur, exitcriteria en voorwaarden voor productiegebruik.</td>
 </tr>
 <tr>
-<td><strong>Pub-EAA-provider voor publieke attestaties</strong></td>
+<td><strong>PuBEAA-provider voor publieke attestaties</strong></td>
 <td>EUDI-wallet / S11</td>
 <td>Voorziening + wettelijke rol</td>
 <td>EUDI-Wallet-governance / nationale eIDAS-governance</td>
 <td>Nader te bepalen; RvIG logisch voor PID/BRP-gerelateerde attributen; mogelijk federatief model voor domeinattributen</td>
-<td>Pub-EAA-uitgifte vraagt certificering, opname op relevante vertrouwenslijsten en duidelijke bronhouderverantwoordelijkheid. RvIG is logisch voor persoonsidentiteitsgegevens, maar niet automatisch voor alle publieke attributen.</td>
+<td>PuBEAA-uitgifte vraagt certificering, opname op relevante vertrouwenslijsten en duidelijke bronhouderverantwoordelijkheid. RvIG is logisch voor persoonsidentiteitsgegevens, maar niet automatisch voor alle publieke attributen.</td>
 <td>Besluit nodig over centraal, decentraal of federatief uitgiftemodel.</td>
 </tr>
 <tr>
@@ -1501,7 +1501,7 @@ In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende a
 <td>EUDI-Wallet-governance, met bronhouder- en domeingovernance</td>
 <td>BZK voor nationale regie; bronhouders/domeinen voor inhoud; technische beheerder nader te bepalen</td>
 <td>Per attribuuttype moet worden vastgelegd welke bron leidend is, welke gegevens worden uitgegeven, welke binding en intrekking gelden en welke betrouwbaarheidsniveaus van toepassing zijn.</td>
-<td>Apart beleggen naast de technische Pub-EAA-provider.</td>
+<td>Apart beleggen naast de technische PuBEAA-provider.</td>
 </tr>
 <tr>
 <td><strong>ASI-provider / verificatiedienst</strong></td>

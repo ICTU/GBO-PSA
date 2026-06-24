@@ -1270,7 +1270,7 @@
 <h2 id="juridisch-identiteit">Juridisch &amp; Identiteit<a class="headerlink" href="#juridisch-identiteit" title="Permanent link">&para;</a></h2>
 <p>De vier functies in deze laag vormen de voorwaarden waaronder de generieke functies mogen opereren. Ze zijn geen onderdeel van de gegevensstroom zelf, maar worden door alle generieke functies geraadpleegd.</p>
 <h3 id="toestemming">Toestemming<a class="headerlink" href="#toestemming" title="Permanent link">&para;</a></h3>
-<p><strong>Doel:</strong> Vaststellen en beheren van de testemming voor gegevensdeling.</p>
+<p><strong>Doel:</strong> Vaststellen en beheren van de toestemming voor gegevensdeling.</p>
 <p><strong>Eisen:</strong></p>
 <ul>
 <li>Toestemming van de burger is altijd herleidbaar tot een specifiek doel, een specifieke afnemer, en een specifieke gegevensvraag (doelbinding).</li>
@@ -1290,7 +1290,7 @@
 <p><strong>Doel:</strong> Het garanderen dat het BSN uitsluitend circuleert binnen de overheidsinfrastructuur en nooit zichtbaar is voor private afnemers.</p>
 <p><strong>Eisen:</strong></p>
 <ul>
-<li>Het BSN wordt nooit doorgegeven aan of verwerkt door private dienstverleners die daar geen wettelijke grondslag voor hebben. Voor deze partijen wordt altijd een partij-specifiek, onomkeerbaar pseudoniem gebruikt.</li>
+<li>Het BSN wordt nooit doorgegeven aan of verwerkt door private dienstverleners die daar geen wettelijke grondslag voor hebben. Voor deze partijen wordt altijd een partijspecifiek, onomkeerbaar pseudoniem gebruikt.</li>
 <li>Pseudoniemen voor verschillende private partijen zijn niet onderling koppelbaar, ook niet wanneer die partijen samenwerken.</li>
 <li>Herhaald gebruik van hetzelfde pseudoniem voor dezelfde burger levert cryptografisch onkoppelbare uitvoer op (geen correlatierisico over tijd).</li>
 <li>De omzetting van BSN naar pseudoniem — en terug, aan de bronhouderszijde — vindt plaats in een door de overheid beheerde en gecertificeerde voorziening.</li>
@@ -1338,7 +1338,7 @@
 <li>Een bronhouder realiseert één generieke ontsluiting. Er zijn geen trajectspecifieke endpoints of koppelingen per afnemer.</li>
 <li>De interface ondersteunt selectieve gegevensuitvraag: de afnemer kan exact de velden opvragen die voor het specifieke gebruik nodig zijn. Dataminimalisatie is structureel ingebouwd, niet afhankelijk van afsprakenstelsel of goede wil.</li>
 <li>De set van toegestane gegevensvragen per gebruik is vooraf geregistreerd (via een catalogus of template-mechanisme) en door beleid afdwingbaar. Binnen de toegestane gegevensvraag bepaalt de afnemer welke gegevens voor zijn situatie nodig zijn. Afwijkingen die buiten de toegestane gegevensvraag vallen zijn niet mogelijk.</li>
-<li>De interface is onafhankelijk van het BSN als externe sleutel: het subject-identifier in een uitvraag van een private afnemer is altijd een pseudoniem of een consent-referentie; BSN-resolving is een interne aangelegenheid van de ontsluiting.</li>
+<li>De interface is onafhankelijk van het BSN als externe sleutel: de subject-identifier in een uitvraag van een private afnemer is altijd een pseudoniem of een consent-referentie; BSN-resolving is een interne aangelegenheid van de ontsluiting.</li>
 <li>Bronhouders implementeren de ontsluiting eenmalig; aanpassingen voor nieuwe afnemers of trajecten vereisen geen bronhouder-specifieke ontwikkeling, alleen aanpassing van het beleid en de query-registratie.</li>
 <li>Verzoeken vanuit andere EU-lidstaten (OOTS) worden aan de GBO-zijde vertaald naar het binnenlandse formaat en protocol. Bronhouders zien geen EU-specifiek transportprotocol.</li>
 <li>Serviceregistratie voor grensoverschrijdende discovery (SMP) wordt centraal beheerd, niet door individuele bronhouders.</li>
@@ -1350,7 +1350,7 @@
 <ul>
 <li>Per bronhouder bestaat een geregistreerde, door GBO beheerde beschrijving van de beschikbaar gestelde gegevenselementen (naam, type, definitie, herkomst).</li>
 <li>Dezelfde gegevensset kan worden geserialiseerd naar de voor elk traject vereiste uitwisselingsformaten (JSON voor binnenlands, OOTS-EDM XML voor grensoverschrijdend, SD-JWT VC of mdoc voor de wallet). De canonieke definitie is eenmalig vastgelegd.</li>
-<li>Mapping tussen de GBO-canonieke definitie en trajectspecifieke schema's (zoals OOTS Semantic Repository types of PuB-EAA attestatieschema's) is expliciet en beheerbaar.</li>
+<li>Mapping tussen de GBO-canonieke definitie en trajectspecifieke schema's (zoals OOTS Semantic Repository types of PuBEAA attestatieschema's) is expliciet en beheerbaar.</li>
 <li>Vocabularia zijn gebaseerd op open, breed gedragen standaarden (RDF, OWL, SKOS, JSON-LD) en sluiten aan op de Nederlandse overheidsstandaarden (GGM, NORA).</li>
 <li>Semantische afspraken zijn versie-beheerd; wijzigingen in definities zijn traceerbaar en worden beheerst doorgevoerd.</li>
 </ul>
@@ -1402,7 +1402,7 @@
 </ul>
 <hr />
 <h2 id="samenhang">Samenhang<a class="headerlink" href="#samenhang" title="Permanent link">&para;</a></h2>
-<p>De generieke functies zijn niet op zichzelf staand. De onderstaande afhankelijkheden zijn architectureel kritiek:</p>
+<p>De generieke functies zijn niet op zichzelf staand. De onderstaande afhankelijkheden zijn architectuurkritisch:</p>
 <ul>
 <li><strong>Generieke functie 1 (Identiteit &amp; Vertrouwen)</strong> is afhankelijk van de <strong>Vertrouwensstelsel</strong>-laag voor de identiteitsvaststelling van organisaties, en van <strong>Generieke functie 6 (Grondslag &amp; Beleid)</strong> als informatiebron voor autorisatiebeslissingen.</li>
 <li><strong>Generieke functie 2 (Toegang &amp; Interactie)</strong> is de schrijfinterface naar <strong>Toestemming &amp; Grondslag</strong>, en triggert de pseudonimiseringsactie van <strong>Burgeridentificatie &amp; Pseudonimisering</strong>.</li>

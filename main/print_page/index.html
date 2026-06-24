@@ -1126,18 +1126,18 @@ De PSA beschrijft <strong>wat de oplossing moet kunnen</strong>, maar legt nog g
 </figure>
 
 <h2 id="oplossingsrichting-gemeenschappelijke-bronontsluiting">Gemeenschappelijke bronontsluiting<a class="headerlink" href="#oplossingsrichting-gemeenschappelijke-bronontsluiting" title="Permanent link">&para;</a></h2>
-<p>De verbinding tussen vragende partij en bron wordt via de <strong>FSC-standaard</strong> tot stand gebracht. Dit is een standaard koppelvlak waarmee de beveiliging van de gegevensuitwisseling gegarandeerd wordt en de noodzakelijke logging vastgelegd wordt.
-Bronhouders stellen hun gegevens bloot via een generieke, herbruikbare API. Dit is mogelijk met <strong>GraphQL</strong> - een API die een zo volledig mogelijke set gegevens beschikbaar stelt, waarvan afhankelijk van de toepassing een selectie bevraagd wordt. Dit maakt het inrichten en onderhouden van een groot aantal kleinere REST-API's overbodig. Als er een nieuwe gegevensvraag ontstaat, kan dat via configuratie ingericht worden, in plaats van dat er een nieuw endpoint ingericht en beheerd hoeft te worden.<br />
-Om te garanderen dat afnemers alleen die gegevens krijgt waar zij recht op hebben, is autorisatie nodig. Deze autorisatie moet niet alleen controleren of de afnemer toegang heeft tot de bron, maar ook welke set gegevens opgevraagd mag worden en of voldaan wordt aan de grondslag die voor de gegevensvraag geldt. Dat is configurabel in te richten als gewerkt wordt met "Policy Based Access Control" (<strong>PBAC</strong>).  </p>
-<p>Deze bouwstenen moeten door de bronhouder ingericht en onderhouden worden. Er bestaat al een referentie-implementatie voor de FSC-componenten onder de naam <strong>OpenFSC</strong> en er wordt vanuit het Federatief Datastelsel gewerkt aan een PBAC implementatie onder de naam Federatieve Toegangsverlening (<strong>FTV</strong>). Om de inrichting van de GraphQL API te standaardiseren zou er een GraphQL profiel in de <strong>Digikoppeling</strong> standaard opgenomen moeten worden.</p>
+<p>De verbinding tussen vragende partij en bron wordt via de <strong>FSC-standaard</strong> tot stand gebracht. Dit is een standaard koppelvlak waarmee de beveiliging van de gegevensuitwisseling wordt gegarandeerd en de noodzakelijke logging wordt vastgelegd.
+Bronhouders stellen hun gegevens bloot via een generieke, herbruikbare API. Dit is mogelijk met <strong>GraphQL</strong> - een API die een zo volledig mogelijke set gegevens beschikbaar stelt, waarvan afhankelijk van de toepassing een selectie wordt bevraagd. Dit maakt het inrichten en onderhouden van een groot aantal kleinere REST-API's overbodig. Als er een nieuwe gegevensvraag ontstaat, kan dat via configuratie ingericht worden, in plaats van dat er een nieuw endpoint ingericht en beheerd hoeft te worden.<br />
+Om te garanderen dat afnemers alleen die gegevens krijgen waarop zij recht op hebben, is autorisatie nodig. Deze autorisatie moet niet alleen controleren of de afnemer toegang heeft tot de bron, maar ook welke set gegevens opgevraagd mag worden en of voldaan wordt aan de grondslag die voor de gegevensvraag geldt. Dat is configurabel in te richten als gewerkt wordt met "Policy Based Access Control" (<strong>PBAC</strong>).  </p>
+<p>Deze bouwstenen moeten door de bronhouder ingericht en onderhouden worden. Er bestaat al een referentie-implementatie voor de FSC-componenten onder de naam <strong>OpenFSC</strong> en er wordt vanuit het Federatief Datastelsel gewerkt aan een PBAC-implementatie onder de naam Federatieve Toegangsverlening (<strong>FTV</strong>). Om de inrichting van de GraphQL-API te standaardiseren zou er een GraphQL profiel in de <strong>Digikoppeling</strong> standaard opgenomen moeten worden.</p>
 <h2 id="oplossingsrichting-aansluiten-op-bestaande-voorzieningen">Aansluiten op bestaande voorzieningen<a class="headerlink" href="#oplossingsrichting-aansluiten-op-bestaande-voorzieningen" title="Permanent link">&para;</a></h2>
-<p>De vragende partijen kennen hun eigen standaarden en protocollen. Als deze afwijken van de FSC-standaard met GraphQL API's, dan worden er componenten ontwikkeld om de aansluiting te maken. Voor bronhouders is dit geen zorg; als zij hun gegevens beschikbaarstellen via de gemeenschappelijke bronontsluiting kunnen zij aansluiten. Ook voor de vragende partijen wordt de koppeling eenvoudig: zij kunnen hun standaarden en protocollen blijven gebruiken en krijgen toegang tot alle bronnen die voldoen aan de GBO oplossing.  </p>
-<p>In de figuur bovenaan dit hoofdstuk de vereiste centrale voorzieningen voor de drie gegevensstromen die bij GBO in beeld zijn, ingetekend:<br />
+<p>De vragende partijen kennen hun eigen standaarden en protocollen. Als deze afwijken van de FSC-standaard met GraphQL-API's, dan worden er componenten ontwikkeld om de aansluiting te maken. Voor bronhouders is dit geen zorg; als zij hun gegevens beschikbaar stellen via de gemeenschappelijke bronontsluiting kunnen zij aansluiten. Ook voor de vragende partijen wordt de koppeling eenvoudig: zij kunnen hun standaarden en protocollen blijven gebruiken en krijgen toegang tot alle bronnen die voldoen aan de GBO-oplossing.  </p>
+<p>In de figuur bovenaan dit hoofdstuk zijn de vereiste centrale voorzieningen voor de drie gegevensstromen die bij GBO in beeld zijn, ingetekend:<br />
 - Voor de EUDI-Wallet zijn dat een <strong>verify-interface</strong> waar QTSP's toegang toe krijgen om QEAA's uit te kunnen geven, en een voorziening waarmee overheidsbronnen zelf attestaties (PubEAA's) kunnen uitgeven.<br />
 - Voor OOTS is dit een <strong>OOTS-adapter</strong> waarmee aangesloten wordt op de basisinrichting OOTS, waarvandaan gegevens met buitenlandse overheden gedeeld kunnen worden in het kader van SDG.<br />
 - Voor het delen van gegevens via toestemming met private dienstverleners is een <strong>toestemmingsvoorziening</strong> nodig, en een voorziening om BSN's te <strong>pseudonimiseren</strong>, zodat deze niet terechtkomen bij partijen die geen BSN mogen verwerken.  </p>
 <h2 id="oplossingsrichting-uitbreidbaar">Uitbreidbaar<a class="headerlink" href="#oplossingsrichting-uitbreidbaar" title="Permanent link">&para;</a></h2>
-<p>Het doel van GBO is het ontzorgen van bronhouders bij het bedienen van verschillende gegevensstromen. Het project GBO richt zich daarbij op de gegevensstromen die door burgers geïnitieerd worden: EDI, OOTS en DvTP. Maar de oplossingsrichting leent zich ook prima voor andere gegevensstromen: door het inrichten van een generieke bronontsluiting (GraphQL) met configureerbare toegangscontrole (FSC met FTV) kan deze voor veel verschillende gegevensstromen gebruikt worden. Die gegevensstromen moeten hun gegevensverzoeken dan via FSC aanbieden in de vorm van een GraphQL-request waarin de gewenste gegevens uitgevraagd worden. Als dat niet rechstreeks kan, is een adapter nodig die het verzoek omzet naar GraphQL en via een FSC Outway aanbiedt.<br />
+<p>Het doel van GBO is het ontzorgen van bronhouders bij het bedienen van verschillende gegevensstromen. Het project GBO richt zich daarbij op de gegevensstromen die door burgers geïnitieerd worden: EDI, OOTS en DvTP. Maar de oplossingsrichting leent zich ook prima voor andere gegevensstromen: door het inrichten van een generieke bronontsluiting (GraphQL) met configureerbare toegangscontrole (FSC met FTV) kan deze voor veel verschillende gegevensstromen gebruikt worden. Die gegevensstromen moeten hun gegevensverzoeken dan via FSC aanbieden in de vorm van een GraphQL-request waarin de gewenste gegevens uitgevraagd worden. Als dat niet rechtstreeks kan, is een adapter nodig die het verzoek omzet naar GraphQL en via een FSC Outway aanbiedt.<br />
 Iedere gegevensstroom zal afspraken vereisen over de gegevenssets die afgenomen mogen worden en wie onder welke voorwaarden deze gegevens mogen opvragen. De vastlegging en toepassing van die afspraken kan echter in de bestaande FTV componenten (PEP/PDP, PAP en PIP) gebeuren.</p>
 <p>Om een indruk te geven hoe nieuwe gegevensstromen toegevoegd kunnen worden, zijn in de onderstaande figuur twee extra gegevensstromen toegevoegd.</p>
 <figure>
@@ -1252,7 +1252,7 @@ gegroepeerd per juridisch/beleids­kader. Bedoeld als basis voor de uitwerking v
 - NORA NAP07 — Minimale gegevensverwerking  </p>
 <hr />
 <h3 id="architectuurprincipes-p-03-privacy-by-design-by-default">P-03 · Privacy by design &amp; by default<a class="headerlink" href="#architectuurprincipes-p-03-privacy-by-design-by-default" title="Permanent link">&para;</a></h3>
-<p><strong>Stelling:</strong> Privacybeschermende maatregelen — waaronder pseudonimisering — zijn ingebakken in het ontwerp van het stelsel, niet achteraf toegevoegd. Welke maatregelen nodig zijn kan per situatie verschillen, maar het moet altijd vanaf het ontwerp meegnomen worden.</p>
+<p><strong>Stelling:</strong> Privacybeschermende maatregelen — waaronder pseudonimisering — zijn ingebakken in het ontwerp van het stelsel, niet achteraf toegevoegd. Welke maatregelen nodig zijn kan per situatie verschillen, maar het moet altijd vanaf het ontwerp meegenomen worden.</p>
 <p><strong>Bronnen:</strong><br />
 - AVG art. 25<br />
 - NORA Domeinarchitectuur Gegevensuitwisseling §4.2  </p>
@@ -1315,7 +1315,7 @@ gegroepeerd per juridisch/beleids­kader. Bedoeld als basis voor de uitwerking v
 - NORA Authenticatie(middelen)beheer  </p>
 <hr />
 <h3 id="architectuurprincipes-p-07-vertrouwensstelsel-op-basis-van-pki-en-erkende-toetredingseisen">P-07 · Vertrouwensstelsel op basis van PKI en erkende toetredingseisen<a class="headerlink" href="#architectuurprincipes-p-07-vertrouwensstelsel-op-basis-van-pki-en-erkende-toetredingseisen" title="Permanent link">&para;</a></h3>
-<p><strong>Stelling:</strong> Alle deelnemende partijen (bronhouders, afnemers, private partijen) voldoen aan toetredingseisen en zijn aantoonbaar betrouwbaar via PKIoverheid-certificaten en/ of bestaande stelsels (zoals sectorale afsprakenstelsels), die door de stelselbeheer voldoende vertrouwd worden. In de toekomst kunnen daar EUDI en/ of European Business Wallet bij komen.</p>
+<p><strong>Stelling:</strong> Alle deelnemende partijen (bronhouders, afnemers, private partijen) voldoen aan toetredingseisen en zijn aantoonbaar betrouwbaar via PKIoverheid-certificaten en/of bestaande stelsels (zoals sectorale afsprakenstelsels), die door het stelselbeheer voldoende vertrouwd worden. In de toekomst kunnen daar EUDI en/of European Business Wallet bij komen.</p>
 <p><strong>Bronnen:</strong><br />
 - PKIoverheid-stelsel<br />
 - Wet digitale overheid (Wdo)<br />
@@ -1331,7 +1331,7 @@ gegroepeerd per juridisch/beleids­kader. Bedoeld als basis voor de uitwerking v
 <hr />
 <h2 id="architectuurprincipes-kader-5-eu-data-governance-act-dga-data-act">Kader 5 — EU Data Governance Act (DGA) &amp; Data Act<a class="headerlink" href="#architectuurprincipes-kader-5-eu-data-governance-act-dga-data-act" title="Permanent link">&para;</a></h2>
 <h3 id="architectuurprincipes-p-10-datasoevereiniteit-de-bronhouder-behoudt-regie">P-10 · Datasoevereiniteit: de bronhouder behoudt regie<a class="headerlink" href="#architectuurprincipes-p-10-datasoevereiniteit-de-bronhouder-behoudt-regie" title="Permanent link">&para;</a></h3>
-<p><strong>Stelling:</strong> Bronhouders behouden volledige zeggenschap over hun gegevens en de condities waaronder die worden ontsloten. GBO heeft geen eigenaarschap over de data welke ontsloten wordt, maar faciliteert deze enkel.</p>
+<p><strong>Stelling:</strong> Bronhouders behouden volledige zeggenschap over hun gegevens en de condities waaronder die worden ontsloten. GBO heeft geen eigenaarschap over de data die wordt ontsloten wordt, maar faciliteert deze enkel.</p>
 <p><strong>Bronnen:</strong><br />
 - EU Data Governance Act (DGA) Verordening 2022/868<br />
 - FDS Design Principles for Data Spaces — principe 1<br />
@@ -1464,7 +1464,7 @@ gegroepeerd per juridisch/beleids­kader. Bedoeld als basis voor de uitwerking v
 <blockquote>
 <p>Selectie van de meest relevante <strong>ontwerpprincipes</strong> voor de inrichting van de GBO.
 Waar de <a href="#architectuurprincipes">architectuurprincipes</a> de <em>wat</em> en <em>waarom</em> beschrijven,
-geven deze ontwerpprincipes richting aan de <em>hoe</em> — de concrete keuzes bij het bouwen van het stelsel.</p>
+geven deze ontwerpprincipes richting aan het <em>hoe</em> — de concrete keuzes bij het bouwen van het stelsel.</p>
 </blockquote>
 <hr />
 <h2 id="ontwerpprincipes-kader-1-gdi-gemeenschappelijke-overheidsarchitectuur-ga">Kader 1 — GDI / Gemeenschappelijke Overheidsarchitectuur (GA)<a class="headerlink" href="#ontwerpprincipes-kader-1-gdi-gemeenschappelijke-overheidsarchitectuur-ga" title="Permanent link">&para;</a></h2>
@@ -1503,7 +1503,7 @@ Voor authenticatie: DigiD / eHerkenning / EUDIW. Voor transport: Digikoppeling R
 <p><strong>Bronnen:</strong><br />
 - GDI-Meerjarenvisie 2024–2028 (Bureau MIDO)<br />
 - GDI Programmeringsplan 2024 (Rijksoverheid / MIDO)<br />
-- Digitaleoverheid.nl — GDI bouwstenoverzicht<br />
+- Digitaleoverheid.nl — GDI-bouwstenoverzicht<br />
 - NORA — gebruik generieke bouwstenen (BP07)  </p>
 <hr />
 <h3 id="ontwerpprincipes-d-04-robuust-modulair-en-flexibel-ontwerp">D-04 · Robuust, modulair en flexibel ontwerp<a class="headerlink" href="#ontwerpprincipes-d-04-robuust-modulair-en-flexibel-ontwerp" title="Permanent link">&para;</a></h3>
@@ -1760,11 +1760,11 @@ Ook deelnemers moeten aantoonbaar voldoen aan beveiligings- en privacy-eisen bij
 </tr>
 </tbody>
 </table>
-<p>Om GraphQL in zijn volle breedte op een gestandaardiseerde manier te kunnen gebruiken is een GraphQL-profiel op de Digikoppeling standaard gewenst. Er zijn meer trajecten bij de overheid die het gebruik van GraphQL onderzoeken (doorontwikkeling KArWeI, BKWI) of zelfs al toepassen (iWlz). Daarom zoekt GBO de samenwerking met deze partijen om tot een standaard te komen. Om bronhouders te ontlasten wordt tooling beschikbaar gesteld om met de huidige koppelvlakken aan te sluiten op GBO.</p></section><section class="print-page" id="interactiepatronen" heading-number="5"><h1 id="interactiepatronen-interactiepatronen-gbo">Interactiepatronen GBO<a class="headerlink" href="#interactiepatronen-interactiepatronen-gbo" title="Permanent link">&para;</a></h1>
+<p>Om GraphQL in zijn volle breedte op een gestandaardiseerde manier te kunnen gebruiken is een GraphQL-profiel op de Digikoppeling-standaard gewenst. Er zijn meer trajecten bij de overheid die het gebruik van GraphQL onderzoeken (doorontwikkeling KArWeI, BKWI) of zelfs al toepassen (iWlz). Daarom zoekt GBO de samenwerking met deze partijen om tot een standaard te komen. Om bronhouders te ontlasten wordt tooling beschikbaar gesteld om met de huidige koppelvlakken aan te sluiten op GBO.</p></section><section class="print-page" id="interactiepatronen" heading-number="5"><h1 id="interactiepatronen-interactiepatronen-gbo">Interactiepatronen GBO<a class="headerlink" href="#interactiepatronen-interactiepatronen-gbo" title="Permanent link">&para;</a></h1>
 <p>Dit document beschrijft de belangrijkste interactiepatronen voor GBO zoals afgeleid uit de use cases. In de patronen is op verschillende plekken sprake van een "dienst"; dit kunnen afspraken, standaarden of centrale of decentrale voorzieningen zijn. Daar wordt in het hoofdstuk <a href="#capabilities">Stelselfuncties</a> dieper op ingegaan.  </p>
 <h2 id="interactiepatronen-gegevensverzoek-van-burger-om-gegevens-via-wallet-te-delen">Gegevensverzoek van burger om gegevens via wallet te delen<a class="headerlink" href="#interactiepatronen-gegevensverzoek-van-burger-om-gegevens-via-wallet-te-delen" title="Permanent link">&para;</a></h2>
 <h3 id="interactiepatronen-doel">Doel<a class="headerlink" href="#interactiepatronen-doel" title="Permanent link">&para;</a></h3>
-<p>Een burger vraagt een gegeven op als gekwalificeerde attestatie om in zijn/haar wallet op te nemen en te delen met een dienstverlener.</p>
+<p>Een burger vraagt een gegeven op als gekwalificeerde attestatie om in diens wallet op te nemen en te delen met een dienstverlener.</p>
 <h3 id="interactiepatronen-interactie">Interactie<a class="headerlink" href="#interactiepatronen-interactie" title="Permanent link">&para;</a></h3>
 <figure>
 
@@ -1773,28 +1773,28 @@ Ook deelnemers moeten aantoonbaar voldoen aan beveiligings- en privacy-eisen bij
     actor Burger
     participant Wallet as EUDI-Wallet
     participant QTSP as QTSP
-    participant PubEAA as PuB-EAA&lt;br/&gt;voorziening
+    participant PubEAA as PuBEAA&lt;br/&gt;voorziening
     participant VerifDienst as Verificatie-&lt;br/&gt;dienst
     participant Auth as Autorisatie&lt;br/&gt;voorziening
     participant Bron as Overheids-&lt;br/&gt;bron
 
-    Note over Burger,Bron: Stroom A — PuB-EAA: overheidsinstantie geeft attribuut rechtstreeks uit
+    Note over Burger,Bron: Stroom A — PuBEAA: overheidsinstantie geeft attribuut rechtstreeks uit
 
     rect rgb(225, 245, 238)
         Burger-&gt;&gt;Wallet: Vraag attribuut op
         Wallet-&gt;&gt;PubEAA: Credential Request
-        Note over PubEAA: PuB-EAA voorziening: aangeboden&lt;br/&gt;door bron zelf óf centraal via GBO
+        Note over PubEAA: PuBEAA voorziening: aangeboden&lt;br/&gt;door bron zelf óf centraal via GBO
         PubEAA-&gt;&gt;Auth: Autorisatieverzoek
         Auth-&gt;&gt;Wallet: Authenticatie- &amp; autorisatieverzoek
         Wallet-&gt;&gt;Burger: Toont verzoek &amp; vraagt consent
         Burger-&gt;&gt;Wallet: Geeft consent &amp; presenteert PID / eID
-        Wallet-&gt;&gt;Auth: Authenticatie / consent (incl.PID / eID)
+        Wallet-&gt;&gt;Auth: Authenticatie / consent (incl. PID / eID)
         Auth-&gt;&gt;PubEAA: Autorisatie (incl. identificatie burger)
         PubEAA-&gt;&gt;Bron: Bevraag bron
         Bron--&gt;&gt;PubEAA: Attribuutgegevens
         PubEAA-&gt;&gt;PubEAA: Kwalificeer attribuutgegevens
-        PubEAA--&gt;&gt;Wallet: PuB-EAA credential
-        Wallet--&gt;&gt;Burger: PuB-EAA opgeslagen in wallet
+        PubEAA--&gt;&gt;Wallet: PuBEAA credential
+        Wallet--&gt;&gt;Burger: PuBEAA opgeslagen in wallet
     end
 
     Note over Burger,Bron: Stroom B — QEAA: QTSP kwalificeert attribuut via verificatiedienst
@@ -1824,8 +1824,8 @@ Ook deelnemers moeten aantoonbaar voldoen aan beveiligings- en privacy-eisen bij
 </figure>
 
 <h3 id="interactiepatronen-toelichting">Toelichting<a class="headerlink" href="#interactiepatronen-toelichting" title="Permanent link">&para;</a></h3>
-<p>Iedere bronhouder kan in theorie gegevens uitleveren aan wallets, maar deze gegevens krijgen pas juridische waarde als ze gekwalificeerd zijn. Dat kwalificeren kan op twee manieren: de overheid ondertekent het gegeven, waardoor het een PuB-EAA wordt, of een gekwalificeerde verlener van vertrouwensdiensten (QTSP) doet dit.<br />
-Als de overheid het gegeven kwalificeert kan de bronhouder dit zelf doen, maar het kan schaalvoordeel bieden om dit te centraliseren in een GBO PuB-EAA-dienst. Als een QTSP het gegeven kwalificeert, moet deze QTSP het gegeven kunnen verifiëren via een verificatiedienst. Ook hier kan een bronhouder de dienst zelf aanbieden, of kan ervoor gekozen worden om dit te centraliseren in een GBO verificatiedienst. Ook de autorisatiedienst die door de Pub-EAA-dienst en de verificatiedienst aangeroepen wordt, kan door de bronhouder aangeboden worden, maar het biedt schaalvoordeel om dat te centraliseren in een GBO dienst.</p>
+<p>Iedere bronhouder kan in theorie gegevens uitleveren aan wallets, maar deze gegevens krijgen pas juridische waarde als ze gekwalificeerd zijn. Dat kwalificeren kan op twee manieren: de overheid ondertekent het gegeven, waardoor het een PuBEAA wordt, of een gekwalificeerde verlener van vertrouwensdiensten (QTSP) doet dit.<br />
+Als de overheid het gegeven kwalificeert kan de bronhouder dit zelf doen, maar het kan schaalvoordeel bieden om dit te centraliseren in een GBO PuBEAA-dienst. Als een QTSP het gegeven kwalificeert, moet deze QTSP het gegeven kunnen verifiëren via een verificatiedienst. Ook hier kan een bronhouder de dienst zelf aanbieden, of kan ervoor gekozen worden om dit te centraliseren in een GBO verificatiedienst. Ook de autorisatiedienst die door de PuBEAA-dienst en de verificatiedienst wordt aangeroepen, kan door de bronhouder worden aangeboden, maar het biedt schaalvoordeel om dat te centraliseren in een GBO dienst.</p>
 <h2 id="interactiepatronen-gegevensverzoek-van-europese-overheidsdienst-aan-nederlandse-overheidsbron">Gegevensverzoek van Europese overheidsdienst aan Nederlandse overheidsbron<a class="headerlink" href="#interactiepatronen-gegevensverzoek-van-europese-overheidsdienst-aan-nederlandse-overheidsbron" title="Permanent link">&para;</a></h2>
 <h3 id="interactiepatronen-doel_1">Doel<a class="headerlink" href="#interactiepatronen-doel_1" title="Permanent link">&para;</a></h3>
 <p>Een Europese overheidsdienst vraagt een gegeven (Evidence Request) aan een Nederlandse overheidsbron om een dienst aan een Nederlandse burger in het buitenland te kunnen leveren.</p>
@@ -1843,7 +1843,7 @@ Als de overheid het gegeven kwalificeert kan de bronhouder dit zelf doen, maar h
     rect rgb(250, 241, 251)
         Note over BRG,EU: ① Burger neemt dienst af
         BRG-&gt;&gt;EU: Verzoek dienst
-        Note over EU: Gegeven Bronhouder nodig
+        Note over EU: Gegeven van bronhouder nodig
     end
 
     rect rgb(230, 241, 251)
@@ -1955,8 +1955,8 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 </figure>
 
 <h3 id="interactiepatronen-toelichting_2">Toelichting<a class="headerlink" href="#interactiepatronen-toelichting_2" title="Permanent link">&para;</a></h3>
-<p>De dienstverlener kan rechtstreeks gegevens opvragen bij de bronhouder, maar heeft daarvoor toestemming van de burger nodig. Deze toestemming wordt door GBO afgehandeld via een toestemmingsvoorziening (een interface waar de burger vrij, specifiek, geïnformeerd en ondubbelzinnig de toestemming verleent) en een toestemmingsregister waar de toestemming wordt vastgelegd en waar deze gecontroleerd kan worden. De toestemmingsvoorziening moet de burger ook toegang geven tot de gegeven toestemmingen om te zien of die is gebruikt en om deze - indien relevant - in te trekken.</p>
-<p>De dienstverlener gebruikt nooit het BSN van de burger. Daarom moet deze gepseudonimiseerd worden. De pseudonimisering moet zo gebeuren dat de dienstverlener deze telkens kan depseudonimiseren naar een eigen identificatie, die echter geen betekenis heeft voor andere partijen. De bronhouder moet het pseudoniem kunnen depseudonimiseren naar het originele BSN.</p>
+<p>De dienstverlener kan rechtstreeks gegevens opvragen bij de bronhouder, maar heeft daarvoor toestemming van de burger nodig. Deze toestemming wordt door GBO afgehandeld via een toestemmingsvoorziening (een interface waar de burger vrij, specifiek, geïnformeerd en ondubbelzinnig de toestemming verleent) en een toestemmingsregister waar de toestemming wordt vastgelegd en waar deze gecontroleerd kan worden. De toestemmingsvoorziening moet de burger ook toegang geven tot de gegeven toestemmingen om te zien of deze zijn gebruikt en om deze - indien relevant - in te trekken.</p>
+<p>De dienstverlener gebruikt nooit het BSN van de burger. Daarom moet het BSN gepseudonimiseerd worden. De pseudonimisering moet zo gebeuren dat de dienstverlener deze telkens kan depseudonimiseren naar een eigen identificatie, die echter geen betekenis heeft voor andere partijen. De bronhouder moet het pseudoniem kunnen depseudonimiseren naar het originele BSN.</p>
 <p>Bij controle van de gegevensvraag door de dienstverlener bij de bronhouder, authenticeert de bronhouder de dienstverlener op basis van het certificaat dat ook voor de versleuteling van het transport (mTLS) gebruikt wordt. Daarnaast moet de bronhouder controleren of de dienstverlener bevoegd is om gegevens op te vragen. Dat kan via FSC-contracten - de dienstverlener moet een contract hebben afgesloten om de API van de bronhouder te mogen bevragen. Dit kan ook op basis van een lijst met bevoegde afnemers (Trusted List). Zo'n lijst kan sectoraal beheerd worden, wat voorkomt dat een bronhouder met heel veel afnemers (bv. alle hypotheekverstrekkers) contracten moet afsluiten en beheren.</p></section><section class="print-page" id="generieke-functies" heading-number="6"><h1 id="generieke-functies-logische-architectuur-generieke-functies">Logische architectuur (generieke functies)<a class="headerlink" href="#generieke-functies-logische-architectuur-generieke-functies" title="Permanent link">&para;</a></h1>
 <p>De oplossingsrichting met gemeenschappelijke bronontsluiting wordt gerealiseerd door <strong>generieke functies</strong>.</p>
 <h2 id="generieke-functies-logisch-architectuurdiagram">Logisch architectuurdiagram<a class="headerlink" href="#generieke-functies-logisch-architectuurdiagram" title="Permanent link">&para;</a></h2>
@@ -2079,7 +2079,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 <h2 id="generieke-functies-juridisch-identiteit">Juridisch &amp; Identiteit<a class="headerlink" href="#generieke-functies-juridisch-identiteit" title="Permanent link">&para;</a></h2>
 <p>De vier functies in deze laag vormen de voorwaarden waaronder de generieke functies mogen opereren. Ze zijn geen onderdeel van de gegevensstroom zelf, maar worden door alle generieke functies geraadpleegd.</p>
 <h3 id="generieke-functies-toestemming">Toestemming<a class="headerlink" href="#generieke-functies-toestemming" title="Permanent link">&para;</a></h3>
-<p><strong>Doel:</strong> Vaststellen en beheren van de testemming voor gegevensdeling.</p>
+<p><strong>Doel:</strong> Vaststellen en beheren van de toestemming voor gegevensdeling.</p>
 <p><strong>Eisen:</strong></p>
 <ul>
 <li>Toestemming van de burger is altijd herleidbaar tot een specifiek doel, een specifieke afnemer, en een specifieke gegevensvraag (doelbinding).</li>
@@ -2099,7 +2099,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 <p><strong>Doel:</strong> Het garanderen dat het BSN uitsluitend circuleert binnen de overheidsinfrastructuur en nooit zichtbaar is voor private afnemers.</p>
 <p><strong>Eisen:</strong></p>
 <ul>
-<li>Het BSN wordt nooit doorgegeven aan of verwerkt door private dienstverleners die daar geen wettelijke grondslag voor hebben. Voor deze partijen wordt altijd een partij-specifiek, onomkeerbaar pseudoniem gebruikt.</li>
+<li>Het BSN wordt nooit doorgegeven aan of verwerkt door private dienstverleners die daar geen wettelijke grondslag voor hebben. Voor deze partijen wordt altijd een partijspecifiek, onomkeerbaar pseudoniem gebruikt.</li>
 <li>Pseudoniemen voor verschillende private partijen zijn niet onderling koppelbaar, ook niet wanneer die partijen samenwerken.</li>
 <li>Herhaald gebruik van hetzelfde pseudoniem voor dezelfde burger levert cryptografisch onkoppelbare uitvoer op (geen correlatierisico over tijd).</li>
 <li>De omzetting van BSN naar pseudoniem — en terug, aan de bronhouderszijde — vindt plaats in een door de overheid beheerde en gecertificeerde voorziening.</li>
@@ -2147,7 +2147,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 <li>Een bronhouder realiseert één generieke ontsluiting. Er zijn geen trajectspecifieke endpoints of koppelingen per afnemer.</li>
 <li>De interface ondersteunt selectieve gegevensuitvraag: de afnemer kan exact de velden opvragen die voor het specifieke gebruik nodig zijn. Dataminimalisatie is structureel ingebouwd, niet afhankelijk van afsprakenstelsel of goede wil.</li>
 <li>De set van toegestane gegevensvragen per gebruik is vooraf geregistreerd (via een catalogus of template-mechanisme) en door beleid afdwingbaar. Binnen de toegestane gegevensvraag bepaalt de afnemer welke gegevens voor zijn situatie nodig zijn. Afwijkingen die buiten de toegestane gegevensvraag vallen zijn niet mogelijk.</li>
-<li>De interface is onafhankelijk van het BSN als externe sleutel: het subject-identifier in een uitvraag van een private afnemer is altijd een pseudoniem of een consent-referentie; BSN-resolving is een interne aangelegenheid van de ontsluiting.</li>
+<li>De interface is onafhankelijk van het BSN als externe sleutel: de subject-identifier in een uitvraag van een private afnemer is altijd een pseudoniem of een consent-referentie; BSN-resolving is een interne aangelegenheid van de ontsluiting.</li>
 <li>Bronhouders implementeren de ontsluiting eenmalig; aanpassingen voor nieuwe afnemers of trajecten vereisen geen bronhouder-specifieke ontwikkeling, alleen aanpassing van het beleid en de query-registratie.</li>
 <li>Verzoeken vanuit andere EU-lidstaten (OOTS) worden aan de GBO-zijde vertaald naar het binnenlandse formaat en protocol. Bronhouders zien geen EU-specifiek transportprotocol.</li>
 <li>Serviceregistratie voor grensoverschrijdende discovery (SMP) wordt centraal beheerd, niet door individuele bronhouders.</li>
@@ -2159,7 +2159,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 <ul>
 <li>Per bronhouder bestaat een geregistreerde, door GBO beheerde beschrijving van de beschikbaar gestelde gegevenselementen (naam, type, definitie, herkomst).</li>
 <li>Dezelfde gegevensset kan worden geserialiseerd naar de voor elk traject vereiste uitwisselingsformaten (JSON voor binnenlands, OOTS-EDM XML voor grensoverschrijdend, SD-JWT VC of mdoc voor de wallet). De canonieke definitie is eenmalig vastgelegd.</li>
-<li>Mapping tussen de GBO-canonieke definitie en trajectspecifieke schema's (zoals OOTS Semantic Repository types of PuB-EAA attestatieschema's) is expliciet en beheerbaar.</li>
+<li>Mapping tussen de GBO-canonieke definitie en trajectspecifieke schema's (zoals OOTS Semantic Repository types of PuBEAA attestatieschema's) is expliciet en beheerbaar.</li>
 <li>Vocabularia zijn gebaseerd op open, breed gedragen standaarden (RDF, OWL, SKOS, JSON-LD) en sluiten aan op de Nederlandse overheidsstandaarden (GGM, NORA).</li>
 <li>Semantische afspraken zijn versie-beheerd; wijzigingen in definities zijn traceerbaar en worden beheerst doorgevoerd.</li>
 </ul>
@@ -2211,7 +2211,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 </ul>
 <hr />
 <h2 id="generieke-functies-samenhang">Samenhang<a class="headerlink" href="#generieke-functies-samenhang" title="Permanent link">&para;</a></h2>
-<p>De generieke functies zijn niet op zichzelf staand. De onderstaande afhankelijkheden zijn architectureel kritiek:</p>
+<p>De generieke functies zijn niet op zichzelf staand. De onderstaande afhankelijkheden zijn architectuurkritisch:</p>
 <ul>
 <li><strong>Generieke functie 1 (Identiteit &amp; Vertrouwen)</strong> is afhankelijk van de <strong>Vertrouwensstelsel</strong>-laag voor de identiteitsvaststelling van organisaties, en van <strong>Generieke functie 6 (Grondslag &amp; Beleid)</strong> als informatiebron voor autorisatiebeslissingen.</li>
 <li><strong>Generieke functie 2 (Toegang &amp; Interactie)</strong> is de schrijfinterface naar <strong>Toestemming &amp; Grondslag</strong>, en triggert de pseudonimiseringsactie van <strong>Burgeridentificatie &amp; Pseudonimisering</strong>.</li>
@@ -2228,7 +2228,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 - <strong>Instantiëring:</strong> gedeelde instantie of eigen instantie per partij<br />
 - <strong>Bestaande invulling:</strong> wat er al is en hergebruikt kan worden<br />
 - <strong>Gap:</strong> wat er nog ontbreekt of nog ingevuld moet worden (apart gemarkeerd met ⚠️)  </p>
-<p>De context is GBO, ingebed in NORA/GDI en het Federatief Datastelsel (FDS), met aansluiting op het eIDAS2/ARF Europees kader. Stelselafspraken landen in bestaande afsprakenstelsels zoals FDS en GDI.</p>
+<p>De context is GBO, ingebed in NORA/GDI en het Federatief Datastelsel (FDS), met aansluiting op het Europese eIDAS2/ARF kader. Stelselafspraken landen in bestaande afsprakenstelsels zoals FDS en GDI.</p>
 <p>De structuur "afspraken boven standaarden boven voorzieningen" is het expliciete uitgangspunt van FDS en wordt hier overgenomen. Waar mogelijk worden bestaande FDS-stelselfuncties hergebruikt.</p>
 <p>Naast technische gaps kent dit document ook <strong>juridische randvoorwaarden</strong> (gemarkeerd met ⚖️): stelselfuncties die pas zinvol te realiseren zijn nadat de benodigde wettelijke grondslag is verankerd.</p>
 <hr />
@@ -2335,7 +2335,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 <h2 id="capabilities-s02-toestemmingsportaal-burger-interactie">S02 — Toestemmingsportaal (Burger Interactie)<a class="headerlink" href="#capabilities-s02-toestemmingsportaal-burger-interactie" title="Permanent link">&para;</a></h2>
 <p><em>De burger geeft via een toegankelijke interface geïnformeerde toestemming voor gegevensdeling, authenticeert zich daarvoor op het vereiste niveau, en kan toestemmingen inzien en intrekken. De pseudonimiseringsactie vindt hier plaats.</em></p>
 <blockquote>
-<p>⚖️ <strong>Juridische randvoorwaarde:</strong> De werking van dit portaal is onlosmakelijk verbonden aan de Wdo-grondslag (zie S01). Bovendien moeten de vrijwilligheidsborging en het gelijkwaardig alternatief wettelijk worden verankerd als aansluiteis voor private dienstverleners, voordat het portaal operationeel zinvol is. Zonder die verankering is niet afdwingbaar dat dienstverleners de digitale route niet als dwingend voorwaarde mogen stellen.</p>
+<p>⚖️ <strong>Juridische randvoorwaarde:</strong> De werking van dit portaal is onlosmakelijk verbonden aan de Wdo-grondslag (zie S01). Bovendien moeten de vrijwilligheidsborging en het gelijkwaardig alternatief wettelijk worden verankerd als aansluiteis voor private dienstverleners, voordat het portaal operationeel zinvol is. Zonder die verankering is niet afdwingbaar dat dienstverleners de digitale route niet als dwingende voorwaarde mogen stellen.</p>
 </blockquote>
 <h3 id="capabilities-afspraken_1">Afspraken<a class="headerlink" href="#capabilities-afspraken_1" title="Permanent link">&para;</a></h3>
 <table>
@@ -2450,7 +2450,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 </table>
 <hr />
 <h2 id="capabilities-s03-burgeridentificatie-pseudonimisering">S03 — Burgeridentificatie &amp; Pseudonimisering<a class="headerlink" href="#capabilities-s03-burgeridentificatie-pseudonimisering" title="Permanent link">&para;</a></h2>
-<p><em>Het vaststellen van de identiteit van de burger op het vereiste betrouwbaarheidsniveau, en het omzetten van het BSN naar partij-specifieke, onomkeerbare pseudoniemen zodat het BSN nooit bij private afnemers terechtkomt als daar geen wettelijke grondslag voor bestaat.</em></p>
+<p><em>Het vaststellen van de identiteit van de burger op het vereiste betrouwbaarheidsniveau, en het omzetten van het BSN naar partijspecifieke, onomkeerbare pseudoniemen zodat het BSN nooit bij private afnemers terechtkomt als daar geen wettelijke grondslag voor bestaat.</em></p>
 <h3 id="capabilities-afspraken_2">Afspraken<a class="headerlink" href="#capabilities-afspraken_2" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -2463,7 +2463,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 </thead>
 <tbody>
 <tr>
-<td>BSN mag private dienstverleners (die hiervoor geen wettelijke grondslag hebben) nooit bereiken; pseudoniem is verplicht voor DvTP-traject</td>
+<td>Het BSN mag private dienstverleners (die hiervoor geen wettelijke grondslag hebben) nooit bereiken; pseudoniem is verplicht voor DvTP-traject</td>
 <td>Stelselafspraak</td>
 <td>Centraal — GBO, verankerd in AMvB Wdo / Wabvpz</td>
 <td>Deels al wettelijk bepaald (Wabvpz); uitwerking in GBO-stelsel nog nodig</td>
@@ -2630,7 +2630,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 <tr>
 <td>ETSI EN 319 412 (certificaatprofielen voor gekwalificeerde zegels en handtekeningen)</td>
 <td>ETSI</td>
-<td>Beschikbaar; relevant voor QTSP-erkenning en PuB-EAA signing</td>
+<td>Beschikbaar; relevant voor QTSP-erkenning en PuBEAA signing</td>
 </tr>
 </tbody>
 </table>
@@ -2743,7 +2743,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 <tr>
 <td>AuthZEN NL Gov (draft) — gestandaardiseerde interface tussen PEP en PDP</td>
 <td>Logius</td>
-<td>Draft-standaard; FTV (Federatieve Toegangsverlenig, Logius) loopt pilot</td>
+<td>Draft-standaard; FTV (Federatieve Toegangsverlening, Logius) loopt pilot</td>
 </tr>
 <tr>
 <td>OPA/Rego — machineleesbare beleidstaal voor PDP-evaluatie</td>
@@ -2828,7 +2828,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 <td>⚠️ Nog te maken; raakt aan rolverdeling bronhouder, vakdepartement en GBO-beheer</td>
 </tr>
 <tr>
-<td>Beleidswijzigingsproces: RFC-procedure voor het aanpassen van gedeelde policies, inclusief testfase en inwerkingtredingmoment</td>
+<td>Beleidswijzigingsproces: RFC-procedure voor het aanpassen van gedeelde policies, inclusief testfase en inwerkingtredingsmoment</td>
 <td>Stelselafspraak</td>
 <td>Centraal — GBO</td>
 <td>⚠️ Nog te maken; analoog aan iWlz RFC-aanpak</td>
@@ -2965,7 +2965,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 <tr>
 <td>FSC (Federated Service Connectivity) — binnenlands koppelnetwerk voor REST/HTTP</td>
 <td>Logius / FSC-community</td>
-<td><strong>Beschikbaar en in gebruik</strong> binnen overheid; standaard voor domestiek verkeer in FDS</td>
+<td><strong>Beschikbaar en in gebruik</strong> binnen overheid; standaard voor binnenlands verkeer in FDS</td>
 </tr>
 <tr>
 <td>GraphQL — selectieve gegevensuitvraag op basis van geregistreerde schema's</td>
@@ -3234,7 +3234,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 </table>
 <hr />
 <h2 id="capabilities-s10-semantiek-gegevenscatalogus">S10 — Semantiek &amp; Gegevenscatalogus<a class="headerlink" href="#capabilities-s10-semantiek-gegevenscatalogus" title="Permanent link">&para;</a></h2>
-<p><em>Gegevens die via GBO uitgewisseld worden hebben een eenduidige, beheerde betekenis. Dezelfde canonieke definitie wordt geserialiseerd naar de voor elk traject vereiste uitwisselingsformaten.</em></p>
+<p><em>Gegevens die via GBO worden uitgewisseld, hebben een eenduidige, beheerde betekenis. Dezelfde canonieke definitie wordt geserialiseerd naar de voor elk traject vereiste uitwisselingsformaten.</em></p>
 <h3 id="capabilities-afspraken_9">Afspraken<a class="headerlink" href="#capabilities-afspraken_9" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -3265,7 +3265,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 <td>⚠️ Nog te maken</td>
 </tr>
 <tr>
-<td>Mapping naar PuB-EAA attestatieschema's is verplicht voor EUDI-Wallet traject</td>
+<td>Mapping naar PuBEAA attestatieschema's is verplicht voor EUDI-Wallet traject</td>
 <td>Stelselafspraak</td>
 <td>Centraal — GBO, aansluiting ARF/EC</td>
 <td>⚠️ Nog te maken</td>
@@ -3345,11 +3345,11 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 </tbody>
 </table>
 <hr />
-<h2 id="capabilities-s11-attesteringsuitgifte-pub-eaa-qeaa">S11 — Attesteringsuitgifte (PuB-EAA / QEAA)<a class="headerlink" href="#capabilities-s11-attesteringsuitgifte-pub-eaa-qeaa" title="Permanent link">&para;</a></h2>
+<h2 id="capabilities-s11-attesteringsuitgifte-pubeaa-qeaa">S11 — Attesteringsuitgifte (PuBEAA / QEAA)<a class="headerlink" href="#capabilities-s11-attesteringsuitgifte-pubeaa-qeaa" title="Permanent link">&para;</a></h2>
 <p><em>Het omzetten van brongegevens uit authentieke overheidsbronnen naar digitaal ondertekende attesteringen die burgers kunnen opslaan in een EUDI-wallet en presenteren aan vertrouwende partijen.</em></p>
 <blockquote>
-<p>⚖️ <strong>Juridische randvoorwaarde:</strong> De vereisten voor PuB-EAA-uitgifte zijn vastgelegd in Uitvoeringsverordening (EU) 2025/1569 en de bijbehorende ETSI-normen. Overheidsorganen die PuB-EAAs uitgeven moeten beschikken over een goedgekeurd Conformity Assessment Report (CAR) van een geaccrediteerde Conformity Assessment Body (CAB). De Europese regelgeving op dit punt is nog in ontwikkeling; de uitwerking van GBO op dit vlak loopt parallel aan de nadere invulling van het Europese kader.</p>
-<p>ℹ️ <strong>Scope-afbakening:</strong> GBO overweegt een <strong>centrale PuB-EAA-uitgifte-dienst</strong> in te richten die namens overheidsbronhouders attesteringen uitgeeft op basis van de generieke bronontsluiting (S07), en een <strong>centrale verificatiedienst</strong> waar vertrouwende partijen de geldigheid van uitgegeven attesteringen kunnen controleren. De keuze of beide voorzieningen centraal worden ingericht, decentraal per bronhouder, of dat de uitgifte elders (buiten GBO) wordt belegd, is nog niet gemaakt en wordt hier als open vraag behandeld.</p>
+<p>⚖️ <strong>Juridische randvoorwaarde:</strong> De vereisten voor PuBEAA-uitgifte zijn vastgelegd in Uitvoeringsverordening (EU) 2025/1569 en de bijbehorende ETSI-normen. Overheidsorganen die PuBEAA's uitgeven moeten beschikken over een goedgekeurd Conformity Assessment Report (CAR) van een geaccrediteerde Conformity Assessment Body (CAB). De Europese regelgeving op dit punt is nog in ontwikkeling; de uitwerking van GBO op dit vlak loopt parallel aan de nadere invulling van het Europese kader.</p>
+<p>ℹ️ <strong>Scope-afbakening:</strong> GBO overweegt een <strong>centrale PuBEAA-uitgiftedienst</strong> in te richten die namens overheidsbronhouders attesteringen uitgeeft op basis van de generieke bronontsluiting (S07), en een <strong>centrale verificatiedienst</strong> waar vertrouwende partijen de geldigheid van uitgegeven attesteringen kunnen controleren. De keuze of beide voorzieningen centraal worden ingericht, decentraal per bronhouder, of dat de uitgifte elders (buiten GBO) wordt belegd, is nog niet gemaakt en wordt hier als open vraag behandeld.</p>
 </blockquote>
 <h3 id="capabilities-afspraken_10">Afspraken<a class="headerlink" href="#capabilities-afspraken_10" title="Permanent link">&para;</a></h3>
 <table>
@@ -3363,7 +3363,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 </thead>
 <tbody>
 <tr>
-<td>Welke overheidsbronnen PuB-EAAs uitgeven en voor welke attribuuttypen</td>
+<td>Welke overheidsbronnen PuBEAA's uitgeven en voor welke attribuuttypen</td>
 <td>Stelselafspraak</td>
 <td>Centraal — GBO, per bronhouder te activeren</td>
 <td>⚠️ Nog te maken; lijst van attribuuttypen sluit aan op canonieke schema's (C9)</td>
@@ -3387,7 +3387,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 <td>⚠️ Nog te maken; sluit aan op statuslijstmechanisme (Token Status List of OCSP)</td>
 </tr>
 <tr>
-<td>Opname van de centrale PuB-EAA-dienst op de Nederlandse Trusted List (beheerd door RDI)</td>
+<td>Opname van de centrale PuBEAA-dienst op de Nederlandse Trusted List (beheerd door RDI)</td>
 <td>Toetredingsafspraak</td>
 <td>Centraal — RDI / GBO</td>
 <td>⚠️ Vereist CAR-certificering; procedure nog te doorlopen</td>
@@ -3418,7 +3418,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 <tr>
 <td>SD-JWT VC (Selective Disclosure JWT Verifiable Credential) — credential-formaat voor wallet-opslag</td>
 <td>IETF / ARF</td>
-<td><strong>Beschikbaar</strong>; primair formaat voor PuB-EAA in ARF</td>
+<td><strong>Beschikbaar</strong>; primair formaat voor PuBEAA in ARF</td>
 </tr>
 <tr>
 <td>ISO/IEC 18013-5 (mdoc) — alternatief credential-formaat voor proximity-presentatie</td>
@@ -3426,9 +3426,9 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 <td><strong>Beschikbaar</strong>; relevant voor offline en proximity use cases</td>
 </tr>
 <tr>
-<td>ETSI EN 319 412 — eisen aan gekwalificeerde zegels voor ondertekening van PuB-EAA</td>
+<td>ETSI EN 319 412 — eisen aan gekwalificeerde zegels voor ondertekening van PuBEAA</td>
 <td>ETSI</td>
-<td><strong>Beschikbaar</strong>; ondertekening met QESeal verplicht voor PuB-EAA</td>
+<td><strong>Beschikbaar</strong>; ondertekening met QESeal verplicht voor PuBEAA</td>
 </tr>
 <tr>
 <td>Token Status List (IETF draft) — mechanisme voor statusbeheer van uitgegeven credentials</td>
@@ -3455,17 +3455,17 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 </thead>
 <tbody>
 <tr>
-<td>Centrale PuB-EAA-uitgifte-dienst (Credential Issuer)</td>
+<td>Centrale PuBEAA-uitgiftedienst (Credential Issuer)</td>
 <td>Centrale voorziening (optie)</td>
 <td>Centraal — GBO of Logius als beheerder</td>
 <td>Gedeelde instantie namens meerdere bronhouders</td>
 <td>⚠️ Nog te realiseren; vereist CAR-certificering; bouwt op C5 (bronontsluiting) en C2 (burgeridentificatie)</td>
 </tr>
 <tr>
-<td>CAR-certificering voor de uitgifte-dienst</td>
+<td>CAR-certificering voor de uitgiftedienst</td>
 <td>Conformiteitseis</td>
 <td>Geaccrediteerde CAB (markt, onder toezicht RDI)</td>
-<td>Per uitgifte-dienst</td>
+<td>Per uitgiftedienst</td>
 <td>⚠️ Nog te doorlopen; vereiste uit uitvoeringsverordening 2025/1569</td>
 </tr>
 <tr>
@@ -3564,13 +3564,13 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 <tr>
 <td>S10 — Semantiek &amp; Gegevenscatalogus</td>
 <td>—</td>
-<td>Schema Registry; serialisatie-service; mappings naar OOTS-EDM en PuB-EAA</td>
+<td>Schema Registry; serialisatie-service; mappings naar OOTS-EDM en PuBEAA</td>
 <td>FDS Datacatalogus; DCAT-AP NL; OOTS-EDM</td>
 </tr>
 <tr>
-<td>S11 — Attesteringsuitgifte (PuB-EAA / QEAA)</td>
-<td>CAR-certificering uitgifte-dienst; opname op NL Trusted List (RDI)</td>
-<td>Centrale uitgifte-dienst; Attestation Rulebooks per attribuuttype; wallet binding profiel; verificatiedienst; intrekkingsbeleid</td>
+<td>S11 — Attesteringsuitgifte (PuBEAA / QEAA)</td>
+<td>CAR-certificering uitgiftedienst; opname op NL Trusted List (RDI)</td>
+<td>Centrale uitgiftedienst; Attestation Rulebooks per attribuuttype; wallet binding profiel; verificatiedienst; intrekkingsbeleid</td>
 <td>OpenID4VCI; SD-JWT VC; ARF; NL Wallet (pilot)</td>
 </tr>
 </tbody>
@@ -3597,7 +3597,7 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
 </tr>
 <tr>
 <td>Informatie</td>
-<td>Gegevensmodellen per bronhouder, canonieke schema's, mappings naar OOTS-EDM en PuB-EAA</td>
+<td>Gegevensmodellen per bronhouder, canonieke schema's, mappings naar OOTS-EDM en PuBEAA</td>
 </tr>
 <tr>
 <td>Applicatie</td>
@@ -3626,7 +3626,7 @@ Een voorstel hiervoor:<br />
 Zie ook de paragraaf <a href="#realisatiestrategie-gebruik-van-bestaande-stelsels">Gebruik van bestaande stelsels</a> voor een verdere uitwerking hiervan.</p>
 </li>
 <li>
-<p>Er wordt gedurende de projectfase al wel pilots gestart waar gewerkt met de gewenste afspraken, standaarden en voorzieningen. Als deze nog niet bestaan, worden voorbeeld implementaties gebruikt die tevens gebruikt worden om het ontwerp te verbeteren. Uiteindelijk worden deze ontwikkelingen als referentie implementaties aangeboden aan de gremia waar het beheer belegd wordt. Dit gaat tot het niveau van "pre-productie": d.w.z. dat de afspraak of voorziening volledig genoeg is uitgewerkt om in productie genomen te kunnen worden. Maar de daadwerkelijke productiegang wordt aan de beoogde beheerder overgelaten. In sommige gevallen kan hier wet- en regelgeving voor nodig zijn, die in werking moet zijn getreden voor in productie gegaan kan worden.</p>
+<p>Er worden gedurende de projectfase al wel pilots gestart waarin wordt gewerkt met de gewenste afspraken, standaarden en voorzieningen. Als deze nog niet bestaan, worden voorbeeld implementaties gebruikt die tevens gebruikt worden om het ontwerp te verbeteren. Uiteindelijk worden deze ontwikkelingen als referentie implementaties aangeboden aan de gremia waar het beheer belegd wordt. Dit gaat tot het niveau van "pre-productie": d.w.z. dat de afspraak of voorziening volledig genoeg is uitgewerkt om in productie genomen te kunnen worden. Maar de daadwerkelijke productiegang wordt aan de beoogde beheerder overgelaten. In sommige gevallen kan hier wet- en regelgeving voor nodig zijn, die in werking moet zijn getreden voor in productie gegaan kan worden.</p>
 </li>
 <li>
 <p>De inrichting van de ontbrekende afspraken, standaarden en voorzieningen moet voldoen aan de <a href="#ontwerpprincipes">ontwerpprincipes</a>. Gedurende het traject worden de ontwikkelingen hier periodiek op beoordeeld, waarover zo openbaar mogelijk (maar in elk geval naar de betrokken partijen) wordt gerapporteerd.</p>
@@ -3758,7 +3758,7 @@ NB: in deze figuur zijn enkel de voorzieningen geschetst - daarnaast kunnen de w
 </table>
 <hr />
 <h3 id="realisatiestrategie-werkpakket-eudi-wallet-edi">Werkpakket EUDI-wallet (EDI)<a class="headerlink" href="#realisatiestrategie-werkpakket-eudi-wallet-edi" title="Permanent link">&para;</a></h3>
-<p>Maakt het mogelijk dat burgers overheidsgegeven als digitale attestatie (PuB-EAA) in een EUDI-wallet opslaan. Bouwt op GBO Basis.</p>
+<p>Maakt het mogelijk dat burgers overheidsgegevens als digitale attestatie (PuBEAA) in een EUDI-wallet opslaan. Bouwt op GBO Basis.</p>
 <table>
 <thead>
 <tr>
@@ -3773,16 +3773,16 @@ NB: in deze figuur zijn enkel de voorzieningen geschetst - daarnaast kunnen de w
 <tbody>
 <tr>
 <td>1</td>
-<td><strong>Pub-EAA provider</strong> (centrale uitgifte-dienst)</td>
-<td><a href="#capabilities-s11-attesteringsuitgifte-pub-eaa-qeaa">S11</a></td>
+<td><strong>PuBEAA provider</strong> (centrale uitgiftedienst)</td>
+<td><a href="#capabilities-s11-attesteringsuitgifte-PuBEAA-qeaa">S11</a></td>
 <td>- Attestation Rulebook per attribuuttype<br/>- wallet binding-profiel<br/>- intrekkingsbeleid<br/>- ⚖️ opname op NL Trusted List (RDI)<br/>- ⚖️ conformiteitsbeoordeling vereist (Verordening 910/2014)</td>
 <td>- OpenID4VCI ✅<br/>- SD-JWT VC ✅<br/>- mdoc (ISO 18013-5) ✅<br/>- QESeal (ETSI EN 319 412) ✅<br/>- Token Status List ⚠️</td>
-<td>- Centrale Pub-EAA uitgifte-dienst ⚠️<br/>- Opname LoTE ⚠️<br/>- NL Wallet ✅ (pilot)</td>
+<td>- Centrale PuBEAA uitgiftedienst ⚠️<br/>- Opname LoTE ⚠️<br/>- NL Wallet ✅ (pilot)</td>
 </tr>
 <tr>
 <td>2</td>
 <td><strong>Authentic Source Interface</strong> (verificatiedienst)</td>
-<td><a href="#capabilities-s11-attesteringsuitgifte-pub-eaa-qeaa">S11</a></td>
+<td><a href="#capabilities-s11-attesteringsuitgifte-PuBEAA-qeaa">S11</a></td>
 <td>- Welke partijen de verificatieservice mogen bevragen en onder welke voorwaarden?</td>
 <td>- OpenID4VP ✅</td>
 <td>- Centrale verificatiedienst ⚠️</td>
@@ -3791,7 +3791,7 @@ NB: in deze figuur zijn enkel de voorzieningen geschetst - daarnaast kunnen de w
 <td>3</td>
 <td><strong>Mapping GraphQL → EDI-attestaties</strong></td>
 <td><a href="#capabilities-s10-semantiek-gegevenscatalogus">S10</a></td>
-<td>- Mapping naar PuB-EAA attestatieschema's verplicht per bronhouder</td>
+<td>- Mapping naar PuBEAA attestatieschema's verplicht per bronhouder</td>
 <td>- SD-JWT VC / mdoc</td>
 <td>- Serialisatie-service ⚠️ (onderdeel <a href="#capabilities-s10-semantiek-gegevenscatalogus">S10</a>)</td>
 </tr>
@@ -3895,12 +3895,12 @@ NB: in deze figuur zijn enkel de voorzieningen geschetst - daarnaast kunnen de w
 <hr />
 <h2 id="realisatiestrategie-implementatie-bij-bronhouders">Implementatie bij bronhouders<a class="headerlink" href="#realisatiestrategie-implementatie-bij-bronhouders" title="Permanent link">&para;</a></h2>
 <p>Bronhouders die gebruik willen maken van GBO moeten de componenten van het GBO-Basis werkpakket in de eigen omgeving installeren en onderhouden. Alleen de policy store met beleidsregels (PAP) wordt centraal aangeboden, maar daar moet wel op aangesloten worden.<br />
-GBO biedt bronhouders hiervoor referentiecomponenten aan, die de inrichting sterk vereenvoudigen. En als het (nog) niet haalbaar is om gegevens uit de bron met een GraphQL API beschikbaar te stellen, biedt GBO ondersteuning en tools om eventueel met andere API's aan te sluiten.</p>
+GBO biedt bronhouders hiervoor referentiecomponenten aan, die de inrichting sterk vereenvoudigen. En als het (nog) niet haalbaar is om gegevens uit de bron met een GraphQL-API beschikbaar te stellen, biedt GBO ondersteuning en tools om eventueel met andere API's aan te sluiten.</p>
 <p>Als bronhouders de GBO-Basis componenten hebben geïnstalleerd kunnen ze gebruik maken van de centrale componenten om de verschillende gegevensstromen te bedienen. Daar hoeven zij verder niets voor in te richten - er moeten enkel afspraken gemaakt worden over wie wanneer onder welke voorwaarden gegevens mogen opvragen.  </p>
 <p>Of bronhouders gebruik maken van de centrale componenten die nodig zijn om de verschillende gegevensstromen te bedienen, is een beleidsafweging. Voor zover deze componenten niet in wet- en regelgeving zijn opgenomen en (nog) niet op de pas-toe-of-leg-uit lijst staan, is het de bronhouders vrij om eigen componenten te gebruiken.<br />
-Zo kan voor het uitgeven van geattesteerde attributen (EUDI-Wallet) ook een eigen PubEAA-provider gebruikt worden, of afspraken met QTSP's gemaakt worden om QEAA's uit te geven. en voor aansluiting op OOTS kunnen ook eigen voorzieningen gebruikt worden, zoals in de onderwijswereld al gebruik gemaakt wordt van EMREX.</p>
+Zo kan voor het uitgeven van geattesteerde attributen (EUDI-Wallet) ook een eigen PubEAA-provider gebruikt worden, of afspraken met QTSP's gemaakt worden om QEAA's uit te geven. En voor aansluiting op OOTS kunnen ook eigen voorzieningen gebruikt worden, zoals in de onderwijswereld al gebruik gemaakt wordt van EMREX.</p>
 <h2 id="realisatiestrategie-gebruik-van-bestaande-stelsels">Gebruik van bestaande stelsels<a class="headerlink" href="#realisatiestrategie-gebruik-van-bestaande-stelsels" title="Permanent link">&para;</a></h2>
-<p>GBO zal gebruik maken van bestaande afspraken, standaarden en voorzieningen, maar daar ook een aantal aan toevoegen of uitbreiden. De afspraken, standaarden en voorzieningen die ontwikkeld worden, moeten landen in bestaande afsprakenstelsel en/ of beheerorganisaties. Als er sprake is van een doorontwikkeling is de keuze voor dat afsprakenstelsel of die beheerorganisatie eenvoudig: dat blijft bij de huidige organisatie en de doorontwikkeling wordt zoveel mogelijk met of zelfs door die organisatie doorgevoerd. Maar voor nieuwe afspraken, standaarden of voorzieningen moet een geschikte organisatie gevonden worden.<br />
+<p>GBO zal gebruik maken van bestaande afspraken, standaarden en voorzieningen, maar daar ook een aantal aan toevoegen of uitbreiden. De afspraken, standaarden en voorzieningen die ontwikkeld worden, moeten landen in bestaande afsprakenstelsels en/of beheerorganisaties. Als er sprake is van een doorontwikkeling is de keuze voor dat afsprakenstelsel of die beheerorganisatie eenvoudig: dat blijft bij de huidige organisatie en de doorontwikkeling wordt zoveel mogelijk met of zelfs door die organisatie doorgevoerd. Maar voor nieuwe afspraken, standaarden of voorzieningen moet een geschikte organisatie gevonden worden.<br />
 In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende afspraken, standaarden en voorzieningen naar verwachting kunnen landen. Daarbij is onderscheid gemaakt tussen inhoudelijke governance, standaardbeheer en operationeel beheer van voorzieningen. Voor onderdelen waarvoor nog geen bestaande beheerorganisatie evident is, is het open besluitpunt expliciet gemaakt.</p>
 <table>
 <thead>
@@ -4033,12 +4033,12 @@ In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende a
 <td>Besluit nodig over beheerduur, exitcriteria en voorwaarden voor productiegebruik.</td>
 </tr>
 <tr>
-<td><strong>Pub-EAA-provider voor publieke attestaties</strong></td>
+<td><strong>PuBEAA-provider voor publieke attestaties</strong></td>
 <td>EUDI-wallet / S11</td>
 <td>Voorziening + wettelijke rol</td>
 <td>EUDI-Wallet-governance / nationale eIDAS-governance</td>
 <td>Nader te bepalen; RvIG logisch voor PID/BRP-gerelateerde attributen; mogelijk federatief model voor domeinattributen</td>
-<td>Pub-EAA-uitgifte vraagt certificering, opname op relevante vertrouwenslijsten en duidelijke bronhouderverantwoordelijkheid. RvIG is logisch voor persoonsidentiteitsgegevens, maar niet automatisch voor alle publieke attributen.</td>
+<td>PuBEAA-uitgifte vraagt certificering, opname op relevante vertrouwenslijsten en duidelijke bronhouderverantwoordelijkheid. RvIG is logisch voor persoonsidentiteitsgegevens, maar niet automatisch voor alle publieke attributen.</td>
 <td>Besluit nodig over centraal, decentraal of federatief uitgiftemodel.</td>
 </tr>
 <tr>
@@ -4048,7 +4048,7 @@ In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende a
 <td>EUDI-Wallet-governance, met bronhouder- en domeingovernance</td>
 <td>BZK voor nationale regie; bronhouders/domeinen voor inhoud; technische beheerder nader te bepalen</td>
 <td>Per attribuuttype moet worden vastgelegd welke bron leidend is, welke gegevens worden uitgegeven, welke binding en intrekking gelden en welke betrouwbaarheidsniveaus van toepassing zijn.</td>
-<td>Apart beleggen naast de technische Pub-EAA-provider.</td>
+<td>Apart beleggen naast de technische PuBEAA-provider.</td>
 </tr>
 <tr>
 <td><strong>ASI-provider / verificatiedienst</strong></td>
@@ -4173,23 +4173,23 @@ In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende a
 <p>In dit hoofdstuk worden de vraagstukken waarvoor een oplossing gevonden moet worden of waarvoor een keuze gemaakt moet worden besproken.<br />
 Als er een oplossing is gevonden of een keuze is gemaakt, wordt dit in dit hoofdstuk als ontwerpkeuze vastgelegd. De verdere uitwerking vindt plaats in het technisch ontwerp.  </p>
 <h2 id="vraagstukken-onboarding">Onboarding<a class="headerlink" href="#vraagstukken-onboarding" title="Permanent link">&para;</a></h2>
-<p>Deelnemers aan het stelsel moeten aan eisen voldoen, waarbij de eisen kunnen verschillen per deelnemersgroep: bronhouders, afnemers, intermediairs, etc. Om deel te kunnen nemen aan het stelsel doorlopen de deelnemers een onboarding proces. Dat proces moet nog ingericht worden, zowel wat betreft de governance (wie doet wat en is waarvoor verantwoordelijk) als inhoud (waarop worden deelnemers beoordeeld).</p>
+<p>Deelnemers aan het stelsel moeten aan eisen voldoen, waarbij de eisen kunnen verschillen per deelnemersgroep: bronhouders, afnemers, intermediairs, etc. Om deel te kunnen nemen aan het stelsel doorlopen de deelnemers een onboardingproces. Dat proces moet nog ingericht worden, zowel wat betreft de governance (wie doet wat en is waarvoor verantwoordelijk) als inhoud (waarop worden deelnemers beoordeeld).</p>
 <h2 id="vraagstukken-identificatie-authenticatie-intermediairs">Identificatie &amp; authenticatie intermediairs<a class="headerlink" href="#vraagstukken-identificatie-authenticatie-intermediairs" title="Permanent link">&para;</a></h2>
-<p>Voor systeemherkenning bij gegevensuitwisseling wordt PKIo gebruikt. Maar hoe gaan we om met intermediairs die tussen de bronhouder of afnemer en de stelselvoorziening zit?<br />
+<p>Voor systeemherkenning bij gegevensuitwisseling wordt PKIo gebruikt. Maar hoe gaan we om met intermediairs die tussen de bronhouder of afnemer en de stelselvoorziening zitten?<br />
 FSC biedt hiervoor oplossingsrichtingen, waar in de uitwerking naar gekeken kan worden.</p>
 <h2 id="vraagstukken-autorisatiearchitectuur-centrale-autorisatieserver-vs-gedistribueerde-pdp">Autorisatiearchitectuur: centrale autorisatieserver vs. gedistribueerde PDP<a class="headerlink" href="#vraagstukken-autorisatiearchitectuur-centrale-autorisatieserver-vs-gedistribueerde-pdp" title="Permanent link">&para;</a></h2>
 <p>Gaat GBO werken met een "Autorisatieserver" als centraal component, met een bijbehorende "Vertrouwensleverancier" die tokens afgeeft. De Functionele Requirements en het GBO Beschrijvend Document spreken van een autorisatieserver als apart component (component 4).<br />
 <strong>Ontwerpkeuze</strong>: De PSA en het technisch ontwerp gaan nu uit van een PBAC-oplossing, met een PDP, PEP en een centrale PAP. Of dit voor alle use cases de beste oplossing is, moet nog blijken.  </p>
 <h2 id="vraagstukken-burgeridentificatie-en-het-bsn">Burgeridentificatie en het BSN<a class="headerlink" href="#vraagstukken-burgeridentificatie-en-het-bsn" title="Permanent link">&para;</a></h2>
 <p>Het BSN mag bij private partijen, die daarvoor geen wettelijke grondslag hebben, niet worden doorgegeven. Dit vereist een pseudonimiseringslaag.<br />
-<strong>Ontwerpkeuze</strong>: Voor het pseudonimiseren van het BSN wordt gebruik gemaakt van de BSNk PP voorziening. Deze voorziening gaat uit van een "geactiveerd" BSN - d.w.z. dat er al een pseudoniem voor het BSN bestaat. Deze pseudoniemen worden door GBO aangevraagd via de activatiedienst van BSNk en bijgehouden in het toestemmingenregister. Voordeel van het vastleggen van de pseudoniemen, is dat er geen BSN's in het toestemmingenregister opgeslagen hoeven te worden. Nadeel ia dat GBO als "toegangsdienst" erkend moet worden door BSNk, wat mogelijk extra verantwoording vereist.</p>
+<strong>Ontwerpkeuze</strong>: Voor het pseudonimiseren van het BSN wordt gebruik gemaakt van de BSNk PP voorziening. Deze voorziening gaat uit van een "geactiveerd" BSN - d.w.z. dat er al een pseudoniem voor het BSN bestaat. Deze pseudoniemen worden door GBO aangevraagd via de activatiedienst van BSNk en bijgehouden in het toestemmingenregister. Voordeel van het vastleggen van de pseudoniemen, is dat er geen BSN's in het toestemmingenregister opgeslagen hoeven te worden. Nadeel is dat GBO als "toegangsdienst" erkend moet worden door BSNk, wat mogelijk extra verantwoording vereist.</p>
 <h2 id="vraagstukken-toestemmingen">Toestemmingen<a class="headerlink" href="#vraagstukken-toestemmingen" title="Permanent link">&para;</a></h2>
-<p>Voor DvTP (de gegevensstroom van overheidsbronnen naar private dienstverleners) is een toestemming vereist. Hiervoor is de toestemmingenvoorziening en het toestemmingenregister bedacht, maar hiervoor is nog wetgeving nodig.
+<p>Voor DvTP (de gegevensstroom van overheidsbronnen naar private dienstverleners) is een toestemming vereist. Hiervoor is de toestemmingsvoorziening en het toestemmingenregister bedacht, maar hiervoor is nog wetgeving nodig.
 Er spelen hierbij enkele vragen:<br />
 - Hoe wordt omgegaan met toestemming voor een eenmalige bevraging?<br />
-- Is een toestemmingenvoorziening nodig als de gegevens via de burger aan de private dienstverlener beschikbaar worden gesteld (conform de "preview" functie van de Basisinrichting OOTS en de "Authorising Actors" functie van TIP)?<br />
+- Is een toestemmingsvoorziening nodig als de gegevens via de burger aan de private dienstverlener beschikbaar worden gesteld (conform de "preview" functie van de Basisinrichting OOTS en de "Authorising Actors" functie van TIP)?<br />
 - Waarom niet de verantwoordelijkheid bij de bronhouder of afnemer leggen en dit decentraal oplossen?<br />
-<strong>Ontwerpkeuze</strong>: GBO gaat uit van een centrale toestemmingsvoorziening met een toestemmingenregister en een toestemmingenportaal. De onderbouwing daarvoor is:<br />
+<strong>Ontwerpkeuze</strong>: GBO gaat uit van een centrale toestemmingsvoorziening met een toestemmingenregister en een toestemmingsportaal. De onderbouwing daarvoor is:<br />
 - Kostenbesparing: éénmalig inrichten en beheren is goedkoper dan dat iedere bronhouder en/of afnemer dit zelf regelt.<br />
 - Herkenbaarheid voor de burger: een centrale voorziening biedt de burger telkens dezelfde ervaring, wat herkenning en vertrouwen opbouwt.<br />
 - Inzage voor de burger: met een centrale voorziening is het aanzienlijk eenvoudiger om de burger inzage te geven in al zijn toestemmingen via het Toestemmingsportaal.<br />
@@ -4198,21 +4198,21 @@ Er spelen hierbij enkele vragen:<br />
 <p>Welke partijen mogen deelnemen, hoe worden ze geaccrediteerd, welke niveaus van zekerheid gelden per gegevenstype, en hoe verhouden PKI(O), eHerkenning, eIDAS, FDS en bijvoorbeeld TIP-afspraken zich tot elkaar?</p>
 <h2 id="vraagstukken-gekwalificeerde-elektronische-attesteringen-van-attributen">Gekwalificeerde elektronische attesteringen van attributen<a class="headerlink" href="#vraagstukken-gekwalificeerde-elektronische-attesteringen-van-attributen" title="Permanent link">&para;</a></h2>
 <p>Hoe laten we attributen elektronisch kwalificeren? Hoe wordt de "attesteringsuitgifte" ingericht?<br />
-Dit is nodig voor de Wallet, maar mogelijk ook voor de andere use cases. Er is <a href="https://eur-lex.europa.eu/legal-content/NL/TXT/HTML/?uri=OJ:L_202501569">Europese Wetgeving</a>, maar die laat nog ruimte voor de inrichting en wie welke rol invult.  </p>
+Dit is nodig voor de Wallet, maar mogelijk ook voor de andere use cases. Er is <a href="https://eur-lex.europa.eu/legal-content/NL/TXT/HTML/?uri=OJ:L_202501569">Europese wetgeving</a>, maar die laat nog ruimte voor de inrichting en wie welke rol invult.  </p>
 <ul>
 <li>Gebruik QEAA / QTSP?  </li>
-<li>Inrichten Pub-EAA?  </li>
+<li>Inrichten PuBEAA?  </li>
 <li>Centrale verificatie- en/of retrievedienst t.b.v. QEAA?  </li>
 </ul>
-<p><strong>Ontwerpkeuze</strong>: Vooralsnog gaan we uit van een centrale Pub-EAA verstrekker en een centrale verificatiedienst t.b.v. QEAA. Daarmee zijn diverse opties mogelijk: bronhouder treedt zelf op als Pub-EAA-verstrekker, bronhouder gebruikt centrale Pub-EAA-verstrekker, QTSP geeft attesteringen uit die bij bronhouder geverifieerd zijn. Als bronhouders ook graag attestaties wil laten uitgeven door QTSP's, kan er een "retrieve" functie toegevoegd worden aan de centrale verificatiedienst (die beide onderdeel zijn van de "Authentic Source Interface").</p>
+<p><strong>Ontwerpkeuze</strong>: Vooralsnog gaan we uit van een centrale PuBEAA verstrekker en een centrale verificatiedienst t.b.v. QEAA. Daarmee zijn diverse opties mogelijk: bronhouder treedt zelf op als PuBEAA-verstrekker, bronhouder gebruikt centrale PuBEAA-verstrekker, QTSP geeft attesteringen uit die bij bronhouder geverifieerd zijn. Als bronhouders ook graag attestaties willen laten uitgeven door QTSP's, kan er een "retrieve" functie toegevoegd worden aan de centrale verificatiedienst (die beide onderdeel zijn van de "Authentic Source Interface").</p>
 <h2 id="vraagstukken-hoe-start-de-uitgifte-van-attestaties">Hoe start de uitgifte van attestaties?<a class="headerlink" href="#vraagstukken-hoe-start-de-uitgifte-van-attestaties" title="Permanent link">&para;</a></h2>
 <p>In het interactiepatroon is geschetst dat de burger de aanvraag voor een attestatie start vanuit zijn wallet of via een QTSP. Maar het is nog de vraag hoe de uitgifte in de praktijk start: vanuit de bronhouder (eventueel via de wallet), een QTSP of wellicht vanuit de dienstverlener of een combinatie daarvan, waarbij de ene partij doorverwijst naar de andere. Mogelijk heeft een keuze hierin gevolgen voor het interactiepatroon en de uitwerking van de voorgestelde voorzieningen.<br />
 Vooralsnog maakt GBO hierin geen keuze en worden de voorzieningen zo ontworpen dat zoveel mogelijk opties mogelijk blijven.</p>
 <h2 id="vraagstukken-centrale-componenten">Centrale Componenten<a class="headerlink" href="#vraagstukken-centrale-componenten" title="Permanent link">&para;</a></h2>
-<p>Ontwerpprincipe D01 stelt "Decentraal wat kan, centraal wat moet". Dit geldt als uitgangspunt, maar als een centrale voorziening voldoende voordelen biedt, past in de geldende wet- en regelgeving en niet tegn andere ontwerpprincipes ingaat, dan kan ervoor gekozen worden hiervoor te kiezen.<br />
+<p>Ontwerpprincipe D01 stelt "Decentraal wat kan, centraal wat moet". Dit geldt als uitgangspunt, maar als een centrale voorziening voldoende voordelen biedt, past in de geldende wet- en regelgeving en niet tegen andere ontwerpprincipes ingaat, dan kan ervoor gekozen worden hiervoor te kiezen.<br />
 Bij de volgende voorzieningen die in theorie decentraal ingericht kunnen worden, wordt een centrale inrichting overwogen:</p>
 <ul>
-<li>PuB-EAA dienst waar alle overheidsbronnen gebruik van kunnen maken.</li>
+<li>PuBEAA dienst waar alle overheidsbronnen gebruik van kunnen maken.</li>
 <li>Verificatiedienst waarmee QTSP's gegevens kunnen verifiëren en waar alle overheidsbronnen gebruik van kunnen maken.</li>
 <li>Vertaalvoorziening om GraphQL verzoeken om te zetten naar REST/API verzoeken voor overheidsbronnen die (nog) geen eigen GraphQL implementatie willen/ kunnen realiseren.</li>
 </ul></section></div><style>.print-site-enumerate-headings #index > h1:before { content: '1 ' }
