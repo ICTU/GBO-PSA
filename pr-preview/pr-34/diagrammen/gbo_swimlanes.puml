@@ -1,0 +1,108 @@
+@startuml gbo_swimlanes
+
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+skinparam ArrowColor #5F5E5A
+skinparam ArrowThickness 1.5
+skinparam linetype ortho
+
+left to right direction
+
+' ── Kleurinstellingen per stereotype ──────────────────────
+skinparam package {
+  BorderColor #AAAAAA
+  FontColor #444441
+  BackgroundColor transparent
+}
+
+skinparam rectangle<<bron>> {
+  BackgroundColor #EDF7DF
+  BorderColor #6AA13A
+  FontColor #27500A
+}
+skinparam rectangle<<gbo>> {
+  BackgroundColor #FFF0E8
+  BorderColor #185FA5
+  FontColor #0C447C
+}
+skinparam rectangle<<eudi>> {
+  BackgroundColor #E1F5EE
+  BorderColor #0F6E56
+  FontColor #085041
+}
+skinparam rectangle<<oots>> {
+  BackgroundColor #E6F1FB
+  BorderColor #185FA5
+  FontColor #0C447C
+}
+skinparam rectangle<<dvtp>> {
+  BackgroundColor #FAECE7
+  BorderColor #993C1D
+  FontColor #712B13
+}
+skinparam rectangle<<burger>> {
+  BackgroundColor #EDF7DF
+  BorderColor #6AA13A
+  FontColor #27500A
+}
+
+' ── Bronhouders ───────────────────────────────────────────
+rectangle "Overheidsbronnen\nBRP · BD · UWV · KvK…" <<bron>> as bron
+
+' ── GBO Basis ─────────────────────────────────────────────
+package "GBO Basis" as gbo {
+  rectangle "PAP\n(beleidsregels)" <<gbo>> as pap
+  rectangle "FSC / GraphQL / PBAC\n(generieke bronontsluiting)" <<gbo>> as fsc
+  rectangle "GBO tools\n(vertaallaag)" <<gbo>> as tools
+
+  pap <--> fsc
+  fsc <--> tools
+}
+
+' ── EUDI-Wallet ───────────────────────────────────────────
+package "EUDI-Wallet" as lane_eudi {
+  rectangle "ASI-provider\n(verify dienst)" <<gbo>> as eudi_asi
+  rectangle "PubEAA-provider\n(PubEAA)" <<gbo>> as eudi_pubeaa
+  rectangle "QTSP\n(QEAA)" <<eudi>> as eudi_qtsp
+  rectangle "EUDI-Wallet burger" <<eudi>> as eudi_wallet
+
+  eudi_asi <--> eudi_qtsp <--> eudi_wallet
+  eudi_pubeaa <--> eudi_wallet
+}
+
+' ── SDG / OOTS ────────────────────────────────────────────
+package "SDG / OOTS" as lane_oots {
+  rectangle "OOTS adapter\n(semantische mapping)" <<gbo>> as oots_adapter
+  rectangle "Basisinrichting OOTS\nRINIS / BZK" <<oots>> as oots_basis
+  rectangle "Europese overheid\nSDG-portaal" <<oots>> as oots_afnemer
+
+  oots_adapter <--> oots_basis <--> oots_afnemer
+}
+
+' ── DvTP ──────────────────────────────────────────────────
+package "DvTP" as lane_dvtp {
+  rectangle "Toestemmingsvoorziening" <<gbo>> as dvtp_toestemming
+  rectangle "Pseudonimiseervoorziening\n(BSNk PP)" <<dvtp>> as dvtp_pseudo
+  rectangle "Private dienstverlener" <<dvtp>> as dvtp_afnemer
+
+  dvtp_toestemming <--> dvtp_pseudo <--> dvtp_afnemer
+}
+
+' ── Burger ────────────────────────────────────────────────
+rectangle "Burger" <<burger>> as burger
+
+' ── Verbindingen tussen blokken ───────────────────────────
+bron <--> fsc
+
+fsc <--> eudi_asi
+fsc <--> eudi_pubeaa
+
+fsc <--> oots_adapter
+
+fsc <--> dvtp_toestemming
+
+eudi_wallet <--> burger
+oots_afnemer <--> burger
+dvtp_afnemer <--> burger
+
+@enduml
