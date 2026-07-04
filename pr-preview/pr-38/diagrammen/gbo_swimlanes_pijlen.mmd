@@ -1,0 +1,71 @@
+flowchart LR
+  subgraph gbo["GBO Basis"]
+    direction TB
+        fsc_pap("PAP<br/>(beleidsregels)")
+        fsc("FSC / GraphQL / PBAC<br/>(generieke bronontsluiting)")
+        fsc_tools("GBO tools<br/>(vertaallaag)")
+  end
+  subgraph eudi["EUDI-Wallet"]
+    direction LR
+        eudi_asi("ASI-provider<br/>(verify dienst)")
+        eudi_pubeaa("PubEAA-provider<br/>(PubEAA)")
+        eudi_qeaa["QTSP<br/>(QEAA)"]
+        eudi_wallet["EUDI-Wallet burger"]
+  end
+  subgraph oots["SDG / OOTS"]
+    direction LR
+        oots_adapter("OOTS adapter<br/>(semantische mapping)")
+        oots_basis["Basisinrichting OOTS<br/>RINIS / BZK"]
+        oots_afnemer["Europese overheid<br/>SDG-portaal"]
+  end
+  subgraph dvtp["DvTP"]
+    direction LR
+        dvtp_toestemming("Toestemmingsvoorziening")
+        dvtp_pseudoniem["Pseudonimiseervoorziening<br/>(BSNk PP)"]
+        dvtp_afnemer["Private dienstverlener"]
+  end
+
+  fsc_pap <--> fsc
+  fsc <--> fsc_tools
+  bron[("Overheidsbronnen<br/>BRP · BD · UWV · KvK · …")] -- Bron API<br/>(GraphQL / REST-JSON / ...) --- gbo
+  eudi_asi <-- REST-JSON --> eudi_qeaa
+  eudi_qeaa -- OpenID4VCI --> eudi_wallet
+  gbo <-- GraphQL --> eudi_asi & eudi_pubeaa & oots_adapter & dvtp_afnemer
+  eudi_pubeaa -- OpenID4VCI ---> eudi_wallet
+  oots_adapter <-- REST-JSON --> oots_basis
+  oots_basis <-- eDelivery-AS4 --> oots_afnemer
+  gbo <-- REST-JSON<br/>(PIP) --> dvtp_toestemming
+  dvtp_toestemming -- REST-JSON --> dvtp_afnemer
+  dvtp_toestemming <-- REST-JSON --> dvtp_pseudoniem
+  dvtp_pseudoniem ~~~ dvtp_afnemer
+  dvtp_toestemming <-.-> burger
+  oots_basis <-.-> burger
+  eudi_asi <-.-> burger
+  eudi_pubeaa <-.-> burger
+  eudi_wallet -.- burger["Burger"]
+  oots_afnemer -.- burger
+  dvtp_afnemer -.- burger
+
+  fsc_pap:::gbo
+  fsc:::gbo
+  fsc_tools:::gbo
+  eudi_asi:::gbo
+  eudi_pubeaa:::gbo
+  eudi_qeaa:::eudi
+  eudi_wallet:::eudi
+  oots_adapter:::gbo
+  oots_basis:::oots
+  oots_afnemer:::oots
+  dvtp_toestemming:::gbo
+  dvtp_pseudoniem:::dvtp
+  dvtp_afnemer:::dvtp
+  bron:::bron
+  burger:::burger
+
+  classDef bron fill:#edf7df,stroke:#6aa13a,color:#27500a
+  classDef generiek fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef eudi fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef oots fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef dvtp fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef gbo fill:#fff0e8,stroke:#000000,color:#000000
+  classDef burger fill:#edf7df,stroke:#6aa13a,color:#27500a

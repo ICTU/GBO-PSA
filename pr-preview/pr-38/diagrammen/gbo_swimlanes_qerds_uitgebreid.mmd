@@ -1,0 +1,111 @@
+flowchart LR
+  %% =========================================================
+  %% GBO als gemeenschappelijke bronontsluiting voor meerdere
+  %% gegevensstromen. QERDS is bewust apart gemodelleerd als
+  %% eIDAS trust-service route, naast wallet/attestation flows.
+  %% =========================================================
+
+  bron[("Overheidsbronnen<br/>BRP · Belastingdienst · UWV · KvK · …")]
+  burger["Burger<br/>(natuurlijk persoon)"]
+  organisatie["Organisatie<br/>(publiek / privaat)"]
+
+%%  subgraph legenda["Legenda / ontwerpduiding"]
+%%    direction TB
+%%    leg_qtsp["Alleen QERDS als de dienst door een QTSP wordt geleverd"]
+%%    leg_qerds["QERDS message flow<br/>system-mediated · bewijs van verzending/ontvangst · eIDAS trust service"]
+%%    leg_wallet["Wallet / attestation flow<br/>user-mediated · EAA / PubEAA / QEAA"]
+%%  end
+
+  subgraph gbo["GBO Basis"]
+    direction TB
+    fsc_pap("<strong>PAP</strong><br/>beleidsregels / autorisatiebeleid<strong>")
+    fsc("<strong>FSC / GraphQL / PBAC</strong><br/>generieke bronontsluiting")
+    fsc_tools("<strong>GBO tools</strong><br/>vertaallaag / mapping / normalisatie")
+  end
+
+  subgraph qerds["QERDS (Trust Services)"]
+    direction LR
+    qerds_client("<strong>GBO QERDS client</strong><br/>routing / integratie / payloadvoorbereiding")
+    qerds_public("<strong>Publieke QTSP</strong><br/>Qualified ERDS provider<br/>(<i>vereist QTSP-status</i>)")
+    qerds_private["Private QTSP<br/>Qualified ERDS provider"]
+%%    qerds_nonqualified["Optioneel: secure delivery service<br/><i>niet-gekwalificeerd; geen QERDS</i>"]
+  end
+
+  subgraph eudi["EDI gegevensstroom"]
+    direction LR
+    eudi_asi("<strong>ASI-provider</strong><br/>verify dienst voor authentieke bron")
+    eudi_pubeaa("<strong>PubEAA-provider</strong><br/>publieke attestaties uit authentieke bron")
+    eudi_qeaa["Private QTSP<br/>QEAA"]
+    subgraph wallet["EUDI-Wallet"]
+      eudi_ebw["EBW<br/>(bedrijfsattributen, mandaten)"]
+      eudi_wallet_burger["EUDI-wallet<br/>(persoonlijke attributen)"]
+    end
+  end
+
+  subgraph oots["SDG / OOTS gegevensstroom"]
+    direction LR
+    oots_adapter("<strong>OOTS adapter</strong><br/>semantische mapping")
+    oots_basis["Basisinrichting OOTS<br/>RINIS / BZK"]
+    oots_afnemer["Europese overheid<br/>SDG-portaal"]
+  end
+
+  subgraph dvtp["DvTP gegevensstroom"]
+    direction LR
+    dvtp_toestemming("<strong>Toestemmingsvoorziening</strong>")
+    dvtp_pseudoniem["Pseudonimiseervoorziening<br/>BSNk PP"]
+    dvtp_afnemer["Private dienstverlener"]
+  end
+
+  %% GBO-kern
+  bron <--> gbo
+  fsc_pap <--> fsc
+  fsc <--> fsc_tools
+
+  %% QERDS registered delivery flow voor EBW/formele berichten
+  gbo <--> qerds_client
+  qerds_client <--> qerds_public
+  qerds_client <--> qerds_private
+  qerds_public <--> eudi_ebw
+  qerds_private <--> eudi_ebw
+
+  %% Wallet / attestation flows
+  gbo <--> eudi_asi <--> eudi_qeaa <--> wallet
+  gbo <--> eudi_pubeaa <--> wallet
+  eudi_ebw <--> organisatie
+  eudi_wallet_burger <--> burger
+
+  %% Overige gegevensstromen
+  gbo <--> oots_adapter
+  oots_adapter <--> oots_basis
+  oots_basis <--> oots_afnemer
+  oots_afnemer <--> burger
+
+  gbo <--> dvtp_toestemming
+  dvtp_toestemming <--> dvtp_pseudoniem
+  dvtp_pseudoniem <--> dvtp_afnemer
+  dvtp_afnemer <--> burger
+
+  %% Duiding
+%%  leg_wallet -. duidt .-> eudi_wallet
+%%  leg_qerds -. duidt .-> qerds_client
+%%  leg_qtsp -. duidt .-> qerds_private
+%%  leg_qtsp -. duidt .-> qerds_public
+
+  %% Styling
+  class bron,burger,organisatie actor
+  class fsc_pap,fsc,fsc_tools,eudi_asi,eudi_pubeaa,ebw_asi,ebw_pubeaa,qerds_client,oots_adapter,dvtp_toestemming,qerds_public gboStyle
+  class eudi_qeaa,eudi_wallet,eudi_wallet_burger,eudi_ebw walletStyle
+  class qerds_private trustStyle
+  class qerds_nonqualified warningStyle
+  class oots_basis,oots_afnemer ootsStyle
+  class dvtp_pseudoniem,dvtp_afnemer dvtpStyle
+  class legenda,leg_wallet,leg_qerds,leg_qtsp legendStyle
+
+  classDef actor fill:#edf7df,stroke:#6aa13a,color:#27500a
+  classDef gboStyle fill:#fff0e8,stroke:#000000,color:#000000
+  classDef walletStyle fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef trustStyle fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef warningStyle fill:#fff7d6,stroke:#b58b00,color:#5f4600,stroke-dasharray: 5 5
+  classDef ootsStyle fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef dvtpStyle fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef legendStyle fill:#ffffff,stroke:#999999,color:#333333,stroke-dasharray: 3 3
