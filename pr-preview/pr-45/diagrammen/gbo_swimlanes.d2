@@ -1,0 +1,221 @@
+# GBO - drie gegevensstromen (D2)
+# Render bijvoorbeeld met:
+#   curl -X POST https://kroki.io/d2/svg --data-binary @gbo_swimlanes.d2 > gbo_swimlanes.svg
+
+vars: {
+  bron_fill: "#edf7df"
+  bron_stroke: "#6aa13a"
+  bron_text: "#27500a"
+
+  generiek_fill: "#f1efe8"
+  generiek_stroke: "#5f5e5a"
+  generiek_text: "#444441"
+
+  eudi_fill: "#e1f5ee"
+  eudi_stroke: "#0f6e56"
+  eudi_text: "#085041"
+
+  oots_fill: "#e6f1ff"
+  oots_stroke: "#185fa5"
+  oots_text: "#0c447c"
+
+  dvtp_fill: "#fff0e8"
+  dvtp_stroke: "#993c1d"
+  dvtp_text: "#712b13"
+}
+
+direction: right
+
+bron: {
+  label: "Bronhouders\nBRP · BD · UWV · KvK…"
+  shape: cylinder
+  style: {
+    fill: ${bron_fill}
+    stroke: ${bron_stroke}
+    font-color: ${bron_text}
+  }
+}
+
+gbo: {
+  label: "GBO Basis"
+  grid-columns: 1
+  grid-gap: 24
+  style: {
+    fill: "#faf9f5"
+    stroke: ${generiek_stroke}
+  }
+
+  fsc_pap: {
+    label: "PAP\n(beleidsregels)"
+    style: {
+      fill: ${generiek_fill}
+      stroke: ${generiek_stroke}
+      font-color: ${generiek_text}
+    }
+  }
+
+  fsc: {
+    label: "FSC / PBAC\nGenerieke bronontsluiting"
+    style: {
+      fill: ${generiek_fill}
+      stroke: ${generiek_stroke}
+      font-color: ${generiek_text}
+    }
+  }
+
+  fsc_support: {
+    label: "GBO tools\n(GBO vertaallaag)"
+    style: {
+      fill: ${generiek_fill}
+      stroke: ${generiek_stroke}
+      font-color: ${generiek_text}
+    }
+  }
+
+  fsc_pap <-> fsc
+  fsc <-> fsc_support
+}
+
+eudi: {
+  label: "EUDI-Wallet"
+  direction: right
+  style: {
+    fill: "#f4fffb"
+    stroke: ${eudi_stroke}
+  }
+
+  asi: {
+    label: "Authentic Source Interface\nVerify dienst"
+    style: {
+      fill: ${eudi_fill}
+      stroke: ${eudi_stroke}
+      font-color: ${eudi_text}
+    }
+  }
+
+  pubeaa: {
+    label: "PubEAA-provider\nPubEAA"
+    style: {
+      fill: ${eudi_fill}
+      stroke: ${eudi_stroke}
+      font-color: ${eudi_text}
+    }
+  }
+
+  qeaa: {
+    label: "QTSP\nQEAA"
+    style: {
+      fill: ${eudi_fill}
+      stroke: ${eudi_stroke}
+      font-color: ${eudi_text}
+    }
+  }
+
+  wallet: {
+    label: "EUDI-Wallet burger\nOID4VC / eIDAS 2"
+    style: {
+      fill: ${eudi_fill}
+      stroke: ${eudi_stroke}
+      font-color: ${eudi_text}
+    }
+  }
+
+  asi -> qeaa -> wallet
+  pubeaa -> wallet
+}
+
+oots: {
+  label: "SDG / OOTS"
+  direction: right
+  style: {
+    fill: "#f6faff"
+    stroke: ${oots_stroke}
+  }
+
+  adapter: {
+    label: "OOTS adapter\n(semantische mapping)"
+    style: {
+      fill: ${oots_fill}
+      stroke: ${oots_stroke}
+      font-color: ${oots_text}
+    }
+  }
+
+  basis: {
+    label: "Basisinrichting OOTS\nRINIS / BZK"
+    style: {
+      fill: ${oots_fill}
+      stroke: ${oots_stroke}
+      font-color: ${oots_text}
+    }
+  }
+
+  afnemer: {
+    label: "Europese overheid\nSDG-portaal"
+    style: {
+      fill: ${oots_fill}
+      stroke: ${oots_stroke}
+      font-color: ${oots_text}
+    }
+  }
+
+  adapter -> basis -> afnemer
+}
+
+dvtp: {
+  label: "DvTP"
+  direction: right
+  style: {
+    fill: "#fff8f4"
+    stroke: ${dvtp_stroke}
+  }
+
+  toestemming: {
+    label: "Toestemmingsvoorziening\nAVG consent"
+    style: {
+      fill: ${dvtp_fill}
+      stroke: ${dvtp_stroke}
+      font-color: ${dvtp_text}
+    }
+  }
+
+  pseudoniem: {
+    label: "Pseudonimiseervoorziening\nBSNk PP"
+    style: {
+      fill: ${dvtp_fill}
+      stroke: ${dvtp_stroke}
+      font-color: ${dvtp_text}
+    }
+  }
+
+  afnemer: {
+    label: "Private dienstverlener\nDvTP-token / API"
+    style: {
+      fill: ${dvtp_fill}
+      stroke: ${dvtp_stroke}
+      font-color: ${dvtp_text}
+    }
+  }
+
+  toestemming -> pseudoniem -> afnemer
+}
+
+burger: {
+  label: "Burger"
+  style: {
+    fill: ${bron_fill}
+    stroke: ${bron_stroke}
+    font-color: ${bron_text}
+  }
+}
+
+bron -> gbo
+
+gbo -> eudi.asi
+gbo -> eudi.pubeaa
+gbo -> oots.adapter
+gbo -> dvtp.toestemming
+
+eudi.wallet -> burger
+oots.afnemer -> burger
+dvtp.afnemer -> burger
