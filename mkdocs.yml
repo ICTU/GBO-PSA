@@ -96,14 +96,14 @@ nav:
   - Globaal Ontwerp: https://ictu.github.io/GBO-GO/
   - Projectstartarchitectuur:
       - Inleiding: index.md
-      - Oplossingsrichting: oplossingsrichting.md
+      - Vertrekpunt globaal ontwerp: oplossingsrichting.md
       - Architectuurprincipes: architectuurprincipes.md
       - Ontwerpprincipes: ontwerpprincipes.md
       - Interactiepatronen: interactiepatronen.md
-      - Logische architectuur: generieke-functies.md
+      - Generieke functies: generieke-functies.md
       - Stelselfuncties: capabilities.md
       - Realisatiestrategie: realisatiestrategie.md
-      - Open vragen en ontwerpkeuzes: vraagstukken.md
+      - Open besluiten: vraagstukken.md
   - Technisch Ontwerp: https://ictu.github.io/GBO/main/underconstruction_to/
   - Technische Requirements: https://ictu.github.io/GBO/main/underconstruction_tr/
   - Semantiek: https://ictu.github.io/GBO/main/underconstruction_sem/
