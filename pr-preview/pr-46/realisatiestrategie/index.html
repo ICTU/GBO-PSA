@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -943,10 +943,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementatie-bij-bronhouders" class="md-nav__link">
+  <a href="#impact-op-betrokken-partijen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Implementatie bij bronhouders
+        Impact op betrokken partijen
       
     </span>
   </a>
@@ -1144,7 +1144,7 @@
 <table>
 <thead>
 <tr>
-<th>Werkpakket</th>
+<th>Werkpakket&nbsp;&nbsp;</th>
 <th>Stelselfuncties</th>
 <th>Belangrijkste resultaten</th>
 <th>Belangrijkste afhankelijkheden</th>
@@ -1185,7 +1185,7 @@
 <li>API-profiel voor de bronontsluiting;</li>
 <li>model en beheerproces voor de dienstencatalogus;</li>
 <li>autorisatieprofiel voor PEP, PDP en PIP;</li>
-<li>governance- en distributieprofiel voor beleid;</li>
+<li>governance- en distributieprofiel voor beleidsregels;</li>
 <li>profiel voor ketenlogging en correlatie;</li>
 <li>kaders voor begrippen, schema's, kwaliteit en mappings.</li>
 </ul>
@@ -1219,10 +1219,10 @@
 </ul>
 <p>De keuze wordt niet door de PSA op voorhand centraal vastgelegd. De interfaces en eisen moeten varianten onderling uitwisselbaar maken.</p>
 <h2 id="werkpakket-oots">Werkpakket OOTS<a class="headerlink" href="#werkpakket-oots" title="Permanent link">&para;</a></h2>
-<p>Dit werkpakket koppelt GBO aan de Basisinrichting OOTS.</p>
+<p>Dit werkpakket koppelt de gemeenschappelijke ontsluiting aan de Basisinrichting OOTS.</p>
 <h3 id="op-te-leveren-afspraken-en-standaarden_2">Op te leveren afspraken en standaarden<a class="headerlink" href="#op-te-leveren-afspraken-en-standaarden_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li>het nationale koppelvlak tussen OOTS-V en de bronontsluiting-API;</li>
+<li>het koppelvlak tussen OOTS-V en de bronontsluiting-API;</li>
 <li>autorisatie- en loggingafspraken voor OOTS-verzoeken;</li>
 <li>beheerproces voor gegevensdiensten, discovery en OOTS-EDM-mappings;</li>
 <li>verantwoordelijkheidsverdeling bij fouten, wijzigingen en incidenten.</li>
@@ -1255,7 +1255,10 @@
 <li>registratie van diensten, doelen en toegestane gegevensvragen;</li>
 <li>autorisatiebeleid en wijzigingsgovernance.</li>
 </ul>
-<h2 id="implementatie-bij-bronhouders">Implementatie bij bronhouders<a class="headerlink" href="#implementatie-bij-bronhouders" title="Permanent link">&para;</a></h2>
+<h2 id="impact-op-betrokken-partijen">Impact op betrokken partijen<a class="headerlink" href="#impact-op-betrokken-partijen" title="Permanent link">&para;</a></h2>
+<p>In het <a href="https://ictu.github.io/GBO-GO/main/#6-impact-op-betrokken-partijen">globaal ontwerp</a> is een eerste inschatting gemaakt van de impact van GBO op de betrokken partijen. Op basis van het PSA kan dat verder uitgewerkt worden.<br />
+Dit zal verder geconcretiseerd worden als het technisch ontwerp en de technische requirements uitgewerkt zijn.  </p>
+<h3 id="bronhouder">Bronhouder<a class="headerlink" href="#bronhouder" title="Permanent link">&para;</a></h3>
 <p>Een bronhouder realiseert of gebruikt:</p>
 <ul>
 <li>een bronontsluiting-API conform het vastgestelde profiel;</li>
@@ -1264,8 +1267,33 @@
 <li>een beschrijving van gegevensdiensten, schema's en kwaliteit;</li>
 <li>beheerprocessen voor aansluiting, wijzigingen en incidenten.</li>
 </ul>
-<p>Een bronhouder kan gebruikmaken van referentiecomponenten of functioneel gelijkwaardige alternatieven. De keuzevrijheid geldt niet voor de naleving van de vastgestelde afspraken, standaarden en koppelvlakken.</p>
-<p>Voor interactiepatroonspecifieke functies kan de bronhouder gebruikmaken van gedeelde voorzieningen of eigen varianten, voor zover wet- en regelgeving dit toestaat en de variant voldoet aan dezelfde interoperabiliteits- en beveiligingseisen.</p>
+<p>Een bronhouder kan gebruikmaken van referentiecomponenten, eventueel ondersteund met onderdelen uit de GBO-vertaallaag, of functioneel gelijkwaardige alternatieven. De keuzevrijheid geldt niet voor de naleving van de vastgestelde afspraken, standaarden en koppelvlakken.</p>
+<h3 id="qtsps">QTSP's<a class="headerlink" href="#qtsps" title="Permanent link">&para;</a></h3>
+<p>De wijze waarop attestaties uitgegeven worden met GBO, is nog niet vastgesteld. Vooralsnog worden alle varianten ondersteund. Dat betekent dat QTSP's verschillende opties hebben:</p>
+<ul>
+<li>gebruikmaken van de verifyfunctie van de centrale ASI-provider om attributen te controleren en op basis daarvan attestaties uitgeven;</li>
+<li>gebruikmaken van de retrievefunctie van de centrale ASI-provider om namens een bronhouder attestaties uit te geven;</li>
+<li>via andere kanalen bij de bron de vereiste gegevens ophalen om attestaties uit te geven (buiten scope van GBO).</li>
+</ul>
+<p>Voor het gebruik van de centrale ASI-provider zal de QTSP conform de EUDI-afspraken en -standaarden moeten aansluiten.</p>
+<h3 id="oots-basisinrichting">OOTS Basisinrichting<a class="headerlink" href="#oots-basisinrichting" title="Permanent link">&para;</a></h3>
+<p>Voor levering van bewijzen aan andere Europese overheden conform de SDG verordening, sluit GBO aan op de OOTS Basisinrichting. NB: Bronhouders zijn vrij om hiervoor andere kanalen te gebruiken.<br />
+Voor de aansluiting van GBO op de OOTS Basisinrichting is het volgende nodig:</p>
+<ul>
+<li>uitbreiding van de OOTS-V component van de Basisinrichting OOTS met het GBO-koppelvlak;</li>
+<li>afspraken over precieze grens tussen GBO-koppelvlak en OOTS-V / Basisinrichting OOTS (o.a. voor autorisatie, logging en verantwoording);</li>
+<li>afspraken over gebruik en beheer van semantische mapping tussen gegevenmodellen van de bronhouder en EDM;</li>
+<li>afspraken over discovery- en dienstinformatie.</li>
+</ul>
+<h3 id="private-dienstverlener">Private dienstverlener<a class="headerlink" href="#private-dienstverlener" title="Permanent link">&para;</a></h3>
+<p>De private dienstverlener die gebruik wil maken van de DvTP dienst van GBO, moet:</p>
+<ul>
+<li>voldoen aan de aansluitvoorwaarden om gebruik te maken van de voorzieningen;</li>
+<li>de burger toestemming vragen via de centrale toestemmingsvoorziening;</li>
+<li>de burger een volwaardig alternatief aanbieden om de gegevens aan te leveren;</li>
+<li>gegevens conform de dienstencatalogus uitvragen;</li>
+<li>gegevensverzoeken conform de afgesproken koppelvlakspecificatie moeten uitvoeren.</li>
+</ul>
 <h2 id="landing-in-bestaande-stelsels-en-beheerorganisaties">Landing in bestaande stelsels en beheerorganisaties<a class="headerlink" href="#landing-in-bestaande-stelsels-en-beheerorganisaties" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1424,7 +1452,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.code.annotate", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Let op: er wordt alleen gezocht binnen dit documentatie-onderdeel. Om in andere onderdelen te zoeken: ga via het hoofdmenu eerst naar het onderdeel en voer dan de zoekterm in.", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../js/print-site.js"></script>
       

@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -991,12 +991,12 @@
     <dl class="print-cover__metadata">
       <div>
         <dt>Versie</dt>
-        <dd>0.7.3</dd>
+        <dd>0.8.0</dd>
       </div>
 
       <div>
         <dt>Datum</dt>
-        <dd>juli 2026</dd>
+        <dd>augustus 2026</dd>
       </div>
 
       <div>
@@ -1006,7 +1006,7 @@
 
       <div>
         <dt>Status</dt>
-        <dd>voor externe review</dd>
+        <dd>externe review verwerkt</dd>
       </div>
     </dl>
   </div>
@@ -1037,16 +1037,17 @@
 </blockquote>
 <h2 id="index-documenthierarchie">Documenthiërarchie<a class="headerlink" href="#index-documenthierarchie" title="Permanent link">&para;</a></h2>
 <p>Voor GBO geldt de volgende documenthiërarchie:</p>
-<ol>
-<li>Het <strong>globaal ontwerp</strong> beschrijft de oplossingsrichting, interactiepatronen, generieke functies en componenten op hoofdlijnen.</li>
-<li>De <strong>PSA</strong> beschrijft de kaders, eisen en ontwerpkeuzes voor de generieke functies en stelselfuncties.</li>
-<li>Het <strong>technisch ontwerp</strong> beschrijft de technische inrichting van de benodigde voorzieningen en koppelvlakken.</li>
-<li>De <strong>technische requirements</strong> specificeren de te realiseren of aan te passen componenten.</li>
-<li>De uitwerking <strong>Semantiek</strong> beschrijft de informatiemodellen, begrippen, schema's en mappings voor gegevensuitwisseling.</li>
+<ol start="0">
+<li>De <a href="https://ictu.github.io/GBO/"><strong>inleiding</strong></a> en <a href="https://ictu.github.io/GBO/latest/context"><strong>context</strong></a> beschrijven de doelen, de omgeving en de juridische kaders van de gemeenschappelijke bronontsluiting.</li>
+<li>Het <a href="https://ictu.github.io/GBO-GO/"><strong>globaal ontwerp</strong></a> beschrijft de oplossingsrichting, interactiepatronen, generieke functies en componenten op hoofdlijnen.</li>
+<li>De <a href="https://ictu.github.io/GBO-PSA/"><strong>PSA</strong></a> beschrijft de kaders, eisen en ontwerpkeuzes voor de generieke functies en stelselfuncties.</li>
+<li>Het <a href="https://ictu.github.io/GBO/main/underconstruction_to/"><strong>technisch ontwerp</strong></a> beschrijft de technische inrichting van de benodigde voorzieningen en koppelvlakken.</li>
+<li>De <a href="https://ictu.github.io/GBO/main/underconstruction_tr/"><strong>technische requirements</strong></a> specificeren de te realiseren of aan te passen componenten.</li>
+<li>De uitwerking <a href="https://ictu.github.io/GBO/main/underconstruction_sem/"><strong>Semantiek</strong></a> beschrijft de informatiemodellen, begrippen, schema's en mappings voor gegevensuitwisseling.</li>
 </ol>
 <p>Bij verschillen in de beschrijving van de oplossingsrichting of interactiepatronen is het globaal ontwerp leidend. De PSA is leidend voor de normerende architectuureisen aan de uitwerking.</p>
 <h2 id="index-scope">Scope<a class="headerlink" href="#index-scope" title="Permanent link">&para;</a></h2>
-<p>De PSA beschrijft de afspraken, standaarden en voorzieningen die nodig zijn om de <a href="https://ictu.github.io/GBO/latest/">voordelen die GBO nastreeft</a> te bereiken. Waar mogelijk worden bestaande afspraken, standaarden en voorzieningen hergebruikt. Aanvullingen worden ingebracht bij bestaande afsprakenstelsels en beheerorganisaties.</p>
+<p>De PSA beschrijft de afspraken, standaarden en voorzieningen die nodig zijn om de <a href="https://ictu.github.io/GBO/latest/">doelen die GBO nastreeft</a> te bereiken. Waar mogelijk worden bestaande afspraken, standaarden en voorzieningen hergebruikt. Aanvullingen worden ingebracht bij bestaande afsprakenstelsels en beheerorganisaties.</p>
 <p>De PSA beschrijft niet:</p>
 <ul>
 <li>de volledige werking van de oplossingsrichting en interactiepatronen; daarvoor wordt verwezen naar het globaal ontwerp;</li>
@@ -1086,7 +1087,7 @@
 </tr>
 <tr>
 <td>Nederlandse voorziening voor aansluiting van verstrekkende bronhouders op OOTS</td>
-<td><strong>Basisinrichting OOTS</strong>, onderdeel <strong>OOTS-V</strong></td>
+<td><strong>Basisinrichting OOTS</strong><br>(met <strong>OOTS-V</strong> als onderdeel waarop aangesloten kan worden vanuit een FSC koppeling)</td>
 </tr>
 <tr>
 <td>GBO-component voor aansluiting op OOTS-V</td>
@@ -1207,14 +1208,14 @@
 <li>welke organisatie het operationele beheer uitvoert;</li>
 <li>hoe continuïteit, financiering en toezicht zijn geregeld.</li>
 </ul></section><section class="print-page" id="architectuurprincipes" heading-number="3"><h1 id="architectuurprincipes-architectuurprincipes">Architectuurprincipes<a class="headerlink" href="#architectuurprincipes-architectuurprincipes" title="Permanent link">&para;</a></h1>
-<p>De architectuurprincipes geven richting aan de uitwerking van de generieke functies en stelselfuncties. De tabel bevat per principe de concrete consequentie voor GBO. Algemene toelichtingen op de onderliggende wet- en beleidskaders worden niet herhaald.</p>
+<p>De architectuurprincipes geven richting aan de uitwerking van de generieke functies en stelselfuncties. De tabel bevat per principe de concrete consequentie voor GBO en het primaire kader waaraan voldaan moet worden (en dat als bron heeft gefungeerd). Algemene toelichtingen op de onderliggende wet- en beleidskaders worden niet herhaald.</p>
 <table>
 <thead>
 <tr>
 <th>ID</th>
 <th>Principe</th>
-<th>Consequentie voor GBO</th>
-<th>Primair kader</th>
+<th>Consequentie&nbsp;voor&nbsp;GBO</th>
+<th>Primair&nbsp;kader&nbsp;/&nbsp;bron</th>
 </tr>
 </thead>
 <tbody>
@@ -1222,97 +1223,97 @@
 <td><strong>P-01</strong></td>
 <td>Grondslag vóór uitwisseling</td>
 <td>Iedere gegevensvraag bevat of verwijst naar een controleerbare grondslag, doelbinding en afnemerscontext. Zonder geldige grondslag wordt niet geleverd.</td>
-<td>AVG, sectorale wetgeving</td>
+<td><a href="https://eur-lex.europa.eu/eli/reg/2016/679/2016-05-04?locale=nl">AVG — art. 5 en 6</a>, <a href="https://wetten.overheid.nl/">sectorale wetgeving</a></td>
 </tr>
 <tr>
 <td><strong>P-02</strong></td>
 <td>Minimale gegevensverwerking</td>
 <td>De bronontsluiting ondersteunt selectieve gegevensvragen. Alleen gegevens die voor de geregistreerde dienst en het doel noodzakelijk zijn, kunnen worden geleverd.</td>
-<td>AVG</td>
+<td><a href="https://eur-lex.europa.eu/eli/reg/2016/679/2016-05-04?locale=nl">AVG — art. 5, lid 1, onder c</a></td>
 </tr>
 <tr>
 <td><strong>P-03</strong></td>
 <td>Privacy by design en by default</td>
 <td>Pseudonimisering, doelbinding, minimale gegevensselectie en beperkte bewaartermijnen worden in afspraken, beleid en koppelvlakken ingebouwd.</td>
-<td>AVG, NORA</td>
+<td><a href="https://eur-lex.europa.eu/eli/reg/2016/679/2016-05-04?locale=nl">AVG — art. 25</a>, <a href="https://www.noraonline.nl/wiki/Privacy_(Doel)">NORA — Privacy</a></td>
 </tr>
 <tr>
 <td><strong>P-04</strong></td>
 <td>Geen BSN voor onbevoegde afnemers</td>
 <td>Afnemers zonder wettelijke bevoegdheid verwerken geen BSN. Zij ontvangen een partijspecifieke identiteit of pseudoniem dat niet buiten de bedoelde context kan worden gekoppeld.</td>
-<td>Wabb, AVG</td>
+<td><a href="https://wetten.overheid.nl/BWBR0022428/">Wabb</a>, <a href="https://eur-lex.europa.eu/eli/reg/2016/679/2016-05-04?locale=nl">AVG — art. 25</a></td>
 </tr>
 <tr>
 <td><strong>P-05</strong></td>
 <td>Passend betrouwbaarheidsniveau</td>
 <td>Burgers, organisaties en systemen authenticeren zich op een niveau dat past bij de dienst, de gegevens en het risico.</td>
-<td>Wdo, eIDAS</td>
+<td><a href="https://wetten.overheid.nl/BWBR0048156/">Wdo</a>, <a href="https://eur-lex.europa.eu/eli/reg/2014/910/oj?locale=nl">eIDAS</a></td>
 </tr>
 <tr>
 <td><strong>P-06</strong></td>
 <td>Ondersteuning van de EUDI-Wallet</td>
-<td>GBO ondersteunt de uitgifte, verificatie en waar nodig retrieval van attestaties conform eIDAS2 en het Architecture and Reference Framework.</td>
-<td>eIDAS2, ARF</td>
+<td>GBO ondersteunt de uitgifte, verificatie en waar nodig retrieval van attestaties conform eIDAS2 en het Architecture and Reference Framework (ARF).</td>
+<td><a href="https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX%3A32024R1183">eIDAS2</a>, <a href="https://eudi.dev/latest/architecture-and-reference-framework-main/">EUDI-Wallet ARF</a></td>
 </tr>
 <tr>
 <td><strong>P-07</strong></td>
 <td>Vertrouwen door erkende toetreding en trust anchors</td>
 <td>Deelnemers worden vooraf toegelaten en zijn technisch verifieerbaar via erkende certificaten, registers en vertrouwenslijsten.</td>
-<td>Wdo, PKIoverheid, eIDAS</td>
+<td><a href="https://wetten.overheid.nl/BWBR0048156/">Wdo</a>, <a href="https://www.logius.nl/onze-dienstverlening/toegang/pkioverheid/wat-pkioverheid">PKIoverheid</a>, <a href="https://eur-lex.europa.eu/eli/reg/2014/910/oj?locale=nl">eIDAS</a></td>
 </tr>
 <tr>
 <td><strong>P-08</strong></td>
 <td>Eenmalige vastlegging, meervoudig gebruik</td>
 <td>Gegevens worden bij de bron beheerd en via één generieke bronontsluiting voor meerdere interactiepatronen hergebruikt.</td>
-<td>NORA, FDS</td>
+<td><a href="https://www.noraonline.nl/wiki/Informeer_bij_de_bron">NORA — Informeer bij de bron</a>, <a href="https://federatief.datastelsel.nl/kennisbank/principes/">FDS — principes</a></td>
 </tr>
 <tr>
 <td><strong>P-09</strong></td>
 <td>Open standaarden en leveranciersonafhankelijkheid</td>
 <td>Koppelvlakken en gegevensformaten zijn gebaseerd op open standaarden. Product- of leveranciersspecifieke interfaces mogen geen verplichte stelselafhankelijkheid vormen.</td>
-<td>NORA, Forum Standaardisatie</td>
+<td><a href="https://www.noraonline.nl/wiki/Pas_open_standaarden_toe">NORA — Pas open standaarden toe</a>, <a href="https://www.forumstandaardisatie.nl/open-standaarden">Forum Standaardisatie — open standaarden</a></td>
 </tr>
 <tr>
 <td><strong>P-10</strong></td>
 <td>Bronhouder behoudt regie</td>
 <td>De bronhouder blijft verantwoordelijk voor de gegevens, gegevenskwaliteit en voorwaarden waaronder gegevens worden geleverd. GBO faciliteert ontsluiting en transformatie, maar wordt geen eigenaar van de brongegevens.</td>
-<td>DGA, Data Act, FDS</td>
+<td><a href="https://eur-lex.europa.eu/eli/reg/2022/868/oj?locale=nl">Data Governance Act (DGA)</a>, <a href="https://eur-lex.europa.eu/eli/reg/2023/2854/oj?locale=nl">Data Act</a>, <a href="https://federatief.datastelsel.nl/kennisbank/principes/">FDS — principes</a></td>
 </tr>
 <tr>
 <td><strong>P-11</strong></td>
 <td>Vindbare en herbruikbare gegevensbeschrijvingen</td>
 <td>Gegevensdiensten, schema's, begrippen, kwaliteit en voorwaarden zijn machineleesbaar en versieerbaar beschreven.</td>
-<td>FAIR, NORA, FDS</td>
+<td><a href="https://www.gofair.foundation/fair-principles">FAIR-principes</a>, <a href="https://www.noraonline.nl/wiki/Architectuurprincipes_Domeinarchitectuur_Gegevensuitwisseling">NORA — architectuurprincipes gegevensuitwisseling</a>, <a href="https://federatief.datastelsel.nl/kennisbank/standaarden/">FDS — standaarden</a></td>
 </tr>
 <tr>
 <td><strong>P-12</strong></td>
 <td>Herleidbare en onweerlegbare gegevensuitwisseling</td>
 <td>Iedere poging tot gegevensuitwisseling en iedere relevante autorisatiebeslissing wordt zodanig vastgelegd dat de keten achteraf kan worden gereconstrueerd.</td>
-<td>AVG, BIO, NORA</td>
+<td><a href="https://eur-lex.europa.eu/eli/reg/2016/679/2016-05-04?locale=nl">AVG — art. 5, lid 2</a>, <a href="https://zoek.officielebekendmakingen.nl/stcrt-2026-7416.html">BIO2</a>, <a href="https://www.noraonline.nl/wiki/Domeinarchitectuur_Gegevensuitwisseling">NORA — domeinarchitectuur gegevensuitwisseling</a></td>
 </tr>
 <tr>
 <td><strong>P-13</strong></td>
 <td>Transparantie voor de burger</td>
 <td>De inrichting ondersteunt inzage in relevante toestemmingen en verwerkingen en maakt correctie of intrekking mogelijk waar de wet dat vereist.</td>
-<td>AVG, Regie op Gegevens</td>
+<td><a href="https://eur-lex.europa.eu/eli/reg/2016/679/2016-05-04?locale=nl">AVG — art. 13–15</a>, <a href="https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/regie-op-gegevens/">Regie op Gegevens</a></td>
 </tr>
 <tr>
 <td><strong>P-14</strong></td>
 <td>Scheiding van generieke en domeinspecifieke functies</td>
 <td>GBO levert generieke kaders en functies. Domeinen blijven verantwoordelijk voor domeinbegrippen, gegevensmodellen, inhoudelijke kwaliteit en sectorspecifieke regels.</td>
-<td>GDI, NORA</td>
+<td><a href="https://www.noraonline.nl/wiki/GA_Basisprincipes">GDI-Architectuur — GA-basisprincipes</a>, <a href="https://www.noraonline.nl/">NORA</a></td>
 </tr>
 <tr>
 <td><strong>P-15</strong></td>
 <td>Ontkoppeling en vervangbaarheid</td>
 <td>Bronhouders, centrale functies en afnemers zijn gekoppeld via stabiele, gestandaardiseerde interfaces. Functionele componenten kunnen onafhankelijk worden vervangen.</td>
-<td>GDI, NORA</td>
+<td><a href="https://www.noraonline.nl/wiki/GA_Basisprincipes">GDI-Architectuur — GA-BP-4</a>, <a href="https://www.noraonline.nl/">NORA</a></td>
 </tr>
 <tr>
 <td><strong>P-16</strong></td>
 <td>Transparante toegang voor private partijen</td>
 <td>Toetredingseisen voor private dienstverleners zijn objectief, proportioneel en controleerbaar. De toegestane dienst, grondslag en gegevensvraag zijn vooraf geregistreerd.</td>
-<td>DGA, Wabb, DvTP-kader</td>
+<td><a href="https://eur-lex.europa.eu/eli/reg/2022/868/oj?locale=nl">Data Governance Act (DGA)</a>, <a href="https://wetten.overheid.nl/BWBR0022428/">Wabb</a></td>
 </tr>
 </tbody>
 </table>
@@ -1344,7 +1345,7 @@
 <tr>
 <td><strong>D-02</strong></td>
 <td>Afspraken boven standaarden boven voorzieningen</td>
-<td>Begin met rollen, verantwoordelijkheden en gebruiksafspraken. Standaardiseer waar interoperabiliteit nodig is. Richt alleen een gedeelde voorziening in als afspraken en standaarden onvoldoende zijn.</td>
+<td>Begin met rollen, verantwoordelijkheden en gebruiksafspraken. Standaardiseer waar interoperabiliteit nodig is. Richt alleen een gedeelde voorziening in als afspraken en standaarden onvoldoende zijn of het schaalvoordeel zo groot is dat de betrokken partijen erom vragen.</td>
 </tr>
 <tr>
 <td><strong>D-03</strong></td>
@@ -1434,19 +1435,19 @@
 <tr>
 <td><strong>A — Burger gebruikt EUDI-Wallet</strong></td>
 <td>De burger vraagt een attestatie van attributen op voor opname in een EUDI-Wallet. Uitgifte kan als PubEAA door of namens een bronhouder plaatsvinden, of als QEAA via een QTSP.</td>
-<td>S03, S04, S05, S07, S09, S10 en S11</td>
+<td><a href="#capabilities-s03-burgeridentificatie-pseudonimisering">S03</a>, <a href="#capabilities-s04-organisatie-authenticatie-vertrouwensstelsel">S04</a>, <a href="#capabilities-s05-autorisatie">S05</a>, <a href="#capabilities-s07-gegevensontsluiting">S07</a>, <a href="#capabilities-s09-logging-audit-traceerbaarheid">S09</a>, <a href="#capabilities-s10-semantiek-gegevenscatalogus">S10</a> en <a href="#capabilities-s11-attesteringsuitgifte">S11</a></td>
 <td>Identificatie van de burger; autorisatie van uitgifte, verificatie en retrieval; attestation rulebooks; semantische mapping; signing, status en intrekking; verantwoordelijkheidsverdeling tussen bronhouder, PubEAA-provider, ASI-provider en QTSP.</td>
 </tr>
 <tr>
 <td><strong>B — Grensoverschrijdend verzoek via OOTS</strong></td>
-<td>Een publieke instantie in een andere lidstaat vraagt bewijsgegevens op bij een Nederlandse bronhouder in het kader van de SDG-verordening. Binnen de GBO-oplossing verloopt dit via de Basisinrichting OOTS en OOTS-V.</td>
-<td>S04, S05, S07, S08, S09 en S10</td>
+<td>Een publieke instantie in een andere lidstaat vraagt bewijsgegevens op bij een Nederlandse bronhouder in het kader van de SDG-verordening. Binnen de GBO-oplossing verloopt dit via de Basisinrichting OOTS en met name het OOTS-V component daarvan.</td>
+<td><a href="#capabilities-s04-organisatie-authenticatie-vertrouwensstelsel">S04</a>, <a href="#capabilities-s05-autorisatie">S05</a>, <a href="#capabilities-s07-gegevensontsluiting">S07</a>, <a href="#capabilities-s08-oots-adapter">S08</a>, <a href="#capabilities-s09-logging-audit-traceerbaarheid">S09</a> en <a href="#capabilities-s10-semantiek-gegevenscatalogus">S10</a></td>
 <td>Aansluiting van OOTS-V op de bronontsluiting-API; autorisatie via dezelfde keten als andere gegevensvragen; mapping naar OOTS-EDM; centraal beheer van discovery- en aansluitgegevens; ketenbrede logging.</td>
 </tr>
 <tr>
 <td><strong>C — Gegevensverzoek private dienstverlener</strong></td>
 <td>Een private dienstverlener vraagt gegevens op bij een bronhouder op basis van een wettelijk geldige grondslag. Als toestemming vereist is, wordt deze specifiek, geïnformeerd en aantoonbaar vastgelegd.</td>
-<td>S01 tot en met S07, S09 en S10</td>
+<td><a href="#capabilities-s01-toestemmingsregistratie">S01</a> tot en met S07, <a href="#capabilities-s09-logging-audit-traceerbaarheid">S09</a> en <a href="#capabilities-s10-semantiek-gegevenscatalogus">S10</a></td>
 <td>Juridische grondslag; burgerinteractie; registratie, raadpleging en intrekking van toestemming; pseudonimisering als de afnemer geen BSN mag verwerken; toelating van dienstverleners; registratie van diensten en toegestane gegevensvragen.</td>
 </tr>
 </tbody>
@@ -1462,58 +1463,6 @@
 <li>afwijkingen en patroonafhankelijke eisen worden als beleid, schema, mapping of configuratie beheerd en niet als hardgecodeerde implementatielogica.</li>
 </ul></section><section class="print-page" id="generieke-functies" heading-number="6"><h1 id="generieke-functies-generieke-functies">Generieke functies<a class="headerlink" href="#generieke-functies-generieke-functies" title="Permanent link">&para;</a></h1>
 <p>Het <a href="https://ictu.github.io/GBO-GO/main/#4-generieke-functies-en-stelselfuncties">globaal ontwerp</a> onderscheidt acht generieke functies. Deze PSA herhaalt de functionele beschrijving daarvan niet, maar legt per functie de normerende eisen en de relatie met de stelselfuncties vast.</p>
-<h2 id="generieke-functies-overzicht">Overzicht<a class="headerlink" href="#generieke-functies-overzicht" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Generieke functie</th>
-<th>Doel in het globaal ontwerp</th>
-<th>Stelselfuncties</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>F1 — Identiteit &amp; Vertrouwen</strong></td>
-<td>Vaststellen en vertrouwen van burgers, organisaties en systemen.</td>
-<td>S03, S04</td>
-</tr>
-<tr>
-<td><strong>F2 — Toegang &amp; Interactie</strong></td>
-<td>Toegang voor burgers en organisaties en, waar nodig, interactie over toestemming.</td>
-<td>S01, S02, S05, S06</td>
-</tr>
-<tr>
-<td><strong>F3 — Gegevensvoorziening</strong></td>
-<td>Herbruikbare en selectieve ontsluiting van brongegevens naar verschillende gegevensstromen.</td>
-<td>S07, S08, S11</td>
-</tr>
-<tr>
-<td><strong>F4 — Semantiek &amp; Eenheid van Taal</strong></td>
-<td>Eenduidige betekenis, beschrijving en transformatie van gegevens.</td>
-<td>S10</td>
-</tr>
-<tr>
-<td><strong>F5 — Gegevenskwaliteit &amp; Validatie</strong></td>
-<td>Aantoonbare kwaliteit, herkomst en geldigheid van uitgewisselde gegevens.</td>
-<td>S10</td>
-</tr>
-<tr>
-<td><strong>F6 — Grondslag &amp; Beleid</strong></td>
-<td>Vastleggen en toepassen van grondslagen, voorwaarden en autorisatiebeleid.</td>
-<td>S01, S05, S06</td>
-</tr>
-<tr>
-<td><strong>F7 — Orkestratie &amp; Integratie</strong></td>
-<td>Integratie met bronnen en externe stelsels zonder patroonafhankelijke logica in de bron.</td>
-<td>S07, S08, S11</td>
-</tr>
-<tr>
-<td><strong>F8 — Beheer &amp; Continuïteit</strong></td>
-<td>Beheersbaarheid, monitoring, auditbaarheid en continuïteit van de keten.</td>
-<td>S09 en alle overige stelselfuncties</td>
-</tr>
-</tbody>
-</table>
 <h2 id="generieke-functies-f1-identiteit-vertrouwen">F1 — Identiteit &amp; Vertrouwen<a class="headerlink" href="#generieke-functies-f1-identiteit-vertrouwen" title="Permanent link">&para;</a></h2>
 <p>De inrichting voldoet aan de volgende eisen:</p>
 <ul>
@@ -1606,7 +1555,60 @@
 <li>F4 en F5 bepalen welke gegevens betekenisvol en valide kunnen worden geleverd door F3;</li>
 <li>F7 verbindt F3 met de externe interactiepatronen;</li>
 <li>F8 stelt beheer- en auditvoorwaarden aan alle functies.</li>
-</ul></section><section class="print-page" id="capabilities" heading-number="7"><h1 id="capabilities-stelselfuncties">Stelselfuncties<a class="headerlink" href="#capabilities-stelselfuncties" title="Permanent link">&para;</a></h1>
+</ul>
+<h2 id="generieke-functies-uitwerking-in-stelselfuncties">Uitwerking in stelselfuncties<a class="headerlink" href="#generieke-functies-uitwerking-in-stelselfuncties" title="Permanent link">&para;</a></h2>
+<p>De generieke functies worden uitgewerkt naar stelselfuncties: afspraken, standaarden en voorzieningen die invulling geven aan de generieke functie. In de onderstaande tabel staat de relatie tussen generieke functies en stelselfuncties, die in het volgende hoofdstuk uitgewerkt worden.</p>
+<table>
+<thead>
+<tr>
+<th>Generieke functie</th>
+<th>Doel in het globaal ontwerp</th>
+<th>Stelselfuncties</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>F1 — Identiteit &amp; Vertrouwen</strong></td>
+<td>Vaststellen en vertrouwen van burgers, organisaties en systemen.</td>
+<td><a href="#capabilities-s03-burgeridentificatie-pseudonimisering">S03</a>, <a href="#capabilities-s04-organisatie-authenticatie-vertrouwensstelsel">S04</a></td>
+</tr>
+<tr>
+<td><strong>F2 — Toegang &amp; Interactie</strong></td>
+<td>Toegang voor burgers en organisaties en, waar nodig, interactie over toestemming.</td>
+<td><a href="#capabilities-s01-toestemmingsregistratie">S01</a>, <a href="#capabilities-s02-toestemmingsportaal">S02</a>, <a href="#capabilities-s05-autorisatie">S05</a>, <a href="#capabilities-s06-beleidsbeheer-distributie">S06</a></td>
+</tr>
+<tr>
+<td><strong>F3 — Gegevensvoorziening</strong></td>
+<td>Herbruikbare en selectieve ontsluiting van brongegevens naar verschillende gegevensstromen.</td>
+<td><a href="#capabilities-s07-gegevensontsluiting">S07</a>, <a href="#capabilities-s08-oots-adapter">S08</a>, <a href="#capabilities-s11-attesteringsuitgifte">S11</a></td>
+</tr>
+<tr>
+<td><strong>F4 — Semantiek &amp; Eenheid van Taal</strong></td>
+<td>Eenduidige betekenis, beschrijving en transformatie van gegevens.</td>
+<td><a href="#capabilities-s10-semantiek-gegevenscatalogus">S10</a></td>
+</tr>
+<tr>
+<td><strong>F5 — Gegevenskwaliteit &amp; Validatie</strong></td>
+<td>Aantoonbare kwaliteit, herkomst en geldigheid van uitgewisselde gegevens.</td>
+<td><a href="#capabilities-s10-semantiek-gegevenscatalogus">S10</a></td>
+</tr>
+<tr>
+<td><strong>F6 — Grondslag &amp; Beleid</strong></td>
+<td>Vastleggen en toepassen van grondslagen, voorwaarden en autorisatiebeleid.</td>
+<td><a href="#capabilities-s01-toestemmingsregistratie">S01</a>, <a href="#capabilities-s05-autorisatie">S05</a>, <a href="#capabilities-s06-beleidsbeheer-distributie">S06</a></td>
+</tr>
+<tr>
+<td><strong>F7 — Orkestratie &amp; Integratie</strong></td>
+<td>Integratie met bronnen en externe stelsels zonder patroonafhankelijke logica in de bron.</td>
+<td><a href="#capabilities-s07-gegevensontsluiting">S07</a>, <a href="#capabilities-s08-oots-adapter">S08</a>, <a href="#capabilities-s11-attesteringsuitgifte">S11</a></td>
+</tr>
+<tr>
+<td><strong>F8 — Beheer &amp; Continuïteit</strong></td>
+<td>Beheersbaarheid, monitoring, auditbaarheid en continuïteit van de keten.</td>
+<td><a href="#capabilities-s09-logging-audit-traceerbaarheid">S09</a> en alle overige stelselfuncties</td>
+</tr>
+</tbody>
+</table></section><section class="print-page" id="capabilities" heading-number="7"><h1 id="capabilities-stelselfuncties">Stelselfuncties<a class="headerlink" href="#capabilities-stelselfuncties" title="Permanent link">&para;</a></h1>
 <p>Dit hoofdstuk werkt de stelselfuncties uit die in het <a href="https://ictu.github.io/GBO-GO/main/#4-generieke-functies-en-stelselfuncties">globaal ontwerp</a> zijn gekoppeld aan de generieke functies. De nadruk ligt op normerende eisen, afspraken, standaarden, functionele voorzieningen, verantwoordelijkheden en open besluiten.</p>
 <p>Een genoemde voorziening is een functionele component. De PSA schrijft geen product of specifieke referentie-implementatie voor.</p>
 <h2 id="capabilities-overzicht">Overzicht<a class="headerlink" href="#capabilities-overzicht" title="Permanent link">&para;</a></h2>
@@ -1620,58 +1622,58 @@
 </thead>
 <tbody>
 <tr>
-<td>S01 — Toestemmingsregistratie</td>
-<td>F2, F6</td>
+<td><a href="#capabilities-s01-toestemmingsregistratie">S01 — Toestemmingsregistratie</a></td>
+<td><a href="#generieke-functies-f2-toegang-interactie">F2</a>, <a href="#generieke-functies-f6-grondslag-beleid">F6</a></td>
 <td>Geldige toestemming machineleesbaar vastleggen en actueel raadplegen.</td>
 </tr>
 <tr>
-<td>S02 — Toestemmingsportaal</td>
-<td>F2</td>
+<td><a href="#capabilities-s02-toestemmingsportaal">S02 — Toestemmingsportaal</a></td>
+<td><a href="#generieke-functies-f2-toegang-interactie">F2</a></td>
 <td>Begrijpelijke burgerinteractie voor verlenen, inzien en intrekken.</td>
 </tr>
 <tr>
-<td>S03 — Burgeridentificatie &amp; Pseudonimisering</td>
-<td>F1</td>
+<td><a href="#capabilities-s03-burgeridentificatie-pseudonimisering">S03 — Burgeridentificatie &amp; Pseudonimisering</a></td>
+<td><a href="#generieke-functies-f1-identiteit-vertrouwen">F1</a></td>
 <td>Burger identificeren en BSN afschermen voor onbevoegde afnemers.</td>
 </tr>
 <tr>
-<td>S04 — Organisatie-authenticatie &amp; Vertrouwensstelsel</td>
-<td>F1</td>
+<td><a href="#capabilities-s04-organisatie-authenticatie-vertrouwensstelsel">S04 — Organisatie-authenticatie &amp; Vertrouwensstelsel</a></td>
+<td><a href="#generieke-functies-f1-identiteit-vertrouwen">F1</a></td>
 <td>Deelnemers toelaten, identificeren en vertrouwen.</td>
 </tr>
 <tr>
-<td>S05 — Autorisatie</td>
-<td>F2, F6</td>
+<td><a href="#capabilities-s05-autorisatie">S05 — Autorisatie</a></td>
+<td><a href="#generieke-functies-f2-toegang-interactie">F2</a>, <a href="#generieke-functies-f6-grondslag-beleid">F6</a></td>
 <td>Iedere gegevensvraag toetsen en de beslissing afdwingen.</td>
 </tr>
 <tr>
-<td>S06 — Beleidsbeheer &amp; -distributie</td>
-<td>F2, F6</td>
+<td><a href="#capabilities-s06-beleidsbeheer-distributie">S06 — Beleidsbeheer &amp; -distributie</a></td>
+<td><a href="#generieke-functies-f2-toegang-interactie">F2</a>, <a href="#generieke-functies-f6-grondslag-beleid">F6</a></td>
 <td>Beleid bestuurlijk beheren en gecontroleerd beschikbaar stellen.</td>
 </tr>
 <tr>
-<td>S07 — Gegevensontsluiting</td>
-<td>F3, F7</td>
+<td><a href="#capabilities-s07-gegevensontsluiting">S07 — Gegevensontsluiting</a></td>
+<td><a href="#generieke-functies-f3-gegevensvoorziening">F3</a>, <a href="#generieke-functies-f7-orkestratie-integratie">F7</a></td>
 <td>Eén generieke bronontsluiting-API en een dienstencatalogus.</td>
 </tr>
 <tr>
-<td>S08 — OOTS-adapter</td>
-<td>F3, F7</td>
+<td><a href="#capabilities-s08-oots-adapter">S08 — OOTS-adapter</a></td>
+<td><a href="#generieke-functies-f3-gegevensvoorziening">F3</a>, <a href="#generieke-functies-f7-orkestratie-integratie">F7</a></td>
 <td>Aansluiting op OOTS-V en mapping naar OOTS-EDM.</td>
 </tr>
 <tr>
-<td>S09 — Logging, Audit &amp; Traceerbaarheid</td>
-<td>F8</td>
+<td><a href="#capabilities-s09-logging-audit-traceerbaarheid">S09 — Logging, Audit &amp; Traceerbaarheid</a></td>
+<td><a href="#generieke-functies-f8-beheer-continuiteit">F8</a></td>
 <td>Ketenbrede herleidbaarheid en verantwoording.</td>
 </tr>
 <tr>
-<td>S10 — Semantiek &amp; Gegevenscatalogus</td>
-<td>F4, F5</td>
+<td><a href="#capabilities-s10-semantiek-gegevenscatalogus">S10 — Semantiek &amp; Gegevenscatalogus</a></td>
+<td><a href="#generieke-functies-f4-semantiek-eenheid-van-taal">F4</a>, <a href="#generieke-functies-f5-gegevenskwaliteit-validatie">F5</a></td>
 <td>Begrippen, schema's, kwaliteit en mappings beheren.</td>
 </tr>
 <tr>
-<td>S11 — Attesteringsuitgifte</td>
-<td>F3, F7</td>
+<td><a href="#capabilities-s11-attesteringsuitgifte">S11 — Attesteringsuitgifte</a></td>
+<td><a href="#generieke-functies-f3-gegevensvoorziening">F3</a>, <a href="#generieke-functies-f7-orkestratie-integratie">F7</a></td>
 <td>PubEAA-uitgifte en ondersteuning van QEAA-uitgifte via een ASI.</td>
 </tr>
 </tbody>
@@ -1681,12 +1683,12 @@
 Een geldige toestemming en de bijbehorende doelbinding machineleesbaar vastleggen en actueel raadpleegbaar maken voor autorisatie.</p>
 <p><strong>Normerende eisen</strong></p>
 <ul>
-<li>Een toestemmingsrecord bevat ten minste betrokkene of pseudonieme verwijzing, afnemer, dienst, doel, gegevensscope, tijdstip, geldigheidsduur, status en bewijs van de interactie.</li>
-<li>De registratie ondersteunt verlening, wijziging, intrekking en verloop.</li>
-<li>De actuele status wordt op het moment van de gegevensvraag gecontroleerd.</li>
-<li>Het register bevat geen BSN als een pseudonieme identificatie volstaat.</li>
-<li>Toegang tot toestemming is beperkt tot de burger en componenten die de informatie voor autorisatie of verantwoording nodig hebben.</li>
-<li>Bewaartermijnen en verwijdering worden op juridische en auditvereisten afgestemd.</li>
+<li>een toestemmingsrecord bevat ten minste betrokkene of pseudonieme verwijzing, afnemer, dienst, doel, gegevensscope, tijdstip, geldigheidsduur, status en bewijs van de interactie;</li>
+<li>de registratie ondersteunt verlening, wijziging, intrekking en verloop;</li>
+<li>de actuele status wordt op het moment van de gegevensvraag gecontroleerd;</li>
+<li>het register bevat geen BSN als een pseudonieme identificatie volstaat;</li>
+<li>toegang tot toestemming is beperkt tot de burger en componenten die de informatie voor autorisatie of verantwoording nodig hebben;</li>
+<li>bewaartermijnen en verwijdering worden op juridische en auditvereisten afgestemd.</li>
 </ul>
 <p><strong>Afspraken en standaarden</strong></p>
 <ul>
@@ -1717,13 +1719,13 @@ Een geldige toestemming en de bijbehorende doelbinding machineleesbaar vastlegge
 De burger in staat stellen geïnformeerd toestemming te verlenen en bestaande toestemmingen in te zien en, waar toepasselijk, in te trekken.</p>
 <p><strong>Normerende eisen</strong></p>
 <ul>
-<li>De burger ziet in begrijpelijke taal de afnemer, dienst, doel, gegevensscope, duur en gevolgen.</li>
-<li>De authenticatie heeft een passend betrouwbaarheidsniveau.</li>
-<li>De burger ontvangt een bevestiging van de gemaakte keuze.</li>
-<li>Intrekking wordt zonder onnodige vertraging verwerkt in het toestemmingsregister.</li>
-<li>De interactie voldoet aan toegankelijkheidseisen en is bruikbaar op gangbare apparaten.</li>
-<li>De inrichting ondersteunt een gelijkwaardig alternatief als dit juridisch of beleidsmatig vereist is.</li>
-<li>Pseudonimisering en technische identifiers zijn voor de burger transparant en worden niet als inhoudelijke keuze gepresenteerd.</li>
+<li>de burger ziet in begrijpelijke taal de afnemer, dienst, doel, gegevensscope, duur en gevolgen;</li>
+<li>de authenticatie heeft een passend betrouwbaarheidsniveau;</li>
+<li>de burger ontvangt een bevestiging van de gemaakte keuze;</li>
+<li>intrekking wordt zonder onnodige vertraging verwerkt in het toestemmingsregister;</li>
+<li>de interactie voldoet aan toegankelijkheidseisen en is bruikbaar op gangbare apparaten;</li>
+<li>de inrichting ondersteunt een gelijkwaardig alternatief als dit juridisch of beleidsmatig vereist is;</li>
+<li>pseudonimisering en technische identifiers zijn voor de burger transparant en worden niet als inhoudelijke keuze gepresenteerd.</li>
 </ul>
 <p><strong>Afspraken en standaarden</strong></p>
 <ul>
@@ -1751,19 +1753,19 @@ De burger in staat stellen geïnformeerd toestemming te verlenen en bestaande to
 De burger op passend niveau identificeren en voorkomen dat het BSN terechtkomt bij afnemers die het niet mogen verwerken.</p>
 <p><strong>Normerende eisen</strong></p>
 <ul>
-<li>Het BSN blijft binnen componenten en organisaties die het rechtmatig mogen verwerken.</li>
-<li>Een private afnemer zonder wettelijke BSN-bevoegdheid ontvangt een partijspecifieke identiteit of pseudoniem.</li>
-<li>Pseudoniemen voor verschillende partijen of contexten zijn niet onderling koppelbaar.</li>
-<li>Identiteitsvertaling wordt alleen uitgevoerd voor een toegestane dienst en gegevensvraag.</li>
-<li>Identiteitsgegevens en sleutelmateriaal worden volgens hoge beveiligingseisen beheerd.</li>
-<li>Als een erkend buitenlands of wallet-gebaseerd middel geen BSN bevat, wordt een gecontroleerd identity-matchingproces toegepast voordat persoonsgegevens bij de bron worden bevraagd.</li>
+<li>het BSN blijft binnen componenten en organisaties die het rechtmatig mogen verwerken;</li>
+<li>een private afnemer zonder wettelijke BSN-bevoegdheid ontvangt een partijspecifieke identiteit of pseudoniem;</li>
+<li>pseudoniemen voor verschillende partijen of contexten zijn niet onderling koppelbaar;</li>
+<li>identiteitsvertaling wordt alleen uitgevoerd voor een toegestane dienst en gegevensvraag;</li>
+<li>identiteitsgegevens en sleutelmateriaal worden volgens hoge beveiligingseisen beheerd;</li>
+<li>als een erkend buitenlands of wallet-gebaseerd middel geen BSN bevat, wordt een gecontroleerd identity-matchingproces toegepast voordat persoonsgegevens bij de bron worden bevraagd.</li>
 </ul>
 <p><strong>Afspraken en standaarden</strong></p>
 <ul>
 <li>betrouwbaarheidsniveaus en toegestane authenticatiemiddelen;</li>
 <li>aansluitprofiel voor de pseudonimiseringsvoorziening;</li>
 <li>regels voor sleutelbeheer, partijbinding en levenscyclus;</li>
-<li>eisen aan identity matching, inclusief foutafhandeling en menselijke tussenkomst.</li>
+<li>eisen aan identity matching, inclusief foutafhandeling en eventuele menselijke tussenkomst.</li>
 </ul>
 <p><strong>Functionele voorzieningen</strong></p>
 <ul>
@@ -1783,12 +1785,12 @@ De burger op passend niveau identificeren en voorkomen dat het BSN terechtkomt b
 Vaststellen dat deelnemende organisaties en systemen zijn wie zij zeggen te zijn, bevoegd zijn tot deelname en blijvend aan de aansluitvoorwaarden voldoen.</p>
 <p><strong>Normerende eisen</strong></p>
 <ul>
-<li>Deelname vereist een voorafgaande toelatingsbeslissing.</li>
-<li>Organisaties en systemen gebruiken erkende identifiers en certificaten.</li>
-<li>De technische identiteit wordt gekoppeld aan de toegelaten juridische organisatie en rol.</li>
-<li>Vertrouwensankers en deelnemersstatus zijn machineleesbaar controleerbaar.</li>
-<li>Schorsing en beëindiging leiden tijdig tot intrekking van toegang.</li>
-<li>Buitenlandse, publieke en private deelnemers kunnen verschillende toelatingsregimes hebben, maar gebruiken waar mogelijk dezelfde verificatiepatronen.</li>
+<li>deelname vereist een voorafgaande toelatingsbeslissing;</li>
+<li>organisaties en systemen gebruiken erkende identifiers en certificaten;</li>
+<li>de technische identiteit wordt gekoppeld aan de toegelaten juridische organisatie en rol;</li>
+<li>vertrouwensankers en deelnemersstatus zijn machineleesbaar controleerbaar;</li>
+<li>schorsing en beëindiging leiden tijdig tot intrekking van toegang;</li>
+<li>buitenlandse, publieke en private deelnemers kunnen verschillende toelatingsregimes hebben, maar gebruiken waar mogelijk dezelfde verificatiepatronen.</li>
 </ul>
 <p><strong>Afspraken en standaarden</strong></p>
 <ul>
@@ -1816,13 +1818,13 @@ Vaststellen dat deelnemende organisaties en systemen zijn wie zij zeggen te zijn
 Iedere gegevensvraag toetsen aan identiteit, dienst, doel, grondslag, gegevensscope en context, en de beslissing bij de bron afdwingen.</p>
 <p><strong>Normerende eisen</strong></p>
 <ul>
-<li>Iedere gegevensvraag doorloopt een PEP-PDP-keten of een functioneel gelijkwaardige scheiding tussen afdwinging en besluitvorming.</li>
-<li>De autorisatievraag gebruikt een gestandaardiseerd vocabulaire voor subject, actie, resource en context.</li>
-<li>De PDP kan relevante informatiebronnen raadplegen, waaronder deelnemersstatus, dienstencatalogus en toestemmingsregister.</li>
-<li>De beslissing is fijnmazig genoeg om afzonderlijke gegevens of velden toe te staan of te weigeren.</li>
-<li>De beleidsversie, relevante context en beslissing worden gelogd.</li>
-<li>Een PEP weigert standaard bij ontbrekende of onbetrouwbare beslisinformatie.</li>
-<li>De interface en het beleid zijn productonafhankelijk.</li>
+<li>iedere gegevensvraag doorloopt een PEP-PDP-keten of een functioneel gelijkwaardige scheiding tussen afdwinging en besluitvorming;</li>
+<li>de autorisatievraag gebruikt een gestandaardiseerd vocabulaire voor subject, actie, resource en context;</li>
+<li>de PDP kan relevante informatiebronnen raadplegen, waaronder deelnemersstatus, dienstencatalogus en toestemmingsregister;</li>
+<li>de beslissing is fijnmazig genoeg om afzonderlijke gegevens of velden toe te staan of te weigeren;</li>
+<li>de beleidsversie, relevante context en beslissing worden gelogd;</li>
+<li>een PEP weigert standaard bij ontbrekende of onbetrouwbare beslisinformatie;</li>
+<li>de interface en het beleid zijn productonafhankelijk.</li>
 </ul>
 <p><strong>Afspraken en standaarden</strong></p>
 <ul>
@@ -1849,12 +1851,12 @@ Iedere gegevensvraag toetsen aan identiteit, dienst, doel, grondslag, gegevenssc
 Autorisatiebeleid bestuurlijk beheersen, testen, vaststellen, publiceren en gecontroleerd beschikbaar stellen aan autorisatiecomponenten.</p>
 <p><strong>Normerende eisen</strong></p>
 <ul>
-<li>Beleid is machineleesbaar, versieerbaar en niet gebonden aan één specifieke policytaal of implementatie.</li>
-<li>Beleid heeft een inhoudelijke eigenaar, goedkeurder, ingangsdatum en wijzigingshistorie.</li>
-<li>Wijzigingen worden vóór publicatie gevalideerd met positieve, negatieve en regressietests.</li>
-<li>Gepubliceerde beleidssets zijn authentiek en integer verifieerbaar.</li>
-<li>Autorisatiecomponenten kunnen een geldige beleidsversie betrouwbaar verkrijgen en bij storingen gecontroleerd terugvallen.</li>
-<li>Een spoedprocedure en terugrolprocedure zijn beschikbaar.</li>
+<li>beleid is machineleesbaar, versieerbaar en niet gebonden aan één specifieke policytaal of implementatie;</li>
+<li>beleid heeft een inhoudelijke eigenaar, goedkeurder, ingangsdatum en wijzigingshistorie;</li>
+<li>wijzigingen worden vóór publicatie gevalideerd met positieve, negatieve en regressietests;</li>
+<li>gepubliceerde beleidssets zijn authentiek en integer verifieerbaar;</li>
+<li>autorisatiecomponenten kunnen een geldige beleidsversie betrouwbaar verkrijgen en bij storingen gecontroleerd terugvallen;</li>
+<li>een spoedprocedure en terugrolprocedure zijn beschikbaar.</li>
 </ul>
 <p><strong>Afspraken en standaarden</strong></p>
 <ul>
@@ -1883,13 +1885,13 @@ Autorisatiebeleid bestuurlijk beheersen, testen, vaststellen, publiceren en geco
 Bronhouders gegevens laten aanbieden via één generieke, herbruikbare en selectief bevraagbare bronontsluiting-API.</p>
 <p><strong>Normerende eisen</strong></p>
 <ul>
-<li>Een bronhouder gebruikt voor de GBO-interactiepatronen één logisch koppelvlak.</li>
-<li>De API ondersteunt vooraf geregistreerde, selectieve gegevensvragen.</li>
-<li>Een gegevensvraag verwijst eenduidig naar een dienst in de dienstencatalogus.</li>
-<li>Het koppelvlak ondersteunt de autorisatie- en loggingvereisten van S05 en S09.</li>
-<li>Schema's, versies, foutmeldingen en beschikbaarheidskenmerken zijn gepubliceerd.</li>
-<li>Nieuwe diensten kunnen in beginsel via schema, dienstregistratie en beleid worden toegevoegd.</li>
-<li>De GBO-vertaallaag is een optionele, vervangbare ondersteuning en geen verplichte centrale route.</li>
+<li>een bronhouder gebruikt voor de GBO-interactiepatronen één logisch koppelvlak;</li>
+<li>de API ondersteunt vooraf geregistreerde, selectieve gegevensvragen;</li>
+<li>een gegevensvraag verwijst eenduidig naar een dienst in de dienstencatalogus;</li>
+<li>het koppelvlak ondersteunt de autorisatie- en loggingvereisten van S05 en S09;</li>
+<li>schema's, versies, foutmeldingen en beschikbaarheidskenmerken zijn gepubliceerd;</li>
+<li>nieuwe diensten kunnen in beginsel via schema, dienstregistratie en beleid worden toegevoegd;</li>
+<li>de GBO-vertaallaag is een optionele, vervangbare ondersteuning en geen verplichte centrale route.</li>
 </ul>
 <p><strong>Afspraken en standaarden</strong></p>
 <ul>
@@ -1918,12 +1920,12 @@ Bronhouders gegevens laten aanbieden via één generieke, herbruikbare en select
 Binnen de GBO-oplossing de generieke bronontsluiting aansluiten op de Basisinrichting OOTS, in het bijzonder OOTS-V, zonder OOTS-specifieke techniek bij bronhouders te vereisen.</p>
 <p><strong>Normerende eisen</strong></p>
 <ul>
-<li>De OOTS-adapter koppelt aan het nationale koppelvlak van OOTS-V.</li>
-<li>OOTS-verzoeken doorlopen dezelfde generieke autorisatie- en loggingfuncties als andere gegevensvragen.</li>
-<li>Transport, discovery en Europese procesinteractie blijven verantwoordelijkheid van de Basisinrichting OOTS.</li>
-<li>De adapter of bijbehorende mappingfunctie vertaalt expliciet tussen brongegevens en OOTS-EDM.</li>
-<li>Bronhouders worden niet afhankelijk van AS4/eDelivery-implementatiedetails.</li>
-<li>Sectorale of eigen OOTS-aansluitingen vallen buiten GBO, maar worden niet technisch uitgesloten.</li>
+<li>de OOTS-adapter koppelt aan het nationale koppelvlak van OOTS-V;</li>
+<li>verzoeken via OOTS doorlopen dezelfde generieke autorisatie- en loggingfuncties als andere gegevensvragen;</li>
+<li>transport, discovery en Europese procesinteractie blijven verantwoordelijkheid van de Basisinrichting OOTS;</li>
+<li>de adapter of bijbehorende mappingfunctie vertaalt expliciet tussen brongegevens en OOTS-EDM;</li>
+<li>bronhouders worden niet afhankelijk van AS4/eDelivery-implementatiedetails;</li>
+<li>sectorale of eigen OOTS-aansluitingen vallen buiten GBO, maar worden niet technisch uitgesloten.</li>
 </ul>
 <p><strong>Afspraken en standaarden</strong></p>
 <ul>
@@ -1936,12 +1938,12 @@ Binnen de GBO-oplossing de generieke bronontsluiting aansluiten op de Basisinric
 <p><strong>Functionele voorzieningen</strong></p>
 <ul>
 <li>Basisinrichting OOTS en OOTS-V als externe bestaande voorziening;</li>
-<li>OOTS-adapter of uitbreiding van OOTS-V met het GBO-koppelvlak;</li>
+<li>uitbreiding van OOTS-V met het GBO-koppelvlak;</li>
 <li>semantische mappings via S10.</li>
 </ul>
 <p><strong>Open besluiten</strong></p>
 <ul>
-<li>precieze grens tussen OOTS-V, OOTS-adapter en semantische mapping;</li>
+<li>precieze grens tussen OOTS-V en semantische mapping;</li>
 <li>beheer en financiering van de aanpassing;</li>
 <li>beheer van discovery- en dienstinformatie.</li>
 </ul>
@@ -1950,13 +1952,13 @@ Binnen de GBO-oplossing de generieke bronontsluiting aansluiten op de Basisinric
 Gegevensvragen en relevante beslissingen over de hele keten herleidbaar maken en wettelijke verantwoording en inzage ondersteunen.</p>
 <p><strong>Normerende eisen</strong></p>
 <ul>
-<li>Iedere gegevensvraag krijgt een ketenbreed bruikbare verzoekidentificator.</li>
-<li>Iedere component legt de voor zijn verantwoordelijkheid relevante gebeurtenis vast.</li>
-<li>Logging bevat niet meer persoonsgegevens dan noodzakelijk.</li>
-<li>Autorisatiebeslissingen verwijzen naar de toegepaste beleidsversie en relevante grondslaginformatie.</li>
-<li>Loggegevens zijn beschermd tegen ongeautoriseerde wijziging en verwijdering.</li>
-<li>Bewaartermijnen, toegang, inzage en vernietiging zijn expliciet geregeld.</li>
-<li>Een centrale aggregatie is alleen toegestaan als noodzaak, grondslag en privacymaatregelen zijn aangetoond.</li>
+<li>iedere gegevensvraag krijgt een ketenbreed bruikbare verzoekidentificator;</li>
+<li>iedere component legt de voor zijn verantwoordelijkheid relevante gebeurtenis vast;</li>
+<li>logging bevat niet meer persoonsgegevens dan noodzakelijk;</li>
+<li>autorisatiebeslissingen verwijzen naar de toegepaste beleidsversie en relevante grondslaginformatie;</li>
+<li>loggegevens zijn beschermd tegen ongeautoriseerde wijziging en verwijdering;</li>
+<li>bewaartermijnen, toegang, inzage en vernietiging zijn expliciet geregeld;</li>
+<li>een centrale aggregatie is alleen toegestaan als noodzaak, grondslag en privacymaatregelen zijn aangetoond.</li>
 </ul>
 <p><strong>Afspraken en standaarden</strong></p>
 <ul>
@@ -1982,13 +1984,13 @@ Gegevensvragen en relevante beslissingen over de hele keten herleidbaar maken en
 Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven, zodat gegevens in verschillende interactiepatronen eenduidig kunnen worden geïnterpreteerd en gevalideerd.</p>
 <p><strong>Normerende eisen</strong></p>
 <ul>
-<li>Iedere gegevensdienst verwijst naar een beheerd schema en begrippenkader.</li>
-<li>Bronhouders en domeinen zijn verantwoordelijk voor inhoud en kwaliteit van hun modellen.</li>
-<li>Catalogusbeschrijvingen, schema's en mappings zijn machineleesbaar en versieerbaar.</li>
-<li>Kwaliteitskenmerken en herkomstinformatie zijn opgenomen.</li>
-<li>Validatieregels worden vóór uitlevering toegepast waar dit technisch en juridisch passend is.</li>
-<li>Mappings naar OOTS-EDM en attestatieschema's zijn expliciet en herleidbaar naar bron- en doelversies.</li>
-<li>De catalogus beschrijft tevens de voorwaarden waaronder een dienst kan worden gebruikt, zonder het autorisatiebeleid te dupliceren.</li>
+<li>iedere gegevensdienst verwijst naar een beheerd schema en begrippenkader;</li>
+<li>bronhouders en domeinen zijn verantwoordelijk voor inhoud en kwaliteit van hun modellen;</li>
+<li>catalogusbeschrijvingen, schema's en mappings zijn machineleesbaar en versieerbaar;</li>
+<li>kwaliteitskenmerken en herkomstinformatie zijn opgenomen;</li>
+<li>validatieregels worden vóór uitlevering toegepast waar dit technisch en juridisch passend is;</li>
+<li>mappings naar OOTS-EDM en attestatieschema's zijn expliciet en herleidbaar naar bron- en doelversies;</li>
+<li>de catalogus beschrijft tevens de voorwaarden waaronder een dienst kan worden gebruikt, zonder het autorisatiebeleid te dupliceren.</li>
 </ul>
 <p><strong>Afspraken en standaarden</strong></p>
 <ul>
@@ -2017,13 +2019,13 @@ Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven, zodat 
 Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's ondersteunen bij QEAA-uitgifte via een Authentic Source Interface.</p>
 <p><strong>Normerende eisen</strong></p>
 <ul>
-<li>De bronhouder blijft juridisch en inhoudelijk verantwoordelijk voor de uitgegeven publieke attributen, tenzij wet- en regelgeving een andere rolverdeling bepaalt.</li>
-<li>GBO kan de technische functie van PubEAA-provider ondersteunen, maar wordt daardoor niet automatisch de juridische uitgevende instantie.</li>
-<li>Een ASI-provider biedt gestandaardiseerde verify- en, waar toegestaan, retrievefuncties aan QTSP's.</li>
-<li>Uitgifte, verificatie en retrieval doorlopen passende authenticatie, autorisatie en logging.</li>
-<li>Attestaties volgen een vastgesteld attestation rulebook en schema.</li>
-<li>Binding aan burger en wallet, signing, status, intrekking en geldigheid zijn geregeld.</li>
-<li>Centrale, decentrale en federatieve varianten blijven mogelijk zolang zij aan dezelfde koppelvlakken en eisen voldoen.</li>
+<li>de bronhouder blijft juridisch en inhoudelijk verantwoordelijk voor de uitgegeven publieke attributen, tenzij wet- en regelgeving een andere rolverdeling bepaalt;</li>
+<li>de GBO-oplossing kan de technische functie van PubEAA-provider ondersteunen, maar wordt daardoor niet automatisch de juridische uitgevende instantie;</li>
+<li>een ASI-provider biedt gestandaardiseerde verify- en, waar toegestaan, retrievefuncties aan QTSP's;</li>
+<li>uitgifte, verificatie en retrieval doorlopen passende authenticatie, autorisatie en logging;</li>
+<li>attestaties volgen een vastgesteld attestation rulebook en schema;</li>
+<li>binding aan burger en wallet, signing, status, intrekking en geldigheid zijn geregeld;</li>
+<li>centrale, decentrale en federatieve varianten blijven mogelijk zolang zij aan dezelfde koppelvlakken en eisen voldoen.</li>
 </ul>
 <p><strong>Afspraken en standaarden</strong></p>
 <ul>
@@ -2134,7 +2136,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 <table>
 <thead>
 <tr>
-<th>Werkpakket</th>
+<th>Werkpakket&nbsp;&nbsp;</th>
 <th>Stelselfuncties</th>
 <th>Belangrijkste resultaten</th>
 <th>Belangrijkste afhankelijkheden</th>
@@ -2175,7 +2177,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 <li>API-profiel voor de bronontsluiting;</li>
 <li>model en beheerproces voor de dienstencatalogus;</li>
 <li>autorisatieprofiel voor PEP, PDP en PIP;</li>
-<li>governance- en distributieprofiel voor beleid;</li>
+<li>governance- en distributieprofiel voor beleidsregels;</li>
 <li>profiel voor ketenlogging en correlatie;</li>
 <li>kaders voor begrippen, schema's, kwaliteit en mappings.</li>
 </ul>
@@ -2209,10 +2211,10 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 </ul>
 <p>De keuze wordt niet door de PSA op voorhand centraal vastgelegd. De interfaces en eisen moeten varianten onderling uitwisselbaar maken.</p>
 <h2 id="realisatiestrategie-werkpakket-oots">Werkpakket OOTS<a class="headerlink" href="#realisatiestrategie-werkpakket-oots" title="Permanent link">&para;</a></h2>
-<p>Dit werkpakket koppelt GBO aan de Basisinrichting OOTS.</p>
+<p>Dit werkpakket koppelt de gemeenschappelijke ontsluiting aan de Basisinrichting OOTS.</p>
 <h3 id="realisatiestrategie-op-te-leveren-afspraken-en-standaarden_2">Op te leveren afspraken en standaarden<a class="headerlink" href="#realisatiestrategie-op-te-leveren-afspraken-en-standaarden_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li>het nationale koppelvlak tussen OOTS-V en de bronontsluiting-API;</li>
+<li>het koppelvlak tussen OOTS-V en de bronontsluiting-API;</li>
 <li>autorisatie- en loggingafspraken voor OOTS-verzoeken;</li>
 <li>beheerproces voor gegevensdiensten, discovery en OOTS-EDM-mappings;</li>
 <li>verantwoordelijkheidsverdeling bij fouten, wijzigingen en incidenten.</li>
@@ -2245,7 +2247,10 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 <li>registratie van diensten, doelen en toegestane gegevensvragen;</li>
 <li>autorisatiebeleid en wijzigingsgovernance.</li>
 </ul>
-<h2 id="realisatiestrategie-implementatie-bij-bronhouders">Implementatie bij bronhouders<a class="headerlink" href="#realisatiestrategie-implementatie-bij-bronhouders" title="Permanent link">&para;</a></h2>
+<h2 id="realisatiestrategie-impact-op-betrokken-partijen">Impact op betrokken partijen<a class="headerlink" href="#realisatiestrategie-impact-op-betrokken-partijen" title="Permanent link">&para;</a></h2>
+<p>In het <a href="https://ictu.github.io/GBO-GO/main/#6-impact-op-betrokken-partijen">globaal ontwerp</a> is een eerste inschatting gemaakt van de impact van GBO op de betrokken partijen. Op basis van het PSA kan dat verder uitgewerkt worden.<br />
+Dit zal verder geconcretiseerd worden als het technisch ontwerp en de technische requirements uitgewerkt zijn.  </p>
+<h3 id="realisatiestrategie-bronhouder">Bronhouder<a class="headerlink" href="#realisatiestrategie-bronhouder" title="Permanent link">&para;</a></h3>
 <p>Een bronhouder realiseert of gebruikt:</p>
 <ul>
 <li>een bronontsluiting-API conform het vastgestelde profiel;</li>
@@ -2254,8 +2259,33 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 <li>een beschrijving van gegevensdiensten, schema's en kwaliteit;</li>
 <li>beheerprocessen voor aansluiting, wijzigingen en incidenten.</li>
 </ul>
-<p>Een bronhouder kan gebruikmaken van referentiecomponenten of functioneel gelijkwaardige alternatieven. De keuzevrijheid geldt niet voor de naleving van de vastgestelde afspraken, standaarden en koppelvlakken.</p>
-<p>Voor interactiepatroonspecifieke functies kan de bronhouder gebruikmaken van gedeelde voorzieningen of eigen varianten, voor zover wet- en regelgeving dit toestaat en de variant voldoet aan dezelfde interoperabiliteits- en beveiligingseisen.</p>
+<p>Een bronhouder kan gebruikmaken van referentiecomponenten, eventueel ondersteund met onderdelen uit de GBO-vertaallaag, of functioneel gelijkwaardige alternatieven. De keuzevrijheid geldt niet voor de naleving van de vastgestelde afspraken, standaarden en koppelvlakken.</p>
+<h3 id="realisatiestrategie-qtsps">QTSP's<a class="headerlink" href="#realisatiestrategie-qtsps" title="Permanent link">&para;</a></h3>
+<p>De wijze waarop attestaties uitgegeven worden met GBO, is nog niet vastgesteld. Vooralsnog worden alle varianten ondersteund. Dat betekent dat QTSP's verschillende opties hebben:</p>
+<ul>
+<li>gebruikmaken van de verifyfunctie van de centrale ASI-provider om attributen te controleren en op basis daarvan attestaties uitgeven;</li>
+<li>gebruikmaken van de retrievefunctie van de centrale ASI-provider om namens een bronhouder attestaties uit te geven;</li>
+<li>via andere kanalen bij de bron de vereiste gegevens ophalen om attestaties uit te geven (buiten scope van GBO).</li>
+</ul>
+<p>Voor het gebruik van de centrale ASI-provider zal de QTSP conform de EUDI-afspraken en -standaarden moeten aansluiten.</p>
+<h3 id="realisatiestrategie-oots-basisinrichting">OOTS Basisinrichting<a class="headerlink" href="#realisatiestrategie-oots-basisinrichting" title="Permanent link">&para;</a></h3>
+<p>Voor levering van bewijzen aan andere Europese overheden conform de SDG verordening, sluit GBO aan op de OOTS Basisinrichting. NB: Bronhouders zijn vrij om hiervoor andere kanalen te gebruiken.<br />
+Voor de aansluiting van GBO op de OOTS Basisinrichting is het volgende nodig:</p>
+<ul>
+<li>uitbreiding van de OOTS-V component van de Basisinrichting OOTS met het GBO-koppelvlak;</li>
+<li>afspraken over precieze grens tussen GBO-koppelvlak en OOTS-V / Basisinrichting OOTS (o.a. voor autorisatie, logging en verantwoording);</li>
+<li>afspraken over gebruik en beheer van semantische mapping tussen gegevenmodellen van de bronhouder en EDM;</li>
+<li>afspraken over discovery- en dienstinformatie.</li>
+</ul>
+<h3 id="realisatiestrategie-private-dienstverlener">Private dienstverlener<a class="headerlink" href="#realisatiestrategie-private-dienstverlener" title="Permanent link">&para;</a></h3>
+<p>De private dienstverlener die gebruik wil maken van de DvTP dienst van GBO, moet:</p>
+<ul>
+<li>voldoen aan de aansluitvoorwaarden om gebruik te maken van de voorzieningen;</li>
+<li>de burger toestemming vragen via de centrale toestemmingsvoorziening;</li>
+<li>de burger een volwaardig alternatief aanbieden om de gegevens aan te leveren;</li>
+<li>gegevens conform de dienstencatalogus uitvragen;</li>
+<li>gegevensverzoeken conform de afgesproken koppelvlakspecificatie moeten uitvoeren.</li>
+</ul>
 <h2 id="realisatiestrategie-landing-in-bestaande-stelsels-en-beheerorganisaties">Landing in bestaande stelsels en beheerorganisaties<a class="headerlink" href="#realisatiestrategie-landing-in-bestaande-stelsels-en-beheerorganisaties" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2439,7 +2469,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 <td>Vertrouwensstelsel private partijen</td>
 <td>S04</td>
 <td>Welke partijen mogen deelnemen en welk stelsel beheert toelating en toezicht?</td>
-<td>Hergebruik FDS-functies waar mogelijk, aangevuld met een specifiek juridisch en organisatorisch kader voor private dienstverleners.</td>
+<td>Hergebruik FDS-functies waar mogelijk, aangevuld met een specifiek juridisch en organisatorisch kader voor private dienstverleners. Sluit waar mogelijk aan bij bestaande (sectorale) vertrouwensstelsels.</td>
 <td>BZK, FDS, sectoren, toezichthouders</td>
 </tr>
 <tr>
@@ -2455,7 +2485,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 <td>Semantische governance</td>
 <td>S10</td>
 <td>Wie beheert begrippen, schema's en mappings en hoe worden wijzigingen vastgesteld?</td>
-<td>Domeinen beheren inhoud; GBO/FDS beheert profielen, vindbaarheid en interoperabiliteitsregels.</td>
+<td>Domeinen beheren inhoud; FDS beheert profielen, vindbaarheid en interoperabiliteitsregels.</td>
 <td>Geonovum, FDS, domeinen, bronhouders</td>
 </tr>
 <tr>
@@ -2463,8 +2493,8 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 <td>OOTS-functiegrenzen</td>
 <td>S08, S10</td>
 <td>Welke functies liggen in OOTS-V, de OOTS-adapter en de mappingvoorziening?</td>
-<td>Houd Europese proces- en transportfuncties in de Basisinrichting OOTS; gebruik GBO voor bronkoppeling en optionele semantische transformatie.</td>
-<td>BZK/EZK, beheer Basisinrichting OOTS, GBO</td>
+<td>Houd Europese proces- en transportfuncties in de Basisinrichting OOTS; gebruik GBO voor bronkoppeling en (optionele) semantische transformatie.</td>
+<td>BZK/EZK, bNC-SDG</td>
 </tr>
 <tr>
 <td><strong>B-13</strong></td>
@@ -2496,7 +2526,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 <td>S07</td>
 <td>Is de vertaallaag een tijdelijke overgangsvoorziening of structurele gedeelde dienst?</td>
 <td>Tijdelijk of optioneel, met expliciete exitcriteria en zonder afhankelijkheid voor de doelarchitectuur.</td>
-<td>GBO, FDS, bronhouders</td>
+<td>GBO-project, FDS, bronhouders</td>
 </tr>
 <tr>
 <td><strong>B-17</strong></td>
@@ -2623,7 +2653,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
       <script id="__config" type="application/json">{"annotate": null, "base": "/GBO-PSA/", "features": ["navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.code.annotate", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.result.more.one": "1 extra overeenkomst op deze pagina", "search.result.more.other": "# extra overeenkomsten op deze pagina", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Let op: er wordt alleen gezocht binnen dit documentatie-onderdeel. Om in andere onderdelen te zoeken: ga via het hoofdmenu eerst naar het onderdeel en voer dan de zoekterm in.", "search.result.term.missing": "Ontbreekt", "select.version": "Selecteer versie"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../js/print-site.js"></script>
       
