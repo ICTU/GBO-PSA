@@ -1,0 +1,143 @@
+specification {
+  element actor {
+    style {
+      shape person
+    }
+  }
+
+  element system
+  element container
+  element component
+
+  // Custom styles om dicht bij je Mermaid-kleuren te komen
+  element gboComponent {
+    style {
+      color orange
+    }
+  }
+
+  element externalSource {
+    style {
+      shape storage
+      color green
+    }
+  }
+}
+
+model {
+  // Overheidsbronnen (extern)
+  bron = externalSource 'Overheidsbronnen' {
+    title 'Overheidsbronnen\nBRP · BD · UWV · KvK · …'
+  }
+
+  // GBO Basis (hoofdcontainer)
+  gbo = system 'GBO Basis' {
+    fsc_pap = component 'PAP' {
+      title 'PAP\n(beleidsregels)'
+    }
+
+    fsc = component 'FSC' {
+      title 'FSC / GraphQL / FTV\n(generieke bronontsluiting)'
+    }
+
+    fsc_tools = component 'GBO tools' {
+      title 'GBO tools\n(vertaallaag)'
+    }
+
+    // Interne relaties binnen GBO
+    fsc_pap -> fsc
+    fsc -> fsc_tools
+  }
+
+  // EUDI-Wallet
+  eudi = system 'EUDI-Wallet' {
+    eudi_asi = container 'ASI-provider' {
+      title 'ASI-provider\n(verify / retrieve dienst)'
+    }
+
+    eudi_pubeaa = container 'PubEAA-provider' {
+      title 'PubEAA-provider\n(PubEAA)'
+    }
+
+    eudi_qeaa = container 'QTSP' {
+      title 'QTSP\n(QEAA)'
+    }
+
+    eudi_wallet = container 'EUDI-Wallet'
+
+    eudi_asi -> eudi_qeaa
+    eudi_qeaa -> eudi_wallet
+    eudi_pubeaa -> eudi_wallet
+  }
+
+  // OOTS
+  oots = system 'OOTS' {
+    oots_adapter = container 'OOTS adapter' {
+      title 'OOTS adapter\n(semantische mapping)'
+    }
+
+    oots_basis = container 'Basisinrichting OOTS' {
+      title 'Basisinrichting OOTS\n(incl. OOTS-V backend)'
+    }
+
+    oots_afnemer = container 'Europese overheid' {
+      title 'Europese overheid\nSDG-portaal'
+    }
+
+    oots_adapter -> oots_basis
+    oots_basis -> oots_afnemer
+  }
+
+  // DvTP
+  dvtp = system 'DvTP' {
+    dvtp_toestemming = container 'Toestemmingsvoorziening'
+
+    dvtp_pseudoniem = container 'Pseudonimiseervoorziening' {
+      title 'Pseudonimiseervoorziening\n(BSNk PP)'
+    }
+
+    dvtp_afnemer = container 'Private dienstverlener'
+
+    dvtp_toestemming -> dvtp_pseudoniem 'REST-JSON'
+    dvtp_toestemming -> dvtp_afnemer
+  }
+
+  // Burger (actor)
+  burger = actor 'Burger'
+
+  // Koppelingen vanuit GBO
+  gbo -> eudi_asi
+  gbo -> eudi_pubeaa
+  gbo -> oots_adapter
+  gbo -> dvtp_afnemer
+
+  bron -> gbo
+
+  gbo -> dvtp_toestemming
+
+  // Koppelingen naar de Burger
+  eudi_wallet -> burger
+  oots_afnemer -> burger
+  dvtp_afnemer -> burger
+}
+
+views {
+  view index {
+    title 'GBO - Architectuur overzicht (LikeC4)'
+    include *
+
+    // Optionele styling per view (aan te passen)
+    style gbo {
+      color orange
+    }
+    style eudi {
+      color blue
+    }
+    style oots {
+      color purple
+    }
+    style dvtp {
+      color teal
+    }
+  }
+}

@@ -1,0 +1,71 @@
+flowchart LR
+  subgraph gbo["GBO Basis"]
+    direction TB
+        fsc_pap("PAP<br/>(beleidsregels)")
+        fsc("FSC / GraphQL / PBAC<br/>(generieke bronontsluiting)")
+        fsc_tools("GBO tools<br/>(vertaallaag)")
+  end
+  subgraph eudi["EUDI-Wallet"]
+    direction LR
+        eudi_asi("ASI-provider<br/>(verify/retrieve dienst)")
+        eudi_pubeaa("PubEAA-provider<br/>(PubEAA)")
+        eudi_qeaa["QTSP<br/>(QEAA)"]
+        eudi_wallet["EUDI-Wallet"]
+  end
+  subgraph oots["OOTS"]
+    direction LR
+        oots_adapter("OOTS-adapter<br/>(semantische mapping)")
+        oots_basis["Basisinrichting OOTS<br/>(incl. OOTS-V backend)"]
+        oots_afnemer["Europese overheid<br/>SDG-portaal"]
+  end
+  subgraph dvtp["DvTP"]
+    direction LR
+        dvtp_toestemming("Toestemmingsvoorziening")
+        dvtp_pseudoniem["Pseudonimiseervoorziening<br/>(BSNk PP)"]
+        dvtp_afnemer["Private dienstverlener"]
+  end
+
+  fsc_pap --- fsc
+  fsc --- fsc_tools
+  bron[("Overheidsbronnen<br/>BRP · BD · UWV · KvK · …")] -- Bron API<br/>(GraphQL / REST-JSON / ...) --- gbo
+  eudi_asi -- verify --- eudi_qeaa
+  eudi_asi -- retrieve --- eudi_qeaa
+  eudi_qeaa -- OpenID4VCI --- eudi_wallet
+  gbo -- GraphQL --- eudi_asi & eudi_pubeaa & oots_adapter & dvtp_afnemer
+  eudi_asi ~~~ eudi_pubeaa
+  eudi_pubeaa -- OpenID4VCI --- eudi_wallet
+  oots_adapter -- GraphQL --- oots_basis
+  oots_basis -- eDelivery-AS4 --- oots_afnemer
+  gbo -. PIP .- dvtp_toestemming
+  dvtp_toestemming -. consent-id .- dvtp_afnemer
+  dvtp_toestemming -- REST-JSON --- dvtp_pseudoniem
+  dvtp_pseudoniem ~~~ dvtp_afnemer
+  eudi_wallet --- burger["Burger"]
+  oots_afnemer --- burger
+  dvtp_afnemer --- burger
+
+  fsc_pap:::gbo_d
+  fsc:::gbo_d
+  fsc_tools:::gbo_d
+  eudi_asi:::gbo_k
+  eudi_pubeaa:::gbo_k
+  eudi_qeaa:::eudi
+  eudi_wallet:::eudi
+  oots_adapter:::gbo_k
+  oots_basis:::oots
+  oots_afnemer:::oots
+  dvtp_toestemming:::gbo_c
+  dvtp_pseudoniem:::dvtp
+  dvtp_afnemer:::dvtp
+  bron:::bron
+  burger:::burger
+
+  classDef bron fill:#DDEBF7,stroke:#6F94B8,color:#263746
+  classDef generiek fill:#f1efe8,stroke:#5f5e5a,color:#444441
+  classDef eudi fill:#EEEEEE,stroke:#999999,color:#444441
+  classDef oots fill:#EEEEEE,stroke:#999999,color:#444441
+  classDef dvtp fill:#EEEEEE,stroke:#999999,color:#444441
+  classDef gbo_k fill:#EEE4F2,stroke:#9C86B7,color:#5f5e5a
+  classDef gbo_c fill:#FEDCD8,stroke:#E28F80,color:#5f5e5a
+  classDef gbo_d fill:#E5EFDC,stroke:#7E9F72,color:#5f5e5a
+  classDef burger fill:#DDEBF7,stroke:#6F94B8,color:#263746
