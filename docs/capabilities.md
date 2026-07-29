@@ -8,17 +8,17 @@ Een genoemde voorziening is een functionele component. De PSA schrijft geen prod
 
 | Stelselfunctie | Generieke functie(s) | Kern van de uitwerking |
 |---|---|---|
-| S01 — Toestemmingsregistratie | F2, F6 | Geldige toestemming machineleesbaar vastleggen en actueel raadplegen. |
-| S02 — Toestemmingsportaal | F2 | Begrijpelijke burgerinteractie voor verlenen, inzien en intrekken. |
-| S03 — Burgeridentificatie & Pseudonimisering | F1 | Burger identificeren en BSN afschermen voor onbevoegde afnemers. |
-| S04 — Organisatie-authenticatie & Vertrouwensstelsel | F1 | Deelnemers toelaten, identificeren en vertrouwen. |
-| S05 — Autorisatie | F2, F6 | Iedere gegevensvraag toetsen en de beslissing afdwingen. |
-| S06 — Beleidsbeheer & -distributie | F2, F6 | Beleid bestuurlijk beheren en gecontroleerd beschikbaar stellen. |
-| S07 — Gegevensontsluiting | F3, F7 | Eén generieke bronontsluiting-API en een dienstencatalogus. |
-| S08 — OOTS-adapter | F3, F7 | Aansluiting op OOTS-V en mapping naar OOTS-EDM. |
-| S09 — Logging, Audit & Traceerbaarheid | F8 | Ketenbrede herleidbaarheid en verantwoording. |
-| S10 — Semantiek & Gegevenscatalogus | F4, F5 | Begrippen, schema's, kwaliteit en mappings beheren. |
-| S11 — Attesteringsuitgifte | F3, F7 | PubEAA-uitgifte en ondersteuning van QEAA-uitgifte via een ASI. |
+| [S01 — Toestemmingsregistratie](#s01-toestemmingsregistratie) | [F2](generieke-functies.md#f2-toegang-interactie), [F6](generieke-functies.md#f6-grondslag-beleid) | Geldige toestemming machineleesbaar vastleggen en actueel raadplegen. |
+| [S02 — Toestemmingsportaal](#s02-toestemmingsportaal) | [F2](generieke-functies.md#f2-toegang-interactie) | Begrijpelijke burgerinteractie voor verlenen, inzien en intrekken. |
+| [S03 — Burgeridentificatie & Pseudonimisering](#s03-burgeridentificatie-pseudonimisering) | [F1](generieke-functies.md#f1-identiteit-vertrouwen) | Burger identificeren en BSN afschermen voor onbevoegde afnemers. |
+| [S04 — Organisatie-authenticatie & Vertrouwensstelsel](#s04-organisatie-authenticatie-vertrouwensstelsel) | [F1](generieke-functies.md#f1-identiteit-vertrouwen) | Deelnemers toelaten, identificeren en vertrouwen. |
+| [S05 — Autorisatie](#s05-autorisatie) | [F2](generieke-functies.md#f2-toegang-interactie), [F6](generieke-functies.md#f6-grondslag-beleid) | Iedere gegevensvraag toetsen en de beslissing afdwingen. |
+| [S06 — Beleidsbeheer & -distributie](#s06-beleidsbeheer-distributie) | [F2](generieke-functies.md#f2-toegang-interactie), [F6](generieke-functies.md#f6-grondslag-beleid) | Beleid bestuurlijk beheren en gecontroleerd beschikbaar stellen. |
+| [S07 — Gegevensontsluiting](#s07-gegevensontsluiting) | [F3](generieke-functies.md#f3-gegevensvoorziening), [F7](generieke-functies.md#f7-orkestratie-integratie) | Eén generieke bronontsluiting-API en een dienstencatalogus. |
+| [S08 — OOTS-adapter](#s08-oots-adapter) | [F3](generieke-functies.md#f3-gegevensvoorziening), [F7](generieke-functies.md#f7-orkestratie-integratie) | Aansluiting op OOTS-V en mapping naar OOTS-EDM. |
+| [S09 — Logging, Audit & Traceerbaarheid](#s09-logging-audit-traceerbaarheid) | [F8](generieke-functies.md#f8-beheer-continuiteit) | Ketenbrede herleidbaarheid en verantwoording. |
+| [S10 — Semantiek & Gegevenscatalogus](#s10-semantiek-gegevenscatalogus) | [F4](generieke-functies.md#f4-semantiek-eenheid-van-taal), [F5](generieke-functies.md#f5-gegevenskwaliteit-validatie) | Begrippen, schema's, kwaliteit en mappings beheren. |
+| [S11 — Attesteringsuitgifte](#s11-attesteringsuitgifte) | [F3](generieke-functies.md#f3-gegevensvoorziening), [F7](generieke-functies.md#f7-orkestratie-integratie) | PubEAA-uitgifte en ondersteuning van QEAA-uitgifte via een ASI. |
 
 ## S01 — Toestemmingsregistratie
 
@@ -27,12 +27,12 @@ Een geldige toestemming en de bijbehorende doelbinding machineleesbaar vastlegge
 
 **Normerende eisen**
 
-- Een toestemmingsrecord bevat ten minste betrokkene of pseudonieme verwijzing, afnemer, dienst, doel, gegevensscope, tijdstip, geldigheidsduur, status en bewijs van de interactie.
-- De registratie ondersteunt verlening, wijziging, intrekking en verloop.
-- De actuele status wordt op het moment van de gegevensvraag gecontroleerd.
-- Het register bevat geen BSN als een pseudonieme identificatie volstaat.
-- Toegang tot toestemming is beperkt tot de burger en componenten die de informatie voor autorisatie of verantwoording nodig hebben.
-- Bewaartermijnen en verwijdering worden op juridische en auditvereisten afgestemd.
+- een toestemmingsrecord bevat ten minste betrokkene of pseudonieme verwijzing, afnemer, dienst, doel, gegevensscope, tijdstip, geldigheidsduur, status en bewijs van de interactie;
+- de registratie ondersteunt verlening, wijziging, intrekking en verloop;
+- de actuele status wordt op het moment van de gegevensvraag gecontroleerd;
+- het register bevat geen BSN als een pseudonieme identificatie volstaat;
+- toegang tot toestemming is beperkt tot de burger en componenten die de informatie voor autorisatie of verantwoording nodig hebben;
+- bewaartermijnen en verwijdering worden op juridische en auditvereisten afgestemd.
 
 **Afspraken en standaarden**
 
@@ -67,13 +67,13 @@ De burger in staat stellen geïnformeerd toestemming te verlenen en bestaande to
 
 **Normerende eisen**
 
-- De burger ziet in begrijpelijke taal de afnemer, dienst, doel, gegevensscope, duur en gevolgen.
-- De authenticatie heeft een passend betrouwbaarheidsniveau.
-- De burger ontvangt een bevestiging van de gemaakte keuze.
-- Intrekking wordt zonder onnodige vertraging verwerkt in het toestemmingsregister.
-- De interactie voldoet aan toegankelijkheidseisen en is bruikbaar op gangbare apparaten.
-- De inrichting ondersteunt een gelijkwaardig alternatief als dit juridisch of beleidsmatig vereist is.
-- Pseudonimisering en technische identifiers zijn voor de burger transparant en worden niet als inhoudelijke keuze gepresenteerd.
+- de burger ziet in begrijpelijke taal de afnemer, dienst, doel, gegevensscope, duur en gevolgen;
+- de authenticatie heeft een passend betrouwbaarheidsniveau;
+- de burger ontvangt een bevestiging van de gemaakte keuze;
+- intrekking wordt zonder onnodige vertraging verwerkt in het toestemmingsregister;
+- de interactie voldoet aan toegankelijkheidseisen en is bruikbaar op gangbare apparaten;
+- de inrichting ondersteunt een gelijkwaardig alternatief als dit juridisch of beleidsmatig vereist is;
+- pseudonimisering en technische identifiers zijn voor de burger transparant en worden niet als inhoudelijke keuze gepresenteerd.
 
 **Afspraken en standaarden**
 
@@ -103,19 +103,19 @@ De burger op passend niveau identificeren en voorkomen dat het BSN terechtkomt b
 
 **Normerende eisen**
 
-- Het BSN blijft binnen componenten en organisaties die het rechtmatig mogen verwerken.
-- Een private afnemer zonder wettelijke BSN-bevoegdheid ontvangt een partijspecifieke identiteit of pseudoniem.
-- Pseudoniemen voor verschillende partijen of contexten zijn niet onderling koppelbaar.
-- Identiteitsvertaling wordt alleen uitgevoerd voor een toegestane dienst en gegevensvraag.
-- Identiteitsgegevens en sleutelmateriaal worden volgens hoge beveiligingseisen beheerd.
-- Als een erkend buitenlands of wallet-gebaseerd middel geen BSN bevat, wordt een gecontroleerd identity-matchingproces toegepast voordat persoonsgegevens bij de bron worden bevraagd.
+- het BSN blijft binnen componenten en organisaties die het rechtmatig mogen verwerken;
+- een private afnemer zonder wettelijke BSN-bevoegdheid ontvangt een partijspecifieke identiteit of pseudoniem;
+- pseudoniemen voor verschillende partijen of contexten zijn niet onderling koppelbaar;
+- identiteitsvertaling wordt alleen uitgevoerd voor een toegestane dienst en gegevensvraag;
+- identiteitsgegevens en sleutelmateriaal worden volgens hoge beveiligingseisen beheerd;
+- als een erkend buitenlands of wallet-gebaseerd middel geen BSN bevat, wordt een gecontroleerd identity-matchingproces toegepast voordat persoonsgegevens bij de bron worden bevraagd.
 
 **Afspraken en standaarden**
 
 - betrouwbaarheidsniveaus en toegestane authenticatiemiddelen;
 - aansluitprofiel voor de pseudonimiseringsvoorziening;
 - regels voor sleutelbeheer, partijbinding en levenscyclus;
-- eisen aan identity matching, inclusief foutafhandeling en menselijke tussenkomst.
+- eisen aan identity matching, inclusief foutafhandeling en eventuele menselijke tussenkomst.
 
 **Functionele voorzieningen**
 
@@ -137,12 +137,12 @@ Vaststellen dat deelnemende organisaties en systemen zijn wie zij zeggen te zijn
 
 **Normerende eisen**
 
-- Deelname vereist een voorafgaande toelatingsbeslissing.
-- Organisaties en systemen gebruiken erkende identifiers en certificaten.
-- De technische identiteit wordt gekoppeld aan de toegelaten juridische organisatie en rol.
-- Vertrouwensankers en deelnemersstatus zijn machineleesbaar controleerbaar.
-- Schorsing en beëindiging leiden tijdig tot intrekking van toegang.
-- Buitenlandse, publieke en private deelnemers kunnen verschillende toelatingsregimes hebben, maar gebruiken waar mogelijk dezelfde verificatiepatronen.
+- deelname vereist een voorafgaande toelatingsbeslissing;
+- organisaties en systemen gebruiken erkende identifiers en certificaten;
+- de technische identiteit wordt gekoppeld aan de toegelaten juridische organisatie en rol;
+- vertrouwensankers en deelnemersstatus zijn machineleesbaar controleerbaar;
+- schorsing en beëindiging leiden tijdig tot intrekking van toegang;
+- buitenlandse, publieke en private deelnemers kunnen verschillende toelatingsregimes hebben, maar gebruiken waar mogelijk dezelfde verificatiepatronen.
 
 **Afspraken en standaarden**
 
@@ -172,13 +172,13 @@ Iedere gegevensvraag toetsen aan identiteit, dienst, doel, grondslag, gegevenssc
 
 **Normerende eisen**
 
-- Iedere gegevensvraag doorloopt een PEP-PDP-keten of een functioneel gelijkwaardige scheiding tussen afdwinging en besluitvorming.
-- De autorisatievraag gebruikt een gestandaardiseerd vocabulaire voor subject, actie, resource en context.
-- De PDP kan relevante informatiebronnen raadplegen, waaronder deelnemersstatus, dienstencatalogus en toestemmingsregister.
-- De beslissing is fijnmazig genoeg om afzonderlijke gegevens of velden toe te staan of te weigeren.
-- De beleidsversie, relevante context en beslissing worden gelogd.
-- Een PEP weigert standaard bij ontbrekende of onbetrouwbare beslisinformatie.
-- De interface en het beleid zijn productonafhankelijk.
+- iedere gegevensvraag doorloopt een PEP-PDP-keten of een functioneel gelijkwaardige scheiding tussen afdwinging en besluitvorming;
+- de autorisatievraag gebruikt een gestandaardiseerd vocabulaire voor subject, actie, resource en context;
+- de PDP kan relevante informatiebronnen raadplegen, waaronder deelnemersstatus, dienstencatalogus en toestemmingsregister;
+- de beslissing is fijnmazig genoeg om afzonderlijke gegevens of velden toe te staan of te weigeren;
+- de beleidsversie, relevante context en beslissing worden gelogd;
+- een PEP weigert standaard bij ontbrekende of onbetrouwbare beslisinformatie;
+- de interface en het beleid zijn productonafhankelijk.
 
 **Afspraken en standaarden**
 
@@ -207,12 +207,12 @@ Autorisatiebeleid bestuurlijk beheersen, testen, vaststellen, publiceren en geco
 
 **Normerende eisen**
 
-- Beleid is machineleesbaar, versieerbaar en niet gebonden aan één specifieke policytaal of implementatie.
-- Beleid heeft een inhoudelijke eigenaar, goedkeurder, ingangsdatum en wijzigingshistorie.
-- Wijzigingen worden vóór publicatie gevalideerd met positieve, negatieve en regressietests.
-- Gepubliceerde beleidssets zijn authentiek en integer verifieerbaar.
-- Autorisatiecomponenten kunnen een geldige beleidsversie betrouwbaar verkrijgen en bij storingen gecontroleerd terugvallen.
-- Een spoedprocedure en terugrolprocedure zijn beschikbaar.
+- beleid is machineleesbaar, versieerbaar en niet gebonden aan één specifieke policytaal of implementatie;
+- beleid heeft een inhoudelijke eigenaar, goedkeurder, ingangsdatum en wijzigingshistorie;
+- wijzigingen worden vóór publicatie gevalideerd met positieve, negatieve en regressietests;
+- gepubliceerde beleidssets zijn authentiek en integer verifieerbaar;
+- autorisatiecomponenten kunnen een geldige beleidsversie betrouwbaar verkrijgen en bij storingen gecontroleerd terugvallen;
+- een spoedprocedure en terugrolprocedure zijn beschikbaar.
 
 **Afspraken en standaarden**
 
@@ -243,13 +243,13 @@ Bronhouders gegevens laten aanbieden via één generieke, herbruikbare en select
 
 **Normerende eisen**
 
-- Een bronhouder gebruikt voor de GBO-interactiepatronen één logisch koppelvlak.
-- De API ondersteunt vooraf geregistreerde, selectieve gegevensvragen.
-- Een gegevensvraag verwijst eenduidig naar een dienst in de dienstencatalogus.
-- Het koppelvlak ondersteunt de autorisatie- en loggingvereisten van S05 en S09.
-- Schema's, versies, foutmeldingen en beschikbaarheidskenmerken zijn gepubliceerd.
-- Nieuwe diensten kunnen in beginsel via schema, dienstregistratie en beleid worden toegevoegd.
-- De GBO-vertaallaag is een optionele, vervangbare ondersteuning en geen verplichte centrale route.
+- een bronhouder gebruikt voor de GBO-interactiepatronen één logisch koppelvlak;
+- de API ondersteunt vooraf geregistreerde, selectieve gegevensvragen;
+- een gegevensvraag verwijst eenduidig naar een dienst in de dienstencatalogus;
+- het koppelvlak ondersteunt de autorisatie- en loggingvereisten van S05 en S09;
+- schema's, versies, foutmeldingen en beschikbaarheidskenmerken zijn gepubliceerd;
+- nieuwe diensten kunnen in beginsel via schema, dienstregistratie en beleid worden toegevoegd;
+- de GBO-vertaallaag is een optionele, vervangbare ondersteuning en geen verplichte centrale route.
 
 **Afspraken en standaarden**
 
@@ -280,12 +280,12 @@ Binnen de GBO-oplossing de generieke bronontsluiting aansluiten op de Basisinric
 
 **Normerende eisen**
 
-- De OOTS-adapter koppelt aan het nationale koppelvlak van OOTS-V.
-- OOTS-verzoeken doorlopen dezelfde generieke autorisatie- en loggingfuncties als andere gegevensvragen.
-- Transport, discovery en Europese procesinteractie blijven verantwoordelijkheid van de Basisinrichting OOTS.
-- De adapter of bijbehorende mappingfunctie vertaalt expliciet tussen brongegevens en OOTS-EDM.
-- Bronhouders worden niet afhankelijk van AS4/eDelivery-implementatiedetails.
-- Sectorale of eigen OOTS-aansluitingen vallen buiten GBO, maar worden niet technisch uitgesloten.
+- de OOTS-adapter koppelt aan het nationale koppelvlak van OOTS-V;
+- verzoeken via OOTS doorlopen dezelfde generieke autorisatie- en loggingfuncties als andere gegevensvragen;
+- transport, discovery en Europese procesinteractie blijven verantwoordelijkheid van de Basisinrichting OOTS;
+- de adapter of bijbehorende mappingfunctie vertaalt expliciet tussen brongegevens en OOTS-EDM;
+- bronhouders worden niet afhankelijk van AS4/eDelivery-implementatiedetails;
+- sectorale of eigen OOTS-aansluitingen vallen buiten GBO, maar worden niet technisch uitgesloten.
 
 **Afspraken en standaarden**
 
@@ -298,12 +298,12 @@ Binnen de GBO-oplossing de generieke bronontsluiting aansluiten op de Basisinric
 **Functionele voorzieningen**
 
 - Basisinrichting OOTS en OOTS-V als externe bestaande voorziening;
-- OOTS-adapter of uitbreiding van OOTS-V met het GBO-koppelvlak;
+- uitbreiding van OOTS-V met het GBO-koppelvlak;
 - semantische mappings via S10.
 
 **Open besluiten**
 
-- precieze grens tussen OOTS-V, OOTS-adapter en semantische mapping;
+- precieze grens tussen OOTS-V en semantische mapping;
 - beheer en financiering van de aanpassing;
 - beheer van discovery- en dienstinformatie.
 
@@ -314,13 +314,13 @@ Gegevensvragen en relevante beslissingen over de hele keten herleidbaar maken en
 
 **Normerende eisen**
 
-- Iedere gegevensvraag krijgt een ketenbreed bruikbare verzoekidentificator.
-- Iedere component legt de voor zijn verantwoordelijkheid relevante gebeurtenis vast.
-- Logging bevat niet meer persoonsgegevens dan noodzakelijk.
-- Autorisatiebeslissingen verwijzen naar de toegepaste beleidsversie en relevante grondslaginformatie.
-- Loggegevens zijn beschermd tegen ongeautoriseerde wijziging en verwijdering.
-- Bewaartermijnen, toegang, inzage en vernietiging zijn expliciet geregeld.
-- Een centrale aggregatie is alleen toegestaan als noodzaak, grondslag en privacymaatregelen zijn aangetoond.
+- iedere gegevensvraag krijgt een ketenbreed bruikbare verzoekidentificator;
+- iedere component legt de voor zijn verantwoordelijkheid relevante gebeurtenis vast;
+- logging bevat niet meer persoonsgegevens dan noodzakelijk;
+- autorisatiebeslissingen verwijzen naar de toegepaste beleidsversie en relevante grondslaginformatie;
+- loggegevens zijn beschermd tegen ongeautoriseerde wijziging en verwijdering;
+- bewaartermijnen, toegang, inzage en vernietiging zijn expliciet geregeld;
+- een centrale aggregatie is alleen toegestaan als noodzaak, grondslag en privacymaatregelen zijn aangetoond.
 
 **Afspraken en standaarden**
 
@@ -348,13 +348,13 @@ Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven, zodat 
 
 **Normerende eisen**
 
-- Iedere gegevensdienst verwijst naar een beheerd schema en begrippenkader.
-- Bronhouders en domeinen zijn verantwoordelijk voor inhoud en kwaliteit van hun modellen.
-- Catalogusbeschrijvingen, schema's en mappings zijn machineleesbaar en versieerbaar.
-- Kwaliteitskenmerken en herkomstinformatie zijn opgenomen.
-- Validatieregels worden vóór uitlevering toegepast waar dit technisch en juridisch passend is.
-- Mappings naar OOTS-EDM en attestatieschema's zijn expliciet en herleidbaar naar bron- en doelversies.
-- De catalogus beschrijft tevens de voorwaarden waaronder een dienst kan worden gebruikt, zonder het autorisatiebeleid te dupliceren.
+- iedere gegevensdienst verwijst naar een beheerd schema en begrippenkader;
+- bronhouders en domeinen zijn verantwoordelijk voor inhoud en kwaliteit van hun modellen;
+- catalogusbeschrijvingen, schema's en mappings zijn machineleesbaar en versieerbaar;
+- kwaliteitskenmerken en herkomstinformatie zijn opgenomen;
+- validatieregels worden vóór uitlevering toegepast waar dit technisch en juridisch passend is;
+- mappings naar OOTS-EDM en attestatieschema's zijn expliciet en herleidbaar naar bron- en doelversies;
+- de catalogus beschrijft tevens de voorwaarden waaronder een dienst kan worden gebruikt, zonder het autorisatiebeleid te dupliceren.
 
 **Afspraken en standaarden**
 
@@ -385,13 +385,13 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 
 **Normerende eisen**
 
-- De bronhouder blijft juridisch en inhoudelijk verantwoordelijk voor de uitgegeven publieke attributen, tenzij wet- en regelgeving een andere rolverdeling bepaalt.
-- GBO kan de technische functie van PubEAA-provider ondersteunen, maar wordt daardoor niet automatisch de juridische uitgevende instantie.
-- Een ASI-provider biedt gestandaardiseerde verify- en, waar toegestaan, retrievefuncties aan QTSP's.
-- Uitgifte, verificatie en retrieval doorlopen passende authenticatie, autorisatie en logging.
-- Attestaties volgen een vastgesteld attestation rulebook en schema.
-- Binding aan burger en wallet, signing, status, intrekking en geldigheid zijn geregeld.
-- Centrale, decentrale en federatieve varianten blijven mogelijk zolang zij aan dezelfde koppelvlakken en eisen voldoen.
+- de bronhouder blijft juridisch en inhoudelijk verantwoordelijk voor de uitgegeven publieke attributen, tenzij wet- en regelgeving een andere rolverdeling bepaalt;
+- de GBO-oplossing kan de technische functie van PubEAA-provider ondersteunen, maar wordt daardoor niet automatisch de juridische uitgevende instantie;
+- een ASI-provider biedt gestandaardiseerde verify- en, waar toegestaan, retrievefuncties aan QTSP's;
+- uitgifte, verificatie en retrieval doorlopen passende authenticatie, autorisatie en logging;
+- attestaties volgen een vastgesteld attestation rulebook en schema;
+- binding aan burger en wallet, signing, status, intrekking en geldigheid zijn geregeld;
+- centrale, decentrale en federatieve varianten blijven mogelijk zolang zij aan dezelfde koppelvlakken en eisen voldoen.
 
 **Afspraken en standaarden**
 

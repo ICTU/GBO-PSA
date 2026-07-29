@@ -19,7 +19,7 @@ De realisatie volgt de [ontwerpprincipes](ontwerpprincipes.md), in het bijzonder
 
 De werkpakketten zijn gekoppeld aan samenhangende stelselfuncties. De oplossingsplaat en technische componentbeschrijvingen staan in het globaal ontwerp en worden hier niet herhaald.
 
-| Werkpakket | Stelselfuncties | Belangrijkste resultaten | Belangrijkste afhankelijkheden |
+| Werkpakket&nbsp;&nbsp; | Stelselfuncties | Belangrijkste resultaten | Belangrijkste afhankelijkheden |
 |---|---|---|---|
 | **GBO-basis** | S04 tot en met S07, S09 en S10 | Aansluitvoorwaarden; bronontsluiting-API; dienstencatalogus; autorisatieprofiel; policy-governance; logging- en traceprofiel; semantische kaders. | FDS- en GDI-governance; standaardisering API-profiel; beheerkeuzes voor beleid en catalogi. |
 | **EUDI-Wallet** | S03 tot en met S05, S09 tot en met S11 | Attestation rulebooks; PubEAA- en ASI-profielen; mappings; signing, status en intrekking; technische uitgifte- en verificatiefuncties. | eIDAS2/ARF; nationale EUDI-Wallet-governance; certificering; rolverdeling bronhouders en QTSP's. |
@@ -36,7 +36,7 @@ Dit werkpakket legt de herbruikbare fundatie voor alle interactiepatronen.
 - API-profiel voor de bronontsluiting;
 - model en beheerproces voor de dienstencatalogus;
 - autorisatieprofiel voor PEP, PDP en PIP;
-- governance- en distributieprofiel voor beleid;
+- governance- en distributieprofiel voor beleidsregels;
 - profiel voor ketenlogging en correlatie;
 - kaders voor begrippen, schema's, kwaliteit en mappings.
 
@@ -76,11 +76,11 @@ De keuze wordt niet door de PSA op voorhand centraal vastgelegd. De interfaces e
 
 ## Werkpakket OOTS
 
-Dit werkpakket koppelt GBO aan de Basisinrichting OOTS.
+Dit werkpakket koppelt de gemeenschappelijke ontsluiting aan de Basisinrichting OOTS.
 
 ### Op te leveren afspraken en standaarden
 
-- het nationale koppelvlak tussen OOTS-V en de bronontsluiting-API;
+- het koppelvlak tussen OOTS-V en de bronontsluiting-API;
 - autorisatie- en loggingafspraken voor OOTS-verzoeken;
 - beheerproces voor gegevensdiensten, discovery en OOTS-EDM-mappings;
 - verantwoordelijkheidsverdeling bij fouten, wijzigingen en incidenten.
@@ -118,7 +118,12 @@ Productiegebruik is pas mogelijk als wet- en regelgeving voldoende duidelijk maa
 - registratie van diensten, doelen en toegestane gegevensvragen;
 - autorisatiebeleid en wijzigingsgovernance.
 
-## Implementatie bij bronhouders
+## Impact op betrokken partijen
+
+In het [globaal ontwerp](https://ictu.github.io/GBO-GO/main/#6-impact-op-betrokken-partijen) is een eerste inschatting gemaakt van de impact van GBO op de betrokken partijen. Op basis van het PSA kan dat verder uitgewerkt worden.  
+Dit zal verder geconcretiseerd worden als het technisch ontwerp en de technische requirements uitgewerkt zijn.  
+
+### Bronhouder
 
 Een bronhouder realiseert of gebruikt:
 
@@ -128,9 +133,38 @@ Een bronhouder realiseert of gebruikt:
 - een beschrijving van gegevensdiensten, schema's en kwaliteit;
 - beheerprocessen voor aansluiting, wijzigingen en incidenten.
 
-Een bronhouder kan gebruikmaken van referentiecomponenten of functioneel gelijkwaardige alternatieven. De keuzevrijheid geldt niet voor de naleving van de vastgestelde afspraken, standaarden en koppelvlakken.
+Een bronhouder kan gebruikmaken van referentiecomponenten, eventueel ondersteund met onderdelen uit de GBO-vertaallaag, of functioneel gelijkwaardige alternatieven. De keuzevrijheid geldt niet voor de naleving van de vastgestelde afspraken, standaarden en koppelvlakken.
 
-Voor interactiepatroonspecifieke functies kan de bronhouder gebruikmaken van gedeelde voorzieningen of eigen varianten, voor zover wet- en regelgeving dit toestaat en de variant voldoet aan dezelfde interoperabiliteits- en beveiligingseisen.
+### QTSP's
+
+De wijze waarop attestaties uitgegeven worden met GBO, is nog niet vastgesteld. Vooralsnog worden alle varianten ondersteund. Dat betekent dat QTSP's verschillende opties hebben:
+
+- gebruikmaken van de verifyfunctie van de centrale ASI-provider om attributen te controleren en op basis daarvan attestaties uitgeven;
+- gebruikmaken van de retrievefunctie van de centrale ASI-provider om namens een bronhouder attestaties uit te geven;
+- via andere kanalen bij de bron de vereiste gegevens ophalen om attestaties uit te geven (buiten scope van GBO).
+
+Voor het gebruik van de centrale ASI-provider zal de QTSP conform de EUDI-afspraken en -standaarden moeten aansluiten.
+
+### OOTS Basisinrichting
+
+Voor levering van bewijzen aan andere Europese overheden conform de SDG verordening, sluit GBO aan op de OOTS Basisinrichting. NB: Bronhouders zijn vrij om hiervoor andere kanalen te gebruiken.  
+Voor de aansluiting van GBO op de OOTS Basisinrichting is het volgende nodig:
+
+- uitbreiding van de OOTS-V component van de Basisinrichting OOTS met het GBO-koppelvlak;
+- afspraken over precieze grens tussen GBO-koppelvlak en OOTS-V / Basisinrichting OOTS (o.a. voor autorisatie, logging en verantwoording);
+- afspraken over gebruik en beheer van semantische mapping tussen gegevenmodellen van de bronhouder en EDM;
+- afspraken over discovery- en dienstinformatie.
+
+### Private dienstverlener
+
+De private dienstverlener die gebruik wil maken van de DvTP dienst van GBO, moet:
+
+- voldoen aan de aansluitvoorwaarden om gebruik te maken van de voorzieningen;
+- de burger toestemming vragen via de centrale toestemmingsvoorziening;
+- de burger een volwaardig alternatief aanbieden om de gegevens aan te leveren;
+- gegevens conform de dienstencatalogus uitvragen;
+- gegevensverzoeken conform de afgesproken koppelvlakspecificatie moeten uitvoeren.
+
 
 ## Landing in bestaande stelsels en beheerorganisaties
 

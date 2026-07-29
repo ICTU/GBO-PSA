@@ -2,19 +2,6 @@
 
 Het [globaal ontwerp](https://ictu.github.io/GBO-GO/main/#4-generieke-functies-en-stelselfuncties) onderscheidt acht generieke functies. Deze PSA herhaalt de functionele beschrijving daarvan niet, maar legt per functie de normerende eisen en de relatie met de stelselfuncties vast.
 
-## Overzicht
-
-| Generieke functie | Doel in het globaal ontwerp | Stelselfuncties |
-|---|---|---|
-| **F1 — Identiteit & Vertrouwen** | Vaststellen en vertrouwen van burgers, organisaties en systemen. | S03, S04 |
-| **F2 — Toegang & Interactie** | Toegang voor burgers en organisaties en, waar nodig, interactie over toestemming. | S01, S02, S05, S06 |
-| **F3 — Gegevensvoorziening** | Herbruikbare en selectieve ontsluiting van brongegevens naar verschillende gegevensstromen. | S07, S08, S11 |
-| **F4 — Semantiek & Eenheid van Taal** | Eenduidige betekenis, beschrijving en transformatie van gegevens. | S10 |
-| **F5 — Gegevenskwaliteit & Validatie** | Aantoonbare kwaliteit, herkomst en geldigheid van uitgewisselde gegevens. | S10 |
-| **F6 — Grondslag & Beleid** | Vastleggen en toepassen van grondslagen, voorwaarden en autorisatiebeleid. | S01, S05, S06 |
-| **F7 — Orkestratie & Integratie** | Integratie met bronnen en externe stelsels zonder patroonafhankelijke logica in de bron. | S07, S08, S11 |
-| **F8 — Beheer & Continuïteit** | Beheersbaarheid, monitoring, auditbaarheid en continuïteit van de keten. | S09 en alle overige stelselfuncties |
-
 ## F1 — Identiteit & Vertrouwen
 
 De inrichting voldoet aan de volgende eisen:
@@ -117,3 +104,18 @@ De generieke functies worden niet als afzonderlijke silo's gerealiseerd. In het 
 - F4 en F5 bepalen welke gegevens betekenisvol en valide kunnen worden geleverd door F3;
 - F7 verbindt F3 met de externe interactiepatronen;
 - F8 stelt beheer- en auditvoorwaarden aan alle functies.
+
+## Uitwerking in stelselfuncties
+
+De generieke functies worden uitgewerkt naar stelselfuncties: afspraken, standaarden en voorzieningen die invulling geven aan de generieke functie. In de onderstaande tabel staat de relatie tussen generieke functies en stelselfuncties, die in het volgende hoofdstuk uitgewerkt worden.
+
+| Generieke functie | Doel in het globaal ontwerp | Stelselfuncties |
+|---|---|---|
+| **F1 — Identiteit & Vertrouwen** | Vaststellen en vertrouwen van burgers, organisaties en systemen. | [S03](capabilities.md#s03-burgeridentificatie-pseudonimisering), [S04](capabilities.md#s04-organisatie-authenticatie-vertrouwensstelsel) |
+| **F2 — Toegang & Interactie** | Toegang voor burgers en organisaties en, waar nodig, interactie over toestemming. | [S01](capabilities.md#s01-toestemmingsregistratie), [S02](capabilities.md#s02-toestemmingsportaal), [S05](capabilities.md#s05-autorisatie), [S06](capabilities.md#s06-beleidsbeheer-distributie) |
+| **F3 — Gegevensvoorziening** | Herbruikbare en selectieve ontsluiting van brongegevens naar verschillende gegevensstromen. | [S07](capabilities.md#s07-gegevensontsluiting), [S08](capabilities.md#s08-oots-adapter), [S11](capabilities.md#s11-attesteringsuitgifte) |
+| **F4 — Semantiek & Eenheid van Taal** | Eenduidige betekenis, beschrijving en transformatie van gegevens. | [S10](capabilities.md#s10-semantiek-gegevenscatalogus) |
+| **F5 — Gegevenskwaliteit & Validatie** | Aantoonbare kwaliteit, herkomst en geldigheid van uitgewisselde gegevens. | [S10](capabilities.md#s10-semantiek-gegevenscatalogus) |
+| **F6 — Grondslag & Beleid** | Vastleggen en toepassen van grondslagen, voorwaarden en autorisatiebeleid. | [S01](capabilities.md#s01-toestemmingsregistratie), [S05](capabilities.md#s05-autorisatie), [S06](capabilities.md#s06-beleidsbeheer-distributie) |
+| **F7 — Orkestratie & Integratie** | Integratie met bronnen en externe stelsels zonder patroonafhankelijke logica in de bron. | [S07](capabilities.md#s07-gegevensontsluiting), [S08](capabilities.md#s08-oots-adapter), [S11](capabilities.md#s11-attesteringsuitgifte) |
+| **F8 — Beheer & Continuïteit** | Beheersbaarheid, monitoring, auditbaarheid en continuïteit van de keten. | [S09](capabilities.md#s09-logging-audit-traceerbaarheid) en alle overige stelselfuncties |

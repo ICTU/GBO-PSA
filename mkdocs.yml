@@ -7,10 +7,10 @@ extra:
   version:
     provider: mike
     alias: true
-  document_version: "0.7.3"
-  document_date: "juli 2026"
+  document_version: "0.8.0"
+  document_date: "augustus 2026"
   document_author: "ICTU"
-  document_status: "voor externe review"
+  document_status: "externe review verwerkt"
 
 theme:
   name: material

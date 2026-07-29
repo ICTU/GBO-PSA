@@ -5,7 +5,7 @@ De ontwerpprincipes zijn normerend voor de verdere uitwerking en realisatie van 
 | ID | Ontwerpprincipe | Normerende toepassing voor GBO |
 |---|---|---|
 | **D-01** | Decentraal wat kan, centraal wat moet | Gegevens en bronspecifieke logica blijven bij de bronhouder. Een centrale of gedeelde functie wordt alleen ingericht als interoperabiliteit, schaal, uniforme burgerinteractie, veiligheid of bestuurlijke beheersing dit vereist. |
-| **D-02** | Afspraken boven standaarden boven voorzieningen | Begin met rollen, verantwoordelijkheden en gebruiksafspraken. Standaardiseer waar interoperabiliteit nodig is. Richt alleen een gedeelde voorziening in als afspraken en standaarden onvoldoende zijn. |
+| **D-02** | Afspraken boven standaarden boven voorzieningen | Begin met rollen, verantwoordelijkheden en gebruiksafspraken. Standaardiseer waar interoperabiliteit nodig is. Richt alleen een gedeelde voorziening in als afspraken en standaarden onvoldoende zijn of het schaalvoordeel zo groot is dat de betrokken partijen erom vragen. |
 | **D-03** | Hergebruik generieke overheidsvoorzieningen | Gebruik bestaande GDI-, FDS-, eIDAS- en OOTS-bouwstenen als zij aan de eisen voldoen. Afwijkingen worden gemotiveerd volgens pas-toe-of-leg-uit. |
 | **D-04** | Modulair en ontkoppeld | Iedere functionele component heeft één duidelijke verantwoordelijkheid en een gedocumenteerd koppelvlak. Vervanging van een component vereist geen wijziging van andere componenten buiten het koppelvlak. |
 | **D-05** | Gegevens bij de bron | GBO creëert geen structureel gegevensmagazijn. Tijdelijke opslag is alleen toegestaan als dit noodzakelijk en rechtmatig is en bewaartermijn, beveiliging en verwijdering zijn vastgelegd. |
