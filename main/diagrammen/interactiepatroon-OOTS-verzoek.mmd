@@ -2,9 +2,9 @@ sequenceDiagram
     autonumber
     participant BRG as Burger<br/>(rechthebbende)
     participant EU as EU dienst<br/>(OOTS)
-    participant RINIS as Basisinrichting OOTS NL<br />(BZK/RINIS)
-    participant GBO as GBO<br/>(GBO voorziening)
-    participant BRH as Bronhouder<br/>(BRP / BD / …)
+    participant RINIS as Basisinrichting OOTS<br />(BZK/RINIS)
+    participant GBO as OOTS adapter<br/>(GBO voorziening)
+    participant BRH as Bron<br/>(BRP / BD / …)
 
     rect rgb(250, 241, 251)
         Note over BRG,EU: ① Burger neemt dienst af
@@ -19,25 +19,25 @@ sequenceDiagram
 
     rect rgb(250, 238, 218)
         Note over RINIS,GBO: ③ Doorzetten naar bron via GBO
-        RINIS->>GBO: OOTS-payload (REST/JSON)
+        RINIS->>GBO: OOTS-payload (GraphQL)
         Note over RINIS: eDelivery → GraphQL ontkoppeling
     end
 
     rect rgb(225, 245, 238)
-        Note over GBO,BRH: ④ Bronontsluiting (GBO generieke API)
-        GBO->>BRH: API-aanroep (GBO-formaat)
-        BRH->>GBO: Gegevens (REST/JSON)
+        Note over GBO: ④ Semantische mapping
+        Note over GBO: SDG Evidence type ↔ Bron-formaat
     end
 
     rect rgb(225, 245, 238)
-        Note over GBO: ⑤ Semantische mapping & logging (intern GBO)
-        Note over GBO: GBO-formaat → SDG Evidence type · audit log · doelbinding
+        Note over GBO,BRH: ⑤ Bronontsluiting (GBO generieke API)
+        GBO->>BRH: API-aanroep (GraphQL)
+        BRH->>GBO: Gegevens (Bron-formaat)
     end
 
     rect rgb(250, 238, 218)
-        Note over GBO,RINIS: ⑥ Terugkoppeling naar OOTS basisinrichting
-        GBO->>RINIS: Evidence Response (REST/JSON)
-        Note over RINIS: GraphQL → eDelivery vertaling
+        Note over GBO,RINIS: ⑥ Terugkoppeling naar OOTS-basisinrichting
+        GBO->>RINIS: Evidence Response (SDG Evidence type formaat)
+        Note over RINIS: GraphQL → eDelivery/AS4 vertaling
     end
 
     rect rgb(230, 241, 251)

@@ -793,10 +793,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#gegevensverzoek-van-burger-om-gegevens-via-wallet-te-delen" class="md-nav__link">
+  <a href="#gegevensverzoek-van-burger-om-attestatie-van-attributen-in-wallet-te-ontvangen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Gegevensverzoek van burger om gegevens via wallet te delen
+        Gegevensverzoek van burger om attestatie van attributen in wallet te ontvangen
       
     </span>
   </a>
@@ -1062,9 +1062,9 @@
 
 <h1 id="interactiepatronen-gbo">Interactiepatronen GBO<a class="headerlink" href="#interactiepatronen-gbo" title="Permanent link">&para;</a></h1>
 <p>Dit document beschrijft de belangrijkste interactiepatronen voor GBO zoals afgeleid uit de use cases. In de patronen is op verschillende plekken sprake van een "dienst"; dit kunnen afspraken, standaarden of centrale of decentrale voorzieningen zijn. Daar wordt in het hoofdstuk <a href="../capabilities/">Stelselfuncties</a> dieper op ingegaan.  </p>
-<h2 id="gegevensverzoek-van-burger-om-gegevens-via-wallet-te-delen">Gegevensverzoek van burger om gegevens via wallet te delen<a class="headerlink" href="#gegevensverzoek-van-burger-om-gegevens-via-wallet-te-delen" title="Permanent link">&para;</a></h2>
+<h2 id="gegevensverzoek-van-burger-om-attestatie-van-attributen-in-wallet-te-ontvangen">Gegevensverzoek van burger om attestatie van attributen in wallet te ontvangen<a class="headerlink" href="#gegevensverzoek-van-burger-om-attestatie-van-attributen-in-wallet-te-ontvangen" title="Permanent link">&para;</a></h2>
 <h3 id="doel">Doel<a class="headerlink" href="#doel" title="Permanent link">&para;</a></h3>
-<p>Een burger vraagt een gegeven op als gekwalificeerde attestatie om in diens wallet op te nemen en te delen met een dienstverlener.</p>
+<p>Een burger vraagt een gegeven op als gekwalificeerde attestatie om in diens wallet op te nemen, zodat deze gedeeld kan worden met een dienstverlener.</p>
 <h3 id="interactie">Interactie<a class="headerlink" href="#interactie" title="Permanent link">&para;</a></h3>
 <figure>
 
@@ -1073,17 +1073,16 @@
     actor Burger
     participant Wallet as EUDI-Wallet
     participant QTSP as QTSP
-    participant PubEAA as PuBEAA&lt;br/&gt;voorziening
-    participant VerifDienst as Verificatie-&lt;br/&gt;dienst
+    participant PubEAA as PubEAA&lt;br/&gt;voorziening
+    participant VerifDienst as Verify-/retrievedienst&lt;br/&gt;(Authentic Source Interface)
     participant Auth as Autorisatie&lt;br/&gt;voorziening
     participant Bron as Overheids-&lt;br/&gt;bron
 
-    Note over Burger,Bron: Stroom A — PuBEAA: overheidsinstantie geeft attribuut rechtstreeks uit
+    Note over Burger,Bron: Stroom A — PubEAA: overheidsinstantie geeft attribuut rechtstreeks uit
 
     rect rgb(225, 245, 238)
         Burger-&gt;&gt;Wallet: Vraag attribuut op
         Wallet-&gt;&gt;PubEAA: Credential Request
-        Note over PubEAA: PuBEAA voorziening: aangeboden&lt;br/&gt;door bron zelf óf centraal via GBO
         PubEAA-&gt;&gt;Auth: Autorisatieverzoek
         Auth-&gt;&gt;Wallet: Authenticatie- &amp; autorisatieverzoek
         Wallet-&gt;&gt;Burger: Toont verzoek &amp; vraagt consent
@@ -1091,41 +1090,41 @@
         Wallet-&gt;&gt;Auth: Authenticatie / consent (incl. PID / eID)
         Auth-&gt;&gt;PubEAA: Autorisatie (incl. identificatie burger)
         PubEAA-&gt;&gt;Bron: Bevraag bron
-        Bron--&gt;&gt;PubEAA: Attribuutgegevens
+        Bron-&gt;&gt;PubEAA: Attribuutgegevens
         PubEAA-&gt;&gt;PubEAA: Kwalificeer attribuutgegevens
-        PubEAA--&gt;&gt;Wallet: PuBEAA credential
-        Wallet--&gt;&gt;Burger: PuBEAA opgeslagen in wallet
+        PubEAA-&gt;&gt;Wallet: PubEAA
+        Wallet-&gt;&gt;Burger: PubEAA opgeslagen in wallet
     end
 
-    Note over Burger,Bron: Stroom B — QEAA: QTSP kwalificeert attribuut via verificatiedienst
+    Note over Burger,Bron: Stroom B — QEAA: QTSP levert attribuut via verificatie- of retrievedienst
 
     rect rgb(238, 237, 254)
         Burger-&gt;&gt;QTSP: Attestatie Request&lt;br /&gt;(incl. evt. stukken)
-        Note over QTSP: QTSP verifieert attribuut&lt;br/&gt;via verificatiedienst
-        QTSP-&gt;&gt;VerifDienst: Verificatieverzoek
-        Note over VerifDienst: Verificatiedienst: aangeboden&lt;br/&gt;door bron of centraal via GBO
+        Note over QTSP: QTSP verifieert attribuut (verify)&lt;br/&gt;of haalt attribuut op (retrieve)
+        QTSP-&gt;&gt;VerifDienst: Verify- of Retrieveverzoek
         VerifDienst-&gt;&gt;Auth: Autorisatieverzoek
+        Note over Auth: Bij gebruik ISO15000 geen&lt;br/&gt;autorisatie/authenticatie nodig
         Auth-&gt;&gt;Wallet: Authenticatie- &amp; autorisatieverzoek
         Wallet-&gt;&gt;Burger: Toont verzoek &amp; vraagt consent
         Burger-&gt;&gt;Wallet: Geeft consent &amp; presenteert PID / eID
         Wallet-&gt;&gt;Auth: Authenticatie / consent (met PID / eID)
         Auth-&gt;&gt;VerifDienst: Autorisatie (incl. identificatie burger)
         VerifDienst-&gt;&gt;Bron: Bevraag bron
-        Bron--&gt;&gt;VerifDienst: Attribuutgegevens
-        VerifDienst-&gt;&gt;VerifDienst: Verifieer attribuutgegevens
-        VerifDienst--&gt;&gt;QTSP: Geverifieerd attribuut
+        Bron-&gt;&gt;VerifDienst: Attribuutgegevens
+        VerifDienst-&gt;&gt;VerifDienst: Bij verify: Verifieer attribuutgegevens
+        VerifDienst-&gt;&gt;QTSP: (geverifieerd) attribuut
         QTSP-&gt;&gt;QTSP: Issue QEAA
-        QTSP--&gt;&gt;Wallet: QEAA attestatie
-        Wallet--&gt;&gt;Burger: QEAA opgeslagen in wallet
+        QTSP-&gt;&gt;Wallet: QEAA
+        Wallet-&gt;&gt;Burger: QEAA opgeslagen in wallet
     end
 
 </div>
-<figcaption>Gegevensverzoek van burger om credential via wallet te delen</figcaption>
+<figcaption>Gegevensverzoek van burger om attestatie van attributen in wallet te ontvangen</figcaption>
 </figure>
 
 <h3 id="toelichting">Toelichting<a class="headerlink" href="#toelichting" title="Permanent link">&para;</a></h3>
 <p>Iedere bronhouder kan in theorie gegevens uitleveren aan wallets, maar deze gegevens krijgen pas juridische waarde als ze gekwalificeerd zijn. Dat kwalificeren kan op twee manieren: de overheid ondertekent het gegeven, waardoor het een PuBEAA wordt, of een gekwalificeerde verlener van vertrouwensdiensten (QTSP) doet dit.<br />
-Als de overheid het gegeven kwalificeert kan de bronhouder dit zelf doen, maar het kan schaalvoordeel bieden om dit te centraliseren in een GBO PuBEAA-dienst. Als een QTSP het gegeven kwalificeert, moet deze QTSP het gegeven kunnen verifiëren via een verificatiedienst. Ook hier kan een bronhouder de dienst zelf aanbieden, of kan ervoor gekozen worden om dit te centraliseren in een GBO verificatiedienst. Ook de autorisatiedienst die door de PuBEAA-dienst en de verificatiedienst wordt aangeroepen, kan door de bronhouder worden aangeboden, maar het biedt schaalvoordeel om dat te centraliseren in een GBO dienst.</p>
+Als de overheid het gegeven kwalificeert kan de bronhouder dit zelf doen, maar het kan schaalvoordeel bieden om dit te centraliseren in een GBO PuBEAA-dienst. Als een QTSP het gegeven kwalificeert, moet deze QTSP het gegeven kunnen verifiëren of zelfs ophalen via een verificatie- of retrievedienst. Ook hier kan een bronhouder de dienst zelf aanbieden, of kan ervoor gekozen worden om dit te centraliseren in een GBO verificatiedienst. Ook de autorisatiedienst die door de PuBEAA-dienst en de verificatie-/retrievedienst wordt aangeroepen, kan door de bronhouder worden aangeboden, maar het biedt schaalvoordeel om dat te centraliseren in een GBO dienst.</p>
 <h2 id="gegevensverzoek-van-europese-overheidsdienst-aan-nederlandse-overheidsbron">Gegevensverzoek van Europese overheidsdienst aan Nederlandse overheidsbron<a class="headerlink" href="#gegevensverzoek-van-europese-overheidsdienst-aan-nederlandse-overheidsbron" title="Permanent link">&para;</a></h2>
 <h3 id="doel_1">Doel<a class="headerlink" href="#doel_1" title="Permanent link">&para;</a></h3>
 <p>Een Europese overheidsdienst vraagt een gegeven (Evidence Request) aan een Nederlandse overheidsbron om een dienst aan een Nederlandse burger in het buitenland te kunnen leveren.</p>
@@ -1136,9 +1135,9 @@ Als de overheid het gegeven kwalificeert kan de bronhouder dit zelf doen, maar h
     autonumber
     participant BRG as Burger&lt;br/&gt;(rechthebbende)
     participant EU as EU dienst&lt;br/&gt;(OOTS)
-    participant RINIS as Basisinrichting OOTS NL&lt;br /&gt;(BZK/RINIS)
-    participant GBO as GBO&lt;br/&gt;(GBO voorziening)
-    participant BRH as Bronhouder&lt;br/&gt;(BRP / BD / …)
+    participant RINIS as Basisinrichting OOTS&lt;br /&gt;(BZK/RINIS)
+    participant GBO as OOTS adapter&lt;br/&gt;(GBO voorziening)
+    participant BRH as Bron&lt;br/&gt;(BRP / BD / …)
 
     rect rgb(250, 241, 251)
         Note over BRG,EU: ① Burger neemt dienst af
@@ -1153,25 +1152,25 @@ Als de overheid het gegeven kwalificeert kan de bronhouder dit zelf doen, maar h
 
     rect rgb(250, 238, 218)
         Note over RINIS,GBO: ③ Doorzetten naar bron via GBO
-        RINIS-&gt;&gt;GBO: OOTS-payload (REST/JSON)
+        RINIS-&gt;&gt;GBO: OOTS-payload (GraphQL)
         Note over RINIS: eDelivery → GraphQL ontkoppeling
     end
 
     rect rgb(225, 245, 238)
-        Note over GBO,BRH: ④ Bronontsluiting (GBO generieke API)
-        GBO-&gt;&gt;BRH: API-aanroep (GBO-formaat)
-        BRH-&gt;&gt;GBO: Gegevens (REST/JSON)
+        Note over GBO: ④ Semantische mapping
+        Note over GBO: SDG Evidence type ↔ Bron-formaat
     end
 
     rect rgb(225, 245, 238)
-        Note over GBO: ⑤ Semantische mapping &amp; logging (intern GBO)
-        Note over GBO: GBO-formaat → SDG Evidence type · audit log · doelbinding
+        Note over GBO,BRH: ⑤ Bronontsluiting (GBO generieke API)
+        GBO-&gt;&gt;BRH: API-aanroep (GraphQL)
+        BRH-&gt;&gt;GBO: Gegevens (Bron-formaat)
     end
 
     rect rgb(250, 238, 218)
-        Note over GBO,RINIS: ⑥ Terugkoppeling naar OOTS basisinrichting
-        GBO-&gt;&gt;RINIS: Evidence Response (REST/JSON)
-        Note over RINIS: GraphQL → eDelivery vertaling
+        Note over GBO,RINIS: ⑥ Terugkoppeling naar OOTS-basisinrichting
+        GBO-&gt;&gt;RINIS: Evidence Response (SDG Evidence type formaat)
+        Note over RINIS: GraphQL → eDelivery/AS4 vertaling
     end
 
     rect rgb(230, 241, 251)
@@ -1208,8 +1207,8 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
     actor Burger
     participant DV as Dienst-&lt;br/&gt;verlener
     participant Auth as Authenticatie-&lt;br/&gt;dienst
-    participant TV as Toestemmings-&lt;br/&gt;voorziening (GBO)
-    participant PP as BSNk PP&lt;br/&gt;(pseudonimisering)
+    participant TV as Toestemmings-&lt;br/&gt;voorziening
+    participant PP as Pseudonimiserings-&lt;br/&gt;voorziening
     participant TR as Toestemmings-&lt;br/&gt;register
     participant BRH as Bron-&lt;br/&gt;houder
 
@@ -1220,34 +1219,35 @@ De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisin
         DV-&gt;&gt;Burger: Redirect naar toestemmingsvoorziening GBO&lt;br/&gt;(met scope + doelbinding)
         Burger-&gt;&gt;TV: Volgt redirect
         TV-&gt;&gt;Auth: Authenticatieverzoek
-        Note over Auth: DigiD of ander identificatiemiddel (eIDAS 2.0)
+        Note over Auth: DigiD of ander identificatiemiddel
         Auth-&gt;&gt;Burger: Authenticeer burger
-        Burger--&gt;&gt;Auth: Authenticatie
-        Auth--&gt;&gt;TV: BSN (geverifieerde identiteit)
+        Burger-&gt;&gt;Auth: Authenticatie
+        Auth-&gt;&gt;TV: BSN (geverifieerde identiteit)
         TV-&gt;&gt;TV: PI/PP aanwezig?
         TV-&gt;&gt;PP: Activeer BSN
         PP-&gt;&gt;TV: PI/PP
         TV-&gt;&gt;TV: Registreer PI/PP
         TV-&gt;&gt;PP: Transformeer PI/PP
-        PP--&gt;&gt;TV: Versleutelde PI/PP (VI/VP)
-        TV-&gt;&gt;Burger: Toon gegevens waarvoor toestemming&lt;br/&gt;gevraagd wordt (scope + doelbinding)
-        Burger--&gt;&gt;TV: Verleent toestemming
+        PP-&gt;&gt;TV: Versleutelde PI/PP (VI/VP)
+        TV-&gt;&gt;Burger: Toon gegevensset waarvoor toestemming&lt;br/&gt;gevraagd wordt (scope + doelbinding)
+        Burger-&gt;&gt;TV: Verleent toestemming
         TV-&gt;&gt;TR: Schrijf toestemming in register&lt;br/&gt;(VI · scope · doelbinding · TTL)
-        TR--&gt;&gt;TV: consent_id
-        TV-&gt;&gt;DV: Redirect terug naar dienstverlener&lt;br/&gt;(met consent_id en VP)
+        TR-&gt;&gt;TV: consent-id
+        TV-&gt;&gt;DV: Redirect terug naar dienstverlener&lt;br/&gt;(met consent-id en VI/VP)
     end
 
-    Note over DV,BRH: Fase 2 — Gegevensopvraging bij bronhouder
+    Note over DV,BRH: Fase 2 — Gegevensopvraging bij bronhouder (per bron een verzoek)
 
     rect rgb(238, 237, 254)
-        DV-&gt;&gt;BRH: Gegevensverzoek&lt;br/&gt;(consent_id · mTLS / certificaat)
+        DV-&gt;&gt;BRH: Gegevensverzoek&lt;br/&gt;(consent-id · VI · mTLS / certificaat)
         BRH-&gt;&gt;BRH: Authenticeer dienstverlener&lt;br /&gt;(via certificaat)
         BRH-&gt;&gt;BRH: Controleer bevoegdheid&lt;br /&gt;(via FSC contract/Trusted List)
-        BRH-&gt;&gt;TR: Valideer consent_id&lt;br/&gt;(geldig? scope? TTL?)*
-        TR--&gt;&gt;BRH: Consent geldig&lt;br /&gt;(incl. VI)
-        BRH-&gt;&gt;BRH: Controleer data scope&lt;br /&gt;(template match)
+        BRH-&gt;&gt;TR: Valideer consent-id
+        TR-&gt;&gt;BRH: Consent geldig
+        BRH-&gt;&gt;BRH: Controleer data scope
         BRH-&gt;&gt;BRH: Ontsleutel VI naar BSN
-        BRH--&gt;&gt;DV: Gevraagde gegevens
+        BRH-&gt;&gt;DV: Gevraagde gegevens
+        DV-&gt;&gt;Burger: Levert dienst
     end
 
 </div>

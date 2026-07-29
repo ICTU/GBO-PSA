@@ -12,16 +12,16 @@ flowchart LR
         eudi_qeaa["QTSP<br/>(QEAA)"]
         eudi_wallet["EUDI-Wallet"]
   end
-  subgraph oots["SDG / OOTS"]
+  subgraph oots["OOTS"]
     direction LR
         oots_adapter("OOTS adapter<br/>(semantische mapping)")
-        oots_basis["Basisinrichting OOTS<br/>(incl. OOTS-V backend)"]
+        oots_basis["Basisinrichting OOTS"]
         oots_afnemer["Europese overheid<br/>SDG-portaal"]
   end
   subgraph dvtp["DvTP"]
     direction LR
         dvtp_toestemming("Toestemmingsvoorziening")
-        dvtp_pseudoniem["Pseudonimiseervoorziening<br/>(BSNk PP)"]
+        dvtp_pseudoniem["Pseudonimiseervoorziening"]
         dvtp_afnemer["Private dienstverlener"]
   end
   subgraph ebw["QERDS/EBW"]
@@ -34,17 +34,16 @@ flowchart LR
 
   fsc_pap --- fsc
   fsc --- fsc_tools
-  bron[("Overheidsbronnen<br/>BRP · BD · UWV · KvK · …")] -- Bron API<br/>(GraphQL / REST-JSON / ...) --- gbo
-  eudi_asi -- verify --- eudi_qeaa
-  eudi_asi -. "`*retrieve*`" .- eudi_qeaa
-  eudi_qeaa -- OpenID4VCI --- eudi_wallet
-  gbo -- GraphQL --- eudi_asi & eudi_pubeaa & oots_adapter & dvtp_afnemer & ebw_qerds_adapter
-  eudi_pubeaa -- OpenID4VCI ---- eudi_wallet
-  oots_adapter -- REST-JSON --- oots_basis
-  oots_basis -- eDelivery-AS4 --- oots_afnemer
-  gbo -- REST-JSON<br/>(PIP) --- dvtp_toestemming
-  dvtp_toestemming -- REST-JSON --- dvtp_afnemer
-  dvtp_toestemming -- REST-JSON --- dvtp_pseudoniem
+  bron[("Overheidsbronnen<br/>BRP · BD · UWV · KvK · …")] --- gbo
+  eudi_asi --- eudi_qeaa
+  eudi_qeaa --- eudi_wallet
+  gbo --- eudi_asi & eudi_pubeaa & oots_adapter & dvtp_afnemer & ebw_qerds_adapter
+  eudi_pubeaa --- eudi_wallet
+  oots_adapter --- oots_basis
+  oots_basis --- oots_afnemer
+  gbo --- dvtp_toestemming
+  dvtp_toestemming --- dvtp_afnemer
+  dvtp_toestemming --- dvtp_pseudoniem
   dvtp_pseudoniem ~~~ dvtp_afnemer
   ebw_qerds_adapter --- ebw_pub_qtsp --- ebw_wallet
   ebw_qerds_adapter --- ebw_qtsp --- ebw_wallet
@@ -53,7 +52,7 @@ flowchart LR
   dvtp_afnemer --- burger
   ebw_wallet --- organisatie["Organisatie<br/>(publiek/privaat)"]
   ebw_wallet ~~~ overheid["Ketenpartner<br/>(overheid)"]
-  gbo  -- GraphQL --- overheid["Ketenpartner<br/>(overheid)"]
+  gbo  --- overheid["Ketenpartner<br/>(overheid)"]
 
   fsc_pap:::gbo
   fsc:::gbo

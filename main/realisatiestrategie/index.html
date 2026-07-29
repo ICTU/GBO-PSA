@@ -1093,19 +1093,19 @@ Zie ook de paragraaf <a href="#gebruik-van-bestaande-stelsels">Gebruik van besta
   subgraph gbo["GBO Basis"]
     direction TB
         fsc_pap("PAP&lt;br/&gt;(beleidsregels)")
-        fsc("FSC / GraphQL / FTV&lt;br/&gt;(generieke bronontsluiting)")
+        fsc("FSC / GraphQL / PBAC&lt;br/&gt;(generieke bronontsluiting)")
         fsc_tools("GBO tools&lt;br/&gt;(vertaallaag)")
   end
   subgraph eudi["EUDI-Wallet"]
     direction LR
-        eudi_asi("ASI-provider&lt;br/&gt;(verify dienst)")
+        eudi_asi("ASI-provider&lt;br/&gt;(verify/retrieve dienst)")
         eudi_pubeaa("PubEAA-provider&lt;br/&gt;(PubEAA)")
         eudi_qeaa["QTSP&lt;br/&gt;(QEAA)"]
         eudi_wallet["EUDI-Wallet"]
   end
   subgraph oots["OOTS"]
     direction LR
-        oots_adapter("OOTS adapter&lt;br/&gt;(semantische mapping)")
+        oots_adapter("OOTS-adapter&lt;br/&gt;(semantische mapping)")
         oots_basis["Basisinrichting OOTS&lt;br/&gt;(incl. OOTS-V backend)"]
         oots_afnemer["Europese overheid&lt;br/&gt;SDG-portaal"]
   end
@@ -1119,46 +1119,50 @@ Zie ook de paragraaf <a href="#gebruik-van-bestaande-stelsels">Gebruik van besta
   fsc_pap --- fsc
   fsc --- fsc_tools
   bron[("Overheidsbronnen&lt;br/&gt;BRP · BD · UWV · KvK · …")] -- Bron API&lt;br/&gt;(GraphQL / REST-JSON / ...) --- gbo
-  eudi_asi -- REST-JSON&lt;br/&gt;(HTTP / OAuth) --- eudi_qeaa
+  eudi_asi -- verify --- eudi_qeaa
+  eudi_asi -- retrieve --- eudi_qeaa
   eudi_qeaa -- OpenID4VCI --- eudi_wallet
   gbo -- GraphQL --- eudi_asi &amp; eudi_pubeaa &amp; oots_adapter &amp; dvtp_afnemer
-  eudi_pubeaa -- OpenID4VCI ---- eudi_wallet
-  oots_adapter -- REST-JSON --- oots_basis
+  eudi_asi ~~~ eudi_pubeaa
+  eudi_pubeaa -- OpenID4VCI --- eudi_wallet
+  oots_adapter -- GraphQL --- oots_basis
   oots_basis -- eDelivery-AS4 --- oots_afnemer
-  gbo -- REST-JSON&lt;br/&gt;(PIP) --- dvtp_toestemming
-  dvtp_toestemming -- REST-JSON --- dvtp_afnemer
+  gbo -. PIP .- dvtp_toestemming
+  dvtp_toestemming -. consent-id .- dvtp_afnemer
   dvtp_toestemming -- REST-JSON --- dvtp_pseudoniem
   dvtp_pseudoniem ~~~ dvtp_afnemer
   eudi_wallet --- burger["Burger"]
   oots_afnemer --- burger
   dvtp_afnemer --- burger
 
-  fsc_pap:::gbo
-  fsc:::gbo
-  fsc_tools:::gbo
-  eudi_asi:::gbo
-  eudi_pubeaa:::gbo
+  fsc_pap:::gbo_d
+  fsc:::gbo_d
+  fsc_tools:::gbo_d
+  eudi_asi:::gbo_k
+  eudi_pubeaa:::gbo_k
   eudi_qeaa:::eudi
   eudi_wallet:::eudi
-  oots_adapter:::gbo
+  oots_adapter:::gbo_k
   oots_basis:::oots
   oots_afnemer:::oots
-  dvtp_toestemming:::gbo
+  dvtp_toestemming:::gbo_c
   dvtp_pseudoniem:::dvtp
   dvtp_afnemer:::dvtp
   bron:::bron
   burger:::burger
 
-  classDef bron fill:#edf7df,stroke:#6aa13a,color:#27500a
+  classDef bron fill:#DDEBF7,stroke:#6F94B8,color:#263746
   classDef generiek fill:#f1efe8,stroke:#5f5e5a,color:#444441
-  classDef eudi fill:#f1efe8,stroke:#5f5e5a,color:#444441
-  classDef oots fill:#f1efe8,stroke:#5f5e5a,color:#444441
-  classDef dvtp fill:#f1efe8,stroke:#5f5e5a,color:#444441
-  classDef gbo fill:#fff0e8,stroke:#000000,color:#000000
-  classDef burger fill:#edf7df,stroke:#6aa13a,color:#27500a
+  classDef eudi fill:#EEEEEE,stroke:#999999,color:#444441
+  classDef oots fill:#EEEEEE,stroke:#999999,color:#444441
+  classDef dvtp fill:#EEEEEE,stroke:#999999,color:#444441
+  classDef gbo_k fill:#EEE4F2,stroke:#9C86B7,color:#5f5e5a
+  classDef gbo_c fill:#FEDCD8,stroke:#E28F80,color:#5f5e5a
+  classDef gbo_d fill:#E5EFDC,stroke:#7E9F72,color:#5f5e5a
+  classDef burger fill:#DDEBF7,stroke:#6F94B8,color:#263746
 </div>
 <figcaption>De werkpakketten getekend in relatie tot elkaar.<br/>
-NB: in deze figuur zijn enkel de voorzieningen geschetst - daarnaast kunnen de werkpakketten ook afspraken of standaarden nodig hebben.<br/>De lichtrode voorzieningen moeten nog ontwikkeld worden. De overige voorzieningen bestaan al - daar moet op aangesloten worden.</figcaption>
+NB: in deze figuur zijn enkel de voorzieningen geschetst - daarnaast zijn er ook afspraken en standaarden nodig.<br/>De lichtrode voorzieningen moeten nog ontwikkeld worden. De overige voorzieningen bestaan al - daar moet op aangesloten worden.</figcaption>
 </figure>
 
 <h3 id="werkpakket-gbo-basis">Werkpakket GBO Basis<a class="headerlink" href="#werkpakket-gbo-basis" title="Permanent link">&para;</a></h3>
@@ -1287,7 +1291,7 @@ NB: in deze figuur zijn enkel de voorzieningen geschetst - daarnaast kunnen de w
 <h3 id="werkpakket-dvtp">Werkpakket DvTP<a class="headerlink" href="#werkpakket-dvtp" title="Permanent link">&para;</a></h3>
 <p>Maakt het mogelijk dat private dienstverleners met toestemming van de burger gegevens opvragen bij overheidsbronhouders. Bouwt op GBO Basis en voegt toestemmingsinfrastructuur toe.</p>
 <blockquote>
-<p>⚖️ <strong>Juridische randvoorwaarde:</strong> Pas operationeel na inwerkingtreding van de Wdo-grondslag (expliciete bevoegdheid voor bronhouders om op verzoek van de burger gegevens te verstrekken aan private dienstverleners) en bijbehorende AMvB. Technische uitwerking loopt parallel aan het wetgevingstraject.</p>
+<p>⚖️ <strong>Juridische randvoorwaarde:</strong> Pas operationeel na inwerkingtreding van de benodigde wet- en regelgeving (expliciete bevoegdheid voor bronhouders om op verzoek van de burger gegevens te verstrekken aan private dienstverleners). Technische uitwerking loopt parallel aan het wetgevingstraject.</p>
 </blockquote>
 <table>
 <thead>
@@ -1305,7 +1309,7 @@ NB: in deze figuur zijn enkel de voorzieningen geschetst - daarnaast kunnen de w
 <td>1</td>
 <td><strong>Toestemmingsportaal</strong></td>
 <td><a href="../capabilities/#s02-toestemmingsportaal-burger-interactie">S02</a></td>
-<td>- GBO-UX-richtlijnen (doel, afnemer, gegevens, geldigheidsduur)<br/>- ⚖️ gelijkwaardig alternatief verplicht (wettelijk te verankeren in Wdo)<br/>- ⚖️ geen nadeel bij weigering<br/>- architectuurafspraak: pseudonimisering in portaal</td>
+<td>- GBO-UX-richtlijnen (doel, afnemer, gegevens, geldigheidsduur)<br/>- ⚖️ gelijkwaardig alternatief verplicht (wettelijk te verankeren)<br/>- ⚖️ geen nadeel bij weigering<br/>- architectuurafspraak: pseudonimisering in portaal</td>
 <td>- DigiD (SAML/OIDC) ✅<br/>- WCAG 2.1 AA ✅</td>
 <td>- Toestemmingsportaal ⚠️<br/>- BSNk Activate ✅ (⚠️ onboarding portaal)</td>
 </tr>
@@ -1313,7 +1317,7 @@ NB: in deze figuur zijn enkel de voorzieningen geschetst - daarnaast kunnen de w
 <td>2</td>
 <td><strong>Toestemmingsregister</strong></td>
 <td><a href="../capabilities/#s01-toestemmingenregistratie">S01</a></td>
-<td>- Grondslagtypen per traject (toestemming/wettelijke basis/doelbinding)<br/>- formaat grondslag-record<br/>- intrekkingsrecht burger<br/>- ⚖️ Wdo-grondslag vereist</td>
+<td>- Grondslagtypen per traject (toestemming/wettelijke basis/doelbinding)<br/>- formaat grondslag-record<br/>- intrekkingsrecht burger<br/>- ⚖️ Wettelijke basis vereist</td>
 <td>- W3C ODRL ✅<br/>- GBO PIP-profiel ⚠️</td>
 <td>- Toestemmingsregister ⚠️<br/>- Policy Store ⚠️</td>
 </tr>
@@ -1321,7 +1325,7 @@ NB: in deze figuur zijn enkel de voorzieningen geschetst - daarnaast kunnen de w
 <td>3</td>
 <td><strong>Aansluiting BSNk PP</strong></td>
 <td><a href="../capabilities/#s03-burgeridentificatie-pseudonimisering">S03</a></td>
-<td>- BSN mag private dienstverleners nooit bereiken (verankerd in AMvB Wdo/Wabvpz)<br/>- onboarding private dienstverleners als BSNk PP-deelnemer</td>
+<td>- BSN mag private dienstverleners nooit bereiken<br/>- onboarding private dienstverleners als BSNk PP-deelnemer</td>
 <td></td>
 <td>- BSNk PP ✅ (productie)<br/>- BSNk Transform/Close ✅ (⚠️ PEP-integratie)</td>
 </tr>
@@ -1349,7 +1353,7 @@ NB: in deze figuur zijn enkel de voorzieningen geschetst - daarnaast kunnen de w
 <h2 id="implementatie-bij-bronhouders">Implementatie bij bronhouders<a class="headerlink" href="#implementatie-bij-bronhouders" title="Permanent link">&para;</a></h2>
 <p>Bronhouders die gebruik willen maken van GBO moeten de componenten van het GBO-Basis werkpakket in de eigen omgeving installeren en onderhouden. Alleen de policy store met beleidsregels (PAP) wordt centraal aangeboden, maar daar moet wel op aangesloten worden.<br />
 GBO biedt bronhouders hiervoor referentiecomponenten aan, die de inrichting sterk vereenvoudigen. En als het (nog) niet haalbaar is om gegevens uit de bron met een GraphQL-API beschikbaar te stellen, biedt GBO ondersteuning en tools om eventueel met andere API's aan te sluiten.</p>
-<p>Als bronhouders de GBO-Basis componenten hebben geïnstalleerd kunnen ze gebruik maken van de centrale componenten om de verschillende gegevensstromen te bedienen. Daar hoeven zij verder niets voor in te richten - er moeten enkel afspraken gemaakt worden over wie wanneer onder welke voorwaarden gegevens mogen opvragen.  </p>
+<p>Als bronhouders de GBO-Basis componenten hebben geïnstalleerd kunnen ze gebruik maken van de centrale componenten om de verschillende gegevensstromen te bedienen, die vanuit de andere werkpakketten ontwikkeld worden. Daar hoeven zij verder niets voor in te richten - er moeten enkel afspraken gemaakt worden over wie wanneer onder welke voorwaarden gegevens mogen opvragen.  </p>
 <p>Of bronhouders gebruik maken van de centrale componenten die nodig zijn om de verschillende gegevensstromen te bedienen, is een beleidsafweging. Voor zover deze componenten niet in wet- en regelgeving zijn opgenomen en (nog) niet op de pas-toe-of-leg-uit lijst staan, is het de bronhouders vrij om eigen componenten te gebruiken.<br />
 Zo kan voor het uitgeven van geattesteerde attributen (EUDI-Wallet) ook een eigen PubEAA-provider gebruikt worden, of afspraken met QTSP's gemaakt worden om QEAA's uit te geven. En voor aansluiting op OOTS kunnen ook eigen voorzieningen gebruikt worden, zoals in de onderwijswereld al gebruik gemaakt wordt van EMREX.</p>
 <h2 id="gebruik-van-bestaande-stelsels">Gebruik van bestaande stelsels<a class="headerlink" href="#gebruik-van-bestaande-stelsels" title="Permanent link">&para;</a></h2>
@@ -1562,7 +1566,7 @@ In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende a
 <td>DvTP / S01</td>
 <td>Voorziening + juridisch beheerproces</td>
 <td>GDI-governance / FDS / DvTP-governance</td>
-<td>Logius of IBDS als kandidaat; BZK als opdrachtgever vanwege Wdo-grondslag</td>
+<td>Logius of IBDS als kandidaat</td>
 <td>Het register fungeert als PIP voor PDP-besluiten en moet grondslag, doelbinding, geldigheid, intrekking en bewijsbaarheid vastleggen.</td>
 <td>Juridische grondslag en beheerder moeten vóór productie zijn vastgesteld.</td>
 </tr>

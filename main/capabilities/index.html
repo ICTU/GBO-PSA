@@ -871,10 +871,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#s02-toestemmingsportaal-burger-interactie" class="md-nav__link">
+  <a href="#s02-toestemmingsportaal-interactie-met-de-burger" class="md-nav__link">
     <span class="md-ellipsis">
       
-        S02 — Toestemmingsportaal (Burger Interactie)
+        S02 — Toestemmingsportaal (interactie met de burger)
       
     </span>
   </a>
@@ -985,17 +985,6 @@
     <span class="md-ellipsis">
       
         Overzicht: gaps per stelselfunctie
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bijlage-afsprakenstelsel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Bijlage: Afsprakenstelsel
       
     </span>
   </a>
@@ -1197,7 +1186,7 @@
 <h2 id="s01-toestemmingenregistratie">S01 — Toestemmingenregistratie<a class="headerlink" href="#s01-toestemmingenregistratie" title="Permanent link">&para;</a></h2>
 <p><em>Het machineleesbaar vastleggen en raadplegen van de juridische grondslag per gegevensuitvraag (toestemming, wettelijke basis, doelbinding), zodat de autorisatiecomponent deze real-time kan toetsen.</em></p>
 <blockquote>
-<p>⚖️ <strong>Juridische randvoorwaarde:</strong> Deze stelselfunctie is voor het DvTP-traject pas zinvol te realiseren nadat de Wdo een expliciete bevoegdheid voor bronhouders bevat om op verzoek van de burger gegevens te verstrekken aan private dienstverleners. Zolang sectorale geheimhoudingsplichten (AWR art. 67, Wet SUWI art. 74 e.a.) niet via de Wdo zijn doorbroken, heeft een technisch grondslagregister geen werkende juridische basis. De technische uitwerking van deze stelselfunctie loopt parallel aan het wetgevingstraject, maar kan pas operationeel worden na inwerkingtreding van de Wdo-grondslag en bijbehorende AMvB.</p>
+<p>⚖️ <strong>Juridische randvoorwaarde:</strong> Deze stelselfunctie is voor het DvTP-traject pas zinvol te realiseren als er een wettelijke basis is voor het delen van gegevens op basis van toestemming. Nu staan sectorale geheimhoudingsplichten (AWR art. 67, Wet SUWI art. 74 e.a.) hier nog in de weg.</p>
 </blockquote>
 <h3 id="afspraken">Afspraken<a class="headerlink" href="#afspraken" title="Permanent link">&para;</a></h3>
 <table>
@@ -1211,25 +1200,25 @@
 </thead>
 <tbody>
 <tr>
-<td>Welke grondslagtypen geldig zijn per traject (toestemming / wettelijke basis / doelbinding)</td>
+<td>Welke grondslagtypen geldig zijn per type gegevensverzoek</td>
 <td>Stelselafspraak</td>
 <td>Centraal — GBO/FDS</td>
-<td>⚠️ Nog te maken; raakt aan AVG-uitwerking in AMvB Wdo</td>
+<td>⚠️ Nog te maken; raakt aan AVG-uitwerking in andere wet- &amp; regelgeving</td>
 </tr>
 <tr>
-<td>Formaat en inhoud van een grondslag-record (minimale attributen, geldigheid, scope)</td>
+<td>Formaat en inhoud van een toestemmingrecord (minimale attributen, geldigheid, scope)</td>
 <td>Stelselafspraak</td>
 <td>Centraal — GBO</td>
 <td>⚠️ Nog te maken</td>
 </tr>
 <tr>
-<td>Intrekkingsrecht burger: termijnen en effect op lopende verwerkingen</td>
+<td>Intrekkingsrecht burger, geldigheidstermijnen en effect op lopende verwerkingen</td>
 <td>Stelselafspraak</td>
 <td>Centraal — GBO/FDS, raakvlak AVG</td>
 <td>⚠️ Nog te maken; deels bepaald door AVG art. 7</td>
 </tr>
 <tr>
-<td>Aansluiting bronhouders en afnemers op de grondslagregistratie</td>
+<td>Aansluiting bronhouders en afnemers op de toestemmingenregistratie</td>
 <td>Toetredingsafspraak (FDS)</td>
 <td>Centraal — FDS afsprakenstelsel</td>
 <td>⚠️ Nog te maken als FDS-toetredingseis</td>
@@ -1247,12 +1236,7 @@
 </thead>
 <tbody>
 <tr>
-<td>W3C ODRL (Open Digital Rights Language) — uitdrukken van beleid en toestemming als machineleesbare policy</td>
-<td>Internationaal / W3C</td>
-<td>Beschikbaar; binnen FDS en DCAT-AP NL al in gebruik voor beleidsbeschrijving</td>
-</tr>
-<tr>
-<td>REST of GraphQL als raadpleeginterface voor de grondslagregistratie (PIP-interface)</td>
+<td>REST of GraphQL als raadpleeginterface voor de toestemmingenregistratie (PIP-interface)</td>
 <td>GBO</td>
 <td>⚠️ Nog te standaardiseren als GBO PIP-profiel</td>
 </tr>
@@ -1271,33 +1255,26 @@
 </thead>
 <tbody>
 <tr>
-<td>Toestemmingsregister / grondslagregister</td>
+<td>Toestemmingsregister</td>
 <td>Centrale voorziening</td>
 <td>Centraal — GBO</td>
 <td>Gedeelde instantie</td>
 <td>⚠️ In de zorg gebruikt men Mitz waarvan geleerd kan worden; nog geen generieke GBO-voorziening</td>
 </tr>
 <tr>
-<td>Inzage- en beheerinterface voor burger (Mijn Toestemmingen)</td>
+<td>Inzage- en beheerinterface voor burger (zie ook Toestemmingsportaal)</td>
 <td>Centrale voorziening</td>
 <td>Centraal — GBO/Logius</td>
 <td>Gedeelde instantie</td>
 <td>⚠️ Raakvlak MijnOverheid; nog geen generieke invulling</td>
 </tr>
-<tr>
-<td>Policy Store (centrale beleidsdefinities overige grondslagen)</td>
-<td>Centrale voorziening</td>
-<td>Centraal — GBO</td>
-<td>Gedeeld</td>
-<td>⚠️ Nog te realiseren - zie ook S05</td>
-</tr>
 </tbody>
 </table>
 <hr />
-<h2 id="s02-toestemmingsportaal-burger-interactie">S02 — Toestemmingsportaal (Burger Interactie)<a class="headerlink" href="#s02-toestemmingsportaal-burger-interactie" title="Permanent link">&para;</a></h2>
-<p><em>De burger geeft via een toegankelijke interface geïnformeerde toestemming voor gegevensdeling, authenticeert zich daarvoor op het vereiste niveau, en kan toestemmingen inzien en intrekken. De pseudonimiseringsactie vindt hier plaats.</em></p>
+<h2 id="s02-toestemmingsportaal-interactie-met-de-burger">S02 — Toestemmingsportaal (interactie met de burger)<a class="headerlink" href="#s02-toestemmingsportaal-interactie-met-de-burger" title="Permanent link">&para;</a></h2>
+<p><em>De burger geeft via een toegankelijke interface geïnformeerde toestemming voor gegevensdeling, authenticeert zich daarvoor op het vereiste niveau, en kan toestemmingen inzien en intrekken.</em></p>
 <blockquote>
-<p>⚖️ <strong>Juridische randvoorwaarde:</strong> De werking van dit portaal is onlosmakelijk verbonden aan de Wdo-grondslag (zie S01). Bovendien moeten de vrijwilligheidsborging en het gelijkwaardig alternatief wettelijk worden verankerd als aansluiteis voor private dienstverleners, voordat het portaal operationeel zinvol is. Zonder die verankering is niet afdwingbaar dat dienstverleners de digitale route niet als dwingende voorwaarde mogen stellen.</p>
+<p>⚖️ <strong>Juridische randvoorwaarde:</strong> De werking van dit portaal is verbonden aan wet- &amp; regelgeving (zie S01). Bovendien moeten de vrijwilligheidsborging en het gelijkwaardig alternatief wettelijk worden verankerd als aansluiteis voor private dienstverleners, voordat het portaal operationeel zinvol is. Zonder die verankering is niet afdwingbaar dat dienstverleners de digitale route niet als dwingende voorwaarde mogen stellen.</p>
 </blockquote>
 <h3 id="afspraken_1">Afspraken<a class="headerlink" href="#afspraken_1" title="Permanent link">&para;</a></h3>
 <table>
@@ -1331,13 +1308,13 @@
 <tr>
 <td>Gelijkwaardig alternatief verplicht: private dienstverleners mogen de digitale toestemmingsroute niet als enige toegangsweg stellen</td>
 <td>Aansluiteis (wettelijk te verankeren)</td>
-<td>Centraal — Wdo / RDI-toezicht</td>
-<td>⚖️ Moet wettelijk worden verankerd als aansluiteis in Wdo of AMvB; handhaving bij RDI</td>
+<td>Centraal / RDI-toezicht</td>
+<td>⚖️ Moet wettelijk worden verankerd; handhaving bij RDI</td>
 </tr>
 <tr>
 <td>Geen nadeel bij weigering: weigering van toestemming mag niet leiden tot weigering van dienst, vertraging, hogere kosten of slechtere voorwaarden</td>
 <td>Aansluiteis (wettelijk te verankeren)</td>
-<td>Centraal — Wdo / RDI-toezicht</td>
+<td>Centraal / RDI-toezicht</td>
 <td>⚖️ Moet wettelijk worden verankerd; bewijslast ligt bij de private dienstverlener</td>
 </tr>
 <tr>
@@ -1401,18 +1378,11 @@
 <td>Gedeeld</td>
 <td><strong>Beschikbaar</strong></td>
 </tr>
-<tr>
-<td>BSNk Activate (BSN → PI+PP bij eerste toestemmingsregistratie)</td>
-<td>Onderdeel BSNk PP</td>
-<td>Logius</td>
-<td>Gedeeld</td>
-<td><strong>Beschikbaar</strong>; ⚠️ onboarding portaal als BSNk-deelnemer nog te realiseren</td>
-</tr>
 </tbody>
 </table>
 <hr />
 <h2 id="s03-burgeridentificatie-pseudonimisering">S03 — Burgeridentificatie &amp; Pseudonimisering<a class="headerlink" href="#s03-burgeridentificatie-pseudonimisering" title="Permanent link">&para;</a></h2>
-<p><em>Het vaststellen van de identiteit van de burger op het vereiste betrouwbaarheidsniveau, en het omzetten van het BSN naar partijspecifieke, onomkeerbare pseudoniemen zodat het BSN nooit bij private afnemers terechtkomt als daar geen wettelijke grondslag voor bestaat.</em></p>
+<p><em>Het vaststellen van de identiteit van de burger op het vereiste betrouwbaarheidsniveau, en het omzetten van het BSN naar partijspecifieke pseudoniemen zodat het BSN nooit bij afnemers terechtkomt als daar geen wettelijke grondslag voor bestaat.</em></p>
 <h3 id="afspraken_2">Afspraken<a class="headerlink" href="#afspraken_2" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -1425,16 +1395,22 @@
 </thead>
 <tbody>
 <tr>
-<td>Het BSN mag private dienstverleners (die hiervoor geen wettelijke grondslag hebben) nooit bereiken; pseudoniem is verplicht voor DvTP-traject</td>
+<td>Het BSN mag dienstverleners die hiervoor geen wettelijke grondslag hebben nooit bereiken; pseudoniem is verplicht voor DvTP-traject</td>
 <td>Stelselafspraak</td>
-<td>Centraal — GBO, verankerd in AMvB Wdo / Wabvpz</td>
+<td>Centraal — GBO, verankerd in wetgeving</td>
 <td>Deels al wettelijk bepaald (Wabvpz); uitwerking in GBO-stelsel nog nodig</td>
 </tr>
 <tr>
-<td>Koppeling tussen toestemmingsrecord en pseudoniem (consent_id als brug)</td>
+<td>Koppeling tussen toestemmingsrecord en pseudoniem</td>
 <td>Stelselafspraak</td>
 <td>Centraal — GBO</td>
-<td>⚠️ Nog te maken</td>
+<td>⚠️ Nog te maken - vooralsnog gekozen om versleutelde pseudoniemen aan afnemer te leveren, die deze in de gegevensverzoeken gebruikt.</td>
+</tr>
+<tr>
+<td>Beheer gepseudonimiseerde BSN's (gebeurt niet bij BSNk PP)</td>
+<td>Stelselafspraak</td>
+<td>Centraal - GBO</td>
+<td>⚠️ Nog te maken - vooralsnog gekozen om deze in het toestemmingenregister op te slaan en daar ook te gebruiken als identiteitskenmerk</td>
 </tr>
 <tr>
 <td>Betrouwbaarheidsniveaus per traject (welk eIDAS-niveau vereist voor welk type gegevens)</td>
@@ -1497,25 +1473,25 @@
 <td>Beschikbaar; ondersteunt eIDAS Substantieel; koppeling met GBO via bestaande DigiD-aansluiting</td>
 </tr>
 <tr>
-<td>eHerkenning</td>
-<td>Stelselvoorziening</td>
-<td>Logius / markt</td>
-<td>Gedeeld (meerdere leveranciers)</td>
-<td>Beschikbaar voor organisatie-authenticatie; relevant voor onboarding dienstverleners</td>
-</tr>
-<tr>
 <td>eIDAS-erkende buitenlandse authenticatiemiddelen</td>
 <td>Stelselvoorziening</td>
 <td>eIDAS-knooppunt (Logius)</td>
 <td>Gedeeld</td>
-<td>Beschikbaar via NL eIDAS-knooppunt; relevant voor EUDI-Wallet en OOTS</td>
+<td>Beschikbaar via NL eIDAS-knooppunt</td>
+</tr>
+<tr>
+<td>Identity Matching (eIDAS-erkende authenticatiemiddelen &gt; BSN)</td>
+<td>Onderdeel van EDI-stelsel</td>
+<td>EDI?</td>
+<td>Centraal</td>
+<td><strong>onbekend</strong></td>
 </tr>
 <tr>
 <td>BSNk PP (polymorf pseudonimiseringsstelsel)</td>
 <td>Centrale voorziening</td>
 <td>Logius</td>
 <td>Gedeeld</td>
-<td><strong>Beschikbaar en in productie</strong> (eToegang-stelsel, ~2019); integratiewerk voor GBO/DvTP-traject nog nodig</td>
+<td><strong>Beschikbaar en in productie</strong>; integratiewerk voor GBO/DvTP-traject nog nodig</td>
 </tr>
 <tr>
 <td>BSNk Activate / Transform / Close</td>
@@ -1523,6 +1499,13 @@
 <td>Logius</td>
 <td>Gedeeld</td>
 <td>Beschikbaar; onboarding Toestemmingsportaal als AD/MR-deelnemer en PEP als BSN-geautoriseerde component nog te realiseren</td>
+</tr>
+<tr>
+<td>BSNk PI/PP (gepseudonimiseerde identiteit)</td>
+<td>Onderdeel van BSNk PP</td>
+<td>GBO</td>
+<td>Centraal</td>
+<td>⚠️ Nog te maken - NB: hiervoor kan het toestemmingenregister dienen</td>
 </tr>
 </tbody>
 </table>
@@ -1554,6 +1537,18 @@
 <td>Toetredingsafspraak</td>
 <td>Centraal — GBO-stelsel, aansluiting FDS</td>
 <td>⚠️ Nog te maken als GBO-toetredingsprocedure</td>
+</tr>
+<tr>
+<td>Onboarding bronhouders: PKIoverheid-certificaat → FSC-registratie → DCAT-beschrijving → trajectactivatie</td>
+<td>Toetredingsafspraak</td>
+<td>Centraal — GBO/FDS</td>
+<td>⚠️ Nog te maken als GBO-onboardingprocedure</td>
+</tr>
+<tr>
+<td>Aansluiten op Europese afspraken: QTSP's op Trusted List worden toegelaten</td>
+<td>Wetgeving</td>
+<td>Centraal</td>
+<td><a href="https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls">Europese Trusted Lists</a>; ⚠️ implementatie nog uitwerken</td>
 </tr>
 <tr>
 <td>Erkenning QTSP-uitgegeven attestaties en gekwalificeerde zegels als vertrouwensanker</td>
@@ -1637,6 +1632,13 @@
 <td>Beschikbaar als onderdeel FSC; registratie van actieve contracten tussen partijen</td>
 </tr>
 <tr>
+<td>eHerkenning</td>
+<td>Stelselvoorziening</td>
+<td>Logius / markt</td>
+<td>Gedeeld (meerdere leveranciers)</td>
+<td>Beschikbaar voor organisatie-authenticatie; relevant voor onboarding dienstverleners</td>
+</tr>
+<tr>
 <td>FDS Poortwachter (toelating en onboarding deelnemers)</td>
 <td>Organisatorische stelselfunctie FDS</td>
 <td>Centraal — FDS-beheer / GBO</td>
@@ -1654,7 +1656,7 @@
 </table>
 <hr />
 <h2 id="s05-autorisatie-peppdppip">S05 — Autorisatie (PEP/PDP/PIP)<a class="headerlink" href="#s05-autorisatie-peppdppip" title="Permanent link">&para;</a></h2>
-<p><em>Iedere gegevensuitvraag wordt getoetst aan machineleesbaar beleid, op basis van de identiteit van de afnemer, de gevraagde gegevens, en de real-time raadpleging van de grondslag. De beslissing is herleidbaar en trajectonafhankelijk.</em></p>
+<p><em>Iedere gegevensuitvraag wordt getoetst aan machineleesbaar beleid, op basis van de identiteit van de afnemer, de gevraagde gegevens, en de vaststelling van de grondslag. De beslissing is herleidbaar en trajectonafhankelijk.</em></p>
 <h3 id="afspraken_4">Afspraken<a class="headerlink" href="#afspraken_4" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -1679,7 +1681,7 @@
 <td>⚠️ Nog te maken als GBO-AuthZEN-profiel</td>
 </tr>
 <tr>
-<td>Beleidstemplates per traject (wie mag wat opvragen onder welke grondslag)</td>
+<td>Beleidsregels per traject (wie mag wat opvragen onder welke grondslag)</td>
 <td>Stelselafspraak</td>
 <td>Centraal beheer, decentrale configuratie per sector of bronhouder</td>
 <td>⚠️ Nog te maken; iWlz-Rego-patronen als vertrekpunt</td>
@@ -1708,19 +1710,19 @@
 <td>Draft-standaard; FTV (Federatieve Toegangsverlening, Logius) loopt pilot</td>
 </tr>
 <tr>
-<td>OPA/Rego — machineleesbare beleidstaal voor PDP-evaluatie</td>
-<td>Open Policy Agent / CNCF</td>
-<td><strong>In productie bij iWlz</strong> (ZIN) voor gevoelige zorgdata; directe precedentwaarde</td>
-</tr>
-<tr>
 <td>XACML 3.0 — alternatieve PDP-standaard (minder actueel, maar breed ingezet)</td>
 <td>OASIS</td>
-<td>Beschikbaar; minder geschikt voor fine-grained data-access dan OPA/Rego</td>
+<td>Beschikbaar; minder geschikt voor fine-grained data-access</td>
 </tr>
 <tr>
 <td>PBAC (Policy-Based Access Control) als autorisatieparadigma</td>
 <td>Conceptueel kader</td>
 <td>Beschreven in FTV-architectuur; aansluiting GBO gewenst</td>
+</tr>
+<tr>
+<td>Authorization Decision Log</td>
+<td>Logius</td>
+<td>Draft-standaard; onderdeel van FTV</td>
 </tr>
 </tbody>
 </table>
@@ -1748,27 +1750,20 @@
 <td>Decentrale voorziening (centraal beheerde policies)</td>
 <td>Policies centraal beheerd door GBO; PDP-instantie decentraal bij bronhouder</td>
 <td>Eigen instantie per bronhouder</td>
-<td>⚠️ Nog te realiseren; iWlz implementatie OPA/Rego als precedent</td>
+<td>⚠️ Nog te realiseren; iWlz implementatie OPA/Rego waarvan geleerd kan worden</td>
 </tr>
 <tr>
-<td>PIP-interface naar grondslagregistratie</td>
+<td>PIP-interface naar toestemmingenregister</td>
 <td>Koppelvlak</td>
-<td>Centraal — GBO (grondslagregistratie als PIP)</td>
+<td>Centraal — GBO (toestemmingenregister als PIP)</td>
 <td>Gedeeld koppelvlak</td>
-<td>⚠️ Nog te standaardiseren als GBO PIP-profiel (zie S01)</td>
-</tr>
-<tr>
-<td>Policy Store / PAP</td>
-<td>Centrale voorziening</td>
-<td>Centraal — GBO</td>
-<td>Gedeeld</td>
-<td>Zie S06 — Beleidsbeheer &amp; -distributie</td>
+<td>⚠️ Eventueel te standaardiseren als GBO PIP-profiel (zie S01)</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="s06-beleidsbeheer-distributie-pap">S06 — Beleidsbeheer &amp; -distributie (PAP)<a class="headerlink" href="#s06-beleidsbeheer-distributie-pap" title="Permanent link">&para;</a></h2>
-<p><em>Het centraal beheren en distribueren van autorisatiebeleid (OPA/Rego-policies) naar de decentrale autorisatiecomponenten (PDP's) van alle aangesloten bronhouders, zodat het stelsel als geheel consistent en bestuurlijk controleerbaar toegang handhaaft.</em></p>
+<p><em>Het centraal beheren en distribueren van autorisatiebeleid naar de decentrale autorisatiecomponenten (PDP's) van alle aangesloten bronhouders, zodat het stelsel als geheel consistent en bestuurlijk controleerbaar toegang handhaaft.</em></p>
 <blockquote>
 <p>⚠️ <strong>Nog te ontwerpen:</strong> Deze stelselfunctie is nieuw en heeft geen bestaande invulling. De PAP (Policy Administration Point) is het technisch-bestuurlijke gezagspunt van het stelsel: hij bepaalt wat iedere deelnemer mag opvragen. Vereist een expliciete governance-afspraak over wie policies mag schrijven, wijzigen en goedkeuren.</p>
 </blockquote>
@@ -1802,9 +1797,9 @@
 <td>⚠️ Nog te maken als GBO-architectuurprincipe</td>
 </tr>
 <tr>
-<td>Naast toestemming worden ook toepasbare grondslagen (wettelijke basis, doelbinding) als machineleesbaar beleid centraal beheerd</td>
+<td>Policies worden als machineleesbaar beleid centraal beheerd</td>
 <td>Stelselafspraak</td>
-<td>Centraal — GBO/FDS, raakvlak AVG/Wdo</td>
+<td>Centraal — GBO/FDS, raakvlak AVG</td>
 <td>⚠️ Nog te maken; ODRL of Rego als taal nog te bepalen</td>
 </tr>
 </tbody>
@@ -1875,7 +1870,7 @@
 <h2 id="s07-gegevensontsluiting-bronontsluiting-api">S07 — Gegevensontsluiting (Bronontsluiting API)<a class="headerlink" href="#s07-gegevensontsluiting-bronontsluiting-api" title="Permanent link">&para;</a></h2>
 <p><em>Bronhouders stellen gegevens beschikbaar via één generieke, herbruikbare interface. Selectieve uitvraag is structureel mogelijk en afdwingbaar. Geen trajectspecifieke endpoints.</em></p>
 <blockquote>
-<p>ℹ️ <strong>FDS hergebruik:</strong> De FDS-stelselfunctie <strong>Poortwachter</strong> regelt het onboardingproces voor bronhouders als data-aanbieders binnen FDS. GBO hergebruikt dit proces en breidt het uit met GBO-specifieke stappen (BSNk PP-onboarding, query-template registratie, trajectactivatie). De FDS-stelselfunctie <strong>Datadiensten</strong> definieert het kwaliteitskader voor data-aanbod; GBO-bronontsluiting valt hieronder als een specialisatie.</p>
+<p>ℹ️ <strong>FDS hergebruik:</strong> De FDS-stelselfunctie <strong>Datadiensten</strong> definieert het kwaliteitskader voor data-aanbod; GBO-bronontsluiting valt hieronder als een specialisatie.</p>
 </blockquote>
 <h3 id="afspraken_6">Afspraken<a class="headerlink" href="#afspraken_6" title="Permanent link">&para;</a></h3>
 <table>
@@ -1895,16 +1890,10 @@
 <td>⚠️ Nog te maken als FDS-architectuureis voor GBO-bronhouders</td>
 </tr>
 <tr>
-<td>Query-registratie: toegestane gegevensvragen per use case zijn vooraf geregistreerd en afdwingbaar</td>
+<td>Query-registratie: toegestane gegevensvragen per gegevensdienst zijn vooraf geregistreerd en afdwingbaar</td>
 <td>Stelselafspraak</td>
 <td>Centraal — GBO (query-catalogus)</td>
 <td>⚠️ Nog te maken</td>
-</tr>
-<tr>
-<td>Onboarding bronhouders: PKIoverheid-certificaat → FSC-registratie → DCAT-beschrijving → trajectactivatie</td>
-<td>Toetredingsafspraak</td>
-<td>Centraal — GBO/FDS</td>
-<td>⚠️ Nog te maken als GBO-onboardingprocedure</td>
 </tr>
 <tr>
 <td>DCAT-AP NL als verplicht formaat voor zelfbeschrijving van bronhouder-datasets</td>
@@ -1973,7 +1962,7 @@
 <td><strong>Beschikbaar</strong> — FSC Outway referentie-implementatie beschikbaar</td>
 </tr>
 <tr>
-<td>Query Template Registry (catalogus van geregistreerde gegevensvragen)</td>
+<td>Query Catalogus (catalogus van op te vragen gegevens per "gegevensdienst": wie mag onder welke voorwaarden welke gegevens bij welke bron opvragen)</td>
 <td>Centrale voorziening</td>
 <td>Centraal — GBO</td>
 <td>Gedeeld</td>
@@ -2424,14 +2413,14 @@
 <td>⚠️ Nog te realiseren; vereist CAR-certificering; bouwt op C5 (bronontsluiting) en C2 (burgeridentificatie)</td>
 </tr>
 <tr>
-<td>CAR-certificering voor de uitgiftedienst</td>
+<td>Certificering voor de uitgiftedienst</td>
 <td>Conformiteitseis</td>
 <td>Geaccrediteerde CAB (markt, onder toezicht RDI)</td>
 <td>Per uitgiftedienst</td>
 <td>⚠️ Nog te doorlopen; vereiste uit uitvoeringsverordening 2025/1569</td>
 </tr>
 <tr>
-<td>Centrale verificatiedienst (Status List / Verifier endpoint)</td>
+<td>Centrale Authentic Source Interface Provider (met discover, verify en retrieve dienst)</td>
 <td>Centrale voorziening (optie)</td>
 <td>Centraal — GBO of Logius</td>
 <td>Gedeelde instantie</td>
@@ -2471,32 +2460,32 @@
 <tbody>
 <tr>
 <td>S01 — Toestemmingenregistratie</td>
-<td>Wdo-grondslag DvTP; AMvB doelbinding en gegevenscategorieën</td>
+<td>Grondslag DvTP; vastlegging doelbinding en gegevenscategorieën</td>
 <td>Toestemmingenregister als GBO-voorziening; PIP-interface standaard; stelselafspraken intrekking</td>
 <td>W3C ODRL; DCAT-AP NL</td>
 </tr>
 <tr>
 <td>S02 — Toestemmingsportaal</td>
-<td>Wdo-grondslag DvTP; wettelijke verankering vrijwilligheidseis en gelijkwaardig alternatief als aansluiteis</td>
+<td>Grondslag DvTP; wettelijke verankering vrijwilligheidseis en gelijkwaardig alternatief als aansluiteis</td>
 <td>Portaal zelf; BSNk-onboarding portaal; UX-richtlijnen toestemmingspresentatie; transparantie-eis uitwerking</td>
 <td>DigiD; BSNk Activate</td>
 </tr>
 <tr>
 <td>S03 — Burgeridentificatie &amp; Pseudonimisering</td>
 <td>—</td>
-<td>BSNk PP-integratie voor DvTP (onboarding portaal en PEP); betrouwbaarheidsniveau-beleid per traject</td>
+<td>BSNk PP-integratie voor DvTP (onboarding portaal en PEP); Identity Matching voor eIDAS authenticatiemiddelen zonder BSN; betrouwbaarheidsniveau-beleid per traject</td>
 <td>BSNk PP (productie); DigiD; eIDAS-knooppunt</td>
 </tr>
 <tr>
 <td>S04 — Organisatie-authenticatie &amp; Vertrouwensstelsel</td>
 <td>—</td>
 <td>GBO-vertrouwensprofiel (welke trust anchors per traject); OIN ↔ KvK ↔ eIDAS-identifier koppeling; GBO-aansluitvoorwaarden</td>
-<td>FDS Poortwachter (in opzet); FDS Marktmeester (in opzet); FSC Directory; PKI Overheid; OIN-register</td>
+<td>FDS Poortwachter (in opzet); FDS Marktmeester (in opzet); FSC Directory; PKI Overheid; OIN-register; Europese Trusted Lists (List of Trusted Lists)</td>
 </tr>
 <tr>
 <td>S05 — Autorisatie (PEP/PDP/PIP)</td>
 <td>—</td>
-<td>Volledige PEP/PDP/PIP-keten nog te realiseren; GBO AuthZEN-profiel; BSN-resolving post-decision</td>
+<td>PEP/PDP/PIP-keten nog te realiseren; GBO AuthZEN-profiel; BSN-resolving</td>
 <td>OPA/Rego; FTV/AuthZEN (pilot)</td>
 </tr>
 <tr>
@@ -2508,11 +2497,11 @@
 <tr>
 <td>S07 — Gegevensontsluiting (Bronontsluiting API)</td>
 <td>—</td>
-<td>Query Template Registry; GraphQL als FDS-datadienst-type positioneren; GBO onboardingprocedure bronhouders</td>
-<td>FSC (productie); FDS Poortwachter (in opzet); DCAT-AP NL; iWlz GraphQL-patroon</td>
+<td>Dienstencatalogus; GraphQL als FDS-datadienst-type positioneren; GBO onboardingprocedure bronhouders</td>
+<td>FSC (productie); FDS Poortwachter (in opzet); DCAT-AP NL</td>
 </tr>
 <tr>
-<td>S08 — OOTS-adapter (Grensoverschrijdend)</td>
+<td>S08 — OOTS-adapter</td>
 <td>—</td>
 <td>GBO ↔ RINIS REST-koppeling; SMP-beheer; SDG-EDM mapping</td>
 <td>RINIS basisinrichting beschikbaar; Domibus (open source, EC); AS4/OOTS-EDM standaarden</td>
@@ -2521,7 +2510,7 @@
 <td>S09 — Logging, Audit &amp; Traceerbaarheid</td>
 <td>—</td>
 <td>LDV-profiel per GBO-component; inzagevoorziening burger</td>
-<td>LDV (in consultatie, referentie-impl. beschikbaar); OpenTelemetry; iWlz TraceID/SpanID RFC (productie)</td>
+<td>LDV (in consultatie, referentie-impl. beschikbaar); OpenTelemetry</td>
 </tr>
 <tr>
 <td>S10 — Semantiek &amp; Gegevenscatalogus</td>
@@ -2537,50 +2526,6 @@
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="bijlage-afsprakenstelsel">Bijlage: Afsprakenstelsel<a class="headerlink" href="#bijlage-afsprakenstelsel" title="Permanent link">&para;</a></h2>
-<p>Er is een werkend afsprakenstelsel nodig dat de bovenstaande stelselfuncties verbindt in één samenhangend geheel van afspraken, standaarden en voorzieningen. Het <strong>iWlz-afsprakenstelsel</strong> is hiervoor een goede blauwdruk: het is gelaagd opgebouwd, formeel vastgesteld, en heeft een werkend RFC-proces voor wijzigingen.</p>
-<p>De aanbevolen lagenstructuur voor het afsprakenstelsel (analoog aan iWlz):</p>
-<table>
-<thead>
-<tr>
-<th>Laag</th>
-<th>Inhoud voor GBO</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Organisatiebeleid</td>
-<td>Governance, rollen (bronhouder, afnemer, GBO-beheer), ontwerpkeuzes, serviceafspraken, wijzigingsbeheer</td>
-</tr>
-<tr>
-<td>Proces</td>
-<td>Trajectprocessen: DvTP-toestemmingsstroom, OOTS-adapterstroom, EUDI-Wallet uitgifte- en presentatiestroom</td>
-</tr>
-<tr>
-<td>Informatie</td>
-<td>Gegevensmodellen per bronhouder, canonieke schema's, mappings naar OOTS-EDM en PuBEAA</td>
-</tr>
-<tr>
-<td>Applicatie</td>
-<td>Technische afspraken per stelselfunctie: GraphQL profiel, PEP/PDP-keten, FSC-profiel, BSNk PP-integratie, query-templates</td>
-</tr>
-<tr>
-<td>IT-infrastructuur</td>
-<td>Connectiviteit (FSC), certificaten (PKI Overheid), netwerkeisen, SLA's</td>
-</tr>
-<tr>
-<td>Uitwisselprofielen</td>
-<td>Per traject (DvTP, OOTS, EUDI-Wallet): specifieke afspraken aanvullend op de generieke lagen</td>
-</tr>
-</tbody>
-</table>
-<p>Wijzigingen in het afsprakenstelsel verlopen via een formeel RFC-proces, met gepubliceerde versies en expliciete inwerkingtreding per implementatiestap.</p>
-<p>NB: De afspraken moeten landen in bestaande afsprakenstelsels en wetgeving.<br />
-Een voorstel hiervoor:<br />
-- Afspraken die uitsluitend overheid-overheid betreffen → landen in het FDS- en/of het GDI-afsprakenstelsel<br />
-- Afspraken waarbij ook private dienstverleners zijn betrokken (toelating dienstverleners, aansluitvoorwaarden, vrijwilligheidseis) → landen in publiek-private afsprakenstelsels zoals het TIP-afsprakenstelsel<br />
-- Wat wettelijk verankerd moet zijn → in Wdo en AMvB</p>
 
 
 

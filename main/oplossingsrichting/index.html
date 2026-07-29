@@ -709,6 +709,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#gebruik-bestaande-afsprakenstelsels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gebruik bestaande afsprakenstelsels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#gemeenschappelijke-bronontsluiting" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1079,14 +1090,14 @@
   end
   subgraph oots["OOTS"]
     direction LR
-        oots_adapter("OOTS adapter&lt;br/&gt;(protocol + semantische mapping)")
-        oots_basis["Basisinrichting OOTS&lt;br/&gt;(nationaal OOTS-toegangspunt)"]
+        oots_adapter("OOTS-adapter&lt;br/&gt;(semantische mapping)")
+        oots_basis["Basisinrichting OOTS&lt;br/&gt;(Nederlands OOTS-koppelpunt)"]
         oots_afnemer["Europese overheid&lt;br/&gt;SDG-portaal"]
   end
   subgraph dvtp["DvTP"]
     direction LR
         dvtp_toestemming("Toestemmingsvoorziening")
-        dvtp_pseudoniem["Pseudonimiseervoorziening&lt;br/&gt;(BSNk PP)"]
+        dvtp_pseudoniem["Pseudonimiseervoorziening"]
         dvtp_afnemer["Private dienstverlener"]
   end
 
@@ -1123,17 +1134,28 @@
   bron:::bron
   burger:::burger
 
-  classDef bron fill:#edf7df,stroke:#6aa13a,color:#27500a
+  classDef bron fill:#DDEBF7,stroke:#6F94B8,color:#263746
   classDef generiek fill:#f1efe8,stroke:#5f5e5a,color:#444441
   classDef eudi fill:#f1efe8,stroke:#5f5e5a,color:#444441
   classDef oots fill:#f1efe8,stroke:#5f5e5a,color:#444441
   classDef dvtp fill:#f1efe8,stroke:#5f5e5a,color:#444441
   classDef gbo fill:#fff0e8,stroke:#000000,color:#000000
-  classDef burger fill:#edf7df,stroke:#6aa13a,color:#27500a
+  classDef burger fill:#DDEBF7,stroke:#6F94B8,color:#263746
 </div>
 <figcaption>Oplossingsrichting GBO.</figcaption>
 </figure>
 
+<h2 id="gebruik-bestaande-afsprakenstelsels">Gebruik bestaande afsprakenstelsels<a class="headerlink" href="#gebruik-bestaande-afsprakenstelsels" title="Permanent link">&para;</a></h2>
+<p>GBO gaat geen eigen stelsel inrichten en ook geen eigen standaarden of voorzieningen introduceren. Er wordt gebruik gemaakt van bestaande afsprakenstelsels en de standaarden en voorzieningen die daar beschikbaar zijn.<br />
+De afsprakenstelsels waarmee GBO ingericht wordt zijn:<br />
+- Federatief Datastelsel (FDS): een afsprakenstelsel dat organisaties met een publieke taak hierbij ondersteunt. De gezamenlijke afspraken zijn erop gericht dat overheden werken op basis van dezelfde standaarden, waardoor ze op een uniforme manier met data omgaan. Het FDS maakt voor de gegevensuitwisseling gebruik van de GDI-standaarden en zorgt voor aanvullingen op deze GDI-standaarden indien hiervoor nog geen standaarden of afspraken gemaakt zijn. Voorbeelden is bijvoorbeeld: Federatieve Toegangsverlening wat gebaseerd is op AuthZen en als standaard op dit moment is aangeboden bij Forum Standaardisatie.<br />
+Voor GBO dient FDS als basis voor de bronontsluiting.<br />
+- Generieke Digitale Infrastructuur (GDI): de verzameling van afspraken(stelsels), standaarden en voorzieningen die alle publieke dienstverleners gebruiken voor hun digitale dienstverlening aan burgers en ondernemers. Deze afspraken, standaarden en voorzieningen zijn verdeeld in 4 domeinen: toegang, interactie, gegevensuitwisseling en infrastructuur.<br />
+Voor GBO dient GDI als basis voor de centrale voorzieningen.<br />
+- European Digital Identity (EUDI): het door de Europese Unie vastgestelde kader waarin afspraken, architecturen en standaarden zijn vastgelegd. Dit stelsel maakt het mogelijk dat burgers en bedrijven zich door middel van één veilige digitale portemonnee (de EUDI Wallet) in de gehele EU kunnen identificeren en verifiëren.<br />
+Voor GBO dient EUDI als basis voor het leveren van gegevens (attestaties van attributen) aan burgers.<br />
+- Single Digital Gateway / Once Only Technical System (SDG/OOTS): de bindende set technische, organisatorische en juridische afspraken binnen de EU. Het stelt overheidsinstanties in staat om, met toestemming, veilig officiële bewijsstukken en gegevens van burgers en bedrijven onderling uit te wisselen.<br />
+Voor GBO dient SDG/OOTS als basis voor het leveren van gegevens aan buitenlandse Europese overheden.  </p>
 <h2 id="gemeenschappelijke-bronontsluiting">Gemeenschappelijke bronontsluiting<a class="headerlink" href="#gemeenschappelijke-bronontsluiting" title="Permanent link">&para;</a></h2>
 <p>De verbinding tussen vragende partij en bron wordt via de <strong>FSC-standaard</strong> tot stand gebracht. Dit is een standaard koppelvlak waarmee de beveiliging van de gegevensuitwisseling wordt gegarandeerd en de noodzakelijke logging wordt vastgelegd.
 Bronhouders stellen hun gegevens bloot via een generieke, herbruikbare API. Dit is mogelijk met <strong>GraphQL</strong> - een API die een zo volledig mogelijke set gegevens beschikbaar stelt, waarvan afhankelijk van de toepassing een selectie wordt bevraagd. Dit maakt het inrichten en onderhouden van een groot aantal kleinere REST-API's overbodig. Als er een nieuwe gegevensvraag ontstaat, kan dat via configuratie ingericht worden, in plaats van dat er een nieuw endpoint ingericht en beheerd hoeft te worden.<br />
@@ -1142,7 +1164,7 @@ Om te garanderen dat afnemers alleen die gegevens krijgen waarop zij recht op he
 <h2 id="aansluiten-op-bestaande-voorzieningen">Aansluiten op bestaande voorzieningen<a class="headerlink" href="#aansluiten-op-bestaande-voorzieningen" title="Permanent link">&para;</a></h2>
 <p>De vragende partijen kennen hun eigen standaarden en protocollen. Als deze afwijken van de FSC-standaard met GraphQL-API's, dan worden er componenten ontwikkeld om de aansluiting te maken. Voor bronhouders is dit geen zorg; als zij hun gegevens beschikbaar stellen via de gemeenschappelijke bronontsluiting kunnen zij aansluiten. Ook voor de vragende partijen wordt de koppeling eenvoudig: zij kunnen hun standaarden en protocollen blijven gebruiken en krijgen toegang tot alle bronnen die voldoen aan de GBO-oplossing.  </p>
 <p>In de figuur bovenaan dit hoofdstuk zijn de vereiste centrale voorzieningen voor de drie gegevensstromen die bij GBO in beeld zijn, ingetekend:<br />
-- Voor de EUDI-Wallet zijn dat een <strong>verify-interface</strong> waar QTSP's toegang toe krijgen om QEAA's uit te kunnen geven, en een voorziening waarmee overheidsbronnen zelf attestaties (PubEAA's) kunnen uitgeven.<br />
+- Voor de EUDI-Wallet zijn dat een <strong>Authentic Source Interface</strong> waar QTSP's toegang toe krijgen om QEAA's uit te kunnen geven, en een <strong>PubEAA Provider</strong> waarmee overheidsbronnen zelf attestaties (PubEAA's) kunnen uitgeven.<br />
 - Voor OOTS is dit een <strong>OOTS-adapter</strong> waarmee aangesloten wordt op de basisinrichting OOTS, waarvandaan gegevens met buitenlandse overheden gedeeld kunnen worden in het kader van SDG.<br />
 - Voor het delen van gegevens via toestemming met private dienstverleners is een <strong>toestemmingsvoorziening</strong> nodig, en een voorziening om BSN's te <strong>pseudonimiseren</strong>, zodat deze niet terechtkomen bij partijen die geen BSN mogen verwerken.  </p>
 <h2 id="uitbreidbaar">Uitbreidbaar<a class="headerlink" href="#uitbreidbaar" title="Permanent link">&para;</a></h2>
@@ -1164,16 +1186,16 @@ Iedere gegevensstroom zal afspraken vereisen over de gegevenssets die afgenomen 
         eudi_qeaa["QTSP&lt;br/&gt;(QEAA)"]
         eudi_wallet["EUDI-Wallet"]
   end
-  subgraph oots["SDG / OOTS"]
+  subgraph oots["OOTS"]
     direction LR
         oots_adapter("OOTS adapter&lt;br/&gt;(semantische mapping)")
-        oots_basis["Basisinrichting OOTS&lt;br/&gt;(incl. OOTS-V backend)"]
+        oots_basis["Basisinrichting OOTS"]
         oots_afnemer["Europese overheid&lt;br/&gt;SDG-portaal"]
   end
   subgraph dvtp["DvTP"]
     direction LR
         dvtp_toestemming("Toestemmingsvoorziening")
-        dvtp_pseudoniem["Pseudonimiseervoorziening&lt;br/&gt;(BSNk PP)"]
+        dvtp_pseudoniem["Pseudonimiseervoorziening"]
         dvtp_afnemer["Private dienstverlener"]
   end
   subgraph ebw["QERDS/EBW"]
@@ -1186,17 +1208,16 @@ Iedere gegevensstroom zal afspraken vereisen over de gegevenssets die afgenomen 
 
   fsc_pap --- fsc
   fsc --- fsc_tools
-  bron[("Overheidsbronnen&lt;br/&gt;BRP · BD · UWV · KvK · …")] -- Bron API&lt;br/&gt;(GraphQL / REST-JSON / ...) --- gbo
-  eudi_asi -- verify --- eudi_qeaa
-  eudi_asi -. "`*retrieve*`" .- eudi_qeaa
-  eudi_qeaa -- OpenID4VCI --- eudi_wallet
-  gbo -- GraphQL --- eudi_asi &amp; eudi_pubeaa &amp; oots_adapter &amp; dvtp_afnemer &amp; ebw_qerds_adapter
-  eudi_pubeaa -- OpenID4VCI ---- eudi_wallet
-  oots_adapter -- REST-JSON --- oots_basis
-  oots_basis -- eDelivery-AS4 --- oots_afnemer
-  gbo -- REST-JSON&lt;br/&gt;(PIP) --- dvtp_toestemming
-  dvtp_toestemming -- REST-JSON --- dvtp_afnemer
-  dvtp_toestemming -- REST-JSON --- dvtp_pseudoniem
+  bron[("Overheidsbronnen&lt;br/&gt;BRP · BD · UWV · KvK · …")] --- gbo
+  eudi_asi --- eudi_qeaa
+  eudi_qeaa --- eudi_wallet
+  gbo --- eudi_asi &amp; eudi_pubeaa &amp; oots_adapter &amp; dvtp_afnemer &amp; ebw_qerds_adapter
+  eudi_pubeaa --- eudi_wallet
+  oots_adapter --- oots_basis
+  oots_basis --- oots_afnemer
+  gbo --- dvtp_toestemming
+  dvtp_toestemming --- dvtp_afnemer
+  dvtp_toestemming --- dvtp_pseudoniem
   dvtp_pseudoniem ~~~ dvtp_afnemer
   ebw_qerds_adapter --- ebw_pub_qtsp --- ebw_wallet
   ebw_qerds_adapter --- ebw_qtsp --- ebw_wallet
@@ -1205,7 +1226,7 @@ Iedere gegevensstroom zal afspraken vereisen over de gegevenssets die afgenomen 
   dvtp_afnemer --- burger
   ebw_wallet --- organisatie["Organisatie&lt;br/&gt;(publiek/privaat)"]
   ebw_wallet ~~~ overheid["Ketenpartner&lt;br/&gt;(overheid)"]
-  gbo  -- GraphQL --- overheid["Ketenpartner&lt;br/&gt;(overheid)"]
+  gbo  --- overheid["Ketenpartner&lt;br/&gt;(overheid)"]
 
   fsc_pap:::gbo
   fsc:::gbo
