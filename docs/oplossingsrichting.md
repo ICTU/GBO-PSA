@@ -9,6 +9,19 @@ Dit hoofdstuk beschrijft de voorgestelde oplossingsrichting voor GBO. Het onders
 <figcaption>Oplossingsrichting GBO.</figcaption>
 </figure>
 
+## Gebruik bestaande afsprakenstelsels
+
+GBO gaat geen eigen stelsel inrichten en ook geen eigen standaarden of voorzieningen introduceren. Er wordt gebruik gemaakt van bestaande afsprakenstelsels en de standaarden en voorzieningen die daar beschikbaar zijn.  
+De afsprakenstelsels waarmee GBO ingericht wordt zijn:  
+- Federatief Datastelsel (FDS): een afsprakenstelsel dat organisaties met een publieke taak hierbij ondersteunt. De gezamenlijke afspraken zijn erop gericht dat overheden werken op basis van dezelfde standaarden, waardoor ze op een uniforme manier met data omgaan. Het FDS maakt voor de gegevensuitwisseling gebruik van de GDI-standaarden en zorgt voor aanvullingen op deze GDI-standaarden indien hiervoor nog geen standaarden of afspraken gemaakt zijn. Voorbeelden is bijvoorbeeld: Federatieve Toegangsverlening wat gebaseerd is op AuthZen en als standaard op dit moment is aangeboden bij Forum Standaardisatie.  
+Voor GBO dient FDS als basis voor de bronontsluiting.  
+- Generieke Digitale Infrastructuur (GDI): de verzameling van afspraken(stelsels), standaarden en voorzieningen die alle publieke dienstverleners gebruiken voor hun digitale dienstverlening aan burgers en ondernemers. Deze afspraken, standaarden en voorzieningen zijn verdeeld in 4 domeinen: toegang, interactie, gegevensuitwisseling en infrastructuur.  
+Voor GBO dient GDI als basis voor de centrale voorzieningen.  
+- European Digital Identity (EUDI): het door de Europese Unie vastgestelde kader waarin afspraken, architecturen en standaarden zijn vastgelegd. Dit stelsel maakt het mogelijk dat burgers en bedrijven zich door middel van één veilige digitale portemonnee (de EUDI Wallet) in de gehele EU kunnen identificeren en verifiëren.  
+Voor GBO dient EUDI als basis voor het leveren van gegevens (attestaties van attributen) aan burgers.  
+- Single Digital Gateway / Once Only Technical System (SDG/OOTS): de bindende set technische, organisatorische en juridische afspraken binnen de EU. Het stelt overheidsinstanties in staat om, met toestemming, veilig officiële bewijsstukken en gegevens van burgers en bedrijven onderling uit te wisselen.  
+Voor GBO dient SDG/OOTS als basis voor het leveren van gegevens aan buitenlandse Europese overheden.  
+
 ## Gemeenschappelijke bronontsluiting
 
 De verbinding tussen vragende partij en bron wordt via de **FSC-standaard** tot stand gebracht. Dit is een standaard koppelvlak waarmee de beveiliging van de gegevensuitwisseling wordt gegarandeerd en de noodzakelijke logging wordt vastgelegd.
@@ -23,7 +36,7 @@ Deze bouwstenen moeten door de bronhouder ingericht en onderhouden worden. Er be
 De vragende partijen kennen hun eigen standaarden en protocollen. Als deze afwijken van de FSC-standaard met GraphQL-API's, dan worden er componenten ontwikkeld om de aansluiting te maken. Voor bronhouders is dit geen zorg; als zij hun gegevens beschikbaar stellen via de gemeenschappelijke bronontsluiting kunnen zij aansluiten. Ook voor de vragende partijen wordt de koppeling eenvoudig: zij kunnen hun standaarden en protocollen blijven gebruiken en krijgen toegang tot alle bronnen die voldoen aan de GBO-oplossing.  
 
 In de figuur bovenaan dit hoofdstuk zijn de vereiste centrale voorzieningen voor de drie gegevensstromen die bij GBO in beeld zijn, ingetekend:  
-- Voor de EUDI-Wallet zijn dat een **verify-interface** waar QTSP's toegang toe krijgen om QEAA's uit te kunnen geven, en een voorziening waarmee overheidsbronnen zelf attestaties (PubEAA's) kunnen uitgeven.  
+- Voor de EUDI-Wallet zijn dat een **Authentic Source Interface** waar QTSP's toegang toe krijgen om QEAA's uit te kunnen geven, en een **PubEAA Provider** waarmee overheidsbronnen zelf attestaties (PubEAA's) kunnen uitgeven.  
 - Voor OOTS is dit een **OOTS-adapter** waarmee aangesloten wordt op de basisinrichting OOTS, waarvandaan gegevens met buitenlandse overheden gedeeld kunnen worden in het kader van SDG.  
 - Voor het delen van gegevens via toestemming met private dienstverleners is een **toestemmingsvoorziening** nodig, en een voorziening om BSN's te **pseudonimiseren**, zodat deze niet terechtkomen bij partijen die geen BSN mogen verwerken.  
 

@@ -12,9 +12,9 @@
 **Stelling:** Elke gegevensuitwisseling vereist een expliciete wettelijke grondslag en doelbinding, die vooraf door de afnemer worden vastgesteld en aantoonbaar gemaakt.
 
 **Bronnen:**  
-- AVG art. 5 & 6  
-- NORA Domeinarchitectuur Gegevensuitwisseling §4.2  
-- NORA NAP05 — Nauwkeurig  
+- [AVG art. 5 & 6](https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX:32016R0679)  
+- [NORA Domeinarchitectuur Gegevensuitwisseling §4.2](https://www.noraonline.nl/wiki/Architectuurprincipes%20Domeinarchitectuur%20Gegevensuitwisseling)  
+- [NORA NAP09 — Nauwkeurig](https://www.noraonline.nl/wiki/Beschrijf_de_dienst_nauwkeurig)  
 
 ---
 
@@ -23,8 +23,7 @@
 **Stelling:** Er worden niet meer persoonsgegevens uitgewisseld dan strikt noodzakelijk voor het doel. Het stelsel ondersteunt dit door het leveren van attributen of specifieke gegevenssets in plaats van ruwe (basis)registratie-dumps.
 
 **Bronnen:**  
-- AVG art. 5 lid 1 sub c  
-- NORA NAP07 — Minimale gegevensverwerking  
+- [AVG art. 5 lid 1 sub c](https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX:32016R0679)  
 
 ---
 
@@ -33,8 +32,8 @@
 **Stelling:** Privacybeschermende maatregelen — waaronder pseudonimisering — zijn ingebakken in het ontwerp van het stelsel, niet achteraf toegevoegd. Welke maatregelen nodig zijn kan per situatie verschillen, maar het moet altijd vanaf het ontwerp meegenomen worden.
 
 **Bronnen:**  
-- AVG art. 25  
-- NORA Domeinarchitectuur Gegevensuitwisseling §4.2  
+- [AVG art. 25](https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX:32016R0679)  
+- [NORA Privacy (doel)](https://www.noraonline.nl/wiki/Privacy_(Doel))  
 
 ---
 
@@ -43,9 +42,9 @@
 **Stelling:** Elke (poging tot) gegevensuitwisseling wordt gelogd (metadata van verzending en ontvangst) zodat achteraf aantoonbaar is dat uitwisselingen hebben plaatsgevonden en door wie.
 
 **Bronnen:**  
-- AVG art. 5 lid 2 (verantwoordingsplicht)  
-- NORA Domeinarchitectuur Gegevensuitwisseling §4.2  
-- BIO (Baseline Informatiebeveiliging Overheid)  
+- [AVG art. 5 lid 2 (verantwoordingsplicht)](https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX:32016R0679)  
+- [NORA Domeinarchitectuur Gegevensuitwisseling](https://www.noraonline.nl/wiki/Domeinarchitectuur_Gegevensuitwisseling)  
+- [BIO (Baseline Informatiebeveiliging Overheid)](https://www.bio-overheid.nl/)  
 
 ---
 
@@ -54,9 +53,8 @@
 **Stelling:** De burger heeft recht op inzage in welke gegevens over hem / haar zijn uitgewisseld, met wie en op welke grondslag.
 
 **Bronnen:**  
-- AVG art. 13–15 (informatieplicht, inzagerecht)  
-- Programma Regie op Gegevens (BZK)  
-- NORA BP03 — Ontvanger is op de hoogte  
+- [AVG art. 13–15 (informatieplicht, inzagerecht)](https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX:32016R0679)  
+- [Programma Regie op Gegevens (BZK)](https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/regie-op-gegevens/)  
 
 ---
 
@@ -67,9 +65,9 @@
 **Stelling:** Gegevens worden eenmalig bij de bron vastgelegd en vanuit die bron hergebruikt. Het stelsel bevordert gegevensdeling in plaats van gegevens kopiëren.
 
 **Bronnen:**  
-- NORA BP08 — Gebruik open standaarden  
-- NORA NAP10 — Neem gegevens als fundament  
-- FDS-architectuurprincipes  
+- [NORA NAP10 — Neem gegevens als fundament](https://www.noraonline.nl/wiki/Neem_gegevens_als_fundament)  
+- [NORA NAP12 - Informeer bij de bron](https://www.noraonline.nl/wiki/Informeer_bij_de_bron)
+- [FDS-architectuurprincipes](https://federatief.datastelsel.nl/kennisbank/principes/)  
 
 ---
 
@@ -78,9 +76,9 @@
 **Stelling:** Het stelsel maakt gebruik van open standaarden (zoals OAuth 2.0, Digikoppeling, OpenID4VCI/OpenIDVP) van de Forum Standaardisatie 'pas toe of leg uit'-lijst, zodat vendor lock-in wordt voorkomen.
 
 **Bronnen:**  
-- NORA Domeinarchitectuur Gegevensuitwisseling §4.2  
-- Forum Standaardisatie (lijsten verplichte/aanbevolen standaarden)  
-- EU Data Act hfst. VIII (interoperabiliteit)  
+- [NORA - Pas open standaarden toe](https://www.noraonline.nl/wiki/Pas_open_standaarden_toe)  
+- [Forum Standaardisatie (lijsten verplichte/aanbevolen standaarden)](https://www.forumstandaardisatie.nl/open-standaarden)  
+- [EU Data Act hfst. VIII (interoperabiliteit)](https://eur-lex.europa.eu/eli/reg/2023/2854/oj?locale=nl)  
 
 ---
 
@@ -89,9 +87,10 @@
 **Stelling:** Gegevens in het stelsel zijn voorzien van metadata die ze vindbaar en herbruikbaar maakt conform de FAIR-principes, inclusief semantische standaarden (GGM, RDF, SHACL).
 
 **Bronnen:**  
-- FAIR-principes (Wilkinson et al., 2016)  
-- NORA NAP10 — Neem gegevens als fundament  
-- FDS-architectuurprincipes  
+- [FAIR-principes (Wilkinson et al., 2016)](https://www.nature.com/articles/sdata201618)  
+- [NORA Domeinarchitectuur Gegevensuitwisseling principe 1.1 - Gegevens die kunnen worden gedeeld zijn vindbaar, toegankelijk, interoperabel en herbruikbaar](https://www.noraonline.nl/wiki/Architectuurprincipes_Domeinarchitectuur_Gegevensuitwisseling)
+- [NORA NAP10 — Neem gegevens als fundament](https://www.noraonline.nl/wiki/Neem_gegevens_als_fundament)  
+- [FDS-architectuurprincipes](https://federatief.datastelsel.nl/kennisbank/principes/)  
 
 ---
 
@@ -100,9 +99,8 @@
 **Stelling:** De GBO beperkt zich tot generieke functies die overheidsbreed noodzakelijk zijn. Domeinspecifieke functionaliteit is de verantwoordelijkheid van de betreffende sector of partij.
 
 **Bronnen:**  
-- NORA subsidiariteitsbeginsel  
-- GDI-Architectuur Basisprincipes (Bureau MIDO)  
-- Architectuur Digitale Overheid 2030  
+- [GDI-Architectuur Basisprincipes](https://www.noraonline.nl/images/noraonline/c/c3/GA_basisprincipes.pdf)  
+- [Architectuur Digitale Overheid 2030](https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/architectuur/)  
 
 ---
 
@@ -111,8 +109,8 @@
 **Stelling:** Afnemers, de generieke kern en bronhouders zijn technisch ontkoppeld via gestandaardiseerde koppelvlakken, zodat componenten onafhankelijk kunnen worden doorontwikkeld en vervangen.
 
 **Bronnen:**  
-- GDI-Architectuur Basisprincipes — "Gebruik van flexibele en ontkoppelde functies"  
-- NORA BP09 — Pas open standaarden toe  
+- [GDI-Architectuur Basisprincipes — "5.4 Gebruik van flexibele en ontkoppelde functies"](https://www.noraonline.nl/images/noraonline/c/c3/GA_basisprincipes.pdf)  
+- [NORA NAP08 — Standaardiseer waar mogelijk](https://www.noraonline.nl/wiki/Standaardiseer_waar_mogelijk)  
 
 ---
 
@@ -120,23 +118,23 @@
 
 ### P-05 · Erkende authenticatiemiddelen op passend betrouwbaarheidsniveau
 
-**Stelling:** Toegang tot het stelsel vereist een erkend inlogmiddel (DigiD, eHerkenning, EUDIW) op het betrouwbaarheidsniveau dat past bij het risiconiveau van de dienst.
+**Stelling:** Toegang tot het stelsel vereist een erkend inlogmiddel (zoals DigiD, eHerkenning, EUDIW) op het betrouwbaarheidsniveau dat past bij het risiconiveau van de dienst.
 
 **Bronnen:**  
-- Wet digitale overheid (Wdo) 2023  
-- eIDAS Verordening (EU) 2024/1183  
-- NORA Authenticatie(middelen)beheer  
+- [Wet digitale overheid (Wdo) 2023](https://wetten.overheid.nl/BWBR0048156/2025-11-11)  
+- [eIDAS Verordening (EU) 2024/1183](https://eur-lex.europa.eu/eli/reg/2024/1183/oj?locale=nl)  
+- [NORA Authenticatie(middelen)beheer](https://www.noraonline.nl/wiki/Authenticatie(middelen)beheer)  
 
 ---
 
 ### P-07 · Vertrouwensstelsel op basis van PKI en erkende toetredingseisen
 
-**Stelling:** Alle deelnemende partijen (bronhouders, afnemers, private partijen) voldoen aan toetredingseisen en zijn aantoonbaar betrouwbaar via PKIoverheid-certificaten en/of bestaande stelsels (zoals sectorale afsprakenstelsels), die door het stelselbeheer voldoende vertrouwd worden. In de toekomst kunnen daar EUDI en/of European Business Wallet bij komen.
+**Stelling:** Alle deelnemende partijen (bronhouders, afnemers en eventuele intermediairs) voldoen aan toetredingseisen en zijn aantoonbaar betrouwbaar via PKIoverheid-certificaten en/of bestaande stelsels (zoals sectorale afsprakenstelsels), die door het stelselbeheer voldoende vertrouwd worden. In de toekomst kunnen daar EUDI en/of European Business Wallet bij komen.
 
 **Bronnen:**  
-- PKIoverheid-stelsel  
-- Wet digitale overheid (Wdo)  
-- Afsprakenstelsel Elektronische Toegangsdiensten (eHerkenning)  
+- [PKIoverheid-stelsel](https://www.logius.nl/onze-dienstverlening/toegang/pkioverheid/wat-pkioverheid)  
+- [Wet digitale overheid (Wdo)](https://wetten.overheid.nl/BWBR0048156/2025-11-11)  
+- [Afsprakenstelsel Elektronische Toegangsdiensten (eHerkenning)](https://www.logius.nl/onze-dienstverlening/toegang/eherkenning)  
 
 ---
 
@@ -147,9 +145,9 @@
 **Stelling:** Het stelsel is ontworpen om in de toekomst attributen uit te wisselen via de EU Digital Identity Wallet (OpenID4VCI/OpenID4VP), zodat grensoverschrijdende dienstverlening mogelijk is.
 
 **Bronnen:**  
-- eIDAS2 Verordening (EU) 2024/1183  
-- EU Architecture Reference Framework (ARF)  
-- Single Digital Gateway (SDG) Verordening  
+- [eIDAS2 Verordening (EU) 2024/1183](https://eur-lex.europa.eu/eli/reg/2024/1183/oj?locale=nl)  
+- [EU Architecture Reference Framework (ARF)](https://eudi.dev/latest/)  
+- [Single Digital Gateway (SDG) Verordening](https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX%3A32018R1724)  
 
 ---
 
@@ -157,12 +155,12 @@
 
 ### P-10 · Datasoevereiniteit: de bronhouder behoudt regie
 
-**Stelling:** Bronhouders behouden volledige zeggenschap over hun gegevens en de condities waaronder die worden ontsloten. GBO heeft geen eigenaarschap over de data die wordt ontsloten wordt, maar faciliteert deze enkel.
+**Stelling:** Bronhouders behouden volledige zeggenschap over hun gegevens en de condities waaronder die worden ontsloten. GBO heeft geen eigenaarschap over de data die wordt ontsloten wordt, maar faciliteert enkel de ontsluiting ervan.
 
 **Bronnen:**  
-- EU Data Governance Act (DGA) Verordening 2022/868  
-- FDS Design Principles for Data Spaces — principe 1  
-- NORA Domeinarchitectuur Gegevensuitwisseling §4.2  
+- [EU Data Governance Act (DGA) Verordening 2022/868](https://eur-lex.europa.eu/eli/reg/2022/868/oj?locale=nl)  
+- [FDS Design Principles for Data Spaces — principe 1](https://federatief.datastelsel.nl/kennisbank/principes/)  
+- [NORA Domeinarchitectuur Gegevensuitwisseling - principe 1.5 De bron van de gegevens is leidend](https://www.noraonline.nl/wiki/Domeinarchitectuur_Gegevensuitwisseling)  
 
 ---
 
@@ -171,9 +169,8 @@
 **Stelling:** Private partijen kunnen deelnemen aan het stelsel onder transparante, proportionele en niet-discriminerende toetredingsvoorwaarden, mits zij voldoen aan de gestelde beveiligings- en privacynormen en géén BSN verwerken, behalve als daar een wettelijke grondslag voor bestaat.
 
 **Bronnen:**  
-- EU Data Governance Act art. 5 (condities hergebruik)  
-- Wabb art. 10 (BSN-verbod private partijen)  
-- DvTP-kader (Data delen via Toestemming met Private partijen)  
+- [EU Data Governance Act art. 5 (condities hergebruik)](https://eur-lex.europa.eu/eli/reg/2022/868/oj?locale=nl)  
+- [Wabb art. 10 (BSN-verbod private partijen)](https://wetten.overheid.nl/BWBR0022428/2025-11-11)  
 
 ---
 
@@ -184,9 +181,9 @@
 **Stelling:** Private partijen mogen het BSN niet verwerken (Wabb art. 10). Het GBO levert aan private afnemers uitsluitend sectorale of context-specifieke pseudoniemen; de BSN-koppeling blijft binnen de vertrouwde kern. NB: als private partijen een wettelijke grondslag hebben om het BSN wel te verwerken, kan dit wel gedeeld worden.
 
 **Bronnen:**  
-- Wet algemene bepalingen BSN (Wabb) art. 10  
-- AVG art. 25 (pseudonimisering)  
-- BSNk / Polymorfe pseudonimisering  
+- [Wet algemene bepalingen BSN (Wabb) art. 10](https://wetten.overheid.nl/BWBR0022428/2025-11-11)  
+- [AVG art. 25 (pseudonimisering)](https://eur-lex.europa.eu/legal-content/NL/TXT/?uri=CELEX:32016R0679)  
+- [BSNk / Polymorfe pseudonimisering](https://www.logius.nl/onze-dienstverlening/toegang/voorzieningen/bsnk-pp)  
 
 ---
 

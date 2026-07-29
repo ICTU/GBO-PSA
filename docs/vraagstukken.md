@@ -17,16 +17,13 @@ Voor systeemherkenning bij gegevensuitwisseling wordt PKIo gebruikt. Maar hoe ga
 FSC biedt hiervoor oplossingsrichtingen, waar in de uitwerking naar gekeken kan worden.
 
 
-## Autorisatiearchitectuur: centrale autorisatieserver vs. gedistribueerde PDP
-
-Gaat GBO werken met een "Autorisatieserver" als centraal component, met een bijbehorende "Vertrouwensleverancier" die tokens afgeeft. De Functionele Requirements en het GBO Beschrijvend Document spreken van een autorisatieserver als apart component (component 4).  
-**Ontwerpkeuze**: De PSA en het technisch ontwerp gaan nu uit van een PBAC-oplossing, met een PDP, PEP en een centrale PAP. Of dit voor alle use cases de beste oplossing is, moet nog blijken.  
-
-
 ## Burgeridentificatie en het BSN
 
 Het BSN mag bij private partijen, die daarvoor geen wettelijke grondslag hebben, niet worden doorgegeven. Dit vereist een pseudonimiseringslaag.  
 **Ontwerpkeuze**: Voor het pseudonimiseren van het BSN wordt gebruik gemaakt van de BSNk PP voorziening. Deze voorziening gaat uit van een "geactiveerd" BSN - d.w.z. dat er al een pseudoniem voor het BSN bestaat. Deze pseudoniemen worden door GBO aangevraagd via de activatiedienst van BSNk en bijgehouden in het toestemmingenregister. Voordeel van het vastleggen van de pseudoniemen, is dat er geen BSN's in het toestemmingenregister opgeslagen hoeven te worden. Nadeel is dat GBO als "toegangsdienst" erkend moet worden door BSNk, wat mogelijk extra verantwoording vereist.
+De afnemer (private dienstverlener) krijgt de versleutelde pseudoniemen (voor hemzelf en voor de te bevragen bronhouders) met het consent-id als de burger de toestemming heeft verleend.  
+
+Als de burger zich authenticeert met een EIDAS-middel dat geen BSN bevat, dan moet de BSN op een andere manier achterhaald worden. Het BSN is immers altijd nodig om de gevraagde gegevens uit de overheidsbron op te halen. Er wordt in Europa gewerkt aan "identity matching" - een dienst om op basis van beschikbare gegevens de gewenste burgeridentiteit te achterhalen. Het is nog onduidelijk of deze dienst ook door GBO gebruikt kan worden en wat dat eventueel betekent voor de architectuur.
 
 
 ## Toestemmingen
@@ -57,13 +54,14 @@ Dit is nodig voor de Wallet, maar mogelijk ook voor de andere use cases. Er is [
 - Inrichten PuBEAA?  
 - Centrale verificatie- en/of retrievedienst t.b.v. QEAA?  
 
-**Ontwerpkeuze**: Vooralsnog gaan we uit van een centrale PuBEAA verstrekker en een centrale verificatiedienst t.b.v. QEAA. Daarmee zijn diverse opties mogelijk: bronhouder treedt zelf op als PuBEAA-verstrekker, bronhouder gebruikt centrale PuBEAA-verstrekker, QTSP geeft attesteringen uit die bij bronhouder geverifieerd zijn. Als bronhouders ook graag attestaties willen laten uitgeven door QTSP's, kan er een "retrieve" functie toegevoegd worden aan de centrale verificatiedienst (die beide onderdeel zijn van de "Authentic Source Interface").
+**Ontwerpkeuze**: Vooralsnog gaat de architectuur uit van een centrale PuBEAA verstrekker en een centrale verificatie- en retrievedienst t.b.v. QEAA. Daarmee zijn diverse opties mogelijk: bronhouder treedt zelf op als PuBEAA-verstrekker, bronhouder gebruikt centrale PuBEAA-verstrekker, QTSP geeft attesteringen uit die bij bronhouder geverifieerd zijn of QTSP geeft attesteringen uit namens de bronhouder met behulp van de retrievedienst. Als bronhouders ook graag attestaties willen laten uitgeven door QTSP's, kan er een "retrieve" functie toegevoegd worden aan de centrale verificatiedienst (die beide onderdeel zijn van de "Authentic Source Interface"). Bij de verdere ontwikkeling en implementatie wordt besloten welke diensten daadwerkelijk ingericht worden.
 
 
 ## Hoe start de uitgifte van attestaties?
 
 In het interactiepatroon is geschetst dat de burger de aanvraag voor een attestatie start vanuit zijn wallet of via een QTSP. Maar het is nog de vraag hoe de uitgifte in de praktijk start: vanuit de bronhouder (eventueel via de wallet), een QTSP of wellicht vanuit de dienstverlener of een combinatie daarvan, waarbij de ene partij doorverwijst naar de andere. Mogelijk heeft een keuze hierin gevolgen voor het interactiepatroon en de uitwerking van de voorgestelde voorzieningen.  
-Vooralsnog maakt GBO hierin geen keuze en worden de voorzieningen zo ontworpen dat zoveel mogelijk opties mogelijk blijven.
+Vooralsnog wordt uitgegaan van aanvragen vanuit de wallet.
+
 
 ## Centrale Componenten
 
@@ -71,5 +69,6 @@ Ontwerpprincipe D01 stelt "Decentraal wat kan, centraal wat moet". Dit geldt als
 Bij de volgende voorzieningen die in theorie decentraal ingericht kunnen worden, wordt een centrale inrichting overwogen:
 
 - PuBEAA dienst waar alle overheidsbronnen gebruik van kunnen maken.
-- Verificatiedienst waarmee QTSP's gegevens kunnen verifiëren en waar alle overheidsbronnen gebruik van kunnen maken.
-- Vertaalvoorziening om GraphQL verzoeken om te zetten naar REST/API verzoeken voor overheidsbronnen die (nog) geen eigen GraphQL implementatie willen/ kunnen realiseren.
+- Verificatie- en/of retrievedienst waarmee QTSP's gegevens kunnen verifiëren en waar alle overheidsbronnen gebruik van kunnen maken.
+- Vertaalvoorziening om GraphQL verzoeken om voor overheidsbronnen die (nog) geen eigen GraphQL implementatie willen/ kunnen realiseren, toch een GraphQL API te kunnen aanbieden.
+- Semantische mapping van gegevensverzoeken in voorgeschreven formaten (zoals EDM, attestatieschema's) naar GraphQL formaat.

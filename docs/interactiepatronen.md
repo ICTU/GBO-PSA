@@ -4,11 +4,11 @@ Dit document beschrijft de belangrijkste interactiepatronen voor GBO zoals afgel
 
 
 
-## Gegevensverzoek van burger om gegevens via wallet te delen
+## Gegevensverzoek van burger om attestatie van attributen in wallet te ontvangen
 
 ### Doel
 
-Een burger vraagt een gegeven op als gekwalificeerde attestatie om in diens wallet op te nemen en te delen met een dienstverlener.
+Een burger vraagt een gegeven op als gekwalificeerde attestatie om in diens wallet op te nemen, zodat deze gedeeld kan worden met een dienstverlener.
 
 ### Interactie
 
@@ -18,13 +18,13 @@ Een burger vraagt een gegeven op als gekwalificeerde attestatie om in diens wall
 --8<-- "diagrammen/interactiepatroon-EUDI-Wallet.mmd"
 
 ```
-<figcaption>Gegevensverzoek van burger om credential via wallet te delen</figcaption>
+<figcaption>Gegevensverzoek van burger om attestatie van attributen in wallet te ontvangen</figcaption>
 </figure>
 
 ### Toelichting
 
 Iedere bronhouder kan in theorie gegevens uitleveren aan wallets, maar deze gegevens krijgen pas juridische waarde als ze gekwalificeerd zijn. Dat kwalificeren kan op twee manieren: de overheid ondertekent het gegeven, waardoor het een PuBEAA wordt, of een gekwalificeerde verlener van vertrouwensdiensten (QTSP) doet dit.  
-Als de overheid het gegeven kwalificeert kan de bronhouder dit zelf doen, maar het kan schaalvoordeel bieden om dit te centraliseren in een GBO PuBEAA-dienst. Als een QTSP het gegeven kwalificeert, moet deze QTSP het gegeven kunnen verifiëren via een verificatiedienst. Ook hier kan een bronhouder de dienst zelf aanbieden, of kan ervoor gekozen worden om dit te centraliseren in een GBO verificatiedienst. Ook de autorisatiedienst die door de PuBEAA-dienst en de verificatiedienst wordt aangeroepen, kan door de bronhouder worden aangeboden, maar het biedt schaalvoordeel om dat te centraliseren in een GBO dienst.
+Als de overheid het gegeven kwalificeert kan de bronhouder dit zelf doen, maar het kan schaalvoordeel bieden om dit te centraliseren in een GBO PuBEAA-dienst. Als een QTSP het gegeven kwalificeert, moet deze QTSP het gegeven kunnen verifiëren of zelfs ophalen via een verificatie- of retrievedienst. Ook hier kan een bronhouder de dienst zelf aanbieden, of kan ervoor gekozen worden om dit te centraliseren in een GBO verificatiedienst. Ook de autorisatiedienst die door de PuBEAA-dienst en de verificatie-/retrievedienst wordt aangeroepen, kan door de bronhouder worden aangeboden, maar het biedt schaalvoordeel om dat te centraliseren in een GBO dienst.
 
 
 ## Gegevensverzoek van Europese overheidsdienst aan Nederlandse overheidsbron

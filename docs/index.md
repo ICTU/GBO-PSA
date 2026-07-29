@@ -10,11 +10,7 @@ De PSA beschrijft **wat de oplossing moet kunnen**, maar legt nog geen technisch
 
 ## Scope
 
-De PSA beschrijft de architectuur voor een afsprakenstelsel en generieke infrastructuur waarmee:
-
--   burgers gegevens van overheidsorganisaties kunnen verkrijgen  
--   burgers deze gegevens kunnen delen met private partijen  
--   gegevens gebruikt kunnen worden voor Europese toepassingen zoals EDI Wallet en OOTS  
+De PSA beschrijft de afspraken, standaarden en voorzieningen die nodig zijn om de [voordelen die GBO nastreeft](https://ictu.github.io/GBO/latest/) te bereiken. Waar mogelijk zijn dit afspraken, standaarden en voorzieningen die al gelden in bestaande afsprakenstelsels. Als aanvullingen of aanpassingen nodig zijn om de GBO voordelen te bereiken, dan worden deze via de reguliere weg ingebracht bij bestaande afsprakenstelsels.
 
 
 De PSA beschrijft **niet**:

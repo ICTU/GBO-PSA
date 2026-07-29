@@ -60,15 +60,16 @@ De vier functies in deze laag vormen de voorwaarden waaronder de generieke funct
 
 - De identiteitsvaststelling sluit aan op de voor het traject vereiste betrouwbaarheidsniveaus (eIDAS Laag/Substantieel/Hoog) en maakt gebruik van erkende authenticatiemiddelen.
 - Voor het EUDI-Wallet traject ondersteunt de functie het ontvangen van een burgeridentiteit via een wallet-presentatie (conform eIDAS2/ARF), met verificatie via de relevante Trusted List.
+- Als in de wallet-presentatie geen BSN meegeleverd wordt, is een "identity matching" functie nodig. Voor bevraging van overheidsbronnen met persoonsgegevens is altijd het BSN nodig.
 
 ### Pseudonimisering
 
-**Doel:** Het garanderen dat het BSN uitsluitend circuleert binnen de overheidsinfrastructuur en nooit zichtbaar is voor private afnemers.
+**Doel:** Het garanderen dat het BSN uitsluitend circuleert binnen de overheidsinfrastructuur en nooit zichtbaar is voor afnemers die geen wettelijke grondslag hebben om het BSN te verwerken.
 
 **Eisen:**
 
-- Het BSN wordt nooit doorgegeven aan of verwerkt door private dienstverleners die daar geen wettelijke grondslag voor hebben. Voor deze partijen wordt altijd een partijspecifiek, onomkeerbaar pseudoniem gebruikt.
-- Pseudoniemen voor verschillende private partijen zijn niet onderling koppelbaar, ook niet wanneer die partijen samenwerken.
+- Het BSN wordt nooit doorgegeven aan of verwerkt door dienstverleners die daar geen wettelijke grondslag voor hebben. Voor deze partijen wordt altijd een partijspecifiek, onomkeerbaar pseudoniem gebruikt.
+- Pseudoniemen voor verschillende partijen zijn niet onderling koppelbaar, ook niet wanneer die partijen samenwerken.
 - Herhaald gebruik van hetzelfde pseudoniem voor dezelfde burger levert cryptografisch onkoppelbare uitvoer op (geen correlatierisico over tijd).
 - De omzetting van BSN naar pseudoniem — en terug, aan de bronhouderszijde — vindt plaats in een door de overheid beheerde en gecertificeerde voorziening.
 
@@ -98,7 +99,6 @@ De vier functies in deze laag vormen de voorwaarden waaronder de generieke funct
 - De autorisatiecomponent raadpleegt de toestemming real-time op het moment van uitvraag — er is geen vertrouwen op eerder uitgegeven tokens die de toestemmingsstatus "bevroren" vastleggen.
 - Beleidsdefinities zijn per traject instelbaar zonder wijziging van de autorisatie-infrastructuur zelf.
 - De beslissing (allow/deny) en de relevante context worden vastgelegd ten behoeve van auditbaarheid.
-- BSN-resolving vindt pas plaats *na* de autorisatiebeslissing (PDP), binnen de handhavingscomponent (PEP) — niet als invoer voor de beleidsevaluatie.
 
 ---
 
@@ -119,15 +119,14 @@ De vier functies in deze laag vormen de voorwaarden waaronder de generieke funct
 
 ## Generieke functie 3 — Gegevensvoorziening
 
-**Doel:** Bronhouders stellen hun gegevens beschikbaar via een gestandaardiseerde interface die door alle trajecten herbruikbaar is, inclusief grensoverschrijdende uitwisseling conform OOTS.
+**Doel:** Bronhouders stellen hun gegevens beschikbaar via een gestandaardiseerde interface die door alle trajecten herbruikbaar is.
 
 **Eisen:**
 
-- Een bronhouder realiseert één generieke ontsluiting. Er zijn geen trajectspecifieke endpoints of koppelingen per afnemer.
+- Een bronhouder realiseert één generieke interface. Er zijn geen trajectspecifieke endpoints of koppelingen per afnemer.
 - De interface ondersteunt selectieve gegevensuitvraag: de afnemer kan exact de velden opvragen die voor het specifieke gebruik nodig zijn. Dataminimalisatie is structureel ingebouwd, niet afhankelijk van afsprakenstelsel of goede wil.
-- De set van toegestane gegevensvragen per gebruik is vooraf geregistreerd (via een catalogus of template-mechanisme) en door beleid afdwingbaar. Binnen de toegestane gegevensvraag bepaalt de afnemer welke gegevens voor zijn situatie nodig zijn. Afwijkingen die buiten de toegestane gegevensvraag vallen zijn niet mogelijk.
-- De interface is onafhankelijk van het BSN als externe sleutel: de subject-identifier in een uitvraag van een private afnemer is altijd een pseudoniem of een consent-referentie; BSN-resolving is een interne aangelegenheid van de ontsluiting.
-- Bronhouders implementeren de ontsluiting eenmalig; aanpassingen voor nieuwe afnemers of trajecten vereisen geen bronhouder-specifieke ontwikkeling, alleen aanpassing van het beleid en de query-registratie.
+- De set van toegestane gegevensvragen per gebruik is vooraf geregistreerd en door beleid afdwingbaar. Binnen de toegestane gegevensvraag bepaalt de afnemer welke gegevens voor zijn situatie nodig zijn. Afwijkingen die buiten de toegestane gegevensvraag vallen zijn niet mogelijk.
+- Bronhouders implementeren de interface eenmalig; aanpassingen voor nieuwe afnemers of trajecten vereisen geen bronhouder-specifieke ontwikkeling, alleen aanpassing van het beleid en de query-registratie.
 - Verzoeken vanuit andere EU-lidstaten (OOTS) worden aan de GBO-zijde vertaald naar het binnenlandse formaat en protocol. Bronhouders zien geen EU-specifiek transportprotocol.
 - Serviceregistratie voor grensoverschrijdende discovery (SMP) wordt centraal beheerd, niet door individuele bronhouders.
 
@@ -139,10 +138,10 @@ De vier functies in deze laag vormen de voorwaarden waaronder de generieke funct
 
 **Eisen:**
 
-- Per bronhouder bestaat een geregistreerde, door GBO beheerde beschrijving van de beschikbaar gestelde gegevenselementen (naam, type, definitie, herkomst).
+- Per bronhouder bestaat een geregistreerde beheerde beschrijving van de beschikbaar gestelde gegevenselementen (naam, type, definitie, herkomst).
 - Dezelfde gegevensset kan worden geserialiseerd naar de voor elk traject vereiste uitwisselingsformaten (JSON voor binnenlands, OOTS-EDM XML voor grensoverschrijdend, SD-JWT VC of mdoc voor de wallet). De canonieke definitie is eenmalig vastgelegd.
 - Mapping tussen de GBO-canonieke definitie en trajectspecifieke schema's (zoals OOTS Semantic Repository types of PuBEAA attestatieschema's) is expliciet en beheerbaar.
-- Vocabularia zijn gebaseerd op open, breed gedragen standaarden (RDF, OWL, SKOS, JSON-LD) en sluiten aan op de Nederlandse overheidsstandaarden (GGM, NORA).
+- Vocabularia zijn gebaseerd op open, breed gedragen standaarden (zoals RDF, OWL, SKOS, JSON-LD) en sluiten aan op de Nederlandse overheidsstandaarden (zoals vastgelegd in de Pas-toe-of-leg-uit lijst).
 - Semantische afspraken zijn versie-beheerd; wijzigingen in definities zijn traceerbaar en worden beheerst doorgevoerd.
 
 ---
@@ -163,14 +162,14 @@ De vier functies in deze laag vormen de voorwaarden waaronder de generieke funct
 
 ## Generieke functie 6 — Grondslag & Beleid
 
-**Doel:** Elke gegevensuitvraag wordt getoetst aan het geldende beleid. De toetsing is geünificeerd, machineleesbaar en herleidbaar. Beleid en grondslagen zijn beheerbaar zonder wijziging van de verwerkende infrastructuur.
+**Doel:** Elke gegevensuitvraag wordt getoetst aan het geldende beleid. De toetsing is geünificeerd (iedere gegevensuitvraag voor een bepaalde dienst doorloopt dezelfde regels), machineleesbaar en herleidbaar. Beleid en grondslagen zijn beheerbaar zonder wijziging van de verwerkende infrastructuur.
 
 **Eisen:**
 
 - Beleidsdefinities omvatten: welke afnemers welke gegevens mogen opvragen, onder welke grondslagtypen, voor welke doelen, en met welke beperkingen (doelbinding, dataminimalisatie).
-- Beleidsregels zijn uitgedrukt in een formele, machineleesbare taal. Menselijk leesbare beschrijvingen zijn afgeleid van dezelfde bron, niet de bron zelf.
-- Wijzigingen in beleid (nieuwe afnemer, nieuwe gegevensvraag, gewijzigde AMvB) zijn door te voeren zonder aanpassing van de verwerkende systemen van bronhouders of de centrale GBO-infrastructuur.
-- De grondslag wordt real-time geraadpleegd op het moment van uitvraag. Er is geen vertrouwen op eerder uitgegeven tokens die de grondslagstatus "bevroren" vastleggen.
+- Beleidsregels zijn uitgedrukt in een formele, machineleesbare taal. Menselijk leesbare beschrijvingen zijn afgeleid van deze formele beleidsregels, maar vormen niet de bron zelf.
+- Wijzigingen in beleid (zoals nieuwe afnemers, nieuwe gegevensvragen) zijn door te voeren zonder aanpassing van de verwerkende systemen van bronhouders.
+- Bij toestemming wordt deze real-time gecontroleerd op het moment van uitvraag. Er is geen vertrouwen op eerder uitgegeven tokens die de toestemmingstatus "bevroren" vastleggen.
 - De autorisatiebeslissing en de bijbehorende beleidscontext worden vastgelegd ten behoeve van auditbaarheid (zie Generieke functie 8).
 
 ---
@@ -181,11 +180,10 @@ De vier functies in deze laag vormen de voorwaarden waaronder de generieke funct
 
 **Eisen:**
 
-- Een gegevensuitvraag die gegevens van meerdere bronhouders vereist, wordt als één samengesteld verzoek afgehandeld. De afnemer ziet één gecoördineerde respons, niet een reeks losse antwoorden.
+- Hoewel een toestemming die gegevens van meerdere bronhouders behelst in één toestemming geregistreerd kan worden, moet de afnemer de gegevens van de verschillende bronnen in aparte verzoeken versturen, met verwijzing naar dezelfde toestemming.
 - Procesorkestratie is configureerbaar per traject zonder dat de onderliggende bronhouderssystemen worden aangepast.
-- Mapping tussen het interne GBO-model en de externe formaten van afnemers (REST/JSON, AS4/XML, SD-JWT VC) is een expliciete, beheerde transformatiestap — geen impliciete conversie in de transportlaag.
+- Mapping tussen het interne GBO-model en de externe formaten van afnemers (zoals REST/JSON, AS4/XML, SD-JWT VC) is een expliciete, beheerde transformatiestap — geen impliciete conversie in de transportlaag.
 - De orkestratie-component handelt foutscenario's af (bronhouder niet bereikbaar, gedeeltelijke respons) op een voorspelbare, per traject instelbare manier.
-- Event-gedreven interacties (notificaties bij wijziging van brongegevens) worden ondersteund als aanvulling op synchrone bevraging.
 
 ---
 
@@ -199,8 +197,8 @@ De vier functies in deze laag vormen de voorwaarden waaronder de generieke funct
 - Logregels over de keten heen zijn correleerbaar via een gestandaardiseerde verzoekidentificator, zodat een uitvraag van afnemer tot bronhouder volledig reconstrueerbaar is.
 - Audit-logs zijn niet aanpasbaar door de componenten die ze genereren (onweerlegbaarheid).
 - De burger heeft recht op inzage in de verwerkingen die zijn gegevens betreffen; de logging is zo ingericht dat dit recht technisch uitvoerbaar is.
-- Wallet-lokale logs (EDI-traject) vallen buiten de server-side correlatie; de architectuur maakt geen aannames over inzage in wallet-transacties van de burger zelf.
-- Versies van beleid, schema's en configuraties zijn beheerd en traceerbaar, zodat een uitvraag altijd reconstrueerbaar is naar de op dat moment geldende instellingen.
+- Wallet-lokale logs (EDI-traject) vallen buiten de ketenbrede logging; de architectuur maakt geen aannames over inzage in wallet-transacties van de burger zelf.
+- Versies van beleid, schema's en dienstencatalogi zijn beheerd en traceerbaar, zodat een uitvraag altijd reconstrueerbaar is naar de op dat moment geldende instellingen.
 - Incidentbeheer en monitoring zijn ingericht conform de continuïteitseisen die gelden voor overheidsinfrastructuur.
 
 ---

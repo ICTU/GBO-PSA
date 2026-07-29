@@ -14,14 +14,14 @@ flowchart LR
   end
   subgraph oots["OOTS"]
     direction LR
-        oots_adapter("OOTS adapter<br/>(protocol + semantische mapping)")
-        oots_basis["Basisinrichting OOTS<br/>(nationaal OOTS-toegangspunt)"]
+        oots_adapter("OOTS-adapter<br/>(semantische mapping)")
+        oots_basis["Basisinrichting OOTS<br/>(Nederlands OOTS-koppelpunt)"]
         oots_afnemer["Europese overheid<br/>SDG-portaal"]
   end
   subgraph dvtp["DvTP"]
     direction LR
         dvtp_toestemming("Toestemmingsvoorziening")
-        dvtp_pseudoniem["Pseudonimiseervoorziening<br/>(BSNk PP)"]
+        dvtp_pseudoniem["Pseudonimiseervoorziening"]
         dvtp_afnemer["Private dienstverlener"]
   end
 
@@ -58,10 +58,10 @@ flowchart LR
   bron:::bron
   burger:::burger
 
-  classDef bron fill:#edf7df,stroke:#6aa13a,color:#27500a
+  classDef bron fill:#DDEBF7,stroke:#6F94B8,color:#263746
   classDef generiek fill:#f1efe8,stroke:#5f5e5a,color:#444441
   classDef eudi fill:#f1efe8,stroke:#5f5e5a,color:#444441
   classDef oots fill:#f1efe8,stroke:#5f5e5a,color:#444441
   classDef dvtp fill:#f1efe8,stroke:#5f5e5a,color:#444441
   classDef gbo fill:#fff0e8,stroke:#000000,color:#000000
-  classDef burger fill:#edf7df,stroke:#6aa13a,color:#27500a
+  classDef burger fill:#DDEBF7,stroke:#6F94B8,color:#263746

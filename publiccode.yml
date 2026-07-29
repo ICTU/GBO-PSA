@@ -1,7 +1,7 @@
 publiccodeYmlVersion: "0.1"
 
 name: PSA GBO
-url: "https://github.com/ICTU/psa-gbo-dvtp.git"
+url: "https://github.com/ICTU/gbo-psa.git"
 # softwareVersion: "1.0"    # Optional
 releaseDate: "tbd"
 platforms:
@@ -21,22 +21,20 @@ description:
          Project Startarchitectuur GBO
 
    longDescription: >
-         Architectuur voor het project Gemeenschappelijke Bronontsluiting (GBO)
+         Deze repository beschrijft de projectstartarchitectuur (PSA) voor het project Gemeenschappelijke Bronontsluiting (GBO). De PSA beschrijft wat de oplossing moet kunnen, maar legt nog geen technische implementatie vast.
 
    features:
       - PSA
       - Diagrammen die in PSA gebruikt worden
-      - Technisch ontwerp
-      - Globaal ontwerp
 
 legal:
- license: nog vast te stellen
+ license: EUPL-1.2
 
 maintenance:
- type: "community"
-
- contacts:
-   - name: Govert Claus
+  type: "community"
+  contacts:
+    - name: Govert Claus
+      email: "govert.claus@ictu.nl"
 
 localisation:
  localisationReady: false
