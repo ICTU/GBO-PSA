@@ -52,9 +52,9 @@ In deze PSA worden de volgende namen consequent gebruikt:
 | Technische voorziening voor uitgifte van PubEAA's | **PubEAA-provider** |
 | Gestandaardiseerd koppelvlak voor authentieke bronnen | **Authentic Source Interface (ASI)** |
 | Technische rol of voorziening die een ASI aanbiedt | **ASI-provider** |
-| Nederlandse voorziening voor aansluiting van verstrekkende bronhouders op OOTS | **Basisinrichting OOTS**<br>(met **OOTS-V** als onderdeel waarop aangesloten kan worden vanuit een FSC koppeling) |
+| Nederlandse voorziening voor aansluiting van verstrekkende bronhouders op OOTS | **Basisinrichting OOTS**<br>(met **OOTS-V** als interface waarop aangesloten kan worden vanuit een FSC koppeling) |
 | GBO-component voor aansluiting op OOTS-V | **OOTS-adapter** |
-| Generieke interface van een bronhouder | **bronontsluiting-API** |
+| Generieke interface van een bronhouder | **bronontsluiting-API**<br>(functioneel ook beschreven als **generieke bronontsluiting**) |
 | Catalogus van toegestane gegevensvragen per dienst | **dienstencatalogus** |
 | Overkoepelende functie voor register, portaal en interfaces voor toestemming | **toestemmingsvoorziening** |
 | Registratie van verleende en ingetrokken toestemmingen | **toestemmingsregister** |

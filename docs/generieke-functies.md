@@ -87,6 +87,7 @@ Daarbij gelden de volgende eisen:
 De inrichting voldoet aan de volgende eisen:
 
 - alle componenten hebben een expliciete eigenaar, beheerder, serviceniveau en continuïteitsplan;
+- voor eventuele "Single Point of Failure" (SPOF) worden maatregelen getroffen om beschikbaarheid te garanderen;
 - de keten is monitorbaar zonder inhoudelijke persoonsgegevens onnodig centraal te verzamelen;
 - gebeurtenissen zijn over componenten heen correleerbaar via een gestandaardiseerde verzoekidentificator;
 - configuraties, beleid, schema's, mappings en dienstregistraties zijn versieerbaar en auditeerbaar;
