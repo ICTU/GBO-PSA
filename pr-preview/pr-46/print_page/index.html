@@ -1087,7 +1087,7 @@
 </tr>
 <tr>
 <td>Nederlandse voorziening voor aansluiting van verstrekkende bronhouders op OOTS</td>
-<td><strong>Basisinrichting OOTS</strong><br>(met <strong>OOTS-V</strong> als onderdeel waarop aangesloten kan worden vanuit een FSC koppeling)</td>
+<td><strong>Basisinrichting OOTS</strong><br>(met <strong>OOTS-V</strong> als interface waarop aangesloten kan worden vanuit een FSC koppeling)</td>
 </tr>
 <tr>
 <td>GBO-component voor aansluiting op OOTS-V</td>
@@ -1095,7 +1095,7 @@
 </tr>
 <tr>
 <td>Generieke interface van een bronhouder</td>
-<td><strong>bronontsluiting-API</strong></td>
+<td><strong>bronontsluiting-API</strong><br>(functioneel ook beschreven als <strong>generieke bronontsluiting</strong>)</td>
 </tr>
 <tr>
 <td>Catalogus van toegestane gegevensvragen per dienst</td>
@@ -1360,7 +1360,7 @@
 <tr>
 <td><strong>D-05</strong></td>
 <td>Gegevens bij de bron</td>
-<td>GBO creëert geen structureel gegevensmagazijn. Tijdelijke opslag is alleen toegestaan als dit noodzakelijk en rechtmatig is en bewaartermijn, beveiliging en verwijdering zijn vastgelegd.</td>
+<td>GBO creëert geen structureel gegevensmagazijn. Tijdelijke opslag is alleen toegestaan als dit noodzakelijk en rechtmatig is en bewaartermijn, beveiliging en verwijdering zijn vastgelegd. Dit is primair de verantwoordelijkheid van de bronhouder(s) en geen verantwoordelijkheid van GBO.</td>
 </tr>
 <tr>
 <td><strong>D-06</strong></td>
@@ -1395,7 +1395,7 @@
 <tr>
 <td><strong>D-12</strong></td>
 <td>Aantoonbare veiligheid</td>
-<td>Deelnemers en gedeelde voorzieningen voldoen aantoonbaar aan toepasselijke beveiligingsnormen. Audits, testen, kwetsbaarheidsbeheer en incidentafhandeling zijn onderdeel van de aansluit- en beheerafspraken.</td>
+<td>Deelnemers en gedeelde voorzieningen voldoen aantoonbaar aan toepasselijke beveiligingsnormen. Audits, testen, kwetsbaarheidsbeheer (ook SPOF(Single Point of Failure)-analyses) en incidentafhandeling zijn onderdeel van de aansluit- en beheerafspraken.</td>
 </tr>
 <tr>
 <td><strong>D-13</strong></td>
@@ -1539,6 +1539,7 @@
 <p>De inrichting voldoet aan de volgende eisen:</p>
 <ul>
 <li>alle componenten hebben een expliciete eigenaar, beheerder, serviceniveau en continuïteitsplan;</li>
+<li>voor eventuele "Single Point of Failure" (SPOF) worden maatregelen getroffen om beschikbaarheid te garanderen;</li>
 <li>de keten is monitorbaar zonder inhoudelijke persoonsgegevens onnodig centraal te verzamelen;</li>
 <li>gebeurtenissen zijn over componenten heen correleerbaar via een gestandaardiseerde verzoekidentificator;</li>
 <li>configuraties, beleid, schema's, mappings en dienstregistraties zijn versieerbaar en auditeerbaar;</li>
