@@ -49,7 +49,7 @@ In deze PSA worden de volgende namen consequent gebruikt:
 |---|---|
 | Europese digitale identiteitswallet | **EUDI-Wallet** |
 | Publieke elektronische attestatie van attributen | **PubEAA** |
-| Technische voorziening voor uitgifte van PubEAA's | **PubEAA-provider** |
+| Technische voorziening voor uitgifte van PubEAA's | **PubEAA-verstrekker** |
 | Gestandaardiseerd koppelvlak voor authentieke bronnen | **Authentic Source Interface (ASI)** |
 | Technische rol of voorziening die een ASI aanbiedt | **ASI-provider** |
 | Nederlandse voorziening voor aansluiting van verstrekkende bronhouders op OOTS | **Basisinrichting OOTS**<br>(met **OOTS-V** als interface waarop aangesloten kan worden vanuit een FSC koppeling) |

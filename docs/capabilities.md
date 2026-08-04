@@ -386,7 +386,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 **Normerende eisen**
 
 - de bronhouder blijft juridisch en inhoudelijk verantwoordelijk voor de uitgegeven publieke attributen, tenzij wet- en regelgeving een andere rolverdeling bepaalt;
-- de GBO-oplossing kan de technische functie van PubEAA-provider ondersteunen, maar wordt daardoor niet automatisch de juridische uitgevende instantie;
+- de GBO-oplossing kan de technische functie van PubEAA-verstrekker ondersteunen, maar wordt daardoor niet automatisch de juridische uitgevende instantie;
 - een ASI-provider biedt gestandaardiseerde verify- en, waar toegestaan, retrievefuncties aan QTSP's;
 - uitgifte, verificatie en retrieval doorlopen passende authenticatie, autorisatie en logging;
 - attestaties volgen een vastgesteld attestation rulebook en schema;
@@ -404,7 +404,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 
 **Functionele voorzieningen**
 
-- PubEAA-provider;
+- PubEAA-verstrekker;
 - ASI-provider met verify- en eventueel retrievefunctie;
 - signing- en statusvoorzieningen;
 - aansluiting op relevante vertrouwenslijsten en catalogi;
@@ -414,7 +414,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 
 - centraal, decentraal of federatief uitgiftemodel;
 - beheerder van generieke technische voorzieningen;
-- verdeling van verantwoordelijkheden tussen bronhouder, PubEAA-provider, ASI-provider en QTSP;
+- verdeling van verantwoordelijkheden tussen bronhouder, PubEAA-verstrekker, ASI-provider en QTSP;
 - certificering en opname in vertrouwenslijsten;
 - startpunt en gebruikersreis voor de uitgifte.
 

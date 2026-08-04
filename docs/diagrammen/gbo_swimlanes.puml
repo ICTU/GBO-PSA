@@ -62,7 +62,7 @@ package "GBO Basis" as gbo {
 ' ── EUDI-Wallet ───────────────────────────────────────────
 package "EUDI-Wallet" as lane_eudi {
   rectangle "ASI-provider\n(verify dienst)" <<gbo>> as eudi_asi
-  rectangle "PubEAA-provider\n(PubEAA)" <<gbo>> as eudi_pubeaa
+  rectangle "PubEAA-vertrekker\n(PubEAA)" <<gbo>> as eudi_pubeaa
   rectangle "QTSP\n(QEAA)" <<eudi>> as eudi_qtsp
   rectangle "EUDI-Wallet burger" <<eudi>> as eudi_wallet
 

@@ -57,7 +57,7 @@ Dit werkpakket maakt attestatie-uitgifte en ondersteuning van QTSP's mogelijk.
 
 ### Op te leveren afspraken en standaarden
 
-- rolverdeling tussen bronhouder, PubEAA-provider, ASI-provider en QTSP;
+- rolverdeling tussen bronhouder, PubEAA-verstrekker, ASI-provider en QTSP;
 - attestation rulebooks per attribuuttype;
 - profielen voor uitgifte, verificatie, retrieval, walletbinding, signing, status en intrekking;
 - schema's en mappings per attestatietype;
@@ -67,8 +67,8 @@ Dit werkpakket maakt attestatie-uitgifte en ondersteuning van QTSP's mogelijk.
 
 De realisatie ondersteunt meerdere varianten:
 
-- een bronhouder beheert zelf een PubEAA-provider;
-- meerdere bronhouders gebruiken een gedeelde technische PubEAA-provider;
+- een bronhouder beheert zelf een PubEAA-verstrekker;
+- meerdere bronhouders gebruiken een gedeelde technische PubEAA-verstrekker;
 - een QTSP geeft QEAA's uit na verificatie of retrieval via een ASI-provider;
 - een combinatie van deze varianten per attribuuttype of domein.
 
