@@ -171,7 +171,7 @@ De private dienstverlener die gebruik wil maken van de DvTP dienst van GBO, moet
 | Beheerobject | Beoogde governance | Beoogde beheer- of uitvoeringsrichting | Besluitpunt |
 |---|---|---|---|
 | Aansluitvoorwaarden en gebruik bronontsluiting | FDS | FDS-beheer, in samenwerking met GDI-partijen | Definitieve eigenaar en handhaving |
-| API-profiel bronontsluiting | Digikoppeling/API-governance en FDS | Logius en relevante standaardisatiegremia | Positionering GraphQL of alternatief profiel |
+| API-profiel bronontsluiting | Digikoppeling/API-governance en FDS | Logius en relevante standaardisatiegremia | Positionering GraphQL |
 | Dienstencatalogus | FDS met inhoudelijke verantwoordelijkheid bij domeinen | Bestaande of uit te breiden FDS-catalogusinfrastructuur | Beheerder en federatief model |
 | Autorisatieprofiel | FDS/GDI | Beheer bij passende landelijke standaardbeheerder | Status, versiebeheer en conformiteitstoetsing |
 | Beleidsbeheer en distributie | FDS/FTV-governance | Operationele beheerder nader te bepalen | Inhoudelijk eigenaarschap en technisch beheer |
