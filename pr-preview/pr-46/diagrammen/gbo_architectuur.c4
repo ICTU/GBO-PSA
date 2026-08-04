@@ -55,8 +55,8 @@ model {
       title 'ASI-provider\n(verify / retrieve dienst)'
     }
 
-    eudi_pubeaa = container 'PubEAA-provider' {
-      title 'PubEAA-provider\n(PubEAA)'
+    eudi_pubeaa = container 'PubEAA-vertrekker' {
+      title 'PubEAA-vertrekker\n(PubEAA)'
     }
 
     eudi_qeaa = container 'QTSP' {

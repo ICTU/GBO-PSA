@@ -1075,7 +1075,7 @@
 </tr>
 <tr>
 <td>Technische voorziening voor uitgifte van PubEAA's</td>
-<td><strong>PubEAA-provider</strong></td>
+<td><strong>PubEAA-verstrekker</strong></td>
 </tr>
 <tr>
 <td>Gestandaardiseerd koppelvlak voor authentieke bronnen</td>
@@ -1436,7 +1436,7 @@
 <td><strong>A — Burger gebruikt EUDI-Wallet</strong></td>
 <td>De burger vraagt een attestatie van attributen op voor opname in een EUDI-Wallet. Uitgifte kan als PubEAA door of namens een bronhouder plaatsvinden, of als QEAA via een QTSP.</td>
 <td><a href="#capabilities-s03-burgeridentificatie-pseudonimisering">S03</a>, <a href="#capabilities-s04-organisatie-authenticatie-vertrouwensstelsel">S04</a>, <a href="#capabilities-s05-autorisatie">S05</a>, <a href="#capabilities-s07-gegevensontsluiting">S07</a>, <a href="#capabilities-s09-logging-audit-traceerbaarheid">S09</a>, <a href="#capabilities-s10-semantiek-gegevenscatalogus">S10</a> en <a href="#capabilities-s11-attesteringsuitgifte">S11</a></td>
-<td>Identificatie van de burger; autorisatie van uitgifte, verificatie en retrieval; attestation rulebooks; semantische mapping; signing, status en intrekking; verantwoordelijkheidsverdeling tussen bronhouder, PubEAA-provider, ASI-provider en QTSP.</td>
+<td>Identificatie van de burger; autorisatie van uitgifte, verificatie en retrieval; attestation rulebooks; semantische mapping; signing, status en intrekking; verantwoordelijkheidsverdeling tussen bronhouder, PubEAA-verstrekker, ASI-provider en QTSP.</td>
 </tr>
 <tr>
 <td><strong>B — Grensoverschrijdend verzoek via OOTS</strong></td>
@@ -2021,7 +2021,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 <p><strong>Normerende eisen</strong></p>
 <ul>
 <li>de bronhouder blijft juridisch en inhoudelijk verantwoordelijk voor de uitgegeven publieke attributen, tenzij wet- en regelgeving een andere rolverdeling bepaalt;</li>
-<li>de GBO-oplossing kan de technische functie van PubEAA-provider ondersteunen, maar wordt daardoor niet automatisch de juridische uitgevende instantie;</li>
+<li>de GBO-oplossing kan de technische functie van PubEAA-verstrekker ondersteunen, maar wordt daardoor niet automatisch de juridische uitgevende instantie;</li>
 <li>een ASI-provider biedt gestandaardiseerde verify- en, waar toegestaan, retrievefuncties aan QTSP's;</li>
 <li>uitgifte, verificatie en retrieval doorlopen passende authenticatie, autorisatie en logging;</li>
 <li>attestaties volgen een vastgesteld attestation rulebook en schema;</li>
@@ -2039,7 +2039,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 </ul>
 <p><strong>Functionele voorzieningen</strong></p>
 <ul>
-<li>PubEAA-provider;</li>
+<li>PubEAA-verstrekker;</li>
 <li>ASI-provider met verify- en eventueel retrievefunctie;</li>
 <li>signing- en statusvoorzieningen;</li>
 <li>aansluiting op relevante vertrouwenslijsten en catalogi;</li>
@@ -2049,7 +2049,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 <ul>
 <li>centraal, decentraal of federatief uitgiftemodel;</li>
 <li>beheerder van generieke technische voorzieningen;</li>
-<li>verdeling van verantwoordelijkheden tussen bronhouder, PubEAA-provider, ASI-provider en QTSP;</li>
+<li>verdeling van verantwoordelijkheden tussen bronhouder, PubEAA-verstrekker, ASI-provider en QTSP;</li>
 <li>certificering en opname in vertrouwenslijsten;</li>
 <li>startpunt en gebruikersreis voor de uitgifte.</li>
 </ul>
@@ -2196,7 +2196,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 <p>Dit werkpakket maakt attestatie-uitgifte en ondersteuning van QTSP's mogelijk.</p>
 <h3 id="realisatiestrategie-op-te-leveren-afspraken-en-standaarden_1">Op te leveren afspraken en standaarden<a class="headerlink" href="#realisatiestrategie-op-te-leveren-afspraken-en-standaarden_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>rolverdeling tussen bronhouder, PubEAA-provider, ASI-provider en QTSP;</li>
+<li>rolverdeling tussen bronhouder, PubEAA-verstrekker, ASI-provider en QTSP;</li>
 <li>attestation rulebooks per attribuuttype;</li>
 <li>profielen voor uitgifte, verificatie, retrieval, walletbinding, signing, status en intrekking;</li>
 <li>schema's en mappings per attestatietype;</li>
@@ -2205,8 +2205,8 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 <h3 id="realisatiestrategie-inrichtingsvarianten">Inrichtingsvarianten<a class="headerlink" href="#realisatiestrategie-inrichtingsvarianten" title="Permanent link">&para;</a></h3>
 <p>De realisatie ondersteunt meerdere varianten:</p>
 <ul>
-<li>een bronhouder beheert zelf een PubEAA-provider;</li>
-<li>meerdere bronhouders gebruiken een gedeelde technische PubEAA-provider;</li>
+<li>een bronhouder beheert zelf een PubEAA-verstrekker;</li>
+<li>meerdere bronhouders gebruiken een gedeelde technische PubEAA-verstrekker;</li>
 <li>een QTSP geeft QEAA's uit na verificatie of retrieval via een ASI-provider;</li>
 <li>een combinatie van deze varianten per attribuuttype of domein.</li>
 </ul>
