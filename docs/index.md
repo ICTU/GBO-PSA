@@ -30,6 +30,9 @@ Voor GBO geldt de volgende documenthiërarchie:
 
 Bij verschillen in de beschrijving van de oplossingsrichting of interactiepatronen is het globaal ontwerp leidend. De PSA is leidend voor de normerende architectuureisen aan de uitwerking.
 
+De [demo-omgeving](https://gbo.simulatie.datastelsel.nl/) toont aan hoe de voorgestelde oplossing in de praktijk kan werken. Let er wel op dat dit een demonstratie-omgeving is die nog in ontwikkeling is, testdata gebruikt en nog fouten kan bevatten.
+
+
 ## Scope
 
 De PSA beschrijft de afspraken, standaarden en voorzieningen die nodig zijn om de [doelen die GBO nastreeft](https://ictu.github.io/GBO/latest/) te bereiken. Waar mogelijk worden bestaande afspraken, standaarden en voorzieningen hergebruikt. Aanvullingen worden ingebracht bij bestaande afsprakenstelsels en beheerorganisaties.
