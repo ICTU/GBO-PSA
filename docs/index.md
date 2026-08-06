@@ -61,6 +61,8 @@ In deze PSA worden de volgende namen consequent gebruikt:
 | Burgerinterface voor toestemming | **toestemmingsportaal** |
 | Ondersteuning voor bronhouders die niet rechtstreeks op de bronontsluiting-API kunnen aansluiten | **GBO-vertaallaag** |
 
+Een uitvoerige begrippenlijst is opgenomen in het [globaal ontwerp](https://ictu.github.io/GBO-GO/main/bijlage_begrippenlijst/).
+
 ## Leeswijzer
 
 De PSA bevat de volgende onderdelen:
