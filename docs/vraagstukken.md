@@ -1,74 +1,40 @@
-# Vraagstukken en ontwerpkeuzes
+# Open besluiten
 
-## Inleiding
+Dit hoofdstuk bevat de architectuurbesluiten die nog nodig zijn voor verdere uitwerking. Detailvragen worden zoveel mogelijk bij de betreffende stelselfunctie behandeld. Na besluitvorming wordt de uitkomst verwerkt in die stelselfunctie en blijft hier alleen een verwijzing naar het besluit bestaan.
 
-In dit hoofdstuk worden de vraagstukken waarvoor een oplossing gevonden moet worden of waarvoor een keuze gemaakt moet worden besproken.  
-Als er een oplossing is gevonden of een keuze is gemaakt, wordt dit in dit hoofdstuk als ontwerpkeuze vastgelegd. De verdere uitwerking vindt plaats in het technisch ontwerp.  
+## Besluitregister
 
+| ID | Onderwerp | Betrokken stelselfuncties | Te nemen besluit | Voorkeursrichting in deze PSA | Beslissende of coördinerende partijen |
+|---|---|---|---|---|---|
+| **B-01** | Governance GBO-afspraken | Alle | In welk bestaand stelsel landen GBO-specifieke afspraken en wie ziet toe op naleving? | FDS als basis voor bronontsluiting en generieke gegevensdeling, aangevuld met GDI- en domeingovernance. | BZK, FDS/IBDS, betrokken beheerorganisaties |
+| **B-02** | API-profiel bronontsluiting | S07 | Hoe kan GraphQL als voorkeursprofiel voorgesteld en uitgewerkt worden en hoe verhoudt dit zich tot bestaande API-standaarden? | Standaardiseer functionele eisen voor selectieve bevraging; werk GraphQL uit als voorkeursprofiel met een expliciete pas-toe-of-leg-uitroute. | Logius, FDS, Forum Standaardisatie, Kennisplatform API's |
+| **B-03** | Dienstencatalogus | S05, S06, S07, S10 | Is de catalogus centraal, federatief of onderdeel van een bestaande FDS-catalogus? | Federatief inhoudsbeheer met een gemeenschappelijk profiel en centrale vindbaarheid. | FDS, domeinen, bronhouders |
+| **B-04** | PDP-inrichting | S05 | Wordt besluitvorming per bronhouder, gedeeld of hybride ingericht? | Sta meerdere implementatievarianten toe onder één gestandaardiseerd PEP-PDP-koppelvlak en dezelfde beleidseisen. | Bronhouders, FDS/GDI-governance |
+| **B-05** | Policy-governance | S05, S06 | Wie schrijft, beoordeelt en stelt beleid vast en wie beheert de distributie? | Scheid inhoudelijk eigenaarschap van technisch beheer; beleid per dienst onder verantwoordelijkheid van bevoegde publieke partijen. | Vakdepartementen, bronhouders, FDS/GDI |
+| **B-06** | Toestemming bij DvTP | S01, S02 | Welke wettelijke grondslag en waarborgen gelden en is een centrale voorziening verplicht? | Centrale of landelijk samenhangende toestemmingsvoorziening, mits wettelijk verankerd en met gelijkwaardig alternatief. | Wetgever, BZK, toezichthouders, bronhouders |
+| **B-07** | Pseudonieme identiteit | S01, S03 | Waar worden pseudonieme verwijzingen beheerd en hoe worden zij aan toestemming en diensten gekoppeld? | Geen BSN in het toestemmingsregister; gebruik een beveiligde pseudonieme verwijzing met minimale centrale koppelinformatie. | Logius/BSNk, beheerder toestemmingsvoorziening |
+| **B-08** | Identity matching | S03 | Welke functie mag een buitenlandse of walletidentiteit aan een BSN koppelen? | Gebruik een erkende, afzonderlijk bestuurde functie met hoge assurance en expliciete foutafhandeling. | BZK, Logius/RvIG, eIDAS-governance |
+| **B-09** | Vertrouwensstelsel private partijen | S04 | Welke partijen mogen deelnemen en welk stelsel beheert toelating en toezicht? | Hergebruik FDS-functies waar mogelijk, aangevuld met een specifiek juridisch en organisatorisch kader voor private dienstverleners. Sluit waar mogelijk aan bij bestaande (sectorale) vertrouwensstelsels. | BZK, FDS, sectoren, toezichthouders |
+| **B-10** | Logging en burgerinzage | S09 | Is centrale aggregatie nodig en waar krijgt de burger inzage? | Decentraal loggen, federatief correleren; centrale opslag alleen bij aangetoonde noodzaak. | BZK, Logius, bronhouders, AP |
+| **B-11** | Semantische governance | S10 | Wie beheert begrippen, schema's en mappings en hoe worden wijzigingen vastgesteld? | Domeinen beheren inhoud; FDS beheert profielen, vindbaarheid en interoperabiliteitsregels. | Geonovum, FDS, domeinen, bronhouders |
+| **B-12** | OOTS-functiegrenzen | S08, S10 | Welke functies liggen in OOTS-V, de OOTS-adapter en de mappingvoorziening? | Houd Europese proces- en transportfuncties in de Basisinrichting OOTS; gebruik GBO voor bronkoppeling en (optionele) semantische transformatie. | BZK/EZK, bNC-SDG |
+| **B-13** | PubEAA-uitgiftemodel | S11 | Wordt uitgifte centraal, decentraal of federatief ingericht? | Ondersteun alle varianten via gemeenschappelijke profielen; besluit per attribuuttype en verantwoordelijke bronhouder. | BZK, RDI, bronhouders, nationale EUDI-governance |
+| **B-14** | ASI-provider | S11 | Wie biedt verify- en retrievefuncties aan QTSP's en onder welke voorwaarden? | Een of meer gecertificeerde ASI-providers met inhoudelijke verantwoordelijkheid bij bronhouders. | BZK, RDI, bronhouders, QTSP's |
+| **B-15** | Start van attestatie-uitgifte | S11 | Start de gebruikersreis bij wallet, bronhouder, QTSP of dienstverlener? | Maak meerdere gestandaardiseerde initiatieroutes mogelijk; voorkom dat één gebruikersinterface architectuurbepalend wordt. | EUDI-Wallet-governance, bronhouders, QTSP's |
+| **B-16** | GBO-vertaallaag | S07 | Is de vertaallaag een tijdelijke overgangsvoorziening of structurele gedeelde dienst? | Tijdelijk of optioneel, met expliciete exitcriteria en zonder afhankelijkheid voor de doelarchitectuur. | GBO-project, FDS, bronhouders |
+| **B-17** | Beheer referentiecomponenten | Alle | Welke componenten worden overgedragen, ondersteund of uitgefaseerd? | Per component vooraf een landingsplan, acceptatiecriteria en eindverantwoordelijke vaststellen. | GBO-project, beoogde beheerders |
 
-## Onboarding
+## Werkwijze voor besluitvorming
 
-Deelnemers aan het stelsel moeten aan eisen voldoen, waarbij de eisen kunnen verschillen per deelnemersgroep: bronhouders, afnemers, intermediairs, etc. Om deel te kunnen nemen aan het stelsel doorlopen de deelnemers een onboardingproces. Dat proces moet nog ingericht worden, zowel wat betreft de governance (wie doet wat en is waarvoor verantwoordelijk) als inhoud (waarop worden deelnemers beoordeeld).
+Voor ieder besluit wordt een Architecture Decision Record opgesteld met:
 
+- context en probleemstelling;
+- toepasselijke principes en wettelijke kaders;
+- betrokken rollen en verantwoordelijkheden;
+- onderzochte alternatieven;
+- keuze en onderbouwing;
+- gevolgen voor generieke functies, stelselfuncties en documenten;
+- risico's en mitigerende maatregelen;
+- eigenaar, datum en heroverwegingsmoment.
 
-## Identificatie & authenticatie intermediairs
-
-Voor systeemherkenning bij gegevensuitwisseling wordt PKIo gebruikt. Maar hoe gaan we om met intermediairs die tussen de bronhouder of afnemer en de stelselvoorziening zitten?  
-FSC biedt hiervoor oplossingsrichtingen, waar in de uitwerking naar gekeken kan worden.
-
-
-## Burgeridentificatie en het BSN
-
-Het BSN mag bij private partijen, die daarvoor geen wettelijke grondslag hebben, niet worden doorgegeven. Dit vereist een pseudonimiseringslaag.  
-**Ontwerpkeuze**: Voor het pseudonimiseren van het BSN wordt gebruik gemaakt van de BSNk PP voorziening. Deze voorziening gaat uit van een "geactiveerd" BSN - d.w.z. dat er al een pseudoniem voor het BSN bestaat. Deze pseudoniemen worden door GBO aangevraagd via de activatiedienst van BSNk en bijgehouden in het toestemmingenregister. Voordeel van het vastleggen van de pseudoniemen, is dat er geen BSN's in het toestemmingenregister opgeslagen hoeven te worden. Nadeel is dat GBO als "toegangsdienst" erkend moet worden door BSNk, wat mogelijk extra verantwoording vereist.
-De afnemer (private dienstverlener) krijgt de versleutelde pseudoniemen (voor hemzelf en voor de te bevragen bronhouders) met het consent-id als de burger de toestemming heeft verleend.  
-
-Als de burger zich authenticeert met een EIDAS-middel dat geen BSN bevat, dan moet de BSN op een andere manier achterhaald worden. Het BSN is immers altijd nodig om de gevraagde gegevens uit de overheidsbron op te halen. Er wordt in Europa gewerkt aan "identity matching" - een dienst om op basis van beschikbare gegevens de gewenste burgeridentiteit te achterhalen. Het is nog onduidelijk of deze dienst ook door GBO gebruikt kan worden en wat dat eventueel betekent voor de architectuur.
-
-
-## Toestemmingen
-
-Voor DvTP (de gegevensstroom van overheidsbronnen naar private dienstverleners) is een toestemming vereist. Hiervoor is de toestemmingsvoorziening en het toestemmingenregister bedacht, maar hiervoor is nog wetgeving nodig.
-Er spelen hierbij enkele vragen:  
-- Hoe wordt omgegaan met toestemming voor een eenmalige bevraging?  
-- Is een toestemmingsvoorziening nodig als de gegevens via de burger aan de private dienstverlener beschikbaar worden gesteld (conform de "preview" functie van de Basisinrichting OOTS en de "Authorising Actors" functie van TIP)?  
-- Waarom niet de verantwoordelijkheid bij de bronhouder of afnemer leggen en dit decentraal oplossen?  
-**Ontwerpkeuze**: GBO gaat uit van een centrale toestemmingsvoorziening met een toestemmingenregister en een toestemmingsportaal. De onderbouwing daarvoor is:  
-- Kostenbesparing: éénmalig inrichten en beheren is goedkoper dan dat iedere bronhouder en/of afnemer dit zelf regelt.  
-- Herkenbaarheid voor de burger: een centrale voorziening biedt de burger telkens dezelfde ervaring, wat herkenning en vertrouwen opbouwt.  
-- Inzage voor de burger: met een centrale voorziening is het aanzienlijk eenvoudiger om de burger inzage te geven in al zijn toestemmingen via het Toestemmingsportaal.  
-- Eén keer toestemmen: de burger kan in één handeling toestemming geven voor een set gegevens die mogelijk uit meerdere bronnen afkomstig zijn. Bij decentrale registratie per bron zou de burger voor elke bron apart moeten toestemmen.  
-
-
-## Vertrouwensstelsel
-
-Welke partijen mogen deelnemen, hoe worden ze geaccrediteerd, welke niveaus van zekerheid gelden per gegevenstype, en hoe verhouden PKI(O), eHerkenning, eIDAS, FDS en bijvoorbeeld TIP-afspraken zich tot elkaar?
-
-
-## Gekwalificeerde elektronische attesteringen van attributen
-
-Hoe laten we attributen elektronisch kwalificeren? Hoe wordt de "attesteringsuitgifte" ingericht?  
-Dit is nodig voor de Wallet, maar mogelijk ook voor de andere use cases. Er is [Europese wetgeving](https://eur-lex.europa.eu/legal-content/NL/TXT/HTML/?uri=OJ:L_202501569), maar die laat nog ruimte voor de inrichting en wie welke rol invult.  
-
-- Gebruik QEAA / QTSP?  
-- Inrichten PuBEAA?  
-- Centrale verificatie- en/of retrievedienst t.b.v. QEAA?  
-
-**Ontwerpkeuze**: Vooralsnog gaat de architectuur uit van een centrale PuBEAA verstrekker en een centrale verificatie- en retrievedienst t.b.v. QEAA. Daarmee zijn diverse opties mogelijk: bronhouder treedt zelf op als PuBEAA-verstrekker, bronhouder gebruikt centrale PuBEAA-verstrekker, QTSP geeft attesteringen uit die bij bronhouder geverifieerd zijn of QTSP geeft attesteringen uit namens de bronhouder met behulp van de retrievedienst. Als bronhouders ook graag attestaties willen laten uitgeven door QTSP's, kan er een "retrieve" functie toegevoegd worden aan de centrale verificatiedienst (die beide onderdeel zijn van de "Authentic Source Interface"). Bij de verdere ontwikkeling en implementatie wordt besloten welke diensten daadwerkelijk ingericht worden.
-
-
-## Hoe start de uitgifte van attestaties?
-
-In het interactiepatroon is geschetst dat de burger de aanvraag voor een attestatie start vanuit zijn wallet of via een QTSP. Maar het is nog de vraag hoe de uitgifte in de praktijk start: vanuit de bronhouder (eventueel via de wallet), een QTSP of wellicht vanuit de dienstverlener of een combinatie daarvan, waarbij de ene partij doorverwijst naar de andere. Mogelijk heeft een keuze hierin gevolgen voor het interactiepatroon en de uitwerking van de voorgestelde voorzieningen.  
-Vooralsnog wordt uitgegaan van aanvragen vanuit de wallet.
-
-
-## Centrale Componenten
-
-Ontwerpprincipe D01 stelt "Decentraal wat kan, centraal wat moet". Dit geldt als uitgangspunt, maar als een centrale voorziening voldoende voordelen biedt, past in de geldende wet- en regelgeving en niet tegen andere ontwerpprincipes ingaat, dan kan ervoor gekozen worden hiervoor te kiezen.  
-Bij de volgende voorzieningen die in theorie decentraal ingericht kunnen worden, wordt een centrale inrichting overwogen:
-
-- PuBEAA dienst waar alle overheidsbronnen gebruik van kunnen maken.
-- Verificatie- en/of retrievedienst waarmee QTSP's gegevens kunnen verifiëren en waar alle overheidsbronnen gebruik van kunnen maken.
-- Vertaalvoorziening om GraphQL verzoeken om voor overheidsbronnen die (nog) geen eigen GraphQL implementatie willen/ kunnen realiseren, toch een GraphQL API te kunnen aanbieden.
-- Semantische mapping van gegevensverzoeken in voorgeschreven formaten (zoals EDM, attestatieschema's) naar GraphQL formaat.
+Een besluit wordt pas als afgerond beschouwd als het ook is verwerkt in de relevante PSA-paragraaf, het globaal ontwerp indien nodig, en de aansluitende technische of semantische documentatie.

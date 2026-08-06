@@ -1,76 +1,22 @@
-# Interactiepatronen GBO
+# Interactiepatronen
 
-Dit document beschrijft de belangrijkste interactiepatronen voor GBO zoals afgeleid uit de use cases. In de patronen is op verschillende plekken sprake van een "dienst"; dit kunnen afspraken, standaarden of centrale of decentrale voorzieningen zijn. Daar wordt in het hoofdstuk [Stelselfuncties](./capabilities.md) dieper op ingegaan.  
+De drie interactiepatronen van GBO zijn beschreven in [hoofdstuk 3 van het globaal ontwerp](https://ictu.github.io/GBO-GO/main/#3-interactiepatronen). De procesbeschrijvingen en sequencediagrammen worden in de PSA niet herhaald.
 
+Dit hoofdstuk legt alleen vast welke stelselfuncties voor ieder patroon relevant zijn en welke aanvullende aandachtspunten in de PSA worden uitgewerkt.
 
+| Patroon | Grondslag en context | Primair betrokken stelselfuncties | PSA-aandachtspunten |
+|---|---|---|---|
+| **A — Burger gebruikt EUDI-Wallet** | De burger vraagt een attestatie van attributen op voor opname in een EUDI-Wallet. Uitgifte kan als PubEAA door of namens een bronhouder plaatsvinden, of als QEAA via een QTSP. | [S03](capabilities.md#s03-burgeridentificatie-pseudonimisering), [S04](capabilities.md#s04-organisatie-authenticatie-vertrouwensstelsel), [S05](capabilities.md#s05-autorisatie), [S07](capabilities.md#s07-gegevensontsluiting), [S09](capabilities.md#s09-logging-audit-traceerbaarheid), [S10](capabilities.md#s10-semantiek-gegevenscatalogus) en [S11](capabilities.md#s11-attesteringsuitgifte) | Identificatie van de burger; autorisatie van uitgifte, verificatie en retrieval; attestation rulebooks; semantische mapping; signing, status en intrekking; verantwoordelijkheidsverdeling tussen bronhouder, PubEAA-verstrekker, ASI-provider en QTSP. |
+| **B — Grensoverschrijdend verzoek via OOTS** | Een publieke instantie in een andere lidstaat vraagt bewijsgegevens op bij een Nederlandse bronhouder in het kader van de SDG-verordening. Binnen de GBO-oplossing verloopt dit via de Basisinrichting OOTS en met name het OOTS-V component daarvan. | [S04](capabilities.md#s04-organisatie-authenticatie-vertrouwensstelsel), [S05](capabilities.md#s05-autorisatie), [S07](capabilities.md#s07-gegevensontsluiting), [S08](capabilities.md#s08-oots-adapter), [S09](capabilities.md#s09-logging-audit-traceerbaarheid) en [S10](capabilities.md#s10-semantiek-gegevenscatalogus) | Aansluiting van OOTS-V op de bronontsluiting-API; autorisatie via dezelfde keten als andere gegevensvragen; mapping naar OOTS-EDM; centraal beheer van discovery- en aansluitgegevens; ketenbrede logging. |
+| **C — Gegevensverzoek private dienstverlener** | Een private dienstverlener vraagt gegevens op bij een bronhouder op basis van een wettelijk geldige grondslag. Als toestemming vereist is, wordt deze specifiek, geïnformeerd en aantoonbaar vastgelegd. | [S01](capabilities.md#s01-toestemmingsregistratie) tot en met S07, [S09](capabilities.md#s09-logging-audit-traceerbaarheid) en [S10](capabilities.md#s10-semantiek-gegevenscatalogus) | Juridische grondslag; burgerinteractie; registratie, raadpleging en intrekking van toestemming; pseudonimisering als de afnemer geen BSN mag verwerken; toelating van dienstverleners; registratie van diensten en toegestane gegevensvragen. |
 
-## Gegevensverzoek van burger om attestatie van attributen in wallet te ontvangen
+## Gemeenschappelijke eisen
 
-### Doel
+Ongeacht het interactiepatroon gelden de volgende eisen:
 
-Een burger vraagt een gegeven op als gekwalificeerde attestatie om in diens wallet op te nemen, zodat deze gedeeld kan worden met een dienstverlener.
-
-### Interactie
-
-<figure>
-
-``` mermaid
---8<-- "diagrammen/interactiepatroon-EUDI-Wallet.mmd"
-
-```
-<figcaption>Gegevensverzoek van burger om attestatie van attributen in wallet te ontvangen</figcaption>
-</figure>
-
-### Toelichting
-
-Iedere bronhouder kan in theorie gegevens uitleveren aan wallets, maar deze gegevens krijgen pas juridische waarde als ze gekwalificeerd zijn. Dat kwalificeren kan op twee manieren: de overheid ondertekent het gegeven, waardoor het een PuBEAA wordt, of een gekwalificeerde verlener van vertrouwensdiensten (QTSP) doet dit.  
-Als de overheid het gegeven kwalificeert kan de bronhouder dit zelf doen, maar het kan schaalvoordeel bieden om dit te centraliseren in een GBO PuBEAA-dienst. Als een QTSP het gegeven kwalificeert, moet deze QTSP het gegeven kunnen verifiëren of zelfs ophalen via een verificatie- of retrievedienst. Ook hier kan een bronhouder de dienst zelf aanbieden, of kan ervoor gekozen worden om dit te centraliseren in een GBO verificatiedienst. Ook de autorisatiedienst die door de PuBEAA-dienst en de verificatie-/retrievedienst wordt aangeroepen, kan door de bronhouder worden aangeboden, maar het biedt schaalvoordeel om dat te centraliseren in een GBO dienst.
-
-
-## Gegevensverzoek van Europese overheidsdienst aan Nederlandse overheidsbron
-
-### Doel
-
-Een Europese overheidsdienst vraagt een gegeven (Evidence Request) aan een Nederlandse overheidsbron om een dienst aan een Nederlandse burger in het buitenland te kunnen leveren.
-
-### Interactie
-
-<figure>
-
-``` mermaid
---8<-- "diagrammen/interactiepatroon-OOTS-verzoek.mmd"
-
-```
-<figcaption>Interactiepatroon gegevensverzoek Europese overheidsdienst via OOTS</figcaption>
-</figure>
-
-### Toelichting
-
-BZK heeft RINIS aangewezen als nationaal OOTS-toegangspunt (AS4/eDelivery), waar de OOTS basisinrichting in beheer is. Die geeft het Evidence Request als GraphQL-request door aan GBO. GBO verzorgt de bronontsluiting en de semantische mapping naar het SDG Evidence-formaat. Bronhouders zien uitsluitend de GBO-API en hoeven geen OOTS-kennis te hebben.  
-De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisinrichting, waar het bericht in AS4 wordt verpakt. Na de toestemmingsinteractie met de burger wordt het bericht als Evidence Response teruggestuurd naar de Europese overheidsdienst.
-
-
-## Gegevensverzoek van private partij met toestemming aan bronhouder (DvTP)
-
-### Doel
-
-Een private dienstverlener haalt gegevens op bij een bronhouder op basis van een geldige toestemming van de burger.
-
-### Interactie
-
-<figure>
-
-``` mermaid
---8<-- "diagrammen/interactiepatroon-PP-haalt-gegevens-op.mmd"
-
-```
-<figcaption>Interactiepatroon Private Partij haalt gegevens op met toestemming van de burger</figcaption>
-</figure>
-
-### Toelichting
-
-De dienstverlener kan rechtstreeks gegevens opvragen bij de bronhouder, maar heeft daarvoor toestemming van de burger nodig. Deze toestemming wordt door GBO afgehandeld via een toestemmingsvoorziening (een interface waar de burger vrij, specifiek, geïnformeerd en ondubbelzinnig de toestemming verleent) en een toestemmingsregister waar de toestemming wordt vastgelegd en waar deze gecontroleerd kan worden. De toestemmingsvoorziening moet de burger ook toegang geven tot de gegeven toestemmingen om te zien of deze zijn gebruikt en om deze - indien relevant - in te trekken.
-
-De dienstverlener gebruikt nooit het BSN van de burger. Daarom moet het BSN gepseudonimiseerd worden. De pseudonimisering moet zo gebeuren dat de dienstverlener deze telkens kan depseudonimiseren naar een eigen identificatie, die echter geen betekenis heeft voor andere partijen. De bronhouder moet het pseudoniem kunnen depseudonimiseren naar het originele BSN.
-
-Bij controle van de gegevensvraag door de dienstverlener bij de bronhouder, authenticeert de bronhouder de dienstverlener op basis van het certificaat dat ook voor de versleuteling van het transport (mTLS) gebruikt wordt. Daarnaast moet de bronhouder controleren of de dienstverlener bevoegd is om gegevens op te vragen. Dat kan via FSC-contracten - de dienstverlener moet een contract hebben afgesloten om de API van de bronhouder te mogen bevragen. Dit kan ook op basis van een lijst met bevoegde afnemers (Trusted List). Zo'n lijst kan sectoraal beheerd worden, wat voorkomt dat een bronhouder met heel veel afnemers (bv. alle hypotheekverstrekkers) contracten moet afsluiten en beheren.
+- de bronhouder biedt geen patroon- of afnemerspecifiek bronkoppelvlak aan;
+- iedere gegevensvraag wordt getoetst aan identiteit, grondslag, doel, gegevensvraag en relevante context;
+- dezelfde generieke autorisatieketen wordt gebruikt, met patroon- of dienstspecifiek beleid;
+- semantische en protocoltransformaties vinden plaats in expliciete, beheerde functies buiten het bronsysteem;
+- iedere gegevensuitwisseling is ketenbreed herleidbaar;
+- afwijkingen en patroonafhankelijke eisen worden als beleid, schema, mapping of configuratie beheerd en niet als hardgecodeerde implementatielogica.

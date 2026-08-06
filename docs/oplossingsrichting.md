@@ -1,56 +1,51 @@
-# Voorgestelde oplossingsrichting
+# Vertrekpunt uit het globaal ontwerp
 
-Dit hoofdstuk beschrijft de voorgestelde oplossingsrichting voor GBO. Het onderstaande diagram vormt hiervoor de basis.
+De oplossingsrichting voor GBO is beschreven en onderbouwd in [hoofdstuk 2 van het globaal ontwerp](https://ictu.github.io/GBO-GO/main/#2-voorgestelde-oplossingsrichting). Dit hoofdstuk herhaalt die beschrijving niet, maar benoemt de architectuurconsequenties die in deze PSA normerend worden uitgewerkt.
 
-<figure>
-``` mermaid
---8<-- "diagrammen/gbo_swimlanes_simpel.mmd"
-```
-<figcaption>Oplossingsrichting GBO.</figcaption>
-</figure>
+## Architectuurconsequenties
 
-## Gebruik bestaande afsprakenstelsels
+GBO gaat uit van een gemeenschappelijke bronontsluiting die door bronhouders eenmalig wordt ingericht en voor meerdere gegevensstromen kan worden gebruikt. Nieuwe gegevensvragen worden zoveel mogelijk door configuratie mogelijk gemaakt, zonder voor iedere toepassing of afnemer een nieuw bronkoppelvlak te ontwikkelen.
 
-GBO gaat geen eigen stelsel inrichten en ook geen eigen standaarden of voorzieningen introduceren. Er wordt gebruik gemaakt van bestaande afsprakenstelsels en de standaarden en voorzieningen die daar beschikbaar zijn.  
-De afsprakenstelsels waarmee GBO ingericht wordt zijn:  
-- Federatief Datastelsel (FDS): een afsprakenstelsel dat organisaties met een publieke taak hierbij ondersteunt. De gezamenlijke afspraken zijn erop gericht dat overheden werken op basis van dezelfde standaarden, waardoor ze op een uniforme manier met data omgaan. Het FDS maakt voor de gegevensuitwisseling gebruik van de GDI-standaarden en zorgt voor aanvullingen op deze GDI-standaarden indien hiervoor nog geen standaarden of afspraken gemaakt zijn. Voorbeelden is bijvoorbeeld: Federatieve Toegangsverlening wat gebaseerd is op AuthZen en als standaard op dit moment is aangeboden bij Forum Standaardisatie.  
-Voor GBO dient FDS als basis voor de bronontsluiting.  
-- Generieke Digitale Infrastructuur (GDI): de verzameling van afspraken(stelsels), standaarden en voorzieningen die alle publieke dienstverleners gebruiken voor hun digitale dienstverlening aan burgers en ondernemers. Deze afspraken, standaarden en voorzieningen zijn verdeeld in 4 domeinen: toegang, interactie, gegevensuitwisseling en infrastructuur.  
-Voor GBO dient GDI als basis voor de centrale voorzieningen.  
-- European Digital Identity (EUDI): het door de Europese Unie vastgestelde kader waarin afspraken, architecturen en standaarden zijn vastgelegd. Dit stelsel maakt het mogelijk dat burgers en bedrijven zich door middel van één veilige digitale portemonnee (de EUDI Wallet) in de gehele EU kunnen identificeren en verifiëren.  
-Voor GBO dient EUDI als basis voor het leveren van gegevens (attestaties van attributen) aan burgers.  
-- Single Digital Gateway / Once Only Technical System (SDG/OOTS): de bindende set technische, organisatorische en juridische afspraken binnen de EU. Het stelt overheidsinstanties in staat om, met toestemming, veilig officiële bewijsstukken en gegevens van burgers en bedrijven onderling uit te wisselen.  
-Voor GBO dient SDG/OOTS als basis voor het leveren van gegevens aan buitenlandse Europese overheden.  
+Daaruit volgen de volgende consequenties voor de PSA:
 
-## Gemeenschappelijke bronontsluiting
+| Consequentie uit het globaal ontwerp | Uitwerking in de PSA |
+|---|---|
+| Bronhouders bieden één generieke, herbruikbare bronontsluiting aan. | F3, F7 en S07 |
+| Gegevensvragen zijn selectief, vooraf beheerd en afdwingbaar. | F3, F4, F6, S05, S06, S07 en S10 |
+| Identiteit, grondslag en context bepalen welke gegevens mogen worden geleverd. | F1, F2, F6 en S01 tot en met S06 |
+| Aansluiting op externe stelsels wordt buiten de bronhouder afgehandeld. | S08, S10 en S11 |
+| OOTS-verkeer loopt binnen de GBO-oplossing via de Basisinrichting OOTS en OOTS-V. | S08 en S10 |
+| Attestaties voor een EUDI-Wallet kunnen door bronhouders of QTSP's worden uitgegeven. | S10 en S11 |
+| Gegevensdeling met private dienstverleners vereist een geldige grondslag en, waar nodig, pseudonimisering. | S01 tot en met S05 |
+| Gegevensuitwisseling is ketenbreed herleidbaar en controleerbaar. | F8 en S09 |
+| Bestaande afsprakenstelsels, standaarden en voorzieningen worden zoveel mogelijk hergebruikt. | Ontwerpprincipes en realisatiestrategie |
 
-De verbinding tussen vragende partij en bron wordt via de **FSC-standaard** tot stand gebracht. Dit is een standaard koppelvlak waarmee de beveiliging van de gegevensuitwisseling wordt gegarandeerd en de noodzakelijke logging wordt vastgelegd.
-Bronhouders stellen hun gegevens bloot via een generieke, herbruikbare API. Dit is mogelijk met **GraphQL** - een API die een zo volledig mogelijke set gegevens beschikbaar stelt, waarvan afhankelijk van de toepassing een selectie wordt bevraagd. Dit maakt het inrichten en onderhouden van een groot aantal kleinere REST-API's overbodig. Als er een nieuwe gegevensvraag ontstaat, kan dat via configuratie ingericht worden, in plaats van dat er een nieuw endpoint ingericht en beheerd hoeft te worden.  
-Om te garanderen dat afnemers alleen die gegevens krijgen waarop zij recht op hebben, is autorisatie nodig. Deze autorisatie moet niet alleen controleren of de afnemer toegang heeft tot de bron, maar ook welke set gegevens opgevraagd mag worden en of voldaan wordt aan de grondslag die voor de gegevensvraag geldt. Dat is configurabel in te richten als gewerkt wordt met "Policy Based Access Control" (**PBAC**).  
+## Afbakening tussen globaal ontwerp en PSA
 
-Deze bouwstenen moeten door de bronhouder ingericht en onderhouden worden. Er bestaat al een referentie-implementatie voor de FSC-componenten onder de naam **OpenFSC** en er wordt vanuit het Federatief Datastelsel gewerkt aan een PBAC-implementatie onder de naam Federatieve Toegangsverlening (**FTV**). Om de inrichting van de GraphQL-API te standaardiseren zou er een GraphQL profiel in de **Digikoppeling** standaard opgenomen moeten worden.
+Het globaal ontwerp is leidend voor:
 
+- de probleem- en knelpuntenanalyse;
+- de gekozen oplossingsrichting;
+- de beschrijving en diagrammen van de interactiepatronen;
+- de hoofdindeling in generieke functies en stelselfuncties;
+- het overzicht van te ontwikkelen componenten en de impact op betrokken partijen.
 
-## Aansluiten op bestaande voorzieningen
+De PSA is leidend voor:
 
-De vragende partijen kennen hun eigen standaarden en protocollen. Als deze afwijken van de FSC-standaard met GraphQL-API's, dan worden er componenten ontwikkeld om de aansluiting te maken. Voor bronhouders is dit geen zorg; als zij hun gegevens beschikbaar stellen via de gemeenschappelijke bronontsluiting kunnen zij aansluiten. Ook voor de vragende partijen wordt de koppeling eenvoudig: zij kunnen hun standaarden en protocollen blijven gebruiken en krijgen toegang tot alle bronnen die voldoen aan de GBO-oplossing.  
+- de architectuur- en ontwerpprincipes;
+- de normerende eisen aan de generieke functies;
+- de afspraken, standaarden en functionele voorzieningen per stelselfunctie;
+- de verantwoordelijkheids- en beheervraagstukken;
+- de open architectuurbesluiten voor de verdere uitwerking.
 
-In de figuur bovenaan dit hoofdstuk zijn de vereiste centrale voorzieningen voor de drie gegevensstromen die bij GBO in beeld zijn, ingetekend:  
-- Voor de EUDI-Wallet zijn dat een **Authentic Source Interface** waar QTSP's toegang toe krijgen om QEAA's uit te kunnen geven, en een **PubEAA Provider** waarmee overheidsbronnen zelf attestaties (PubEAA's) kunnen uitgeven.  
-- Voor OOTS is dit een **OOTS-adapter** waarmee aangesloten wordt op de basisinrichting OOTS, waarvandaan gegevens met buitenlandse overheden gedeeld kunnen worden in het kader van SDG.  
-- Voor het delen van gegevens via toestemming met private dienstverleners is een **toestemmingsvoorziening** nodig, en een voorziening om BSN's te **pseudonimiseren**, zodat deze niet terechtkomen bij partijen die geen BSN mogen verwerken.  
+## Gebruik van bestaande stelsels
 
+GBO richt geen zelfstandig nieuw afsprakenstelsel in. Nieuwe of aangepaste afspraken, standaarden en voorzieningen worden waar mogelijk ondergebracht bij bestaande afsprakenstelsels en beheerorganisaties, in het bijzonder FDS, GDI, de nationale EUDI-Wallet-governance en de governance rond de Basisinrichting OOTS.
 
-## Uitbreidbaar
+Tijdens de projectfase kunnen referentiecomponenten of tijdelijke voorzieningen worden ontwikkeld om afspraken en standaarden te beproeven. Voor productiegebruik moet per onderdeel vooraf zijn vastgesteld:
 
-Het doel van GBO is het ontzorgen van bronhouders bij het bedienen van verschillende gegevensstromen. Het project GBO richt zich daarbij op de gegevensstromen die door burgers geïnitieerd worden: EDI, OOTS en DvTP. Maar de oplossingsrichting leent zich ook prima voor andere gegevensstromen: door het inrichten van een generieke bronontsluiting (GraphQL) met configureerbare toegangscontrole (FSC met FTV) kan deze voor veel verschillende gegevensstromen gebruikt worden. Die gegevensstromen moeten hun gegevensverzoeken dan via FSC aanbieden in de vorm van een GraphQL-request waarin de gewenste gegevens uitgevraagd worden. Als dat niet rechtstreeks kan, is een adapter nodig die het verzoek omzet naar GraphQL en via een FSC Outway aanbiedt.  
-Iedere gegevensstroom zal afspraken vereisen over de gegevenssets die afgenomen mogen worden en wie onder welke voorwaarden deze gegevens mogen opvragen. De vastlegging en toepassing van die afspraken kan echter in de bestaande FTV componenten (PEP/PDP, PAP en PIP) gebeuren.
-
-Om een indruk te geven hoe nieuwe gegevensstromen toegevoegd kunnen worden, zijn in de onderstaande figuur twee extra gegevensstromen toegevoegd.
-
-<figure>
-``` mermaid
---8<-- "diagrammen/gbo_swimlanes_qerds_g2g.mmd"
-```
-<figcaption>Mogelijke toekomstige use cases GBO-model. NB: dit is zuiver illustratief en valt buiten de scope van GBO!</figcaption>
-</figure>
+- welke partij inhoudelijk verantwoordelijk is;
+- welk afsprakenstelsel de gebruiks- en toetredingsafspraken beheert;
+- welke organisatie de standaard of het profiel beheert;
+- welke organisatie het operationele beheer uitvoert;
+- hoe continuïteit, financiering en toezicht zijn geregeld.
