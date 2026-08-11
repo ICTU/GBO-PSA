@@ -399,6 +399,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 - OpenID4VCI voor uitgifte;
 - OpenID4VP voor presentatie of verificatie waar relevant;
 - SD-JWT VC en mdoc waar voorgeschreven of passend;
+- ETSI TS 119 478 V1.1.1 standaard voor de inrichting van de ASI-Provider ten behoeve van QTSP's;
 - ETSI-profielen voor gekwalificeerde zegels en vertrouwensdiensten;
 - attestation rulebooks, status- en intrekkingsprofielen.
 
