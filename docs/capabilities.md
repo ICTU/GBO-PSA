@@ -1,6 +1,6 @@
 # Stelselfuncties
 
-Dit hoofdstuk werkt de stelselfuncties uit die in het [globaal ontwerp](https://ictu.github.io/GBO-GO/main/#4-generieke-functies-en-stelselfuncties) zijn gekoppeld aan de generieke functies. De nadruk ligt op normerende eisen, afspraken, standaarden, functionele voorzieningen, verantwoordelijkheden en open besluiten.
+Dit hoofdstuk werkt de stelselfuncties uit die in het [globaal ontwerp](https://ictu.github.io/GBO-GO/latest/#4-generieke-functies-en-stelselfuncties) zijn gekoppeld aan de generieke functies. De nadruk ligt op normerende eisen, afspraken, standaarden, functionele voorzieningen, verantwoordelijkheden en open besluiten.
 
 Een genoemde voorziening is een functionele component. De PSA schrijft geen product of specifieke referentie-implementatie voor.
 

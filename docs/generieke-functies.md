@@ -1,6 +1,6 @@
 # Generieke functies
 
-Het [globaal ontwerp](https://ictu.github.io/GBO-GO/main/#4-generieke-functies-en-stelselfuncties) onderscheidt acht generieke functies. Deze PSA herhaalt de functionele beschrijving daarvan niet, maar legt per functie de normerende eisen vast die voortkomen uit de [functionele beschrijving](https://ictu.github.io/GBO-GO/latest/#4-generieke-functies-en-stelselfuncties), de [uitgangspunten](https://ictu.github.io/GBO-GO/latest/#uitgangspunten), [architectuurprincipes](#architectuurprincipes) en [ontwerpprincipes](#ontwerpprincipes). Ten slotte wordt de relatie met de stelselfuncties vastgesteld.
+Het [globaal ontwerp](https://ictu.github.io/GBO-GO/main/#4-generieke-functies-en-stelselfuncties) onderscheidt acht generieke functies. Deze PSA herhaalt de functionele beschrijving daarvan niet, maar legt per functie de normerende eisen vast die voortkomen uit de [functionele beschrijving](https://ictu.github.io/GBO-GO/latest/#4-generieke-functies-en-stelselfuncties), de [uitgangspunten](https://ictu.github.io/GBO-GO/latest/#uitgangspunten), [architectuurprincipes](architectuurprincipes.md) en [ontwerpprincipes](ontwerpprincipes.md). Ten slotte wordt de relatie met de stelselfuncties vastgesteld.
 
 ## F1 — Identiteit & Vertrouwen
 

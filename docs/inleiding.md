@@ -35,11 +35,11 @@ De PSA beschrijft **niet**:
 
 De PSA bevat de volgende onderdelen:
 
-- Oplossingsrichting: een schets van hoe de gemeenschappelijke bronontsluiting eruit komt te zien;
-- Architectuurprincipes: de principes die de kaders vormen voor de oplossing;
-- Ontwerpprincipes: de principes waaraan de ontwikkeling van de oplossing zich moet houden;
-- Interactiepatronen: een uitwerking van hoe de gegevensstromen die in beeld zijn, uitgevoerd worden;
-- Logische architectuur: de generieke functies die nodig zijn om invulling te geven aan de gewenste oplossing;
-- Stelselfuncties: de stelselfuncties (capabilities) die invulling geven aan de generieke functies;
-- Realisatiestrategie: de voorgestelde manier om de oplossing tot stand te laten komen;
-- Open vragen en ontwerpkeuzes: vraagstukken die nog uitgewerkt moeten worden en (indien relevant) de ontwerpkeuze die is gemaakt.
+- [Vertrekpunt globaal ontwerp](oplossingsrichting.md): relatie tussen het globaal ontwerp en deze projectstartarchitectuur;
+- [Architectuurprincipes](architectuurprincipes.md): de principes die de kaders vormen voor de oplossing;
+- [Ontwerpprincipes](ontwerpprincipes.md): de principes waaraan de ontwikkeling van de oplossing zich moet houden;
+- [Interactiepatronen](interactiepatronen.md): een uitwerking van hoe de gegevensstromen die in beeld zijn, uitgevoerd worden;
+- [Generieke functies](generieke-functies.md): de generieke functies die nodig zijn om invulling te geven aan de gewenste oplossing;
+- [Stelselfuncties](capabilities.md): de stelselfuncties (capabilities) die invulling geven aan de generieke functies;
+- [Realisatiestrategie](realisatiestrategie.md): de voorgestelde manier om de oplossing tot stand te laten komen;
+- [Open besluiten](vraagstukken.md): vraagstukken die nog uitgewerkt moeten worden en (indien relevant) de ontwerpkeuze die is gemaakt.
