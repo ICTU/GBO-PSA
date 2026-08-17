@@ -369,14 +369,16 @@ Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven, zodat 
 - gegevens- en dienstencatalogus;
 - schema- en mappingrepository;
 - validatievoorzieningen;
-- optionele serialisatie- of mappingservice.
+- optionele serialisatie- of mappingservice;
+- gestandaardiseerde procedure voor het terugmelden van fouten of vermoedelijke onjuistheden aan de bronhouder.
 
 **Open besluiten**
 
 - federatieve of centrale inrichting van catalogus en schema-repository;
 - inhoudelijke en technische beheerverantwoordelijkheden;
 - positionering van mapping- en serialisatieservices;
-- wijzigingsproces tussen bronhouders, domeinen en externe stelsels.
+- wijzigingsproces tussen bronhouders, domeinen en externe stelsels;
+- inrichting terugmeldprocedure voor fouten of vermoedelijke onjuistheden.
 
 ## S11 — Attesteringsuitgifte
 

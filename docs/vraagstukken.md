@@ -23,6 +23,8 @@ Dit hoofdstuk bevat de architectuurbesluiten die nog nodig zijn voor verdere uit
 | **B-15** | Start van attestatie-uitgifte | S11 | Start de gebruikersreis bij wallet, bronhouder, QTSP of dienstverlener? | Maak meerdere gestandaardiseerde initiatieroutes mogelijk; voorkom dat één gebruikersinterface architectuurbepalend wordt. | EUDI-Wallet-governance, bronhouders, QTSP's |
 | **B-16** | GBO-vertaallaag | S07 | Is de vertaallaag een tijdelijke overgangsvoorziening of structurele gedeelde dienst? | Tijdelijk of optioneel, met expliciete exitcriteria en zonder afhankelijkheid voor de doelarchitectuur. | GBO-project, FDS, bronhouders |
 | **B-17** | Beheer referentiecomponenten | Alle | Welke componenten worden overgedragen, ondersteund of uitgefaseerd? | Per component vooraf een landingsplan, acceptatiecriteria en eindverantwoordelijke vaststellen. | GBO-project, beoogde beheerders |
+| **B-18** | Terugmelden van fouten of vermoedelijke onjuistheden | EUDI-Wallet, DvTP | Hoe worden fouten en waarschijnlijke onjuistheden terug gemeld aan de bronhouder? | Nog niet uitgewerkt. | Nog vast te stellen |
+
 
 ## Werkwijze voor besluitvorming
 

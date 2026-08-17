@@ -56,7 +56,7 @@ De inrichting voldoet aan de volgende eisen:
 - herkomst, bronhouder, tijdstip en relevante versie-informatie worden meegeleverd of aantoonbaar vastgelegd;
 - berichten en attestaties worden vóór uitlevering tegen het toepasselijke schema gevalideerd;
 - cryptografische integriteit en authenticiteit worden toegepast waar het interactiepatroon dat vereist;
-- afnemers kunnen fouten of vermoedelijke onjuistheden via een gestandaardiseerd proces terugmelden;
+- afnemers kunnen fouten of vermoedelijke onjuistheden via een gestandaardiseerd proces terugmelden (NB: dit geldt niet voor OOTS, waar expliciet voor besloten is);
 - een terugmelding is herleidbaar tot de betreffende gegevenslevering, zonder onnodige verspreiding van persoonsgegevens.
 
 ## F6 — Grondslag & Beleid
