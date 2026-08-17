@@ -1390,7 +1390,7 @@ De burger op passend niveau identificeren en voorkomen dat het BSN terechtkomt b
 </ul>
 <h2 id="s04-organisatie-authenticatie-vertrouwensstelsel">S04 — Organisatie-authenticatie &amp; Vertrouwensstelsel<a class="headerlink" href="#s04-organisatie-authenticatie-vertrouwensstelsel" title="Permanent link">&para;</a></h2>
 <p><strong>Doel</strong><br />
-Vaststellen dat deelnemende organisaties en systemen zijn wie zij zeggen te zijn, bevoegd zijn tot deelname en blijvend aan de aansluitvoorwaarden voldoen.</p>
+Vaststellen dat deelnemende organisaties en systemen zijn wie zij zeggen te zijn, bevoegd zijn tot deelname en blijvend aan de aansluitvoorwaarden voldoen, en waar nodig kunnen aantonen in welke rol en namens welke partij zij handelen.</p>
 <p><strong>Normerende eisen</strong></p>
 <ul>
 <li>deelname vereist een voorafgaande toelatingsbeslissing;</li>
@@ -1398,7 +1398,10 @@ Vaststellen dat deelnemende organisaties en systemen zijn wie zij zeggen te zijn
 <li>de technische identiteit wordt gekoppeld aan de toegelaten juridische organisatie en rol;</li>
 <li>vertrouwensankers en deelnemersstatus zijn machineleesbaar controleerbaar;</li>
 <li>schorsing en beëindiging leiden tijdig tot intrekking van toegang;</li>
-<li>buitenlandse, publieke en private deelnemers kunnen verschillende toelatingsregimes hebben, maar gebruiken waar mogelijk dezelfde verificatiepatronen.</li>
+<li>buitenlandse, publieke en private deelnemers kunnen verschillende toelatingsregimes hebben, maar gebruiken waar mogelijk dezelfde verificatiepatronen;</li>
+<li>de technische identiteit en toelatingsstatus van een deelnemer worden onderscheiden van de rol en bevoegdheid waarmee deze in een concrete interactie handelt;</li>
+<li>als een organisatie of systeem namens een andere persoon of organisatie handelt, is de relevante vertegenwoordigingscontext verifieerbaar, waaronder ten minste de vertegenwoordiger, de vertegenwoordigde partij, de rol of hoedanigheid, de reikwijdte en de geldigheid;</li>
+<li>een technische intermediair die uitsluitend transport- of connectiviteitsdiensten levert, verkrijgt door die rol geen bevoegdheid om namens een bronhouder, afnemer of betrokkene te handelen.</li>
 </ul>
 <p><strong>Afspraken en standaarden</strong></p>
 <ul>
@@ -1406,7 +1409,9 @@ Vaststellen dat deelnemende organisaties en systemen zijn wie zij zeggen te zijn
 <li>certificaat- en trust-anchorprofielen;</li>
 <li>koppeling tussen OIN, KvK-nummer en Europese identifiers waar nodig;</li>
 <li>periodieke herbeoordeling, toezicht, schorsing en beëindiging;</li>
-<li>hergebruik van FDS Poortwachter en Marktmeester waar deze functies beschikbaar en passend zijn.</li>
+<li>hergebruik van FDS Poortwachter en Marktmeester waar deze functies beschikbaar en passend zijn;</li>
+<li>gemeenschappelijk model voor het uitwisselen en verifiëren van vertegenwoordigings- en bevoegdheidscontext;</li>
+<li>regels voor de herkomst, geldigheid, intrekking en verificatie van bevoegdheidsbewijzen.</li>
 </ul>
 <p><strong>Functionele voorzieningen</strong></p>
 <ul>
@@ -1428,7 +1433,8 @@ Iedere gegevensvraag toetsen aan identiteit, dienst, doel, grondslag, gegevenssc
 <ul>
 <li>iedere gegevensvraag doorloopt een PEP-PDP-keten of een functioneel gelijkwaardige scheiding tussen afdwinging en besluitvorming;</li>
 <li>de autorisatievraag gebruikt een gestandaardiseerd vocabulaire voor subject, actie, resource en context;</li>
-<li>de PDP kan relevante informatiebronnen raadplegen, waaronder deelnemersstatus, dienstencatalogus en toestemmingsregister;</li>
+<li>als een actor namens een andere partij handelt, betrekt de autorisatiebeslissing zowel de identiteit van de handelende actor als de vertegenwoordigde partij, rol, reikwijdte en geldigheid van de bevoegdheid;</li>
+<li>de PDP kan relevante informatiebronnen raadplegen, waaronder deelnemersstatus, dienstencatalogus, toestemmingsregister en, waar van toepassing, informatie voor de verificatie van vertegenwoordiging en bevoegdheid;</li>
 <li>de beslissing is fijnmazig genoeg om afzonderlijke gegevens of velden toe te staan of te weigeren;</li>
 <li>de beleidsversie, relevante context en beslissing worden gelogd;</li>
 <li>een PEP weigert standaard bij ontbrekende of onbetrouwbare beslisinformatie;</li>
@@ -1598,6 +1604,7 @@ Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven, zodat 
 <li>kwaliteitskenmerken en herkomstinformatie zijn opgenomen;</li>
 <li>validatieregels worden vóór uitlevering toegepast waar dit technisch en juridisch passend is;</li>
 <li>mappings naar OOTS-EDM en attestatieschema's zijn expliciet en herleidbaar naar bron- en doelversies;</li>
+<li>begrippen en relaties die als context voor identificatie en autorisatie worden gebruikt, zoals rol, vertegenwoordiger, vertegenwoordigde partij, bevoegdheid en reikwijdte, worden waar nodig eveneens beheerd en eenduidig beschreven;</li>
 <li>de catalogus beschrijft tevens de voorwaarden waaronder een dienst kan worden gebruikt, zonder het autorisatiebeleid te dupliceren.</li>
 </ul>
 <p><strong>Afspraken en standaarden</strong></p>
@@ -1661,6 +1668,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 <li>beheerder van generieke technische voorzieningen;</li>
 <li>verdeling van verantwoordelijkheden tussen bronhouder, PubEAA-verstrekker, ASI-provider en QTSP;</li>
 <li>certificering en opname in vertrouwenslijsten;</li>
+<li>voorwaarden waaronder uit authentieke brongegevens afgeleide claims als attestatie kunnen worden uitgegeven, inclusief eigenaarschap en versiebeheer van de toegepaste regel en verantwoordelijkheid voor de resulterende claim;</li>
 <li>startpunt en gebruikersreis voor de uitgifte.</li>
 </ul>
 <h2 id="samenvatting-van-belangrijkste-gaps">Samenvatting van belangrijkste gaps<a class="headerlink" href="#samenvatting-van-belangrijkste-gaps" title="Permanent link">&para;</a></h2>
@@ -1690,8 +1698,8 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 </tr>
 <tr>
 <td>S04</td>
-<td>Toelatingsmodel private partijen</td>
-<td>Vertrouwensprofiel en identifierkoppeling</td>
+<td>Toelatingsmodel private partijen en governance van vertegenwoordiging</td>
+<td>Vertrouwensprofiel, identifierkoppeling en verificatie van bevoegdheidsbewijzen</td>
 </tr>
 <tr>
 <td>S05</td>
