@@ -21,7 +21,7 @@ De werkpakketten zijn gekoppeld aan samenhangende stelselfuncties. De oplossings
 
 | Werkpakket&nbsp;&nbsp; | Stelselfuncties | Belangrijkste resultaten | Belangrijkste afhankelijkheden |
 |---|---|---|---|
-| **GBO-basis** | S04 tot en met S07, S09 en S10 | Aansluitvoorwaarden; bronontsluiting-API; dienstencatalogus; autorisatieprofiel; policy-governance; logging- en traceprofiel; semantische kaders. | FDS- en GDI-governance; standaardisering API-profiel; beheerkeuzes voor beleid en catalogi. |
+| **GBO-basis** | S04 tot en met S07, S09 en S10 | Aansluitvoorwaarden; bronontsluiting-API; dienstencatalogus; autorisatieprofiel; policy-governance; logging- en traceprofiel; semantische kaders. | FDS en GDI; standaardisering API-profiel; beheerkeuzes voor beleid en catalogi. |
 | **EUDI-Wallet** | S03 tot en met S05, S09 tot en met S11 | Attestation rulebooks; PubEAA- en ASI-profielen; mappings; signing, status en intrekking; technische uitgifte- en verificatiefuncties. | eIDAS2/ARF; nationale EUDI-Wallet-governance; certificering; rolverdeling bronhouders en QTSP's. |
 | **OOTS** | S04, S05 en S07 tot en met S10 | Koppelvlak met OOTS-V; OOTS-adapter; OOTS-EDM-mappings; dienst- en discoverybeheer; ketenlogging. | Basisinrichting OOTS; nationale SDG-governance; afspraken over mapping en beheer. |
 | **DvTP** | S01 tot en met S07, S09 en S10 | Toestemmingsmodel en -voorziening; pseudonimiseringsintegratie; toelatingsmodel private partijen; dienstregistratie; autorisatiebeleid. | Wet- en regelgeving; toezicht; beheer toestemmingsvoorziening; aansluiting BSNk PP; private vertrouwensgovernance. |
