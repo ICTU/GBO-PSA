@@ -133,7 +133,7 @@ De burger op passend niveau identificeren en voorkomen dat het BSN terechtkomt b
 ## S04 — Organisatie-authenticatie & Vertrouwensstelsel
 
 **Doel**  
-Vaststellen dat deelnemende organisaties en systemen zijn wie zij zeggen te zijn, bevoegd zijn tot deelname en blijvend aan de aansluitvoorwaarden voldoen.
+Vaststellen dat deelnemende organisaties en systemen zijn wie zij zeggen te zijn, bevoegd zijn tot deelname en blijvend aan de aansluitvoorwaarden voldoen, en waar nodig kunnen aantonen in welke rol en namens welke partij zij handelen.
 
 **Normerende eisen**
 
@@ -142,7 +142,10 @@ Vaststellen dat deelnemende organisaties en systemen zijn wie zij zeggen te zijn
 - de technische identiteit wordt gekoppeld aan de toegelaten juridische organisatie en rol;
 - vertrouwensankers en deelnemersstatus zijn machineleesbaar controleerbaar;
 - schorsing en beëindiging leiden tijdig tot intrekking van toegang;
-- buitenlandse, publieke en private deelnemers kunnen verschillende toelatingsregimes hebben, maar gebruiken waar mogelijk dezelfde verificatiepatronen.
+- buitenlandse, publieke en private deelnemers kunnen verschillende toelatingsregimes hebben, maar gebruiken waar mogelijk dezelfde verificatiepatronen;
+- de technische identiteit en toelatingsstatus van een deelnemer worden onderscheiden van de rol en bevoegdheid waarmee deze in een concrete interactie handelt;
+- als een organisatie of systeem namens een andere persoon of organisatie handelt, is de relevante vertegenwoordigingscontext verifieerbaar, waaronder ten minste de vertegenwoordiger, de vertegenwoordigde partij, de rol of hoedanigheid, de reikwijdte en de geldigheid;
+- een technische intermediair die uitsluitend transport- of connectiviteitsdiensten levert, verkrijgt door die rol geen bevoegdheid om namens een bronhouder, afnemer of betrokkene te handelen.
 
 **Afspraken en standaarden**
 
@@ -150,7 +153,9 @@ Vaststellen dat deelnemende organisaties en systemen zijn wie zij zeggen te zijn
 - certificaat- en trust-anchorprofielen;
 - koppeling tussen OIN, KvK-nummer en Europese identifiers waar nodig;
 - periodieke herbeoordeling, toezicht, schorsing en beëindiging;
-- hergebruik van FDS Poortwachter en Marktmeester waar deze functies beschikbaar en passend zijn.
+- hergebruik van FDS Poortwachter en Marktmeester waar deze functies beschikbaar en passend zijn;
+- gemeenschappelijk model voor het uitwisselen en verifiëren van vertegenwoordigings- en bevoegdheidscontext;
+- regels voor de herkomst, geldigheid, intrekking en verificatie van bevoegdheidsbewijzen.
 
 **Functionele voorzieningen**
 
@@ -174,7 +179,8 @@ Iedere gegevensvraag toetsen aan identiteit, dienst, doel, grondslag, gegevenssc
 
 - iedere gegevensvraag doorloopt een PEP-PDP-keten of een functioneel gelijkwaardige scheiding tussen afdwinging en besluitvorming;
 - de autorisatievraag gebruikt een gestandaardiseerd vocabulaire voor subject, actie, resource en context;
-- de PDP kan relevante informatiebronnen raadplegen, waaronder deelnemersstatus, dienstencatalogus en toestemmingsregister;
+- als een actor namens een andere partij handelt, betrekt de autorisatiebeslissing zowel de identiteit van de handelende actor als de vertegenwoordigde partij, rol, reikwijdte en geldigheid van de bevoegdheid;
+- de PDP kan relevante informatiebronnen raadplegen, waaronder deelnemersstatus, dienstencatalogus, toestemmingsregister en, waar van toepassing, informatie voor de verificatie van vertegenwoordiging en bevoegdheid;
 - de beslissing is fijnmazig genoeg om afzonderlijke gegevens of velden toe te staan of te weigeren;
 - de beleidsversie, relevante context en beslissing worden gelogd;
 - een PEP weigert standaard bij ontbrekende of onbetrouwbare beslisinformatie;
@@ -354,6 +360,7 @@ Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven, zodat 
 - kwaliteitskenmerken en herkomstinformatie zijn opgenomen;
 - validatieregels worden vóór uitlevering toegepast waar dit technisch en juridisch passend is;
 - mappings naar OOTS-EDM en attestatieschema's zijn expliciet en herleidbaar naar bron- en doelversies;
+- begrippen en relaties die als context voor identificatie en autorisatie worden gebruikt, zoals rol, vertegenwoordiger, vertegenwoordigde partij, bevoegdheid en reikwijdte, worden waar nodig eveneens beheerd en eenduidig beschreven;
 - de catalogus beschrijft tevens de voorwaarden waaronder een dienst kan worden gebruikt, zonder het autorisatiebeleid te dupliceren.
 
 **Afspraken en standaarden**
@@ -419,6 +426,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 - beheerder van generieke technische voorzieningen;
 - verdeling van verantwoordelijkheden tussen bronhouder, PubEAA-verstrekker, ASI-provider en QTSP;
 - certificering en opname in vertrouwenslijsten;
+- voorwaarden waaronder uit authentieke brongegevens afgeleide claims als attestatie kunnen worden uitgegeven, inclusief eigenaarschap en versiebeheer van de toegepaste regel en verantwoordelijkheid voor de resulterende claim;
 - startpunt en gebruikersreis voor de uitgifte.
 
 ## Samenvatting van belangrijkste gaps
@@ -428,7 +436,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet en QTSP's onderst
 | S01 | Grondslag en governance voor toestemming bij DvTP | Toestemmingsmodel, PIP-profiel en beheerder |
 | S02 | Vrijwilligheid, alternatief en toezicht | Portaalinrichting en UX-profiel |
 | S03 | Governance identity matching | Pseudonimiserings- en identity-matchingintegratie |
-| S04 | Toelatingsmodel private partijen | Vertrouwensprofiel en identifierkoppeling |
+| S04 | Toelatingsmodel private partijen en governance van vertegenwoordiging | Vertrouwensprofiel, identifierkoppeling en verificatie van bevoegdheidsbewijzen |
 | S05 | Verantwoordelijkheid voor beslisbeleid | GBO-autorisatieprofiel en componentinrichting |
 | S06 | Eigenaarschap van policy-governance | Open policyformaat, distributie en beheer |
 | S07 | Beheer van diensten en aansluitvoorwaarden | API-profiel, dienstencatalogus en vertaallaag |

@@ -9,7 +9,10 @@ De inrichting voldoet aan de volgende eisen:
 - burgers, organisaties en systemen worden eenduidig geïdentificeerd;
 - het vereiste betrouwbaarheidsniveau wordt per dienst, gegevenscategorie en interactiepatroon vastgesteld;
 - organisaties worden toegelaten op basis van expliciete aansluitvoorwaarden en blijven periodiek aantoonbaar aan die voorwaarden voldoen;
+- identiteit, rol of hoedanigheid en bevoegdheid worden als afzonderlijke aspecten behandeld: het vaststellen wie een actor is, impliceert niet dat deze actor bevoegd is om een bepaalde handeling uit te voeren;
+- als een actor namens een andere persoon of organisatie handelt, kan de vertegenwoordigingsrelatie inclusief rol, reikwijdte en geldigheid aantoonbaar worden vastgesteld en als context voor autorisatie worden gebruikt;
 - trust anchors, certificaten en vertrouwenslijsten worden centraal of federatief beheerd en zijn machineleesbaar raadpleegbaar;
+- de vertrouwensarchitectuur is niet afhankelijk van één vorm van identiteits- of bevoegdheidsbewijs; verschillende erkende registers, vertrouwensdiensten en wallet-gebaseerde bewijzen kunnen via gestandaardiseerde verificatie worden ondersteund;
 - het BSN wordt alleen verwerkt door partijen en componenten die daarvoor een wettelijke grondslag hebben;
 - voor andere afnemers wordt een partijspecifieke identiteit of pseudoniem toegepast;
 - identiteitsvertaling en pseudonimisering zijn gescheiden van de inhoudelijke autorisatiebeslissing en worden alleen uitgevoerd als de gegevensvraag is toegestaan.
