@@ -882,6 +882,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../change-log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2629,7 +2657,448 @@ Voor de aansluiting van GBO op de OOTS Basisinrichting is het volgende nodig:</p
 <li>risico's en mitigerende maatregelen;</li>
 <li>eigenaar, datum en heroverwegingsmoment.</li>
 </ul>
-<p>Een besluit wordt pas als afgerond beschouwd als het ook is verwerkt in de relevante PSA-paragraaf, het globaal ontwerp indien nodig, en de aansluitende technische of semantische documentatie.</p></section></div><style>.print-site-enumerate-headings #index > h1:before { content: '1 ' }
+<p>Een besluit wordt pas als afgerond beschouwd als het ook is verwerkt in de relevante PSA-paragraaf, het globaal ontwerp indien nodig, en de aansluitende technische of semantische documentatie.</p></section><section class="print-page" id="change-log" heading-number="10"><h1 id="change-log-change-log">Change Log<a class="headerlink" href="#change-log-change-log" title="Permanent link">&para;</a></h1>
+<h2 id="change-log-change-log-v081">Change Log v0.8.1<a class="headerlink" href="#change-log-change-log-v081" title="Permanent link">&para;</a></h2>
+<p>Van: versie <a href="https://ictu.github.io/GBO-PSA/0.7.2/"><strong>0.7.2</strong></a> (juli 2026) → Naar: versie <strong>0.8.1</strong> (september 2026)</p>
+<p>Dit is geen uitputtende opsomming van iedere gewijzigde zin, maar een overzicht van wat er conceptueel en structureel is veranderd, per hoofdstuk/paragraaf.</p>
+<hr />
+<h3 id="change-log-samenvatting-in-een-oogopslag">Samenvatting in één oogopslag<a class="headerlink" href="#change-log-samenvatting-in-een-oogopslag" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Onderdeel</th>
+<th>Aard van de wijziging</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Positionering PSA</td>
+<td>PSA duidelijker gepositioneerd tussen Globaal Ontwerp en technische uitwerking</td>
+<td><a href="#change-log-algemeen-opzet">detailbeschrijving</a></td>
+</tr>
+<tr>
+<td>Terminologie</td>
+<td>Naamgeving gelijkgetrokken met het Globaal Ontwerp</td>
+<td><a href="#change-log-algemeen-opzet">detailbeschrijving</a></td>
+</tr>
+<tr>
+<td>Vertrekpunt Globaal Ontwerp</td>
+<td>Uitgebreide oplossingsbeschrijving vervangen door architectuurconsequenties en duidelijke documentafbakening</td>
+<td><a href="#change-log-vertrekpunt-uit-het-globaal-ontwerp">detailbeschrijving</a></td>
+</tr>
+<tr>
+<td>Architectuurprincipes</td>
+<td>Sterk compacter en normerender gemaakt; principes P-01 t/m P-16 behouden</td>
+<td><a href="#change-log-architectuurprincipes">detailbeschrijving</a></td>
+</tr>
+<tr>
+<td>Ontwerpprincipes</td>
+<td>Sterk vereenvoudigd en technologieneutraler gemaakt; concrete implementatiekeuzes teruggebracht</td>
+<td><a href="#change-log-ontwerpprincipes">detailbeschrijving</a></td>
+</tr>
+<tr>
+<td>Interactiepatronen</td>
+<td>Procesbeschrijvingen en diagrammen verplaatst naar het Globaal Ontwerp; PSA legt vooral eisen en relaties met stelselfuncties vast</td>
+<td><a href="#change-log-interactiepatronen">detailbeschrijving</a></td>
+</tr>
+<tr>
+<td>Generieke functies</td>
+<td>Volledig herschreven als normerende eisen voor F1 t/m F8, met expliciete koppeling naar stelselfuncties</td>
+<td><a href="#change-log-generieke-functies">detailbeschrijving</a></td>
+</tr>
+<tr>
+<td>Stelselfuncties</td>
+<td>Uitwerking S01 t/m S11 geharmoniseerd en productonafhankelijk gemaakt</td>
+<td><a href="#change-log-stelselfuncties">detailbeschrijving</a></td>
+</tr>
+<tr>
+<td>Realisatiestrategie</td>
+<td>Van concrete component-/implementatiematrix naar werkpakketten, afhankelijkheden en landing in bestaande stelsels</td>
+<td><a href="#change-log-realisatiestrategie">detailbeschrijving</a></td>
+</tr>
+<tr>
+<td>Open vraagstukken</td>
+<td>Losse vragen en voorlopige ontwerpkeuzes vervangen door een gestructureerd besluitregister</td>
+<td><a href="#change-log-open-besluiten">detailbeschrijving</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="change-log-algemeen-opzet">Algemeen / opzet<a class="headerlink" href="#change-log-algemeen-opzet" title="Permanent link">&para;</a></h3>
+<ul>
+<li>De rol van de PSA binnen de totale GBO-documentatie is expliciet gemaakt. Het <strong>Globaal Ontwerp</strong> is leidend voor oplossingsrichting, interactiepatronen en de functionele hoofdindeling; de <strong>PSA</strong> is leidend voor de normerende architectuureisen aan de verdere uitwerking.</li>
+<li>Een nieuwe paragraaf <strong>Documenthiërarchie</strong> beschrijft de verhouding tussen context, Globaal Ontwerp, PSA, Technisch Ontwerp, Technische Requirements en de semantische uitwerking.</li>
+<li>
+<p>De scope is aangescherpt. De PSA beschrijft vooral:</p>
+</li>
+<li>
+<p>normerende eisen aan de generieke functies;</p>
+</li>
+<li>afspraken, standaarden en functionele voorzieningen voor de stelselfuncties;</li>
+<li>verantwoordelijkheden en beheerkeuzes;</li>
+<li>open juridische, organisatorische en technische besluiten.</li>
+<li>Beschrijvingen die al in het Globaal Ontwerp staan worden zoveel mogelijk niet meer herhaald.</li>
+<li>De PSA schrijft explicieter <strong>geen producten, leveranciers of referentie-implementaties</strong> voor. Concrete technische componentontwerpen horen thuis in het Technisch Ontwerp en de Technische Requirements.</li>
+<li>De terminologie is gelijkgetrokken met het Globaal Ontwerp. Onder andere <strong>EUDI-Wallet</strong>, <strong>PubEAA-verstrekker</strong>, <strong>Authentic Source Interface (ASI)</strong>, <strong>ASI-provider</strong>, <strong>Basisinrichting OOTS</strong>, <strong>OOTS-V</strong>, <strong>OOTS-adapter</strong>, <strong>bronontsluiting-API</strong>, <strong>dienstencatalogus</strong>, <strong>toestemmingsvoorziening</strong>, <strong>toestemmingsregister</strong> en <strong>GBO-vertaallaag</strong> worden nu consequent gebruikt.</li>
+<li>Specifieke implementaties, pilots en producten worden waar mogelijk niet meer als architectuurkeuze genoemd. Verwijzingen naar bijvoorbeeld specifieke policy-engines en referentie-implementaties zijn verwijderd of technologieneutraal gemaakt.</li>
+<li>
+<p>De hoofdstuknamen zijn aangepast om beter aan te sluiten op hun nieuwe functie:</p>
+</li>
+<li>
+<p>"Oplossingsrichting" → <strong>Vertrekpunt uit het globaal ontwerp</strong>;</p>
+</li>
+<li>"Logische architectuur" → <strong>Generieke functies</strong>;</li>
+<li>"Open vragen en ontwerpkeuzes" → <strong>Open besluiten</strong>.</li>
+</ul>
+<p><span style='font-size: small;'><a href="#change-log-samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
+<hr />
+<h3 id="change-log-vertrekpunt-uit-het-globaal-ontwerp">Vertrekpunt uit het globaal ontwerp<a class="headerlink" href="#change-log-vertrekpunt-uit-het-globaal-ontwerp" title="Permanent link">&para;</a></h3>
+<ul>
+<li>De uitgebreide beschrijving van de voorgestelde oplossingsrichting is verwijderd. Hiervoor wordt voortaan verwezen naar hoofdstuk 2 van het Globaal Ontwerp.</li>
+<li>De eerdere technische beschrijving van FSC, GraphQL, PBAC, centrale voorzieningen en adapters is vervangen door een overzicht van de <strong>architectuurconsequenties</strong> van het Globaal Ontwerp.</li>
+<li>Een nieuwe tabel koppelt deze architectuurconsequenties expliciet aan de onderdelen van de PSA waarin zij normerend worden uitgewerkt.</li>
+<li>
+<p>De afbakening tussen Globaal Ontwerp en PSA is expliciet gemaakt:</p>
+</li>
+<li>
+<p>het Globaal Ontwerp bepaalt de gekozen oplossingsrichting en interactiepatronen;</p>
+</li>
+<li>de PSA bepaalt principes, normerende eisen, afspraken, standaarden, verantwoordelijkheden en open architectuurbesluiten.</li>
+<li>De passage over bestaande afsprakenstelsels is aangescherpt: GBO richt geen zelfstandig nieuw afsprakenstelsel in. Nieuwe afspraken, standaarden en voorzieningen moeten zoveel mogelijk landen in bestaande governance- en beheerstructuren.</li>
+<li>Voor tijdelijke project- en pilotvoorzieningen zijn expliciete voorwaarden toegevoegd voor overgang naar productie, waaronder eigenaarschap, afsprakenbeheer, standaardbeheer, operationeel beheer, continuïteit, financiering en toezicht.</li>
+<li>Illustratieve toekomstige gegevensstromen en bijbehorende diagrammen zijn uit dit hoofdstuk verwijderd.</li>
+</ul>
+<p><span style='font-size: small;'><a href="#change-log-samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
+<hr />
+<h3 id="change-log-architectuurprincipes">Architectuurprincipes<a class="headerlink" href="#change-log-architectuurprincipes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>De zestien architectuurprincipes <strong>P-01 t/m P-16</strong> zijn behouden, maar de uitwerking is sterk vereenvoudigd.</li>
+<li>De oude indeling per juridisch of beleidskader met uitgebreide achtergrondteksten en afzonderlijke bronlijsten is vervangen door één overzichtelijke tabel.</li>
+<li>
+<p>Per principe wordt nu direct vastgelegd:</p>
+</li>
+<li>
+<p>het principe;</p>
+</li>
+<li>de concrete consequentie voor GBO;</li>
+<li>het primaire wettelijke of architectuurkader.</li>
+<li>De principes zijn daarmee meer <strong>normerend</strong> en minder beschrijvend geworden.</li>
+<li>
+<p>De formuleringen zijn aangescherpt op onder andere:</p>
+</li>
+<li>
+<p>controleerbare grondslag en doelbinding;</p>
+</li>
+<li>selectieve gegevensuitvraag en dataminimalisatie;</li>
+<li>voorkomen van BSN-verwerking door onbevoegde afnemers;</li>
+<li>ondersteuning van EUDI-Wallet, verificatie en retrieval;</li>
+<li>toelating en trust anchors;</li>
+<li>hergebruik van gegevens bij de bron;</li>
+<li>product- en leveranciersonafhankelijkheid;</li>
+<li>ketenbrede herleidbaarheid;</li>
+<li>transparantie voor burgers;</li>
+<li>scheiding tussen generieke en domeinspecifieke verantwoordelijkheid.</li>
+<li>Een nieuwe paragraaf <strong>Toepassing</strong> beschrijft hoe de principes worden gebruikt bij afspraken, standaarden, voorzieningen, aansluitvoorwaarden en architectuurbesluiten.</li>
+<li>Afwijkingen van principes moeten voortaan expliciet als architectuurbesluit worden vastgelegd.</li>
+</ul>
+<p><span style='font-size: small;'><a href="#change-log-samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
+<hr />
+<h3 id="change-log-ontwerpprincipes">Ontwerpprincipes<a class="headerlink" href="#change-log-ontwerpprincipes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>De ontwerpprincipes <strong>D-01 t/m D-14</strong> zijn behouden, maar de uitgebreide beschrijvingen, voorbeelden en productspecifieke uitwerkingen zijn vervangen door een compacte tabel met normerende toepassing voor GBO.</li>
+<li>Het onderscheid tussen principe, betekenis, GBO-toelichting en bronnen is teruggebracht tot de essentie.</li>
+<li>De principes leggen nu nadrukkelijker vast <strong>welke eisen gelden</strong>, zonder de technische implementatie voor te schrijven.</li>
+<li>"Gebruik landelijke GDI-bouwstenen" is verbreed naar hergebruik van generieke <strong>GDI-, FDS-, eIDAS- en OOTS-bouwstenen</strong>.</li>
+<li>Het principe rond API's is technologieneutraler gemaakt. <strong>GraphQL blijft de voorgestelde invulling</strong> voor selectieve bronontsluiting, maar alternatieven zijn toegestaan als zij aan dezelfde eisen voor selectie, beveiliging, autorisatie, schema's en audit voldoen.</li>
+<li>De eerdere uitgebreide vergelijking tussen REST en GraphQL is verwijderd.</li>
+<li>
+<p>Een nieuwe paragraaf <strong>Aanvullende eisen voor de bronontsluiting-API</strong> legt technologieonafhankelijke eisen vast voor onder meer:</p>
+</li>
+<li>
+<p>vooraf toegestane gegevensvragen;</p>
+</li>
+<li>dataminimalisatie;</li>
+<li>autorisatie op gegevensniveau;</li>
+<li>versieerbare schema's;</li>
+<li>authenticatie en beveiliging;</li>
+<li>logging en foutafhandeling;</li>
+<li>ondersteuning van bronhouders via de GBO-vertaallaag.</li>
+</ul>
+<p><span style='font-size: small;'><a href="#change-log-samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
+<hr />
+<h3 id="change-log-interactiepatronen">Interactiepatronen<a class="headerlink" href="#change-log-interactiepatronen" title="Permanent link">&para;</a></h3>
+<ul>
+<li>De uitgebreide procesbeschrijvingen en sequencediagrammen voor de drie interactiepatronen zijn uit de PSA verwijderd en staan voortaan alleen in het Globaal Ontwerp.</li>
+<li>
+<p>De PSA bevat nu een compacte tabel voor:</p>
+</li>
+<li>
+<p><strong>Patroon A — Burger gebruikt EUDI-Wallet</strong>;</p>
+</li>
+<li><strong>Patroon B — Grensoverschrijdend verzoek via OOTS</strong>;</li>
+<li><strong>Patroon C — Gegevensverzoek private dienstverlener</strong>.</li>
+<li>Per patroon worden de relevante stelselfuncties en de belangrijkste PSA-aandachtspunten benoemd.</li>
+<li>Voor EUDI-Wallet zijn de verantwoordelijkheden rond bronhouder, PubEAA-verstrekker, ASI-provider en QTSP explicieter gemaakt.</li>
+<li>Voor OOTS is duidelijker vastgelegd dat de GBO-oplossing aansluit op de <strong>Basisinrichting OOTS en OOTS-V</strong>, terwijl Europese transport- en procesfuncties buiten de generieke bronontsluiting blijven.</li>
+<li>Voor DvTP ligt meer nadruk op juridische grondslag, toestemming, pseudonimisering, toelating van private dienstverleners en registratie van diensten en toegestane gegevensvragen.</li>
+<li>
+<p>Een nieuwe paragraaf <strong>Gemeenschappelijke eisen</strong> legt eisen vast die voor alle interactiepatronen gelden, waaronder:</p>
+</li>
+<li>
+<p>geen patroon- of afnemerspecifiek bronkoppelvlak;</p>
+</li>
+<li>uniforme toetsing van identiteit, grondslag, doel en gegevensvraag;</li>
+<li>hergebruik van dezelfde generieke autorisatieketen;</li>
+<li>expliciete protocol- en semantische transformaties;</li>
+<li>ketenbrede herleidbaarheid;</li>
+<li>patroonafhankelijke logica als configuratie, beleid of mapping in plaats van hardgecodeerde bronlogica.</li>
+</ul>
+<p><span style='font-size: small;'><a href="#change-log-samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
+<hr />
+<h3 id="change-log-generieke-functies">Generieke functies<a class="headerlink" href="#change-log-generieke-functies" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Het hoofdstuk <strong>Logische architectuur</strong> is vervangen door <strong>Generieke functies</strong>.</li>
+<li>Het logische architectuurdiagram en de uitgebreide duplicatie van functionele beschrijvingen zijn verwijderd. Hiervoor wordt verwezen naar het Globaal Ontwerp.</li>
+<li>Voor alle acht generieke functies <strong>F1 t/m F8</strong> zijn nu expliciete normerende eisen opgenomen.</li>
+<li><strong>F1 — Identiteit &amp; Vertrouwen</strong> is uitgebreid met duidelijk onderscheid tussen identiteit, rol, hoedanigheid, vertegenwoordiging en bevoegdheid. Ook identity matching en pseudonimisering zijn scherper afgebakend.</li>
+<li><strong>F2 — Toegang &amp; Interactie</strong> concentreert zich op eisen aan burgerinteractie, toestemming, actuele controle en toegang van organisaties.</li>
+<li><strong>F3 — Gegevensvoorziening</strong> legt één herbruikbare bronontsluiting, selectieve bevraging, externe adapters en de optionele GBO-vertaallaag vast.</li>
+<li><strong>F4 — Semantiek &amp; Eenheid van Taal</strong> legt meer nadruk op beheerde begrippen, modellen, schema's, mappings en versiebeheer.</li>
+<li><strong>F5 — Gegevenskwaliteit &amp; Validatie</strong> bevat eisen aan kwaliteit, herkomst, validatie en terugmelding van fouten; voor OOTS is terugmelding expliciet uitgezonderd.</li>
+<li><strong>F6 — Grondslag &amp; Beleid</strong> is technologieneutraal gemaakt: beleid moet machineleesbaar, testbaar en versieerbaar zijn, maar is niet meer gekoppeld aan één policy-engine of taal.</li>
+<li><strong>F7 — Orkestratie &amp; Integratie</strong> stelt nu expliciet dat voor de huidige interactiepatronen <strong>geen afzonderlijke centrale procesorkestratie</strong> nodig is. De nadruk ligt op adapters, mappings, foutafhandeling en afzonderlijke bronverzoeken.</li>
+<li><strong>F8 — Beheer &amp; Continuïteit</strong> is uitgebreid met expliciete eisen rond eigenaarschap, beheer, serviceniveaus, continuïteit, SPOF's, monitoring, versiebeheer en overdracht van tijdelijke projectvoorzieningen.</li>
+<li>Een nieuwe tabel legt de relatie tussen <strong>F1 t/m F8 en S01 t/m S11</strong> expliciet vast.</li>
+</ul>
+<p><span style='font-size: small;'><a href="#change-log-samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
+<hr />
+<h3 id="change-log-stelselfuncties">Stelselfuncties<a class="headerlink" href="#change-log-stelselfuncties" title="Permanent link">&para;</a></h3>
+<p>Het hoofdstuk met stelselfuncties is inhoudelijk en structureel sterk herwerkt.</p>
+<ul>
+<li>
+<p>Alle stelselfuncties <strong>S01 t/m S11</strong> hebben nu een uniforme opbouw:</p>
+</li>
+<li>
+<p>doel;</p>
+</li>
+<li>normerende eisen;</li>
+<li>afspraken en standaarden;</li>
+<li>functionele voorzieningen;</li>
+<li>verantwoordelijkheden, waar relevant;</li>
+<li>open besluiten.</li>
+<li>De oude nadruk op concrete producten, referentie-implementaties, "beschikbaar/nog te realiseren" en specifieke beheerproducten is teruggebracht.</li>
+<li>Een voorziening wordt expliciet als een <strong>functionele component</strong> beschreven; de PSA schrijft geen product of specifieke implementatie voor.</li>
+<li>Een nieuw totaaloverzicht koppelt iedere stelselfunctie aan de bijbehorende generieke functies.</li>
+</ul>
+<p>Belangrijkste inhoudelijke wijzigingen per stelselfunctie:</p>
+<ul>
+<li>
+<p><strong>S01 — Toestemmingsregistratie</strong></p>
+</li>
+<li>
+<p>naamgeving aangescherpt;</p>
+</li>
+<li>eisen aan toestemmingsrecords, actualiteit, intrekking en bewaartermijnen explicieter;</li>
+<li>centrale versus federatieve inrichting is een open besluit;</li>
+<li>
+<p>PIP-profiel en governance expliciet benoemd.</p>
+</li>
+<li>
+<p><strong>S02 — Toestemmingsportaal</strong></p>
+</li>
+<li>
+<p>nadruk op begrijpelijkheid, toegankelijkheid, vrijwilligheid en een gelijkwaardig alternatief;</p>
+</li>
+<li>centrale voorziening is niet meer als vanzelfsprekende implementatie voorgeschreven;</li>
+<li>
+<p>meerdere interoperabele portalen blijven mogelijk.</p>
+</li>
+<li>
+<p><strong>S03 — Burgeridentificatie &amp; Pseudonimisering</strong></p>
+</li>
+<li>
+<p>scherper onderscheid tussen identificatie, pseudonimisering en autorisatie;</p>
+</li>
+<li>identity matching voor buitenlandse of walletidentiteiten explicieter uitgewerkt;</li>
+<li>
+<p>concrete implementatiekeuzes vervangen door functionele eisen aan een erkende pseudonimiseringsvoorziening.</p>
+</li>
+<li>
+<p><strong>S04 — Organisatie-authenticatie &amp; Vertrouwensstelsel</strong></p>
+</li>
+<li>
+<p>uitgebreid met <strong>vertegenwoordiging en bevoegdheidsbewijzen</strong>;</p>
+</li>
+<li>onderscheid tussen technische identiteit, juridische organisatie, rol en bevoegdheid expliciet gemaakt;</li>
+<li>
+<p>toelating, schorsing, beëindiging en periodieke herbeoordeling toegevoegd.</p>
+</li>
+<li>
+<p><strong>S05 — Autorisatie</strong></p>
+</li>
+<li>
+<p>productonafhankelijk geformuleerd;</p>
+</li>
+<li>PEP/PDP of functioneel gelijkwaardige scheiding blijft de basis;</li>
+<li>autorisatie betrekt afnemer, dienst, doel, grondslag, gegevensscope en context;</li>
+<li>vertegenwoordiging en bevoegdheid worden onderdeel van de autorisatiecontext;</li>
+<li>
+<p>centrale, decentrale en hybride PDP-inrichtingen blijven mogelijk.</p>
+</li>
+<li>
+<p><strong>S06 — Beleidsbeheer &amp; -distributie</strong></p>
+</li>
+<li>
+<p>directe afhankelijkheid van specifieke policy-engines en distributieproducten verwijderd;</p>
+</li>
+<li>beleid moet machineleesbaar, versieerbaar, testbaar en productonafhankelijk zijn;</li>
+<li>
+<p>governance voor schrijven, goedkeuren, publiceren, activeren en terugrollen van beleid is expliciet gemaakt.</p>
+</li>
+<li>
+<p><strong>S07 — Gegevensontsluiting</strong></p>
+</li>
+<li>
+<p><strong>Query Catalogus / Query Template Registry</strong> vervangen door <strong>dienstencatalogus</strong>;</p>
+</li>
+<li>GraphQL is een voorgestelde invulling in plaats van een verplichte technologiekeuze;</li>
+<li>de GBO-vertaallaag is expliciet optioneel en vervangbaar;</li>
+<li>
+<p>nieuwe diensten moeten primair via schema's, dienstregistratie en beleid kunnen worden toegevoegd.</p>
+</li>
+<li>
+<p><strong>S08 — OOTS-adapter</strong></p>
+</li>
+<li>
+<p>duidelijker gekoppeld aan <strong>Basisinrichting OOTS en OOTS-V</strong>;</p>
+</li>
+<li>Europese transport-, discovery- en procesfuncties worden bij de Basisinrichting OOTS belegd;</li>
+<li>GBO concentreert zich op bronontsluiting, autorisatie, logging en semantische mapping;</li>
+<li>
+<p>de precieze grens tussen OOTS-V, adapter en mapping is als open besluit benoemd.</p>
+</li>
+<li>
+<p><strong>S09 — Logging, Audit &amp; Traceerbaarheid</strong></p>
+</li>
+<li>
+<p>nadruk verschoven van specifieke loggingproducten naar ketenbrede functionele eisen;</p>
+</li>
+<li>decentrale logging en federatieve correlatie zijn het uitgangspunt;</li>
+<li>centrale aggregatie is alleen toegestaan als noodzaak en privacygrondslag zijn aangetoond;</li>
+<li>
+<p>LDV en tracecontext worden als te profileren standaarden benoemd.</p>
+</li>
+<li>
+<p><strong>S10 — Semantiek &amp; Gegevenscatalogus</strong></p>
+</li>
+<li>
+<p>inhoudelijke verantwoordelijkheid explicieter bij bronhouders en domeinen gelegd;</p>
+</li>
+<li>gemeenschappelijke kaders gelden voor begrippen, schema's, kwaliteit, mappings en versiebeheer;</li>
+<li>mappings naar OOTS-EDM en attestatieschema's worden expliciet beheerd;</li>
+<li>ook begrippen rond rol, vertegenwoordiging en bevoegdheid vallen waar nodig onder semantische governance;</li>
+<li>
+<p>terugmelding van fouten of vermoedelijke onjuistheden is als afzonderlijk vraagstuk toegevoegd.</p>
+</li>
+<li>
+<p><strong>S11 — Attesteringsuitgifte</strong></p>
+</li>
+<li>
+<p>rolverdeling tussen bronhouder, PubEAA-verstrekker, ASI-provider en QTSP aangescherpt;</p>
+</li>
+<li>ASI omvat verify- en waar toegestaan retrievefuncties;</li>
+<li>centrale, decentrale en federatieve inrichtingsvarianten blijven expliciet mogelijk;</li>
+<li>
+<p>verantwoordelijkheden voor signing, status, intrekking, attestatieschema's en rulebooks zijn uitgebreider beschreven.</p>
+</li>
+<li>
+<p>De afsluitende gaptabel is vereenvoudigd. In plaats van vooral concrete producten en implementatiestatussen wordt nu per stelselfunctie onderscheid gemaakt tussen:</p>
+</li>
+<li>
+<p>juridische of bestuurlijke gaps;</p>
+</li>
+<li>standaardisatie- of realisatiegaps.</li>
+</ul>
+<p><span style='font-size: small;'><a href="#change-log-samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
+<hr />
+<h3 id="change-log-realisatiestrategie">Realisatiestrategie<a class="headerlink" href="#change-log-realisatiestrategie" title="Permanent link">&para;</a></h3>
+<ul>
+<li>De realisatiestrategie is opnieuw opgebouwd rond het uitgangspunt dat <strong>GBO geen zelfstandig nieuw afsprakenstelsel of structurele GBO-beheerorganisatie vormt</strong>.</li>
+<li>Tijdelijke projectvoorzieningen en referentiecomponenten zijn toegestaan voor pilots, maar voor productie zijn expliciete eigenaarschap-, beheer-, continuïteits-, financierings- en exitafspraken vereist.</li>
+<li>
+<p>De realisatie is opnieuw ingedeeld in vier samenhangende werkpakketten:</p>
+</li>
+<li>
+<p><strong>GBO-basis</strong>;</p>
+</li>
+<li><strong>EUDI-Wallet</strong>;</li>
+<li><strong>OOTS</strong>;</li>
+<li><strong>DvTP</strong>.</li>
+<li>Per werkpakket worden nu de betrokken stelselfuncties, belangrijkste resultaten en afhankelijkheden benoemd.</li>
+<li>De oude gedetailleerde matrices met specifieke producten en referentie-implementaties zijn vervangen door functionele resultaten en te maken afspraken en standaarden.</li>
+<li>Voor <strong>GBO-basis</strong> ligt de nadruk op bronontsluiting, dienstencatalogus, autorisatie, policy-governance, logging en semantische kaders.</li>
+<li>Voor <strong>EUDI-Wallet</strong> worden meerdere uitgiftemodellen expliciet ondersteund: bronhouder-eigen PubEAA-uitgifte, gedeelde uitgifte en QEAA-uitgifte door QTSP's via een ASI-provider.</li>
+<li>Voor <strong>OOTS</strong> is de afbakening met de Basisinrichting OOTS explicieter gemaakt.</li>
+<li>Voor <strong>DvTP</strong> zijn de wettelijke randvoorwaarden, toezicht, pseudonimisering, toelating en toestemmingsvoorziening nadrukkelijker als afhankelijkheden opgenomen.</li>
+<li>Een nieuwe uitwerking van de <strong>impact op betrokken partijen</strong> beschrijft de gevolgen voor bronhouders, QTSP's, de Basisinrichting OOTS en private dienstverleners.</li>
+<li>Een nieuwe tabel <strong>Landing in bestaande stelsels en beheerorganisaties</strong> geeft per beheerobject de beoogde governance, beheer- of uitvoeringsrichting en het nog te nemen besluit.</li>
+<li>Een expliciete fasering is toegevoegd:</li>
+</ul>
+<ol>
+<li>kaders vaststellen;</li>
+<li>profielen ontwerpen;</li>
+<li>beproeven;</li>
+<li>standaardiseren en beleggen;</li>
+<li>productierijp maken;</li>
+<li>overdragen en opschalen.</li>
+</ol>
+<p><span style='font-size: small;'><a href="#change-log-samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
+<hr />
+<h3 id="change-log-open-besluiten">Open besluiten<a class="headerlink" href="#change-log-open-besluiten" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Het oude hoofdstuk <strong>Vraagstukken en ontwerpkeuzes</strong>, met losse inhoudelijke vragen en voorlopige ontwerpkeuzes, is vervangen door <strong>Open besluiten</strong>.</li>
+<li>De open vraagstukken zijn geconsolideerd in een gestructureerd <strong>besluitregister</strong>.</li>
+<li>
+<p>Ieder besluit heeft:</p>
+</li>
+<li>
+<p>een uniek ID;</p>
+</li>
+<li>onderwerp;</li>
+<li>betrokken stelselfuncties;</li>
+<li>de te nemen beslissing;</li>
+<li>een voorkeursrichting vanuit de huidige PSA;</li>
+<li>de relevante beslissende of coördinerende partijen.</li>
+<li>
+<p>Het besluitregister bevat onder andere besluiten over:</p>
+</li>
+<li>
+<p>governance van GBO-afspraken;</p>
+</li>
+<li>het API-profiel van de bronontsluiting;</li>
+<li>de dienstencatalogus;</li>
+<li>PDP-inrichting;</li>
+<li>policy-governance;</li>
+<li>toestemming bij DvTP;</li>
+<li>pseudonieme identiteit;</li>
+<li>identity matching;</li>
+<li>het vertrouwensstelsel voor private partijen;</li>
+<li>logging en burgerinzage;</li>
+<li>semantische governance;</li>
+<li>functiegrenzen rond OOTS;</li>
+<li>PubEAA-uitgifte;</li>
+<li>ASI-providers;</li>
+<li>start van attestatie-uitgifte;</li>
+<li>de GBO-vertaallaag;</li>
+<li>beheer van referentiecomponenten;</li>
+<li>terugmelden van fouten;</li>
+<li>vertegenwoordiging en bevoegdheidsbewijzen.</li>
+<li>Voor besluitvorming is een vaste <strong>ADR-werkwijze (Architecture Decision Record)</strong> toegevoegd.</li>
+<li>Een besluit geldt pas als afgerond wanneer de uitkomst ook is verwerkt in de relevante PSA-paragraaf en, indien nodig, in het Globaal Ontwerp en de technische of semantische documentatie.</li>
+</ul>
+<p><span style='font-size: small;'><a href="#change-log-samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
+<hr /></section></div><style>.print-site-enumerate-headings #index > h1:before { content: '1 ' }
 
                 .print-site-enumerate-headings #index h2:before { content: '1.' counter(counter-index-2) ' ' }
                 .print-site-enumerate-headings #index h2 {  counter-increment: counter-index-2 }
@@ -2673,6 +3142,11 @@ Voor de aansluiting van GBO op de OOTS Basisinrichting is het volgende nodig:</p
 
                 .print-site-enumerate-headings #vraagstukken h2:before { content: '9.' counter(counter-vraagstukken-2) ' ' }
                 .print-site-enumerate-headings #vraagstukken h2 {  counter-increment: counter-vraagstukken-2 }
+            
+.print-site-enumerate-headings #change-log > h1:before { content: '10 ' }
+
+                .print-site-enumerate-headings #change-log h2:before { content: '10.' counter(counter-change-log-2) ' ' }
+                .print-site-enumerate-headings #change-log h2 {  counter-increment: counter-change-log-2 }
             </style>
 
 
