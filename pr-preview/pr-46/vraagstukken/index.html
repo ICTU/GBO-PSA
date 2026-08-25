@@ -1124,7 +1124,7 @@
 
 
 <h1 id="open-besluiten">Open besluiten<a class="headerlink" href="#open-besluiten" title="Permanent link">&para;</a></h1>
-<p>Dit hoofdstuk bevat de architectuurbesluiten die nog nodig zijn voor verdere uitwerking. Detailvragen worden zoveel mogelijk bij de betreffende stelselfunctie behandeld. Na besluitvorming wordt de uitkomst verwerkt in die stelselfunctie en blijft hier alleen een verwijzing naar het besluit bestaan.</p>
+<p>Dit hoofdstuk bevat de architectuurbesluiten die nog nodig zijn voor de verdere uitwerking. De betreffende stelselfunctie behandelt detailvragen zoveel mogelijk zelf. Na een besluit verwerkt de PSA de uitkomst in die stelselfunctie. In dit hoofdstuk blijft daarna alleen een verwijzing naar het besluit staan.</p>
 <h2 id="besluitregister">Besluitregister<a class="headerlink" href="#besluitregister" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1142,16 +1142,16 @@
 <td><strong>B-01</strong></td>
 <td>Governance GBO-afspraken</td>
 <td>Alle</td>
-<td>In welk bestaand stelsel landen GBO-specifieke afspraken en wie ziet toe op naleving?</td>
-<td>FDS als basis voor bronontsluiting en generieke gegevensdeling, aangevuld met GDI- en domeingovernance.</td>
+<td>In welk bestaand stelsel landen GBO-specifieke afspraken? Wie ziet toe op naleving?</td>
+<td>FDS vormt de basis voor bronontsluiting en generieke gegevensdeling. GDI- en domeingovernance vullen dit aan.</td>
 <td>BZK, FDS/IBDS, betrokken beheerorganisaties</td>
 </tr>
 <tr>
 <td><strong>B-02</strong></td>
 <td>API-profiel bronontsluiting</td>
 <td>S07</td>
-<td>Hoe kan GraphQL als voorkeursprofiel voorgesteld en uitgewerkt worden en hoe verhoudt dit zich tot bestaande API-standaarden?</td>
-<td>Standaardiseer functionele eisen voor selectieve bevraging; werk GraphQL uit als voorkeursprofiel met een expliciete pas-toe-of-leg-uitroute.</td>
+<td>Hoe kan GraphQL als voorkeursprofiel worden uitgewerkt? Hoe verhoudt GraphQL zich tot bestaande API-standaarden?</td>
+<td>Functionele eisen voor selectieve bevraging worden gestandaardiseerd. GraphQL is het voorkeursprofiel met een expliciete pas-toe-of-leg-uitroute.</td>
 <td>Logius, FDS, Forum Standaardisatie, Kennisplatform API's</td>
 </tr>
 <tr>
@@ -1159,7 +1159,7 @@
 <td>Dienstencatalogus</td>
 <td>S05, S06, S07, S10</td>
 <td>Is de catalogus centraal, federatief of onderdeel van een bestaande FDS-catalogus?</td>
-<td>Federatief inhoudsbeheer met een gemeenschappelijk profiel en centrale vindbaarheid.</td>
+<td>Inhoudelijk beheer is federatief. Een gemeenschappelijk profiel zorgt voor centrale vindbaarheid.</td>
 <td>FDS, domeinen, bronhouders</td>
 </tr>
 <tr>
@@ -1167,31 +1167,31 @@
 <td>PDP-inrichting</td>
 <td>S05</td>
 <td>Wordt besluitvorming per bronhouder, gedeeld of hybride ingericht?</td>
-<td>Sta meerdere implementatievarianten toe onder één gestandaardiseerd PEP-PDP-koppelvlak en dezelfde beleidseisen.</td>
+<td>Meerdere implementatievarianten zijn mogelijk onder één gestandaardiseerd PEP-PDP-koppelvlak en dezelfde beleidseisen.</td>
 <td>Bronhouders, FDS/GDI</td>
 </tr>
 <tr>
 <td><strong>B-05</strong></td>
 <td>Policy-governance</td>
 <td>S05, S06</td>
-<td>Wie schrijft, beoordeelt en stelt beleid vast en wie beheert de distributie?</td>
-<td>Scheid inhoudelijk eigenaarschap van technisch beheer; beleid per dienst onder verantwoordelijkheid van bevoegde publieke partijen.</td>
+<td>Wie schrijft, beoordeelt en stelt beleid vast? Wie beheert de distributie?</td>
+<td>Inhoudelijk eigenaarschap en technisch beheer zijn gescheiden. Bevoegde publieke partijen zijn verantwoordelijk voor beleid per dienst.</td>
 <td>Vakdepartementen, bronhouders, FDS/GDI</td>
 </tr>
 <tr>
 <td><strong>B-06</strong></td>
 <td>Toestemming bij DvTP</td>
 <td>S01, S02</td>
-<td>Welke wettelijke grondslag en waarborgen gelden en is een centrale voorziening verplicht?</td>
-<td>Centrale of landelijk samenhangende toestemmingsvoorziening, mits wettelijk verankerd en met gelijkwaardig alternatief.</td>
+<td>Welke wettelijke grondslag en waarborgen gelden? Is een centrale voorziening verplicht?</td>
+<td>Een centrale of landelijk samenhangende toestemmingsvoorziening heeft de voorkeur. Dit vereist wettelijke verankering en een gelijkwaardig alternatief.</td>
 <td>Wetgever, BZK, toezichthouders, bronhouders</td>
 </tr>
 <tr>
 <td><strong>B-07</strong></td>
 <td>Pseudonieme identiteit</td>
 <td>S01, S03</td>
-<td>Waar worden pseudonieme verwijzingen beheerd en hoe worden zij aan toestemming en diensten gekoppeld?</td>
-<td>Geen BSN in het toestemmingsregister; gebruik een beveiligde pseudonieme verwijzing met minimale centrale koppelinformatie.</td>
+<td>Waar worden pseudonieme verwijzingen beheerd? Hoe worden zij aan toestemming en diensten gekoppeld?</td>
+<td>Het toestemmingsregister bevat geen BSN. Een beveiligde pseudonieme verwijzing bevat zo weinig mogelijk centrale koppelinformatie.</td>
 <td>Logius/BSNk, beheerder toestemmingsvoorziening</td>
 </tr>
 <tr>
@@ -1199,31 +1199,31 @@
 <td>Identity matching</td>
 <td>S03</td>
 <td>Welke functie mag een buitenlandse of walletidentiteit aan een BSN koppelen?</td>
-<td>Gebruik een erkende, afzonderlijk bestuurde functie met hoge assurance en expliciete foutafhandeling.</td>
+<td>Een erkende en afzonderlijk bestuurde functie voert de koppeling uit. Deze functie heeft hoge assurance en expliciete foutafhandeling.</td>
 <td>BZK, Logius/RvIG, eIDAS-governance</td>
 </tr>
 <tr>
 <td><strong>B-09</strong></td>
 <td>Vertrouwensstelsel private partijen</td>
 <td>S04</td>
-<td>Welke partijen mogen deelnemen en welk stelsel beheert toelating en toezicht?</td>
-<td>Hergebruik FDS-functies waar mogelijk, aangevuld met een specifiek juridisch en organisatorisch kader voor private dienstverleners. Sluit waar mogelijk aan bij bestaande (sectorale) vertrouwensstelsels.</td>
+<td>Welke partijen mogen deelnemen? Welk stelsel beheert toelating en toezicht?</td>
+<td>GBO gebruikt FDS-functies waar mogelijk. Voor private dienstverleners is aanvullend een juridisch en organisatorisch kader nodig.<br>Dit kader sluit waar mogelijk aan op bestaande sectorale vertrouwensstelsels.</td>
 <td>BZK, FDS, sectoren, toezichthouders</td>
 </tr>
 <tr>
 <td><strong>B-10</strong></td>
 <td>Logging en burgerinzage</td>
 <td>S09</td>
-<td>Is centrale aggregatie nodig en waar krijgt de burger inzage?</td>
-<td>Decentraal loggen, federatief correleren; centrale opslag alleen bij aangetoonde noodzaak.</td>
+<td>Is centrale aggregatie nodig? Waar krijgt de burger inzage?</td>
+<td>Logging is decentraal en correlatie is federatief. Centrale opslag is alleen toegestaan bij een aangetoonde noodzaak.</td>
 <td>BZK, Logius, bronhouders, AP</td>
 </tr>
 <tr>
 <td><strong>B-11</strong></td>
 <td>Semantische governance</td>
 <td>S10</td>
-<td>Wie beheert begrippen, schema's en mappings en hoe worden wijzigingen, versieovergangen en semantische conflicten vastgesteld en afgehandeld?</td>
-<td>Domeinen beheren inhoud; FDS beheert profielen, vindbaarheid en interoperabiliteitsregels.</td>
+<td>Wie beheert begrippen, schema's en mappings? Hoe worden wijzigingen, versieovergangen en semantische conflicten vastgesteld en afgehandeld?</td>
+<td>Domeinen beheren de inhoud. FDS beheert profielen, vindbaarheid en interoperabiliteitsregels.</td>
 <td>Geonovum, FDS, domeinen, bronhouders</td>
 </tr>
 <tr>
@@ -1231,7 +1231,7 @@
 <td>OOTS-functiegrenzen</td>
 <td>S08, S10</td>
 <td>Welke functies liggen in OOTS-V, de OOTS-adapter en de mappingvoorziening?</td>
-<td>Houd Europese proces- en transportfuncties in de Basisinrichting OOTS; gebruik GBO voor bronkoppeling en (optionele) semantische transformatie.</td>
+<td>De Basisinrichting OOTS verzorgt Europese proces- en transportfuncties. GBO verzorgt de bronkoppeling en eventueel de semantische transformatie.</td>
 <td>BZK/EZK, bNC-SDG</td>
 </tr>
 <tr>
@@ -1239,15 +1239,15 @@
 <td>PubEAA-uitgiftemodel</td>
 <td>S11</td>
 <td>Wordt uitgifte centraal, decentraal of federatief ingericht?</td>
-<td>Ondersteun alle varianten via gemeenschappelijke profielen; besluit per attribuuttype en verantwoordelijke bronhouder.</td>
+<td>Gemeenschappelijke profielen ondersteunen alle varianten. Het besluit kan per attribuuttype en verantwoordelijke bronhouder verschillen.</td>
 <td>BZK, RDI, bronhouders, nationale EUDI-governance</td>
 </tr>
 <tr>
 <td><strong>B-14</strong></td>
 <td>ASI-provider</td>
 <td>S11</td>
-<td>Wie biedt verify- en retrievefuncties aan QTSP's en onder welke voorwaarden?</td>
-<td>Een of meer gecertificeerde ASI-providers met inhoudelijke verantwoordelijkheid bij bronhouders.</td>
+<td>Wie biedt verify- en retrievefuncties aan QTSP's? Onder welke voorwaarden gebeurt dat?</td>
+<td>Een of meer gecertificeerde ASI-providers bieden deze functies. De inhoudelijke verantwoordelijkheid blijft bij de bronhouders.</td>
 <td>BZK, RDI, bronhouders, QTSP's</td>
 </tr>
 <tr>
@@ -1255,15 +1255,15 @@
 <td>Start van attestatie-uitgifte</td>
 <td>S11</td>
 <td>Start de gebruikersreis bij wallet, bronhouder, QTSP of dienstverlener?</td>
-<td>Maak meerdere gestandaardiseerde initiatieroutes mogelijk; voorkom dat één gebruikersinterface architectuurbepalend wordt.</td>
+<td>Meerdere gestandaardiseerde initiatieroutes blijven mogelijk. Eén gebruikersinterface mag de architectuur niet bepalen.</td>
 <td>EUDI-Wallet-governance, bronhouders, QTSP's</td>
 </tr>
 <tr>
 <td><strong>B-16</strong></td>
 <td>GBO-vertaallaag</td>
 <td>S07</td>
-<td>Is de vertaallaag een tijdelijke overgangsvoorziening of structurele gedeelde dienst?</td>
-<td>Tijdelijk of optioneel, met expliciete exitcriteria en zonder afhankelijkheid voor de doelarchitectuur.</td>
+<td>Is de vertaallaag een tijdelijke overgangsvoorziening of een structurele gedeelde dienst?</td>
+<td>De vertaallaag is tijdelijk of optioneel. Expliciete exitcriteria voorkomen afhankelijkheid in de doelarchitectuur.</td>
 <td>GBO-project, FDS, bronhouders</td>
 </tr>
 <tr>
@@ -1271,7 +1271,7 @@
 <td>Beheer referentiecomponenten</td>
 <td>Alle</td>
 <td>Welke componenten worden overgedragen, ondersteund of uitgefaseerd?</td>
-<td>Per component vooraf een landingsplan, acceptatiecriteria en eindverantwoordelijke vaststellen.</td>
+<td>Ieder component krijgt vooraf een landingsplan, acceptatiecriteria en een eindverantwoordelijke.</td>
 <td>GBO-project, beoogde beheerders</td>
 </tr>
 <tr>
@@ -1279,32 +1279,32 @@
 <td>Terugmelden van fouten of vermoedelijke onjuistheden</td>
 <td>S10</td>
 <td>Hoe worden fouten en waarschijnlijke onjuistheden terug gemeld aan de bronhouder?</td>
-<td>Nog niet uitgewerkt. NB: Voor OOTS is expliciet besloten geen terugmelding in te richten!</td>
+<td>Nog niet uitgewerkt. Voor OOTS is expliciet besloten geen terugmelding in te richten.</td>
 <td>Nog vast te stellen</td>
 </tr>
 <tr>
 <td><strong>B-19</strong></td>
 <td>Vertegenwoordiging &amp; bevoegdheidsbewijzen</td>
 <td>S04, S05, S09, S10</td>
-<td>Hoe wordt aantoonbaar gemaakt dat een persoon, organisatie of systeem namens een andere partij handelt, welke bevoegdheid daarbij geldt en hoe wordt die informatie betrokken bij de autorisatiebeslissing?</td>
-<td>Scheid identiteit, vertegenwoordiging en autorisatie. Ondersteun meerdere betrouwbare bronnen en bewijsvormen via een gemeenschappelijk model en gestandaardiseerde verificatie, zonder afhankelijkheid van één voorziening, leverancier of wallettype.</td>
+<td>Hoe toont een actor aan dat deze namens een andere partij handelt? Welke bevoegdheid geldt? Hoe gebruikt de autorisatiebeslissing deze informatie?</td>
+<td>Identiteit, vertegenwoordiging en autorisatie blijven gescheiden. Een gemeenschappelijk model ondersteunt meerdere betrouwbare bronnen en bewijsvormen.<br>Gestandaardiseerde verificatie voorkomt afhankelijkheid van één voorziening, leverancier of wallettype.</td>
 <td>BZK, GDI/FDS, domeinen, bronhouders en beheerders van relevante vertegenwoordigingsvoorzieningen</td>
 </tr>
 </tbody>
 </table>
 <h2 id="werkwijze-voor-besluitvorming">Werkwijze voor besluitvorming<a class="headerlink" href="#werkwijze-voor-besluitvorming" title="Permanent link">&para;</a></h2>
-<p>Voor ieder besluit wordt een Architecture Decision Record opgesteld met:</p>
+<p>Voor ieder besluit is een Architecture Decision Record nodig met:</p>
 <ul>
-<li>context en probleemstelling;</li>
-<li>toepasselijke principes en wettelijke kaders;</li>
-<li>betrokken rollen en verantwoordelijkheden;</li>
-<li>onderzochte alternatieven;</li>
-<li>keuze en onderbouwing;</li>
-<li>gevolgen voor generieke functies, stelselfuncties en documenten;</li>
-<li>risico's en mitigerende maatregelen;</li>
+<li>context en probleemstelling.</li>
+<li>toepasselijke principes en wettelijke kaders.</li>
+<li>betrokken rollen en verantwoordelijkheden.</li>
+<li>onderzochte alternatieven.</li>
+<li>keuze en onderbouwing.</li>
+<li>gevolgen voor generieke functies, stelselfuncties en documenten.</li>
+<li>risico's en mitigerende maatregelen.</li>
 <li>eigenaar, datum en heroverwegingsmoment.</li>
 </ul>
-<p>Een besluit wordt pas als afgerond beschouwd als het ook is verwerkt in de relevante PSA-paragraaf, het globaal ontwerp indien nodig, en de aansluitende technische of semantische documentatie.</p>
+<p>Een besluit is pas afgerond als de relevante PSA-paragraaf het besluit bevat. Werk zo nodig ook het globaal ontwerp en de technische of semantische documentatie bij.</p>
 
 
 

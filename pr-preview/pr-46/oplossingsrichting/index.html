@@ -1135,9 +1135,9 @@
 
 
 <h1 id="vertrekpunt-uit-het-globaal-ontwerp">Vertrekpunt uit het globaal ontwerp<a class="headerlink" href="#vertrekpunt-uit-het-globaal-ontwerp" title="Permanent link">&para;</a></h1>
-<p>De oplossingsrichting voor GBO is beschreven en onderbouwd in <a href="https://ictu.github.io/GBO-GO/main/#2-voorgestelde-oplossingsrichting">hoofdstuk 2 van het globaal ontwerp</a>. Dit hoofdstuk herhaalt die beschrijving niet, maar benoemt de architectuurconsequenties die in deze PSA normerend worden uitgewerkt.</p>
+<p><a href="https://ictu.github.io/GBO-GO/main/#2-voorgestelde-oplossingsrichting">Hoofdstuk 2 van het globaal ontwerp</a> beschrijft en onderbouwt de oplossingsrichting voor GBO. Dit hoofdstuk herhaalt die beschrijving niet. Het benoemt alleen de architectuurconsequenties die deze PSA normerend uitwerkt.</p>
 <h2 id="architectuurconsequenties">Architectuurconsequenties<a class="headerlink" href="#architectuurconsequenties" title="Permanent link">&para;</a></h2>
-<p>GBO gaat uit van een gemeenschappelijke bronontsluiting die door bronhouders eenmalig wordt ingericht en voor meerdere gegevensstromen kan worden gebruikt. Nieuwe gegevensvragen worden zoveel mogelijk door configuratie mogelijk gemaakt, zonder voor iedere toepassing of afnemer een nieuw bronkoppelvlak te ontwikkelen.</p>
+<p>GBO gaat uit van een gemeenschappelijke bronontsluiting. Een bronhouder richt deze ontsluiting één keer in en gebruikt deze daarna voor meerdere gegevensstromen. De inrichting voegt nieuwe gegevensvragen zoveel mogelijk via configuratie toe. Daardoor hoeft een bronhouder niet voor iedere toepassing of afnemer een nieuw bronkoppelvlak te ontwikkelen.</p>
 <p>Daaruit volgen de volgende consequenties voor de PSA:</p>
 <table>
 <thead>
@@ -1160,15 +1160,15 @@
 <td>F1, F2, F6 en S01 tot en met S06</td>
 </tr>
 <tr>
-<td>Aansluiting op externe stelsels wordt buiten de bronhouder afgehandeld.</td>
+<td>GBO handelt aansluitingen op externe stelsels buiten de bronhouder af.</td>
 <td>S08, S10 en S11</td>
 </tr>
 <tr>
-<td>OOTS-verkeer loopt binnen de GBO-oplossing via de Basisinrichting OOTS en OOTS-V.</td>
+<td>OOTS-verkeer loopt binnen GBO via de Basisinrichting OOTS en OOTS-V.</td>
 <td>S08 en S10</td>
 </tr>
 <tr>
-<td>Attestaties voor een EUDI-Wallet kunnen door bronhouders of QTSP's worden uitgegeven.</td>
+<td>Bronhouders of QTSP's kunnen attestaties voor een EUDI-Wallet uitgeven.</td>
 <td>S10 en S11</td>
 </tr>
 <tr>
@@ -1176,11 +1176,11 @@
 <td>S01 tot en met S05</td>
 </tr>
 <tr>
-<td>Gegevensuitwisseling is ketenbreed herleidbaar en controleerbaar.</td>
+<td>De gegevensuitwisseling is over de hele keten herleidbaar en controleerbaar.</td>
 <td>F8 en S09</td>
 </tr>
 <tr>
-<td>Bestaande afsprakenstelsels, standaarden en voorzieningen worden zoveel mogelijk hergebruikt.</td>
+<td>GBO gebruikt bestaande afsprakenstelsels, standaarden en voorzieningen waar dat mogelijk is.</td>
 <td>Ontwerpprincipes en realisatiestrategie</td>
 </tr>
 </tbody>
@@ -1188,28 +1188,29 @@
 <h2 id="afbakening-tussen-globaal-ontwerp-en-psa">Afbakening tussen globaal ontwerp en PSA<a class="headerlink" href="#afbakening-tussen-globaal-ontwerp-en-psa" title="Permanent link">&para;</a></h2>
 <p>Het globaal ontwerp is leidend voor:</p>
 <ul>
-<li>de probleem- en knelpuntenanalyse;</li>
-<li>de gekozen oplossingsrichting;</li>
-<li>de beschrijving en diagrammen van de interactiepatronen;</li>
-<li>de hoofdindeling in generieke functies en stelselfuncties;</li>
+<li>de probleem- en knelpuntenanalyse.</li>
+<li>de gekozen oplossingsrichting.</li>
+<li>de beschrijving en diagrammen van de interactiepatronen.</li>
+<li>de hoofdindeling in generieke functies en stelselfuncties.</li>
 <li>het overzicht van te ontwikkelen componenten en de impact op betrokken partijen.</li>
 </ul>
 <p>De PSA is leidend voor:</p>
 <ul>
-<li>de architectuur- en ontwerpprincipes;</li>
-<li>de normerende eisen aan de generieke functies;</li>
-<li>de afspraken, standaarden en functionele voorzieningen per stelselfunctie;</li>
-<li>de verantwoordelijkheids- en beheervraagstukken;</li>
+<li>de architectuur- en ontwerpprincipes.</li>
+<li>de normerende eisen aan de generieke functies.</li>
+<li>de afspraken, standaarden en functionele voorzieningen per stelselfunctie.</li>
+<li>de vragen over verantwoordelijkheden en beheer.</li>
 <li>de open architectuurbesluiten voor de verdere uitwerking.</li>
 </ul>
 <h2 id="gebruik-van-bestaande-stelsels">Gebruik van bestaande stelsels<a class="headerlink" href="#gebruik-van-bestaande-stelsels" title="Permanent link">&para;</a></h2>
-<p>GBO richt geen zelfstandig nieuw afsprakenstelsel in. Nieuwe of aangepaste afspraken, standaarden en voorzieningen worden waar mogelijk ondergebracht bij bestaande afsprakenstelsels en beheerorganisaties, in het bijzonder FDS, GDI, de nationale EUDI-Wallet-governance en de governance rond de Basisinrichting OOTS.</p>
-<p>Tijdens de projectfase kunnen referentiecomponenten of tijdelijke voorzieningen worden ontwikkeld om afspraken en standaarden te beproeven. Voor productiegebruik moet per onderdeel vooraf zijn vastgesteld:</p>
+<p>GBO richt geen zelfstandig nieuw afsprakenstelsel in. GBO brengt nieuwe of aangepaste afspraken, standaarden en voorzieningen waar mogelijk onder bij bestaande afsprakenstelsels en beheerorganisaties. Dit geldt vooral voor FDS, GDI, de nationale EUDI-Wallet-governance en de governance rond de Basisinrichting OOTS.</p>
+<p>Tijdens de projectfase kan het project referentiecomponenten of tijdelijke voorzieningen ontwikkelen. Daarmee kan het project afspraken en standaarden beproeven.</p>
+<p>Voor productiegebruik moeten de betrokken partijen vooraf per onderdeel vaststellen:</p>
 <ul>
-<li>welke partij inhoudelijk verantwoordelijk is;</li>
-<li>welk afsprakenstelsel de gebruiks- en toetredingsafspraken beheert;</li>
-<li>welke organisatie de standaard of het profiel beheert;</li>
-<li>welke organisatie het operationele beheer uitvoert;</li>
+<li>welke partij inhoudelijk verantwoordelijk is.</li>
+<li>welk afsprakenstelsel de gebruiks- en toetredingsafspraken beheert.</li>
+<li>welke organisatie de standaard of het profiel beheert.</li>
+<li>welke organisatie het operationele beheer uitvoert.</li>
 <li>hoe continuïteit, financiering en toezicht zijn geregeld.</li>
 </ul>
 

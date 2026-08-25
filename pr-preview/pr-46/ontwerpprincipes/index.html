@@ -1113,7 +1113,7 @@
 
 
 <h1 id="ontwerpprincipes">Ontwerpprincipes<a class="headerlink" href="#ontwerpprincipes" title="Permanent link">&para;</a></h1>
-<p>De ontwerpprincipes zijn normerend voor de verdere uitwerking en realisatie van GBO. Zij concretiseren de <a href="../architectuurprincipes/">architectuurprincipes</a> zonder een product- of leverancierskeuze voor te schrijven.</p>
+<p>De ontwerpprincipes zijn normerend voor de verdere uitwerking en realisatie van GBO. Zij werken de <a href="../architectuurprincipes/">architectuurprincipes</a> concreet uit zonder een product of leverancier voor te schrijven.</p>
 <table>
 <thead>
 <tr>
@@ -1126,67 +1126,67 @@
 <tr>
 <td><strong>D-01</strong></td>
 <td>Decentraal wat kan, centraal wat moet</td>
-<td>Gegevens en bronspecifieke logica blijven bij de bronhouder. Een centrale of gedeelde functie wordt alleen ingericht als interoperabiliteit, schaal, uniforme burgerinteractie, veiligheid of bestuurlijke beheersing dit vereist.</td>
+<td>Gegevens en bronspecifieke logica blijven bij de bronhouder. GBO gebruikt alleen een centrale of gedeelde functie als daar een duidelijke reden voor is.<br>Die reden kan interoperabiliteit, schaal, uniforme burgerinteractie, veiligheid of bestuurlijke beheersing zijn.</td>
 </tr>
 <tr>
 <td><strong>D-02</strong></td>
 <td>Afspraken boven standaarden boven voorzieningen</td>
-<td>Begin met rollen, verantwoordelijkheden en gebruiksafspraken. Standaardiseer waar interoperabiliteit nodig is. Richt alleen een gedeelde voorziening in als afspraken en standaarden onvoldoende zijn of het schaalvoordeel zo groot is dat de betrokken partijen erom vragen.</td>
+<td>De uitwerking begint met rollen, verantwoordelijkheden en gebruiksafspraken. Standaardisering volgt als interoperabiliteit dat vereist.<br>Een gedeelde voorziening komt alleen in beeld als afspraken en standaarden niet volstaan of als partijen aantoonbaar schaalvoordeel nodig hebben.</td>
 </tr>
 <tr>
 <td><strong>D-03</strong></td>
 <td>Hergebruik generieke overheidsvoorzieningen</td>
-<td>Gebruik bestaande GDI-, FDS-, eIDAS- en OOTS-bouwstenen als zij aan de eisen voldoen. Afwijkingen worden gemotiveerd volgens pas-toe-of-leg-uit.</td>
+<td>GBO gebruikt bestaande GDI-, FDS-, eIDAS- en OOTS-bouwstenen als deze aan de eisen voldoen. Een afwijking krijgt een motivering volgens pas-toe-of-leg-uit.</td>
 </tr>
 <tr>
 <td><strong>D-04</strong></td>
 <td>Modulair en ontkoppeld</td>
-<td>Iedere functionele component heeft één duidelijke verantwoordelijkheid en een gedocumenteerd koppelvlak. Vervanging van een component vereist geen wijziging van andere componenten buiten het koppelvlak.</td>
+<td>Iedere functionele component heeft één duidelijke verantwoordelijkheid en een gedocumenteerd koppelvlak. Vervanging van een component vereist geen wijzigingen buiten dat koppelvlak.</td>
 </tr>
 <tr>
 <td><strong>D-05</strong></td>
 <td>Gegevens bij de bron</td>
-<td>GBO creëert geen structureel gegevensmagazijn. Tijdelijke opslag is alleen toegestaan als dit noodzakelijk en rechtmatig is en bewaartermijn, beveiliging en verwijdering zijn vastgelegd. Dit is primair de verantwoordelijkheid van de bronhouder(s) en geen verantwoordelijkheid van GBO.</td>
+<td>GBO maakt geen structureel gegevensmagazijn. Tijdelijke opslag is alleen toegestaan als deze noodzakelijk en rechtmatig is.<br>De bewaartermijn, beveiliging en verwijdering moeten dan zijn vastgelegd. De bronhouder is hiervoor primair verantwoordelijk, niet GBO.</td>
 </tr>
 <tr>
 <td><strong>D-06</strong></td>
 <td>Herbruikbare componenten</td>
-<td>Bronontsluiting, autorisatie, beleidsbeheer, logging, semantische mapping en externe adapters worden als afzonderlijke, herbruikbare functies ingericht.</td>
+<td>GBO richt bronontsluiting, autorisatie, beleidsbeheer, logging, semantische mapping en externe adapters in als afzonderlijke, herbruikbare functies.</td>
 </tr>
 <tr>
 <td><strong>D-07</strong></td>
 <td>Open source waar passend</td>
-<td>Referentiecomponenten en technische profielen worden bij voorkeur open ontwikkeld en gepubliceerd. Een afwijking wordt gemotiveerd op grond van veiligheid, rechtmatigheid, continuïteit of doelmatigheid.</td>
+<td>Referentiecomponenten en technische profielen worden bij voorkeur open ontwikkeld en gepubliceerd. Een afwijking vereist een motivering vanuit veiligheid, rechtmatigheid, continuïteit of doelmatigheid.</td>
 </tr>
 <tr>
 <td><strong>D-08</strong></td>
 <td>Pas open standaarden toe</td>
-<td>Verplichte en aanbevolen standaarden van Forum Standaardisatie worden toegepast. Per koppelvlak wordt vastgelegd welke standaard en welk profiel gelden.</td>
+<td>GBO past verplichte en aanbevolen standaarden van Forum Standaardisatie toe. Voor ieder koppelvlak legt GBO de geldende standaard en het geldende profiel vast.</td>
 </tr>
 <tr>
 <td><strong>D-09</strong></td>
 <td>API-first en selectieve gegevensuitvraag</td>
-<td>Iedere bronontsluiting en gedeelde functie biedt een versieerbaar, machineleesbaar koppelvlak. De bronontsluiting ondersteunt selectieve gegevensvragen via een gestandaardiseerd API-profiel. GraphQL is de voorgestelde invulling; alternatieven moeten dezelfde eisen aan selectie, beveiliging, autorisatie, schema's en audit ondersteunen.</td>
+<td>Iedere bronontsluiting en gedeelde functie biedt een versieerbaar, machineleesbaar koppelvlak. De bronontsluiting ondersteunt selectieve gegevensvragen via een gestandaardiseerd API-profiel.<br>GraphQL is de voorgestelde invulling. Alternatieven moeten aan dezelfde eisen voor selectie, beveiliging, autorisatie, schema's en audit voldoen.</td>
 </tr>
 <tr>
 <td><strong>D-10</strong></td>
 <td>Privacy en security by design</td>
-<td>Voor iedere functie worden gegevensclassificatie, dreigingen, maatregelen, logging, bewaartermijnen en verantwoordelijkheden expliciet ontworpen.</td>
+<td>Het ontwerp beschrijft per functie de gegevensclassificatie, dreigingen, maatregelen, logging, bewaartermijnen en verantwoordelijkheden.</td>
 </tr>
 <tr>
 <td><strong>D-11</strong></td>
 <td>Least privilege</td>
-<td>Autorisatie wordt zo fijnmazig mogelijk uitgevoerd op afnemer, dienst, doel, grondslag, gegevensvraag en context. Beheerrechten zijn beperkt, tijdelijk en aantoonbaar toegekend.</td>
+<td>Autorisatie is zo fijnmazig mogelijk voor afnemer, dienst, doel, grondslag, gegevensvraag en context. Beheerrechten zijn beperkt, tijdelijk en aantoonbaar toegekend.</td>
 </tr>
 <tr>
 <td><strong>D-12</strong></td>
 <td>Aantoonbare veiligheid</td>
-<td>Deelnemers en gedeelde voorzieningen voldoen aantoonbaar aan toepasselijke beveiligingsnormen. Audits, testen, kwetsbaarheidsbeheer (ook SPOF(Single Point of Failure)-analyses) en incidentafhandeling zijn onderdeel van de aansluit- en beheerafspraken.</td>
+<td>Deelnemers en gedeelde voorzieningen tonen aan dat zij aan de toepasselijke beveiligingsnormen voldoen.<br>Aansluit- en beheerafspraken omvatten audits, testen, kwetsbaarheidsbeheer, analyses van Single Points of Failure (SPOF) en incidentafhandeling.</td>
 </tr>
 <tr>
 <td><strong>D-13</strong></td>
 <td>Uitzonderingen zijn expliciet en tijdelijk</td>
-<td>Afwijkingen van de doelarchitectuur worden vastgelegd als architectuurbesluit met eigenaar, einddatum of exitcriteria en een beoogd landingspad.</td>
+<td>GBO legt afwijkingen van de doelarchitectuur vast als architectuurbesluit. Dat besluit bevat een eigenaar, einddatum of exitcriteria en een beoogd landingspad.</td>
 </tr>
 <tr>
 <td><strong>D-14</strong></td>
@@ -1196,15 +1196,15 @@
 </tbody>
 </table>
 <h2 id="aanvullende-eisen-voor-de-bronontsluiting-api">Aanvullende eisen voor de bronontsluiting-API<a class="headerlink" href="#aanvullende-eisen-voor-de-bronontsluiting-api" title="Permanent link">&para;</a></h2>
-<p>De keuze voor het API-profiel wordt in een apart standaardisatietraject vastgesteld. Ongeacht de gekozen technologie geldt dat:</p>
+<p>Een apart standaardisatietraject stelt het API-profiel vast. Ongeacht de gekozen technologie gelden de volgende eisen:</p>
 <ul>
-<li>een afnemer alleen vooraf toegestane gegevensvragen kan uitvoeren;</li>
-<li>veld- en attribuutselectie aantoonbaar bijdraagt aan dataminimalisatie;</li>
-<li>autorisatiebeslissingen op gegevensniveau kunnen worden afgedwongen;</li>
-<li>schema's en wijzigingen versieerbaar zijn;</li>
-<li>beveiliging en authenticatie aansluiten op de geldende overheidsprofielen;</li>
-<li>logging en foutafhandeling gestandaardiseerd zijn;</li>
-<li>bronhouders via de GBO-vertaallaag kunnen aansluiten als zij het gekozen profiel nog niet rechtstreeks ondersteunen.</li>
+<li>een afnemer kan alleen vooraf toegestane gegevensvragen uitvoeren.</li>
+<li>veld- en attribuutselectie draagt aantoonbaar bij aan dataminimalisatie.</li>
+<li>de bronontsluiting kan autorisatiebeslissingen op gegevensniveau afdwingen.</li>
+<li>schema's en wijzigingen ondersteunen versiebeheer.</li>
+<li>beveiliging en authenticatie sluiten aan op de geldende overheidsprofielen.</li>
+<li>logging en foutafhandeling volgen een gestandaardiseerde werkwijze.</li>
+<li>de GBO-vertaallaag ondersteunt bronhouders die het gekozen profiel nog niet rechtstreeks kunnen aanbieden.</li>
 </ul>
 
 

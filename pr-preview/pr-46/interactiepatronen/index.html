@@ -1113,8 +1113,8 @@
 
 
 <h1 id="interactiepatronen">Interactiepatronen<a class="headerlink" href="#interactiepatronen" title="Permanent link">&para;</a></h1>
-<p>De drie interactiepatronen van GBO zijn beschreven in <a href="https://ictu.github.io/GBO-GO/main/#3-interactiepatronen">hoofdstuk 3 van het globaal ontwerp</a>. De procesbeschrijvingen en sequencediagrammen worden in de PSA niet herhaald.</p>
-<p>Dit hoofdstuk legt alleen vast welke stelselfuncties voor ieder patroon relevant zijn en welke aanvullende aandachtspunten in de PSA worden uitgewerkt.</p>
+<p><a href="https://ictu.github.io/GBO-GO/main/#3-interactiepatronen">Hoofdstuk 3 van het globaal ontwerp</a> beschrijft de drie interactiepatronen van GBO. De PSA herhaalt de procesbeschrijvingen en sequencediagrammen niet.</p>
+<p>Dit hoofdstuk beschrijft welke stelselfuncties voor ieder patroon relevant zijn. Ook benoemt het de aandachtspunten die de PSA verder uitwerkt.</p>
 <table>
 <thead>
 <tr>
@@ -1127,33 +1127,33 @@
 <tbody>
 <tr>
 <td><strong>A — Burger gebruikt EUDI-Wallet</strong></td>
-<td>De burger vraagt een attestatie van attributen op voor opname in een EUDI-Wallet. Uitgifte kan als PubEAA door of namens een bronhouder plaatsvinden, of als QEAA via een QTSP.</td>
+<td>De burger vraagt een attestatie van attributen op voor een EUDI-Wallet. Een bronhouder kan zelf of via een andere partij een PubEAA uitgeven. Een QTSP kan een QEAA uitgeven.</td>
 <td><a href="../capabilities/#s03-burgeridentificatie-pseudonimisering">S03</a>, <a href="../capabilities/#s04-organisatie-authenticatie-vertrouwensstelsel">S04</a>, <a href="../capabilities/#s05-autorisatie">S05</a>, <a href="../capabilities/#s07-gegevensontsluiting">S07</a>, <a href="../capabilities/#s09-logging-audit-traceerbaarheid">S09</a>, <a href="../capabilities/#s10-semantiek-gegevenscatalogus">S10</a> en <a href="../capabilities/#s11-attesteringsuitgifte">S11</a></td>
-<td>Identificatie van de burger; autorisatie van uitgifte, verificatie en retrieval; attestation rulebooks; semantische mapping; signing, status en intrekking; verantwoordelijkheidsverdeling tussen bronhouder, PubEAA-verstrekker, ASI-provider en QTSP.</td>
+<td>Identificatie van de burger.<br>Autorisatie van uitgifte, verificatie en retrieval.<br>Attestation rulebooks en semantische mapping.<br>Signing, status en intrekking.<br>Verdeling van verantwoordelijkheden tussen bronhouder, PubEAA-verstrekker, ASI-provider en QTSP.</td>
 </tr>
 <tr>
 <td><strong>B — Grensoverschrijdend verzoek via OOTS</strong></td>
-<td>Een publieke instantie in een andere lidstaat vraagt bewijsgegevens op bij een Nederlandse bronhouder in het kader van de SDG-verordening. Binnen de GBO-oplossing verloopt dit via de Basisinrichting OOTS en met name het OOTS-V component daarvan.</td>
+<td>Een publieke instantie in een andere lidstaat vraagt bewijsgegevens op bij een Nederlandse bronhouder op grond van de SDG-verordening. Binnen GBO loopt dit verzoek via de Basisinrichting OOTS, vooral via de OOTS-V-component.</td>
 <td><a href="../capabilities/#s04-organisatie-authenticatie-vertrouwensstelsel">S04</a>, <a href="../capabilities/#s05-autorisatie">S05</a>, <a href="../capabilities/#s07-gegevensontsluiting">S07</a>, <a href="../capabilities/#s08-oots-adapter">S08</a>, <a href="../capabilities/#s09-logging-audit-traceerbaarheid">S09</a> en <a href="../capabilities/#s10-semantiek-gegevenscatalogus">S10</a></td>
-<td>Aansluiting van OOTS-V op de bronontsluiting-API; autorisatie via dezelfde keten als andere gegevensvragen; mapping naar OOTS-EDM; centraal beheer van discovery- en aansluitgegevens; ketenbrede logging.</td>
+<td>Aansluiting van OOTS-V op de bronontsluiting-API.<br>Autorisatie via dezelfde keten als andere gegevensvragen.<br>Mapping naar OOTS-EDM.<br>Centraal beheer van discovery- en aansluitgegevens.<br>Logging over de hele keten.</td>
 </tr>
 <tr>
 <td><strong>C — Gegevensverzoek private dienstverlener</strong></td>
-<td>Een private dienstverlener vraagt gegevens op bij een bronhouder op basis van een wettelijk geldige grondslag. Als toestemming vereist is, wordt deze specifiek, geïnformeerd en aantoonbaar vastgelegd.</td>
+<td>Een private dienstverlener vraagt gegevens op bij een bronhouder op basis van een geldige juridische grondslag. Als toestemming nodig is, legt de toestemmingsvoorziening deze specifiek, geïnformeerd en aantoonbaar vast.</td>
 <td><a href="../capabilities/#s01-toestemmingsregistratie">S01</a> tot en met S07, <a href="../capabilities/#s09-logging-audit-traceerbaarheid">S09</a> en <a href="../capabilities/#s10-semantiek-gegevenscatalogus">S10</a></td>
-<td>Juridische grondslag; burgerinteractie; registratie, raadpleging en intrekking van toestemming; pseudonimisering als de afnemer geen BSN mag verwerken; toelating van dienstverleners; registratie van diensten en toegestane gegevensvragen.</td>
+<td>Juridische grondslag en burgerinteractie.<br>Registratie, raadpleging en intrekking van toestemming.<br>Pseudonimisering als de afnemer geen BSN mag verwerken.<br>Toelating van dienstverleners.<br>Registratie van diensten en toegestane gegevensvragen.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="gemeenschappelijke-eisen">Gemeenschappelijke eisen<a class="headerlink" href="#gemeenschappelijke-eisen" title="Permanent link">&para;</a></h2>
-<p>Ongeacht het interactiepatroon gelden de volgende eisen:</p>
+<p>Voor alle interactiepatronen gelden de volgende eisen:</p>
 <ul>
-<li>de bronhouder biedt geen patroon- of afnemerspecifiek bronkoppelvlak aan;</li>
-<li>iedere gegevensvraag wordt getoetst aan identiteit, grondslag, doel, gegevensvraag en relevante context;</li>
-<li>dezelfde generieke autorisatieketen wordt gebruikt, met patroon- of dienstspecifiek beleid;</li>
-<li>semantische en protocoltransformaties vinden plaats in expliciete, beheerde functies buiten het bronsysteem;</li>
-<li>iedere gegevensuitwisseling is ketenbreed herleidbaar;</li>
-<li>afwijkingen en patroonafhankelijke eisen worden als beleid, schema, mapping of configuratie beheerd en niet als hardgecodeerde implementatielogica.</li>
+<li>de bronhouder biedt geen patroon- of afnemerspecifiek bronkoppelvlak aan.</li>
+<li>de autorisatie toetst iedere gegevensvraag aan identiteit, grondslag, doel, gegevensvraag en relevante context.</li>
+<li>alle patronen gebruiken dezelfde generieke autorisatieketen, met patroon- of dienstspecifiek beleid.</li>
+<li>expliciete, beheerde functies buiten het bronsysteem voeren semantische en protocoltransformaties uit.</li>
+<li>iedere gegevensuitwisseling is over de hele keten herleidbaar.</li>
+<li>beleid, schema's, mappings of configuratie leggen afwijkingen en patroonafhankelijke eisen vast, niet hardgecodeerde implementatielogica.</li>
 </ul>
 
 
