@@ -1,130 +1,194 @@
 # Realisatiestrategie
 
-## Werkwijze
+## Uitgangspunten
 
-- Er komt geen nieuw stelsel en er komen geen "GBO"-voorzieningen, maar bestaande afspraken, standaarden en voorzieningen worden hergebruikt. Waar afspraken of standaarden aangevuld of aangepast moeten worden of voorzieningen ontworpen of ingericht moeten worden, wordt dit ingebracht bij de bestaande gremia. Voor het uitvoeren van pilots kan het nodig zijn om bepaalde functies tijdens de projectfase onder projectverantwoordelijkheid uit te voeren, maar voor in productiename zullen ook deze functies ondergebracht worden bij een bestaand afsprakenstelsel of een bestaande beheerorganisatie.
-Zie ook de paragraaf [Gebruik van bestaande stelsels](#gebruik-van-bestaande-stelsels) voor een verdere uitwerking hiervan.
+GBO richt geen zelfstandig nieuw afsprakenstelsel in. De realisatie vult bestaande afspraken, standaarden en voorzieningen aan en combineert deze waar nodig. GBO brengt nieuwe onderdelen waar mogelijk onder bij bestaande stelsels en beheerorganisaties.
 
-- Er worden gedurende de projectfase al wel pilots gestart waarin wordt gewerkt met de gewenste afspraken, standaarden en voorzieningen. Als deze nog niet bestaan, worden voorbeeld implementaties gebruikt die tevens gebruikt worden om het ontwerp te verbeteren. Uiteindelijk worden deze ontwikkelingen als referentie implementaties aangeboden aan de gremia waar het beheer belegd wordt. Dit gaat tot het niveau van "pre-productie": d.w.z. dat de afspraak of voorziening volledig genoeg is uitgewerkt om in productie genomen te kunnen worden. Maar de daadwerkelijke productiegang wordt aan de beoogde beheerder overgelaten. In sommige gevallen kan hier wet- en regelgeving voor nodig zijn, die in werking moet zijn getreden voor in productie gegaan kan worden.
+Tijdens pilots kan het project referentiecomponenten of tijdelijke voorzieningen ontwikkelen. Voor productiegebruik moeten de betrokken partijen vóór overdracht vaststellen:
 
-- De inrichting van de ontbrekende afspraken, standaarden en voorzieningen moet voldoen aan de [ontwerpprincipes](ontwerpprincipes.md). Gedurende het traject worden de ontwikkelingen hier periodiek op beoordeeld, waarover zo openbaar mogelijk (maar in elk geval naar de betrokken partijen) wordt gerapporteerd.
+- wie inhoudelijk eigenaar is.
+- waar de gebruiks- en aansluitafspraken worden beheerd.
+- wie standaarden en profielen beheert.
+- wie het operationele beheer en de ondersteuning uitvoert.
+- hoe financiering, continuïteit, toezicht en aansprakelijkheid zijn geregeld.
+- welke acceptatie- en exitcriteria gelden.
 
+De realisatie volgt de [ontwerpprincipes](ontwerpprincipes.md). Vooral de principes *afspraken boven standaarden boven voorzieningen* en *decentraal wat kan, centraal wat moet* zijn bepalend.
 
 ## Werkpakketten
 
-De stelselfuncties die nodig zijn om de GBO te kunnen gebruiken voor de drie gewenste toepassingen worden opgedeeld in werkpakketten. Met deze werkpakketten is het mogelijk om de drie toepassingen los van elkaar mogelijk te maken en afhankelijk van de prioriteiten rond de toepassingen te implementeren. Verder bieden de werkpakketten verschillende "deployment-opties" (manieren waarop de stelselfuncties geïmplementeerd en beheerd kunnen worden) waar afhankelijk van de prioriteit en de afnemersvragen voor gekozen kunnen worden.  
+De werkpakketten groeperen samenhangende stelselfuncties. Het globaal ontwerp bevat de oplossingsplaat en technische componentbeschrijvingen. Deze PSA herhaalt die informatie niet.
 
-Er worden drie werkpakketten onderscheiden, die gekoppeld zijn aan de drie toepassingen. Daarnaast is er een werkpakket dat voor alle toepassingen nodig is: de GBO-basis functies.  
+| Werkpakket&nbsp;&nbsp; | Stelselfuncties | Belangrijkste resultaten | Belangrijkste afhankelijkheden |
+|---|---|---|---|
+| **GBO-basis** | S04 tot en met S07, S09 en S10 | Aansluitvoorwaarden.<br>Bronontsluiting-API en dienstencatalogus.<br>Autorisatieprofiel en policy-governance.<br>Logging- en traceprofiel.<br>Semantische kaders. | FDS en GDI.<br>Standaardisering van het API-profiel.<br>Beheerkeuzes voor beleid en catalogi. |
+| **EUDI-Wallet** | S03 tot en met S05, S09 tot en met S11 | Attestation rulebooks.<br>PubEAA- en ASI-profielen.<br>Mappings.<br>Signing, status en intrekking.<br>Technische functies voor uitgifte en verificatie. | eIDAS2/ARF.<br>Nationale EUDI-Wallet-governance.<br>Certificering.<br>Rolverdeling tussen bronhouders en QTSP's. |
+| **OOTS** | S04, S05 en S07 tot en met S10 | Koppelvlak met OOTS-V.<br>OOTS-adapter.<br>OOTS-EDM-mappings.<br>Beheer van diensten en discovery.<br>Logging over de keten. | Basisinrichting OOTS.<br>Nationale SDG-governance.<br>Afspraken over mapping en beheer. |
+| **DvTP** | S01 tot en met S07, S09 en S10 | Toestemmingsmodel en -voorziening.<br>Pseudonimiseringsintegratie.<br>Toelatingsmodel voor private partijen.<br>Dienstregistratie.<br>Autorisatiebeleid. | Wet- en regelgeving.<br>Toezicht.<br>Beheer van de toestemmingsvoorziening.<br>Aansluiting op BSNk PP.<br>Governance voor privaat vertrouwen. |
 
-<figure>
-``` mermaid
---8<-- "diagrammen/gbo_swimlanes.mmd"
-```
-<figcaption>De werkpakketten getekend in relatie tot elkaar.<br/>
-NB: in deze figuur zijn enkel de voorzieningen geschetst - daarnaast zijn er ook afspraken en standaarden nodig.<br/>De lichtrode voorzieningen moeten nog ontwikkeld worden. De overige voorzieningen bestaan al - daar moet op aangesloten worden.</figcaption>
-</figure>
+## Werkpakket GBO-basis
 
+Dit werkpakket legt de herbruikbare basis voor alle interactiepatronen.
 
-### Werkpakket GBO Basis
+### Op te leveren afspraken en standaarden
 
-Legt de gemeenschappelijke fundatie voor alle drie de toepassingen: generieke bronontsluiting (GraphQL/FSC), autorisatieketen (PEP/PDP/PIP/PAP), logging en semantische catalogus.
+- aansluitvoorwaarden voor bronhouders en afnemers.
+- API-profiel voor de bronontsluiting.
+- model en beheerproces voor de dienstencatalogus.
+- autorisatieprofiel voor PEP, PDP en PIP.
+- governance- en distributieprofiel voor beleidsregels.
+- profiel voor ketenlogging en correlatie.
+- kaders voor begrippen, schema's, kwaliteit en mappings.
 
-| # | Onderdeel | Stelselfunctie | Afspraken (nog te maken) | Standaarden (te kiezen) | Voorzieningen (hergebruiken of ontwikkelen) |
-|---|---|---|---|---|---|
-| 1 | **Bronontsluiting API** | [S07](capabilities.md#s07-gegevensontsluiting-bronontsluiting-api) | Stelselafspraak (FDS):<br/>- één generieke ontsluiting per bronhouder, geen trajectspecifieke koppelingen<br/>- query-registratie verplicht<br/>- onboardingprocedure bronhouders | - FSC ✅<br/>- GraphQL ✅ (⚠️ positionering in FDS)<br/>- DCAT-AP NL ✅ | FSC Inway ✅<br/>- FSC Outway ✅<br/>- Query Template Registry ⚠️ |
-| 2 | **PEP/FTV in FSC + stelselrollen** | [S05](capabilities.md#s05-autorisatie-peppdppip) | Architectuurafspraak:<br/>- geünificeerde PEP/PDP-keten voor alle trajecten<br/>- GBO-AuthZEN-profiel<br/>- BSN-resolving alleen post-decision in PEP | - AuthZEN NL Gov (draft)<br/>- OPA/Rego ✅ (iWlz) | - PEP ⚠️ (ref-impl.)<br/>- PDP ⚠️ (ref-impl.)<br/>- PAP/Policy Store ⚠️ |
-| 3 | **Logging & traceerbaarheid** | [S09](capabilities.md#s09-logging-audit-traceerbaarheid) | - LDV-logging verplicht voor alle GBO-componenten<br/>- cross-component correlatie via trace-identifier | - LDV ✅ (ref-impl.)<br/>- OpenTelemetry ✅<br/>- W3C Trace Context ✅ | - LDV-logging per component ⚠️ (decentraal) |
-| 4 | **Semantiek & catalogus** | [S10](capabilities.md#s10-semantiek-gegevenscatalogus) | - Canoniek schema verplicht per bronhouder<br/>- serialisaties zijn afgeleid | - DCAT-AP NL ✅<br/>- SHACL ✅ | - GBO Schema Registry ⚠️<br/>- Serialisatie-service ⚠️ |
+### Op te leveren of aan te passen voorzieningen
 
----
+- aansluitbare bronontsluiting-componenten.
+- dienstencatalogus.
+- functies voor beleidsbeheer en -distributie.
+- ondersteunende GBO-vertaallaag.
+- schema- en mappingrepository.
+- test- en conformiteitsvoorzieningen.
 
-### Werkpakket EUDI-wallet (EDI)
+Referentiecomponenten ondersteunen interoperabiliteit en maken implementatie eenvoudiger. Zij zijn geen verplichte productkeuze. Een alternatief is toegestaan als het aantoonbaar aan de standaarden en eisen voldoet.
 
-Maakt het mogelijk dat burgers overheidsgegevens als digitale attestatie (PuBEAA) in een EUDI-wallet opslaan. Bouwt op GBO Basis.
+## Werkpakket EUDI-Wallet
 
-| # | Onderdeel | Stelselfunctie | Afspraken (nog te maken) | Standaarden (te kiezen) | Voorzieningen (hergebruiken of ontwikkelen) |
-|---|---|---|---|---|---|
-| 1 | **PuBEAA provider** (centrale uitgiftedienst) | [S11](capabilities.md#s11-attesteringsuitgifte-PuBEAA-qeaa) | - Attestation Rulebook per attribuuttype<br/>- wallet binding-profiel<br/>- intrekkingsbeleid<br/>- ⚖️ opname op NL Trusted List (RDI)<br/>- ⚖️ conformiteitsbeoordeling vereist (Verordening 910/2014) | - OpenID4VCI ✅<br/>- SD-JWT VC ✅<br/>- mdoc (ISO 18013-5) ✅<br/>- QESeal (ETSI EN 319 412) ✅<br/>- Token Status List ⚠️ | - Centrale PuBEAA uitgiftedienst ⚠️<br/>- Opname LoTE ⚠️<br/>- NL Wallet ✅ (pilot) |
-| 2 | **Authentic Source Interface** (verificatiedienst) | [S11](capabilities.md#s11-attesteringsuitgifte-PuBEAA-qeaa) | - Welke partijen de verificatieservice mogen bevragen en onder welke voorwaarden? | - OpenID4VP ✅ | - Centrale verificatiedienst ⚠️ |
-| 3 | **Mapping GraphQL → EDI-attestaties** | [S10](capabilities.md#s10-semantiek-gegevenscatalogus) | - Mapping naar PuBEAA attestatieschema's verplicht per bronhouder | - SD-JWT VC / mdoc | - Serialisatie-service ⚠️ (onderdeel [S10](capabilities.md#s10-semantiek-gegevenscatalogus)) |
+Dit werkpakket maakt attestatie-uitgifte mogelijk en ondersteunt QTSP's.
 
+### Op te leveren afspraken en standaarden
 
----
+- rolverdeling tussen bronhouder, PubEAA-verstrekker, ASI-provider en QTSP.
+- attestation rulebooks per attribuuttype.
+- profielen voor uitgifte, verificatie, retrieval, walletbinding, signing, status en intrekking.
+- schema's en mappings per attestatietype.
+- toelatings- en certificeringseisen.
 
-### Werkpakket OOTS
+### Inrichtingsvarianten
 
-Maakt het mogelijk dat Europese overheden via OOTS (Once Only Technical System) bewijsstukken opvragen bij Nederlandse bronhouders (SDG-verordening EU 2018/1724). Bouwt op GBO Basis.
+De realisatie ondersteunt meerdere varianten:
 
-| # | Onderdeel | Stelselfunctie | Afspraken (nog te maken) | Standaarden (te kiezen) | Voorzieningen (hergebruiken of ontwikkelen) |
-|---|---|---|---|---|---|
-| 1 | **OOTS-adapter** (XML ↔ GraphQL) | [S08](capabilities.md#s08-oots-adapter-grensoverschrijdend), [S10](capabilities.md#s10-semantiek-gegevenscatalogus) | Architectuurafspraak:<br/>- Basisinrichting OOTS is enige AS4-toegangspoort<br/>- SMP-registratie centraal beheerd<br/>- OOTS-verzoeken door zelfde PEP/PDP-keten | - eDelivery AS4 ✅<br/>- OOTS-EDM ✅<br/>- SMP 2.1 ✅ | - Domibus Access Point ✅ (⚠️ inrichting)<br/>- OOTS Adapter ⚠️<br/>- SMP Publisher ⚠️ |
-| 2 | **Mapping GraphQL → OOTS-schema's** | [S10](capabilities.md#s10-semantiek-gegevenscatalogus) | - Mapping naar OOTS Semantic Repository evidence types verplicht<br/>- per bronhouder bepalen welke data ontsloten wordt | OOTS-EDM ✅ | Via GBO Schema Registry ([S10](capabilities.md#s10-semantiek-gegevenscatalogus)) |
+- een bronhouder beheert zelf een PubEAA-verstrekker.
+- meerdere bronhouders gebruiken een gedeelde technische PubEAA-verstrekker.
+- een QTSP geeft QEAA's uit na verificatie of retrieval via een ASI-provider.
+- per attribuuttype of domein is een combinatie van deze varianten mogelijk.
 
----
+De PSA legt vooraf geen centrale keuze tussen deze varianten vast. De interfaces en eisen moeten ervoor zorgen dat de varianten onderling uitwisselbaar zijn.
 
-### Werkpakket DvTP
+## Werkpakket OOTS
 
-Maakt het mogelijk dat private dienstverleners met toestemming van de burger gegevens opvragen bij overheidsbronhouders. Bouwt op GBO Basis en voegt toestemmingsinfrastructuur toe.
+Dit werkpakket koppelt de gemeenschappelijke bronontsluiting aan de Basisinrichting OOTS.
 
-> ⚖️ **Juridische randvoorwaarde:** Pas operationeel na inwerkingtreding van de benodigde wet- en regelgeving (expliciete bevoegdheid voor bronhouders om op verzoek van de burger gegevens te verstrekken aan private dienstverleners). Technische uitwerking loopt parallel aan het wetgevingstraject.
+### Op te leveren afspraken en standaarden
 
-| # | Onderdeel | Stelselfunctie | Afspraken (nog te maken) | Standaarden (te kiezen) | Voorzieningen (hergebruiken of ontwikkelen) |
-|---|---|---|---|---|---|
-| 1 | **Toestemmingsportaal** | [S02](capabilities.md#s02-toestemmingsportaal-burger-interactie) | - GBO-UX-richtlijnen (doel, afnemer, gegevens, geldigheidsduur)<br/>- ⚖️ gelijkwaardig alternatief verplicht (wettelijk te verankeren)<br/>- ⚖️ geen nadeel bij weigering<br/>- architectuurafspraak: pseudonimisering in portaal | - DigiD (SAML/OIDC) ✅<br/>- WCAG 2.1 AA ✅ | - Toestemmingsportaal ⚠️<br/>- BSNk Activate ✅ (⚠️ onboarding portaal) |
-| 2 | **Toestemmingsregister** | [S01](capabilities.md#s01-toestemmingenregistratie) | - Grondslagtypen per traject (toestemming/wettelijke basis/doelbinding)<br/>- formaat grondslag-record<br/>- intrekkingsrecht burger<br/>- ⚖️ Wettelijke basis vereist | - W3C ODRL ✅<br/>- GBO PIP-profiel ⚠️ | - Toestemmingsregister ⚠️<br/>- Policy Store ⚠️ |
-| 3 | **Aansluiting BSNk PP** | [S03](capabilities.md#s03-burgeridentificatie-pseudonimisering) | - BSN mag private dienstverleners nooit bereiken<br/>- onboarding private dienstverleners als BSNk PP-deelnemer |  | - BSNk PP ✅ (productie)<br/>- BSNk Transform/Close ✅ (⚠️ PEP-integratie) |
-| 4 | **Aansluiting Stelsel Toegang** | [S04](capabilities.md#s04-organisatie-authenticatie-vertrouwensstelsel) | - Onboardingprocedure private dienstverleners<br/>- welke trust anchors geaccepteerd per traject | - PKI Overheid ✅<br/>- eIDAS Trusted Lists ✅ | - FDS Poortwachter ⚠️<br/>- FDS Marktmeester ⚠️<br/>- eHerkenning ✅ |
-| 5 | **Policies voor afnemers o.b.v. dienstenregister** | [S05](capabilities.md#s05-autorisatie-peppdppip), [S06](capabilities.md#s06-beleidsbeheer-distributie-pap) | - Beleidstemplates per traject (wie mag wat opvragen, onder welke grondslag)<br/>- governance beleidswijzigingen<br/>- RFC-procedure analoog aan iWlz | - OPA/Rego ✅<br/>- OPA Bundle API ✅<br/>- W3C ODRL ✅ | - PAP/Policy Store ⚠️<br/>- OPA Bundle Server ⚠️ |
+- het koppelvlak tussen OOTS-V en de bronontsluiting-API.
+- autorisatie- en loggingafspraken voor OOTS-verzoeken.
+- beheerproces voor gegevensdiensten, discovery en OOTS-EDM-mappings.
+- verdeling van verantwoordelijkheden bij fouten, wijzigingen en incidenten.
 
----
+### Afbakening
 
-*Legenda: ✅ beschikbaar / in gebruik · ⚠️ nog te realiseren · ⚖️ juridische randvoorwaarde*
+Binnen GBO verzorgt de Basisinrichting OOTS de Europese proces- en transportfuncties. De GBO-uitwerking richt zich op:
 
----
+- de aansluiting van OOTS-V op de generieke bronontsluiting.
+- semantische mapping naar overeengekomen evidence types.
+- toepassing van de generieke autorisatie- en loggingfuncties.
 
-## Implementatie bij bronhouders
+Sectorale en eigen OOTS-aansluitingen vallen buiten de realisatie van GBO.
 
-Bronhouders die gebruik willen maken van GBO moeten de componenten van het GBO-Basis werkpakket in de eigen omgeving installeren en onderhouden. Alleen de policy store met beleidsregels (PAP) wordt centraal aangeboden, maar daar moet wel op aangesloten worden.  
-GBO biedt bronhouders hiervoor referentiecomponenten aan, die de inrichting sterk vereenvoudigen. En als het (nog) niet haalbaar is om gegevens uit de bron met een GraphQL-API beschikbaar te stellen, biedt GBO ondersteuning en tools om eventueel met andere API's aan te sluiten.
+## Werkpakket DvTP
 
-Als bronhouders de GBO-Basis componenten hebben geïnstalleerd kunnen ze gebruik maken van de centrale componenten om de verschillende gegevensstromen te bedienen, die vanuit de andere werkpakketten ontwikkeld worden. Daar hoeven zij verder niets voor in te richten - er moeten enkel afspraken gemaakt worden over wie wanneer onder welke voorwaarden gegevens mogen opvragen.  
+Dit werkpakket maakt gegevensverstrekking aan private dienstverleners mogelijk als daarvoor een geldige juridische grondslag bestaat.
 
-Of bronhouders gebruik maken van de centrale componenten die nodig zijn om de verschillende gegevensstromen te bedienen, is een beleidsafweging. Voor zover deze componenten niet in wet- en regelgeving zijn opgenomen en (nog) niet op de pas-toe-of-leg-uit lijst staan, is het de bronhouders vrij om eigen componenten te gebruiken.  
-Zo kan voor het uitgeven van geattesteerde attributen (EUDI-Wallet) ook een eigen PubEAA-provider gebruikt worden, of afspraken met QTSP's gemaakt worden om QEAA's uit te geven. En voor aansluiting op OOTS kunnen ook eigen voorzieningen gebruikt worden, zoals in de onderwijswereld al gebruik gemaakt wordt van EMREX.
+### Juridische randvoorwaarde
 
-## Gebruik van bestaande stelsels
+Productiegebruik is pas mogelijk als wet- en regelgeving voldoende duidelijkheid geeft over:
 
-GBO zal gebruik maken van bestaande afspraken, standaarden en voorzieningen, maar daar ook een aantal aan toevoegen of uitbreiden. De afspraken, standaarden en voorzieningen die ontwikkeld worden, moeten landen in bestaande afsprakenstelsels en/of beheerorganisaties. Als er sprake is van een doorontwikkeling is de keuze voor dat afsprakenstelsel of die beheerorganisatie eenvoudig: dat blijft bij de huidige organisatie en de doorontwikkeling wordt zoveel mogelijk met of zelfs door die organisatie doorgevoerd. Maar voor nieuwe afspraken, standaarden of voorzieningen moet een geschikte organisatie gevonden worden.  
-In de onderstaande tabel is per stelselfunctie aangegeven waar de bijbehorende afspraken, standaarden en voorzieningen naar verwachting kunnen landen. Daarbij is onderscheid gemaakt tussen inhoudelijke governance, standaardbeheer en operationeel beheer van voorzieningen. Voor onderdelen waarvoor nog geen bestaande beheerorganisatie evident is, is het open besluitpunt expliciet gemaakt.
+- wanneer een bronhouder gegevens aan een private dienstverlener mag verstrekken.
+- welke eisen gelden voor toestemming of een andere grondslag.
+- welke rechten de burger heeft.
+- welke regels gelden voor toelating, toezicht en handhaving.
+- hoe het BSN en andere identificerende gegevens worden beschermd.
 
+### Op te leveren afspraken en standaarden
 
-| Stelselfunctie / beheerobject                                                | Werkpakket / relatie                   | Aard                                             | Beoogd afsprakenstelsel / governance                                                                            | Beoogde beheerorganisatie(s)                                                                                                  | Toelichting                                                                                                                                                                                                                                                                           | Status / besluitpunt                                                                                         |
-| ---------------------------------------------------------------------------- | -------------------------------------- | ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| **GraphQL-profiel voor bronontsluiting**                                     | GBO Basis / S07                        | Standaard / profiel                              | Digikoppeling voor koppelvlaknormering; FDS voor gebruiksafspraken                                              | Logius, in afstemming met FDS/IBDS en Kennisplatform API’s                                                                    | GraphQL is het beoogde generieke koppelvlak voor bronontsluiting. Het profiel hoort qua technische API-governance logisch bij Digikoppeling/API-standaarden, maar het gebruik ervan binnen gegevensdeling — bijvoorbeeld query-governance, autorisatie en onboarding — hoort bij FDS. | Besluiten of GraphQL formeel een Digikoppeling-profiel wordt, een FDS-profiel, of een combinatie van beide.  |
-| **FSC-bronontsluiting: Inway, Outway en aansluitvoorwaarden**                | GBO Basis / S07                        | Afspraak + voorziening / component               | FDS                                                                                                             | FDS/IBDS voor stelselafspraken; RINIS voor operationeel beheer | FSC is de beoogde transport- en vertrouwensinfrastructuur voor federatieve bronontsluiting. De afspraken over één generieke ontsluiting per bronhouder, onboarding en aansluiting moeten landen in FDS.                                                                               |  |
-| **Query Template Registry en query-registratie**                             | GBO Basis / S07                        | Voorziening + beheerproces                       | FDS                                                                                                             | FDS/IBDS; uitvoeringsbeheer nader te bepalen, mogelijk Logius of beheerder van een FDS-catalogus/developerportaal             | Query-registratie is essentieel om generieke GraphQL-ontsluiting beheersbaar en autoriseerbaar te maken. Dit is meer dan een technische repository: het raakt governance op welke gegevensvragen zijn toegestaan.                                                                     | Nog expliciet beleggen; ontbreekt nu als afzonderlijk beheerobject.                                          |
-| **Federatieve Toegangsverlening: PEP/PDP/PIP-profiel**                       | GBO Basis / S05        | Architectuurafspraak + standaardprofiel          | FDS / GDI-governance                                                                                            | Ontwikkeling via Realisatie IBDS/FDS; structureel beheer bij Logius of een GDI-beheerlijn                                     | De PEP/PDP/PIP-keten is de generieke autorisatieketen voor alle gegevensstromen. Het profiel moet voorkomen dat EDI, OOTS en DvTP elk een eigen autorisatiemodel krijgen.                                                                                                         | Structurele beheerrelatie tussen FDS, GDI en Logius expliciteren.                                            |
-| **GBO-AuthZEN-profiel**                                                      | GBO Basis / S05                        | Standaard / profiel                              | FDS / GDI                                                                                                       | Logius/FDS, met IBDS als ontwikkelomgeving                                                                                    | Het profiel concretiseert hoe autorisatiebesluiten worden gevraagd en genomen binnen de GBO-keten. Het hoort bij de FTV-afspraken en moet generiek bruikbaar zijn voor meerdere gegevensstromen.                                                                                      | Status van draft naar beheer expliciet maken.                                                                |
-| **PAP, Policy Store en OPA Bundle Server**                                   | GBO Basis / S05-S06            | Voorziening + beheerproces                       | FDS / FTV-governance                                                                                            | FDS/IBDS; operationeel beheer nader te bepalen, mogelijk Logius                                                               | Policybeheer is een aparte stelselfunctie en moet niet impliciet onder “toestemming” of “FTV” verdwijnen. Het gaat om beleidstemplates, wijzigingsprocedures, distributie van policies en versiebeheer.                                                                               | Als aparte rij opnemen; besluit nodig over eigenaar van policy-governance en technisch beheer.               |
-| **Beleidstemplates en RFC-procedure voor afnemersdiensten**                  | DvTP / S05-S06                         | Afspraak + beheerproces                          | FDS, mogelijk aangevuld met sectoraal afsprakenstelsel of TIP voor private partijen                             | FDS/IBDS; betrokkenheid van sectorale stelsels en private vertrouwensstelsels                                                 | Voor DvTP moet worden vastgelegd wie welke gegevens mag opvragen, onder welke grondslag, voor welke dienst en met welke geldigheidsduur. Dit vraagt inhoudelijke governance, niet alleen technische policy-distributie.                                                               | Besluit nodig over verhouding tussen FDS, sectorale stelsels, TIP en wettelijke DvTP-kaders.                 |
-| **Logboek Dataverwerkingen en traceerbaarheid**                              | GBO Basis / S09                        | Standaard + verplicht gebruik                    | FDS / GDI                                                                                                       | Logius                                                                                                                        | LDV is het logische generieke kader voor logging van dataverwerkingen. Voor GBO moet worden vastgelegd dat alle componenten LDV-conform loggen en dat cross-component correlatie mogelijk is via trace-identifiers.                                                                   | Aanscherpen naar verplicht gebruik voor alle GBO-componenten en opnemen van correlatie-eisen.                |
-| **OpenTelemetry en W3C Trace Context-profiel**                               | GBO Basis / S09                        | Technisch profiel                                | FDS / technische architectuurgovernance                                                                         | Logius/FDS, eventueel in afstemming met beheerder LDV                                                                         | Naast de functionele LDV-logging zijn technische traceerbaarheid en correlatie nodig tussen portaal, PEP, FSC, bronhouder en adapters.                                                                                                                                                | Beleggen als technisch profiel bij de logging- en observability-afspraken.                                   |
-| **Semantische standaarden: DCAT-AP NL, NL-SBB, RDF/SHACL, herkomstmetadata** | GBO Basis / S10                        | Standaard / semantische governance               | Federatief: FDS voor gebruik, Geonovum voor semantische standaarden waar passend                                | Geonovum voor relevante semantische standaarden; domeinbronhouders voor domeinmodellen                                        | Semantiek moet federatief worden ingericht: centrale kaders voor vindbaarheid, beschrijving en validatie, maar domeinen blijven verantwoordelijk voor hun eigen begrippen en gegevensmodellen.                                                                                        | Verduidelijken welk deel standaardbeheer is en welk deel domeinverantwoordelijkheid.                         |
-| **GBO Schema Registry**                                                      | GBO Basis, EDI, OOTS / S10         | Voorziening                                      | FDS-catalogusgovernance, met semantische kaders vanuit Geonovum                                                 | Operationeel beheer nader te bepalen; inhoudelijke verantwoordelijkheid bij bronhouders/domeinen                              | De Schema Registry is nodig voor canonieke schema’s per bronhouder en vormt de basis voor serialisatie naar EDI- en OOTS-formaten. Dit is geen zuivere semantische standaard, maar een beheerde voorziening.                                                                          | Nieuwe voorziening; beheerder en financiering expliciet bepalen.                                             |
-| **Serialisatie-service GraphQL → EDI/OOTS**                                  | GBO Basis, EDI, OOTS / S10-S11-S08 | Voorziening / referentiecomponent                | FDS voor generiek gebruik; EDI- en OOTS-governance voor specifieke doelmodellen                             | Operationeel beheer nader te bepalen; inhoudelijke mapping onder verantwoordelijkheid van bronhouders en betreffende stelsels | De serialisatie-service vertaalt generieke brondata naar specifieke attestatie- of evidence-formaten. Dit is een cruciale brugfunctie tussen generieke bronontsluiting en domeinspecifieke Europese stelsels.                                                                         | Apart beleggen; niet automatisch onder Geonovum of Logius schuiven zonder besluit.                           |
-| **Centrale vertaallaag REST/SOAP → GraphQL**                                 | GBO Basis / deployment-optie C         | Tijdelijke voorziening / overgangscomponent      | Projectgovernance tijdens pilot; daarna FDS of uitfaseren                                                       | Tijdelijk GBO-project; structureel beheer alleen als overgangsvoorziening expliciet wordt toegestaan                          | De vertaallaag helpt bronhouders die nog geen eigen GraphQL-API kunnen aanbieden. Omdat de doelarchitectuur ligt bij bronhouder-eigen GraphQL-ontsluiting, moet deze voorziening een tijdelijk karakter houden.                                                                       | Besluit nodig over beheerduur, exitcriteria en voorwaarden voor productiegebruik.                            |
-| **PuBEAA-provider voor publieke attestaties**                               | EUDI-wallet / S11                      | Voorziening + wettelijke rol                     | EUDI-Wallet-governance / nationale eIDAS-governance                                                              | Nader te bepalen; RvIG logisch voor PID/BRP-gerelateerde attributen; mogelijk federatief model voor domeinattributen          | PuBEAA-uitgifte vraagt certificering, opname op relevante vertrouwenslijsten en duidelijke bronhouderverantwoordelijkheid. RvIG is logisch voor persoonsidentiteitsgegevens, maar niet automatisch voor alle publieke attributen.                                                    | Besluit nodig over centraal, decentraal of federatief uitgiftemodel.                                         |
-| **Attestation Rulebooks per attribuuttype**                                  | EUDI-wallet / S11                      | Afspraak / inhoudelijke governance               | EUDI-Wallet-governance, met bronhouder- en domeingovernance                                                      | BZK voor nationale regie; bronhouders/domeinen voor inhoud; technische beheerder nader te bepalen                             | Per attribuuttype moet worden vastgelegd welke bron leidend is, welke gegevens worden uitgegeven, welke binding en intrekking gelden en welke betrouwbaarheidsniveaus van toepassing zijn.                                                                                            | Apart beleggen naast de technische PuBEAA-provider.                                                         |
-| **ASI-provider / verificatiedienst**                                         | EUDI-wallet / S11                      | Voorziening                                      | EUDI-Wallet-governance / nationale eIDAS-governance                                                              | Nader te bepalen; Logius mogelijk voor generieke technische infrastructuur                                                    | De ASI-providerfunctie betreft het kunnen verifiëren of opvragen van gegevens bij authentieke bronnen. Logius kan logisch zijn voor generieke infrastructuur, maar de inhoudelijke verantwoordelijkheid blijft bij bronhouders.                                                       | Verduidelijken verschil tussen technische ASI-infrastructuur en inhoudelijke bronhouderverantwoordelijkheid. |
-| **Mapping GraphQL → EDI-attestaties**                                        | EUDI-wallet / S10-S11                  | Semantische mapping + beheerproces               | EUDI-Wallet-governance, gekoppeld aan GBO Schema Registry                                                        | Bronhouders/domeinen inhoudelijk; technische ondersteuning via beheerder Schema Registry/Serialisatie-service                 | De mapping bepaalt hoe brongegevens worden vertaald naar SD-JWT VC, mdoc of andere attestatieformaten. Dit raakt zowel semantiek als juridische betekenis van attributen.                                                                                                             | Beleggen per attribuuttype; koppelen aan Attestation Rulebooks.                                              |
-| **OOTS-basisinrichting: Domibus Access Point en SMP**                        | OOTS / S08                         | Voorziening + aansluitafspraak                   | OOTS-governance                                                                                             | BZK/bNC-SDG voor nationale regie; RINIS logisch voor basisinrichting en technische OOTS-aansluiting                           | Voor OOTS ligt het beheer van de AS4-toegangspoort, Domibus-inrichting en SMP-registratie dichter bij de bestaande OOTS-basisinrichting dan bij generieke GBO-governance.                                                                                                         | Expliciet maken dat dit geen generieke GBO-voorziening is, maar aansluiting op OOTS-basisinrichting.         |
-| **GBO OOTS-adapter XML ↔ GraphQL**                                           | OOTS / S08-S10                     | Voorziening / adapter                            | OOTS-governance + FDS voor achterliggende bronontsluiting                                                   | Operationeel beheer nader te bepalen; nationale SDG-regie opdrachtgever                                                       | De adapter vertaalt OOTS-verzoeken naar GraphQL en terug naar OOTS-EDM. Dit is een specifieke gegevensstroomadapter bovenop de generieke GBO-basis.                                                                                                                                   | Beheer apart beleggen; niet laten verdwijnen onder “semantische vertaling”.                                  |
-| **Mapping GraphQL → OOTS Evidence Types**                                    | OOTS / S10                         | Semantische mapping + inhoudelijke governance    | OOTS-governance, met semantische kaders vanuit Geonovum waar passend                                        | bNC-SDG/BZK als nationale opdrachtgever; bronhouders voor inhoud; Geonovum mogelijk voor methodiek/standaarden                | De mapping naar OOTS Evidence Types is deels technisch-semantisch, maar ook inhoudelijk: welke Nederlandse gegevens bewijzen welk Europees evidence requirement?                                                                                                                      | Besluit nodig over nationale regie en goedkeuringsproces per evidence type.                                  |
-| **Toestemmingsportaal voor burgerinteractie**                                | DvTP / S02                             | Voorziening + UX-afspraken                       | GDI-governance / DvTP-governance                                                                                | Logius/MijnOverheid als kandidaat; BZK voor wettelijke en beleidsmatige regie                                                 | Het portaal moet burgers inzicht geven in doel, afnemer, gegevensset, geldigheidsduur, intrekking en gevolgen van weigering. De functie sluit aan bij MijnOverheid, maar vraagt zwaardere juridische en UX-eisen dan alleen tonen van overheidszaken.                                 | Besluit nodig over centrale of decentrale portaalvariant.                                                    |
-| **Toestemmingsregister / grondslagregister**                                 | DvTP / S01                             | Voorziening + juridisch beheerproces             | GDI-governance / FDS / DvTP-governance                                                                          | Logius of IBDS als kandidaat                                                     | Het register fungeert als PIP voor PDP-besluiten en moet grondslag, doelbinding, geldigheid, intrekking en bewijsbaarheid vastleggen.                                                                                                                                                 | Juridische grondslag en beheerder moeten vóór productie zijn vastgesteld.                                    |
-| **GBO PIP-profiel voor toestemming en grondslag**                            | DvTP / S01-S05                         | Standaard / profiel                              | FDS / FTV-governance                                                                                            | FDS/IBDS; structureel beheer mogelijk bij Logius                                                                              | Het PIP-profiel bepaalt hoe PDP’s toestemmings- en grondslaginformatie opvragen en interpreteren. Dit moet generiek genoeg zijn voor meerdere trajecten, niet alleen DvTP.                                                                                                            | Als apart profiel opnemen naast het toestemmingsregister zelf.                                               |
-| **BSNk PP, Transform/Close en pseudonimisering**                             | DvTP / S03                             | Voorziening + aansluitafspraken                  | GDI / BSNk-governance                                                                                           | Logius/BSNk, onder regie van BZK                                                                                              | De BSN-koppeling en pseudonimisering zijn randvoorwaardelijk om te voorkomen dat private dienstverleners het BSN ontvangen. Integratie met PEP/FSC moet expliciet onderdeel zijn van de GBO-architectuur.                                                                             | Aansluiting en PEP-integratie uitwerken.                                                                     |
-| **Organisatie-authenticatie en trust anchors**                               | DvTP / S04                             | Vertrouwensafspraken + standaarden               | FDS voor publieke partijen; aanvullend stelsel voor private partijen, bijvoorbeeld TIP/eHerkenning waar passend | FDS/IBDS, Logius/eHerkenning, sectorale of private vertrouwensstelsels                                                        | Voor private dienstverleners moet worden vastgesteld welke organisaties mogen aansluiten, hoe zij worden geauthentiseerd en welke trust anchors worden geaccepteerd.                                                                                                                  | Besluit nodig over verhouding tussen FDS, eHerkenning, TIP en sectorale stelsels.                            |
-| **FDS Poortwachter en Marktmeester**                                         | DvTP / S04                             | Stelselrol / governancefunctie                   | FDS                                                                                                             | FDS/IBDS; structureel beheer nader te bepalen                                                                                 | Poortwachter- en marktmeesterfuncties zijn nodig voor toelating, toezicht, registratie en beheer van deelnemers. Zonder deze functies blijft het vertrouwensstelsel onvoldoende operationeel.                                                                                         | Nog inrichten; opnemen als expliciete afhankelijkheid voor productie.                                        |
-| **Dienstenregister voor DvTP-afnemersdiensten**                              | DvTP / S05-S06                         | Voorziening + governanceproces                   | DvTP-governance / FDS / mogelijk TIP voor private diensten                                                      | Nader te bepalen; inhoudelijke verantwoordelijkheid bij toelatende overheid of sector                                         | Het dienstenregister is nodig om policies te kunnen baseren op concrete diensten: wie vraagt gegevens op, voor welk doel, onder welke grondslag en met welke toegestane gegevensset.                                                                                                  | Ontbreekt nu als expliciet beheerobject; toevoegen aan beheerlandingsmatrix.                                 |
-| **Deployment-packages en referentie-implementaties**                         | Alle werkpakketten                     | Referentiecomponenten / pre-productie artefacten | Projectgovernance tijdens ontwikkeling; structurele landing per component                                       | GBO-project tijdelijk; uiteindelijke beheerder verschilt per component                                                        | Tijdens pilots kunnen componenten onder projectverantwoordelijkheid worden ontwikkeld. Voor productie moet per component vooraf duidelijk zijn bij welk stelsel of welke beheerorganisatie deze landt.                                                                                | Per referentiecomponent overdrachtsplan en acceptatiecriteria opstellen.                                     |
+- model voor toestemming en grondslag.
+- UX- en toegankelijkheidsprofiel voor het toestemmingsportaal.
+- aansluitprofiel voor pseudonimisering.
+- toelatingsmodel voor private dienstverleners.
+- registratie van diensten, doelen en toegestane gegevensvragen.
+- autorisatiebeleid en governance voor wijzigingen.
+
+## Impact op betrokken partijen
+
+Het [globaal ontwerp](https://ictu.github.io/GBO-GO/main/#6-impact-op-betrokken-partijen) bevat een eerste inschatting van de impact van GBO op betrokken partijen. De PSA maakt een verdere uitwerking mogelijk. Het technisch ontwerp en de technische requirements werken deze impact verder uit.
+
+### Bronhouder
+
+Een bronhouder realiseert of gebruikt:
+
+- een bronontsluiting-API volgens het vastgestelde profiel.
+- een PEP en toegang tot een passende PDP.
+- logging volgens het GBO-profiel.
+- een beschrijving van gegevensdiensten, schema's en kwaliteit.
+- beheerprocessen voor aansluiting, wijzigingen en incidenten.
+
+Een bronhouder kan referentiecomponenten gebruiken en eventueel onderdelen van de GBO-vertaallaag inzetten. Functioneel gelijkwaardige alternatieven zijn ook mogelijk. De bronhouder moet altijd voldoen aan de vastgestelde afspraken, standaarden en koppelvlakken.
+
+### QTSP's
+
+De PSA legt nog niet vast hoe attestatie-uitgifte binnen GBO wordt ingericht. Daarom ondersteunt de PSA voorlopig alle varianten. QTSP's hebben daardoor verschillende mogelijkheden:
+
+- de verifyfunctie van de centrale ASI-provider gebruiken om attributen te controleren en daarna attestaties uit te geven.
+- de retrievefunctie van de centrale ASI-provider gebruiken om namens een bronhouder attestaties uit te geven.
+- de benodigde gegevens via andere kanalen bij de bron ophalen om attestaties uit te geven. Dit valt buiten de scope van GBO.
+
+Een QTSP die de centrale ASI-provider gebruikt, moet aansluiten volgens de EUDI-afspraken en -standaarden.
+
+### Basisinrichting OOTS
+
+GBO sluit aan op de Basisinrichting OOTS voor levering van bewijzen aan andere Europese overheden volgens de SDG-verordening. Bronhouders mogen hiervoor ook andere kanalen gebruiken.
+
+Voor de aansluiting van GBO op de Basisinrichting OOTS zijn de volgende onderdelen nodig:
+
+- uitbreiding van de OOTS-V-component met het GBO-koppelvlak.
+- afspraken over de precieze grens tussen het GBO-koppelvlak, OOTS-V en de Basisinrichting OOTS.
+- afspraken over autorisatie, logging en verantwoording op die grens.
+- afspraken over gebruik en beheer van de semantische mapping tussen de gegevensmodellen van de bronhouder en EDM.
+- afspraken over discovery- en dienstinformatie.
+
+### Private dienstverlener
+
+Een private dienstverlener die de DvTP-dienst van GBO wil gebruiken, moet:
+
+- voldoen aan de aansluitvoorwaarden voor de voorzieningen.
+- de burger via de centrale toestemmingsvoorziening om toestemming vragen.
+- de burger een volwaardig alternatief bieden om de gegevens aan te leveren.
+- gegevens volgens de dienstencatalogus uitvragen.
+- gegevensverzoeken volgens de afgesproken koppelvlakspecificatie uitvoeren.
+
+## Landing in bestaande stelsels en beheerorganisaties
+
+| Beheerobject | Beoogde governance | Beoogde beheer- of uitvoeringsrichting | Besluitpunt |
+|---|---|---|---|
+| Aansluitvoorwaarden en gebruik bronontsluiting | FDS | FDS-beheer, in samenwerking met GDI-partijen | Definitieve eigenaar en handhaving |
+| API-profiel bronontsluiting | Digikoppeling/API-governance en FDS | Logius en relevante standaardisatiegremia | Positionering GraphQL |
+| Dienstencatalogus | FDS met inhoudelijke verantwoordelijkheid bij domeinen | Bestaande of uit te breiden FDS-catalogusinfrastructuur | Beheerder en federatief model |
+| Autorisatieprofiel | FDS/GDI | Beheer bij passende landelijke standaardbeheerder | Status, versiebeheer en conformiteitstoetsing |
+| Beleidsbeheer en distributie | FDS/FTV-governance | Operationele beheerder nader te bepalen | Inhoudelijk eigenaarschap en technisch beheer |
+| Logging- en traceprofiel | GDI/FDS | Aansluiting op beheer LDV en technische profielen | Inzage- en aggregatiemodel |
+| Semantische kaders en catalogusprofielen | FDS en Geonovum waar passend | Federatief: standaarden centraal, inhoud per domein | Scheiding standaardbeheer en inhoudsbeheer |
+| Schema- en mappingrepository | FDS en betrokken externe stelsels | Operationele beheerder nader te bepalen | Centraal of federatief |
+| PubEAA- en ASI-profielen | Nationale EUDI-Wallet- en eIDAS-governance | BZK/RDI en uitvoeringsorganisaties, rol nader te bepalen | Centraal, decentraal of federatief model |
+| OOTS-koppelvlak en adapter | Nationale SDG/OOTS-governance | Beheer rond Basisinrichting OOTS en betrokken bronontsluiting | Functiegrenzen en beheerder |
+| Toestemmingsvoorziening | DvTP/GDI/FDS, afhankelijk van wetgeving | Landelijke beheerorganisatie nader te bepalen | Juridische grondslag, toezicht en beheer |
+| Pseudonimiseringsaansluiting | GDI/BSNk-governance | Logius/BSNk | Deelnemersrollen en integratieprofiel |
+| Referentiecomponenten | Projectgovernance tijdens ontwikkeling | Overdracht per component | Acceptatiecriteria en exitplan |
+
+## Fasering
+
+1. **Kaders vaststellen:** het project besluit over scope, rollen, juridische randvoorwaarden en beheerprincipes.
+2. **Profielen ontwerpen:** het project werkt koppelvlakken, gegevensmodellen, beleid, logging en conformiteitseisen uit.
+3. **Beproeven:** pilots toetsen referentiecomponenten en alternatieve implementaties.
+4. **Standaardiseren en beleggen:** de betrokken partijen stellen afspraken en profielen vast en wijzen beheerorganisaties aan.
+5. **Productierijp maken:** de betrokken partijen richten audits, serviceniveaus, continuïteit, financiering, ondersteuning en toezicht in.
+6. **Overdragen en opschalen:** het project draagt projectvoorzieningen over of faseert deze uit. Daarna kunnen deelnemers gecontroleerd aansluiten.

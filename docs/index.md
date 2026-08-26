@@ -2,33 +2,80 @@
 
 ## Doel van dit document
 
-Dit document beschrijft de Projectstartarchitectuur (PSA) voor het project Gemeenschappelijke Bronontsluiting (GBO).  
-De PSA beschrijft **wat de oplossing moet kunnen**, maar legt nog geen technische implementatie vast.  
+Dit document beschrijft de Projectstartarchitectuur (PSA) voor het project Gemeenschappelijke Bronontsluiting (GBO).
 
-> LET OP: Het project gemeenschappelijke bronontsluiting is in ontwikkeling en de documentatie volgt dit. De huidige versie van dit document is daarom niet definitief. De status van de documentatie is [hier](https://ictu.github.io/GBO/latest/#reviewproces) te vinden.
+De probleemstelling en doelen van GBO staan op het tabblad [Gemeenschappelijke Bronontsluiting](https://ictu.github.io/GBO/). De organisatorische en juridische context staat op het tabblad [Context](https://ictu.github.io/GBO/latest/context). Het [globaal ontwerp](https://ictu.github.io/GBO-GO/main/) beschrijft op hoofdlijnen de gekozen oplossingsrichting, interactiepatronen, generieke functies en benodigde componenten.
 
+De PSA neemt het globaal ontwerp als vertrekpunt. De PSA legt de architectuurkaders en richtlijnen vast voor de verdere uitwerking van de generieke functies en stelselfuncties.
+
+De PSA beschrijft vooral:
+
+- welke normerende eisen gelden voor de generieke functies.
+- welke afspraken, standaarden en functionele voorzieningen nodig zijn voor de stelselfuncties.
+- voor welke verantwoordelijkheden en beheerkeuzes nog een verantwoordelijke partij nodig is.
+- welke juridische, organisatorische en technische besluiten nog openstaan.
+
+De PSA legt geen leveranciers- of productkeuzes vast. Het technisch ontwerp en de technische requirements werken de componentontwerpen en technische specificaties verder uit.
+
+> LET OP: Gemeenschappelijke Bronontsluiting is in ontwikkeling. De documentatie verandert mee. Deze versie is daarom niet definitief. De actuele status staat [hier](https://ictu.github.io/GBO/latest/#reviewproces).
+
+## Documenthiërarchie
+
+Voor GBO geldt de volgende documenthiërarchie:
+
+0. De [**inleiding**](https://ictu.github.io/GBO/) en [**context**](https://ictu.github.io/GBO/latest/context) beschrijven de doelen, omgeving en juridische kaders van de gemeenschappelijke bronontsluiting.
+1. Het [**globaal ontwerp**](https://ictu.github.io/GBO-GO/) beschrijft op hoofdlijnen de oplossingsrichting, interactiepatronen, generieke functies en componenten.
+2. De [**PSA**](https://ictu.github.io/GBO-PSA/) beschrijft de kaders, eisen en ontwerpkeuzes voor de generieke functies en stelselfuncties.
+3. Het [**technisch ontwerp**](https://ictu.github.io/GBO/main/underconstruction_to/) beschrijft de technische inrichting van de voorzieningen en koppelvlakken.
+4. De [**technische requirements**](https://ictu.github.io/GBO/main/underconstruction_tr/) specificeren welke componenten het project moet ontwikkelen of aanpassen.
+5. De uitwerking [**Semantiek**](https://ictu.github.io/GBO/main/underconstruction_sem/) beschrijft de informatiemodellen, begrippen, schema's en mappings voor gegevensuitwisseling.
+
+Bij verschillen over de oplossingsrichting of interactiepatronen is het globaal ontwerp leidend. De PSA is leidend voor de normerende architectuureisen aan de verdere uitwerking.
+
+De [**demo-omgeving**](https://gbo.simulatie.datastelsel.nl/) laat zien hoe de voorgestelde oplossing in de praktijk kan werken. De demo is nog in ontwikkeling, gebruikt testdata en kan fouten bevatten.
 
 ## Scope
 
-De PSA beschrijft de afspraken, standaarden en voorzieningen die nodig zijn om de [voordelen die GBO nastreeft](https://ictu.github.io/GBO/latest/) te bereiken. Waar mogelijk zijn dit afspraken, standaarden en voorzieningen die al gelden in bestaande afsprakenstelsels. Als aanvullingen of aanpassingen nodig zijn om de GBO voordelen te bereiken, dan worden deze via de reguliere weg ingebracht bij bestaande afsprakenstelsels.
+De PSA beschrijft de afspraken, standaarden en voorzieningen die nodig zijn om de [doelen van GBO](https://ictu.github.io/GBO/latest/) te bereiken. GBO gebruikt bestaande afspraken, standaarden en voorzieningen waar dat mogelijk is. Het project brengt noodzakelijke aanvullingen onder bij bestaande afsprakenstelsels en beheerorganisaties.
 
+De PSA beschrijft niet:
 
-De PSA beschrijft **niet**:
+- de volledige werking van de oplossingsrichting en interactiepatronen. Daarvoor verwijst de PSA naar het globaal ontwerp.
+- concrete technische implementaties of referentie-implementaties.
+- leverancierskeuzes.
+- gedetailleerde API-, gegevens- of componentspecificaties.
 
--   concrete technische oplossingen  
--   implementaties van componenten en afspraken  
--   leverancierskeuzes  
+## Naamgeving
 
+Deze PSA gebruikt de volgende namen consequent:
+
+| Begrip | Gebruik in deze PSA |
+|---|---|
+| Europese digitale identiteitswallet | **EUDI-Wallet** |
+| Publieke elektronische attestatie van attributen | **PubEAA** |
+| Technische voorziening voor uitgifte van PubEAA's | **PubEAA-verstrekker** |
+| Gestandaardiseerd koppelvlak voor authentieke bronnen | **Authentic Source Interface (ASI)** |
+| Technische rol of voorziening die een ASI aanbiedt | **ASI-provider** |
+| Nederlandse voorziening voor aansluiting van verstrekkende bronhouders op OOTS | **Basisinrichting OOTS**<br>(met **OOTS-V** als interface voor aansluiting vanuit een FSC-koppeling) |
+| GBO-component voor aansluiting op OOTS-V | **OOTS-adapter** |
+| Generieke interface van een bronhouder | **bronontsluiting-API**<br>(functioneel ook beschreven als **generieke bronontsluiting**) |
+| Catalogus van toegestane gegevensvragen per dienst | **dienstencatalogus** |
+| Overkoepelende functie voor register, portaal en interfaces voor toestemming | **toestemmingsvoorziening** |
+| Registratie van verleende en ingetrokken toestemmingen | **toestemmingsregister** |
+| Burgerinterface voor toestemming | **toestemmingsportaal** |
+| Ondersteuning voor bronhouders die niet rechtstreeks op de bronontsluiting-API kunnen aansluiten | **GBO-vertaallaag** |
+
+Een uitvoerige begrippenlijst staat in het [globaal ontwerp](https://ictu.github.io/GBO-GO/main/bijlage_begrippenlijst/).
 
 ## Leeswijzer
 
 De PSA bevat de volgende onderdelen:
 
-- [Oplossingsrichting](oplossingsrichting.md): een schets van hoe de gemeenschappelijke bronontsluiting eruit komt te zien;
-- [Architectuurprincipes](architectuurprincipes.md): de principes die de kaders vormen voor de oplossing;
-- [Ontwerpprincipes](ontwerpprincipes.md): de principes waaraan de ontwikkeling van de oplossing zich moet houden;
-- [Interactiepatronen](interactiepatronen.md): een uitwerking van hoe de gegevensstromen die in beeld zijn, uitgevoerd worden;
-- [Logische architectuur](generieke-functies.md): de generieke functies die nodig zijn om invulling te geven aan de gewenste oplossing;
-- [Stelselfuncties](capabilities.md): de stelselfuncties (capabilities) die invulling geven aan de generieke functies;
-- [Realisatiestrategie](realisatiestrategie.md): de voorgestelde manier om de oplossing tot stand te laten komen;
-- [Open vragen en ontwerpkeuzes](vraagstukken.md): vraagstukken die nog uitgewerkt moeten worden en (indien relevant) de ontwerpkeuze die is gemaakt.
+- [Vertrekpunt uit het globaal ontwerp](oplossingsrichting.md): de architectuurconsequenties uit het globaal ontwerp die de PSA verder uitwerkt.
+- [Architectuurprincipes](architectuurprincipes.md): de richtinggevende principes en de gevolgen daarvan voor GBO.
+- [Ontwerpprincipes](ontwerpprincipes.md): de normerende principes voor ontwerp en realisatie.
+- [Interactiepatronen](interactiepatronen.md): de relatie tussen de interactiepatronen en de stelselfuncties.
+- [Generieke functies](generieke-functies.md): de eisen aan F1 tot en met F8 en de relatie met de stelselfuncties.
+- [Stelselfuncties](capabilities.md): de afspraken, standaarden, functionele voorzieningen, verantwoordelijkheden en open besluiten voor S01 tot en met S11.
+- [Realisatiestrategie](realisatiestrategie.md): de werkpakketten, afhankelijkheden en beoogde onderbrenging bij bestaande stelsels en beheerorganisaties.
+- [Open besluiten](vraagstukken.md): het besluitregister voor architectuurkeuzes die nog niet zijn vastgesteld.

@@ -1,215 +1,127 @@
-# Logische architectuur (generieke functies)
+# Generieke functies
 
-De oplossingsrichting met gemeenschappelijke bronontsluiting wordt gerealiseerd door **generieke functies**.
+Het [globaal ontwerp](https://ictu.github.io/GBO-GO/main/#4-generieke-functies-en-stelselfuncties) onderscheidt acht generieke functies. Deze PSA herhaalt de functionele beschrijving niet. De PSA legt per functie de normerende eisen vast.
 
-## Logisch architectuurdiagram
+Deze eisen volgen uit de [functionele beschrijving](https://ictu.github.io/GBO-GO/latest/#4-generieke-functies-en-stelselfuncties), de [uitgangspunten](https://ictu.github.io/GBO-GO/latest/#uitgangspunten), de [architectuurprincipes](architectuurprincipes.md) en de [ontwerpprincipes](ontwerpprincipes.md). Dit hoofdstuk legt ook de relatie met de stelselfuncties vast.
 
-Het logische architectuurdiagram schetst de generieke functies ten opzichte van elkaar.
+## F1 — Identiteit & Vertrouwen
 
-<figure>
+De inrichting voldoet aan de volgende eisen:
 
-``` mermaid
---8<-- "diagrammen/Architectuuroverzicht.mmd"
+- de inrichting identificeert burgers, organisaties en systemen eenduidig.
+- de inrichting gebruikt per dienst, gegevenscategorie en interactiepatroon een vastgesteld betrouwbaarheidsniveau.
+- een organisatie kan alleen deelnemen op basis van expliciete aansluitvoorwaarden. De organisatie toont periodiek aan dat zij nog aan deze voorwaarden voldoet.
+- de inrichting behandelt identiteit, rol of hoedanigheid en bevoegdheid als afzonderlijke aspecten. Een vastgestelde identiteit geeft niet automatisch bevoegdheid voor een handeling.
+- als een actor namens een andere persoon of organisatie handelt, kan de inrichting de vertegenwoordigingsrelatie aantoonbaar vaststellen. De relatie bevat rol, reikwijdte en geldigheid. De autorisatie kan deze relatie als context gebruiken.
+- trust anchors, certificaten en vertrouwenslijsten hebben centraal of federatief beheer en zijn machineleesbaar raadpleegbaar.
+- de vertrouwensarchitectuur is niet afhankelijk van één soort identiteits- of bevoegdheidsbewijs. Gestandaardiseerde verificatie ondersteunt verschillende erkende registers, vertrouwensdiensten en wallet-gebaseerde bewijzen.
+- alleen partijen en componenten met een wettelijke grondslag verwerken het BSN.
+- andere afnemers ontvangen een partijspecifieke identiteit of pseudoniem.
+- identiteitsvertaling en pseudonimisering staan los van de inhoudelijke autorisatiebeslissing. De inrichting voert deze handelingen alleen uit na een toegestane gegevensvraag.
 
-```
-<figcaption>Architectuuroverzicht GBO</figcaption>
-</figure>
+## F2 — Toegang & Interactie
 
-Het diagram onderscheidt drie lagen binnen de GBO:
+De inrichting voldoet aan de volgende eisen:
 
-1. **Juridisch & Identiteit** — de grondslag- en vertrouwenslaag die bepaalt *wie* gegevens mag opvragen en op basis waarvan.
-2. **Generieke functies** — de acht functionele clusters die de gegevensuitwisseling mogelijk maken.
-3. **Bronontsluiting** — de generieke API waarmee bronhouders eenmalig hun gegevens beschikbaar stellen.
+- een burgerinteractie over toestemming toont minimaal de afnemer, dienst, het doel, de gegevens, geldigheidsduur en gevolgen van de keuze.
+- toestemming is vrij, specifiek, geïnformeerd, ondubbelzinnig en aantoonbaar als toestemming de toepasselijke grondslag is.
+- de burger kan geldige toestemmingen inzien en, waar van toepassing, intrekken.
+- de autorisatieketen controleert de actuele toestemming op het moment van de gegevensvraag.
+- technische bereikbaarheid geeft een organisatie niet automatisch toegang. Toelating, identiteit, dienstregistratie en autorisatie zijn afzonderlijke controles.
+- interfaces voor burgers en organisaties voldoen aan de toepasselijke toegankelijkheids- en beveiligingseisen.
 
-De generieke functies die het GBO-stelsel moet bieden zijn:
+## F3 — Gegevensvoorziening
 
-1. Identiteit & Vertrouwen
-2. Toegang & Interactie
-3. Gegevensvoorziening
-4. Semantiek & Eenheid van Taal
-5. Gegevenskwaliteit & Validatie
-6. Grondslag & Beleid
-7. Orkestratie & Integratie
-8. Beheer & Continuïteit
+De inrichting voldoet aan de volgende eisen:
 
-Vanuit de [architectuur-](./architectuurprincipes.md) en [ontwerpprincipes](./ontwerpprincipes.md) worden aan deze generieke functies eisen gesteld, die hieronder zijn uitgewerkt. De eisen zijn bewust technologieneutraal geformuleerd; ze beschrijven *wat* een generieke functie moet kunnen, niet *hoe* dat gerealiseerd wordt.
+- iedere bronhouder biedt één generieke bronontsluiting-API voor de gegevensstromen die GBO ondersteunt.
+- gegevensvragen zijn selectief en beperkt tot vooraf geregistreerde diensten en gegevenssets.
+- nieuwe afnemers of interactiepatronen vereisen in beginsel alleen wijzigingen in beleid, dienstregistratie of mapping, niet in het bronsysteem.
+- expliciete adapters en mappings verwerken protocol- en formaatverschillen van externe stelsels.
+- de bronhouder blijft verantwoordelijk voor de beschikbaarheid, juistheid en actualiteit van de brongegevens.
+- de GBO-vertaallaag ondersteunt bronhouders die het gekozen API-profiel nog niet rechtstreeks kunnen aanbieden. Deze ondersteuning blijft vervangbaar.
+- de standaard gegevensstroom bevat geen tijdelijke opslag. Tijdelijke opslag is alleen toegestaan met een expliciete motivering.
 
----
+## F4 — Semantiek & Eenheid van Taal
 
-## Juridisch & Identiteit
+De inrichting voldoet aan de volgende eisen:
 
-De vier functies in deze laag vormen de voorwaarden waaronder de generieke functies mogen opereren. Ze zijn geen onderdeel van de gegevensstroom zelf, maar worden door alle generieke functies geraadpleegd.
+- beschikbare gegevensdiensten, gegevenselementen en begrippen hebben een beheerde beschrijving.
+- bronhouders en domeinen blijven inhoudelijk verantwoordelijk voor hun begrippen en informatiemodellen.
+- GBO stelt gemeenschappelijke kaders vast voor vindbaarheid, beschrijving, versiebeheer en mapping.
+- schema's en mappings zijn machineleesbaar, testbaar en versieerbaar.
+- transformaties naar OOTS-EDM, attestatieschema's en andere uitwisselformaten zijn afgeleid van beheerde bron- en doelschema's.
+- iedere wijziging bevat een impactanalyse en een overgangsstrategie voor bestaande afnemers.
 
-### Toestemming
+## F5 — Gegevenskwaliteit & Validatie
 
-**Doel:** Vaststellen en beheren van de toestemming voor gegevensdeling.
+De inrichting voldoet aan de volgende eisen:
 
-**Eisen:**
+- iedere gegevensdienst beschrijft kwaliteitseisen zoals actualiteit, volledigheid en nauwkeurigheid.
+- de levering bevat herkomst, bronhouder, tijdstip en relevante versie-informatie, of legt deze informatie aantoonbaar vast.
+- de inrichting valideert berichten en attestaties vóór uitlevering tegen het toepasselijke schema.
+- de inrichting past cryptografische integriteit en authenticiteit toe als het interactiepatroon dat vereist.
+- afnemers kunnen fouten of vermoedelijke onjuistheden via een gestandaardiseerd proces terugmelden. Deze eis geldt niet voor OOTS, waarvoor expliciet geen terugmelding is voorzien.
+- iedere terugmelding is herleidbaar tot de betreffende gegevenslevering, zonder onnodige verspreiding van persoonsgegevens.
 
-- Toestemming van de burger is altijd herleidbaar tot een specifiek doel, een specifieke afnemer, en een specifieke gegevensvraag (doelbinding).
-- De toestemming is machineleesbaar raadpleegbaar op het moment van gegevensuitvraag — niet alleen vastgelegd in een document of token dat van tevoren is uitgegeven.
-- Intrekking van toestemming werkt met onmiddellijke ingang: een ingetrokken grondslag leidt bij de eerstvolgende uitvraag automatisch tot weigering, zonder dat daarvoor aparte notificaties of tokeninvalidatie nodig zijn.
-- De burger heeft inzage in welke toestemmingen namens hem actief zijn en kan deze zelf beheren via een toegankelijke interface.
-- De vastlegging van toestemmingen voldoet aan de eisen van de AVG, de Wdo en de van toepassing zijnde AMvB's.
+## F6 — Grondslag & Beleid
 
-### Burgeridentificatie  
+De inrichting voldoet aan de volgende eisen:
 
-**Doel:** Het vaststellen van de identiteit van de burger ten behoeve van gegevensontsluiting.
+- de autorisatie beoordeelt iedere gegevensvraag op afnemer, dienst, doel, grondslag, gegevensvraag en context.
+- beleid is machineleesbaar, versieerbaar, testbaar en onafhankelijk van één product of policytaal.
+- beleidswijzigingen vereisen geen wijziging van de programmatuur bij iedere bronhouder.
+- het proces voor beleidswijzigingen omvat voorbereiding, toetsing, goedkeuring, publicatie, inwerkingtreding en terugval.
+- logging legt de toegepaste beleidsversie en de uitkomst van de beslissing vast.
+- de bronhouder kan aanvullende rechtmatige beperkingen toepassen. Deze beperkingen moeten passen binnen de stelselafspraken en het gestandaardiseerde koppelvlak.
 
-**Eisen:**
+## F7 — Orkestratie & Integratie
 
-- De identiteitsvaststelling sluit aan op de voor het traject vereiste betrouwbaarheidsniveaus (eIDAS Laag/Substantieel/Hoog) en maakt gebruik van erkende authenticatiemiddelen.
-- Voor het EUDI-Wallet traject ondersteunt de functie het ontvangen van een burgeridentiteit via een wallet-presentatie (conform eIDAS2/ARF), met verificatie via de relevante Trusted List.
-- Als in de wallet-presentatie geen BSN meegeleverd wordt, is een "identity matching" functie nodig. Voor bevraging van overheidsbronnen met persoonsgegevens is altijd het BSN nodig.
+De huidige interactiepatronen hebben geen afzonderlijke centrale procesorkestratie. S07, S08 en S11 verzorgen de integratie.
 
-### Pseudonimisering
+Daarbij gelden de volgende eisen:
 
-**Doel:** Het garanderen dat het BSN uitsluitend circuleert binnen de overheidsinfrastructuur en nooit zichtbaar is voor afnemers die geen wettelijke grondslag hebben om het BSN te verwerken.
+- een gegevensvraag aan meerdere bronhouders bestaat uit afzonderlijke, herleidbare bronverzoeken.
+- één toestemming of dienstcontext kan naar meerdere bronverzoeken verwijzen. Alleen een expliciete functie met een geldige grondslag mag resultaten centraal samenvoegen.
+- adapters verzorgen alleen integratie, protocolomzetting en semantische mapping. Zij nemen geen impliciete verantwoordelijkheid van bronhouders over.
+- ieder koppelvlak en interactiepatroon beschrijft foutafhandeling, time-outs en gedeeltelijke beschikbaarheid.
+- patroonafhankelijke logica blijft buiten de generieke bronontsluiting-API.
 
-**Eisen:**
+## F8 — Beheer & Continuïteit
 
-- Het BSN wordt nooit doorgegeven aan of verwerkt door dienstverleners die daar geen wettelijke grondslag voor hebben. Voor deze partijen wordt altijd een partijspecifiek, onomkeerbaar pseudoniem gebruikt.
-- Pseudoniemen voor verschillende partijen zijn niet onderling koppelbaar, ook niet wanneer die partijen samenwerken.
-- Herhaald gebruik van hetzelfde pseudoniem voor dezelfde burger levert cryptografisch onkoppelbare uitvoer op (geen correlatierisico over tijd).
-- De omzetting van BSN naar pseudoniem — en terug, aan de bronhouderszijde — vindt plaats in een door de overheid beheerde en gecertificeerde voorziening.
+De inrichting voldoet aan de volgende eisen:
 
-### Vertrouwensstelsel & Authenticatie van organisaties
-
-**Doel:** Vaststellen dat een afnemende organisatie (dienstverlener, EU-lidstaat) daadwerkelijk is wie zij zegt te zijn, en bevoegd is om deel te nemen aan het desbetreffende traject.
-
-**Eisen:**
-
-- Iedere deelnemende organisatie is aantoonbaar geregistreerd en geautoriseerd vóór zij gegevens kan opvragen. Onboarding is een expliciete beheerhandeling.
-- Organisatie-authenticatie is gebaseerd op certificaten uitgegeven door een erkende, toezichthoudende vertrouwensdienstverlener (conform eIDAS of PKI Overheid).
-- Het vertrouwensstelsel ondersteunt zowel binnenlandse als grensoverschrijdende partijen, waarbij grensoverschrijdend vertrouwen via de Europese Trusted List-infrastructuur wordt verankerd — niet via bilaterale afspraken per traject.
-- Vertrouwensankers (certificaten, attestaties van gekwalificeerde aanbieders) zijn verificeerbaar zonder afhankelijkheid van de uitgevende partij op het moment van verificatie.
-- Het vertrouwensstelsel is onafhankelijk van het transportprotocol: dezelfde vertrouwensbeoordeling geldt ongeacht of de verbinding via het binnenlandse koppelnetwerk of via een Europese infrastructuur binnenkomt.
-
----
-
-## Generieke functie 1 — Identiteit & Vertrouwen
-
-**Doel:** Vaststellen en handhaven van de identiteit van alle deelnemende systemen en organisaties, en borgen van de integriteit en vertrouwelijkheid van de gegevensuitwisseling via PKI en audit logging.
-
-**Eisen:**
-
-- Iedere gegevensuitvraag — ongeacht het traject of de afnemer — doorloopt dezelfde autorisatieketen. Er zijn geen trajectspecifieke omwegen of parallelle handhavingspunten.
-- Het beleid is uitgedrukt in een formele, machineleesbare taal. Menselijk leesbare beschrijvingen zijn afgeleid van dezelfde bron, niet de bron zelf.
-- De autorisatiebeslissing is gebaseerd op: de identiteit van de afnemer, de gevraagde gegevens, de aanwezige grondslag (via toestemmingenregister, grondslagenregels of impliciet in request), en de context van het verzoek. Deze vier elementen zijn altijd expliciet aanwezig in de beslissing.
-- De autorisatiecomponent raadpleegt de toestemming real-time op het moment van uitvraag — er is geen vertrouwen op eerder uitgegeven tokens die de toestemmingsstatus "bevroren" vastleggen.
-- Beleidsdefinities zijn per traject instelbaar zonder wijziging van de autorisatie-infrastructuur zelf.
-- De beslissing (allow/deny) en de relevante context worden vastgelegd ten behoeve van auditbaarheid.
-
----
-
-## Generieke functie 2 — Toegang & Interactie
-
-**Doel:** De burger geeft geïnformeerde, specifieke toestemming voor gegevensdeling via een toegankelijke interface, en kan die toestemming inzien en intrekken. Organisaties krijgen toegang via federatieve mechanismen (SSO, machtigen).
-
-**Eisen:**
-
-- De toestemmingsinteractie is begrijpelijk voor de burger: doel, afnemer en gegevens zijn in gewone taal gepresenteerd, niet in technische of juridische termen.
-- De burger authenticeert zich op een betrouwbaarheidsniveau dat passend is bij de gevoeligheid van de betrokken gegevens.
-- Na het geven van toestemming ontvangt de burger een bevestiging, en kan hij via dezelfde of een gelijkwaardige interface zijn actieve toestemmingen inzien en intrekken.
-- De UI-component schrijft de vastgelegde toestemming weg naar het toestemmingenregister, zodat de autorisatiecomponent deze real-time kan raadplegen.
-- De pseudonimiseringsactie (BSN → pseudoniem voor de afnemer) vindt plaats als onderdeel van het toestemmingsproces, transparant voor de burger en zonder dat het BSN wordt gedeeld.
-- De functie ondersteunt federatief inloggen en machtigingenbeheer voor organisaties die namens een burger of een andere organisatie handelen.
-
----
-
-## Generieke functie 3 — Gegevensvoorziening
-
-**Doel:** Bronhouders stellen hun gegevens beschikbaar via een gestandaardiseerde interface die door alle trajecten herbruikbaar is.
-
-**Eisen:**
-
-- Een bronhouder realiseert één generieke interface. Er zijn geen trajectspecifieke endpoints of koppelingen per afnemer.
-- De interface ondersteunt selectieve gegevensuitvraag: de afnemer kan exact de velden opvragen die voor het specifieke gebruik nodig zijn. Dataminimalisatie is structureel ingebouwd, niet afhankelijk van afsprakenstelsel of goede wil.
-- De set van toegestane gegevensvragen per gebruik is vooraf geregistreerd en door beleid afdwingbaar. Binnen de toegestane gegevensvraag bepaalt de afnemer welke gegevens voor zijn situatie nodig zijn. Afwijkingen die buiten de toegestane gegevensvraag vallen zijn niet mogelijk.
-- Bronhouders implementeren de interface eenmalig; aanpassingen voor nieuwe afnemers of trajecten vereisen geen bronhouder-specifieke ontwikkeling, alleen aanpassing van het beleid en de query-registratie.
-- Verzoeken vanuit andere EU-lidstaten (OOTS) worden aan de GBO-zijde vertaald naar het binnenlandse formaat en protocol. Bronhouders zien geen EU-specifiek transportprotocol.
-- Serviceregistratie voor grensoverschrijdende discovery (SMP) wordt centraal beheerd, niet door individuele bronhouders.
-
----
-
-## Generieke functie 4 — Semantiek & Eenheid van Taal
-
-**Doel:** Gegevens die via GBO worden uitgewisseld hebben een eenduidige, gedocumenteerde betekenis, ongeacht het traject of de afnemer.
-
-**Eisen:**
-
-- Per bronhouder bestaat een geregistreerde beheerde beschrijving van de beschikbaar gestelde gegevenselementen (naam, type, definitie, herkomst).
-- Dezelfde gegevensset kan worden geserialiseerd naar de voor elk traject vereiste uitwisselingsformaten (JSON voor binnenlands, OOTS-EDM XML voor grensoverschrijdend, SD-JWT VC of mdoc voor de wallet). De canonieke definitie is eenmalig vastgelegd.
-- Mapping tussen de GBO-canonieke definitie en trajectspecifieke schema's (zoals OOTS Semantic Repository types of PuBEAA attestatieschema's) is expliciet en beheerbaar.
-- Vocabularia zijn gebaseerd op open, breed gedragen standaarden (zoals RDF, OWL, SKOS, JSON-LD) en sluiten aan op de Nederlandse overheidsstandaarden (zoals vastgelegd in de Pas-toe-of-leg-uit lijst).
-- Semantische afspraken zijn versie-beheerd; wijzigingen in definities zijn traceerbaar en worden beheerst doorgevoerd.
-
----
-
-## Generieke functie 5 — Gegevenskwaliteit & Validatie
-
-**Doel:** Gegevens die via GBO worden uitgewisseld zijn aantoonbaar correct, volledig en afkomstig van de opgegeven bron.
-
-**Eisen:**
-
-- Gegevensherkomst (bronhouder, tijdstip, versie) is altijd meegeleverd bij uitgewisselde gegevens.
-- Uitgewisselde gegevens zijn cryptografisch gezegeld door de bronhouder, zodat de authenticiteit en integriteit door de afnemer verifieerbaar zijn.
-- Validatie van gegevens tegen het geregistreerde schema (conform Generieke functie 4) vindt plaats vóór uitlevering, niet bij de afnemer.
-- Afnemers kunnen geconstateerde onjuistheden terugmelden via een gestandaardiseerde feedbackloop; terugmeldingen zijn herleidbaar tot de specifieke gegevenslevering.
-- De kwaliteitseisen per gegevenselement (actualiteit, volledigheid, nauwkeurigheid) zijn gedocumenteerd als onderdeel van de catalogusbeschrijving.
-
----
-
-## Generieke functie 6 — Grondslag & Beleid
-
-**Doel:** Elke gegevensuitvraag wordt getoetst aan het geldende beleid. De toetsing is geünificeerd (iedere gegevensuitvraag voor een bepaalde dienst doorloopt dezelfde regels), machineleesbaar en herleidbaar. Beleid en grondslagen zijn beheerbaar zonder wijziging van de verwerkende infrastructuur.
-
-**Eisen:**
-
-- Beleidsdefinities omvatten: welke afnemers welke gegevens mogen opvragen, onder welke grondslagtypen, voor welke doelen, en met welke beperkingen (doelbinding, dataminimalisatie).
-- Beleidsregels zijn uitgedrukt in een formele, machineleesbare taal. Menselijk leesbare beschrijvingen zijn afgeleid van deze formele beleidsregels, maar vormen niet de bron zelf.
-- Wijzigingen in beleid (zoals nieuwe afnemers, nieuwe gegevensvragen) zijn door te voeren zonder aanpassing van de verwerkende systemen van bronhouders.
-- Bij toestemming wordt deze real-time gecontroleerd op het moment van uitvraag. Er is geen vertrouwen op eerder uitgegeven tokens die de toestemmingstatus "bevroren" vastleggen.
-- De autorisatiebeslissing en de bijbehorende beleidscontext worden vastgelegd ten behoeve van auditbaarheid (zie Generieke functie 8).
-
----
-
-## Generieke functie 7 — Orkestratie & Integratie
-
-**Doel:** Gegevensuitvragen die meerdere bronhouders, trajecten of verwerkingsstappen omvatten, worden gecoördineerd afgehandeld. Integratie met bestaande systemen van bronhouders en afnemers verloopt via beheerde adapters.
-
-**Eisen:**
-
-- Hoewel een toestemming die gegevens van meerdere bronhouders behelst in één toestemming geregistreerd kan worden, moet de afnemer de gegevens van de verschillende bronnen in aparte verzoeken versturen, met verwijzing naar dezelfde toestemming.
-- Procesorkestratie is configureerbaar per traject zonder dat de onderliggende bronhouderssystemen worden aangepast.
-- Mapping tussen het interne GBO-model en de externe formaten van afnemers (zoals REST/JSON, AS4/XML, SD-JWT VC) is een expliciete, beheerde transformatiestap — geen impliciete conversie in de transportlaag.
-- De orkestratie-component handelt foutscenario's af (bronhouder niet bereikbaar, gedeeltelijke respons) op een voorspelbare, per traject instelbare manier.
-
----
-
-## Generieke functie 8 — Beheer & Continuïteit
-
-**Doel:** De GBO is beheersbaar, monitorbaar en aantoonbaar betrouwbaar. Iedere gegevensuitvraag is herleidbaar: welke afnemer heeft wanneer welke gegevens over welke burger opgevraagd, op basis van welke grondslag, met welk besluit.
-
-**Eisen:**
-
-- Iedere gegevensuitvraag genereert een vastlegging conform de Logboek Dataverwerkingen (LDV) standaard.
-- Logregels over de keten heen zijn correleerbaar via een gestandaardiseerde verzoekidentificator, zodat een uitvraag van afnemer tot bronhouder volledig reconstrueerbaar is.
-- Audit-logs zijn niet aanpasbaar door de componenten die ze genereren (onweerlegbaarheid).
-- De burger heeft recht op inzage in de verwerkingen die zijn gegevens betreffen; de logging is zo ingericht dat dit recht technisch uitvoerbaar is.
-- Wallet-lokale logs (EDI-traject) vallen buiten de ketenbrede logging; de architectuur maakt geen aannames over inzage in wallet-transacties van de burger zelf.
-- Versies van beleid, schema's en dienstencatalogi zijn beheerd en traceerbaar, zodat een uitvraag altijd reconstrueerbaar is naar de op dat moment geldende instellingen.
-- Incidentbeheer en monitoring zijn ingericht conform de continuïteitseisen die gelden voor overheidsinfrastructuur.
-
----
+- iedere component heeft een expliciete eigenaar, beheerder, serviceniveau en continuïteitsplan.
+- voor ieder mogelijk Single Point of Failure (SPOF) zijn maatregelen nodig om de beschikbaarheid te borgen.
+- monitoring van de keten vereist geen onnodige centrale verzameling van inhoudelijke persoonsgegevens.
+- een gestandaardiseerde verzoekidentificator maakt gebeurtenissen over componenten heen correleerbaar.
+- configuraties, beleid, schema's, mappings en dienstregistraties ondersteunen versiebeheer en audit.
+- overeengekomen processen regelen incidenten, kwetsbaarheden en wijzigingen.
+- de inrichting ondersteunt wettelijke verplichtingen voor inzage en verantwoording.
+- afhankelijkheden van tijdelijke projectvoorzieningen hebben een plan voor overdracht of uitfasering.
 
 ## Samenhang
 
-De generieke functies zijn niet op zichzelf staand. De onderstaande afhankelijkheden zijn architectuurkritisch:
+De realisatie behandelt de generieke functies niet als afzonderlijke silo's. De belangrijkste relaties zijn:
 
-- **Generieke functie 1 (Identiteit & Vertrouwen)** is afhankelijk van de **Vertrouwensstelsel**-laag voor de identiteitsvaststelling van organisaties, en van **Generieke functie 6 (Grondslag & Beleid)** als informatiebron voor autorisatiebeslissingen.
-- **Generieke functie 2 (Toegang & Interactie)** is de schrijfinterface naar **Toestemming & Grondslag**, en triggert de pseudonimiseringsactie van **Burgeridentificatie & Pseudonimisering**.
-- **Generieke functie 3 (Gegevensvoorziening)** is afhankelijk van **Generieke functie 1** voor toegangshandhaving, en van **Generieke functie 4 (Semantiek)** voor de definitie van wat er ontsloten wordt.
-- **Generieke functie 5 (Gegevenskwaliteit & Validatie)** is een uitvoerende kwaliteitslaag bovenop **Generieke functie 3**, en levert herkomstinformatie aan **Generieke functie 4**.
-- **Generieke functie 7 (Orkestratie & Integratie)** coördineert verzoeken die meerdere instanties van **Generieke functie 3** aanroepen, en verzorgt de formatmapping naar afnemers.
-- **Generieke functie 8 (Beheer & Continuïteit)** is een cross-cutting concern: iedere andere generieke functie genereert input voor de audit-keten.
+- F1 levert identiteits- en vertrouwensinformatie aan F2 en F6.
+- F2 registreert en beheert burgerinteracties. F6 gebruikt deze als informatie over de grondslag.
+- F3 dwingt de autorisatiebeslissing van F6 af.
+- F4 en F5 bepalen welke gegevens F3 betekenisvol en geldig kan leveren.
+- F7 verbindt F3 met de externe interactiepatronen.
+- F8 stelt beheer- en auditvoorwaarden aan alle functies.
+
+## Uitwerking in stelselfuncties
+
+Stelselfuncties werken de generieke functies uit in afspraken, standaarden en voorzieningen. De onderstaande tabel toont de relatie tussen de generieke functies en stelselfuncties. Het volgende hoofdstuk werkt de stelselfuncties verder uit.
+
+| Generieke functie | Doel in het globaal ontwerp | Stelselfuncties |
+|---|---|---|
+| **F1 — Identiteit & Vertrouwen** | Vaststellen en vertrouwen van burgers, organisaties en systemen. | [S03](capabilities.md#s03-burgeridentificatie-pseudonimisering), [S04](capabilities.md#s04-organisatie-authenticatie-vertrouwensstelsel) |
+| **F2 — Toegang & Interactie** | Toegang voor burgers en organisaties en, waar nodig, interactie over toestemming. | [S01](capabilities.md#s01-toestemmingsregistratie), [S02](capabilities.md#s02-toestemmingsportaal), [S05](capabilities.md#s05-autorisatie), [S06](capabilities.md#s06-beleidsbeheer-distributie) |
+| **F3 — Gegevensvoorziening** | Herbruikbare en selectieve ontsluiting van brongegevens naar verschillende gegevensstromen. | [S07](capabilities.md#s07-gegevensontsluiting), [S08](capabilities.md#s08-oots-adapter), [S11](capabilities.md#s11-attesteringsuitgifte) |
+| **F4 — Semantiek & Eenheid van Taal** | Eenduidige betekenis, beschrijving en transformatie van gegevens. | [S10](capabilities.md#s10-semantiek-gegevenscatalogus) |
+| **F5 — Gegevenskwaliteit & Validatie** | Aantoonbare kwaliteit, herkomst en geldigheid van uitgewisselde gegevens. | [S10](capabilities.md#s10-semantiek-gegevenscatalogus) |
+| **F6 — Grondslag & Beleid** | Vastleggen en toepassen van grondslagen, voorwaarden en autorisatiebeleid. | [S01](capabilities.md#s01-toestemmingsregistratie), [S05](capabilities.md#s05-autorisatie), [S06](capabilities.md#s06-beleidsbeheer-distributie) |
+| **F7 — Orkestratie & Integratie** | Integratie met bronnen en externe stelsels zonder patroonafhankelijke logica in de bron. | [S07](capabilities.md#s07-gegevensontsluiting), [S08](capabilities.md#s08-oots-adapter), [S11](capabilities.md#s11-attesteringsuitgifte) |
+| **F8 — Beheer & Continuïteit** | Beheersbaarheid, monitoring, auditbaarheid en continuïteit van de keten. | [S09](capabilities.md#s09-logging-audit-traceerbaarheid) en alle overige stelselfuncties |
