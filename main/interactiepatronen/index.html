@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#interactiepatronen-gbo" class="md-skip">
+        <a href="#interactiepatronen" class="md-skip">
           Ga naar inhoud
         </a>
       
@@ -410,13 +410,32 @@
   
   
     <li class="md-tabs__item">
-      <a href="https://ictu.github.io/GBO/main/underconstruction_sem/" class="md-tabs__link">
+      <a href="https://ictu.github.io/GBO-Semantiek/" class="md-tabs__link">
         
   
   
     
   
   Semantiek
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://gbo.simulatie.datastelsel.nl/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Demo
 
       </a>
     </li>
@@ -656,7 +675,7 @@
   <span class="md-ellipsis">
     
   
-    Oplossingsrichting
+    Vertrekpunt globaal ontwerp
   
 
     
@@ -793,32 +812,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#gegevensverzoek-van-burger-om-attestatie-van-attributen-in-wallet-te-ontvangen" class="md-nav__link">
+  <a href="#gemeenschappelijke-eisen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Gegevensverzoek van burger om attestatie van attributen in wallet te ontvangen
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gegevensverzoek-van-europese-overheidsdienst-aan-nederlandse-overheidsbron" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gegevensverzoek van Europese overheidsdienst aan Nederlandse overheidsbron
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gegevensverzoek-van-private-partij-met-toestemming-aan-bronhouder-dvtp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gegevensverzoek van private partij met toestemming aan bronhouder (DvTP)
+        Gemeenschappelijke eisen
       
     </span>
   </a>
@@ -848,7 +845,7 @@
   <span class="md-ellipsis">
     
   
-    Logische architectuur
+    Generieke functies
   
 
     
@@ -932,7 +929,35 @@
   <span class="md-ellipsis">
     
   
-    Open vragen en ontwerpkeuzes
+    Open besluiten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../change-log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change Log
   
 
     
@@ -1014,7 +1039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://ictu.github.io/GBO/main/underconstruction_sem/" class="md-nav__link">
+      <a href="https://ictu.github.io/GBO-Semantiek/" class="md-nav__link">
         
   
   
@@ -1022,6 +1047,33 @@
     
   
     Semantiek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://gbo.simulatie.datastelsel.nl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo
   
 
     
@@ -1060,204 +1112,49 @@
   
 
 
-<h1 id="interactiepatronen-gbo">Interactiepatronen GBO<a class="headerlink" href="#interactiepatronen-gbo" title="Permanent link">&para;</a></h1>
-<p>Dit document beschrijft de belangrijkste interactiepatronen voor GBO zoals afgeleid uit de use cases. In de patronen is op verschillende plekken sprake van een "dienst"; dit kunnen afspraken, standaarden of centrale of decentrale voorzieningen zijn. Daar wordt in het hoofdstuk <a href="../capabilities/">Stelselfuncties</a> dieper op ingegaan.  </p>
-<h2 id="gegevensverzoek-van-burger-om-attestatie-van-attributen-in-wallet-te-ontvangen">Gegevensverzoek van burger om attestatie van attributen in wallet te ontvangen<a class="headerlink" href="#gegevensverzoek-van-burger-om-attestatie-van-attributen-in-wallet-te-ontvangen" title="Permanent link">&para;</a></h2>
-<h3 id="doel">Doel<a class="headerlink" href="#doel" title="Permanent link">&para;</a></h3>
-<p>Een burger vraagt een gegeven op als gekwalificeerde attestatie om in diens wallet op te nemen, zodat deze gedeeld kan worden met een dienstverlener.</p>
-<h3 id="interactie">Interactie<a class="headerlink" href="#interactie" title="Permanent link">&para;</a></h3>
-<figure>
-
-<div class="mermaid">sequenceDiagram
-    autonumber
-    actor Burger
-    participant Wallet as EUDI-Wallet
-    participant QTSP as QTSP
-    participant PubEAA as PubEAA&lt;br/&gt;voorziening
-    participant VerifDienst as Verify-/retrievedienst&lt;br/&gt;(Authentic Source Interface)
-    participant Auth as Autorisatie&lt;br/&gt;voorziening
-    participant Bron as Overheids-&lt;br/&gt;bron
-
-    Note over Burger,Bron: Stroom A — PubEAA: overheidsinstantie geeft attribuut rechtstreeks uit
-
-    rect rgb(225, 245, 238)
-        Burger-&gt;&gt;Wallet: Vraag attribuut op
-        Wallet-&gt;&gt;PubEAA: Credential Request
-        PubEAA-&gt;&gt;Auth: Autorisatieverzoek
-        Auth-&gt;&gt;Wallet: Authenticatie- &amp; autorisatieverzoek
-        Wallet-&gt;&gt;Burger: Toont verzoek &amp; vraagt consent
-        Burger-&gt;&gt;Wallet: Geeft consent &amp; presenteert PID / eID
-        Wallet-&gt;&gt;Auth: Authenticatie / consent (incl. PID / eID)
-        Auth-&gt;&gt;PubEAA: Autorisatie (incl. identificatie burger)
-        PubEAA-&gt;&gt;Bron: Bevraag bron
-        Bron-&gt;&gt;PubEAA: Attribuutgegevens
-        PubEAA-&gt;&gt;PubEAA: Kwalificeer attribuutgegevens
-        PubEAA-&gt;&gt;Wallet: PubEAA
-        Wallet-&gt;&gt;Burger: PubEAA opgeslagen in wallet
-    end
-
-    Note over Burger,Bron: Stroom B — QEAA: QTSP levert attribuut via verificatie- of retrievedienst
-
-    rect rgb(238, 237, 254)
-        Burger-&gt;&gt;QTSP: Attestatie Request&lt;br /&gt;(incl. evt. stukken)
-        Note over QTSP: QTSP verifieert attribuut (verify)&lt;br/&gt;of haalt attribuut op (retrieve)
-        QTSP-&gt;&gt;VerifDienst: Verify- of Retrieveverzoek
-        VerifDienst-&gt;&gt;Auth: Autorisatieverzoek
-        Note over Auth: Bij gebruik ISO15000 geen&lt;br/&gt;autorisatie/authenticatie nodig
-        Auth-&gt;&gt;Wallet: Authenticatie- &amp; autorisatieverzoek
-        Wallet-&gt;&gt;Burger: Toont verzoek &amp; vraagt consent
-        Burger-&gt;&gt;Wallet: Geeft consent &amp; presenteert PID / eID
-        Wallet-&gt;&gt;Auth: Authenticatie / consent (met PID / eID)
-        Auth-&gt;&gt;VerifDienst: Autorisatie (incl. identificatie burger)
-        VerifDienst-&gt;&gt;Bron: Bevraag bron
-        Bron-&gt;&gt;VerifDienst: Attribuutgegevens
-        VerifDienst-&gt;&gt;VerifDienst: Bij verify: Verifieer attribuutgegevens
-        VerifDienst-&gt;&gt;QTSP: (geverifieerd) attribuut
-        QTSP-&gt;&gt;QTSP: Issue QEAA
-        QTSP-&gt;&gt;Wallet: QEAA
-        Wallet-&gt;&gt;Burger: QEAA opgeslagen in wallet
-    end
-
-</div>
-<figcaption>Gegevensverzoek van burger om attestatie van attributen in wallet te ontvangen</figcaption>
-</figure>
-
-<h3 id="toelichting">Toelichting<a class="headerlink" href="#toelichting" title="Permanent link">&para;</a></h3>
-<p>Iedere bronhouder kan in theorie gegevens uitleveren aan wallets, maar deze gegevens krijgen pas juridische waarde als ze gekwalificeerd zijn. Dat kwalificeren kan op twee manieren: de overheid ondertekent het gegeven, waardoor het een PuBEAA wordt, of een gekwalificeerde verlener van vertrouwensdiensten (QTSP) doet dit.<br />
-Als de overheid het gegeven kwalificeert kan de bronhouder dit zelf doen, maar het kan schaalvoordeel bieden om dit te centraliseren in een GBO PuBEAA-dienst. Als een QTSP het gegeven kwalificeert, moet deze QTSP het gegeven kunnen verifiëren of zelfs ophalen via een verificatie- of retrievedienst. Ook hier kan een bronhouder de dienst zelf aanbieden, of kan ervoor gekozen worden om dit te centraliseren in een GBO verificatiedienst. Ook de autorisatiedienst die door de PuBEAA-dienst en de verificatie-/retrievedienst wordt aangeroepen, kan door de bronhouder worden aangeboden, maar het biedt schaalvoordeel om dat te centraliseren in een GBO dienst.</p>
-<h2 id="gegevensverzoek-van-europese-overheidsdienst-aan-nederlandse-overheidsbron">Gegevensverzoek van Europese overheidsdienst aan Nederlandse overheidsbron<a class="headerlink" href="#gegevensverzoek-van-europese-overheidsdienst-aan-nederlandse-overheidsbron" title="Permanent link">&para;</a></h2>
-<h3 id="doel_1">Doel<a class="headerlink" href="#doel_1" title="Permanent link">&para;</a></h3>
-<p>Een Europese overheidsdienst vraagt een gegeven (Evidence Request) aan een Nederlandse overheidsbron om een dienst aan een Nederlandse burger in het buitenland te kunnen leveren.</p>
-<h3 id="interactie_1">Interactie<a class="headerlink" href="#interactie_1" title="Permanent link">&para;</a></h3>
-<figure>
-
-<div class="mermaid">sequenceDiagram
-    autonumber
-    participant BRG as Burger&lt;br/&gt;(rechthebbende)
-    participant EU as EU dienst&lt;br/&gt;(OOTS)
-    participant RINIS as Basisinrichting OOTS&lt;br /&gt;(BZK/RINIS)
-    participant GBO as OOTS adapter&lt;br/&gt;(GBO voorziening)
-    participant BRH as Bron&lt;br/&gt;(BRP / BD / …)
-
-    rect rgb(250, 241, 251)
-        Note over BRG,EU: ① Burger neemt dienst af
-        BRG-&gt;&gt;EU: Verzoek dienst
-        Note over EU: Gegeven van bronhouder nodig
-    end
-
-    rect rgb(230, 241, 251)
-        Note over EU,RINIS: ② OOTS-verzoek&lt;br /&gt;(eDelivery/AS4)
-        EU-&gt;&gt;RINIS: Evidence Request (eDelivery/AS4)
-    end
-
-    rect rgb(250, 238, 218)
-        Note over RINIS,GBO: ③ Doorzetten naar bron via GBO
-        RINIS-&gt;&gt;GBO: OOTS-payload (GraphQL)
-        Note over RINIS: eDelivery → GraphQL ontkoppeling
-    end
-
-    rect rgb(225, 245, 238)
-        Note over GBO: ④ Semantische mapping
-        Note over GBO: SDG Evidence type ↔ Bron-formaat
-    end
-
-    rect rgb(225, 245, 238)
-        Note over GBO,BRH: ⑤ Bronontsluiting (GBO generieke API)
-        GBO-&gt;&gt;BRH: API-aanroep (GraphQL)
-        BRH-&gt;&gt;GBO: Gegevens (Bron-formaat)
-    end
-
-    rect rgb(250, 238, 218)
-        Note over GBO,RINIS: ⑥ Terugkoppeling naar OOTS-basisinrichting
-        GBO-&gt;&gt;RINIS: Evidence Response (SDG Evidence type formaat)
-        Note over RINIS: GraphQL → eDelivery/AS4 vertaling
-    end
-
-    rect rgb(230, 241, 251)
-        Note over RINIS,BRG: ⑦ Toestemming burger (User Review)
-        RINIS-&gt;&gt;BRG: Tonen te delen gegevens
-        BRG-&gt;&gt;RINIS: Keuze te delen gegevens
-    end
-
-    rect rgb(230, 241, 251)
-        Note over EU,RINIS: ⑧ OOTS-antwoord&lt;br /&gt;(eDelivery/AS4)
-        RINIS-&gt;&gt;EU: Evidence Response
-    end
-
-    rect rgb(250, 241, 251)
-        Note over BRG,EU: ⑨ Burger neemt dienst af
-        EU-&gt;&gt;BRG: Levert dienst
-    end
-
-</div>
-<figcaption>Interactiepatroon gegevensverzoek Europese overheidsdienst via OOTS</figcaption>
-</figure>
-
-<h3 id="toelichting_1">Toelichting<a class="headerlink" href="#toelichting_1" title="Permanent link">&para;</a></h3>
-<p>BZK heeft RINIS aangewezen als nationaal OOTS-toegangspunt (AS4/eDelivery), waar de OOTS basisinrichting in beheer is. Die geeft het Evidence Request als GraphQL-request door aan GBO. GBO verzorgt de bronontsluiting en de semantische mapping naar het SDG Evidence-formaat. Bronhouders zien uitsluitend de GBO-API en hoeven geen OOTS-kennis te hebben.<br />
-De terugkoppeling volgt de omgekeerde route: GBO retourneert aan de OOTS basisinrichting, waar het bericht in AS4 wordt verpakt. Na de toestemmingsinteractie met de burger wordt het bericht als Evidence Response teruggestuurd naar de Europese overheidsdienst.</p>
-<h2 id="gegevensverzoek-van-private-partij-met-toestemming-aan-bronhouder-dvtp">Gegevensverzoek van private partij met toestemming aan bronhouder (DvTP)<a class="headerlink" href="#gegevensverzoek-van-private-partij-met-toestemming-aan-bronhouder-dvtp" title="Permanent link">&para;</a></h2>
-<h3 id="doel_2">Doel<a class="headerlink" href="#doel_2" title="Permanent link">&para;</a></h3>
-<p>Een private dienstverlener haalt gegevens op bij een bronhouder op basis van een geldige toestemming van de burger.</p>
-<h3 id="interactie_2">Interactie<a class="headerlink" href="#interactie_2" title="Permanent link">&para;</a></h3>
-<figure>
-
-<div class="mermaid">sequenceDiagram
-    autonumber
-    actor Burger
-    participant DV as Dienst-&lt;br/&gt;verlener
-    participant Auth as Authenticatie-&lt;br/&gt;dienst
-    participant TV as Toestemmings-&lt;br/&gt;voorziening
-    participant PP as Pseudonimiserings-&lt;br/&gt;voorziening
-    participant TR as Toestemmings-&lt;br/&gt;register
-    participant BRH as Bron-&lt;br/&gt;houder
-
-    Note over Burger,BRH: Fase 1 — Toestemming verlenen
-
-    rect rgb(225, 245, 238)
-        Burger-&gt;&gt;DV: Neemt dienst af
-        DV-&gt;&gt;Burger: Redirect naar toestemmingsvoorziening GBO&lt;br/&gt;(met scope + doelbinding)
-        Burger-&gt;&gt;TV: Volgt redirect
-        TV-&gt;&gt;Auth: Authenticatieverzoek
-        Note over Auth: DigiD of ander identificatiemiddel
-        Auth-&gt;&gt;Burger: Authenticeer burger
-        Burger-&gt;&gt;Auth: Authenticatie
-        Auth-&gt;&gt;TV: BSN (geverifieerde identiteit)
-        TV-&gt;&gt;TV: PI/PP aanwezig?
-        TV-&gt;&gt;PP: Activeer BSN
-        PP-&gt;&gt;TV: PI/PP
-        TV-&gt;&gt;TV: Registreer PI/PP
-        TV-&gt;&gt;PP: Transformeer PI/PP
-        PP-&gt;&gt;TV: Versleutelde PI/PP (VI/VP)
-        TV-&gt;&gt;Burger: Toon gegevensset waarvoor toestemming&lt;br/&gt;gevraagd wordt (scope + doelbinding)
-        Burger-&gt;&gt;TV: Verleent toestemming
-        TV-&gt;&gt;TR: Schrijf toestemming in register&lt;br/&gt;(VI · scope · doelbinding · TTL)
-        TR-&gt;&gt;TV: consent-id
-        TV-&gt;&gt;DV: Redirect terug naar dienstverlener&lt;br/&gt;(met consent-id en VI/VP)
-    end
-
-    Note over DV,BRH: Fase 2 — Gegevensopvraging bij bronhouder (per bron een verzoek)
-
-    rect rgb(238, 237, 254)
-        DV-&gt;&gt;BRH: Gegevensverzoek&lt;br/&gt;(consent-id · VI · mTLS / certificaat)
-        BRH-&gt;&gt;BRH: Authenticeer dienstverlener&lt;br /&gt;(via certificaat)
-        BRH-&gt;&gt;BRH: Controleer bevoegdheid&lt;br /&gt;(via FSC contract/Trusted List)
-        BRH-&gt;&gt;TR: Valideer consent-id
-        TR-&gt;&gt;BRH: Consent geldig
-        BRH-&gt;&gt;BRH: Controleer data scope
-        BRH-&gt;&gt;BRH: Ontsleutel VI naar BSN
-        BRH-&gt;&gt;DV: Gevraagde gegevens
-        DV-&gt;&gt;Burger: Levert dienst
-    end
-
-</div>
-<figcaption>Interactiepatroon Private Partij haalt gegevens op met toestemming van de burger</figcaption>
-</figure>
-
-<h3 id="toelichting_2">Toelichting<a class="headerlink" href="#toelichting_2" title="Permanent link">&para;</a></h3>
-<p>De dienstverlener kan rechtstreeks gegevens opvragen bij de bronhouder, maar heeft daarvoor toestemming van de burger nodig. Deze toestemming wordt door GBO afgehandeld via een toestemmingsvoorziening (een interface waar de burger vrij, specifiek, geïnformeerd en ondubbelzinnig de toestemming verleent) en een toestemmingsregister waar de toestemming wordt vastgelegd en waar deze gecontroleerd kan worden. De toestemmingsvoorziening moet de burger ook toegang geven tot de gegeven toestemmingen om te zien of deze zijn gebruikt en om deze - indien relevant - in te trekken.</p>
-<p>De dienstverlener gebruikt nooit het BSN van de burger. Daarom moet het BSN gepseudonimiseerd worden. De pseudonimisering moet zo gebeuren dat de dienstverlener deze telkens kan depseudonimiseren naar een eigen identificatie, die echter geen betekenis heeft voor andere partijen. De bronhouder moet het pseudoniem kunnen depseudonimiseren naar het originele BSN.</p>
-<p>Bij controle van de gegevensvraag door de dienstverlener bij de bronhouder, authenticeert de bronhouder de dienstverlener op basis van het certificaat dat ook voor de versleuteling van het transport (mTLS) gebruikt wordt. Daarnaast moet de bronhouder controleren of de dienstverlener bevoegd is om gegevens op te vragen. Dat kan via FSC-contracten - de dienstverlener moet een contract hebben afgesloten om de API van de bronhouder te mogen bevragen. Dit kan ook op basis van een lijst met bevoegde afnemers (Trusted List). Zo'n lijst kan sectoraal beheerd worden, wat voorkomt dat een bronhouder met heel veel afnemers (bv. alle hypotheekverstrekkers) contracten moet afsluiten en beheren.</p>
+<h1 id="interactiepatronen">Interactiepatronen<a class="headerlink" href="#interactiepatronen" title="Permanent link">&para;</a></h1>
+<p><a href="https://ictu.github.io/GBO-GO/main/#3-interactiepatronen">Hoofdstuk 3 van het globaal ontwerp</a> beschrijft de drie interactiepatronen van GBO. De PSA herhaalt de procesbeschrijvingen en sequencediagrammen niet.</p>
+<p>Dit hoofdstuk beschrijft welke stelselfuncties voor ieder patroon relevant zijn. Ook benoemt het de aandachtspunten die de PSA verder uitwerkt.</p>
+<table>
+<thead>
+<tr>
+<th>Patroon</th>
+<th>Grondslag en context</th>
+<th>Primair betrokken stelselfuncties</th>
+<th>PSA-aandachtspunten</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A — Burger gebruikt EUDI-Wallet</strong></td>
+<td>De burger vraagt een attestatie van attributen op voor een EUDI-Wallet. Een bronhouder kan zelf of via een andere partij een PubEAA uitgeven. Een QTSP kan een QEAA uitgeven.</td>
+<td><a href="../capabilities/#s03-burgeridentificatie-pseudonimisering">S03</a>, <a href="../capabilities/#s04-organisatie-authenticatie-vertrouwensstelsel">S04</a>, <a href="../capabilities/#s05-autorisatie">S05</a>, <a href="../capabilities/#s07-gegevensontsluiting">S07</a>, <a href="../capabilities/#s09-logging-audit-traceerbaarheid">S09</a>, <a href="../capabilities/#s10-semantiek-gegevenscatalogus">S10</a> en <a href="../capabilities/#s11-attesteringsuitgifte">S11</a></td>
+<td>Identificatie van de burger.<br>Autorisatie van uitgifte, verificatie en retrieval.<br>Attestation rulebooks en semantische mapping.<br>Signing, status en intrekking.<br>Verdeling van verantwoordelijkheden tussen bronhouder, PubEAA-verstrekker, ASI-provider en QTSP.</td>
+</tr>
+<tr>
+<td><strong>B — Grensoverschrijdend verzoek via OOTS</strong></td>
+<td>Een publieke instantie in een andere lidstaat vraagt bewijsgegevens op bij een Nederlandse bronhouder op grond van de SDG-verordening. Binnen GBO loopt dit verzoek via de Basisinrichting OOTS, vooral via de OOTS-V-component.</td>
+<td><a href="../capabilities/#s04-organisatie-authenticatie-vertrouwensstelsel">S04</a>, <a href="../capabilities/#s05-autorisatie">S05</a>, <a href="../capabilities/#s07-gegevensontsluiting">S07</a>, <a href="../capabilities/#s08-oots-adapter">S08</a>, <a href="../capabilities/#s09-logging-audit-traceerbaarheid">S09</a> en <a href="../capabilities/#s10-semantiek-gegevenscatalogus">S10</a></td>
+<td>Aansluiting van OOTS-V op de bronontsluiting-API.<br>Autorisatie via dezelfde keten als andere gegevensvragen.<br>Mapping naar OOTS-EDM.<br>Centraal beheer van discovery- en aansluitgegevens.<br>Logging over de hele keten.</td>
+</tr>
+<tr>
+<td><strong>C — Gegevensverzoek private dienstverlener</strong></td>
+<td>Een private dienstverlener vraagt gegevens op bij een bronhouder op basis van een geldige juridische grondslag. Als toestemming nodig is, legt de toestemmingsvoorziening deze specifiek, geïnformeerd en aantoonbaar vast.</td>
+<td><a href="../capabilities/#s01-toestemmingsregistratie">S01</a> tot en met S07, <a href="../capabilities/#s09-logging-audit-traceerbaarheid">S09</a> en <a href="../capabilities/#s10-semantiek-gegevenscatalogus">S10</a></td>
+<td>Juridische grondslag en burgerinteractie.<br>Registratie, raadpleging en intrekking van toestemming.<br>Pseudonimisering als de afnemer geen BSN mag verwerken.<br>Toelating van dienstverleners.<br>Registratie van diensten en toegestane gegevensvragen.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gemeenschappelijke-eisen">Gemeenschappelijke eisen<a class="headerlink" href="#gemeenschappelijke-eisen" title="Permanent link">&para;</a></h2>
+<p>Voor alle interactiepatronen gelden de volgende eisen:</p>
+<ul>
+<li>de bronhouder biedt geen patroon- of afnemerspecifiek bronkoppelvlak aan.</li>
+<li>de autorisatie toetst iedere gegevensvraag aan identiteit, grondslag, doel, gegevensvraag en relevante context.</li>
+<li>alle patronen gebruiken dezelfde generieke autorisatieketen, met patroon- of dienstspecifiek beleid.</li>
+<li>expliciete, beheerde functies buiten het bronsysteem voeren semantische en protocoltransformaties uit.</li>
+<li>iedere gegevensuitwisseling is over de hele keten herleidbaar.</li>
+<li>beleid, schema's, mappings of configuratie leggen afwijkingen en patroonafhankelijke eisen vast, niet hardgecodeerde implementatielogica.</li>
+</ul>
 
 
 

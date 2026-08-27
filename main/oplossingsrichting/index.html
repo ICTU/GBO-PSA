@@ -25,7 +25,7 @@
     
     
       
-        <title>Oplossingsrichting - Gemeenschappelijke Bronontsluiting</title>
+        <title>Vertrekpunt globaal ontwerp - Gemeenschappelijke Bronontsluiting</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#voorgestelde-oplossingsrichting" class="md-skip">
+        <a href="#vertrekpunt-uit-het-globaal-ontwerp" class="md-skip">
           Ga naar inhoud
         </a>
       
@@ -164,7 +164,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Oplossingsrichting
+              Vertrekpunt globaal ontwerp
             
           </span>
         </div>
@@ -410,13 +410,32 @@
   
   
     <li class="md-tabs__item">
-      <a href="https://ictu.github.io/GBO/main/underconstruction_sem/" class="md-tabs__link">
+      <a href="https://ictu.github.io/GBO-Semantiek/" class="md-tabs__link">
         
   
   
     
   
   Semantiek
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://gbo.simulatie.datastelsel.nl/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Demo
 
       </a>
     </li>
@@ -665,7 +684,7 @@
   <span class="md-ellipsis">
     
   
-    Oplossingsrichting
+    Vertrekpunt globaal ontwerp
   
 
     
@@ -683,7 +702,7 @@
   <span class="md-ellipsis">
     
   
-    Oplossingsrichting
+    Vertrekpunt globaal ontwerp
   
 
     
@@ -709,10 +728,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#gebruik-bestaande-afsprakenstelsels" class="md-nav__link">
+  <a href="#architectuurconsequenties" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Gebruik bestaande afsprakenstelsels
+        Architectuurconsequenties
       
     </span>
   </a>
@@ -720,10 +739,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gemeenschappelijke-bronontsluiting" class="md-nav__link">
+  <a href="#afbakening-tussen-globaal-ontwerp-en-psa" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Gemeenschappelijke bronontsluiting
+        Afbakening tussen globaal ontwerp en PSA
       
     </span>
   </a>
@@ -731,21 +750,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#aansluiten-op-bestaande-voorzieningen" class="md-nav__link">
+  <a href="#gebruik-van-bestaande-stelsels" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Aansluiten op bestaande voorzieningen
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#uitbreidbaar" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Uitbreidbaar
+        Gebruik van bestaande stelsels
       
     </span>
   </a>
@@ -859,7 +867,7 @@
   <span class="md-ellipsis">
     
   
-    Logische architectuur
+    Generieke functies
   
 
     
@@ -943,7 +951,35 @@
   <span class="md-ellipsis">
     
   
-    Open vragen en ontwerpkeuzes
+    Open besluiten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../change-log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change Log
   
 
     
@@ -1025,7 +1061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://ictu.github.io/GBO/main/underconstruction_sem/" class="md-nav__link">
+      <a href="https://ictu.github.io/GBO-Semantiek/" class="md-nav__link">
         
   
   
@@ -1033,6 +1069,33 @@
     
   
     Semantiek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://gbo.simulatie.datastelsel.nl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo
   
 
     
@@ -1071,197 +1134,85 @@
   
 
 
-<h1 id="voorgestelde-oplossingsrichting">Voorgestelde oplossingsrichting<a class="headerlink" href="#voorgestelde-oplossingsrichting" title="Permanent link">&para;</a></h1>
-<p>Dit hoofdstuk beschrijft de voorgestelde oplossingsrichting voor GBO. Het onderstaande diagram vormt hiervoor de basis.</p>
-<figure>
-<div class="mermaid">flowchart LR
-  subgraph gbo["GBO Basis"]
-    direction TB
-        fsc_pap("Beleidsregels")
-        fsc("Standaard koppelvlak&lt;br/&gt;Generieke bronontsluiting&lt;br/&gt;Configurabele autorisatie")
-        fsc_tools("GBO tools&lt;br/&gt;(ondersteuning bronhouders)")
-  end
-  subgraph eudi["EUDI-Wallet"]
-    direction LR
-        eudi_asi("Bronontsluiting voor QTSP&lt;br/&gt;(Authentic Source Interface)")
-        eudi_pubeaa("Uitgifte van publieke EAA&lt;br/&gt;(PubEAA)")
-        eudi_qeaa["QTSP&lt;br/&gt;(QEAA)"]
-        eudi_wallet["EUDI-Wallet"]
-  end
-  subgraph oots["OOTS"]
-    direction LR
-        oots_adapter("OOTS-adapter&lt;br/&gt;(semantische mapping)")
-        oots_basis["Basisinrichting OOTS"]
-        oots_afnemer["Europese overheid&lt;br/&gt;SDG-portaal"]
-  end
-  subgraph dvtp["DvTP"]
-    direction LR
-        dvtp_toestemming("Toestemmingsvoorziening")
-        dvtp_pseudoniem["Pseudonimiseervoorziening"]
-        dvtp_afnemer["Private dienstverlener"]
-  end
-
-  fsc_pap --- fsc
-  fsc --- fsc_tools
-  bron[("Overheidsbronnen&lt;br/&gt;BRP · BD · UWV · KvK · …")] --- gbo
-  eudi_asi --- eudi_qeaa
-  eudi_qeaa --- eudi_wallet
-  gbo --- eudi_asi &amp; eudi_pubeaa &amp; oots_adapter &amp; dvtp_afnemer
-  eudi_pubeaa --- eudi_wallet
-  oots_adapter --- oots_basis
-  oots_basis --- oots_afnemer
-  gbo --- dvtp_toestemming
-  dvtp_toestemming --- dvtp_afnemer
-  dvtp_toestemming --- dvtp_pseudoniem
-  dvtp_pseudoniem ~~~ dvtp_afnemer
-  eudi_wallet --- burger["Burger"]
-  oots_afnemer --- burger
-  dvtp_afnemer --- burger
-
-  fsc_pap:::gbo
-  fsc:::gbo
-  fsc_tools:::gbo
-  eudi_asi:::gbo
-  eudi_pubeaa:::gbo
-  eudi_qeaa:::eudi
-  eudi_wallet:::eudi
-  oots_adapter:::gbo
-  oots_basis:::oots
-  oots_afnemer:::oots
-  dvtp_toestemming:::gbo
-  dvtp_pseudoniem:::dvtp
-  dvtp_afnemer:::dvtp
-  bron:::bron
-  burger:::burger
-
-  classDef bron fill:#DDEBF7,stroke:#6F94B8,color:#263746
-  classDef generiek fill:#f1efe8,stroke:#5f5e5a,color:#444441
-  classDef eudi fill:#f1efe8,stroke:#5f5e5a,color:#444441
-  classDef oots fill:#f1efe8,stroke:#5f5e5a,color:#444441
-  classDef dvtp fill:#f1efe8,stroke:#5f5e5a,color:#444441
-  classDef gbo fill:#fff0e8,stroke:#000000,color:#000000
-  classDef burger fill:#DDEBF7,stroke:#6F94B8,color:#263746
-</div>
-<figcaption>Oplossingsrichting GBO.</figcaption>
-</figure>
-
-<h2 id="gebruik-bestaande-afsprakenstelsels">Gebruik bestaande afsprakenstelsels<a class="headerlink" href="#gebruik-bestaande-afsprakenstelsels" title="Permanent link">&para;</a></h2>
-<p>GBO gaat geen eigen stelsel inrichten en ook geen eigen standaarden of voorzieningen introduceren. Er wordt gebruik gemaakt van bestaande afsprakenstelsels en de standaarden en voorzieningen die daar beschikbaar zijn.<br />
-De afsprakenstelsels waarmee GBO ingericht wordt zijn:<br />
-- Federatief Datastelsel (FDS): een afsprakenstelsel dat organisaties met een publieke taak hierbij ondersteunt. De gezamenlijke afspraken zijn erop gericht dat overheden werken op basis van dezelfde standaarden, waardoor ze op een uniforme manier met data omgaan. Het FDS maakt voor de gegevensuitwisseling gebruik van de GDI-standaarden en zorgt voor aanvullingen op deze GDI-standaarden indien hiervoor nog geen standaarden of afspraken gemaakt zijn. Voorbeelden is bijvoorbeeld: Federatieve Toegangsverlening wat gebaseerd is op AuthZen en als standaard op dit moment is aangeboden bij Forum Standaardisatie.<br />
-Voor GBO dient FDS als basis voor de bronontsluiting.<br />
-- Generieke Digitale Infrastructuur (GDI): de verzameling van afspraken(stelsels), standaarden en voorzieningen die alle publieke dienstverleners gebruiken voor hun digitale dienstverlening aan burgers en ondernemers. Deze afspraken, standaarden en voorzieningen zijn verdeeld in 4 domeinen: toegang, interactie, gegevensuitwisseling en infrastructuur.<br />
-Voor GBO dient GDI als basis voor de centrale voorzieningen.<br />
-- European Digital Identity (EUDI): het door de Europese Unie vastgestelde kader waarin afspraken, architecturen en standaarden zijn vastgelegd. Dit stelsel maakt het mogelijk dat burgers en bedrijven zich door middel van één veilige digitale portemonnee (de EUDI Wallet) in de gehele EU kunnen identificeren en verifiëren.<br />
-Voor GBO dient EUDI als basis voor het leveren van gegevens (attestaties van attributen) aan burgers.<br />
-- Single Digital Gateway / Once Only Technical System (SDG/OOTS): de bindende set technische, organisatorische en juridische afspraken binnen de EU. Het stelt overheidsinstanties in staat om, met toestemming, veilig officiële bewijsstukken en gegevens van burgers en bedrijven onderling uit te wisselen.<br />
-Voor GBO dient SDG/OOTS als basis voor het leveren van gegevens aan buitenlandse Europese overheden.  </p>
-<h2 id="gemeenschappelijke-bronontsluiting">Gemeenschappelijke bronontsluiting<a class="headerlink" href="#gemeenschappelijke-bronontsluiting" title="Permanent link">&para;</a></h2>
-<p>De verbinding tussen vragende partij en bron wordt via de <strong>FSC-standaard</strong> tot stand gebracht. Dit is een standaard koppelvlak waarmee de beveiliging van de gegevensuitwisseling wordt gegarandeerd en de noodzakelijke logging wordt vastgelegd.
-Bronhouders stellen hun gegevens bloot via een generieke, herbruikbare API. Dit is mogelijk met <strong>GraphQL</strong> - een API die een zo volledig mogelijke set gegevens beschikbaar stelt, waarvan afhankelijk van de toepassing een selectie wordt bevraagd. Dit maakt het inrichten en onderhouden van een groot aantal kleinere REST-API's overbodig. Als er een nieuwe gegevensvraag ontstaat, kan dat via configuratie ingericht worden, in plaats van dat er een nieuw endpoint ingericht en beheerd hoeft te worden.<br />
-Om te garanderen dat afnemers alleen die gegevens krijgen waarop zij recht op hebben, is autorisatie nodig. Deze autorisatie moet niet alleen controleren of de afnemer toegang heeft tot de bron, maar ook welke set gegevens opgevraagd mag worden en of voldaan wordt aan de grondslag die voor de gegevensvraag geldt. Dat is configurabel in te richten als gewerkt wordt met "Policy Based Access Control" (<strong>PBAC</strong>).  </p>
-<p>Deze bouwstenen moeten door de bronhouder ingericht en onderhouden worden. Er bestaat al een referentie-implementatie voor de FSC-componenten onder de naam <strong>OpenFSC</strong> en er wordt vanuit het Federatief Datastelsel gewerkt aan een PBAC-implementatie onder de naam Federatieve Toegangsverlening (<strong>FTV</strong>). Om de inrichting van de GraphQL-API te standaardiseren zou er een GraphQL profiel in de <strong>Digikoppeling</strong> standaard opgenomen moeten worden.</p>
-<h2 id="aansluiten-op-bestaande-voorzieningen">Aansluiten op bestaande voorzieningen<a class="headerlink" href="#aansluiten-op-bestaande-voorzieningen" title="Permanent link">&para;</a></h2>
-<p>De vragende partijen kennen hun eigen standaarden en protocollen. Als deze afwijken van de FSC-standaard met GraphQL-API's, dan worden er componenten ontwikkeld om de aansluiting te maken. Voor bronhouders is dit geen zorg; als zij hun gegevens beschikbaar stellen via de gemeenschappelijke bronontsluiting kunnen zij aansluiten. Ook voor de vragende partijen wordt de koppeling eenvoudig: zij kunnen hun standaarden en protocollen blijven gebruiken en krijgen toegang tot alle bronnen die voldoen aan de GBO-oplossing.  </p>
-<p>In de figuur bovenaan dit hoofdstuk zijn de vereiste centrale voorzieningen voor de drie gegevensstromen die bij GBO in beeld zijn, ingetekend:<br />
-- Voor de EUDI-Wallet zijn dat een <strong>Authentic Source Interface</strong> waar QTSP's toegang toe krijgen om QEAA's uit te kunnen geven, en een <strong>PubEAA Provider</strong> waarmee overheidsbronnen zelf attestaties (PubEAA's) kunnen uitgeven.<br />
-- Voor OOTS is dit een <strong>OOTS-adapter</strong> waarmee aangesloten wordt op de basisinrichting OOTS, waarvandaan gegevens met buitenlandse overheden gedeeld kunnen worden in het kader van SDG.<br />
-- Voor het delen van gegevens via toestemming met private dienstverleners is een <strong>toestemmingsvoorziening</strong> nodig, en een voorziening om BSN's te <strong>pseudonimiseren</strong>, zodat deze niet terechtkomen bij partijen die geen BSN mogen verwerken.  </p>
-<h2 id="uitbreidbaar">Uitbreidbaar<a class="headerlink" href="#uitbreidbaar" title="Permanent link">&para;</a></h2>
-<p>Het doel van GBO is het ontzorgen van bronhouders bij het bedienen van verschillende gegevensstromen. Het project GBO richt zich daarbij op de gegevensstromen die door burgers geïnitieerd worden: EDI, OOTS en DvTP. Maar de oplossingsrichting leent zich ook prima voor andere gegevensstromen: door het inrichten van een generieke bronontsluiting (GraphQL) met configureerbare toegangscontrole (FSC met FTV) kan deze voor veel verschillende gegevensstromen gebruikt worden. Die gegevensstromen moeten hun gegevensverzoeken dan via FSC aanbieden in de vorm van een GraphQL-request waarin de gewenste gegevens uitgevraagd worden. Als dat niet rechtstreeks kan, is een adapter nodig die het verzoek omzet naar GraphQL en via een FSC Outway aanbiedt.<br />
-Iedere gegevensstroom zal afspraken vereisen over de gegevenssets die afgenomen mogen worden en wie onder welke voorwaarden deze gegevens mogen opvragen. De vastlegging en toepassing van die afspraken kan echter in de bestaande FTV componenten (PEP/PDP, PAP en PIP) gebeuren.</p>
-<p>Om een indruk te geven hoe nieuwe gegevensstromen toegevoegd kunnen worden, zijn in de onderstaande figuur twee extra gegevensstromen toegevoegd.</p>
-<figure>
-<div class="mermaid">flowchart LR
-  subgraph gbo["GBO Basis"]
-    direction TB
-        fsc_pap("PAP&lt;br/&gt;(beleidsregels)")
-        fsc("FSC / GraphQL / PBAC&lt;br/&gt;(generieke bronontsluiting)")
-        fsc_tools("GBO tools&lt;br/&gt;(vertaallaag)")
-  end
-  subgraph eudi["EUDI-Wallet"]
-    direction LR
-        eudi_asi("ASI-provider")
-        eudi_pubeaa("PubEAA-provider&lt;br/&gt;(PubEAA)")
-        eudi_qeaa["QTSP&lt;br/&gt;(QEAA)"]
-        eudi_wallet["EUDI-Wallet"]
-  end
-  subgraph oots["OOTS"]
-    direction LR
-        oots_adapter("OOTS adapter&lt;br/&gt;(semantische mapping)")
-        oots_basis["Basisinrichting OOTS"]
-        oots_afnemer["Europese overheid&lt;br/&gt;SDG-portaal"]
-  end
-  subgraph dvtp["DvTP"]
-    direction LR
-        dvtp_toestemming("Toestemmingsvoorziening")
-        dvtp_pseudoniem["Pseudonimiseervoorziening"]
-        dvtp_afnemer["Private dienstverlener"]
-  end
-  subgraph ebw["QERDS/EBW"]
-     direction LR
-        ebw_qerds_adapter("QERDS-adapter&lt;br/&gt;(client/EBW)")
-        ebw_pub_qtsp("Publieke QTSP")
-        ebw_qtsp["Private QTSP"]
-        ebw_wallet["EBW&lt;br/&gt;(publiek/privaat)"]
-  end
-
-  fsc_pap --- fsc
-  fsc --- fsc_tools
-  bron[("Overheidsbronnen&lt;br/&gt;BRP · BD · UWV · KvK · …")] --- gbo
-  eudi_asi --- eudi_qeaa
-  eudi_qeaa --- eudi_wallet
-  gbo --- eudi_asi &amp; eudi_pubeaa &amp; oots_adapter &amp; dvtp_afnemer &amp; ebw_qerds_adapter
-  eudi_pubeaa --- eudi_wallet
-  oots_adapter --- oots_basis
-  oots_basis --- oots_afnemer
-  gbo --- dvtp_toestemming
-  dvtp_toestemming --- dvtp_afnemer
-  dvtp_toestemming --- dvtp_pseudoniem
-  dvtp_pseudoniem ~~~ dvtp_afnemer
-  ebw_qerds_adapter --- ebw_pub_qtsp --- ebw_wallet
-  ebw_qerds_adapter --- ebw_qtsp --- ebw_wallet
-  eudi_wallet --- burger["Burger"]
-  oots_afnemer --- burger
-  dvtp_afnemer --- burger
-  ebw_wallet --- organisatie["Organisatie&lt;br/&gt;(publiek/privaat)"]
-  ebw_wallet ~~~ overheid["Ketenpartner&lt;br/&gt;(overheid)"]
-  gbo  --- overheid["Ketenpartner&lt;br/&gt;(overheid)"]
-
-  fsc_pap:::gbo
-  fsc:::gbo
-  fsc_tools:::gbo
-  ebw_qerds_adapter:::gbo
-  ebw_pub_qtsp:::gbo
-  ebw_qtsp:::eudi
-  ebw_wallet:::eudi
-  eudi_asi:::gbo
-  eudi_pubeaa:::gbo
-  eudi_qeaa:::eudi
-  eudi_wallet:::eudi
-  oots_adapter:::gbo
-  oots_basis:::oots
-  oots_afnemer:::oots
-  dvtp_toestemming:::gbo
-  dvtp_pseudoniem:::dvtp
-  dvtp_afnemer:::dvtp
-  bron:::bron
-  burger:::afnemer
-  organisatie:::afnemer
-  overheid:::afnemer
-
-  classDef bron fill:#edf7df,stroke:#6aa13a,color:#27500a
-  classDef generiek fill:#f1efe8,stroke:#5f5e5a,color:#444441
-  classDef eudi fill:#f1efe8,stroke:#5f5e5a,color:#444441
-  classDef oots fill:#f1efe8,stroke:#5f5e5a,color:#444441
-  classDef dvtp fill:#f1efe8,stroke:#5f5e5a,color:#444441
-  classDef overheid fill:#f1efe8,stroke:#5f5e5a,color:#444441
-  classDef gbo fill:#fff0e8,stroke:#000000,color:#000000
-  classDef gbo_opt fill:#FFF9F5,stroke:#9C9C9C,color:#9C9C9C
-  classDef afnemer fill:#edf7df,stroke:#6aa13a,color:#27500a
-</div>
-<figcaption>Mogelijke toekomstige use cases GBO-model. NB: dit is zuiver illustratief en valt buiten de scope van GBO!</figcaption>
-</figure>
+<h1 id="vertrekpunt-uit-het-globaal-ontwerp">Vertrekpunt uit het globaal ontwerp<a class="headerlink" href="#vertrekpunt-uit-het-globaal-ontwerp" title="Permanent link">&para;</a></h1>
+<p><a href="https://ictu.github.io/GBO-GO/main/#2-voorgestelde-oplossingsrichting">Hoofdstuk 2 van het globaal ontwerp</a> beschrijft en onderbouwt de oplossingsrichting voor GBO. Dit hoofdstuk herhaalt die beschrijving niet. Het benoemt alleen de architectuurconsequenties die deze PSA normerend uitwerkt.</p>
+<h2 id="architectuurconsequenties">Architectuurconsequenties<a class="headerlink" href="#architectuurconsequenties" title="Permanent link">&para;</a></h2>
+<p>GBO gaat uit van een gemeenschappelijke bronontsluiting. Een bronhouder richt deze ontsluiting één keer in en gebruikt deze daarna voor meerdere gegevensstromen. De inrichting voegt nieuwe gegevensvragen zoveel mogelijk via configuratie toe. Daardoor hoeft een bronhouder niet voor iedere toepassing of afnemer een nieuw bronkoppelvlak te ontwikkelen.</p>
+<p>Daaruit volgen de volgende consequenties voor de PSA:</p>
+<table>
+<thead>
+<tr>
+<th>Consequentie uit het globaal ontwerp</th>
+<th>Uitwerking in de PSA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bronhouders bieden één generieke, herbruikbare bronontsluiting aan.</td>
+<td>F3, F7 en S07</td>
+</tr>
+<tr>
+<td>Gegevensvragen zijn selectief, vooraf beheerd en afdwingbaar.</td>
+<td>F3, F4, F6, S05, S06, S07 en S10</td>
+</tr>
+<tr>
+<td>Identiteit, grondslag en context bepalen welke gegevens mogen worden geleverd.</td>
+<td>F1, F2, F6 en S01 tot en met S06</td>
+</tr>
+<tr>
+<td>GBO handelt aansluitingen op externe stelsels buiten de bronhouder af.</td>
+<td>S08, S10 en S11</td>
+</tr>
+<tr>
+<td>OOTS-verkeer loopt binnen GBO via de Basisinrichting OOTS en OOTS-V.</td>
+<td>S08 en S10</td>
+</tr>
+<tr>
+<td>Bronhouders of QTSP's kunnen attestaties voor een EUDI-Wallet uitgeven.</td>
+<td>S10 en S11</td>
+</tr>
+<tr>
+<td>Gegevensdeling met private dienstverleners vereist een geldige grondslag en, waar nodig, pseudonimisering.</td>
+<td>S01 tot en met S05</td>
+</tr>
+<tr>
+<td>De gegevensuitwisseling is over de hele keten herleidbaar en controleerbaar.</td>
+<td>F8 en S09</td>
+</tr>
+<tr>
+<td>GBO gebruikt bestaande afsprakenstelsels, standaarden en voorzieningen waar dat mogelijk is.</td>
+<td>Ontwerpprincipes en realisatiestrategie</td>
+</tr>
+</tbody>
+</table>
+<h2 id="afbakening-tussen-globaal-ontwerp-en-psa">Afbakening tussen globaal ontwerp en PSA<a class="headerlink" href="#afbakening-tussen-globaal-ontwerp-en-psa" title="Permanent link">&para;</a></h2>
+<p>Het globaal ontwerp is leidend voor:</p>
+<ul>
+<li>de probleem- en knelpuntenanalyse.</li>
+<li>de gekozen oplossingsrichting.</li>
+<li>de beschrijving en diagrammen van de interactiepatronen.</li>
+<li>de hoofdindeling in generieke functies en stelselfuncties.</li>
+<li>het overzicht van te ontwikkelen componenten en de impact op betrokken partijen.</li>
+</ul>
+<p>De PSA is leidend voor:</p>
+<ul>
+<li>de architectuur- en ontwerpprincipes.</li>
+<li>de normerende eisen aan de generieke functies.</li>
+<li>de afspraken, standaarden en functionele voorzieningen per stelselfunctie.</li>
+<li>de vragen over verantwoordelijkheden en beheer.</li>
+<li>de open architectuurbesluiten voor de verdere uitwerking.</li>
+</ul>
+<h2 id="gebruik-van-bestaande-stelsels">Gebruik van bestaande stelsels<a class="headerlink" href="#gebruik-van-bestaande-stelsels" title="Permanent link">&para;</a></h2>
+<p>GBO richt geen zelfstandig nieuw afsprakenstelsel in. GBO brengt nieuwe of aangepaste afspraken, standaarden en voorzieningen waar mogelijk onder bij bestaande afsprakenstelsels en beheerorganisaties. Dit geldt vooral voor FDS, GDI, de nationale EUDI-Wallet-governance en de governance rond de Basisinrichting OOTS.</p>
+<p>Tijdens de projectfase kan het project referentiecomponenten of tijdelijke voorzieningen ontwikkelen. Daarmee kan het project afspraken en standaarden beproeven.</p>
+<p>Voor productiegebruik moeten de betrokken partijen vooraf per onderdeel vaststellen:</p>
+<ul>
+<li>welke partij inhoudelijk verantwoordelijk is.</li>
+<li>welk afsprakenstelsel de gebruiks- en toetredingsafspraken beheert.</li>
+<li>welke organisatie de standaard of het profiel beheert.</li>
+<li>welke organisatie het operationele beheer uitvoert.</li>
+<li>hoe continuïteit, financiering en toezicht zijn geregeld.</li>
+</ul>
 
 
 

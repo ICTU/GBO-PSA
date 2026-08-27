@@ -408,13 +408,32 @@
   
   
     <li class="md-tabs__item">
-      <a href="https://ictu.github.io/GBO/main/underconstruction_sem/" class="md-tabs__link">
+      <a href="https://ictu.github.io/GBO-Semantiek/" class="md-tabs__link">
         
   
   
     
   
   Semantiek
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://gbo.simulatie.datastelsel.nl/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Demo
 
       </a>
     </li>
@@ -690,10 +709,32 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#documenthierarchie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documenthiërarchie
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#scope" class="md-nav__link">
     <span class="md-ellipsis">
       
         Scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naamgeving" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naamgeving
       
     </span>
   </a>
@@ -734,7 +775,7 @@
   <span class="md-ellipsis">
     
   
-    Oplossingsrichting
+    Vertrekpunt globaal ontwerp
   
 
     
@@ -846,7 +887,7 @@
   <span class="md-ellipsis">
     
   
-    Logische architectuur
+    Generieke functies
   
 
     
@@ -930,7 +971,35 @@
   <span class="md-ellipsis">
     
   
-    Open vragen en ontwerpkeuzes
+    Open besluiten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="change-log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change Log
   
 
     
@@ -1012,7 +1081,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://ictu.github.io/GBO/main/underconstruction_sem/" class="md-nav__link">
+      <a href="https://ictu.github.io/GBO-Semantiek/" class="md-nav__link">
         
   
   
@@ -1020,6 +1089,33 @@
     
   
     Semantiek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://gbo.simulatie.datastelsel.nl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo
   
 
     
@@ -1060,30 +1156,117 @@
 
 <h1 id="inleiding">Inleiding<a class="headerlink" href="#inleiding" title="Permanent link">&para;</a></h1>
 <h2 id="doel-van-dit-document">Doel van dit document<a class="headerlink" href="#doel-van-dit-document" title="Permanent link">&para;</a></h2>
-<p>Dit document beschrijft de Projectstartarchitectuur (PSA) voor het project Gemeenschappelijke Bronontsluiting (GBO).<br />
-De PSA beschrijft <strong>wat de oplossing moet kunnen</strong>, maar legt nog geen technische implementatie vast.  </p>
-<blockquote>
-<p>LET OP: Het project gemeenschappelijke bronontsluiting is in ontwikkeling en de documentatie volgt dit. De huidige versie van dit document is daarom niet definitief. De status van de documentatie is <a href="https://ictu.github.io/GBO/latest/#reviewproces">hier</a> te vinden.</p>
-</blockquote>
-<h2 id="scope">Scope<a class="headerlink" href="#scope" title="Permanent link">&para;</a></h2>
-<p>De PSA beschrijft de afspraken, standaarden en voorzieningen die nodig zijn om de <a href="https://ictu.github.io/GBO/latest/">voordelen die GBO nastreeft</a> te bereiken. Waar mogelijk zijn dit afspraken, standaarden en voorzieningen die al gelden in bestaande afsprakenstelsels. Als aanvullingen of aanpassingen nodig zijn om de GBO voordelen te bereiken, dan worden deze via de reguliere weg ingebracht bij bestaande afsprakenstelsels.</p>
-<p>De PSA beschrijft <strong>niet</strong>:</p>
+<p>Dit document beschrijft de projectstartarchitectuur (PSA) voor het project Gemeenschappelijke Bronontsluiting (GBO).</p>
+<p>De probleemstelling en doelen van GBO staan op het tabblad <a href="https://ictu.github.io/GBO/">Gemeenschappelijke Bronontsluiting</a>. De organisatorische en juridische context staat op het tabblad <a href="https://ictu.github.io/GBO/latest/context">Context</a>. Het <a href="https://ictu.github.io/GBO-GO/main/">globaal ontwerp</a> beschrijft op hoofdlijnen de gekozen oplossingsrichting, interactiepatronen, generieke functies en benodigde componenten.</p>
+<p>De PSA neemt het globaal ontwerp als vertrekpunt. De PSA legt de architectuurkaders en richtlijnen vast voor de verdere uitwerking van de generieke functies en stelselfuncties.</p>
+<p>De PSA beschrijft vooral:</p>
 <ul>
-<li>concrete technische oplossingen  </li>
-<li>implementaties van componenten en afspraken  </li>
-<li>leverancierskeuzes  </li>
+<li>welke normerende eisen gelden voor de generieke functies.</li>
+<li>welke afspraken, standaarden en functionele voorzieningen nodig zijn voor de stelselfuncties.</li>
+<li>voor welke verantwoordelijkheden en beheerkeuzes nog een verantwoordelijke partij nodig is.</li>
+<li>welke juridische, organisatorische en technische besluiten nog openstaan.</li>
 </ul>
+<p>De PSA legt geen leveranciers- of productkeuzes vast. Het technisch ontwerp en de technische requirements werken de componentontwerpen en technische specificaties verder uit.</p>
+<blockquote>
+<p>LET OP: Gemeenschappelijke Bronontsluiting is in ontwikkeling. De documentatie verandert mee. Deze versie is daarom niet definitief. De actuele status staat <a href="https://ictu.github.io/GBO/latest/#reviewproces">hier</a>.</p>
+</blockquote>
+<h2 id="documenthierarchie">Documenthiërarchie<a class="headerlink" href="#documenthierarchie" title="Permanent link">&para;</a></h2>
+<p>Voor GBO geldt de volgende documenthiërarchie:</p>
+<ol start="0">
+<li>De <a href="https://ictu.github.io/GBO/"><strong>inleiding</strong></a> en <a href="https://ictu.github.io/GBO/latest/context"><strong>context</strong></a> beschrijven de doelen, omgeving en juridische kaders van de gemeenschappelijke bronontsluiting.</li>
+<li>Het <a href="https://ictu.github.io/GBO-GO/"><strong>globaal ontwerp</strong></a> beschrijft op hoofdlijnen de oplossingsrichting, interactiepatronen, generieke functies en componenten.</li>
+<li>De <a href="https://ictu.github.io/GBO-PSA/"><strong>PSA</strong></a> beschrijft de kaders, eisen en ontwerpkeuzes voor de generieke functies en stelselfuncties.</li>
+<li>Het <a href="https://ictu.github.io/GBO/main/underconstruction_to/"><strong>technisch ontwerp</strong></a> beschrijft de technische inrichting van de voorzieningen en koppelvlakken.</li>
+<li>De <a href="https://ictu.github.io/GBO/main/underconstruction_tr/"><strong>technische requirements</strong></a> specificeren welke componenten het project moet ontwikkelen of aanpassen.</li>
+<li>De uitwerking <a href="https://ictu.github.io/GBO/main/underconstruction_sem/"><strong>Semantiek</strong></a> beschrijft de informatiemodellen, begrippen, schema's en mappings voor gegevensuitwisseling.</li>
+</ol>
+<p>Bij verschillen over de oplossingsrichting of interactiepatronen is het globaal ontwerp leidend. De PSA is leidend voor de normerende architectuureisen aan de verdere uitwerking.</p>
+<p>De <a href="https://gbo.simulatie.datastelsel.nl/"><strong>demo-omgeving</strong></a> laat zien hoe de voorgestelde oplossing in de praktijk kan werken. De demo is nog in ontwikkeling, gebruikt testdata en kan fouten bevatten.</p>
+<h2 id="scope">Scope<a class="headerlink" href="#scope" title="Permanent link">&para;</a></h2>
+<p>De PSA beschrijft de afspraken, standaarden en voorzieningen die nodig zijn om de <a href="https://ictu.github.io/GBO/latest/">doelen van GBO</a> te bereiken. GBO gebruikt bestaande afspraken, standaarden en voorzieningen waar dat mogelijk is. Het project brengt noodzakelijke aanvullingen onder bij bestaande afsprakenstelsels en beheerorganisaties.</p>
+<p>De PSA beschrijft niet:</p>
+<ul>
+<li>de volledige werking van de oplossingsrichting en interactiepatronen. Daarvoor verwijst de PSA naar het globaal ontwerp.</li>
+<li>concrete technische implementaties of referentie-implementaties.</li>
+<li>leverancierskeuzes.</li>
+<li>gedetailleerde API-, gegevens- of componentspecificaties.</li>
+</ul>
+<h2 id="naamgeving">Naamgeving<a class="headerlink" href="#naamgeving" title="Permanent link">&para;</a></h2>
+<p>Deze PSA gebruikt de volgende namen consequent:</p>
+<table>
+<thead>
+<tr>
+<th>Begrip</th>
+<th>Gebruik in deze PSA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Europese digitale identiteitswallet</td>
+<td><strong>EUDI-Wallet</strong></td>
+</tr>
+<tr>
+<td>Publieke elektronische attestatie van attributen</td>
+<td><strong>PubEAA</strong></td>
+</tr>
+<tr>
+<td>Technische voorziening voor uitgifte van PubEAA's</td>
+<td><strong>PubEAA-verstrekker</strong></td>
+</tr>
+<tr>
+<td>Gestandaardiseerd koppelvlak voor authentieke bronnen</td>
+<td><strong>Authentic Source Interface (ASI)</strong></td>
+</tr>
+<tr>
+<td>Technische rol of voorziening die een ASI aanbiedt</td>
+<td><strong>ASI-provider</strong></td>
+</tr>
+<tr>
+<td>Nederlandse voorziening voor aansluiting van verstrekkende bronhouders op OOTS</td>
+<td><strong>Basisinrichting OOTS</strong><br>(met <strong>OOTS-V</strong> als interface voor aansluiting vanuit een FSC-koppeling)</td>
+</tr>
+<tr>
+<td>GBO-component voor aansluiting op OOTS-V</td>
+<td><strong>OOTS-adapter</strong></td>
+</tr>
+<tr>
+<td>Generieke interface van een bronhouder</td>
+<td><strong>bronontsluiting-API</strong><br>(functioneel ook beschreven als <strong>generieke bronontsluiting</strong>)</td>
+</tr>
+<tr>
+<td>Catalogus van toegestane gegevensvragen per dienst</td>
+<td><strong>dienstencatalogus</strong></td>
+</tr>
+<tr>
+<td>Overkoepelende functie voor register, portaal en interfaces voor toestemming</td>
+<td><strong>toestemmingsvoorziening</strong></td>
+</tr>
+<tr>
+<td>Registratie van verleende en ingetrokken toestemmingen</td>
+<td><strong>toestemmingsregister</strong></td>
+</tr>
+<tr>
+<td>Burgerinterface voor toestemming</td>
+<td><strong>toestemmingsportaal</strong></td>
+</tr>
+<tr>
+<td>Ondersteuning voor bronhouders die niet rechtstreeks op de bronontsluiting-API kunnen aansluiten</td>
+<td><strong>GBO-vertaallaag</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Een uitvoerige begrippenlijst staat in het <a href="https://ictu.github.io/GBO-GO/main/bijlage_begrippenlijst/">globaal ontwerp</a>.</p>
 <h2 id="leeswijzer">Leeswijzer<a class="headerlink" href="#leeswijzer" title="Permanent link">&para;</a></h2>
 <p>De PSA bevat de volgende onderdelen:</p>
 <ul>
-<li><a href="oplossingsrichting/">Oplossingsrichting</a>: een schets van hoe de gemeenschappelijke bronontsluiting eruit komt te zien;</li>
-<li><a href="architectuurprincipes/">Architectuurprincipes</a>: de principes die de kaders vormen voor de oplossing;</li>
-<li><a href="ontwerpprincipes/">Ontwerpprincipes</a>: de principes waaraan de ontwikkeling van de oplossing zich moet houden;</li>
-<li><a href="interactiepatronen/">Interactiepatronen</a>: een uitwerking van hoe de gegevensstromen die in beeld zijn, uitgevoerd worden;</li>
-<li><a href="generieke-functies/">Logische architectuur</a>: de generieke functies die nodig zijn om invulling te geven aan de gewenste oplossing;</li>
-<li><a href="capabilities/">Stelselfuncties</a>: de stelselfuncties (capabilities) die invulling geven aan de generieke functies;</li>
-<li><a href="realisatiestrategie/">Realisatiestrategie</a>: de voorgestelde manier om de oplossing tot stand te laten komen;</li>
-<li><a href="vraagstukken/">Open vragen en ontwerpkeuzes</a>: vraagstukken die nog uitgewerkt moeten worden en (indien relevant) de ontwerpkeuze die is gemaakt.</li>
+<li><a href="oplossingsrichting/">Vertrekpunt uit het globaal ontwerp</a>: de architectuurconsequenties uit het globaal ontwerp die de PSA verder uitwerkt.</li>
+<li><a href="architectuurprincipes/">Architectuurprincipes</a>: de richtinggevende principes en de gevolgen daarvan voor GBO.</li>
+<li><a href="ontwerpprincipes/">Ontwerpprincipes</a>: de normerende principes voor ontwerp en realisatie.</li>
+<li><a href="interactiepatronen/">Interactiepatronen</a>: de relatie tussen de interactiepatronen en de stelselfuncties.</li>
+<li><a href="generieke-functies/">Generieke functies</a>: de eisen aan F1 tot en met F8 en de relatie met de stelselfuncties.</li>
+<li><a href="capabilities/">Stelselfuncties</a>: de afspraken, standaarden, functionele voorzieningen, verantwoordelijkheden en open besluiten voor S01 tot en met S11.</li>
+<li><a href="realisatiestrategie/">Realisatiestrategie</a>: de werkpakketten, afhankelijkheden en beoogde onderbrenging bij bestaande stelsels en beheerorganisaties.</li>
+<li><a href="vraagstukken/">Open besluiten</a>: het besluitregister voor architectuurkeuzes die nog niet zijn vastgesteld.</li>
 </ul>
 
 

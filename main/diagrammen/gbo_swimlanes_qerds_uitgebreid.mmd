@@ -34,7 +34,7 @@ flowchart LR
   subgraph eudi["EDI gegevensstroom"]
     direction LR
     eudi_asi("<strong>ASI-provider</strong><br/>verify dienst voor authentieke bron")
-    eudi_pubeaa("<strong>PubEAA-provider</strong><br/>publieke attestaties uit authentieke bron")
+    eudi_pubeaa("<strong>PubEAA-vertrekker</strong><br/>publieke attestaties uit authentieke bron")
     eudi_qeaa["Private QTSP<br/>QEAA"]
     subgraph wallet["EUDI-Wallet"]
       eudi_ebw["EBW<br/>(bedrijfsattributen, mandaten)"]

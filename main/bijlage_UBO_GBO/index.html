@@ -404,13 +404,32 @@
   
   
     <li class="md-tabs__item">
-      <a href="https://ictu.github.io/GBO/main/underconstruction_sem/" class="md-tabs__link">
+      <a href="https://ictu.github.io/GBO-Semantiek/" class="md-tabs__link">
         
   
   
     
   
   Semantiek
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://gbo.simulatie.datastelsel.nl/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Demo
 
       </a>
     </li>
@@ -647,7 +666,7 @@
   <span class="md-ellipsis">
     
   
-    Oplossingsrichting
+    Vertrekpunt globaal ontwerp
   
 
     
@@ -759,7 +778,7 @@
   <span class="md-ellipsis">
     
   
-    Logische architectuur
+    Generieke functies
   
 
     
@@ -843,7 +862,35 @@
   <span class="md-ellipsis">
     
   
-    Open vragen en ontwerpkeuzes
+    Open besluiten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../change-log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change Log
   
 
     
@@ -925,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://ictu.github.io/GBO/main/underconstruction_sem/" class="md-nav__link">
+      <a href="https://ictu.github.io/GBO-Semantiek/" class="md-nav__link">
         
   
   
@@ -933,6 +980,33 @@
     
   
     Semantiek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://gbo.simulatie.datastelsel.nl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo
   
 
     
@@ -1048,7 +1122,7 @@ GBO Gegevensstromen
     direction LR
       eudi_fsc_out("FSC outway")
       eudi_asi("ASI-provider&lt;br/&gt;(verify dienst)")
-      eudi_pubeaa("PubEAA-provider&lt;br/&gt;(PubEAA)")
+      eudi_pubeaa("PubEAA-vertrekker&lt;br/&gt;(PubEAA)")
       eudi_qeaa["QTSP&lt;br/&gt;(QEAA)"]
       eudi_wallet["EUDI-Wallet burger"]
   end
@@ -1165,7 +1239,7 @@ GBO Gegevensstromen
 <tr>
 <td><strong>Intermediair patroon</strong></td>
 <td>UBO laat zien dat een intermediair platform algemene functies kan leveren tussen bronhouder en kanaal, zoals OOTS-V, eDelivery, preview/toestemming en attribuutverificatie.</td>
-<td>GBO veralgemeniseert dit tot een “GBO edge”-achtige laag met werkpakketten: OOTS-adapter, ASI-provider, PubEAA-provider, toestemmingsvoorziening en pseudonimiseervoorziening. De PSA tekent deze als afzonderlijke werkpakketten bovenop GBO Basis.</td>
+<td>GBO veralgemeniseert dit tot een “GBO edge”-achtige laag met werkpakketten: OOTS-adapter, ASI-provider, PubEAA-vertrekker, toestemmingsvoorziening en pseudonimiseervoorziening. De PSA tekent deze als afzonderlijke werkpakketten bovenop GBO Basis.</td>
 </tr>
 <tr>
 <td><strong>Lessen over vertrouwen, logging en certificaten</strong></td>
@@ -1208,12 +1282,12 @@ GBO Gegevensstromen
 <tr>
 <td><strong>Autorisatie</strong></td>
 <td>UBO gebruikt FSC-contracten, access tokens en FSC-policies om te controleren of de gevraagde gegevensset binnen het contract valt.</td>
-<td>GBO breidt dit uit naar PBAC met PEP/PDP/PIP, real-time grondslagcontrole, AuthZEN-profielen en centraal beheerde policies. De PSA noemt OPA/Rego, AuthZEN NL Gov, PBAC, decentrale PEP/PDP’s en een centrale PAP/Policy Store als beoogde stelselfuncties.</td>
+<td>GBO breidt dit uit naar PBAC met PEP/PDP/PIP, real-time grondslagcontrole, AuthZEN-profielen en centraal beheerde policies. De PSA noemt AuthZEN NL Gov, PBAC, decentrale PEP/PDP’s en een centrale PAP/Policy Store als beoogde stelselfuncties.</td>
 </tr>
 <tr>
 <td><strong>Beleidsbeheer</strong></td>
 <td>UBO borgt autorisatie vooral in FSC-contracten en configuratie.</td>
-<td>GBO introduceert centraal beheerde, machineleesbare policybundels die naar decentrale PDP’s worden gedistribueerd. De PSA benoemt dit als nieuwe stelselfunctie S06 met een PAP, Policy Store en OPA Bundle Server.</td>
+<td>GBO introduceert centraal beheerde, machineleesbare policybundels die naar decentrale PDP’s worden gedistribueerd. De PSA benoemt dit als nieuwe stelselfunctie S06 met een PAP en Policy Store.</td>
 </tr>
 <tr>
 <td><strong>BSN en private partijen</strong></td>
@@ -1223,7 +1297,7 @@ GBO Gegevensstromen
 <tr>
 <td><strong>Wallet-model</strong></td>
 <td>UBO gaat in de beschreven use cases vooral uit van een QTSP die QEAA’s uitgeeft of attributen verifieert via een intermediair/verificatieservice.</td>
-<td>GBO voegt een publieke route toe: een centrale of bronhoudergebonden PubEAA-provider voor PuBEAA’s, naast de QTSP-route voor QEAA’s. De PSA noemt voorlopig een centrale PubEAA-verstrekker en centrale verificatiedienst, maar houdt ook opties open voor bronhouder-eigen invulling.</td>
+<td>GBO voegt een publieke route toe: een centrale of bronhoudergebonden PubEAA-vertrekker voor PuBEAA’s, naast de QTSP-route voor QEAA’s. De PSA noemt voorlopig een centrale PubEAA-verstrekker en centrale verificatiedienst, maar houdt ook opties open voor bronhouder-eigen invulling.</td>
 </tr>
 <tr>
 <td><strong>Centralisatie versus decentralisatie</strong></td>
