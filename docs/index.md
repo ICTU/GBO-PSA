@@ -2,7 +2,7 @@
 
 ## Doel van dit document
 
-Dit document beschrijft de Projectstartarchitectuur (PSA) voor het project Gemeenschappelijke Bronontsluiting (GBO).
+Dit document beschrijft de projectstartarchitectuur (PSA) voor het project Gemeenschappelijke Bronontsluiting (GBO).
 
 De probleemstelling en doelen van GBO staan op het tabblad [Gemeenschappelijke Bronontsluiting](https://ictu.github.io/GBO/). De organisatorische en juridische context staat op het tabblad [Context](https://ictu.github.io/GBO/latest/context). Het [globaal ontwerp](https://ictu.github.io/GBO-GO/main/) beschrijft op hoofdlijnen de gekozen oplossingsrichting, interactiepatronen, generieke functies en benodigde componenten.
 
