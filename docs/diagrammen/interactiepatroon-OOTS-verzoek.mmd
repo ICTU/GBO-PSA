@@ -13,14 +13,14 @@ sequenceDiagram
     end
 
     rect rgb(230, 241, 251)
-        Note over EU,RINIS: ② OOTS-verzoek<br />(eDelivery/AS4)
-        EU->>RINIS: Evidence Request (eDelivery/AS4)
+        Note over EU,RINIS: ② OOTS-verzoek<br />(e-Delivery/AS4)
+        EU->>RINIS: Evidence Request (e-Delivery/AS4)
     end
 
     rect rgb(250, 238, 218)
         Note over RINIS,GBO: ③ Doorzetten naar bron via GBO
         RINIS->>GBO: OOTS-payload (GraphQL)
-        Note over RINIS: eDelivery → GraphQL ontkoppeling
+        Note over RINIS: e-Delivery → GraphQL ontkoppeling
     end
 
     rect rgb(225, 245, 238)
@@ -37,7 +37,7 @@ sequenceDiagram
     rect rgb(250, 238, 218)
         Note over GBO,RINIS: ⑥ Terugkoppeling naar OOTS-basisinrichting
         GBO->>RINIS: Evidence Response (SDG Evidence type formaat)
-        Note over RINIS: GraphQL → eDelivery/AS4 vertaling
+        Note over RINIS: GraphQL → e-Delivery/AS4 vertaling
     end
 
     rect rgb(230, 241, 251)
@@ -47,7 +47,7 @@ sequenceDiagram
     end
 
     rect rgb(230, 241, 251)
-        Note over EU,RINIS: ⑧ OOTS-antwoord<br />(eDelivery/AS4)
+        Note over EU,RINIS: ⑧ OOTS-antwoord<br />(e-Delivery/AS4)
         RINIS->>EU: Evidence Response
     end
 

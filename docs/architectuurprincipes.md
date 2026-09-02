@@ -31,4 +31,4 @@ De principes gelden voor:
 - het beoordelen van uitzonderingen en tijdelijke oplossingen.
 - het nemen van de open besluiten in deze PSA.
 
-Leg iedere afwijking vast als architectuurbesluit. Beschrijf daarin de aanleiding, alternatieven, risico's en maatregelen. Leg ook vast hoe de afwijking eindigt of overgaat naar regulier beheer.
+Leg iedere afwijking vast als architectuurbesluit (ADR). Beschrijf daarin de aanleiding, alternatieven, risico's en maatregelen. Leg ook vast hoe de afwijking eindigt of overgaat naar regulier beheer.

@@ -13,7 +13,8 @@ Tijdens pilots kan het project referentiecomponenten of tijdelijke voorzieningen
 - hoe financiering, continuïteit, toezicht en aansprakelijkheid zijn geregeld.
 - welke acceptatie- en exitcriteria gelden.
 
-De realisatie volgt de [ontwerpprincipes](ontwerpprincipes.md). Vooral de principes *afspraken boven standaarden boven voorzieningen* en *decentraal wat kan, centraal wat moet* zijn bepalend.
+De realisatie volgt de [ontwerpprincipes](ontwerpprincipes.md). Vooral de principes *afspraken boven standaarden boven voorzieningen* en *decentraal wat kan, centraal wat moet* zijn bepalend.  
+Keuzes bij de uitwerking van het ontwerp, worden vastgelegd in *Architecture Decision Records* (ADR's).
 
 ## Werkpakketten
 

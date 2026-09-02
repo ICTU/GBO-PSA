@@ -188,7 +188,8 @@ Iedere gegevensvraag toetsen aan identiteit, dienst, doel, grondslag, gegevenssc
 
 **Afspraken en standaarden**
 
-- AuthZEN of een gelijkwaardig open PEP-PDP-profiel.
+- AuthZEN NLGov-profiel (NLgov Profile for OpenID AuthZEN Authorization API 1.0.0) of een gelijkwaardig open PEP-PDP-profiel.
+- 
 - gemeenschappelijk autorisatievocabulaire.
 - regels voor foutafhandeling, time-outs en fail-safe gedrag.
 - aansluiting van PIP-bronnen.
@@ -261,7 +262,7 @@ Bronhouders gegevens laten aanbieden via één generieke en herbruikbare bronont
 
 - FSC voor veilige federatieve connectiviteit waar passend.
 - een vastgesteld API-profiel voor selectieve bevraging, met GraphQL als voorgestelde invulling.
-- DCAT-AP NL voor catalogusbeschrijvingen waar van toepassing.
+- DCAT-AP-NL voor catalogusbeschrijvingen waar van toepassing.
 - aansluitvoorwaarden, serviceniveaus en versiebeleid.
 - registratieproces voor diensten en toegestane gegevensvragen.
 
@@ -290,14 +291,14 @@ De generieke bronontsluiting binnen GBO aansluiten op de Basisinrichting OOTS, v
 - OOTS-verzoeken gebruiken dezelfde generieke autorisatie- en loggingfuncties als andere gegevensvragen.
 - de Basisinrichting OOTS blijft verantwoordelijk voor transport, discovery en Europese procesinteractie.
 - de adapter of mappingfunctie vertaalt expliciet tussen brongegevens en OOTS-EDM.
-- bronhouders zijn niet afhankelijk van implementatiedetails van AS4/eDelivery.
+- bronhouders zijn niet afhankelijk van implementatiedetails van AS4/e-Delivery.
 - sectorale of eigen OOTS-aansluitingen vallen buiten GBO. GBO sluit deze aansluitingen technisch niet uit.
 
 **Afspraken en standaarden**
 
 - SDG-verordening en OOTS Technical Design Documents.
 - OOTS-EDM.
-- AS4/eDelivery en discoveryprofielen aan de kant van de Basisinrichting OOTS.
+- AS4/e-Delivery en discoveryprofielen aan de kant van de Basisinrichting OOTS.
 - nationaal koppelvlak tussen OOTS-V en de GBO-bronontsluiting.
 - beheerafspraken voor mappings en gegevensdiensten.
 
@@ -331,6 +332,7 @@ Gegevensvragen en relevante beslissingen over de hele keten herleidbaar maken. D
 **Afspraken en standaarden**
 
 - Logboek Dataverwerkingen als functioneel kader.
+- Authorization Decision Log voor vastleggen autorisatiebeslissingen.
 - gestandaardiseerde correlatie- en tracecontext.
 - uniform gebeurtenismodel en minimale auditset.
 - afspraken voor tijdsynchronisatie, integriteit, bewaartermijnen en incidentonderzoek.
@@ -367,7 +369,7 @@ Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven. Daardo
 
 - NL-SBB voor begrippen.
 - MIM voor informatiemodellen waar passend.
-- DCAT-AP NL voor catalogusbeschrijvingen.
+- DCAT-AP-NL voor catalogusbeschrijvingen.
 - RDF, SKOS, SHACL, JSON Schema, GraphQL-schema's en XML Schema waar passend.
 - kwaliteit en herkomst volgens toepasselijke NORA- en W3C-kaders.
 
