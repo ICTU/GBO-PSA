@@ -17,7 +17,7 @@ flowchart LR
         direction LR
             oots_outway("FSC<br/>Outway")
             oots_adapter("OOTS-V<br/>(GBO mapping)")
-            oots_basis("eDelivery<br/>toegangspunt")
+            oots_basis("e-Delivery<br/>toegangspunt")
             oots_afnemer("Europese lidstaat<br/>SDG-portaal")
     end
     subgraph dvtp["DvTP"]
@@ -40,7 +40,7 @@ flowchart LR
   eudi_pubeaa -- OpenID4VCI --- eudi_wallet
 
   oots_outway --- oots_adapter --- oots_basis
-  oots_basis -- eDelivery/AS4 --- oots_afnemer
+  oots_basis -- e-Delivery/AS4 --- oots_afnemer
 
   dvtp_outway --- dvtp_toestemming
   dvtp_toestemming -- REST-JSON --- dvtp_afnemer

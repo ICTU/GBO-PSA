@@ -17,7 +17,7 @@ flowchart LR
     direction LR
       oots_fsc_out("FSC outway")
       oots_adapter("OOTS-V<br/>(GBO mapping)")
-      oots_basis["eDelivery<br/>toegangspunt"]
+      oots_basis["e-Delivery<br/>toegangspunt"]
       oots_afnemer["Europese overheid<br/>SDG-portaal"]
   end
 
@@ -34,7 +34,7 @@ flowchart LR
 %%  gbo_fsc_in -- GraphQL --- dvtp_fsc_out
   eudi_fsc_out --- eudi_asi -- REST-JSON<br/>(HTTP / OAuth) --- eudi_qeaa -- OpenID4VCI --- eudi_wallet
   eudi_fsc_out --- eudi_pubeaa -- OpenID4VCI ---- eudi_wallet
-  oots_fsc_out --- oots_adapter --- oots_basis -- eDelivery-AS4 --- oots_afnemer
+  oots_fsc_out --- oots_adapter --- oots_basis -- e-Delivery-AS4 --- oots_afnemer
 
 %%  gbo_pbac -- REST-JSON<br/>(PIP) --- dvtp_toestemming
 %%  dvtp_toestemming -- REST-JSON --- dvtp_afnemer

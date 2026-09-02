@@ -24,22 +24,22 @@ flowchart LR
             U_OUTWAY["OpenFSC Outway"]:::auth
             U_RETRIEVE["Attribuutophaalservice<br/>(retrieve)"]:::adapter
             U_VERIF["Attribuutverificatieservice<br/>(verify)"]:::adapter
-            U_AS4["eDelivery/AS4 adapter<br/>REST-JSON → eDelivery/AS4"]:::adapter
+            U_AS4["e-Delivery/AS4 adapter<br/>REST-JSON → e-Delivery/AS4"]:::adapter
             U_OOTSV["OOTS-V backend<br/>UBO-model → OOTS-EDM"]:::adapter
         end
 
         U_QTSP["QTSP-platform<br/>QEAA-provider"]:::afnemer
         U_WALLET["EUDI-wallet"]:::afnemer
-        U_EDLV["eDelivery Access Point<br/>AS4 / Domibus"]:::afnemer
+        U_EDLV["e-Delivery Access Point<br/>AS4 / Domibus"]:::afnemer
         U_OOTS["Europese overheid<br/>OOTS"]:::afnemer
 
         U_BRON --> U_DATA --> U_INWAY
         U_INWAY -->|"REST/JSON"| U_OUTWAY
 
-        U_OUTWAY --> |"REST/JSON"| U_OOTSV -->|"eDelivery/AS4"| U_EDLV -->|"eDelivery/AS4"| U_OOTS
+        U_OUTWAY --> |"REST/JSON"| U_OOTSV -->|"e-Delivery/AS4"| U_EDLV -->|"e-Delivery/AS4"| U_OOTS
         U_AS4 ~~~ U_EDLV
-        U_OUTWAY --> |"REST/JSON"| U_RETRIEVE -->|"REST/JSON"| U_AS4 -->|"eDelivery/AS4"| U_QTSP
-        U_OUTWAY --> |"REST/JSON"| U_VERIF -->|"REST/JSON"| U_AS4 -->|"eDelivery/AS4"| U_QTSP
+        U_OUTWAY --> |"REST/JSON"| U_RETRIEVE -->|"REST/JSON"| U_AS4 -->|"e-Delivery/AS4"| U_QTSP
+        U_OUTWAY --> |"REST/JSON"| U_VERIF -->|"REST/JSON"| U_AS4 -->|"e-Delivery/AS4"| U_QTSP
         U_QTSP -->|"OpenID4VCI"| U_WALLET
     end
 
@@ -67,7 +67,7 @@ flowchart LR
 
         G_WALLET["EDI/EUDI-wallet"]:::afnemer
         G_QTSP["QTSP"]:::afnemer
-        G_OOTS_BI["eDelivery Access Point<br/>AS4 / Domibus"]:::afnemer
+        G_OOTS_BI["e-Delivery Access Point<br/>AS4 / Domibus"]:::afnemer
         G_OOTS["Europese overheid<br/>OOTS"]:::afnemer
         G_PRIV["Private dienstverlener"]:::afnemer
 
@@ -82,5 +82,5 @@ flowchart LR
         G_OUTWAY -->|"GraphQL"| G_DVTP -->|"GraphQL"| G_PRIV
         G_OUTWAY -->|"GraphQL"| G_ASI -->|"REST/JSON"| G_QTSP -->|"OpenID4VCI"| G_WALLET
         G_OUTWAY -->|"GraphQL"| G_PUBEAA -->|"OpenID4VCI"| G_WALLET
-        G_OUTWAY -->|"GraphQL"| G_OOTS_AD -->|"REST/JSON"| G_OOTS_BI -->|"eDelivery/AS4"| G_OOTS
+        G_OUTWAY -->|"GraphQL"| G_OOTS_AD -->|"REST/JSON"| G_OOTS_BI -->|"e-Delivery/AS4"| G_OOTS
     end

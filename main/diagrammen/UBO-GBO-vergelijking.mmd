@@ -28,15 +28,15 @@ flowchart LR
 
         U_QTSP["QTSP-platform<br/>QEAA-provider"]:::afnemer
         U_WALLET["EUDI-wallet"]:::afnemer
-        U_EDLV["eDelivery Access Point<br/>AS4 / Domibus"]:::afnemer
+        U_EDLV["e-Delivery Access Point<br/>AS4 / Domibus"]:::afnemer
         U_OOTS["Europese overheid<br/>OOTS"]:::afnemer
 
         U_REG --> U_DATA --> U_INWAY
         U_INWAY -->|"REST/JSON"| U_OOTSV
         U_RETRIEVE ~~~ U_EDLV
-        U_OOTSV -->|"eDelivery/AS4"| U_EDLV -->|"eDelivery/AS4"| U_OOTS
-        U_OOTSV -->|"eDelivery/AS4"| U_RETRIEVE -->|"eDelivery/AS4"| U_QTSP
-        U_OOTSV -->|"eDelivery/AS4"| U_VERIF -->|"eDelivery/AS4"| U_QTSP
+        U_OOTSV -->|"e-Delivery/AS4"| U_EDLV -->|"e-Delivery/AS4"| U_OOTS
+        U_OOTSV -->|"e-Delivery/AS4"| U_RETRIEVE -->|"e-Delivery/AS4"| U_QTSP
+        U_OOTSV -->|"e-Delivery/AS4"| U_VERIF -->|"e-Delivery/AS4"| U_QTSP
         U_QTSP -->|"OpenID4VCI"| U_WALLET
     end
 
@@ -64,7 +64,7 @@ flowchart LR
 
         G_WALLET["EDI/EUDI-wallet"]:::afnemer
         G_QTSP["QTSP"]:::afnemer
-        G_OOTS_BI["eDelivery Access Point<br/>AS4 / Domibus"]:::afnemer
+        G_OOTS_BI["e-Delivery Access Point<br/>AS4 / Domibus"]:::afnemer
         G_OOTS["Europese overheid<br/>OOTS"]:::afnemer
         G_PRIV["Private dienstverlener"]:::afnemer
 
@@ -78,7 +78,7 @@ flowchart LR
         G_AUTH -->|"GraphQL"| G_DVTP -->|"GraphQL"| G_PRIV
         G_AUTH -->|"GraphQL"| G_ASI -->|"REST/JSON"| G_QTSP -->|"OpenID4VCI"| G_WALLET
         G_AUTH -->|"GraphQL"| G_PUBEAA -->|"OpenID4VCI"| G_WALLET
-        G_AUTH -->|"GraphQL"| G_OOTS_AD -->|"REST/JSON"| G_OOTS_BI -->|"eDelivery/AS4"| G_OOTS
+        G_AUTH -->|"GraphQL"| G_OOTS_AD -->|"REST/JSON"| G_OOTS_BI -->|"e-Delivery/AS4"| G_OOTS
     end
 
     %% Vergelijkingslijnen

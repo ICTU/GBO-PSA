@@ -1047,7 +1047,7 @@
 
 <h1 id="bijlage-lessons-learned-van-de-beproevingen-uniforme-bronontsluiting">Bijlage - Lessons Learned van de beproevingen Uniforme Bronontsluiting<a class="headerlink" href="#bijlage-lessons-learned-van-de-beproevingen-uniforme-bronontsluiting" title="Permanent link">&para;</a></h1>
 <h2 id="inleiding">Inleiding<a class="headerlink" href="#inleiding" title="Permanent link">&para;</a></h2>
-<p>Het project BronConnect / Uniforme Bronontsluitiung (<a href="https://digilab.overheid.nl/projecten/beproeving-eenvoudig-en-eenduidig-gegevens-uitwisselen/">UBO</a>) heeft een aantal beproevingen uitgevoerd om te onderzoeken hoe gemeenten op een eenduidige manier kunnen voldoen aan de eisen die OOTS en de eIDAS-verordening stellen. UBO heeft laten zien dat gemeentelijke bronontsluiting via een integratielaag, Data API, FSC/OpenFSC en een OOTS/eDelivery-adapter werkbaar is.<br />
+<p>Het project BronConnect / Uniforme Bronontsluitiung (<a href="https://digilab.overheid.nl/projecten/beproeving-eenvoudig-en-eenduidig-gegevens-uitwisselen/">UBO</a>) heeft een aantal beproevingen uitgevoerd om te onderzoeken hoe gemeenten op een eenduidige manier kunnen voldoen aan de eisen die OOTS en de eIDAS-verordening stellen. UBO heeft laten zien dat gemeentelijke bronontsluiting via een integratielaag, Data API, FSC/OpenFSC en een OOTS/e-Delivery-adapter werkbaar is.<br />
 GBO bouwt voort op de bevindingen van UBO en maakt daar een productiegericht, breder en generieker stelsel van: meer bronhouders, meer trajecten, rijkere autorisatie, expliciet semantiekbeheer en centrale of gedeelde voorzieningen waar dat schaalvoordeel geeft.  </p>
 <p>In deze bijlage wordt uitgewerkt hoe de bevindingen uit de UBO beproevingen zijn gebruikt in de opzet en architectuur van GBO.</p>
 <h2 id="vergelijking-ubo-gbo">Vergelijking UBO - GBO<a class="headerlink" href="#vergelijking-ubo-gbo" title="Permanent link">&para;</a></h2>
@@ -1066,7 +1066,7 @@ UBO Gegevensstromen
       direction LR
       oots_outway("FSC&lt;br/&gt;Outway")
       oots_v("OOTS-V")
-      oots_delivery("eDelivery&lt;br/&gt;toegangspunt")
+      oots_delivery("e-Delivery&lt;br/&gt;toegangspunt")
       oots_afnemer["OOTS-portaal"]
     end
     subgraph eudi["EUDI"]
@@ -1079,9 +1079,9 @@ UBO Gegevensstromen
   burger
 
   bron[("Gemeentebronnen&lt;br/&gt;(GBA, vergunningen, etc.)")] --- data_api --- fsc --REST/JSON--- oots_outway
-  oots_outway --- oots_v --- oots_delivery --eDelivery/AS4--- oots_afnemer
+  oots_outway --- oots_v --- oots_delivery --e-Delivery/AS4--- oots_afnemer
 
-  oots_delivery --eDelivery/AS4--- eudi_qeaa --OpenID4VCI--- eudi_wallet
+  oots_delivery --e-Delivery/AS4--- eudi_qeaa --OpenID4VCI--- eudi_wallet
   eudi_qeaa ~~~ oots_afnemer
 
   eudi_wallet --- burger["Burger"]
@@ -1130,7 +1130,7 @@ GBO Gegevensstromen
     direction LR
       oots_fsc_out("FSC outway")
       oots_adapter("OOTS-V&lt;br/&gt;(GBO mapping)")
-      oots_basis["eDelivery&lt;br/&gt;toegangspunt"]
+      oots_basis["e-Delivery&lt;br/&gt;toegangspunt"]
       oots_afnemer["Europese overheid&lt;br/&gt;SDG-portaal"]
   end
 
@@ -1147,7 +1147,7 @@ GBO Gegevensstromen
 %%  gbo_fsc_in -- GraphQL --- dvtp_fsc_out
   eudi_fsc_out --- eudi_asi -- REST-JSON&lt;br/&gt;(HTTP / OAuth) --- eudi_qeaa -- OpenID4VCI --- eudi_wallet
   eudi_fsc_out --- eudi_pubeaa -- OpenID4VCI ---- eudi_wallet
-  oots_fsc_out --- oots_adapter --- oots_basis -- eDelivery-AS4 --- oots_afnemer
+  oots_fsc_out --- oots_adapter --- oots_basis -- e-Delivery-AS4 --- oots_afnemer
 
 %%  gbo_pbac -- REST-JSON&lt;br/&gt;(PIP) --- dvtp_toestemming
 %%  dvtp_toestemming -- REST-JSON --- dvtp_afnemer
@@ -1223,22 +1223,22 @@ GBO Gegevensstromen
 </tr>
 <tr>
 <td><strong>OOTS-V / Basisinrichting OOTS / RINIS</strong></td>
-<td>UBO gebruikt de OOTS-V als intermediair platform dat de UBO-integratielaag aansluit op het Europese OOTS-netwerk. De OOTS-V bevat onder meer OpenFSC Outway, OOTS-V backend, eDelivery-toegangspunt, authenticatieservice en preview/toestemmingsservice.</td>
-<td>GBO hergebruikt de Basisinrichting OOTS/RINIS als nationaal OOTS-toegangspunt voor AS4/eDelivery. De PSA beschrijft dat RINIS het OOTS-verzoek als REST/JSON doorzet naar GBO, waarna GBO bronontsluiting en semantische mapping verzorgt.</td>
+<td>UBO gebruikt de OOTS-V als intermediair platform dat de UBO-integratielaag aansluit op het Europese OOTS-netwerk. De OOTS-V bevat onder meer OpenFSC Outway, OOTS-V backend, e-Delivery-toegangspunt, authenticatieservice en preview/toestemmingsservice.</td>
+<td>GBO hergebruikt de Basisinrichting OOTS/RINIS als nationaal OOTS-toegangspunt voor AS4/e-Delivery. De PSA beschrijft dat RINIS het OOTS-verzoek als REST/JSON doorzet naar GBO, waarna GBO bronontsluiting en semantische mapping verzorgt.</td>
 </tr>
 <tr>
-<td><strong>eDelivery/AS4-brug</strong></td>
-<td>UBO heeft het patroon bewezen waarin nationale REST/FSC-bevraging wordt gekoppeld aan Europees eDelivery/AS4-verkeer. De UBO-architectuur beschrijft het eDelivery-toegangspunt als Domibus-implementatie en schakelpunt met andere lidstaten.</td>
-<td>GBO neemt dit over voor OOTS: OOTS-adapter ↔ Basisinrichting OOTS ↔ eDelivery/AS4. De GBO-realisatiestrategie tekent dit ook zo: GBO levert via een OOTS-adapter REST/JSON aan de Basisinrichting OOTS, die via eDelivery-AS4 met de Europese overheid communiceert.</td>
+<td><strong>e-Delivery/AS4-brug</strong></td>
+<td>UBO heeft het patroon bewezen waarin nationale REST/FSC-bevraging wordt gekoppeld aan Europees e-Delivery/AS4-verkeer. De UBO-architectuur beschrijft het e-Delivery-toegangspunt als Domibus-implementatie en schakelpunt met andere lidstaten.</td>
+<td>GBO neemt dit over voor OOTS: OOTS-adapter ↔ Basisinrichting OOTS ↔ e-Delivery/AS4. De GBO-realisatiestrategie tekent dit ook zo: GBO levert via een OOTS-adapter REST/JSON aan de Basisinrichting OOTS, die via e-Delivery-AS4 met de Europese overheid communiceert.</td>
 </tr>
 <tr>
 <td><strong>Attribuutverificatie voor EUDI-wallet/QTSP</strong></td>
-<td>UBO heeft een attribuutverificatieservice uitgewerkt waarbij de QTSP een verificatieverzoek doet en de service de authentieke bron op uniforme wijze bevraagt; de specificatie noemt Digikoppeling API-profiel/FSC richting bron en eDelivery plus OOTS/ETSI TS 119 478-berichtmodellen richting QTSP. (<a href="https://digilab.overheid.nl/uploads/uniforme-bronontsluiting/2026-03-30%20Specificaties%20attribuutverificatieservice.pdf">Digilab</a>)</td>
+<td>UBO heeft een attribuutverificatieservice uitgewerkt waarbij de QTSP een verificatieverzoek doet en de service de authentieke bron op uniforme wijze bevraagt; de specificatie noemt Digikoppeling API-profiel/FSC richting bron en e-Delivery plus OOTS/ETSI TS 119 478-berichtmodellen richting QTSP. (<a href="https://digilab.overheid.nl/uploads/uniforme-bronontsluiting/2026-03-30%20Specificaties%20attribuutverificatieservice.pdf">Digilab</a>)</td>
 <td>GBO bouwt hierop voort met een verificatiedienst/ASI-provider. De PSA beschrijft dat een QTSP via een verificatiedienst attributen kan laten verifiëren, waarbij die dienst door de bronhouder zelf of centraal via GBO kan worden aangeboden.</td>
 </tr>
 <tr>
 <td><strong>Intermediair patroon</strong></td>
-<td>UBO laat zien dat een intermediair platform algemene functies kan leveren tussen bronhouder en kanaal, zoals OOTS-V, eDelivery, preview/toestemming en attribuutverificatie.</td>
+<td>UBO laat zien dat een intermediair platform algemene functies kan leveren tussen bronhouder en kanaal, zoals OOTS-V, e-Delivery, preview/toestemming en attribuutverificatie.</td>
 <td>GBO veralgemeniseert dit tot een “GBO edge”-achtige laag met werkpakketten: OOTS-adapter, ASI-provider, PubEAA-vertrekker, toestemmingsvoorziening en pseudonimiseervoorziening. De PSA tekent deze als afzonderlijke werkpakketten bovenop GBO Basis.</td>
 </tr>
 <tr>
