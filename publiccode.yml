@@ -1,18 +1,20 @@
-publiccodeYmlVersion: "0.1"
+publiccodeYmlVersion: "0.2"
 
-name: PSA GBO
-url: "https://github.com/ICTU/gbo-psa.git"
-# softwareVersion: "1.0"    # Optional
-releaseDate: "tbd"
+name: GBO Projectstartarchitectuur
+url: "https://github.com/ICTU/GBO-PSA.git"
+landingURL: "https://ictu.github.io/GBO-PSA/"
+softwareVersion: "0.8"
+releaseDate: "2026-09-01"
+
 platforms:
   - web
 
 categories:
- - documentation
+ - digital-citizenship
 
 developmentStatus: development
 
-softwareType: "documentation"
+softwareType: "standalone/other"
 
 description:
  en:
@@ -25,6 +27,7 @@ description:
 
    features:
       - PSA
+      - Change Log
       - Diagrammen die in PSA gebruikt worden
 
 legal:
