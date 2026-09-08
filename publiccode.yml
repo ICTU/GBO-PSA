@@ -26,9 +26,11 @@ description:
          Deze repository beschrijft de projectstartarchitectuur (PSA) voor het project Gemeenschappelijke Bronontsluiting (GBO). De PSA beschrijft wat de oplossing moet kunnen, maar legt nog geen technische implementatie vast.
 
    features:
-      - PSA
-      - Change Log
-      - Diagrammen die in PSA gebruikt worden
+      - Op 1 manier ontsluiten - meervoudig gebruiken
+      - Architectuurprincipes
+      - Ontwerpprincipes
+      - Realisatiestrategie
+      - Open besluiten
 
 legal:
  license: EUPL-1.2
