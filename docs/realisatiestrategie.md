@@ -169,6 +169,9 @@ Een private dienstverlener die de DvTP-dienst van GBO wil gebruiken, moet:
 
 ## Landing in bestaande stelsels en beheerorganisaties
 
+GBO is een programma en geen organisatie die componenten kan beheren in een structurele productieomgeving. Ook is GBO geen stelsel met deelnemers en afspraken. Alle componenten die door GBO ontwikkeld worden, moeten opgenomen worden in stelsels en/of organisaties waar deze componenten beheerd worden en er toezicht is op de juiste toepassing.  
+Gedurende de ontwikkeling onderzoekt GBO waar de verschillende componenten het beste kunnen landen. Daarbij wordt zoveel mogelijk gebruik gemaakt van bestaande stelsels en beheerorganisaties. Een eerste voorzet hiervoor staat in de onderstaande tabel.
+
 | Beheerobject | Beoogde governance | Beoogde beheer- of uitvoeringsrichting | Besluitpunt |
 |---|---|---|---|
 | Aansluitvoorwaarden en gebruik bronontsluiting | FDS | FDS-beheer, in samenwerking met GDI-partijen | Definitieve eigenaar en handhaving |
