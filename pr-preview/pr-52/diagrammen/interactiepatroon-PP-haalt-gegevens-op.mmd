@@ -1,0 +1,47 @@
+sequenceDiagram
+    autonumber
+    actor Burger
+    participant DV as Dienst-<br/>verlener
+    participant Auth as Authenticatie-<br/>dienst
+    participant TV as Toestemmings-<br/>voorziening
+    participant PP as Pseudonimiserings-<br/>voorziening
+    participant TR as Toestemmings-<br/>register
+    participant BRH as Bron-<br/>houder
+
+    Note over Burger,BRH: Fase 1 — Toestemming verlenen
+
+    rect rgb(225, 245, 238)
+        Burger->>DV: Neemt dienst af
+        DV->>Burger: Redirect naar toestemmingsvoorziening GBO<br/>(met scope + doelbinding)
+        Burger->>TV: Volgt redirect
+        TV->>Auth: Authenticatieverzoek
+        Note over Auth: DigiD of ander identificatiemiddel
+        Auth->>Burger: Authenticeer burger
+        Burger->>Auth: Authenticatie
+        Auth->>TV: BSN (geverifieerde identiteit)
+        TV->>TV: PI/PP aanwezig?
+        TV->>PP: Activeer BSN
+        PP->>TV: PI/PP
+        TV->>TV: Registreer PI/PP
+        TV->>PP: Transformeer PI/PP
+        PP->>TV: Versleutelde PI/PP (VI/VP)
+        TV->>Burger: Toon gegevensset waarvoor toestemming<br/>gevraagd wordt (scope + doelbinding)
+        Burger->>TV: Verleent toestemming
+        TV->>TR: Schrijf toestemming in register<br/>(VI · scope · doelbinding · TTL)
+        TR->>TV: consent-id
+        TV->>DV: Redirect terug naar dienstverlener<br/>(met consent-id en VI/VP)
+    end
+
+    Note over DV,BRH: Fase 2 — Gegevensopvraging bij bronhouder (per bron een verzoek)
+
+    rect rgb(238, 237, 254)
+        DV->>BRH: Gegevensverzoek<br/>(consent-id · VI · mTLS / certificaat)
+        BRH->>BRH: Authenticeer dienstverlener<br />(via certificaat)
+        BRH->>BRH: Controleer bevoegdheid<br />(via FSC contract/Trusted List)
+        BRH->>TR: Valideer consent-id
+        TR->>BRH: Consent geldig
+        BRH->>BRH: Controleer data scope
+        BRH->>BRH: Ontsleutel VI naar BSN
+        BRH->>DV: Gevraagde gegevens
+        DV->>Burger: Levert dienst
+    end
