@@ -950,6 +950,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#change-log-v082" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change Log v0.8.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#change-log-v081" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1111,11 +1122,192 @@
 
 
 <h1 id="change-log">Change Log<a class="headerlink" href="#change-log" title="Permanent link">&para;</a></h1>
+<h2 id="change-log-v082">Change Log v0.8.2<a class="headerlink" href="#change-log-v082" title="Permanent link">&para;</a></h2>
+<p>Van: versie <a href="https://ictu.github.io/GBO-PSA/0.8.1/"><strong>0.8.1</strong></a> (september 2026) → Naar: versie <strong>0.8.2</strong> (september 2026)</p>
+<p>Dit is geen uitputtende opsomming van iedere gewijzigde zin, maar een overzicht van wat er conceptueel en structureel is veranderd, per hoofdstuk/paragraaf.</p>
+<hr />
+<h3 id="samenvatting-in-een-oogopslag">Samenvatting in één oogopslag<a class="headerlink" href="#samenvatting-in-een-oogopslag" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Onderdeel</th>
+<th>Aard van de wijziging</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vertrekpunt Globaal Ontwerp</td>
+<td>Bronspecifieke GBO-configuratie toegevoegd als architectuurconsequentie</td>
+<td><a href="#vertrekpunt-uit-het-globaal-ontwerp-1">detailbeschrijving</a></td>
+</tr>
+<tr>
+<td>Interactiepatronen</td>
+<td>Vastgelegd dat centrale voorzieningen de configuratie van de bronhouder gebruiken</td>
+<td><a href="#interactiepatronen-1">detailbeschrijving</a></td>
+</tr>
+<tr>
+<td>Generieke functies</td>
+<td>Eisen rond configuratie toegevoegd aan gegevensvoorziening, semantiek en beheer</td>
+<td><a href="#generieke-functies-1">detailbeschrijving</a></td>
+</tr>
+<tr>
+<td>Stelselfuncties</td>
+<td>Decentraal configuratiecomponent uitgewerkt, vooral binnen S07, S08, S10 en S11</td>
+<td><a href="#stelselfuncties-1">detailbeschrijving</a></td>
+</tr>
+<tr>
+<td>Realisatiestrategie</td>
+<td>Configuratiecomponent toegevoegd aan GBO-basis en impact bronhouder; landing in bestaande stelsels verduidelijkt</td>
+<td><a href="#realisatiestrategie-1">detailbeschrijving</a></td>
+</tr>
+<tr>
+<td>Open besluiten</td>
+<td>Voorkeursrichting voor gebruik van de OOTS-mappingvoorziening aangescherpt</td>
+<td><a href="#open-besluiten-1">detailbeschrijving</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="vertrekpunt-uit-het-globaal-ontwerp">Vertrekpunt uit het globaal ontwerp<a class="headerlink" href="#vertrekpunt-uit-het-globaal-ontwerp" title="Permanent link">&para;</a></h3>
+<ul>
+<li>De architectuurconsequenties zijn aangepast aan de verdere uitwerking van het Globaal Ontwerp.</li>
+<li>Expliciet is gemaakt dat een bronhouder naast de gemeenschappelijke bronontsluiting een <strong>bronspecifieke GBO-configuratie</strong> beheert.</li>
+<li>In deze configuratie legt de bronhouder vast welke gegevens beschikbaar zijn en hoe deze binnen de verschillende gegevensstromen worden ontsloten.</li>
+<li>Nieuwe gegevensvragen worden zoveel mogelijk via deze configuratie toegevoegd, zodat daarvoor geen wijzigingen in het bronsysteem of nieuwe afnemerspecifieke bronkoppelvlakken nodig zijn.</li>
+<li>Aan het overzicht van architectuurconsequenties is toegevoegd dat bronhouders met deze configuratie bepalen welke gegevensdiensten beschikbaar zijn en hoe centrale GBO-voorzieningen deze verwerken.</li>
+</ul>
+<p><span style='font-size: small;'><a href="#samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
+<hr />
+<h3 id="interactiepatronen">Interactiepatronen<a class="headerlink" href="#interactiepatronen" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Aan de gemeenschappelijke eisen voor alle interactiepatronen is toegevoegd dat een centrale GBO-voorziening voor bronspecifieke verwerking gebruikmaakt van de configuratie die onder verantwoordelijkheid van de bronhouder wordt beheerd.</li>
+<li>Hiermee is explicieter vastgelegd dat centrale voorzieningen bronspecifieke verwerking uitvoeren op basis van door de bronhouder beheerde configuratie en deze inrichting niet zelfstandig bepalen.</li>
+</ul>
+<p><span style='font-size: small;'><a href="#samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
+<hr />
+<h3 id="generieke-functies">Generieke functies<a class="headerlink" href="#generieke-functies" title="Permanent link">&para;</a></h3>
+<p>De eisen aan de generieke functies zijn aangevuld om het decentrale configuratieconcept expliciet te ondersteunen.</p>
+<ul>
+<li>
+<p><strong>F3 — Gegevensvoorziening</strong></p>
+<ul>
+<li>nieuwe afnemers, gegevensdiensten en interactiepatronen worden zoveel mogelijk ondersteund door wijzigingen in de bronspecifieke configuratie en, waar nodig, beleid, dienstregistratie, schema's en mappings;</li>
+<li>hiervoor zijn in beginsel geen wijzigingen in het bronsysteem nodig.</li>
+</ul>
+</li>
+<li>
+<p><strong>F4 — Semantiek &amp; Eenheid van Taal</strong></p>
+<ul>
+<li>de bronhouder legt in een bronspecifieke GBO-configuratie vast welke gegevensdiensten voor de verschillende gegevensstromen beschikbaar zijn;</li>
+<li>in deze configuratie wordt vastgelegd welke schema's, mappings en andere verwerkingsinstructies van toepassing zijn;</li>
+<li>centrale GBO-voorzieningen kunnen de voor hen relevante configuratie machineleesbaar raadplegen;</li>
+<li>de bronhouder blijft inhoudelijk verantwoordelijk voor de configuratie. Centrale voorzieningen passen deze toe, maar bepalen niet zelfstandig de bronspecifieke inrichting.</li>
+</ul>
+</li>
+<li>
+<p><strong>F8 — Beheer &amp; Continuïteit</strong></p>
+<ul>
+<li>voor bronspecifieke configuratie moeten afspraken bestaan over publicatie, validatie, versiebeheer, geldigheid en actualiteit;</li>
+<li>achteraf moet herleidbaar zijn welke configuratie bij een gegevensverwerking is toegepast.</li>
+</ul>
+</li>
+</ul>
+<p><span style='font-size: small;'><a href="#samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
+<hr />
+<h3 id="stelselfuncties">Stelselfuncties<a class="headerlink" href="#stelselfuncties" title="Permanent link">&para;</a></h3>
+<p>De belangrijkste inhoudelijke wijziging in deze versie is de verdere uitwerking van het <strong>decentrale configuratiecomponent</strong> en de bronspecifieke GBO-configuratie.</p>
+<ul>
+<li>
+<p><strong>S07 — Gegevensontsluiting</strong></p>
+<ul>
+<li>nieuwe diensten worden in beginsel via de bronspecifieke GBO-configuratie toegevoegd;</li>
+<li>deze configuratie wordt gebruikt in samenhang met dienstregistratie, schema's, mappings en het toepasselijke beleid.</li>
+</ul>
+</li>
+<li>
+<p><strong>S08 — OOTS-adapter</strong></p>
+<ul>
+<li>de toepassing van semantische mappings is gekoppeld aan de configuratie van de bronhouder;</li>
+<li>als voor een gegevensdienst een semantische mapping is geconfigureerd, gebruikt de centrale mappingfunctie deze configuratie om brongegevens naar het overeengekomen OOTS-EDM-formaat te vertalen;</li>
+<li>S08 verwijst hiervoor naar de mappings en configuratie die via S10 worden beheerd.</li>
+</ul>
+</li>
+<li>
+<p><strong>S10 — Semantiek &amp; Gegevenscatalogus</strong></p>
+<ul>
+<li>het doel van S10 is uitgebreid met het configureren van de wijze waarop gegevens van een bronhouder via de verschillende GBO-gegevensstromen worden aangeboden;</li>
+<li>de bronhouder beheert een bronspecifieke GBO-configuratie met de beschikbare gegevensdiensten en de bijbehorende schema's, mappings en verwerkingsinstructies;</li>
+<li>configuratie verwijst waar mogelijk naar beheerde objecten, zodat informatie niet onnodig wordt gedupliceerd;</li>
+<li>centrale GBO-voorzieningen moeten de voor hen relevante configuratie machineleesbaar kunnen raadplegen;</li>
+<li>configuratie moet valideerbaar, versieerbaar en herleidbaar zijn;</li>
+<li>de technische implementatie van het configuratiecomponent is vrij, zolang deze aan de afgesproken functionele eisen en koppelvlakken voldoet;</li>
+<li>een <strong>decentraal configuratiecomponent</strong> is toegevoegd aan de functionele voorzieningen van S10;</li>
+<li>standaardisatie, het koppelvlak en de minimale functionele eisen van het configuratiecomponent zijn toegevoegd aan de open besluiten binnen S10.</li>
+</ul>
+</li>
+<li>
+<p><strong>S11 — Attesteringsuitgifte</strong></p>
+<ul>
+<li>als voor attestatie-uitgifte een semantische mapping nodig is, legt de bronhouder in de GBO-configuratie vast welke mapping en welk attestatieschema worden toegepast;</li>
+<li>de semantische mapping en de configuratie daarvoor worden via S10 beschikbaar gesteld.</li>
+</ul>
+</li>
+</ul>
+<p>Het configuratiecomponent is daarmee bewust geen nieuwe afzonderlijke stelselfunctie. Het is een functionele voorziening binnen S10 die ook door andere stelselfuncties wordt gebruikt.</p>
+<p><span style='font-size: small;'><a href="#samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
+<hr />
+<h3 id="realisatiestrategie">Realisatiestrategie<a class="headerlink" href="#realisatiestrategie" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Binnen het werkpakket <strong>GBO-basis</strong> zijn toegevoegd:</p>
+<ul>
+<li>een model en koppelvlak voor de bronspecifieke GBO-configuratie;</li>
+<li>afspraken over validatie, versiebeheer, publicatie en raadpleging van deze configuratie;</li>
+<li>een referentie-implementatie van een decentraal configuratiecomponent.</li>
+</ul>
+</li>
+<li>
+<p>Binnen het werkpakket <strong>OOTS</strong> is verduidelijkt dat:</p>
+<ul>
+<li>het beheerproces voor OOTS-EDM-mappings ook de configuratie omvat waarmee de bronhouder bepaalt welke semantische mapping voor een gegevensdienst wordt toegepast;</li>
+<li>semantische mapping naar een evidence type wordt toegepast als deze door de bronhouder voor de betreffende gegevensdienst is geconfigureerd.</li>
+</ul>
+</li>
+<li>
+<p>Bij de <strong>impact op bronhouders</strong> is toegevoegd dat:</p>
+<ul>
+<li>de bronhouder naast gegevensdiensten, schema's en kwaliteit ook de bronspecifieke configuratie beheert waarmee wordt bepaald hoe gegevens via de verschillende GBO-gegevensstromen worden aangeboden;</li>
+<li>de bronhouder hiervoor een decentraal configuratiecomponent beheert;</li>
+<li>de technische implementatie van dit component vrij is, zolang deze aan de vastgestelde functionele eisen en koppelvlakken voldoet.</li>
+</ul>
+</li>
+<li>
+<p>De paragraaf <strong>Landing in bestaande stelsels en beheerorganisaties</strong> is verduidelijkt:</p>
+<ul>
+<li>GBO is een programma en geen structurele beheerorganisatie;</li>
+<li>GBO is ook geen zelfstandig stelsel met deelnemers en afspraken;</li>
+<li>componenten die binnen GBO worden ontwikkeld moeten voor productie worden ondergebracht bij stelsels en/of organisaties die het beheer en toezicht structureel kunnen uitvoeren;</li>
+<li>tijdens de ontwikkeling wordt onderzocht waar de verschillende componenten het beste kunnen landen, waarbij zoveel mogelijk wordt aangesloten op bestaande stelsels en beheerorganisaties.</li>
+</ul>
+</li>
+</ul>
+<p><span style='font-size: small;'><a href="#samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
+<hr />
+<h3 id="open-besluiten">Open besluiten<a class="headerlink" href="#open-besluiten" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>B-12 — OOTS-functiegrenzen</strong> is aangescherpt.</li>
+<li>Aan het besluitpunt is toegevoegd of OOTS-verzoeken altijd via de OOTS-adapter/mappingvoorziening moeten lopen.</li>
+<li>De voorkeursrichting is verduidelijkt: de mappingvoorziening wordt voor een eenvoudige en uniforme inrichting altijd aangeroepen, ook wanneer geen semantische vertaling nodig is en gegevens één-op-één worden doorgegeven.</li>
+<li>De definitieve functiegrenzen tussen OOTS-V, de OOTS-adapter en de mappingvoorziening blijven onderwerp van besluitvorming.</li>
+</ul>
+<p><span style='font-size: small;'><a href="#samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
+<hr />
 <h2 id="change-log-v081">Change Log v0.8.1<a class="headerlink" href="#change-log-v081" title="Permanent link">&para;</a></h2>
 <p>Van: versie <a href="https://ictu.github.io/GBO-PSA/0.7.2/"><strong>0.7.2</strong></a> (juli 2026) → Naar: versie <strong>0.8.1</strong> (september 2026)</p>
 <p>Dit is geen uitputtende opsomming van iedere gewijzigde zin, maar een overzicht van wat er conceptueel en structureel is veranderd, per hoofdstuk/paragraaf.</p>
 <hr />
-<h3 id="samenvatting-in-een-oogopslag">Samenvatting in één oogopslag<a class="headerlink" href="#samenvatting-in-een-oogopslag" title="Permanent link">&para;</a></h3>
+<h3 id="samenvatting-in-een-oogopslag_1">Samenvatting in één oogopslag<a class="headerlink" href="#samenvatting-in-een-oogopslag_1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1208,7 +1400,7 @@
 </ul>
 <p><span style='font-size: small;'><a href="#samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
 <hr />
-<h3 id="vertrekpunt-uit-het-globaal-ontwerp">Vertrekpunt uit het globaal ontwerp<a class="headerlink" href="#vertrekpunt-uit-het-globaal-ontwerp" title="Permanent link">&para;</a></h3>
+<h3 id="vertrekpunt-uit-het-globaal-ontwerp_1">Vertrekpunt uit het globaal ontwerp<a class="headerlink" href="#vertrekpunt-uit-het-globaal-ontwerp_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>De uitgebreide beschrijving van de voorgestelde oplossingsrichting is verwijderd. Hiervoor wordt voortaan verwezen naar hoofdstuk 2 van het Globaal Ontwerp.</li>
 <li>De eerdere technische beschrijving van FSC, GraphQL, PBAC, centrale voorzieningen en adapters is vervangen door een overzicht van de <strong>architectuurconsequenties</strong> van het Globaal Ontwerp.</li>
@@ -1288,7 +1480,7 @@
 </ul>
 <p><span style='font-size: small;'><a href="#samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
 <hr />
-<h3 id="interactiepatronen">Interactiepatronen<a class="headerlink" href="#interactiepatronen" title="Permanent link">&para;</a></h3>
+<h3 id="interactiepatronen_1">Interactiepatronen<a class="headerlink" href="#interactiepatronen_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>De uitgebreide procesbeschrijvingen en sequencediagrammen voor de drie interactiepatronen zijn uit de PSA verwijderd en staan voortaan alleen in het Globaal Ontwerp.</li>
 <li>
@@ -1319,7 +1511,7 @@
 </ul>
 <p><span style='font-size: small;'><a href="#samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
 <hr />
-<h3 id="generieke-functies">Generieke functies<a class="headerlink" href="#generieke-functies" title="Permanent link">&para;</a></h3>
+<h3 id="generieke-functies_1">Generieke functies<a class="headerlink" href="#generieke-functies_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Het hoofdstuk <strong>Logische architectuur</strong> is vervangen door <strong>Generieke functies</strong>.</li>
 <li>Het logische architectuurdiagram en de uitgebreide duplicatie van functionele beschrijvingen zijn verwijderd. Hiervoor wordt verwezen naar het Globaal Ontwerp.</li>
@@ -1336,7 +1528,7 @@
 </ul>
 <p><span style='font-size: small;'><a href="#samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
 <hr />
-<h3 id="stelselfuncties">Stelselfuncties<a class="headerlink" href="#stelselfuncties" title="Permanent link">&para;</a></h3>
+<h3 id="stelselfuncties_1">Stelselfuncties<a class="headerlink" href="#stelselfuncties_1" title="Permanent link">&para;</a></h3>
 <p>Het hoofdstuk met stelselfuncties is inhoudelijk en structureel sterk herwerkt.</p>
 <ul>
 <li>
@@ -1465,7 +1657,7 @@
 </ul>
 <p><span style='font-size: small;'><a href="#samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
 <hr />
-<h3 id="realisatiestrategie">Realisatiestrategie<a class="headerlink" href="#realisatiestrategie" title="Permanent link">&para;</a></h3>
+<h3 id="realisatiestrategie_1">Realisatiestrategie<a class="headerlink" href="#realisatiestrategie_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>De realisatiestrategie is opnieuw opgebouwd rond het uitgangspunt dat <strong>GBO geen zelfstandig nieuw afsprakenstelsel of structurele GBO-beheerorganisatie vormt</strong>.</li>
 <li>Tijdelijke projectvoorzieningen en referentiecomponenten zijn toegestaan voor pilots, maar voor productie zijn expliciete eigenaarschap-, beheer-, continuïteits-, financierings- en exitafspraken vereist.</li>
@@ -1502,7 +1694,7 @@
 </ul>
 <p><span style='font-size: small;'><a href="#samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
 <hr />
-<h3 id="open-besluiten">Open besluiten<a class="headerlink" href="#open-besluiten" title="Permanent link">&para;</a></h3>
+<h3 id="open-besluiten_1">Open besluiten<a class="headerlink" href="#open-besluiten_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Het oude hoofdstuk <strong>Vraagstukken en ontwerpkeuzes</strong>, met losse inhoudelijke vragen en voorlopige ontwerpkeuzes, is vervangen door <strong>Open besluiten</strong>.</li>
 <li>De open vraagstukken zijn geconsolideerd in een gestructureerd <strong>besluitregister</strong>.</li>
