@@ -1,0 +1,83 @@
+flowchart TB
+
+subgraph OPS["8. Beheer & Continuïteit"]
+OP1["Monitoring"]
+OP2["Incidentbeheer"]
+OP3["Capaciteitsbeheer"]
+OP4["Configuratiebeheer"]
+OP5["Continuïteitsbeheer"]
+OP6["Rapportage over gebruik"]
+OP7["Versiebeheer van interfaces"]
+end
+
+subgraph ORCH["7. Orkestratie & Integratie"]
+OR1["Service discovery"]
+OR2["Coördinatie van gegevensstromen"]
+OR3["Integratie met externe systemen"]
+OR4["Protocolvertaling"]
+OR5["Workflowcoördinatie"]
+OR6["Eventafhandeling"]
+OR7["Berichtenafhandeling"]
+end
+
+subgraph LEGAL["6. Gebruik & Juridische grondslag"]
+LE1["Juridische grondslag vaststellen"]
+LE2["Gebruikvoorwaarden beheren"]
+LE3["Controle op doelbinding"]
+LE4["Privacybescherming"]
+LE5["Audit van gegevensgebruik"]
+LE6["Logging van gegevensgebruik"]
+end
+
+subgraph QUALITY["5. Gegevenskwaliteit & Validatie"]
+QU1["Gegevensvalidatie"]
+QU2["Controle op volledigheid"]
+QU3["Controle op actualiteit"]
+QU4["Controle op consistentie"]
+QU5["Foutdetectie"]
+QU6["Rapportage over datakwaliteit"]
+end
+
+subgraph SEM["4. Semantiek & Eenheid van taal"]
+SE1["Informatiemodellen beheren"]
+SE2["Begrippen en definities beheren"]
+SE3["Mapping tussen datamodellen"]
+SE4["Standaardisatie van gegevensstructuren"]
+SE5["Semantische validatie"]
+SE6["Metadata beheren"]
+end
+
+subgraph DATA["3. Gegevensvoorziening"]
+DA1["Bronregistratie"]
+DA2["Datasetbeschrijving"]
+DA3["Gegevensverzoeken ontvangen"]
+DA4["Gegevens ophalen bij bronhouder"]
+DA5["Gegevens leveren aan afnemer"]
+DA6["Gegevens leveren aan wallet"]
+DA7["Gegevensminimalisatie"]
+DA8["Gegevensformattering"]
+DA9["Versiebeheer van gegevens"]
+end
+
+subgraph ACCESS["2. Toegang & Interactie"]
+AC1["Gegevensverzoek initiëren"]
+AC2["Toegang verlenen tot gegevens"]
+AC3["Autorisatiecontrole"]
+AC4["Toestemming registreren"]
+AC5["Toestemming controleren"]
+AC6["Toestemming intrekken"]
+AC7["Verzoekroutering"]
+AC8["API-interactie"]
+AC9["Sessiebeheer"]
+AC10["Foutafhandeling"]
+end
+
+subgraph ID["1. Identiteit & Vertrouwen"]
+ID1["Identificatie van burgers"]
+ID2["Identificatie van organisaties"]
+ID3["Authenticatie van gebruikers"]
+ID4["Authenticatie van systemen"]
+ID5["Federatieve identiteiten"]
+ID6["Vertrouwensketens"]
+ID7["Identiteitsattributen beheren"]
+end
