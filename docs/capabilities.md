@@ -368,7 +368,7 @@ Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven en bron
 - de configuratie verwijst waar mogelijk naar beheerde objecten, zoals diensten, schema's, mappings en beleidsregels, zodat deze informatie niet onnodig wordt gedupliceerd.
 - centrale GBO-voorzieningen kunnen de voor hen relevante configuratie machineleesbaar raadplegen.
 - de configuratie is valideerbaar, versieerbaar en herleidbaar.
-- sde technische implementatie van het configuratiecomponent is vrij, zolang deze voldoet aan de afgesproken functionele eisen en koppelvlakken.
+- de technische implementatie van het configuratiecomponent is vrij, zolang deze voldoet aan de afgesproken functionele eisen en koppelvlakken.
 
 **Afspraken en standaarden**
 
