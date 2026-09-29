@@ -1210,7 +1210,7 @@
 </ul></section><section class="print-page" id="oplossingsrichting" heading-number="2"><h1 id="oplossingsrichting-vertrekpunt-uit-het-globaal-ontwerp">Vertrekpunt uit het globaal ontwerp<a class="headerlink" href="#oplossingsrichting-vertrekpunt-uit-het-globaal-ontwerp" title="Permanent link">&para;</a></h1>
 <p><a href="https://ictu.github.io/GBO-GO/main/#2-voorgestelde-oplossingsrichting">Hoofdstuk 2 van het globaal ontwerp</a> beschrijft en onderbouwt de oplossingsrichting voor GBO. Dit hoofdstuk herhaalt die beschrijving niet. Het benoemt alleen de architectuurconsequenties die deze PSA normerend uitwerkt.</p>
 <h2 id="oplossingsrichting-architectuurconsequenties">Architectuurconsequenties<a class="headerlink" href="#oplossingsrichting-architectuurconsequenties" title="Permanent link">&para;</a></h2>
-<p>GBO gaat uit van een gemeenschappelijke bronontsluiting. Een bronhouder richt deze ontsluiting één keer in en gebruikt deze daarna voor meerdere gegevensstromen. De inrichting voegt nieuwe gegevensvragen zoveel mogelijk via configuratie toe. Daardoor hoeft een bronhouder niet voor iedere toepassing of afnemer een nieuw bronkoppelvlak te ontwikkelen.</p>
+<p>GBO gaat uit van een gemeenschappelijke bronontsluiting. Een bronhouder richt deze ontsluiting één keer in en gebruikt deze daarna voor meerdere gegevensstromen. De bronhouder beheert daarnaast een bronspecifieke GBO-configuratie, waarmee wordt vastgelegd welke gegevens beschikbaar zijn en hoe deze binnen de verschillende gegevensstromen worden ontsloten. Nieuwe gegevensvragen worden zoveel mogelijk via deze configuratie toegevoegd. Daardoor hoeft een bronhouder niet voor iedere toepassing of afnemer een nieuw bronkoppelvlak te ontwikkelen.</p>
 <p>Daaruit volgen de volgende consequenties voor de PSA:</p>
 <table>
 <thead>
@@ -1223,6 +1223,10 @@
 <tr>
 <td>Bronhouders bieden één generieke, herbruikbare bronontsluiting aan.</td>
 <td>F3, F7 en S07</td>
+</tr>
+<tr>
+<td>Bronhouders beheren de configuratie waarmee zij bepalen welke gegevensdiensten beschikbaar zijn en hoe centrale GBO-voorzieningen deze verwerken.</td>
+<td>F3, F4, S07 en S10</td>
 </tr>
 <tr>
 <td>Gegevensvragen zijn selectief, vooraf beheerd en afdwingbaar.</td>
@@ -1539,6 +1543,7 @@
 <li>expliciete, beheerde functies buiten het bronsysteem voeren semantische en protocoltransformaties uit.</li>
 <li>iedere gegevensuitwisseling is over de hele keten herleidbaar.</li>
 <li>beleid, schema's, mappings of configuratie leggen afwijkingen en patroonafhankelijke eisen vast, niet hardgecodeerde implementatielogica.</li>
+<li>waar een centrale GBO-voorziening bronspecifieke verwerking uitvoert, gebruikt deze daarvoor de configuratie die onder verantwoordelijkheid van de bronhouder wordt beheerd.</li>
 </ul></section><section class="print-page" id="generieke-functies" heading-number="6"><h1 id="generieke-functies-generieke-functies">Generieke functies<a class="headerlink" href="#generieke-functies-generieke-functies" title="Permanent link">&para;</a></h1>
 <p>Het <a href="https://ictu.github.io/GBO-GO/main/#4-generieke-functies-en-stelselfuncties">globaal ontwerp</a> onderscheidt acht generieke functies. Deze PSA herhaalt de functionele beschrijving niet. De PSA legt per functie de normerende eisen vast.</p>
 <p>Deze eisen volgen uit de <a href="https://ictu.github.io/GBO-GO/latest/#4-generieke-functies-en-stelselfuncties">functionele beschrijving</a>, de <a href="https://ictu.github.io/GBO-GO/latest/#uitgangspunten">uitgangspunten</a>, de <a href="#architectuurprincipes">architectuurprincipes</a> en de <a href="#ontwerpprincipes">ontwerpprincipes</a>. Dit hoofdstuk legt ook de relatie met de stelselfuncties vast.</p>
@@ -1571,7 +1576,7 @@
 <ul>
 <li>iedere bronhouder biedt één generieke bronontsluiting-API voor de gegevensstromen die GBO ondersteunt.</li>
 <li>gegevensvragen zijn selectief en beperkt tot vooraf geregistreerde diensten en gegevenssets.</li>
-<li>nieuwe afnemers of interactiepatronen vereisen in beginsel alleen wijzigingen in beleid, dienstregistratie of mapping, niet in het bronsysteem.</li>
+<li>nieuwe afnemers, gegevensdiensten of interactiepatronen vereisen in beginsel alleen wijzigingen in de bronspecifieke configuratie en, waar nodig, in beleid, dienstregistratie, schema's of mappings; zij vereisen geen wijziging in het bronsysteem.</li>
 <li>expliciete adapters en mappings verwerken protocol- en formaatverschillen van externe stelsels.</li>
 <li>de bronhouder blijft verantwoordelijk voor de beschikbaarheid, juistheid en actualiteit van de brongegevens.</li>
 <li>de GBO-vertaallaag ondersteunt bronhouders die het gekozen API-profiel nog niet rechtstreeks kunnen aanbieden. Deze ondersteuning blijft vervangbaar.</li>
@@ -1584,6 +1589,9 @@
 <li>bronhouders en domeinen blijven inhoudelijk verantwoordelijk voor hun begrippen en informatiemodellen.</li>
 <li>GBO stelt gemeenschappelijke kaders vast voor vindbaarheid, beschrijving, versiebeheer en mapping.</li>
 <li>schema's en mappings zijn machineleesbaar, testbaar en versieerbaar.</li>
+<li>de bronhouder legt in een bronspecifieke GBO-configuratie vast welke gegevensdiensten beschikbaar zijn voor de verschillende gegevensstromen en welke schema's, mappings en andere verwerkingsinstructies daarbij van toepassing zijn.</li>
+<li>centrale GBO-voorzieningen kunnen de voor hen relevante bronspecifieke configuratie machineleesbaar raadplegen.</li>
+<li>de bronhouder blijft inhoudelijk verantwoordelijk voor deze configuratie. Centrale voorzieningen passen de configuratie toe, maar bepalen niet zelfstandig de bronspecifieke inrichting.</li>
 <li>transformaties naar OOTS-EDM, attestatieschema's en andere uitwisselformaten zijn afgeleid van beheerde bron- en doelschema's.</li>
 <li>iedere wijziging bevat een impactanalyse en een overgangsstrategie voor bestaande afnemers.</li>
 </ul>
@@ -1625,6 +1633,7 @@
 <li>monitoring van de keten vereist geen onnodige centrale verzameling van inhoudelijke persoonsgegevens.</li>
 <li>een gestandaardiseerde verzoekidentificator maakt gebeurtenissen over componenten heen correleerbaar.</li>
 <li>configuraties, beleid, schema's, mappings en dienstregistraties ondersteunen versiebeheer en audit.</li>
+<li>voor bronspecifieke GBO-configuratie zijn afspraken vastgelegd over publicatie, validatie, versiebeheer, geldigheid en actualiteit. Bij een gegevensverwerking is herleidbaar welke configuratie is toegepast.</li>
 <li>overeengekomen processen regelen incidenten, kwetsbaarheden en wijzigingen.</li>
 <li>de inrichting ondersteunt wettelijke verplichtingen voor inzage en verantwoording.</li>
 <li>afhankelijkheden van tijdelijke projectvoorzieningen hebben een plan voor overdracht of uitfasering.</li>
@@ -1979,7 +1988,7 @@ Bronhouders gegevens laten aanbieden via één generieke en herbruikbare bronont
 <li>iedere gegevensvraag verwijst eenduidig naar een dienst in de dienstencatalogus.</li>
 <li>het koppelvlak ondersteunt de autorisatie- en loggingeisen van S05 en S09.</li>
 <li>gepubliceerde informatie beschrijft schema's, versies, foutmeldingen en beschikbaarheidskenmerken.</li>
-<li>de bronhouder kan nieuwe diensten in beginsel via schema, dienstregistratie en beleid toevoegen.</li>
+<li>de bronhouder kan nieuwe diensten in beginsel via de bronspecifieke GBO-configuratie toevoegen, in samenhang met de bijbehorende dienstregistratie, schema's, mappings en het toepasselijke beleid.</li>
 <li>de GBO-vertaallaag is optionele en vervangbare ondersteuning. De vertaallaag is geen verplichte centrale route.</li>
 </ul>
 <p><strong>Afspraken en standaarden</strong></p>
@@ -2012,7 +2021,7 @@ De generieke bronontsluiting binnen GBO aansluiten op de Basisinrichting OOTS, v
 <li>de OOTS-adapter koppelt aan het nationale koppelvlak van OOTS-V.</li>
 <li>OOTS-verzoeken gebruiken dezelfde generieke autorisatie- en loggingfuncties als andere gegevensvragen.</li>
 <li>de Basisinrichting OOTS blijft verantwoordelijk voor transport, discovery en Europese procesinteractie.</li>
-<li>de adapter of mappingfunctie vertaalt expliciet tussen brongegevens en OOTS-EDM.</li>
+<li>indien de bronhouder voor de betreffende gegevensdienst een semantische mapping heeft geconfigureerd, vertaalt de centrale mappingfunctie de brongegevens naar het overeengekomen OOTS-EDM-formaat. De mappingfunctie gebruikt hiervoor de instellingen uit de bronspecifieke GBO-configuratie.</li>
 <li>bronhouders zijn niet afhankelijk van implementatiedetails van AS4/e-Delivery.</li>
 <li>sectorale of eigen OOTS-aansluitingen vallen buiten GBO. GBO sluit deze aansluitingen technisch niet uit.</li>
 </ul>
@@ -2028,7 +2037,7 @@ De generieke bronontsluiting binnen GBO aansluiten op de Basisinrichting OOTS, v
 <ul>
 <li>Basisinrichting OOTS en OOTS-V als bestaande externe voorziening.</li>
 <li>uitbreiding van OOTS-V met het GBO-koppelvlak.</li>
-<li>semantische mappings via S10.</li>
+<li>semantische mappings en de configuratie voor toepassing daarvan via S10.</li>
 </ul>
 <p><strong>Open besluiten</strong></p>
 <ul>
@@ -2071,7 +2080,7 @@ Gegevensvragen en relevante beslissingen over de hele keten herleidbaar maken. D
 </ul>
 <h2 id="capabilities-s10-semantiek-gegevenscatalogus">S10 — Semantiek &amp; Gegevenscatalogus<a class="headerlink" href="#capabilities-s10-semantiek-gegevenscatalogus" title="Permanent link">&para;</a></h2>
 <p><strong>Doel</strong><br />
-Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven. Daardoor kunnen verschillende interactiepatronen gegevens eenduidig interpreteren en valideren.</p>
+Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven en bronhouders in staat stellen te configureren hoe hun gegevens via de verschillende GBO-gegevensstromen worden aangeboden. Daardoor kunnen GBO-voorzieningen gegevens eenduidig interpreteren, valideren en volgens de configuratie van de bronhouder verwerken.</p>
 <p><strong>Normerende eisen</strong></p>
 <ul>
 <li>iedere gegevensdienst verwijst naar een beheerd schema en begrippenkader.</li>
@@ -2082,6 +2091,11 @@ Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven. Daardo
 <li>mappings naar OOTS-EDM en attestatieschema's zijn expliciet. Zij zijn herleidbaar naar de gebruikte bron- en doelversies.</li>
 <li>ook begrippen voor identificatie en autorisatie krijgen waar nodig een beheerde en eenduidige beschrijving. Voorbeelden zijn rol, vertegenwoordiger, vertegenwoordigde partij, bevoegdheid en reikwijdte.</li>
 <li>de catalogus beschrijft ook de voorwaarden voor gebruik van een dienst. De catalogus dupliceert het autorisatiebeleid niet.</li>
+<li>de bronhouder beheert een bronspecifieke GBO-configuratie waarin is vastgelegd welke gegevensdiensten voor welke gegevensstromen beschikbaar zijn en welke schema's, mappings en andere verwerkingsinstructies daarbij gelden.</li>
+<li>de configuratie verwijst waar mogelijk naar beheerde objecten, zoals diensten, schema's, mappings en beleidsregels, zodat deze informatie niet onnodig wordt gedupliceerd.</li>
+<li>centrale GBO-voorzieningen kunnen de voor hen relevante configuratie machineleesbaar raadplegen.</li>
+<li>de configuratie is valideerbaar, versieerbaar en herleidbaar.</li>
+<li>sde technische implementatie van het configuratiecomponent is vrij, zolang deze voldoet aan de afgesproken functionele eisen en koppelvlakken.</li>
 </ul>
 <p><strong>Afspraken en standaarden</strong></p>
 <ul>
@@ -2098,6 +2112,7 @@ Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven. Daardo
 <li>validatievoorzieningen.</li>
 <li>optionele serialisatie- of mappingservice.</li>
 <li>gestandaardiseerde procedure voor het terugmelden van fouten of vermoedelijke onjuistheden aan de bronhouder.</li>
+<li>decentraal configuratiecomponent waarmee de bronhouder zijn bronspecifieke GBO-configuratie beheert en beschikbaar stelt.</li>
 </ul>
 <p><strong>Open besluiten</strong></p>
 <ul>
@@ -2106,6 +2121,8 @@ Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven. Daardo
 <li>positionering van mapping- en serialisatieservices.</li>
 <li>wijzigingsproces tussen bronhouders, domeinen en externe stelsels.</li>
 <li>inrichting van de terugmeldprocedure voor fouten of vermoedelijke onjuistheden.</li>
+<li>inhoud, standaardisatie en koppelvlak van de bronspecifieke GBO-configuratie.</li>
+<li>minimale functionele eisen aan het decentrale configuratiecomponent en de wijze waarop centrale GBO-voorzieningen de configuratie raadplegen.</li>
 </ul>
 <h2 id="capabilities-s11-attesteringsuitgifte">S11 — Attesteringsuitgifte<a class="headerlink" href="#capabilities-s11-attesteringsuitgifte" title="Permanent link">&para;</a></h2>
 <p><strong>Doel</strong><br />
@@ -2113,6 +2130,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet. Ook ondersteunt 
 <p><strong>Normerende eisen</strong></p>
 <ul>
 <li>de bronhouder blijft juridisch en inhoudelijk verantwoordelijk voor de uitgegeven publieke attributen, tenzij wet- en regelgeving een andere rolverdeling bepaalt.</li>
+<li>indien voor attestatie-uitgifte een semantische mapping nodig is, legt de bronhouder in zijn GBO-configuratie vast welke mapping en welk attestatieschema voor de betreffende gegevensdienst worden toegepast.</li>
 <li>GBO kan de technische functie van PubEAA-verstrekker ondersteunen. Deze ondersteuning maakt GBO niet automatisch de juridische uitgevende instantie.</li>
 <li>een ASI-provider biedt gestandaardiseerde verify- en, waar toegestaan, retrievefuncties aan QTSP's.</li>
 <li>uitgifte, verificatie en retrieval gebruiken passende authenticatie, autorisatie en logging.</li>
@@ -2136,7 +2154,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet. Ook ondersteunt 
 <li>ASI-provider met verify- en eventueel retrievefunctie.</li>
 <li>signing- en statusvoorzieningen.</li>
 <li>aansluiting op relevante vertrouwenslijsten en catalogi.</li>
-<li>semantische mapping via S10.</li>
+<li>semantische mapping en de configuratie voor toepassing daarvan via S10.</li>
 </ul>
 <p><strong>Open besluiten</strong></p>
 <ul>
@@ -2276,10 +2294,13 @@ Keuzes bij de uitwerking van het ontwerp, worden vastgelegd in <em>Architecture 
 <li>governance- en distributieprofiel voor beleidsregels.</li>
 <li>profiel voor ketenlogging en correlatie.</li>
 <li>kaders voor begrippen, schema's, kwaliteit en mappings.</li>
+<li>model en koppelvlak voor de bronspecifieke GBO-configuratie.</li>
+<li>afspraken over validatie, versiebeheer, publicatie en raadpleging van deze configuratie.</li>
 </ul>
 <h3 id="realisatiestrategie-op-te-leveren-of-aan-te-passen-voorzieningen">Op te leveren of aan te passen voorzieningen<a class="headerlink" href="#realisatiestrategie-op-te-leveren-of-aan-te-passen-voorzieningen" title="Permanent link">&para;</a></h3>
 <ul>
 <li>aansluitbare bronontsluiting-componenten.</li>
+<li>referentie-implementatie van een decentraal configuratiecomponent.</li>
 <li>dienstencatalogus.</li>
 <li>functies voor beleidsbeheer en -distributie.</li>
 <li>ondersteunende GBO-vertaallaag.</li>
@@ -2312,14 +2333,14 @@ Keuzes bij de uitwerking van het ontwerp, worden vastgelegd in <em>Architecture 
 <ul>
 <li>het koppelvlak tussen OOTS-V en de bronontsluiting-API.</li>
 <li>autorisatie- en loggingafspraken voor OOTS-verzoeken.</li>
-<li>beheerproces voor gegevensdiensten, discovery en OOTS-EDM-mappings.</li>
+<li>beheerproces voor gegevensdiensten, discovery en OOTS-EDM-mappings, inclusief de configuratie waarmee de bronhouder bepaalt welke semantische mapping voor een gegevensdienst wordt toegepast.</li>
 <li>verdeling van verantwoordelijkheden bij fouten, wijzigingen en incidenten.</li>
 </ul>
 <h3 id="realisatiestrategie-afbakening">Afbakening<a class="headerlink" href="#realisatiestrategie-afbakening" title="Permanent link">&para;</a></h3>
 <p>Binnen GBO verzorgt de Basisinrichting OOTS de Europese proces- en transportfuncties. De GBO-uitwerking richt zich op:</p>
 <ul>
 <li>de aansluiting van OOTS-V op de generieke bronontsluiting.</li>
-<li>semantische mapping naar overeengekomen evidence types.</li>
+<li>semantische mapping naar overeengekomen evidence types, indien deze door de bronhouder voor de betreffende gegevensdienst is geconfigureerd.</li>
 <li>toepassing van de generieke autorisatie- en loggingfuncties.</li>
 </ul>
 <p>Sectorale en eigen OOTS-aansluitingen vallen buiten de realisatie van GBO.</p>
@@ -2351,10 +2372,11 @@ Keuzes bij de uitwerking van het ontwerp, worden vastgelegd in <em>Architecture 
 <li>een bronontsluiting-API volgens het vastgestelde profiel.</li>
 <li>een PEP en toegang tot een passende PDP.</li>
 <li>logging volgens het GBO-profiel.</li>
-<li>een beschrijving van gegevensdiensten, schema's en kwaliteit.</li>
+<li>een beschrijving van gegevensdiensten, schema's en kwaliteit en de bronspecifieke configuratie waarmee wordt vastgelegd hoe deze gegevens via de verschillende GBO-gegevensstromen worden aangeboden.</li>
 <li>beheerprocessen voor aansluiting, wijzigingen en incidenten.</li>
 </ul>
-<p>Een bronhouder kan referentiecomponenten gebruiken en eventueel onderdelen van de GBO-vertaallaag inzetten. Functioneel gelijkwaardige alternatieven zijn ook mogelijk. De bronhouder moet altijd voldoen aan de vastgestelde afspraken, standaarden en koppelvlakken.</p>
+<p>Een bronhouder kan referentiecomponenten gebruiken en eventueel onderdelen van de GBO-vertaallaag inzetten. Functioneel gelijkwaardige alternatieven zijn ook mogelijk. De bronhouder beheert hiervoor een decentraal configuratiecomponent. De technische implementatie daarvan is vrij, zolang deze voldoet aan de vastgestelde functionele eisen en koppelvlakken.
+De bronhouder moet altijd voldoen aan de vastgestelde afspraken, standaarden en koppelvlakken.</p>
 <h3 id="realisatiestrategie-qtsps">QTSP's<a class="headerlink" href="#realisatiestrategie-qtsps" title="Permanent link">&para;</a></h3>
 <p>De PSA legt nog niet vast hoe attestatie-uitgifte binnen GBO wordt ingericht. Daarom ondersteunt de PSA voorlopig alle varianten. QTSP's hebben daardoor verschillende mogelijkheden:</p>
 <ul>

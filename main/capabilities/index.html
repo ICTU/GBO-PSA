@@ -1543,7 +1543,7 @@ Bronhouders gegevens laten aanbieden via één generieke en herbruikbare bronont
 <li>iedere gegevensvraag verwijst eenduidig naar een dienst in de dienstencatalogus.</li>
 <li>het koppelvlak ondersteunt de autorisatie- en loggingeisen van S05 en S09.</li>
 <li>gepubliceerde informatie beschrijft schema's, versies, foutmeldingen en beschikbaarheidskenmerken.</li>
-<li>de bronhouder kan nieuwe diensten in beginsel via schema, dienstregistratie en beleid toevoegen.</li>
+<li>de bronhouder kan nieuwe diensten in beginsel via de bronspecifieke GBO-configuratie toevoegen, in samenhang met de bijbehorende dienstregistratie, schema's, mappings en het toepasselijke beleid.</li>
 <li>de GBO-vertaallaag is optionele en vervangbare ondersteuning. De vertaallaag is geen verplichte centrale route.</li>
 </ul>
 <p><strong>Afspraken en standaarden</strong></p>
@@ -1576,7 +1576,7 @@ De generieke bronontsluiting binnen GBO aansluiten op de Basisinrichting OOTS, v
 <li>de OOTS-adapter koppelt aan het nationale koppelvlak van OOTS-V.</li>
 <li>OOTS-verzoeken gebruiken dezelfde generieke autorisatie- en loggingfuncties als andere gegevensvragen.</li>
 <li>de Basisinrichting OOTS blijft verantwoordelijk voor transport, discovery en Europese procesinteractie.</li>
-<li>de adapter of mappingfunctie vertaalt expliciet tussen brongegevens en OOTS-EDM.</li>
+<li>indien de bronhouder voor de betreffende gegevensdienst een semantische mapping heeft geconfigureerd, vertaalt de centrale mappingfunctie de brongegevens naar het overeengekomen OOTS-EDM-formaat. De mappingfunctie gebruikt hiervoor de instellingen uit de bronspecifieke GBO-configuratie.</li>
 <li>bronhouders zijn niet afhankelijk van implementatiedetails van AS4/e-Delivery.</li>
 <li>sectorale of eigen OOTS-aansluitingen vallen buiten GBO. GBO sluit deze aansluitingen technisch niet uit.</li>
 </ul>
@@ -1592,7 +1592,7 @@ De generieke bronontsluiting binnen GBO aansluiten op de Basisinrichting OOTS, v
 <ul>
 <li>Basisinrichting OOTS en OOTS-V als bestaande externe voorziening.</li>
 <li>uitbreiding van OOTS-V met het GBO-koppelvlak.</li>
-<li>semantische mappings via S10.</li>
+<li>semantische mappings en de configuratie voor toepassing daarvan via S10.</li>
 </ul>
 <p><strong>Open besluiten</strong></p>
 <ul>
@@ -1635,7 +1635,7 @@ Gegevensvragen en relevante beslissingen over de hele keten herleidbaar maken. D
 </ul>
 <h2 id="s10-semantiek-gegevenscatalogus">S10 — Semantiek &amp; Gegevenscatalogus<a class="headerlink" href="#s10-semantiek-gegevenscatalogus" title="Permanent link">&para;</a></h2>
 <p><strong>Doel</strong><br />
-Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven. Daardoor kunnen verschillende interactiepatronen gegevens eenduidig interpreteren en valideren.</p>
+Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven en bronhouders in staat stellen te configureren hoe hun gegevens via de verschillende GBO-gegevensstromen worden aangeboden. Daardoor kunnen GBO-voorzieningen gegevens eenduidig interpreteren, valideren en volgens de configuratie van de bronhouder verwerken.</p>
 <p><strong>Normerende eisen</strong></p>
 <ul>
 <li>iedere gegevensdienst verwijst naar een beheerd schema en begrippenkader.</li>
@@ -1646,6 +1646,11 @@ Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven. Daardo
 <li>mappings naar OOTS-EDM en attestatieschema's zijn expliciet. Zij zijn herleidbaar naar de gebruikte bron- en doelversies.</li>
 <li>ook begrippen voor identificatie en autorisatie krijgen waar nodig een beheerde en eenduidige beschrijving. Voorbeelden zijn rol, vertegenwoordiger, vertegenwoordigde partij, bevoegdheid en reikwijdte.</li>
 <li>de catalogus beschrijft ook de voorwaarden voor gebruik van een dienst. De catalogus dupliceert het autorisatiebeleid niet.</li>
+<li>de bronhouder beheert een bronspecifieke GBO-configuratie waarin is vastgelegd welke gegevensdiensten voor welke gegevensstromen beschikbaar zijn en welke schema's, mappings en andere verwerkingsinstructies daarbij gelden.</li>
+<li>de configuratie verwijst waar mogelijk naar beheerde objecten, zoals diensten, schema's, mappings en beleidsregels, zodat deze informatie niet onnodig wordt gedupliceerd.</li>
+<li>centrale GBO-voorzieningen kunnen de voor hen relevante configuratie machineleesbaar raadplegen.</li>
+<li>de configuratie is valideerbaar, versieerbaar en herleidbaar.</li>
+<li>sde technische implementatie van het configuratiecomponent is vrij, zolang deze voldoet aan de afgesproken functionele eisen en koppelvlakken.</li>
 </ul>
 <p><strong>Afspraken en standaarden</strong></p>
 <ul>
@@ -1662,6 +1667,7 @@ Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven. Daardo
 <li>validatievoorzieningen.</li>
 <li>optionele serialisatie- of mappingservice.</li>
 <li>gestandaardiseerde procedure voor het terugmelden van fouten of vermoedelijke onjuistheden aan de bronhouder.</li>
+<li>decentraal configuratiecomponent waarmee de bronhouder zijn bronspecifieke GBO-configuratie beheert en beschikbaar stelt.</li>
 </ul>
 <p><strong>Open besluiten</strong></p>
 <ul>
@@ -1670,6 +1676,8 @@ Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven. Daardo
 <li>positionering van mapping- en serialisatieservices.</li>
 <li>wijzigingsproces tussen bronhouders, domeinen en externe stelsels.</li>
 <li>inrichting van de terugmeldprocedure voor fouten of vermoedelijke onjuistheden.</li>
+<li>inhoud, standaardisatie en koppelvlak van de bronspecifieke GBO-configuratie.</li>
+<li>minimale functionele eisen aan het decentrale configuratiecomponent en de wijze waarop centrale GBO-voorzieningen de configuratie raadplegen.</li>
 </ul>
 <h2 id="s11-attesteringsuitgifte">S11 — Attesteringsuitgifte<a class="headerlink" href="#s11-attesteringsuitgifte" title="Permanent link">&para;</a></h2>
 <p><strong>Doel</strong><br />
@@ -1677,6 +1685,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet. Ook ondersteunt 
 <p><strong>Normerende eisen</strong></p>
 <ul>
 <li>de bronhouder blijft juridisch en inhoudelijk verantwoordelijk voor de uitgegeven publieke attributen, tenzij wet- en regelgeving een andere rolverdeling bepaalt.</li>
+<li>indien voor attestatie-uitgifte een semantische mapping nodig is, legt de bronhouder in zijn GBO-configuratie vast welke mapping en welk attestatieschema voor de betreffende gegevensdienst worden toegepast.</li>
 <li>GBO kan de technische functie van PubEAA-verstrekker ondersteunen. Deze ondersteuning maakt GBO niet automatisch de juridische uitgevende instantie.</li>
 <li>een ASI-provider biedt gestandaardiseerde verify- en, waar toegestaan, retrievefuncties aan QTSP's.</li>
 <li>uitgifte, verificatie en retrieval gebruiken passende authenticatie, autorisatie en logging.</li>
@@ -1700,7 +1709,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet. Ook ondersteunt 
 <li>ASI-provider met verify- en eventueel retrievefunctie.</li>
 <li>signing- en statusvoorzieningen.</li>
 <li>aansluiting op relevante vertrouwenslijsten en catalogi.</li>
-<li>semantische mapping via S10.</li>
+<li>semantische mapping en de configuratie voor toepassing daarvan via S10.</li>
 </ul>
 <p><strong>Open besluiten</strong></p>
 <ul>
