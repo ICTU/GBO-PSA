@@ -255,7 +255,7 @@ Bronhouders gegevens laten aanbieden via één generieke en herbruikbare bronont
 - iedere gegevensvraag verwijst eenduidig naar een dienst in de dienstencatalogus.
 - het koppelvlak ondersteunt de autorisatie- en loggingeisen van S05 en S09.
 - gepubliceerde informatie beschrijft schema's, versies, foutmeldingen en beschikbaarheidskenmerken.
-- de bronhouder kan nieuwe diensten in beginsel via schema, dienstregistratie en beleid toevoegen.
+- de bronhouder kan nieuwe diensten in beginsel via de bronspecifieke GBO-configuratie toevoegen, in samenhang met de bijbehorende dienstregistratie, schema's, mappings en het toepasselijke beleid.
 - de GBO-vertaallaag is optionele en vervangbare ondersteuning. De vertaallaag is geen verplichte centrale route.
 
 **Afspraken en standaarden**
@@ -290,7 +290,7 @@ De generieke bronontsluiting binnen GBO aansluiten op de Basisinrichting OOTS, v
 - de OOTS-adapter koppelt aan het nationale koppelvlak van OOTS-V.
 - OOTS-verzoeken gebruiken dezelfde generieke autorisatie- en loggingfuncties als andere gegevensvragen.
 - de Basisinrichting OOTS blijft verantwoordelijk voor transport, discovery en Europese procesinteractie.
-- de adapter of mappingfunctie vertaalt expliciet tussen brongegevens en OOTS-EDM.
+- indien de bronhouder voor de betreffende gegevensdienst een semantische mapping heeft geconfigureerd, vertaalt de centrale mappingfunctie de brongegevens naar het overeengekomen OOTS-EDM-formaat. De mappingfunctie gebruikt hiervoor de instellingen uit de bronspecifieke GBO-configuratie.
 - bronhouders zijn niet afhankelijk van implementatiedetails van AS4/e-Delivery.
 - sectorale of eigen OOTS-aansluitingen vallen buiten GBO. GBO sluit deze aansluitingen technisch niet uit.
 
@@ -306,7 +306,7 @@ De generieke bronontsluiting binnen GBO aansluiten op de Basisinrichting OOTS, v
 
 - Basisinrichting OOTS en OOTS-V als bestaande externe voorziening.
 - uitbreiding van OOTS-V met het GBO-koppelvlak.
-- semantische mappings via S10.
+- semantische mappings en de configuratie voor toepassing daarvan via S10.
 
 **Open besluiten**
 
@@ -352,7 +352,7 @@ Gegevensvragen en relevante beslissingen over de hele keten herleidbaar maken. D
 ## S10 — Semantiek & Gegevenscatalogus
 
 **Doel**  
-Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven. Daardoor kunnen verschillende interactiepatronen gegevens eenduidig interpreteren en valideren.
+Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven en bronhouders in staat stellen te configureren hoe hun gegevens via de verschillende GBO-gegevensstromen worden aangeboden. Daardoor kunnen GBO-voorzieningen gegevens eenduidig interpreteren, valideren en volgens de configuratie van de bronhouder verwerken.
 
 **Normerende eisen**
 
@@ -364,6 +364,11 @@ Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven. Daardo
 - mappings naar OOTS-EDM en attestatieschema's zijn expliciet. Zij zijn herleidbaar naar de gebruikte bron- en doelversies.
 - ook begrippen voor identificatie en autorisatie krijgen waar nodig een beheerde en eenduidige beschrijving. Voorbeelden zijn rol, vertegenwoordiger, vertegenwoordigde partij, bevoegdheid en reikwijdte.
 - de catalogus beschrijft ook de voorwaarden voor gebruik van een dienst. De catalogus dupliceert het autorisatiebeleid niet.
+- de bronhouder beheert een bronspecifieke GBO-configuratie waarin is vastgelegd welke gegevensdiensten voor welke gegevensstromen beschikbaar zijn en welke schema's, mappings en andere verwerkingsinstructies daarbij gelden.
+- de configuratie verwijst waar mogelijk naar beheerde objecten, zoals diensten, schema's, mappings en beleidsregels, zodat deze informatie niet onnodig wordt gedupliceerd.
+- centrale GBO-voorzieningen kunnen de voor hen relevante configuratie machineleesbaar raadplegen.
+- de configuratie is valideerbaar, versieerbaar en herleidbaar.
+- sde technische implementatie van het configuratiecomponent is vrij, zolang deze voldoet aan de afgesproken functionele eisen en koppelvlakken.
 
 **Afspraken en standaarden**
 
@@ -380,6 +385,7 @@ Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven. Daardo
 - validatievoorzieningen.
 - optionele serialisatie- of mappingservice.
 - gestandaardiseerde procedure voor het terugmelden van fouten of vermoedelijke onjuistheden aan de bronhouder.
+- decentraal configuratiecomponent waarmee de bronhouder zijn bronspecifieke GBO-configuratie beheert en beschikbaar stelt.
 
 **Open besluiten**
 
@@ -388,6 +394,8 @@ Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven. Daardo
 - positionering van mapping- en serialisatieservices.
 - wijzigingsproces tussen bronhouders, domeinen en externe stelsels.
 - inrichting van de terugmeldprocedure voor fouten of vermoedelijke onjuistheden.
+- inhoud, standaardisatie en koppelvlak van de bronspecifieke GBO-configuratie.
+- minimale functionele eisen aan het decentrale configuratiecomponent en de wijze waarop centrale GBO-voorzieningen de configuratie raadplegen.
 
 ## S11 — Attesteringsuitgifte
 
@@ -397,6 +405,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet. Ook ondersteunt 
 **Normerende eisen**
 
 - de bronhouder blijft juridisch en inhoudelijk verantwoordelijk voor de uitgegeven publieke attributen, tenzij wet- en regelgeving een andere rolverdeling bepaalt.
+- indien voor attestatie-uitgifte een semantische mapping nodig is, legt de bronhouder in zijn GBO-configuratie vast welke mapping en welk attestatieschema voor de betreffende gegevensdienst worden toegepast.
 - GBO kan de technische functie van PubEAA-verstrekker ondersteunen. Deze ondersteuning maakt GBO niet automatisch de juridische uitgevende instantie.
 - een ASI-provider biedt gestandaardiseerde verify- en, waar toegestaan, retrievefuncties aan QTSP's.
 - uitgifte, verificatie en retrieval gebruiken passende authenticatie, autorisatie en logging.
@@ -420,7 +429,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet. Ook ondersteunt 
 - ASI-provider met verify- en eventueel retrievefunctie.
 - signing- en statusvoorzieningen.
 - aansluiting op relevante vertrouwenslijsten en catalogi.
-- semantische mapping via S10.
+- semantische mapping en de configuratie voor toepassing daarvan via S10.
 
 **Open besluiten**
 

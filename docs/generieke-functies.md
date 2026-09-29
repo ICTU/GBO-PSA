@@ -36,7 +36,7 @@ De inrichting voldoet aan de volgende eisen:
 
 - iedere bronhouder biedt één generieke bronontsluiting-API voor de gegevensstromen die GBO ondersteunt.
 - gegevensvragen zijn selectief en beperkt tot vooraf geregistreerde diensten en gegevenssets.
-- nieuwe afnemers of interactiepatronen vereisen in beginsel alleen wijzigingen in beleid, dienstregistratie of mapping, niet in het bronsysteem.
+- nieuwe afnemers, gegevensdiensten of interactiepatronen vereisen in beginsel alleen wijzigingen in de bronspecifieke configuratie en, waar nodig, in beleid, dienstregistratie, schema's of mappings; zij vereisen geen wijziging in het bronsysteem.
 - expliciete adapters en mappings verwerken protocol- en formaatverschillen van externe stelsels.
 - de bronhouder blijft verantwoordelijk voor de beschikbaarheid, juistheid en actualiteit van de brongegevens.
 - de GBO-vertaallaag ondersteunt bronhouders die het gekozen API-profiel nog niet rechtstreeks kunnen aanbieden. Deze ondersteuning blijft vervangbaar.
@@ -50,6 +50,9 @@ De inrichting voldoet aan de volgende eisen:
 - bronhouders en domeinen blijven inhoudelijk verantwoordelijk voor hun begrippen en informatiemodellen.
 - GBO stelt gemeenschappelijke kaders vast voor vindbaarheid, beschrijving, versiebeheer en mapping.
 - schema's en mappings zijn machineleesbaar, testbaar en versieerbaar.
+- de bronhouder legt in een bronspecifieke GBO-configuratie vast welke gegevensdiensten beschikbaar zijn voor de verschillende gegevensstromen en welke schema's, mappings en andere verwerkingsinstructies daarbij van toepassing zijn.
+- centrale GBO-voorzieningen kunnen de voor hen relevante bronspecifieke configuratie machineleesbaar raadplegen.
+- de bronhouder blijft inhoudelijk verantwoordelijk voor deze configuratie. Centrale voorzieningen passen de configuratie toe, maar bepalen niet zelfstandig de bronspecifieke inrichting.
 - transformaties naar OOTS-EDM, attestatieschema's en andere uitwisselformaten zijn afgeleid van beheerde bron- en doelschema's.
 - iedere wijziging bevat een impactanalyse en een overgangsstrategie voor bestaande afnemers.
 
@@ -96,6 +99,7 @@ De inrichting voldoet aan de volgende eisen:
 - monitoring van de keten vereist geen onnodige centrale verzameling van inhoudelijke persoonsgegevens.
 - een gestandaardiseerde verzoekidentificator maakt gebeurtenissen over componenten heen correleerbaar.
 - configuraties, beleid, schema's, mappings en dienstregistraties ondersteunen versiebeheer en audit.
+- voor bronspecifieke GBO-configuratie zijn afspraken vastgelegd over publicatie, validatie, versiebeheer, geldigheid en actualiteit. Bij een gegevensverwerking is herleidbaar welke configuratie is toegepast.
 - overeengekomen processen regelen incidenten, kwetsbaarheden en wijzigingen.
 - de inrichting ondersteunt wettelijke verplichtingen voor inzage en verantwoording.
 - afhankelijkheden van tijdelijke projectvoorzieningen hebben een plan voor overdracht of uitfasering.

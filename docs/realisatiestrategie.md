@@ -40,10 +40,13 @@ Dit werkpakket legt de herbruikbare basis voor alle interactiepatronen.
 - governance- en distributieprofiel voor beleidsregels.
 - profiel voor ketenlogging en correlatie.
 - kaders voor begrippen, schema's, kwaliteit en mappings.
+- model en koppelvlak voor de bronspecifieke GBO-configuratie.
+- afspraken over validatie, versiebeheer, publicatie en raadpleging van deze configuratie.
 
 ### Op te leveren of aan te passen voorzieningen
 
 - aansluitbare bronontsluiting-componenten.
+- referentie-implementatie van een decentraal configuratiecomponent.
 - dienstencatalogus.
 - functies voor beleidsbeheer en -distributie.
 - ondersteunende GBO-vertaallaag.
@@ -83,7 +86,7 @@ Dit werkpakket koppelt de gemeenschappelijke bronontsluiting aan de Basisinricht
 
 - het koppelvlak tussen OOTS-V en de bronontsluiting-API.
 - autorisatie- en loggingafspraken voor OOTS-verzoeken.
-- beheerproces voor gegevensdiensten, discovery en OOTS-EDM-mappings.
+- beheerproces voor gegevensdiensten, discovery en OOTS-EDM-mappings, inclusief de configuratie waarmee de bronhouder bepaalt welke semantische mapping voor een gegevensdienst wordt toegepast.
 - verdeling van verantwoordelijkheden bij fouten, wijzigingen en incidenten.
 
 ### Afbakening
@@ -91,7 +94,7 @@ Dit werkpakket koppelt de gemeenschappelijke bronontsluiting aan de Basisinricht
 Binnen GBO verzorgt de Basisinrichting OOTS de Europese proces- en transportfuncties. De GBO-uitwerking richt zich op:
 
 - de aansluiting van OOTS-V op de generieke bronontsluiting.
-- semantische mapping naar overeengekomen evidence types.
+- semantische mapping naar overeengekomen evidence types, indien deze door de bronhouder voor de betreffende gegevensdienst is geconfigureerd.
 - toepassing van de generieke autorisatie- en loggingfuncties.
 
 Sectorale en eigen OOTS-aansluitingen vallen buiten de realisatie van GBO.
@@ -130,10 +133,11 @@ Een bronhouder realiseert of gebruikt:
 - een bronontsluiting-API volgens het vastgestelde profiel.
 - een PEP en toegang tot een passende PDP.
 - logging volgens het GBO-profiel.
-- een beschrijving van gegevensdiensten, schema's en kwaliteit.
+- een beschrijving van gegevensdiensten, schema's en kwaliteit en de bronspecifieke configuratie waarmee wordt vastgelegd hoe deze gegevens via de verschillende GBO-gegevensstromen worden aangeboden.
 - beheerprocessen voor aansluiting, wijzigingen en incidenten.
 
-Een bronhouder kan referentiecomponenten gebruiken en eventueel onderdelen van de GBO-vertaallaag inzetten. Functioneel gelijkwaardige alternatieven zijn ook mogelijk. De bronhouder moet altijd voldoen aan de vastgestelde afspraken, standaarden en koppelvlakken.
+Een bronhouder kan referentiecomponenten gebruiken en eventueel onderdelen van de GBO-vertaallaag inzetten. Functioneel gelijkwaardige alternatieven zijn ook mogelijk. De bronhouder beheert hiervoor een decentraal configuratiecomponent. De technische implementatie daarvan is vrij, zolang deze voldoet aan de vastgestelde functionele eisen en koppelvlakken.
+De bronhouder moet altijd voldoen aan de vastgestelde afspraken, standaarden en koppelvlakken.
 
 ### QTSP's
 

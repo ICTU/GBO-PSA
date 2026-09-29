@@ -4,13 +4,14 @@
 
 ## Architectuurconsequenties
 
-GBO gaat uit van een gemeenschappelijke bronontsluiting. Een bronhouder richt deze ontsluiting één keer in en gebruikt deze daarna voor meerdere gegevensstromen. De inrichting voegt nieuwe gegevensvragen zoveel mogelijk via configuratie toe. Daardoor hoeft een bronhouder niet voor iedere toepassing of afnemer een nieuw bronkoppelvlak te ontwikkelen.
+GBO gaat uit van een gemeenschappelijke bronontsluiting. Een bronhouder richt deze ontsluiting één keer in en gebruikt deze daarna voor meerdere gegevensstromen. De bronhouder beheert daarnaast een bronspecifieke GBO-configuratie, waarmee wordt vastgelegd welke gegevens beschikbaar zijn en hoe deze binnen de verschillende gegevensstromen worden ontsloten. Nieuwe gegevensvragen worden zoveel mogelijk via deze configuratie toegevoegd. Daardoor hoeft een bronhouder niet voor iedere toepassing of afnemer een nieuw bronkoppelvlak te ontwikkelen.
 
 Daaruit volgen de volgende consequenties voor de PSA:
 
 | Consequentie uit het globaal ontwerp | Uitwerking in de PSA |
 |---|---|
 | Bronhouders bieden één generieke, herbruikbare bronontsluiting aan. | F3, F7 en S07 |
+| Bronhouders beheren de configuratie waarmee zij bepalen welke gegevensdiensten beschikbaar zijn en hoe centrale GBO-voorzieningen deze verwerken. | F3, F4, S07 en S10 |
 | Gegevensvragen zijn selectief, vooraf beheerd en afdwingbaar. | F3, F4, F6, S05, S06, S07 en S10 |
 | Identiteit, grondslag en context bepalen welke gegevens mogen worden geleverd. | F1, F2, F6 en S01 tot en met S06 |
 | GBO handelt aansluitingen op externe stelsels buiten de bronhouder af. | S08, S10 en S11 |

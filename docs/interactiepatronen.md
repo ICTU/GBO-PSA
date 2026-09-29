@@ -20,3 +20,4 @@ Voor alle interactiepatronen gelden de volgende eisen:
 - expliciete, beheerde functies buiten het bronsysteem voeren semantische en protocoltransformaties uit.
 - iedere gegevensuitwisseling is over de hele keten herleidbaar.
 - beleid, schema's, mappings of configuratie leggen afwijkingen en patroonafhankelijke eisen vast, niet hardgecodeerde implementatielogica.
+- waar een centrale GBO-voorziening bronspecifieke verwerking uitvoert, gebruikt deze daarvoor de configuratie die onder verantwoordelijkheid van de bronhouder wordt beheerd.
