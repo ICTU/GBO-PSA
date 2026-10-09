@@ -1,11 +1,11 @@
 # GBO
 
-## Project Start Architectuur  
+## Projectstartarchitectuur  
 
 
 ![ICTU](../media/ictu-logo.png)
 
 ---
 
-Auteur: project GBO  
+Auteur: programma GBO  
 Organisatie: ICTU

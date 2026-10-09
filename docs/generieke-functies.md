@@ -102,7 +102,7 @@ De inrichting voldoet aan de volgende eisen:
 - voor bronspecifieke GBO-configuratie zijn afspraken vastgelegd over publicatie, validatie, versiebeheer, geldigheid en actualiteit. Bij een gegevensverwerking is herleidbaar welke configuratie is toegepast.
 - overeengekomen processen regelen incidenten, kwetsbaarheden en wijzigingen.
 - de inrichting ondersteunt wettelijke verplichtingen voor inzage en verantwoording.
-- afhankelijkheden van tijdelijke projectvoorzieningen hebben een plan voor overdracht of uitfasering.
+- afhankelijkheden van tijdelijke programmavoorzieningen hebben een plan voor overdracht of uitfasering.
 
 ## Samenhang
 

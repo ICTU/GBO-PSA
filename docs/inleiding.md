@@ -2,7 +2,7 @@
 
 ## Doel van dit document
 
-Dit document beschrijft de Projectstartarchitectuur (PSA) voor het project Gemeenschappelijke Bronontsluiting (GBO).
+Dit document beschrijft de projectstartarchitectuur (PSA) voor het programma Gemeenschappelijke Bronontsluiting (GBO).
 
 De PSA beschrijft **wat de oplossing moet kunnen**, maar legt nog geen technische implementatie vast.
 
