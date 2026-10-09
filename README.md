@@ -1,8 +1,8 @@
 # PSA GBO
 
-Deze repository bevat de **Project Start Architectuur (PSA)** voor het project **Gemeenschappelijke Bronontsluiting (GBO)**.
+Deze repository bevat de **Projectstartarchitectuur (PSA)** voor het programma **Gemeenschappelijke Bronontsluiting (GBO)**.
 
-Het project GBO heeft als doel een **generieke infrastructuur en afsprakenstelsel** te realiseren waarmee gegevens van overheidsorganisaties beschikbaar kunnen worden gemaakt voor:
+Het programma GBO heeft als doel een **generieke infrastructuur en afsprakenstelsel** te realiseren waarmee gegevens van overheidsorganisaties beschikbaar kunnen worden gemaakt voor:
 
 * burgers
 * private partijen
@@ -56,7 +56,7 @@ Bijdragen aan deze architectuur kunnen worden gedaan via:
 
 # Contact
 
-Eigenaar: project GBO
+Eigenaar: programma GBO
 Contactpersoon: [Govert Claus](mailto:govert.claus@ictu.nl)
 
 
