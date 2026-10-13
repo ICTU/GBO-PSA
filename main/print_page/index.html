@@ -2687,11 +2687,124 @@ Gedurende de ontwikkeling onderzoekt GBO waar de verschillende componenten het b
 <li>eigenaar, datum en heroverwegingsmoment.</li>
 </ul>
 <p>Een besluit is pas afgerond als de relevante PSA-paragraaf het besluit bevat. Waar nodig wordt ook het globaal ontwerp en de technische of semantische documentatie bijgewerkt.</p></section><section class="print-page" id="change-log" heading-number="10"><h1 id="change-log-change-log">Change Log<a class="headerlink" href="#change-log-change-log" title="Permanent link">&para;</a></h1>
+<h2 id="change-log-change-log-v083">Change Log v0.8.3<a class="headerlink" href="#change-log-change-log-v083" title="Permanent link">&para;</a></h2>
+<p>Van: versie <a href="https://ictu.github.io/GBO-PSA/0.8.2/"><strong>0.8.2</strong></a> (september 2026) → Naar: versie <strong>0.8.3</strong> (oktober 2026)</p>
+<p>Dit is geen uitputtende opsomming van iedere gewijzigde zin, maar een overzicht van wat er conceptueel en structureel is veranderd, per hoofdstuk/paragraaf.</p>
+<p>Deze versie bevat <strong>geen inhoudelijke wijzigingen in de architectuur, generieke functies of stelselfuncties</strong>. De wijzigingen bestaan vooral uit het in lijn brengen van de terminologie met de actuele positionering van GBO als programma, aangevuld met enkele redactionele, vormgevings- en technische wijzigingen.</p>
+<hr />
+<h3 id="change-log-samenvatting-in-een-oogopslag">Samenvatting in één oogopslag<a class="headerlink" href="#change-log-samenvatting-in-een-oogopslag" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Onderdeel</th>
+<th>Aard van de wijziging</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Algemeen / terminologie</td>
+<td>GBO consequent aangeduid als programma in plaats van project</td>
+<td><a href="#change-log-algemeen-terminologie">detailbeschrijving</a></td>
+</tr>
+<tr>
+<td>Generieke functies</td>
+<td>Terminologie rond tijdelijke GBO-voorzieningen aangepast aan programmapositionering</td>
+<td><a href="#change-log-generieke-functies">detailbeschrijving</a></td>
+</tr>
+<tr>
+<td>Realisatiestrategie</td>
+<td>Projectgovernance en projectvoorzieningen vervangen door programmagovernance en programmavoorzieningen</td>
+<td><a href="#change-log-realisatiestrategie">detailbeschrijving</a></td>
+</tr>
+<tr>
+<td>Open besluiten</td>
+<td>Verantwoordelijkheid voor GBO-vertaallaag en referentiecomponenten bij het GBO-programma gelegd</td>
+<td><a href="#change-log-open-besluiten">detailbeschrijving</a></td>
+</tr>
+<tr>
+<td>Vormgeving en technische documentatie</td>
+<td>Vormgeving afgestemd op ICTU-huisstijl en documentatie-afhankelijkheden bijgewerkt</td>
+<td><a href="#change-log-vormgeving-en-technische-documentatie">detailbeschrijving</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="change-log-algemeen-terminologie">Algemeen / terminologie<a class="headerlink" href="#change-log-algemeen-terminologie" title="Permanent link">&para;</a></h3>
+<ul>
+<li>De PSA is aangepast aan de actuele positionering van <strong>Gemeenschappelijke Bronontsluiting als programma in plaats van project</strong>.</li>
+<li>Verwijzingen naar <strong>project GBO</strong>, <strong>projectfase</strong> en vergelijkbare termen zijn waar van toepassing vervangen door <strong>programma GBO</strong>, <strong>programmafase</strong> en <strong>GBO-programma</strong>.</li>
+<li>Dit is consequent doorgevoerd in onder andere:<ul>
+<li>de inleiding en scope van de PSA;</li>
+<li>de beschrijving van de documenthiërarchie;</li>
+<li>het vertrekpunt uit het Globaal Ontwerp;</li>
+<li>het voorblad en de repositorybeschrijving;</li>
+<li>verwijzingen in eerdere Change Log-teksten.</li>
+</ul>
+</li>
+<li>De schrijfwijze <strong>Project Start Architectuur</strong> is waar van toepassing aangepast naar <strong>projectstartarchitectuur</strong>.</li>
+<li>Deze wijzigingen brengen de PSA qua terminologie verder in lijn met de actuele GBO-documentatie en het Globaal Ontwerp.</li>
+<li>De wijzigingen veranderen de inhoudelijke afbakening, architectuurprincipes of verantwoordelijkheidsverdeling van GBO niet.</li>
+</ul>
+<p><span style='font-size: small;'><a href="#change-log-samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
+<hr />
+<h3 id="change-log-generieke-functies">Generieke functies<a class="headerlink" href="#change-log-generieke-functies" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Binnen <strong>F8 — Beheer &amp; Continuïteit</strong> is de terminologie aangepast aan de positionering van GBO als programma.</li>
+<li>Waar eerder sprake was van afhankelijkheden van tijdelijke <strong>projectvoorzieningen</strong>, wordt nu gesproken over tijdelijke <strong>programmavoorzieningen</strong>.</li>
+<li>De bestaande eis blijft ongewijzigd: voor dergelijke tijdelijke voorzieningen moet een plan voor overdracht of uitfasering bestaan.</li>
+<li>Er zijn geen functionele eisen aan F1 tot en met F8 toegevoegd, verwijderd of inhoudelijk gewijzigd.</li>
+</ul>
+<p><span style='font-size: small;'><a href="#change-log-samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
+<hr />
+<h3 id="change-log-realisatiestrategie">Realisatiestrategie<a class="headerlink" href="#change-log-realisatiestrategie" title="Permanent link">&para;</a></h3>
+<p>De realisatiestrategie is inhoudelijk niet gewijzigd, maar de organisatorische terminologie is aangepast aan GBO als programma.</p>
+<ul>
+<li>Tijdelijke referentiecomponenten en voorzieningen worden tijdens pilots ontwikkeld door het <strong>programma</strong> in plaats van het project.</li>
+<li>In de tabel voor landing in bestaande stelsels en beheerorganisaties is <strong>Projectgovernance tijdens ontwikkeling</strong> vervangen door <strong>Programmagovernance tijdens ontwikkeling</strong>.</li>
+<li>In de fasering is verduidelijkt dat:<ul>
+<li>het programma besluiten voorbereidt en neemt over scope, rollen, juridische randvoorwaarden en beheerprincipes;</li>
+<li>het programma de benodigde koppelvlakken, gegevensmodellen, beleidsregels, logging en conformiteitseisen uitwerkt;</li>
+<li>het programma tijdelijke programmavoorzieningen uiteindelijk overdraagt of uitfaseert.</li>
+</ul>
+</li>
+<li>De uitgangspunten rond landing in bestaande stelsels, overdracht naar structurele beheerorganisaties en het tijdelijke karakter van programmavoorzieningen zijn verder ongewijzigd.</li>
+</ul>
+<p><span style='font-size: small;'><a href="#change-log-samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
+<hr />
+<h3 id="change-log-open-besluiten">Open besluiten<a class="headerlink" href="#change-log-open-besluiten" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bij <strong>B-16 — GBO-vertaallaag</strong> is de betrokken partij gewijzigd van <strong>GBO-project</strong> naar <strong>GBO-programma</strong>.</li>
+<li>Bij <strong>B-17 — Beheer referentiecomponenten</strong> is eveneens <strong>GBO-project</strong> vervangen door <strong>GBO-programma</strong>.</li>
+<li>Hiermee wordt duidelijk gemaakt dat het GBO-programma tijdens de ontwikkelfase verantwoordelijk is voor de tijdelijke vertaallaag en referentiecomponenten, totdat deze worden overgedragen of uitgefaseerd.</li>
+<li>De inhoud, voorkeursrichting en besluitpunten van B-16 en B-17 zijn niet gewijzigd.</li>
+<li>De beschrijving van de ADR-werkwijze is redactioneel verduidelijkt: waar nodig wordt na een architectuurbesluit ook het Globaal Ontwerp en de technische of semantische documentatie bijgewerkt.</li>
+<li>Er zijn geen nieuwe open besluiten toegevoegd en bestaande besluiten zijn niet inhoudelijk gewijzigd.</li>
+</ul>
+<p><span style='font-size: small;'><a href="#change-log-samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
+<hr />
+<h3 id="change-log-vormgeving-en-technische-documentatie">Vormgeving en technische documentatie<a class="headerlink" href="#change-log-vormgeving-en-technische-documentatie" title="Permanent link">&para;</a></h3>
+<ul>
+<li>De vormgeving van de documentatiesite is verder afgestemd op de <strong>ICTU-huisstijl</strong>:<ul>
+<li>de primaire kleur van de site is aangepast naar ICTU-blauw;</li>
+<li>dezelfde kleur wordt toegepast op de footer.</li>
+</ul>
+</li>
+<li>De versie-informatie van de documentatie is bijgewerkt van <strong>v0.8.2 / september 2026</strong> naar <strong>v0.8.3 / oktober 2026</strong>.</li>
+<li>Enkele technische afhankelijkheden voor het genereren van de documentatiesite zijn bijgewerkt:<ul>
+<li><code>mkdocs-print-site-plugin</code> van versie 2.8 naar 2.9;</li>
+<li><code>pymdown-extensions</code> van versie 11.0.2 naar 12.1.</li>
+</ul>
+</li>
+<li>Deze wijzigingen hebben geen gevolgen voor de inhoudelijke architectuur van GBO.</li>
+</ul>
+<p><span style='font-size: small;'><a href="#change-log-samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
+<hr />
 <h2 id="change-log-change-log-v082">Change Log v0.8.2<a class="headerlink" href="#change-log-change-log-v082" title="Permanent link">&para;</a></h2>
 <p>Van: versie <a href="https://ictu.github.io/GBO-PSA/0.8.1/"><strong>0.8.1</strong></a> (september 2026) → Naar: versie <strong>0.8.2</strong> (september 2026)</p>
 <p>Dit is geen uitputtende opsomming van iedere gewijzigde zin, maar een overzicht van wat er conceptueel en structureel is veranderd, per hoofdstuk/paragraaf.</p>
 <hr />
-<h3 id="change-log-samenvatting-in-een-oogopslag">Samenvatting in één oogopslag<a class="headerlink" href="#change-log-samenvatting-in-een-oogopslag" title="Permanent link">&para;</a></h3>
+<h3 id="change-log-samenvatting-in-een-oogopslag_1">Samenvatting in één oogopslag<a class="headerlink" href="#change-log-samenvatting-in-een-oogopslag_1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -2751,7 +2864,7 @@ Gedurende de ontwikkeling onderzoekt GBO waar de verschillende componenten het b
 </ul>
 <p><span style='font-size: small;'><a href="#change-log-samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
 <hr />
-<h3 id="change-log-generieke-functies">Generieke functies<a class="headerlink" href="#change-log-generieke-functies" title="Permanent link">&para;</a></h3>
+<h3 id="change-log-generieke-functies_1">Generieke functies<a class="headerlink" href="#change-log-generieke-functies_1" title="Permanent link">&para;</a></h3>
 <p>De eisen aan de generieke functies zijn aangevuld om het decentrale configuratieconcept expliciet te ondersteunen.</p>
 <ul>
 <li>
@@ -2822,7 +2935,7 @@ Gedurende de ontwikkeling onderzoekt GBO waar de verschillende componenten het b
 <p>Het configuratiecomponent is daarmee bewust geen nieuwe afzonderlijke stelselfunctie. Het is een functionele voorziening binnen S10 die ook door andere stelselfuncties wordt gebruikt.</p>
 <p><span style='font-size: small;'><a href="#change-log-samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
 <hr />
-<h3 id="change-log-realisatiestrategie">Realisatiestrategie<a class="headerlink" href="#change-log-realisatiestrategie" title="Permanent link">&para;</a></h3>
+<h3 id="change-log-realisatiestrategie_1">Realisatiestrategie<a class="headerlink" href="#change-log-realisatiestrategie_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>Binnen het werkpakket <strong>GBO-basis</strong> zijn toegevoegd:</p>
@@ -2859,7 +2972,7 @@ Gedurende de ontwikkeling onderzoekt GBO waar de verschillende componenten het b
 </ul>
 <p><span style='font-size: small;'><a href="#change-log-samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
 <hr />
-<h3 id="change-log-open-besluiten">Open besluiten<a class="headerlink" href="#change-log-open-besluiten" title="Permanent link">&para;</a></h3>
+<h3 id="change-log-open-besluiten_1">Open besluiten<a class="headerlink" href="#change-log-open-besluiten_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>B-12 — OOTS-functiegrenzen</strong> is aangescherpt.</li>
 <li>Aan het besluitpunt is toegevoegd of OOTS-verzoeken altijd via de OOTS-adapter/mappingvoorziening moeten lopen.</li>
@@ -2872,7 +2985,7 @@ Gedurende de ontwikkeling onderzoekt GBO waar de verschillende componenten het b
 <p>Van: versie <a href="https://ictu.github.io/GBO-PSA/0.7.2/"><strong>0.7.2</strong></a> (juli 2026) → Naar: versie <strong>0.8.1</strong> (september 2026)</p>
 <p>Dit is geen uitputtende opsomming van iedere gewijzigde zin, maar een overzicht van wat er conceptueel en structureel is veranderd, per hoofdstuk/paragraaf.</p>
 <hr />
-<h3 id="change-log-samenvatting-in-een-oogopslag_1">Samenvatting in één oogopslag<a class="headerlink" href="#change-log-samenvatting-in-een-oogopslag_1" title="Permanent link">&para;</a></h3>
+<h3 id="change-log-samenvatting-in-een-oogopslag_2">Samenvatting in één oogopslag<a class="headerlink" href="#change-log-samenvatting-in-een-oogopslag_2" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -3076,7 +3189,7 @@ Gedurende de ontwikkeling onderzoekt GBO waar de verschillende componenten het b
 </ul>
 <p><span style='font-size: small;'><a href="#change-log-samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
 <hr />
-<h3 id="change-log-generieke-functies_1">Generieke functies<a class="headerlink" href="#change-log-generieke-functies_1" title="Permanent link">&para;</a></h3>
+<h3 id="change-log-generieke-functies_2">Generieke functies<a class="headerlink" href="#change-log-generieke-functies_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Het hoofdstuk <strong>Logische architectuur</strong> is vervangen door <strong>Generieke functies</strong>.</li>
 <li>Het logische architectuurdiagram en de uitgebreide duplicatie van functionele beschrijvingen zijn verwijderd. Hiervoor wordt verwezen naar het Globaal Ontwerp.</li>
@@ -3222,7 +3335,7 @@ Gedurende de ontwikkeling onderzoekt GBO waar de verschillende componenten het b
 </ul>
 <p><span style='font-size: small;'><a href="#change-log-samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
 <hr />
-<h3 id="change-log-realisatiestrategie_1">Realisatiestrategie<a class="headerlink" href="#change-log-realisatiestrategie_1" title="Permanent link">&para;</a></h3>
+<h3 id="change-log-realisatiestrategie_2">Realisatiestrategie<a class="headerlink" href="#change-log-realisatiestrategie_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>De realisatiestrategie is opnieuw opgebouwd rond het uitgangspunt dat <strong>GBO geen zelfstandig nieuw afsprakenstelsel of structurele GBO-beheerorganisatie vormt</strong>.</li>
 <li>Tijdelijke programmavoorzieningen en referentiecomponenten zijn toegestaan voor pilots, maar voor productie zijn expliciete eigenaarschap-, beheer-, continuïteits-, financierings- en exitafspraken vereist.</li>
@@ -3259,7 +3372,7 @@ Gedurende de ontwikkeling onderzoekt GBO waar de verschillende componenten het b
 </ul>
 <p><span style='font-size: small;'><a href="#change-log-samenvatting-in-een-oogopslag">terug naar overzicht</a></span></p>
 <hr />
-<h3 id="change-log-open-besluiten_1">Open besluiten<a class="headerlink" href="#change-log-open-besluiten_1" title="Permanent link">&para;</a></h3>
+<h3 id="change-log-open-besluiten_2">Open besluiten<a class="headerlink" href="#change-log-open-besluiten_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Het oude hoofdstuk <strong>Vraagstukken en ontwerpkeuzes</strong>, met losse inhoudelijke vragen en voorlopige ontwerpkeuzes, is vervangen door <strong>Open besluiten</strong>.</li>
 <li>De open vraagstukken zijn geconsolideerd in een gestructureerd <strong>besluitregister</strong>.</li>
