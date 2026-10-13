@@ -1,5 +1,100 @@
 # Change Log
 
+## Change Log v0.8.3
+
+Van: versie [**0.8.2**](https://ictu.github.io/GBO-PSA/0.8.2/) (september 2026) → Naar: versie **0.8.3** (oktober 2026)
+
+Dit is geen uitputtende opsomming van iedere gewijzigde zin, maar een overzicht van wat er conceptueel en structureel is veranderd, per hoofdstuk/paragraaf.
+
+Deze versie bevat **geen inhoudelijke wijzigingen in de architectuur, generieke functies of stelselfuncties**. De wijzigingen bestaan vooral uit het in lijn brengen van de terminologie met de actuele positionering van GBO als programma, aangevuld met enkele redactionele, vormgevings- en technische wijzigingen.
+
+---
+
+### Samenvatting in één oogopslag
+
+| Onderdeel | Aard van de wijziging | Details |
+| --- | --- | --- |
+| Algemeen / terminologie | GBO consequent aangeduid als programma in plaats van project | [detailbeschrijving](#algemeen-terminologie) |
+| Generieke functies | Terminologie rond tijdelijke GBO-voorzieningen aangepast aan programmapositionering | [detailbeschrijving](#generieke-functies) |
+| Realisatiestrategie | Projectgovernance en projectvoorzieningen vervangen door programmagovernance en programmavoorzieningen | [detailbeschrijving](#realisatiestrategie) |
+| Open besluiten | Verantwoordelijkheid voor GBO-vertaallaag en referentiecomponenten bij het GBO-programma gelegd | [detailbeschrijving](#open-besluiten) |
+| Vormgeving en technische documentatie | Vormgeving afgestemd op ICTU-huisstijl en documentatie-afhankelijkheden bijgewerkt | [detailbeschrijving](#vormgeving-en-technische-documentatie) |
+
+---
+
+### Algemeen / terminologie
+
+* De PSA is aangepast aan de actuele positionering van **Gemeenschappelijke Bronontsluiting als programma in plaats van project**.
+* Verwijzingen naar **project GBO**, **projectfase** en vergelijkbare termen zijn waar van toepassing vervangen door **programma GBO**, **programmafase** en **GBO-programma**.
+* Dit is consequent doorgevoerd in onder andere:
+    * de inleiding en scope van de PSA;
+    * de beschrijving van de documenthiërarchie;
+    * het vertrekpunt uit het Globaal Ontwerp;
+    * het voorblad en de repositorybeschrijving;
+    * verwijzingen in eerdere Change Log-teksten.
+* De schrijfwijze **Project Start Architectuur** is waar van toepassing aangepast naar **projectstartarchitectuur**.
+* Deze wijzigingen brengen de PSA qua terminologie verder in lijn met de actuele GBO-documentatie en het Globaal Ontwerp.
+* De wijzigingen veranderen de inhoudelijke afbakening, architectuurprincipes of verantwoordelijkheidsverdeling van GBO niet.
+
+<span style='font-size: small;'>[terug naar overzicht](#samenvatting-in-een-oogopslag)</span>
+
+---
+
+### Generieke functies
+
+* Binnen **F8 — Beheer & Continuïteit** is de terminologie aangepast aan de positionering van GBO als programma.
+* Waar eerder sprake was van afhankelijkheden van tijdelijke **projectvoorzieningen**, wordt nu gesproken over tijdelijke **programmavoorzieningen**.
+* De bestaande eis blijft ongewijzigd: voor dergelijke tijdelijke voorzieningen moet een plan voor overdracht of uitfasering bestaan.
+* Er zijn geen functionele eisen aan F1 tot en met F8 toegevoegd, verwijderd of inhoudelijk gewijzigd.
+
+<span style='font-size: small;'>[terug naar overzicht](#samenvatting-in-een-oogopslag)</span>
+
+---
+
+### Realisatiestrategie
+
+De realisatiestrategie is inhoudelijk niet gewijzigd, maar de organisatorische terminologie is aangepast aan GBO als programma.
+
+* Tijdelijke referentiecomponenten en voorzieningen worden tijdens pilots ontwikkeld door het **programma** in plaats van het project.
+* In de tabel voor landing in bestaande stelsels en beheerorganisaties is **Projectgovernance tijdens ontwikkeling** vervangen door **Programmagovernance tijdens ontwikkeling**.
+* In de fasering is verduidelijkt dat:
+    * het programma besluiten voorbereidt en neemt over scope, rollen, juridische randvoorwaarden en beheerprincipes;
+    * het programma de benodigde koppelvlakken, gegevensmodellen, beleidsregels, logging en conformiteitseisen uitwerkt;
+    * het programma tijdelijke programmavoorzieningen uiteindelijk overdraagt of uitfaseert.
+* De uitgangspunten rond landing in bestaande stelsels, overdracht naar structurele beheerorganisaties en het tijdelijke karakter van programmavoorzieningen zijn verder ongewijzigd.
+
+<span style='font-size: small;'>[terug naar overzicht](#samenvatting-in-een-oogopslag)</span>
+
+---
+
+### Open besluiten
+
+* Bij **B-16 — GBO-vertaallaag** is de betrokken partij gewijzigd van **GBO-project** naar **GBO-programma**.
+* Bij **B-17 — Beheer referentiecomponenten** is eveneens **GBO-project** vervangen door **GBO-programma**.
+* Hiermee wordt duidelijk gemaakt dat het GBO-programma tijdens de ontwikkelfase verantwoordelijk is voor de tijdelijke vertaallaag en referentiecomponenten, totdat deze worden overgedragen of uitgefaseerd.
+* De inhoud, voorkeursrichting en besluitpunten van B-16 en B-17 zijn niet gewijzigd.
+* De beschrijving van de ADR-werkwijze is redactioneel verduidelijkt: waar nodig wordt na een architectuurbesluit ook het Globaal Ontwerp en de technische of semantische documentatie bijgewerkt.
+* Er zijn geen nieuwe open besluiten toegevoegd en bestaande besluiten zijn niet inhoudelijk gewijzigd.
+
+<span style='font-size: small;'>[terug naar overzicht](#samenvatting-in-een-oogopslag)</span>
+
+---
+
+### Vormgeving en technische documentatie
+
+* De vormgeving van de documentatiesite is verder afgestemd op de **ICTU-huisstijl**:
+    * de primaire kleur van de site is aangepast naar ICTU-blauw;
+    * dezelfde kleur wordt toegepast op de footer.
+* De versie-informatie van de documentatie is bijgewerkt van **v0.8.2 / september 2026** naar **v0.8.3 / oktober 2026**.
+* Enkele technische afhankelijkheden voor het genereren van de documentatiesite zijn bijgewerkt:
+    * `mkdocs-print-site-plugin` van versie 2.8 naar 2.9;
+    * `pymdown-extensions` van versie 11.0.2 naar 12.1.
+* Deze wijzigingen hebben geen gevolgen voor de inhoudelijke architectuur van GBO.
+
+<span style='font-size: small;'>[terug naar overzicht](#samenvatting-in-een-oogopslag)</span>
+
+---
+
 ## Change Log v0.8.2
 
 Van: versie [**0.8.1**](https://ictu.github.io/GBO-PSA/0.8.1/) (september 2026) → Naar: versie **0.8.2** (september 2026)
