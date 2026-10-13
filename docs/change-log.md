@@ -1,5 +1,151 @@
 # Change Log
 
+## Change Log v0.8.2
+
+Van: versie [**0.8.1**](https://ictu.github.io/GBO-PSA/0.8.1/) (september 2026) → Naar: versie **0.8.2** (september 2026)
+
+Dit is geen uitputtende opsomming van iedere gewijzigde zin, maar een overzicht van wat er conceptueel en structureel is veranderd, per hoofdstuk/paragraaf.
+
+---
+
+### Samenvatting in één oogopslag
+
+| Onderdeel | Aard van de wijziging | Details |
+| --- | --- | --- |
+| Vertrekpunt Globaal Ontwerp | Bronspecifieke GBO-configuratie toegevoegd als architectuurconsequentie | [detailbeschrijving](#vertrekpunt-uit-het-globaal-ontwerp-1) |
+| Interactiepatronen | Vastgelegd dat centrale voorzieningen de configuratie van de bronhouder gebruiken | [detailbeschrijving](#interactiepatronen-1) |
+| Generieke functies | Eisen rond configuratie toegevoegd aan gegevensvoorziening, semantiek en beheer | [detailbeschrijving](#generieke-functies-1) |
+| Stelselfuncties | Decentraal configuratiecomponent uitgewerkt, vooral binnen S07, S08, S10 en S11 | [detailbeschrijving](#stelselfuncties-1) |
+| Realisatiestrategie | Configuratiecomponent toegevoegd aan GBO-basis en impact bronhouder; landing in bestaande stelsels verduidelijkt | [detailbeschrijving](#realisatiestrategie-1) |
+| Open besluiten | Voorkeursrichting voor gebruik van de OOTS-mappingvoorziening aangescherpt | [detailbeschrijving](#open-besluiten-1) |
+
+---
+
+### Vertrekpunt uit het globaal ontwerp
+
+* De architectuurconsequenties zijn aangepast aan de verdere uitwerking van het Globaal Ontwerp.
+* Expliciet is gemaakt dat een bronhouder naast de gemeenschappelijke bronontsluiting een **bronspecifieke GBO-configuratie** beheert.
+* In deze configuratie legt de bronhouder vast welke gegevens beschikbaar zijn en hoe deze binnen de verschillende gegevensstromen worden ontsloten.
+* Nieuwe gegevensvragen worden zoveel mogelijk via deze configuratie toegevoegd, zodat daarvoor geen wijzigingen in het bronsysteem of nieuwe afnemerspecifieke bronkoppelvlakken nodig zijn.
+* Aan het overzicht van architectuurconsequenties is toegevoegd dat bronhouders met deze configuratie bepalen welke gegevensdiensten beschikbaar zijn en hoe centrale GBO-voorzieningen deze verwerken.
+
+<span style='font-size: small;'>[terug naar overzicht](#samenvatting-in-een-oogopslag)</span>
+
+---
+
+### Interactiepatronen
+
+* Aan de gemeenschappelijke eisen voor alle interactiepatronen is toegevoegd dat een centrale GBO-voorziening voor bronspecifieke verwerking gebruikmaakt van de configuratie die onder verantwoordelijkheid van de bronhouder wordt beheerd.
+* Hiermee is explicieter vastgelegd dat centrale voorzieningen bronspecifieke verwerking uitvoeren op basis van door de bronhouder beheerde configuratie en deze inrichting niet zelfstandig bepalen.
+
+<span style='font-size: small;'>[terug naar overzicht](#samenvatting-in-een-oogopslag)</span>
+
+---
+
+### Generieke functies
+
+De eisen aan de generieke functies zijn aangevuld om het decentrale configuratieconcept expliciet te ondersteunen.
+
+* **F3 — Gegevensvoorziening**
+
+    * nieuwe afnemers, gegevensdiensten en interactiepatronen worden zoveel mogelijk ondersteund door wijzigingen in de bronspecifieke configuratie en, waar nodig, beleid, dienstregistratie, schema's en mappings;
+    * hiervoor zijn in beginsel geen wijzigingen in het bronsysteem nodig.
+
+* **F4 — Semantiek & Eenheid van Taal**
+
+    * de bronhouder legt in een bronspecifieke GBO-configuratie vast welke gegevensdiensten voor de verschillende gegevensstromen beschikbaar zijn;
+    * in deze configuratie wordt vastgelegd welke schema's, mappings en andere verwerkingsinstructies van toepassing zijn;
+    * centrale GBO-voorzieningen kunnen de voor hen relevante configuratie machineleesbaar raadplegen;
+    * de bronhouder blijft inhoudelijk verantwoordelijk voor de configuratie. Centrale voorzieningen passen deze toe, maar bepalen niet zelfstandig de bronspecifieke inrichting.
+
+* **F8 — Beheer & Continuïteit**
+
+    * voor bronspecifieke configuratie moeten afspraken bestaan over publicatie, validatie, versiebeheer, geldigheid en actualiteit;
+    * achteraf moet herleidbaar zijn welke configuratie bij een gegevensverwerking is toegepast.
+
+<span style='font-size: small;'>[terug naar overzicht](#samenvatting-in-een-oogopslag)</span>
+
+---
+
+### Stelselfuncties
+
+De belangrijkste inhoudelijke wijziging in deze versie is de verdere uitwerking van het **decentrale configuratiecomponent** en de bronspecifieke GBO-configuratie.
+
+* **S07 — Gegevensontsluiting**
+
+    * nieuwe diensten worden in beginsel via de bronspecifieke GBO-configuratie toegevoegd;
+    * deze configuratie wordt gebruikt in samenhang met dienstregistratie, schema's, mappings en het toepasselijke beleid.
+
+* **S08 — OOTS-adapter**
+
+    * de toepassing van semantische mappings is gekoppeld aan de configuratie van de bronhouder;
+    * als voor een gegevensdienst een semantische mapping is geconfigureerd, gebruikt de centrale mappingfunctie deze configuratie om brongegevens naar het overeengekomen OOTS-EDM-formaat te vertalen;
+    * S08 verwijst hiervoor naar de mappings en configuratie die via S10 worden beheerd.
+
+* **S10 — Semantiek & Gegevenscatalogus**
+
+    * het doel van S10 is uitgebreid met het configureren van de wijze waarop gegevens van een bronhouder via de verschillende GBO-gegevensstromen worden aangeboden;
+    * de bronhouder beheert een bronspecifieke GBO-configuratie met de beschikbare gegevensdiensten en de bijbehorende schema's, mappings en verwerkingsinstructies;
+    * configuratie verwijst waar mogelijk naar beheerde objecten, zodat informatie niet onnodig wordt gedupliceerd;
+    * centrale GBO-voorzieningen moeten de voor hen relevante configuratie machineleesbaar kunnen raadplegen;
+    * configuratie moet valideerbaar, versieerbaar en herleidbaar zijn;
+    * de technische implementatie van het configuratiecomponent is vrij, zolang deze aan de afgesproken functionele eisen en koppelvlakken voldoet;
+    * een **decentraal configuratiecomponent** is toegevoegd aan de functionele voorzieningen van S10;
+    * standaardisatie, het koppelvlak en de minimale functionele eisen van het configuratiecomponent zijn toegevoegd aan de open besluiten binnen S10.
+
+* **S11 — Attesteringsuitgifte**
+
+    * als voor attestatie-uitgifte een semantische mapping nodig is, legt de bronhouder in de GBO-configuratie vast welke mapping en welk attestatieschema worden toegepast;
+    * de semantische mapping en de configuratie daarvoor worden via S10 beschikbaar gesteld.
+
+Het configuratiecomponent is daarmee bewust geen nieuwe afzonderlijke stelselfunctie. Het is een functionele voorziening binnen S10 die ook door andere stelselfuncties wordt gebruikt.
+
+<span style='font-size: small;'>[terug naar overzicht](#samenvatting-in-een-oogopslag)</span>
+
+---
+
+### Realisatiestrategie
+
+* Binnen het werkpakket **GBO-basis** zijn toegevoegd:
+
+    * een model en koppelvlak voor de bronspecifieke GBO-configuratie;
+    * afspraken over validatie, versiebeheer, publicatie en raadpleging van deze configuratie;
+    * een referentie-implementatie van een decentraal configuratiecomponent.
+
+* Binnen het werkpakket **OOTS** is verduidelijkt dat:
+
+    * het beheerproces voor OOTS-EDM-mappings ook de configuratie omvat waarmee de bronhouder bepaalt welke semantische mapping voor een gegevensdienst wordt toegepast;
+    * semantische mapping naar een evidence type wordt toegepast als deze door de bronhouder voor de betreffende gegevensdienst is geconfigureerd.
+
+* Bij de **impact op bronhouders** is toegevoegd dat:
+
+    * de bronhouder naast gegevensdiensten, schema's en kwaliteit ook de bronspecifieke configuratie beheert waarmee wordt bepaald hoe gegevens via de verschillende GBO-gegevensstromen worden aangeboden;
+    * de bronhouder hiervoor een decentraal configuratiecomponent beheert;
+    * de technische implementatie van dit component vrij is, zolang deze aan de vastgestelde functionele eisen en koppelvlakken voldoet.
+
+* De paragraaf **Landing in bestaande stelsels en beheerorganisaties** is verduidelijkt:
+
+    * GBO is een programma en geen structurele beheerorganisatie;
+    * GBO is ook geen zelfstandig stelsel met deelnemers en afspraken;
+    * componenten die binnen GBO worden ontwikkeld moeten voor productie worden ondergebracht bij stelsels en/of organisaties die het beheer en toezicht structureel kunnen uitvoeren;
+    * tijdens de ontwikkeling wordt onderzocht waar de verschillende componenten het beste kunnen landen, waarbij zoveel mogelijk wordt aangesloten op bestaande stelsels en beheerorganisaties.
+
+<span style='font-size: small;'>[terug naar overzicht](#samenvatting-in-een-oogopslag)</span>
+
+---
+
+### Open besluiten
+
+* **B-12 — OOTS-functiegrenzen** is aangescherpt.
+* Aan het besluitpunt is toegevoegd of OOTS-verzoeken altijd via de OOTS-adapter/mappingvoorziening moeten lopen.
+* De voorkeursrichting is verduidelijkt: de mappingvoorziening wordt voor een eenvoudige en uniforme inrichting altijd aangeroepen, ook wanneer geen semantische vertaling nodig is en gegevens één-op-één worden doorgegeven.
+* De definitieve functiegrenzen tussen OOTS-V, de OOTS-adapter en de mappingvoorziening blijven onderwerp van besluitvorming.
+
+<span style='font-size: small;'>[terug naar overzicht](#samenvatting-in-een-oogopslag)</span>
+
+---
+
+
 ## Change Log v0.8.1
 
 Van: versie [**0.7.2**](https://ictu.github.io/GBO-PSA/0.7.2/) (juli 2026) → Naar: versie **0.8.1** (september 2026)
