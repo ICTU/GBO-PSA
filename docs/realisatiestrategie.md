@@ -4,7 +4,7 @@
 
 GBO richt geen zelfstandig nieuw afsprakenstelsel in. De realisatie vult bestaande afspraken, standaarden en voorzieningen aan en combineert deze waar nodig. GBO brengt nieuwe onderdelen waar mogelijk onder bij bestaande stelsels en beheerorganisaties.
 
-Tijdens pilots kan het project referentiecomponenten of tijdelijke voorzieningen ontwikkelen. Voor productiegebruik moeten de betrokken partijen vóór overdracht vaststellen:
+Tijdens pilots kan het programma referentiecomponenten of tijdelijke voorzieningen ontwikkelen. Voor productiegebruik moeten de betrokken partijen vóór overdracht vaststellen:
 
 - wie inhoudelijk eigenaar is.
 - waar de gebruiks- en aansluitafspraken worden beheerd.
@@ -190,13 +190,13 @@ Gedurende de ontwikkeling onderzoekt GBO waar de verschillende componenten het b
 | OOTS-koppelvlak en adapter | Nationale SDG/OOTS-governance | Beheer rond Basisinrichting OOTS en betrokken bronontsluiting | Functiegrenzen en beheerder |
 | Toestemmingsvoorziening | DvTP/GDI/FDS, afhankelijk van wetgeving | Landelijke beheerorganisatie nader te bepalen | Juridische grondslag, toezicht en beheer |
 | Pseudonimiseringsaansluiting | GDI/BSNk-governance | Logius/BSNk | Deelnemersrollen en integratieprofiel |
-| Referentiecomponenten | Projectgovernance tijdens ontwikkeling | Overdracht per component | Acceptatiecriteria en exitplan |
+| Referentiecomponenten | Programmagovernance tijdens ontwikkeling | Overdracht per component | Acceptatiecriteria en exitplan |
 
 ## Fasering
 
-1. **Kaders vaststellen:** het project besluit over scope, rollen, juridische randvoorwaarden en beheerprincipes.
-2. **Profielen ontwerpen:** het project werkt koppelvlakken, gegevensmodellen, beleid, logging en conformiteitseisen uit.
+1. **Kaders vaststellen:** het programma besluit over scope, rollen, juridische randvoorwaarden en beheerprincipes.
+2. **Profielen ontwerpen:** het programma werkt koppelvlakken, gegevensmodellen, beleid, logging en conformiteitseisen uit.
 3. **Beproeven:** pilots toetsen referentiecomponenten en alternatieve implementaties.
 4. **Standaardiseren en beleggen:** de betrokken partijen stellen afspraken en profielen vast en wijzen beheerorganisaties aan.
 5. **Productierijp maken:** de betrokken partijen richten audits, serviceniveaus, continuïteit, financiering, ondersteuning en toezicht in.
-6. **Overdragen en opschalen:** het project draagt projectvoorzieningen over of faseert deze uit. Daarna kunnen deelnemers gecontroleerd aansluiten.
+6. **Overdragen en opschalen:** het programma draagt programmavoorzieningen over of faseert deze uit. Daarna kunnen deelnemers gecontroleerd aansluiten.

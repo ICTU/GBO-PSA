@@ -2,7 +2,7 @@
 
 ## Doel van dit document
 
-Dit document beschrijft de projectstartarchitectuur (PSA) voor het project Gemeenschappelijke Bronontsluiting (GBO).
+Dit document beschrijft de projectstartarchitectuur (PSA) voor het programma Gemeenschappelijke Bronontsluiting (GBO).
 
 De probleemstelling en doelen van GBO staan op het tabblad [Gemeenschappelijke Bronontsluiting](https://ictu.github.io/GBO/). De organisatorische en juridische context staat op het tabblad [Context](https://ictu.github.io/GBO/latest/context). Het [globaal ontwerp](https://ictu.github.io/GBO-GO/main/) beschrijft op hoofdlijnen de gekozen oplossingsrichting, interactiepatronen, generieke functies en benodigde componenten.
 
@@ -27,7 +27,7 @@ Voor GBO geldt de volgende documenthiërarchie:
 1. Het [**globaal ontwerp**](https://ictu.github.io/GBO-GO/) beschrijft op hoofdlijnen de oplossingsrichting, interactiepatronen, generieke functies en componenten.
 2. De [**PSA**](https://ictu.github.io/GBO-PSA/) beschrijft de kaders, eisen en ontwerpkeuzes voor de generieke functies en stelselfuncties.
 3. Het [**technisch ontwerp**](https://ictu.github.io/GBO/main/underconstruction_to/) beschrijft de technische inrichting van de voorzieningen en koppelvlakken.
-4. De [**technische requirements**](https://ictu.github.io/GBO/main/underconstruction_tr/) specificeren welke componenten het project moet ontwikkelen of aanpassen.
+4. De [**technische requirements**](https://ictu.github.io/GBO/main/underconstruction_tr/) specificeren welke componenten het programma moet ontwikkelen of aanpassen.
 5. De uitwerking [**Semantiek**](https://ictu.github.io/GBO/main/underconstruction_sem/) beschrijft de informatiemodellen, begrippen, schema's en mappings voor gegevensuitwisseling.
 
 Bij verschillen over de oplossingsrichting of interactiepatronen is het globaal ontwerp leidend. De PSA is leidend voor de normerende architectuureisen aan de verdere uitwerking.
@@ -36,7 +36,7 @@ De [**demo-omgeving**](https://gbo.simulatie.datastelsel.nl/) laat zien hoe de v
 
 ## Scope
 
-De PSA beschrijft de afspraken, standaarden en voorzieningen die nodig zijn om de [doelen van GBO](https://ictu.github.io/GBO/latest/) te bereiken. GBO gebruikt bestaande afspraken, standaarden en voorzieningen waar dat mogelijk is. Het project brengt noodzakelijke aanvullingen onder bij bestaande afsprakenstelsels en beheerorganisaties.
+De PSA beschrijft de afspraken, standaarden en voorzieningen die nodig zijn om de [doelen van GBO](https://ictu.github.io/GBO/latest/) te bereiken. GBO gebruikt bestaande afspraken, standaarden en voorzieningen waar dat mogelijk is. Het programma brengt noodzakelijke aanvullingen onder bij bestaande afsprakenstelsels en beheerorganisaties.
 
 De PSA beschrijft niet:
 

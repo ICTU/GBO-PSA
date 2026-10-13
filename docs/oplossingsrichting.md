@@ -43,7 +43,7 @@ De PSA is leidend voor:
 
 GBO richt geen zelfstandig nieuw afsprakenstelsel in. GBO brengt nieuwe of aangepaste afspraken, standaarden en voorzieningen waar mogelijk onder bij bestaande afsprakenstelsels en beheerorganisaties. Dit geldt vooral voor FDS, GDI, de nationale EUDI-Wallet-governance en de governance rond de Basisinrichting OOTS.
 
-Tijdens de projectfase kan het project referentiecomponenten of tijdelijke voorzieningen ontwikkelen. Daarmee kan het project afspraken en standaarden beproeven.
+Tijdens de programmafase kan het programma referentiecomponenten of tijdelijke voorzieningen ontwikkelen. Daarmee kan het programma afspraken en standaarden beproeven.
 
 Voor productiegebruik moeten de betrokken partijen vooraf per onderdeel vaststellen:
 

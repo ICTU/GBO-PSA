@@ -207,7 +207,7 @@ Dit is geen uitputtende opsomming van iedere gewijzigde zin, maar een overzicht 
     * de PSA bepaalt principes, normerende eisen, afspraken, standaarden, verantwoordelijkheden en open architectuurbesluiten.
 
 * De passage over bestaande afsprakenstelsels is aangescherpt: GBO richt geen zelfstandig nieuw afsprakenstelsel in. Nieuwe afspraken, standaarden en voorzieningen moeten zoveel mogelijk landen in bestaande governance- en beheerstructuren.
-* Voor tijdelijke project- en pilotvoorzieningen zijn expliciete voorwaarden toegevoegd voor overgang naar productie, waaronder eigenaarschap, afsprakenbeheer, standaardbeheer, operationeel beheer, continuïteit, financiering en toezicht.
+* Voor tijdelijke programma- en pilotvoorzieningen zijn expliciete voorwaarden toegevoegd voor overgang naar productie, waaronder eigenaarschap, afsprakenbeheer, standaardbeheer, operationeel beheer, continuïteit, financiering en toezicht.
 * Illustratieve toekomstige gegevensstromen en bijbehorende diagrammen zijn uit dit hoofdstuk verwijderd.
 
 <span style='font-size: small;'>[terug naar overzicht](#samenvatting-in-een-oogopslag)</span>
@@ -418,7 +418,7 @@ Belangrijkste inhoudelijke wijzigingen per stelselfunctie:
 ### Realisatiestrategie
 
 * De realisatiestrategie is opnieuw opgebouwd rond het uitgangspunt dat **GBO geen zelfstandig nieuw afsprakenstelsel of structurele GBO-beheerorganisatie vormt**.
-* Tijdelijke projectvoorzieningen en referentiecomponenten zijn toegestaan voor pilots, maar voor productie zijn expliciete eigenaarschap-, beheer-, continuïteits-, financierings- en exitafspraken vereist.
+* Tijdelijke programmavoorzieningen en referentiecomponenten zijn toegestaan voor pilots, maar voor productie zijn expliciete eigenaarschap-, beheer-, continuïteits-, financierings- en exitafspraken vereist.
 * De realisatie is opnieuw ingedeeld in vier samenhangende werkpakketten:
 
     * **GBO-basis**;
