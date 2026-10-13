@@ -1243,7 +1243,7 @@
 <ul>
 <li>iedere bronhouder biedt één generieke bronontsluiting-API voor de gegevensstromen die GBO ondersteunt.</li>
 <li>gegevensvragen zijn selectief en beperkt tot vooraf geregistreerde diensten en gegevenssets.</li>
-<li>nieuwe afnemers of interactiepatronen vereisen in beginsel alleen wijzigingen in beleid, dienstregistratie of mapping, niet in het bronsysteem.</li>
+<li>nieuwe afnemers, gegevensdiensten of interactiepatronen vereisen in beginsel alleen wijzigingen in de bronspecifieke configuratie en, waar nodig, in beleid, dienstregistratie, schema's of mappings; zij vereisen geen wijziging in het bronsysteem.</li>
 <li>expliciete adapters en mappings verwerken protocol- en formaatverschillen van externe stelsels.</li>
 <li>de bronhouder blijft verantwoordelijk voor de beschikbaarheid, juistheid en actualiteit van de brongegevens.</li>
 <li>de GBO-vertaallaag ondersteunt bronhouders die het gekozen API-profiel nog niet rechtstreeks kunnen aanbieden. Deze ondersteuning blijft vervangbaar.</li>
@@ -1256,6 +1256,9 @@
 <li>bronhouders en domeinen blijven inhoudelijk verantwoordelijk voor hun begrippen en informatiemodellen.</li>
 <li>GBO stelt gemeenschappelijke kaders vast voor vindbaarheid, beschrijving, versiebeheer en mapping.</li>
 <li>schema's en mappings zijn machineleesbaar, testbaar en versieerbaar.</li>
+<li>de bronhouder legt in een bronspecifieke GBO-configuratie vast welke gegevensdiensten beschikbaar zijn voor de verschillende gegevensstromen en welke schema's, mappings en andere verwerkingsinstructies daarbij van toepassing zijn.</li>
+<li>centrale GBO-voorzieningen kunnen de voor hen relevante bronspecifieke configuratie machineleesbaar raadplegen.</li>
+<li>de bronhouder blijft inhoudelijk verantwoordelijk voor deze configuratie. Centrale voorzieningen passen de configuratie toe, maar bepalen niet zelfstandig de bronspecifieke inrichting.</li>
 <li>transformaties naar OOTS-EDM, attestatieschema's en andere uitwisselformaten zijn afgeleid van beheerde bron- en doelschema's.</li>
 <li>iedere wijziging bevat een impactanalyse en een overgangsstrategie voor bestaande afnemers.</li>
 </ul>
@@ -1297,6 +1300,7 @@
 <li>monitoring van de keten vereist geen onnodige centrale verzameling van inhoudelijke persoonsgegevens.</li>
 <li>een gestandaardiseerde verzoekidentificator maakt gebeurtenissen over componenten heen correleerbaar.</li>
 <li>configuraties, beleid, schema's, mappings en dienstregistraties ondersteunen versiebeheer en audit.</li>
+<li>voor bronspecifieke GBO-configuratie zijn afspraken vastgelegd over publicatie, validatie, versiebeheer, geldigheid en actualiteit. Bij een gegevensverwerking is herleidbaar welke configuratie is toegepast.</li>
 <li>overeengekomen processen regelen incidenten, kwetsbaarheden en wijzigingen.</li>
 <li>de inrichting ondersteunt wettelijke verplichtingen voor inzage en verantwoording.</li>
 <li>afhankelijkheden van tijdelijke projectvoorzieningen hebben een plan voor overdracht of uitfasering.</li>

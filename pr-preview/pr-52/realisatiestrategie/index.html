@@ -1263,10 +1263,13 @@ Keuzes bij de uitwerking van het ontwerp, worden vastgelegd in <em>Architecture 
 <li>governance- en distributieprofiel voor beleidsregels.</li>
 <li>profiel voor ketenlogging en correlatie.</li>
 <li>kaders voor begrippen, schema's, kwaliteit en mappings.</li>
+<li>model en koppelvlak voor de bronspecifieke GBO-configuratie.</li>
+<li>afspraken over validatie, versiebeheer, publicatie en raadpleging van deze configuratie.</li>
 </ul>
 <h3 id="op-te-leveren-of-aan-te-passen-voorzieningen">Op te leveren of aan te passen voorzieningen<a class="headerlink" href="#op-te-leveren-of-aan-te-passen-voorzieningen" title="Permanent link">&para;</a></h3>
 <ul>
 <li>aansluitbare bronontsluiting-componenten.</li>
+<li>referentie-implementatie van een decentraal configuratiecomponent.</li>
 <li>dienstencatalogus.</li>
 <li>functies voor beleidsbeheer en -distributie.</li>
 <li>ondersteunende GBO-vertaallaag.</li>
@@ -1299,14 +1302,14 @@ Keuzes bij de uitwerking van het ontwerp, worden vastgelegd in <em>Architecture 
 <ul>
 <li>het koppelvlak tussen OOTS-V en de bronontsluiting-API.</li>
 <li>autorisatie- en loggingafspraken voor OOTS-verzoeken.</li>
-<li>beheerproces voor gegevensdiensten, discovery en OOTS-EDM-mappings.</li>
+<li>beheerproces voor gegevensdiensten, discovery en OOTS-EDM-mappings, inclusief de configuratie waarmee de bronhouder bepaalt welke semantische mapping voor een gegevensdienst wordt toegepast.</li>
 <li>verdeling van verantwoordelijkheden bij fouten, wijzigingen en incidenten.</li>
 </ul>
 <h3 id="afbakening">Afbakening<a class="headerlink" href="#afbakening" title="Permanent link">&para;</a></h3>
 <p>Binnen GBO verzorgt de Basisinrichting OOTS de Europese proces- en transportfuncties. De GBO-uitwerking richt zich op:</p>
 <ul>
 <li>de aansluiting van OOTS-V op de generieke bronontsluiting.</li>
-<li>semantische mapping naar overeengekomen evidence types.</li>
+<li>semantische mapping naar overeengekomen evidence types, indien deze door de bronhouder voor de betreffende gegevensdienst is geconfigureerd.</li>
 <li>toepassing van de generieke autorisatie- en loggingfuncties.</li>
 </ul>
 <p>Sectorale en eigen OOTS-aansluitingen vallen buiten de realisatie van GBO.</p>
@@ -1338,10 +1341,11 @@ Keuzes bij de uitwerking van het ontwerp, worden vastgelegd in <em>Architecture 
 <li>een bronontsluiting-API volgens het vastgestelde profiel.</li>
 <li>een PEP en toegang tot een passende PDP.</li>
 <li>logging volgens het GBO-profiel.</li>
-<li>een beschrijving van gegevensdiensten, schema's en kwaliteit.</li>
+<li>een beschrijving van gegevensdiensten, schema's en kwaliteit en de bronspecifieke configuratie waarmee wordt vastgelegd hoe deze gegevens via de verschillende GBO-gegevensstromen worden aangeboden.</li>
 <li>beheerprocessen voor aansluiting, wijzigingen en incidenten.</li>
 </ul>
-<p>Een bronhouder kan referentiecomponenten gebruiken en eventueel onderdelen van de GBO-vertaallaag inzetten. Functioneel gelijkwaardige alternatieven zijn ook mogelijk. De bronhouder moet altijd voldoen aan de vastgestelde afspraken, standaarden en koppelvlakken.</p>
+<p>Een bronhouder kan referentiecomponenten gebruiken en eventueel onderdelen van de GBO-vertaallaag inzetten. Functioneel gelijkwaardige alternatieven zijn ook mogelijk. De bronhouder beheert hiervoor een decentraal configuratiecomponent. De technische implementatie daarvan is vrij, zolang deze voldoet aan de vastgestelde functionele eisen en koppelvlakken.
+De bronhouder moet altijd voldoen aan de vastgestelde afspraken, standaarden en koppelvlakken.</p>
 <h3 id="qtsps">QTSP's<a class="headerlink" href="#qtsps" title="Permanent link">&para;</a></h3>
 <p>De PSA legt nog niet vast hoe attestatie-uitgifte binnen GBO wordt ingericht. Daarom ondersteunt de PSA voorlopig alle varianten. QTSP's hebben daardoor verschillende mogelijkheden:</p>
 <ul>

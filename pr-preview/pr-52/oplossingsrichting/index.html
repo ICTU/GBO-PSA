@@ -1137,7 +1137,7 @@
 <h1 id="vertrekpunt-uit-het-globaal-ontwerp">Vertrekpunt uit het globaal ontwerp<a class="headerlink" href="#vertrekpunt-uit-het-globaal-ontwerp" title="Permanent link">&para;</a></h1>
 <p><a href="https://ictu.github.io/GBO-GO/main/#2-voorgestelde-oplossingsrichting">Hoofdstuk 2 van het globaal ontwerp</a> beschrijft en onderbouwt de oplossingsrichting voor GBO. Dit hoofdstuk herhaalt die beschrijving niet. Het benoemt alleen de architectuurconsequenties die deze PSA normerend uitwerkt.</p>
 <h2 id="architectuurconsequenties">Architectuurconsequenties<a class="headerlink" href="#architectuurconsequenties" title="Permanent link">&para;</a></h2>
-<p>GBO gaat uit van een gemeenschappelijke bronontsluiting. Een bronhouder richt deze ontsluiting één keer in en gebruikt deze daarna voor meerdere gegevensstromen. De inrichting voegt nieuwe gegevensvragen zoveel mogelijk via configuratie toe. Daardoor hoeft een bronhouder niet voor iedere toepassing of afnemer een nieuw bronkoppelvlak te ontwikkelen.</p>
+<p>GBO gaat uit van een gemeenschappelijke bronontsluiting. Een bronhouder richt deze ontsluiting één keer in en gebruikt deze daarna voor meerdere gegevensstromen. De bronhouder beheert daarnaast een bronspecifieke GBO-configuratie, waarmee wordt vastgelegd welke gegevens beschikbaar zijn en hoe deze binnen de verschillende gegevensstromen worden ontsloten. Nieuwe gegevensvragen worden zoveel mogelijk via deze configuratie toegevoegd. Daardoor hoeft een bronhouder niet voor iedere toepassing of afnemer een nieuw bronkoppelvlak te ontwikkelen.</p>
 <p>Daaruit volgen de volgende consequenties voor de PSA:</p>
 <table>
 <thead>
@@ -1150,6 +1150,10 @@
 <tr>
 <td>Bronhouders bieden één generieke, herbruikbare bronontsluiting aan.</td>
 <td>F3, F7 en S07</td>
+</tr>
+<tr>
+<td>Bronhouders beheren de configuratie waarmee zij bepalen welke gegevensdiensten beschikbaar zijn en hoe centrale GBO-voorzieningen deze verwerken.</td>
+<td>F3, F4, S07 en S10</td>
 </tr>
 <tr>
 <td>Gegevensvragen zijn selectief, vooraf beheerd en afdwingbaar.</td>
