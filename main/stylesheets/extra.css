@@ -1,3 +1,10 @@
+/* standaard kleuren overschrijven met ICTU kleuren */
+[data-md-color-scheme="default"][data-md-color-primary="indigo"], [data-md-color-scheme=slate][data-md-color-primary="indigo"] {
+  --md-primary-fg-color: #2e62e6;        /* de headerkleur zelf */
+  --md-footer-bg-color: #2e62e6;         /* achtergrondkleur footer */
+  --md-footer-bg-color--dark: #2e62e6;   /* achtergrondkleur footer */
+}
+
 /* overschrijf de width: fit-content voor het figure element */
 .md-typeset figure {
   width: 100% !important;
