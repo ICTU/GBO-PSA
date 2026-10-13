@@ -39,4 +39,4 @@ Voor ieder besluit is een Architecture Decision Record nodig met:
 - risico's en mitigerende maatregelen.
 - eigenaar, datum en heroverwegingsmoment.
 
-Een besluit is pas afgerond als de relevante PSA-paragraaf het besluit bevat. Werk zo nodig ook het globaal ontwerp en de technische of semantische documentatie bij.
+Een besluit is pas afgerond als de relevante PSA-paragraaf het besluit bevat. Waar nodig wordt ook het globaal ontwerp en de technische of semantische documentatie bijgewerkt.
