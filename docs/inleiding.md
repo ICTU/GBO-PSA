@@ -13,7 +13,7 @@ De PSA beschrijft de architectuur voor een afsprakenstelsel en generieke infrast
 
 -   burgers gegevens van overheidsorganisaties kunnen verkrijgen  
 -   burgers deze gegevens kunnen delen met private partijen  
--   gegevens gebruikt kunnen worden voor Europese toepassingen zoals EDI Wallet en OOTS  
+-   gegevens gebruikt kunnen worden voor Europese toepassingen zoals EUDI-Wallet en OOTS  
 
 De PSA omvat:
 
