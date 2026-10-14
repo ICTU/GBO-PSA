@@ -189,7 +189,6 @@ Iedere gegevensvraag toetsen aan identiteit, dienst, doel, grondslag, gegevenssc
 **Afspraken en standaarden**
 
 - AuthZEN NLGov-profiel (NLgov Profile for OpenID AuthZEN Authorization API 1.0.0) of een gelijkwaardig open PEP-PDP-profiel.
-- 
 - gemeenschappelijk autorisatievocabulaire.
 - regels voor foutafhandeling, time-outs en fail-safe gedrag.
 - aansluiting van PIP-bronnen.
