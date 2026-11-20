@@ -78,7 +78,7 @@ plugins:
       canonical_version: "latest"
   - print-site:
       add_to_navigation: false
-      print_page_title: "Projectstartarchitectuur"
+      print_page_title: "GBO - Projectstartarchitectuur"
       add_cover_page: true
       cover_page_template: "docs/assets/templates/voorblad.tpl"
       enumerate_headings: true
