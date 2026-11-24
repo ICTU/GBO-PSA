@@ -15,7 +15,7 @@ Iedere genoemde voorziening is een functionele component. De PSA schrijft geen p
 | [S05 — Autorisatie](#s05-autorisatie) | [F2](generieke-functies.md#f2-toegang-interactie), [F6](generieke-functies.md#f6-grondslag-beleid) | Iedere gegevensvraag toetsen en de beslissing afdwingen. |
 | [S06 — Beleidsbeheer & -distributie](#s06-beleidsbeheer-distributie) | [F2](generieke-functies.md#f2-toegang-interactie), [F6](generieke-functies.md#f6-grondslag-beleid) | Beleid bestuurlijk beheren en gecontroleerd beschikbaar stellen. |
 | [S07 — Gegevensontsluiting](#s07-gegevensontsluiting) | [F3](generieke-functies.md#f3-gegevensvoorziening), [F7](generieke-functies.md#f7-orkestratie-integratie) | Eén generieke bronontsluiting-API en een dienstencatalogus. |
-| [S08 — OOTS-adapter](#s08-oots-adapter) | [F3](generieke-functies.md#f3-gegevensvoorziening), [F7](generieke-functies.md#f7-orkestratie-integratie) | Aansluiting op OOTS-V en mapping naar OOTS-EDM. |
+| [S08 — OOTS-adapter](#s08-oots-adapter) | [F3](generieke-functies.md#f3-gegevensvoorziening), [F7](generieke-functies.md#f7-orkestratie-integratie) | Optionele aansluiting op OOTS-V en semantische mapping naar SDG-EDM. |
 | [S09 — Logging, Audit & Traceerbaarheid](#s09-logging-audit-traceerbaarheid) | [F8](generieke-functies.md#f8-beheer-continuiteit) | Ketenbrede herleidbaarheid en verantwoording. |
 | [S10 — Semantiek & Gegevenscatalogus](#s10-semantiek-gegevenscatalogus) | [F4](generieke-functies.md#f4-semantiek-eenheid-van-taal), [F5](generieke-functies.md#f5-gegevenskwaliteit-validatie) | Begrippen, schema's, kwaliteit en mappings beheren. |
 | [S11 — Attesteringsuitgifte](#s11-attesteringsuitgifte) | [F3](generieke-functies.md#f3-gegevensvoorziening), [F7](generieke-functies.md#f7-orkestratie-integratie) | PubEAA-uitgifte en ondersteuning van QEAA-uitgifte via een ASI. |
@@ -203,7 +203,7 @@ Iedere gegevensvraag toetsen aan identiteit, dienst, doel, grondslag, gegevenssc
 **Open besluiten**
 
 - centrale, decentrale of hybride PDP-inrichting.
-- definitief GBO-profiel voor autorisatievragen en beslissingen.
+- definitief autorisatieprofiel voor vragen en beslissingen binnen het bronontsluitingsmodel.
 - locatie van identiteitsvertaling ten opzichte van de beleidsbeslissing.
 
 ## S06 — Beleidsbeheer & -distributie
@@ -249,13 +249,13 @@ Bronhouders gegevens laten aanbieden via één generieke en herbruikbare bronont
 
 **Normerende eisen**
 
-- een bronhouder gebruikt voor de GBO-interactiepatronen één logisch koppelvlak.
+- een bronhouder gebruikt voor de interactiepatronen binnen de huidige programmascope één logisch koppelvlak.
 - de API ondersteunt vooraf geregistreerde, selectieve gegevensvragen.
 - iedere gegevensvraag verwijst eenduidig naar een dienst in de dienstencatalogus.
 - het koppelvlak ondersteunt de autorisatie- en loggingeisen van S05 en S09.
 - gepubliceerde informatie beschrijft schema's, versies, foutmeldingen en beschikbaarheidskenmerken.
-- de bronhouder kan nieuwe diensten in beginsel via de bronspecifieke GBO-configuratie toevoegen, in samenhang met de bijbehorende dienstregistratie, schema's, mappings en het toepasselijke beleid.
-- de GBO-vertaallaag is optionele en vervangbare ondersteuning. De vertaallaag is geen verplichte centrale route.
+- de bronhouder kan nieuwe diensten in beginsel via de bronconfiguratie toevoegen, in samenhang met de bijbehorende dienstregistratie, schema's, mappings en het toepasselijke beleid.
+- de referentievertaallaag is optionele en vervangbare ondersteuning. De vertaallaag is geen verplichte centrale route.
 
 **Afspraken en standaarden**
 
@@ -270,48 +270,49 @@ Bronhouders gegevens laten aanbieden via één generieke en herbruikbare bronont
 - bronontsluiting-API.
 - connectiviteitscomponenten bij bronhouder en afnemer.
 - dienstencatalogus.
-- optionele GBO-vertaallaag.
+- optionele referentievertaallaag.
 
 **Open besluiten**
 
 - formele standaardisering van het API-profiel.
 - beheer van de dienstencatalogus.
-- eisen en exitstrategie voor de GBO-vertaallaag.
+- eisen en exitstrategie voor de referentievertaallaag.
 - verhouding tussen centrale en sectorspecifieke dienstregistratie.
 
 ## S08 — OOTS-adapter
 
 **Doel**  
-De generieke bronontsluiting binnen GBO aansluiten op de Basisinrichting OOTS, vooral op OOTS-V. Bronhouders hoeven daardoor geen OOTS-specifieke techniek te gebruiken.
+De decentrale bronontsluiting via een optionele kanaalvoorziening aansluiten op de Basisinrichting OOTS, vooral op OOTS-V. Bronhouders hoeven daardoor geen OOTS-specifieke techniek te gebruiken.
 
 **Normerende eisen**
 
 - de OOTS-adapter koppelt aan het nationale koppelvlak van OOTS-V.
 - OOTS-verzoeken gebruiken dezelfde generieke autorisatie- en loggingfuncties als andere gegevensvragen.
-- de Basisinrichting OOTS blijft verantwoordelijk voor transport, discovery en Europese procesinteractie.
-- indien de bronhouder voor de betreffende gegevensdienst een semantische mapping heeft geconfigureerd, vertaalt de centrale mappingfunctie de brongegevens naar het overeengekomen OOTS-EDM-formaat. De mappingfunctie gebruikt hiervoor de instellingen uit de bronspecifieke GBO-configuratie.
+- de Basisinrichting OOTS blijft verantwoordelijk voor protocolvertaling, transport, discovery en Europese procesinteractie.
+- indien de bronhouder voor de betreffende gegevensdienst een semantische mapping heeft geconfigureerd, vertaalt de OOTS-adapter de brongegevens naar het overeengekomen SDG-EDM-formaat. De adapter gebruikt hiervoor de instellingen uit de bronconfiguratie.
 - bronhouders zijn niet afhankelijk van implementatiedetails van AS4/e-Delivery.
-- sectorale of eigen OOTS-aansluitingen vallen buiten GBO. GBO sluit deze aansluitingen technisch niet uit.
+- bronhouders publiceren hun beschikbare bewijsdiensten via de dienstverlening van bNC SDG. Het bronontsluitingsmodel bevat hiervoor geen voorziening.
+- sectorale of eigen OOTS-aansluitingen vallen buiten de scope van het programma GBO. Het bronontsluitingsmodel sluit deze aansluitingen technisch niet uit.
 
 **Afspraken en standaarden**
 
 - SDG-verordening en OOTS Technical Design Documents.
-- OOTS-EDM.
+- SDG-EDM voor de semantische beschrijving van bewijsgegevens en OOTS-EDM voor de Europese verzoek- en antwoordberichten.
 - AS4/e-Delivery en discoveryprofielen aan de kant van de Basisinrichting OOTS.
-- nationaal koppelvlak tussen OOTS-V en de GBO-bronontsluiting.
+- nationaal koppelvlak tussen OOTS-V en de decentrale bronontsluiting.
 - beheerafspraken voor mappings en gegevensdiensten.
 
 **Functionele voorzieningen**
 
 - Basisinrichting OOTS en OOTS-V als bestaande externe voorziening.
-- uitbreiding van OOTS-V met het GBO-koppelvlak.
+- uitbreiding van OOTS-V met het nationale koppelvlak voor de decentrale bronontsluiting.
 - semantische mappings en de configuratie voor toepassing daarvan via S10.
 
 **Open besluiten**
 
-- precieze grens tussen OOTS-V en semantische mapping.
+- precieze inrichting van het koppelvlak tussen OOTS-V en de optionele OOTS-adapter.
 - beheer en financiering van de aanpassing.
-- beheer van discovery- en dienstinformatie.
+- aansluiting van dienstinformatie op de dienstverlening van bNC SDG.
 
 ## S09 — Logging, Audit & Traceerbaarheid
 
@@ -346,12 +347,12 @@ Gegevensvragen en relevante beslissingen over de hele keten herleidbaar maken. D
 
 - centraal of federatief inzagemodel voor burgers.
 - noodzaak en inrichting van centrale auditaggregatie.
-- definitief GBO-profiel op LDV en tracecontext.
+- definitief profiel op LDV en tracecontext voor het bronontsluitingsmodel.
 
 ## S10 — Semantiek & Gegevenscatalogus
 
 **Doel**  
-Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven en bronhouders in staat stellen te configureren hoe hun gegevens via de verschillende GBO-gegevensstromen worden aangeboden. Daardoor kunnen GBO-voorzieningen gegevens eenduidig interpreteren, valideren en volgens de configuratie van de bronhouder verwerken.
+Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven en bronhouders in staat stellen te configureren hoe hun gegevens via de verschillende gegevensstromen binnen de programmascope worden aangeboden. Daardoor kunnen kanaalvoorzieningen gegevens eenduidig interpreteren, valideren en volgens de configuratie van de bronhouder verwerken.
 
 **Normerende eisen**
 
@@ -360,12 +361,12 @@ Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven en bron
 - catalogusbeschrijvingen, schema's en mappings zijn machineleesbaar en versieerbaar.
 - de beschrijvingen bevatten kwaliteitskenmerken en herkomstinformatie.
 - de inrichting past validatieregels vóór uitlevering toe waar dat technisch en juridisch passend is.
-- mappings naar OOTS-EDM en attestatieschema's zijn expliciet. Zij zijn herleidbaar naar de gebruikte bron- en doelversies.
+- mappings naar SDG-EDM en attestatieschema's zijn expliciet. Zij zijn herleidbaar naar de gebruikte bron- en doelversies.
 - ook begrippen voor identificatie en autorisatie krijgen waar nodig een beheerde en eenduidige beschrijving. Voorbeelden zijn rol, vertegenwoordiger, vertegenwoordigde partij, bevoegdheid en reikwijdte.
 - de catalogus beschrijft ook de voorwaarden voor gebruik van een dienst. De catalogus dupliceert het autorisatiebeleid niet.
-- de bronhouder beheert een bronspecifieke GBO-configuratie waarin is vastgelegd welke gegevensdiensten voor welke gegevensstromen beschikbaar zijn en welke schema's, mappings en andere verwerkingsinstructies daarbij gelden.
+- de bronhouder beheert een bronconfiguratie waarin is vastgelegd welke gegevensdiensten voor welke gegevensstromen beschikbaar zijn en welke schema's, mappings en andere verwerkingsinstructies daarbij gelden.
 - de configuratie verwijst waar mogelijk naar beheerde objecten, zoals diensten, schema's, mappings en beleidsregels, zodat deze informatie niet onnodig wordt gedupliceerd.
-- centrale GBO-voorzieningen kunnen de voor hen relevante configuratie machineleesbaar raadplegen.
+- kanaalvoorzieningen kunnen de voor hen relevante configuratie machineleesbaar raadplegen.
 - de configuratie is valideerbaar, versieerbaar en herleidbaar.
 - de technische implementatie van het configuratiecomponent is vrij, zolang deze voldoet aan de afgesproken functionele eisen en koppelvlakken.
 
@@ -384,7 +385,7 @@ Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven en bron
 - validatievoorzieningen.
 - optionele serialisatie- of mappingservice.
 - gestandaardiseerde procedure voor het terugmelden van fouten of vermoedelijke onjuistheden aan de bronhouder.
-- decentraal configuratiecomponent waarmee de bronhouder zijn bronspecifieke GBO-configuratie beheert en beschikbaar stelt.
+- decentraal configuratiecomponent waarmee de bronhouder zijn bronconfiguratie beheert en beschikbaar stelt.
 
 **Open besluiten**
 
@@ -393,8 +394,8 @@ Gegevens, begrippen, schema's, kwaliteit en mappings beheerd beschrijven en bron
 - positionering van mapping- en serialisatieservices.
 - wijzigingsproces tussen bronhouders, domeinen en externe stelsels.
 - inrichting van de terugmeldprocedure voor fouten of vermoedelijke onjuistheden.
-- inhoud, standaardisatie en koppelvlak van de bronspecifieke GBO-configuratie.
-- minimale functionele eisen aan het decentrale configuratiecomponent en de wijze waarop centrale GBO-voorzieningen de configuratie raadplegen.
+- inhoud, standaardisatie en koppelvlak van de bronconfiguratie.
+- minimale functionele eisen aan het decentrale configuratiecomponent en de wijze waarop kanaalvoorzieningen de configuratie raadplegen.
 
 ## S11 — Attesteringsuitgifte
 
@@ -404,8 +405,8 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet. Ook ondersteunt 
 **Normerende eisen**
 
 - de bronhouder blijft juridisch en inhoudelijk verantwoordelijk voor de uitgegeven publieke attributen, tenzij wet- en regelgeving een andere rolverdeling bepaalt.
-- indien voor attestatie-uitgifte een semantische mapping nodig is, legt de bronhouder in zijn GBO-configuratie vast welke mapping en welk attestatieschema voor de betreffende gegevensdienst worden toegepast.
-- GBO kan de technische functie van PubEAA-verstrekker ondersteunen. Deze ondersteuning maakt GBO niet automatisch de juridische uitgevende instantie.
+- indien voor attestatie-uitgifte een semantische mapping nodig is, legt de bronhouder in zijn bronconfiguratie vast welke mapping en welk attestatieschema voor de betreffende gegevensdienst worden toegepast.
+- een optionele voorziening voor PubEAA-uitgifte kan de technische uitgifte via OpenID4VCI ondersteunen. De bronhouder blijft juridisch en inhoudelijk verantwoordelijk voor de uitgifte; het programma GBO en de voorziening zijn geen PubEAA-verstrekker.
 - een ASI-provider biedt gestandaardiseerde verify- en, waar toegestaan, retrievefuncties aan QTSP's.
 - uitgifte, verificatie en retrieval gebruiken passende authenticatie, autorisatie en logging.
 - attestaties volgen een vastgesteld attestation rulebook en schema.
@@ -416,7 +417,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet. Ook ondersteunt 
 
 - eIDAS2, uitvoeringshandelingen en ARF.
 - OpenID4VCI voor uitgifte.
-- OpenID4VP voor presentatie of verificatie waar relevant.
+- OpenID4VP voor de presentatie door de wallet aan een dienstverlener. Deze presentatie valt buiten de voorziening voor PubEAA-uitgifte.
 - SD-JWT VC en mdoc waar voorgeschreven of passend.
 - ETSI TS 119 478 V1.1.1 voor de inrichting van de ASI-provider voor QTSP's.
 - ETSI-profielen voor gekwalificeerde zegels en vertrouwensdiensten.
@@ -424,7 +425,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet. Ook ondersteunt 
 
 **Functionele voorzieningen**
 
-- PubEAA-verstrekker.
+- optionele voorziening voor PubEAA-uitgifte.
 - ASI-provider met verify- en eventueel retrievefunctie.
 - signing- en statusvoorzieningen.
 - aansluiting op relevante vertrouwenslijsten en catalogi.
@@ -434,7 +435,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet. Ook ondersteunt 
 
 - centraal, decentraal of federatief uitgiftemodel.
 - beheerder van generieke technische voorzieningen.
-- verdeling van verantwoordelijkheden tussen bronhouder, PubEAA-verstrekker, ASI-provider en QTSP.
+- verdeling van verantwoordelijkheden tussen bronhouder, voorziening voor PubEAA-uitgifte, ASI-provider en QTSP.
 - certificering en opname in vertrouwenslijsten.
 - voorwaarden voor attestatie-uitgifte op basis van claims die zijn afgeleid van authentieke brongegevens. Dit omvat eigenaarschap, versiebeheer van de regel en verantwoordelijkheid voor de resulterende claim.
 - startpunt en gebruikersreis voor de uitgifte.
@@ -447,7 +448,7 @@ Brongegevens beschikbaar maken als PubEAA voor een EUDI-Wallet. Ook ondersteunt 
 | S02 | Vrijwilligheid, alternatief en toezicht | Portaalinrichting en UX-profiel |
 | S03 | Governance identity matching | Pseudonimiserings- en identity-matchingintegratie |
 | S04 | Toelatingsmodel private partijen en governance van vertegenwoordiging | Vertrouwensprofiel, identifierkoppeling en verificatie van bevoegdheidsbewijzen |
-| S05 | Verantwoordelijkheid voor beslisbeleid | GBO-autorisatieprofiel en componentinrichting |
+| S05 | Verantwoordelijkheid voor beslisbeleid | Autorisatieprofiel en componentinrichting |
 | S06 | Eigenaarschap van policy-governance | Open policyformaat, distributie en beheer |
 | S07 | Beheer van diensten en aansluitvoorwaarden | API-profiel, dienstencatalogus en vertaallaag |
 | S08 | Verdeling van verantwoordelijkheden met OOTS-governance | Koppelvlak OOTS-V en mappingbeheer |

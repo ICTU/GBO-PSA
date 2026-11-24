@@ -1,5 +1,37 @@
 # Change Log
 
+## Change Log v0.8.4
+
+Van: versie [**0.8.3**](https://ictu.github.io/GBO-PSA/0.8.3/) (oktober 2026) → Naar: versie **0.8.4** (november 2026)
+
+Deze versie brengt de PSA terminologisch en qua verantwoordelijkheidsverdeling in lijn met versie 0.9.6 van het globaal ontwerp. De architectuurrichting is niet gewijzigd.
+
+### Samenvatting in één oogopslag
+
+| Onderdeel | Aard van de wijziging |
+| --- | --- |
+| Terminologie en status | GBO verwijst uitsluitend naar het programma. De voorgestelde oplossing heet het **bronontsluitingsmodel**, met een **decentrale bronontsluiting** en **kanaalvoorzieningen**. |
+| Begrippen | De PSA verwijst naar de centrale begrippenlijst van het globaal ontwerp en definieert begrippen niet afzonderlijk. |
+| Functies en componenten | **GBO-configuratie** en **GBO-vertaallaag** zijn vervangen door **bronconfiguratie** en **referentievertaallaag**. De afgesproken werkpakketnaam **GBO-basis** blijft gehandhaafd. |
+| Werkpakketten | EUDI-Wallet, OOTS en DvTP zijn als **kanaalwerkpakketten** gepositioneerd. |
+| Verantwoordelijkheden | Technische handelingen zijn toegeschreven aan bronhouders, kanaalvoorzieningen, afsprakenstelsels of beheerorganisaties in plaats van aan GBO als geheel. |
+| OOTS | De Basisinrichting OOTS verzorgt protocolvertaling en Europese proces- en transportfuncties. De optionele OOTS-adapter verzorgt, indien geconfigureerd, semantische mapping naar **SDG-EDM**. Publicatie van bewijsdiensten via bNC SDG valt buiten het bronontsluitingsmodel. |
+| EUDI-Wallet | De optionele voorziening voor PubEAA-uitgifte is onderscheiden van de juridisch verantwoordelijke bronhouder. Presentatie via OpenID4VP valt buiten deze uitgiftevoorziening. |
+
+### Terminologie en begrippen
+
+Aan de inleiding is een paragraaf **Terminologie en begrippen** toegevoegd. Deze legt de status van het programma en het bronontsluitingsmodel vast en verwijst voor alle definities naar de begrippenlijst van het globaal ontwerp. PSA-specifieke begrippen worden eveneens in die centrale begrippenlijst onderhouden.
+
+### Werkpakketten
+
+De naam **GBO-basis** blijft behouden als afgesproken naam van het overkoepelende basiswerkpakket. De werkpakketten EUDI-Wallet, OOTS en DvTP zijn beschreven als kanaalwerkpakketten die de afspraken en voorzieningen voor een specifiek kanaal uitwerken.
+
+### OOTS en EUDI-Wallet
+
+De beschrijving van OOTS maakt nu onderscheid tussen OOTS-EDM voor Europese verzoek- en antwoordberichten en SDG-EDM voor de semantische beschrijving van bewijsgegevens. De rol van bNC SDG bij het publiceren van bewijsdiensten is toegevoegd. Voor EUDI-Wallet is verduidelijkt dat de bronhouder verantwoordelijk blijft voor PubEAA-uitgifte en dat de optionele uitgiftevoorziening niet bij de latere presentatie via OpenID4VP betrokken is.
+
+---
+
 ## Change Log v0.8.3
 
 Van: versie [**0.8.2**](https://ictu.github.io/GBO-PSA/0.8.2/) (september 2026) → Naar: versie **0.8.3** (oktober 2026)

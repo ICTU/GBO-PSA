@@ -7,8 +7,8 @@ extra:
   version:
     provider: mike
     alias: true
-  document_version: "0.8.3"
-  document_date: "oktober 2026"
+  document_version: "0.8.4"
+  document_date: "november 2026"
   document_author: "ICTU"
   document_status: "externe review verwerkt"
 
