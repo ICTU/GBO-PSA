@@ -1113,7 +1113,7 @@
 
 
 <h1 id="interactiepatronen">Interactiepatronen<a class="headerlink" href="#interactiepatronen" title="Permanent link">&para;</a></h1>
-<p><a href="https://ictu.github.io/GBO-GO/main/#3-interactiepatronen">Hoofdstuk 3 van het globaal ontwerp</a> beschrijft de drie interactiepatronen van GBO. De PSA herhaalt de procesbeschrijvingen en sequencediagrammen niet.</p>
+<p><a href="https://ictu.github.io/GBO-GO/main/#3-interactiepatronen">Hoofdstuk 3 van het globaal ontwerp</a> beschrijft de drie interactiepatronen binnen de huidige programmascope. De PSA herhaalt de procesbeschrijvingen en sequencediagrammen niet.</p>
 <p>Dit hoofdstuk beschrijft welke stelselfuncties voor ieder patroon relevant zijn. Ook benoemt het de aandachtspunten die de PSA verder uitwerkt.</p>
 <table>
 <thead>
@@ -1129,13 +1129,13 @@
 <td><strong>A — Burger gebruikt EUDI-Wallet</strong></td>
 <td>De burger vraagt een attestatie van attributen op voor een EUDI-Wallet. Een bronhouder kan zelf of via een andere partij een PubEAA uitgeven. Een QTSP kan een QEAA uitgeven.</td>
 <td><a href="../capabilities/#s03-burgeridentificatie-pseudonimisering">S03</a>, <a href="../capabilities/#s04-organisatie-authenticatie-vertrouwensstelsel">S04</a>, <a href="../capabilities/#s05-autorisatie">S05</a>, <a href="../capabilities/#s07-gegevensontsluiting">S07</a>, <a href="../capabilities/#s09-logging-audit-traceerbaarheid">S09</a>, <a href="../capabilities/#s10-semantiek-gegevenscatalogus">S10</a> en <a href="../capabilities/#s11-attesteringsuitgifte">S11</a></td>
-<td>Identificatie van de burger.<br>Autorisatie van uitgifte, verificatie en retrieval.<br>Attestation rulebooks en semantische mapping.<br>Signing, status en intrekking.<br>Verdeling van verantwoordelijkheden tussen bronhouder, PubEAA-verstrekker, ASI-provider en QTSP.</td>
+<td>Identificatie van de burger.<br>Autorisatie van uitgifte, verificatie en retrieval.<br>Attestation rulebooks en semantische mapping.<br>Signing, status en intrekking.<br>Verdeling van verantwoordelijkheden tussen bronhouder, voorziening voor PubEAA-uitgifte, ASI-provider en QTSP.</td>
 </tr>
 <tr>
 <td><strong>B — Grensoverschrijdend verzoek via OOTS</strong></td>
-<td>Een publieke instantie in een andere lidstaat vraagt bewijsgegevens op bij een Nederlandse bronhouder op grond van de SDG-verordening. Binnen GBO loopt dit verzoek via de Basisinrichting OOTS, vooral via de OOTS-V-component.</td>
+<td>Een publieke instantie in een andere lidstaat vraagt bewijsgegevens op bij een Nederlandse bronhouder op grond van de SDG-verordening. Binnen het OOTS-kanaal loopt dit verzoek via de Basisinrichting OOTS, vooral via de OOTS-V-component.</td>
 <td><a href="../capabilities/#s04-organisatie-authenticatie-vertrouwensstelsel">S04</a>, <a href="../capabilities/#s05-autorisatie">S05</a>, <a href="../capabilities/#s07-gegevensontsluiting">S07</a>, <a href="../capabilities/#s08-oots-adapter">S08</a>, <a href="../capabilities/#s09-logging-audit-traceerbaarheid">S09</a> en <a href="../capabilities/#s10-semantiek-gegevenscatalogus">S10</a></td>
-<td>Aansluiting van OOTS-V op de bronontsluiting-API.<br>Autorisatie via dezelfde keten als andere gegevensvragen.<br>Mapping naar OOTS-EDM.<br>Centraal beheer van discovery- en aansluitgegevens.<br>Logging over de hele keten.</td>
+<td>Aansluiting van OOTS-V op de bronontsluiting-API.<br>Autorisatie via dezelfde keten als andere gegevensvragen.<br>Semantische mapping naar SDG-EDM, indien geconfigureerd.<br>Publicatie van bewijsdiensten via bNC SDG, buiten het bronontsluitingsmodel.<br>Logging over de hele keten.</td>
 </tr>
 <tr>
 <td><strong>C — Gegevensverzoek private dienstverlener</strong></td>
@@ -1154,7 +1154,7 @@
 <li>expliciete, beheerde functies buiten het bronsysteem voeren semantische en protocoltransformaties uit.</li>
 <li>iedere gegevensuitwisseling is over de hele keten herleidbaar.</li>
 <li>beleid, schema's, mappings of configuratie leggen afwijkingen en patroonafhankelijke eisen vast, niet hardgecodeerde implementatielogica.</li>
-<li>waar een centrale GBO-voorziening bronspecifieke verwerking uitvoert, gebruikt deze daarvoor de configuratie die onder verantwoordelijkheid van de bronhouder wordt beheerd.</li>
+<li>waar een kanaalvoorziening bronspecifieke verwerking uitvoert, gebruikt deze daarvoor de bronconfiguratie die onder verantwoordelijkheid van de bronhouder wordt beheerd.</li>
 </ul>
 
 

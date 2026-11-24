@@ -929,10 +929,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#werkpakket-eudi-wallet" class="md-nav__link">
+  <a href="#kanaalwerkpakket-eudi-wallet" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Werkpakket EUDI-Wallet
+        Kanaalwerkpakket EUDI-Wallet
       
     </span>
   </a>
@@ -940,10 +940,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#werkpakket-oots" class="md-nav__link">
+  <a href="#kanaalwerkpakket-oots" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Werkpakket OOTS
+        Kanaalwerkpakket OOTS
       
     </span>
   </a>
@@ -951,10 +951,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#werkpakket-dvtp" class="md-nav__link">
+  <a href="#kanaalwerkpakket-dvtp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Werkpakket DvTP
+        Kanaalwerkpakket DvTP
       
     </span>
   </a>
@@ -1202,7 +1202,7 @@
 
 <h1 id="realisatiestrategie">Realisatiestrategie<a class="headerlink" href="#realisatiestrategie" title="Permanent link">&para;</a></h1>
 <h2 id="uitgangspunten">Uitgangspunten<a class="headerlink" href="#uitgangspunten" title="Permanent link">&para;</a></h2>
-<p>GBO richt geen zelfstandig nieuw afsprakenstelsel in. De realisatie vult bestaande afspraken, standaarden en voorzieningen aan en combineert deze waar nodig. GBO brengt nieuwe onderdelen waar mogelijk onder bij bestaande stelsels en beheerorganisaties.</p>
+<p>Het programma GBO richt geen zelfstandig nieuw afsprakenstelsel in. Het programma doet voorstellen voor aanvullingen op bestaande afspraken, standaarden en voorzieningen en laat deze waar nodig combineren. De aanvullingen gelden pas na besluitvorming en worden waar mogelijk geborgd bij bestaande stelsels en beheerorganisaties.</p>
 <p>Tijdens pilots kan het programma referentiecomponenten of tijdelijke voorzieningen ontwikkelen. Voor productiegebruik moeten de betrokken partijen vóór overdracht vaststellen:</p>
 <ul>
 <li>wie inhoudelijk eigenaar is.</li>
@@ -1215,7 +1215,7 @@
 <p>De realisatie volgt de <a href="../ontwerpprincipes/">ontwerpprincipes</a>. Vooral de principes <em>afspraken boven standaarden boven voorzieningen</em> en <em>decentraal wat kan, centraal wat moet</em> zijn bepalend.<br />
 Keuzes bij de uitwerking van het ontwerp, worden vastgelegd in <em>Architecture Decision Records</em> (ADR's).</p>
 <h2 id="werkpakketten">Werkpakketten<a class="headerlink" href="#werkpakketten" title="Permanent link">&para;</a></h2>
-<p>De werkpakketten groeperen samenhangende stelselfuncties. Het globaal ontwerp bevat de oplossingsplaat en technische componentbeschrijvingen. Deze PSA herhaalt die informatie niet.</p>
+<p>De werkpakketten groeperen samenhangende stelselfuncties. GBO-basis vormt het overkoepelende basiswerkpakket. EUDI-Wallet, OOTS en DvTP zijn kanaalwerkpakketten: zij werken de afspraken en voorzieningen voor een specifiek kanaal uit. Het globaal ontwerp bevat het overzicht van het bronontsluitingsmodel en de componentbeschrijvingen. Deze PSA herhaalt die informatie niet.</p>
 <table>
 <thead>
 <tr>
@@ -1241,7 +1241,7 @@ Keuzes bij de uitwerking van het ontwerp, worden vastgelegd in <em>Architecture 
 <tr>
 <td><strong>OOTS</strong></td>
 <td>S04, S05 en S07 tot en met S10</td>
-<td>Koppelvlak met OOTS-V.<br>OOTS-adapter.<br>OOTS-EDM-mappings.<br>Beheer van diensten en discovery.<br>Logging over de keten.</td>
+<td>Koppelvlak met OOTS-V.<br>Optionele OOTS-adapter.<br>Semantische mappings naar SDG-EDM.<br>Aansluiting op de dienstverlening van bNC SDG.<br>Logging over de keten.</td>
 <td>Basisinrichting OOTS.<br>Nationale SDG-governance.<br>Afspraken over mapping en beheer.</td>
 </tr>
 <tr>
@@ -1263,7 +1263,7 @@ Keuzes bij de uitwerking van het ontwerp, worden vastgelegd in <em>Architecture 
 <li>governance- en distributieprofiel voor beleidsregels.</li>
 <li>profiel voor ketenlogging en correlatie.</li>
 <li>kaders voor begrippen, schema's, kwaliteit en mappings.</li>
-<li>model en koppelvlak voor de bronspecifieke GBO-configuratie.</li>
+<li>model en koppelvlak voor de bronconfiguratie.</li>
 <li>afspraken over validatie, versiebeheer, publicatie en raadpleging van deze configuratie.</li>
 </ul>
 <h3 id="op-te-leveren-of-aan-te-passen-voorzieningen">Op te leveren of aan te passen voorzieningen<a class="headerlink" href="#op-te-leveren-of-aan-te-passen-voorzieningen" title="Permanent link">&para;</a></h3>
@@ -1272,16 +1272,16 @@ Keuzes bij de uitwerking van het ontwerp, worden vastgelegd in <em>Architecture 
 <li>referentie-implementatie van een decentraal configuratiecomponent.</li>
 <li>dienstencatalogus.</li>
 <li>functies voor beleidsbeheer en -distributie.</li>
-<li>ondersteunende GBO-vertaallaag.</li>
+<li>ondersteunende referentievertaallaag.</li>
 <li>schema- en mappingrepository.</li>
 <li>test- en conformiteitsvoorzieningen.</li>
 </ul>
 <p>Referentiecomponenten ondersteunen interoperabiliteit en maken implementatie eenvoudiger. Zij zijn geen verplichte productkeuze. Een alternatief is toegestaan als het aantoonbaar aan de standaarden en eisen voldoet.</p>
-<h2 id="werkpakket-eudi-wallet">Werkpakket EUDI-Wallet<a class="headerlink" href="#werkpakket-eudi-wallet" title="Permanent link">&para;</a></h2>
+<h2 id="kanaalwerkpakket-eudi-wallet">Kanaalwerkpakket EUDI-Wallet<a class="headerlink" href="#kanaalwerkpakket-eudi-wallet" title="Permanent link">&para;</a></h2>
 <p>Dit werkpakket maakt attestatie-uitgifte mogelijk en ondersteunt QTSP's.</p>
 <h3 id="op-te-leveren-afspraken-en-standaarden_1">Op te leveren afspraken en standaarden<a class="headerlink" href="#op-te-leveren-afspraken-en-standaarden_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>rolverdeling tussen bronhouder, PubEAA-verstrekker, ASI-provider en QTSP.</li>
+<li>rolverdeling tussen bronhouder, voorziening voor PubEAA-uitgifte, ASI-provider en QTSP.</li>
 <li>attestation rulebooks per attribuuttype.</li>
 <li>profielen voor uitgifte, verificatie, retrieval, walletbinding, signing, status en intrekking.</li>
 <li>schema's en mappings per attestatietype.</li>
@@ -1290,30 +1290,31 @@ Keuzes bij de uitwerking van het ontwerp, worden vastgelegd in <em>Architecture 
 <h3 id="inrichtingsvarianten">Inrichtingsvarianten<a class="headerlink" href="#inrichtingsvarianten" title="Permanent link">&para;</a></h3>
 <p>De realisatie ondersteunt meerdere varianten:</p>
 <ul>
-<li>een bronhouder beheert zelf een PubEAA-verstrekker.</li>
-<li>meerdere bronhouders gebruiken een gedeelde technische PubEAA-verstrekker.</li>
+<li>een bronhouder richt zelf een voorziening voor PubEAA-uitgifte in.</li>
+<li>meerdere bronhouders gebruiken een gedeelde technische voorziening voor PubEAA-uitgifte, waarbij iedere bronhouder verantwoordelijk blijft voor de eigen uitgifte.</li>
 <li>een QTSP geeft QEAA's uit na verificatie of retrieval via een ASI-provider.</li>
 <li>per attribuuttype of domein is een combinatie van deze varianten mogelijk.</li>
 </ul>
 <p>De PSA legt vooraf geen centrale keuze tussen deze varianten vast. De interfaces en eisen moeten ervoor zorgen dat de varianten onderling uitwisselbaar zijn.</p>
-<h2 id="werkpakket-oots">Werkpakket OOTS<a class="headerlink" href="#werkpakket-oots" title="Permanent link">&para;</a></h2>
-<p>Dit werkpakket koppelt de gemeenschappelijke bronontsluiting aan de Basisinrichting OOTS.</p>
+<h2 id="kanaalwerkpakket-oots">Kanaalwerkpakket OOTS<a class="headerlink" href="#kanaalwerkpakket-oots" title="Permanent link">&para;</a></h2>
+<p>Dit werkpakket koppelt de decentrale bronontsluiting aan de Basisinrichting OOTS. De optionele OOTS-adapter kan daarbij de geconfigureerde semantische vertaling uitvoeren.</p>
 <h3 id="op-te-leveren-afspraken-en-standaarden_2">Op te leveren afspraken en standaarden<a class="headerlink" href="#op-te-leveren-afspraken-en-standaarden_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>het koppelvlak tussen OOTS-V en de bronontsluiting-API.</li>
 <li>autorisatie- en loggingafspraken voor OOTS-verzoeken.</li>
-<li>beheerproces voor gegevensdiensten, discovery en OOTS-EDM-mappings, inclusief de configuratie waarmee de bronhouder bepaalt welke semantische mapping voor een gegevensdienst wordt toegepast.</li>
+<li>beheerproces voor gegevensdiensten en semantische mappings naar SDG-EDM, inclusief de bronconfiguratie waarmee de bronhouder bepaalt welke mapping voor een gegevensdienst wordt toegepast.</li>
+<li>aansluiting op de dienstverlening van bNC SDG voor het publiceren van beschikbare bewijsdiensten. Deze publicatiefunctie valt buiten het bronontsluitingsmodel.</li>
 <li>verdeling van verantwoordelijkheden bij fouten, wijzigingen en incidenten.</li>
 </ul>
 <h3 id="afbakening">Afbakening<a class="headerlink" href="#afbakening" title="Permanent link">&para;</a></h3>
-<p>Binnen GBO verzorgt de Basisinrichting OOTS de Europese proces- en transportfuncties. De GBO-uitwerking richt zich op:</p>
+<p>Binnen het OOTS-kanaal verzorgt de Basisinrichting OOTS de Europese proces- en transportfuncties. Het kanaalwerkpakket richt zich op:</p>
 <ul>
-<li>de aansluiting van OOTS-V op de generieke bronontsluiting.</li>
-<li>semantische mapping naar overeengekomen evidence types, indien deze door de bronhouder voor de betreffende gegevensdienst is geconfigureerd.</li>
+<li>de aansluiting van OOTS-V op de decentrale bronontsluiting.</li>
+<li>semantische mapping naar SDG-EDM, indien deze door de bronhouder voor de betreffende gegevensdienst is geconfigureerd.</li>
 <li>toepassing van de generieke autorisatie- en loggingfuncties.</li>
 </ul>
-<p>Sectorale en eigen OOTS-aansluitingen vallen buiten de realisatie van GBO.</p>
-<h2 id="werkpakket-dvtp">Werkpakket DvTP<a class="headerlink" href="#werkpakket-dvtp" title="Permanent link">&para;</a></h2>
+<p>Sectorale en eigen OOTS-aansluitingen vallen buiten de scope van het programma GBO.</p>
+<h2 id="kanaalwerkpakket-dvtp">Kanaalwerkpakket DvTP<a class="headerlink" href="#kanaalwerkpakket-dvtp" title="Permanent link">&para;</a></h2>
 <p>Dit werkpakket maakt gegevensverstrekking aan private dienstverleners mogelijk als daarvoor een geldige juridische grondslag bestaat.</p>
 <h3 id="juridische-randvoorwaarde">Juridische randvoorwaarde<a class="headerlink" href="#juridische-randvoorwaarde" title="Permanent link">&para;</a></h3>
 <p>Productiegebruik is pas mogelijk als wet- en regelgeving voldoende duidelijkheid geeft over:</p>
@@ -1334,38 +1335,38 @@ Keuzes bij de uitwerking van het ontwerp, worden vastgelegd in <em>Architecture 
 <li>autorisatiebeleid en governance voor wijzigingen.</li>
 </ul>
 <h2 id="impact-op-betrokken-partijen">Impact op betrokken partijen<a class="headerlink" href="#impact-op-betrokken-partijen" title="Permanent link">&para;</a></h2>
-<p>Het <a href="https://ictu.github.io/GBO-GO/main/#6-impact-op-betrokken-partijen">globaal ontwerp</a> bevat een eerste inschatting van de impact van GBO op betrokken partijen. De PSA maakt een verdere uitwerking mogelijk. Het technisch ontwerp en de technische requirements werken deze impact verder uit.</p>
+<p>Het <a href="https://ictu.github.io/GBO-GO/main/#6-impact-op-betrokken-partijen">globaal ontwerp</a> bevat een eerste inschatting van de impact van het bronontsluitingsmodel op betrokken partijen. De PSA maakt een verdere uitwerking mogelijk. Het technisch ontwerp en de technische requirements werken deze impact verder uit.</p>
 <h3 id="bronhouder">Bronhouder<a class="headerlink" href="#bronhouder" title="Permanent link">&para;</a></h3>
 <p>Een bronhouder realiseert of gebruikt:</p>
 <ul>
 <li>een bronontsluiting-API volgens het vastgestelde profiel.</li>
 <li>een PEP en toegang tot een passende PDP.</li>
-<li>logging volgens het GBO-profiel.</li>
-<li>een beschrijving van gegevensdiensten, schema's en kwaliteit en de bronspecifieke configuratie waarmee wordt vastgelegd hoe deze gegevens via de verschillende GBO-gegevensstromen worden aangeboden.</li>
+<li>logging volgens het vastgestelde profiel.</li>
+<li>een beschrijving van gegevensdiensten, schema's en kwaliteit en de bronconfiguratie waarmee wordt vastgelegd hoe deze gegevens via de verschillende gegevensstromen worden aangeboden.</li>
 <li>beheerprocessen voor aansluiting, wijzigingen en incidenten.</li>
 </ul>
-<p>Een bronhouder kan referentiecomponenten gebruiken en eventueel onderdelen van de GBO-vertaallaag inzetten. Functioneel gelijkwaardige alternatieven zijn ook mogelijk. De bronhouder beheert hiervoor een decentraal configuratiecomponent. De technische implementatie daarvan is vrij, zolang deze voldoet aan de vastgestelde functionele eisen en koppelvlakken.
+<p>Een bronhouder kan referentiecomponenten gebruiken en eventueel onderdelen van de referentievertaallaag inzetten. Functioneel gelijkwaardige alternatieven zijn ook mogelijk. De bronhouder beheert hiervoor een decentraal configuratiecomponent. De technische implementatie daarvan is vrij, zolang deze voldoet aan de vastgestelde functionele eisen en koppelvlakken.
 De bronhouder moet altijd voldoen aan de vastgestelde afspraken, standaarden en koppelvlakken.</p>
 <h3 id="qtsps">QTSP's<a class="headerlink" href="#qtsps" title="Permanent link">&para;</a></h3>
-<p>De PSA legt nog niet vast hoe attestatie-uitgifte binnen GBO wordt ingericht. Daarom ondersteunt de PSA voorlopig alle varianten. QTSP's hebben daardoor verschillende mogelijkheden:</p>
+<p>De PSA legt nog niet vast hoe attestatie-uitgifte binnen het EUDI-Wallet-kanaal wordt ingericht. Daarom ondersteunt de PSA voorlopig alle varianten. QTSP's hebben daardoor verschillende mogelijkheden:</p>
 <ul>
 <li>de verifyfunctie van de centrale ASI-provider gebruiken om attributen te controleren en daarna attestaties uit te geven.</li>
 <li>de retrievefunctie van de centrale ASI-provider gebruiken om namens een bronhouder attestaties uit te geven.</li>
-<li>de benodigde gegevens via andere kanalen bij de bron ophalen om attestaties uit te geven. Dit valt buiten de scope van GBO.</li>
+<li>de benodigde gegevens via andere kanalen bij de bron ophalen om attestaties uit te geven. Dit valt buiten de scope van het programma GBO.</li>
 </ul>
 <p>Een QTSP die de centrale ASI-provider gebruikt, moet aansluiten volgens de EUDI-afspraken en -standaarden.</p>
 <h3 id="basisinrichting-oots">Basisinrichting OOTS<a class="headerlink" href="#basisinrichting-oots" title="Permanent link">&para;</a></h3>
-<p>GBO sluit aan op de Basisinrichting OOTS voor levering van bewijzen aan andere Europese overheden volgens de SDG-verordening. Bronhouders mogen hiervoor ook andere kanalen gebruiken.</p>
-<p>Voor de aansluiting van GBO op de Basisinrichting OOTS zijn de volgende onderdelen nodig:</p>
+<p>De decentrale bronontsluiting sluit aan op de Basisinrichting OOTS voor levering van bewijzen aan andere Europese overheden volgens de SDG-verordening. De optionele OOTS-adapter kan daarbij de geconfigureerde semantische vertaling uitvoeren. Bronhouders mogen hiervoor ook andere aansluitingen gebruiken.</p>
+<p>Voor deze aansluiting op de Basisinrichting OOTS zijn de volgende onderdelen nodig:</p>
 <ul>
-<li>uitbreiding van de OOTS-V-component met het GBO-koppelvlak.</li>
-<li>afspraken over de precieze grens tussen het GBO-koppelvlak, OOTS-V en de Basisinrichting OOTS.</li>
+<li>uitbreiding van de OOTS-V-component met het nationale koppelvlak voor de decentrale bronontsluiting.</li>
+<li>afspraken over de precieze grens tussen dat koppelvlak, de optionele OOTS-adapter, OOTS-V en de Basisinrichting OOTS.</li>
 <li>afspraken over autorisatie, logging en verantwoording op die grens.</li>
-<li>afspraken over gebruik en beheer van de semantische mapping tussen de gegevensmodellen van de bronhouder en EDM.</li>
-<li>afspraken over discovery- en dienstinformatie.</li>
+<li>afspraken over gebruik en beheer van de semantische mapping tussen de gegevensmodellen van de bronhouder en SDG-EDM.</li>
+<li>aansluiting op de dienstverlening van bNC SDG voor publicatie van bewijsdiensten.</li>
 </ul>
 <h3 id="private-dienstverlener">Private dienstverlener<a class="headerlink" href="#private-dienstverlener" title="Permanent link">&para;</a></h3>
-<p>Een private dienstverlener die de DvTP-dienst van GBO wil gebruiken, moet:</p>
+<p>Een private dienstverlener die wil deelnemen aan het DvTP-kanaal, moet:</p>
 <ul>
 <li>voldoen aan de aansluitvoorwaarden voor de voorzieningen.</li>
 <li>de burger via de centrale toestemmingsvoorziening om toestemming vragen.</li>
@@ -1374,8 +1375,8 @@ De bronhouder moet altijd voldoen aan de vastgestelde afspraken, standaarden en 
 <li>gegevensverzoeken volgens de afgesproken koppelvlakspecificatie uitvoeren.</li>
 </ul>
 <h2 id="landing-in-bestaande-stelsels-en-beheerorganisaties">Landing in bestaande stelsels en beheerorganisaties<a class="headerlink" href="#landing-in-bestaande-stelsels-en-beheerorganisaties" title="Permanent link">&para;</a></h2>
-<p>GBO is een programma en geen organisatie die componenten kan beheren in een structurele productieomgeving. Ook is GBO geen stelsel met deelnemers en afspraken. Alle componenten die door GBO ontwikkeld worden, moeten opgenomen worden in stelsels en/of organisaties waar deze componenten beheerd worden en er toezicht is op de juiste toepassing.<br />
-Gedurende de ontwikkeling onderzoekt GBO waar de verschillende componenten het beste kunnen landen. Daarbij wordt zoveel mogelijk gebruik gemaakt van bestaande stelsels en beheerorganisaties. Een eerste voorzet hiervoor staat in de onderstaande tabel.</p>
+<p>GBO is een programma en geen organisatie die componenten kan beheren in een structurele productieomgeving. Ook is GBO geen stelsel met deelnemers en afspraken. Alle referentiecomponenten en voorzieningen die het programma laat ontwikkelen, moeten worden overgedragen aan of uitgefaseerd ten gunste van stelsels en organisaties waar structureel beheer en toezicht zijn geregeld.
+Gedurende de ontwikkeling onderzoekt het programma waar de verschillende componenten het beste kunnen landen. Daarbij wordt zoveel mogelijk gebruikgemaakt van bestaande stelsels en beheerorganisaties. Een eerste voorzet hiervoor staat in de onderstaande tabel.</p>
 <table>
 <thead>
 <tr>

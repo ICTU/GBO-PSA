@@ -950,6 +950,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#change-log-v084" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change Log v0.8.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#change-log-v083" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1133,12 +1144,61 @@
 
 
 <h1 id="change-log">Change Log<a class="headerlink" href="#change-log" title="Permanent link">&para;</a></h1>
+<h2 id="change-log-v084">Change Log v0.8.4<a class="headerlink" href="#change-log-v084" title="Permanent link">&para;</a></h2>
+<p>Van: versie <a href="https://ictu.github.io/GBO-PSA/0.8.3/"><strong>0.8.3</strong></a> (oktober 2026) → Naar: versie <strong>0.8.4</strong> (november 2026)</p>
+<p>Deze versie brengt de PSA terminologisch en qua verantwoordelijkheidsverdeling in lijn met versie 0.9.6 van het globaal ontwerp. De architectuurrichting is niet gewijzigd.</p>
+<h3 id="samenvatting-in-een-oogopslag">Samenvatting in één oogopslag<a class="headerlink" href="#samenvatting-in-een-oogopslag" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Onderdeel</th>
+<th>Aard van de wijziging</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Terminologie en status</td>
+<td>GBO verwijst uitsluitend naar het programma. De voorgestelde oplossing heet het <strong>bronontsluitingsmodel</strong>, met een <strong>decentrale bronontsluiting</strong> en <strong>kanaalvoorzieningen</strong>.</td>
+</tr>
+<tr>
+<td>Begrippen</td>
+<td>De PSA verwijst naar de centrale begrippenlijst van het globaal ontwerp en definieert begrippen niet afzonderlijk.</td>
+</tr>
+<tr>
+<td>Functies en componenten</td>
+<td><strong>GBO-configuratie</strong> en <strong>GBO-vertaallaag</strong> zijn vervangen door <strong>bronconfiguratie</strong> en <strong>referentievertaallaag</strong>. De afgesproken werkpakketnaam <strong>GBO-basis</strong> blijft gehandhaafd.</td>
+</tr>
+<tr>
+<td>Werkpakketten</td>
+<td>EUDI-Wallet, OOTS en DvTP zijn als <strong>kanaalwerkpakketten</strong> gepositioneerd.</td>
+</tr>
+<tr>
+<td>Verantwoordelijkheden</td>
+<td>Technische handelingen zijn toegeschreven aan bronhouders, kanaalvoorzieningen, afsprakenstelsels of beheerorganisaties in plaats van aan GBO als geheel.</td>
+</tr>
+<tr>
+<td>OOTS</td>
+<td>De Basisinrichting OOTS verzorgt protocolvertaling en Europese proces- en transportfuncties. De optionele OOTS-adapter verzorgt, indien geconfigureerd, semantische mapping naar <strong>SDG-EDM</strong>. Publicatie van bewijsdiensten via bNC SDG valt buiten het bronontsluitingsmodel.</td>
+</tr>
+<tr>
+<td>EUDI-Wallet</td>
+<td>De optionele voorziening voor PubEAA-uitgifte is onderscheiden van de juridisch verantwoordelijke bronhouder. Presentatie via OpenID4VP valt buiten deze uitgiftevoorziening.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="terminologie-en-begrippen">Terminologie en begrippen<a class="headerlink" href="#terminologie-en-begrippen" title="Permanent link">&para;</a></h3>
+<p>Aan de inleiding is een paragraaf <strong>Terminologie en begrippen</strong> toegevoegd. Deze legt de status van het programma en het bronontsluitingsmodel vast en verwijst voor alle definities naar de begrippenlijst van het globaal ontwerp. PSA-specifieke begrippen worden eveneens in die centrale begrippenlijst onderhouden.</p>
+<h3 id="werkpakketten">Werkpakketten<a class="headerlink" href="#werkpakketten" title="Permanent link">&para;</a></h3>
+<p>De naam <strong>GBO-basis</strong> blijft behouden als afgesproken naam van het overkoepelende basiswerkpakket. De werkpakketten EUDI-Wallet, OOTS en DvTP zijn beschreven als kanaalwerkpakketten die de afspraken en voorzieningen voor een specifiek kanaal uitwerken.</p>
+<h3 id="oots-en-eudi-wallet">OOTS en EUDI-Wallet<a class="headerlink" href="#oots-en-eudi-wallet" title="Permanent link">&para;</a></h3>
+<p>De beschrijving van OOTS maakt nu onderscheid tussen OOTS-EDM voor Europese verzoek- en antwoordberichten en SDG-EDM voor de semantische beschrijving van bewijsgegevens. De rol van bNC SDG bij het publiceren van bewijsdiensten is toegevoegd. Voor EUDI-Wallet is verduidelijkt dat de bronhouder verantwoordelijk blijft voor PubEAA-uitgifte en dat de optionele uitgiftevoorziening niet bij de latere presentatie via OpenID4VP betrokken is.</p>
+<hr />
 <h2 id="change-log-v083">Change Log v0.8.3<a class="headerlink" href="#change-log-v083" title="Permanent link">&para;</a></h2>
 <p>Van: versie <a href="https://ictu.github.io/GBO-PSA/0.8.2/"><strong>0.8.2</strong></a> (september 2026) → Naar: versie <strong>0.8.3</strong> (oktober 2026)</p>
 <p>Dit is geen uitputtende opsomming van iedere gewijzigde zin, maar een overzicht van wat er conceptueel en structureel is veranderd, per hoofdstuk/paragraaf.</p>
 <p>Deze versie bevat <strong>geen inhoudelijke wijzigingen in de architectuur, generieke functies of stelselfuncties</strong>. De wijzigingen bestaan vooral uit het in lijn brengen van de terminologie met de actuele positionering van GBO als programma, aangevuld met enkele redactionele, vormgevings- en technische wijzigingen.</p>
 <hr />
-<h3 id="samenvatting-in-een-oogopslag">Samenvatting in één oogopslag<a class="headerlink" href="#samenvatting-in-een-oogopslag" title="Permanent link">&para;</a></h3>
+<h3 id="samenvatting-in-een-oogopslag_1">Samenvatting in één oogopslag<a class="headerlink" href="#samenvatting-in-een-oogopslag_1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1250,7 +1310,7 @@
 <p>Van: versie <a href="https://ictu.github.io/GBO-PSA/0.8.1/"><strong>0.8.1</strong></a> (september 2026) → Naar: versie <strong>0.8.2</strong> (september 2026)</p>
 <p>Dit is geen uitputtende opsomming van iedere gewijzigde zin, maar een overzicht van wat er conceptueel en structureel is veranderd, per hoofdstuk/paragraaf.</p>
 <hr />
-<h3 id="samenvatting-in-een-oogopslag_1">Samenvatting in één oogopslag<a class="headerlink" href="#samenvatting-in-een-oogopslag_1" title="Permanent link">&para;</a></h3>
+<h3 id="samenvatting-in-een-oogopslag_2">Samenvatting in één oogopslag<a class="headerlink" href="#samenvatting-in-een-oogopslag_2" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1431,7 +1491,7 @@
 <p>Van: versie <a href="https://ictu.github.io/GBO-PSA/0.7.2/"><strong>0.7.2</strong></a> (juli 2026) → Naar: versie <strong>0.8.1</strong> (september 2026)</p>
 <p>Dit is geen uitputtende opsomming van iedere gewijzigde zin, maar een overzicht van wat er conceptueel en structureel is veranderd, per hoofdstuk/paragraaf.</p>
 <hr />
-<h3 id="samenvatting-in-een-oogopslag_2">Samenvatting in één oogopslag<a class="headerlink" href="#samenvatting-in-een-oogopslag_2" title="Permanent link">&para;</a></h3>
+<h3 id="samenvatting-in-een-oogopslag_3">Samenvatting in één oogopslag<a class="headerlink" href="#samenvatting-in-een-oogopslag_3" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
