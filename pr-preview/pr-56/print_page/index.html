@@ -1097,10 +1097,10 @@
         <section class="print-page" id="index" heading-number="1"><h1 id="index-inleiding">Inleiding<a class="headerlink" href="#index-inleiding" title="Permanent link">&para;</a></h1>
 <h2 id="index-doel-van-dit-document">Doel van dit document<a class="headerlink" href="#index-doel-van-dit-document" title="Permanent link">&para;</a></h2>
 <p>Dit document beschrijft de projectstartarchitectuur (PSA) voor het programma Gemeenschappelijke Bronontsluiting (GBO).</p>
-<p>De probleemstelling en doelen van het programma GBO staan op het tabblad <a href="https://ictu.github.io/GBO/">Gemeenschappelijke Bronontsluiting</a>. De organisatorische en juridische context staat op het tabblad <a href="https://ictu.github.io/GBO/latest/context">Context</a>. Het <a href="https://ictu.github.io/GBO-GO/main/">globaal ontwerp</a> beschrijft op hoofdlijnen het voorgestelde bronontsluitingsmodel, de interactiepatronen, generieke functies en benodigde componenten.</p>
+<p>De probleemstelling en doelen van het programma GBO staan op het tabblad <a href="https://ictu.github.io/GBO/">Gemeenschappelijke Bronontsluiting</a>. De organisatorische en juridische context staat op het tabblad <a href="https://ictu.github.io/GBO/latest/context">Context</a>. Het <a href="https://ictu.github.io/GBO-GO/">globaal ontwerp</a> beschrijft op hoofdlijnen het voorgestelde bronontsluitingsmodel, de interactiepatronen, generieke functies en benodigde componenten.</p>
 <h2 id="index-terminologie-en-begrippen">Terminologie en begrippen<a class="headerlink" href="#index-terminologie-en-begrippen" title="Permanent link">&para;</a></h2>
 <p>In deze PSA verwijst <strong>GBO</strong> uitsluitend naar het programma Gemeenschappelijke Bronontsluiting. De door het programma voorgestelde oplossing heet het <strong>bronontsluitingsmodel</strong>. Dit model bestaat uit een <strong>decentrale bronontsluiting</strong> die iedere bronhouder zelf inricht of laat inrichten en uit <strong>kanaalvoorzieningen</strong> voor de kanalen EUDI-Wallet, OOTS en private dienstverleners (DvTP). Het bronontsluitingsmodel is zelf geen standaard, voorziening, organisatie of afsprakenstelsel.</p>
-<p>Deze PSA gebruikt de begrippen en definities uit de <a href="https://ictu.github.io/GBO-GO/main/bijlage_begrippenlijst/">begrippenlijst van het globaal ontwerp</a>. Begrippen worden in de PSA niet afzonderlijk gedefinieerd. Als een benodigd begrip ontbreekt, wordt het aan die gemeenschappelijke begrippenlijst toegevoegd.</p>
+<p>Deze PSA gebruikt de begrippen en definities uit de <a href="https://ictu.github.io/GBO-GO/latest/bijlage_begrippenlijst/">begrippenlijst van het globaal ontwerp</a>. Begrippen worden in de PSA niet afzonderlijk gedefinieerd. Als een benodigd begrip ontbreekt, wordt het aan die gemeenschappelijke begrippenlijst toegevoegd.</p>
 <p>De PSA neemt het globaal ontwerp als vertrekpunt. De PSA legt de architectuurkaders en richtlijnen vast voor de verdere uitwerking van de generieke functies en stelselfuncties.</p>
 <p>De PSA beschrijft vooral:</p>
 <ul>
@@ -1119,14 +1119,14 @@
 <li>De <a href="https://ictu.github.io/GBO/"><strong>inleiding</strong></a> en <a href="https://ictu.github.io/GBO/latest/context"><strong>context</strong></a> beschrijven de doelen van het programma, de omgeving en de juridische kaders.</li>
 <li>Het <a href="https://ictu.github.io/GBO-GO/"><strong>globaal ontwerp</strong></a> beschrijft op hoofdlijnen het voorgestelde bronontsluitingsmodel, de interactiepatronen, generieke functies en componenten.</li>
 <li>De <a href="https://ictu.github.io/GBO-PSA/"><strong>PSA</strong></a> beschrijft de kaders, eisen en ontwerpkeuzes voor de generieke functies en stelselfuncties.</li>
-<li>Het <a href="https://ictu.github.io/GBO/main/underconstruction_to/"><strong>technisch ontwerp</strong></a> beschrijft de technische inrichting van de voorzieningen en koppelvlakken.</li>
+<li>Het <a href="https://ictu.github.io/GBO-TO/"><strong>technisch ontwerp</strong></a> beschrijft de technische inrichting van de voorzieningen en koppelvlakken.</li>
 <li>De <a href="https://ictu.github.io/GBO/main/underconstruction_tr/"><strong>technische requirements</strong></a> specificeren welke referentiecomponenten of voorzieningen het programma laat ontwikkelen of aanpassen.</li>
-<li>De uitwerking <a href="https://ictu.github.io/GBO/main/underconstruction_sem/"><strong>Semantiek</strong></a> beschrijft de informatiemodellen, begrippen, schema's en mappings voor gegevensuitwisseling.</li>
+<li>De uitwerking <a href="https://ictu.github.io/GBO-Semantiek/"><strong>Semantiek</strong></a> beschrijft de informatiemodellen, begrippen, schema's en mappings voor gegevensuitwisseling.</li>
 </ol>
 <p>Bij verschillen over de oplossingsrichting of interactiepatronen is het globaal ontwerp leidend. De PSA is leidend voor de normerende architectuureisen aan de verdere uitwerking.</p>
 <p>De <a href="https://gbo.simulatie.datastelsel.nl/"><strong>demo-omgeving</strong></a> laat zien hoe de voorgestelde oplossing in de praktijk kan werken. De demo is nog in ontwikkeling, gebruikt testdata en kan fouten bevatten.</p>
 <h2 id="index-scope">Scope<a class="headerlink" href="#index-scope" title="Permanent link">&para;</a></h2>
-<p>De PSA beschrijft de kaders, eisen en ontwerpkeuzes voor de afspraken, standaarden en voorzieningen die nodig zijn om de <a href="https://ictu.github.io/GBO/latest/">doelen van het programma GBO</a> te bereiken. Het bronontsluitingsmodel bouwt waar mogelijk voort op bestaande afspraken, standaarden en voorzieningen. Het programma doet voorstellen voor noodzakelijke aanvullingen. Deze gelden pas na besluitvorming en borging in de aangewezen afsprakenstelsels en beheerorganisaties.</p>
+<p>De PSA beschrijft de kaders, eisen en ontwerpkeuzes voor de afspraken, standaarden en voorzieningen die nodig zijn om de <a href="https://ictu.github.io/GBO/">doelen van het programma GBO</a> te bereiken. Het bronontsluitingsmodel bouwt waar mogelijk voort op bestaande afspraken, standaarden en voorzieningen. Het programma doet voorstellen voor noodzakelijke aanvullingen. Deze gelden pas na besluitvorming en borging in de aangewezen afsprakenstelsels en beheerorganisaties.</p>
 <p>De PSA beschrijft niet:</p>
 <ul>
 <li>de volledige werking van de oplossingsrichting en interactiepatronen. Daarvoor verwijst de PSA naar het globaal ontwerp.</li>
@@ -1198,7 +1198,7 @@
 </tr>
 </tbody>
 </table>
-<p>De begrippen en definities staan in de <a href="https://ictu.github.io/GBO-GO/main/bijlage_begrippenlijst/">begrippenlijst van het globaal ontwerp</a>.</p>
+<p>De begrippen en definities staan in de <a href="https://ictu.github.io/GBO-GO/latest/bijlage_begrippenlijst/">begrippenlijst van het globaal ontwerp</a>.</p>
 <h2 id="index-leeswijzer">Leeswijzer<a class="headerlink" href="#index-leeswijzer" title="Permanent link">&para;</a></h2>
 <p>De PSA bevat de volgende onderdelen:</p>
 <ul>
@@ -1211,7 +1211,7 @@
 <li><a href="#realisatiestrategie">Realisatiestrategie</a>: de werkpakketten, afhankelijkheden en beoogde onderbrenging bij bestaande stelsels en beheerorganisaties.</li>
 <li><a href="#vraagstukken">Open besluiten</a>: het besluitregister voor architectuurkeuzes die nog niet zijn vastgesteld.</li>
 </ul></section><section class="print-page" id="oplossingsrichting" heading-number="2"><h1 id="oplossingsrichting-vertrekpunt-uit-het-globaal-ontwerp">Vertrekpunt uit het globaal ontwerp<a class="headerlink" href="#oplossingsrichting-vertrekpunt-uit-het-globaal-ontwerp" title="Permanent link">&para;</a></h1>
-<p><a href="https://ictu.github.io/GBO-GO/main/#2-voorgestelde-oplossingsrichting">Hoofdstuk 2 van het globaal ontwerp</a> beschrijft en onderbouwt het voorgestelde bronontsluitingsmodel. Dit hoofdstuk herhaalt die beschrijving niet. Het benoemt alleen de architectuurconsequenties die deze PSA normerend uitwerkt.</p>
+<p><a href="https://ictu.github.io/GBO-GO/latest/#2-voorgestelde-oplossingsrichting">Hoofdstuk 2 van het globaal ontwerp</a> beschrijft en onderbouwt het voorgestelde bronontsluitingsmodel. Dit hoofdstuk herhaalt die beschrijving niet. Het benoemt alleen de architectuurconsequenties die deze PSA normerend uitwerkt.</p>
 <h2 id="oplossingsrichting-architectuurconsequenties">Architectuurconsequenties<a class="headerlink" href="#oplossingsrichting-architectuurconsequenties" title="Permanent link">&para;</a></h2>
 <p>Het bronontsluitingsmodel gaat uit van een decentrale, herbruikbare bronontsluiting. Een bronhouder richt deze ontsluiting één keer in of laat deze inrichten en gebruikt haar daarna voor meerdere gegevensstromen. De bronhouder beheert daarnaast een bronconfiguratie, waarmee wordt vastgelegd welke gegevens beschikbaar zijn en hoe deze binnen de verschillende gegevensstromen worden ontsloten. Nieuwe gegevensvragen worden zoveel mogelijk via deze configuratie toegevoegd. Daardoor hoeft een bronhouder niet voor iedere toepassing of afnemer een nieuw bronkoppelvlak te ontwikkelen.</p>
 <p>Daaruit volgen de volgende consequenties voor de PSA:</p>
