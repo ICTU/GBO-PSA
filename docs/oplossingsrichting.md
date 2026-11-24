@@ -1,6 +1,6 @@
 # Vertrekpunt uit het globaal ontwerp
 
-[Hoofdstuk 2 van het globaal ontwerp](https://ictu.github.io/GBO-GO/main/#2-voorgestelde-oplossingsrichting) beschrijft en onderbouwt het voorgestelde bronontsluitingsmodel. Dit hoofdstuk herhaalt die beschrijving niet. Het benoemt alleen de architectuurconsequenties die deze PSA normerend uitwerkt.
+[Hoofdstuk 2 van het globaal ontwerp](https://ictu.github.io/GBO-GO/latest/#2-voorgestelde-oplossingsrichting) beschrijft en onderbouwt het voorgestelde bronontsluitingsmodel. Dit hoofdstuk herhaalt die beschrijving niet. Het benoemt alleen de architectuurconsequenties die deze PSA normerend uitwerkt.
 
 ## Architectuurconsequenties
 

@@ -4,13 +4,13 @@
 
 Dit document beschrijft de projectstartarchitectuur (PSA) voor het programma Gemeenschappelijke Bronontsluiting (GBO).
 
-De probleemstelling en doelen van het programma GBO staan op het tabblad [Gemeenschappelijke Bronontsluiting](https://ictu.github.io/GBO/). De organisatorische en juridische context staat op het tabblad [Context](https://ictu.github.io/GBO/latest/context). Het [globaal ontwerp](https://ictu.github.io/GBO-GO/main/) beschrijft op hoofdlijnen het voorgestelde bronontsluitingsmodel, de interactiepatronen, generieke functies en benodigde componenten.
+De probleemstelling en doelen van het programma GBO staan op het tabblad [Gemeenschappelijke Bronontsluiting](https://ictu.github.io/GBO/). De organisatorische en juridische context staat op het tabblad [Context](https://ictu.github.io/GBO/latest/context). Het [globaal ontwerp](https://ictu.github.io/GBO-GO/) beschrijft op hoofdlijnen het voorgestelde bronontsluitingsmodel, de interactiepatronen, generieke functies en benodigde componenten.
 
 ## Terminologie en begrippen
 
 In deze PSA verwijst **GBO** uitsluitend naar het programma Gemeenschappelijke Bronontsluiting. De door het programma voorgestelde oplossing heet het **bronontsluitingsmodel**. Dit model bestaat uit een **decentrale bronontsluiting** die iedere bronhouder zelf inricht of laat inrichten en uit **kanaalvoorzieningen** voor de kanalen EUDI-Wallet, OOTS en private dienstverleners (DvTP). Het bronontsluitingsmodel is zelf geen standaard, voorziening, organisatie of afsprakenstelsel.
 
-Deze PSA gebruikt de begrippen en definities uit de [begrippenlijst van het globaal ontwerp](https://ictu.github.io/GBO-GO/main/bijlage_begrippenlijst/). Begrippen worden in de PSA niet afzonderlijk gedefinieerd. Als een benodigd begrip ontbreekt, wordt het aan die gemeenschappelijke begrippenlijst toegevoegd.
+Deze PSA gebruikt de begrippen en definities uit de [begrippenlijst van het globaal ontwerp](https://ictu.github.io/GBO-GO/latest/bijlage_begrippenlijst/). Begrippen worden in de PSA niet afzonderlijk gedefinieerd. Als een benodigd begrip ontbreekt, wordt het aan die gemeenschappelijke begrippenlijst toegevoegd.
 
 De PSA neemt het globaal ontwerp als vertrekpunt. De PSA legt de architectuurkaders en richtlijnen vast voor de verdere uitwerking van de generieke functies en stelselfuncties.
 
@@ -32,9 +32,9 @@ Voor het programma GBO geldt de volgende documenthiërarchie:
 0. De [**inleiding**](https://ictu.github.io/GBO/) en [**context**](https://ictu.github.io/GBO/latest/context) beschrijven de doelen van het programma, de omgeving en de juridische kaders.
 1. Het [**globaal ontwerp**](https://ictu.github.io/GBO-GO/) beschrijft op hoofdlijnen het voorgestelde bronontsluitingsmodel, de interactiepatronen, generieke functies en componenten.
 2. De [**PSA**](https://ictu.github.io/GBO-PSA/) beschrijft de kaders, eisen en ontwerpkeuzes voor de generieke functies en stelselfuncties.
-3. Het [**technisch ontwerp**](https://ictu.github.io/GBO/main/underconstruction_to/) beschrijft de technische inrichting van de voorzieningen en koppelvlakken.
+3. Het [**technisch ontwerp**](https://ictu.github.io/GBO-TO/) beschrijft de technische inrichting van de voorzieningen en koppelvlakken.
 4. De [**technische requirements**](https://ictu.github.io/GBO/main/underconstruction_tr/) specificeren welke referentiecomponenten of voorzieningen het programma laat ontwikkelen of aanpassen.
-5. De uitwerking [**Semantiek**](https://ictu.github.io/GBO/main/underconstruction_sem/) beschrijft de informatiemodellen, begrippen, schema's en mappings voor gegevensuitwisseling.
+5. De uitwerking [**Semantiek**](https://ictu.github.io/GBO-Semantiek/) beschrijft de informatiemodellen, begrippen, schema's en mappings voor gegevensuitwisseling.
 
 Bij verschillen over de oplossingsrichting of interactiepatronen is het globaal ontwerp leidend. De PSA is leidend voor de normerende architectuureisen aan de verdere uitwerking.
 
@@ -42,7 +42,7 @@ De [**demo-omgeving**](https://gbo.simulatie.datastelsel.nl/) laat zien hoe de v
 
 ## Scope
 
-De PSA beschrijft de kaders, eisen en ontwerpkeuzes voor de afspraken, standaarden en voorzieningen die nodig zijn om de [doelen van het programma GBO](https://ictu.github.io/GBO/latest/) te bereiken. Het bronontsluitingsmodel bouwt waar mogelijk voort op bestaande afspraken, standaarden en voorzieningen. Het programma doet voorstellen voor noodzakelijke aanvullingen. Deze gelden pas na besluitvorming en borging in de aangewezen afsprakenstelsels en beheerorganisaties.
+De PSA beschrijft de kaders, eisen en ontwerpkeuzes voor de afspraken, standaarden en voorzieningen die nodig zijn om de [doelen van het programma GBO](https://ictu.github.io/GBO/) te bereiken. Het bronontsluitingsmodel bouwt waar mogelijk voort op bestaande afspraken, standaarden en voorzieningen. Het programma doet voorstellen voor noodzakelijke aanvullingen. Deze gelden pas na besluitvorming en borging in de aangewezen afsprakenstelsels en beheerorganisaties.
 
 De PSA beschrijft niet:
 
@@ -71,7 +71,7 @@ Deze PSA gebruikt de volgende namen consequent:
 | Burgerinterface voor toestemming | **toestemmingsportaal** |
 | Optionele ondersteuning voor bronhouders die niet rechtstreeks op de bronontsluiting-API kunnen aansluiten | **Referentievertaallaag** |
 
-De begrippen en definities staan in de [begrippenlijst van het globaal ontwerp](https://ictu.github.io/GBO-GO/main/bijlage_begrippenlijst/).
+De begrippen en definities staan in de [begrippenlijst van het globaal ontwerp](https://ictu.github.io/GBO-GO/latest/bijlage_begrippenlijst/).
 
 ## Leeswijzer
 
