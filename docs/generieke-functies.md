@@ -34,12 +34,12 @@ De inrichting voldoet aan de volgende eisen:
 
 De inrichting voldoet aan de volgende eisen:
 
-- iedere bronhouder biedt één generieke bronontsluiting-API voor de gegevensstromen die GBO ondersteunt.
+- iedere bronhouder biedt één generieke bronontsluiting-API voor de gegevensstromen binnen de huidige programmascope.
 - gegevensvragen zijn selectief en beperkt tot vooraf geregistreerde diensten en gegevenssets.
 - nieuwe afnemers, gegevensdiensten of interactiepatronen vereisen in beginsel alleen wijzigingen in de bronspecifieke configuratie en, waar nodig, in beleid, dienstregistratie, schema's of mappings; zij vereisen geen wijziging in het bronsysteem.
 - expliciete adapters en mappings verwerken protocol- en formaatverschillen van externe stelsels.
 - de bronhouder blijft verantwoordelijk voor de beschikbaarheid, juistheid en actualiteit van de brongegevens.
-- de GBO-vertaallaag ondersteunt bronhouders die het gekozen API-profiel nog niet rechtstreeks kunnen aanbieden. Deze ondersteuning blijft vervangbaar.
+- de referentievertaallaag ondersteunt bronhouders die het gekozen API-profiel nog niet rechtstreeks kunnen aanbieden. Deze optionele referentiecomponent blijft vervangbaar.
 - de standaard gegevensstroom bevat geen tijdelijke opslag. Tijdelijke opslag is alleen toegestaan met een expliciete motivering.
 
 ## F4 — Semantiek & Eenheid van Taal
@@ -48,12 +48,12 @@ De inrichting voldoet aan de volgende eisen:
 
 - beschikbare gegevensdiensten, gegevenselementen en begrippen hebben een beheerde beschrijving.
 - bronhouders en domeinen blijven inhoudelijk verantwoordelijk voor hun begrippen en informatiemodellen.
-- GBO stelt gemeenschappelijke kaders vast voor vindbaarheid, beschrijving, versiebeheer en mapping.
+- het programma GBO laat voorstellen uitwerken voor gemeenschappelijke kaders voor vindbaarheid, beschrijving, versiebeheer en mapping. Deze gelden pas na vaststelling en borging bij de aangewezen afsprakenstelsels en beheerorganisaties.
 - schema's en mappings zijn machineleesbaar, testbaar en versieerbaar.
-- de bronhouder legt in een bronspecifieke GBO-configuratie vast welke gegevensdiensten beschikbaar zijn voor de verschillende gegevensstromen en welke schema's, mappings en andere verwerkingsinstructies daarbij van toepassing zijn.
-- centrale GBO-voorzieningen kunnen de voor hen relevante bronspecifieke configuratie machineleesbaar raadplegen.
-- de bronhouder blijft inhoudelijk verantwoordelijk voor deze configuratie. Centrale voorzieningen passen de configuratie toe, maar bepalen niet zelfstandig de bronspecifieke inrichting.
-- transformaties naar OOTS-EDM, attestatieschema's en andere uitwisselformaten zijn afgeleid van beheerde bron- en doelschema's.
+- de bronhouder legt in een bronconfiguratie vast welke gegevensdiensten beschikbaar zijn voor de verschillende gegevensstromen en welke schema's, mappings en andere verwerkingsinstructies daarbij van toepassing zijn.
+- kanaalvoorzieningen kunnen de voor hen relevante bronconfiguratie machineleesbaar raadplegen.
+- de bronhouder blijft inhoudelijk verantwoordelijk voor deze configuratie. Kanaalvoorzieningen passen de configuratie toe, maar bepalen niet zelfstandig de bronspecifieke inrichting.
+- transformaties naar SDG-EDM, attestatieschema's en andere uitwisselformaten zijn afgeleid van beheerde bron- en doelschema's.
 - iedere wijziging bevat een impactanalyse en een overgangsstrategie voor bestaande afnemers.
 
 ## F5 — Gegevenskwaliteit & Validatie
@@ -99,7 +99,7 @@ De inrichting voldoet aan de volgende eisen:
 - monitoring van de keten vereist geen onnodige centrale verzameling van inhoudelijke persoonsgegevens.
 - een gestandaardiseerde verzoekidentificator maakt gebeurtenissen over componenten heen correleerbaar.
 - configuraties, beleid, schema's, mappings en dienstregistraties ondersteunen versiebeheer en audit.
-- voor bronspecifieke GBO-configuratie zijn afspraken vastgelegd over publicatie, validatie, versiebeheer, geldigheid en actualiteit. Bij een gegevensverwerking is herleidbaar welke configuratie is toegepast.
+- voor bronconfiguratie zijn afspraken vastgelegd over publicatie, validatie, versiebeheer, geldigheid en actualiteit. Bij een gegevensverwerking is herleidbaar welke configuratie is toegepast.
 - overeengekomen processen regelen incidenten, kwetsbaarheden en wijzigingen.
 - de inrichting ondersteunt wettelijke verplichtingen voor inzage en verantwoording.
 - afhankelijkheden van tijdelijke programmavoorzieningen hebben een plan voor overdracht of uitfasering.

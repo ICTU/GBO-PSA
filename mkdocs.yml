@@ -7,8 +7,8 @@ extra:
   version:
     provider: mike
     alias: true
-  document_version: "0.8.3"
-  document_date: "oktober 2026"
+  document_version: "0.8.4"
+  document_date: "november 2026"
   document_author: "ICTU"
   document_status: "externe review verwerkt"
 
@@ -78,7 +78,7 @@ plugins:
       canonical_version: "latest"
   - print-site:
       add_to_navigation: false
-      print_page_title: "Projectstartarchitectuur"
+      print_page_title: "GBO - Projectstartarchitectuur"
       add_cover_page: true
       cover_page_template: "docs/assets/templates/voorblad.tpl"
       enumerate_headings: true
@@ -105,7 +105,7 @@ nav:
       - Realisatiestrategie: realisatiestrategie.md
       - Open besluiten: vraagstukken.md
       - Change Log: change-log.md
-  - Technisch Ontwerp: https://ictu.github.io/GBO/main/underconstruction_to/
+  - Technisch Ontwerp: https://ictu.github.io/GBO-TO/
   - Technische Requirements: https://ictu.github.io/GBO/main/underconstruction_tr/
   - Semantiek: https://ictu.github.io/GBO-Semantiek/
   - Demo: https://gbo.simulatie.datastelsel.nl/
